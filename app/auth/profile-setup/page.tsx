@@ -75,7 +75,7 @@ export default function ProfileSetupPage() {
       <div className="auth-container">
         <div className="auth-card">
           <div className="auth-header">
-            <img src="/assets/Logo_dark.png" alt="Sanctuari" className="auth-logo" />
+            <img src="/assets/Logo_light.png" alt="Sanctuari" className="auth-logo" />
             <h1>Setting up your profile...</h1>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function ProfileSetupPage() {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
-          <img src="/assets/Logo_dark.png" alt="Sanctuari" className="auth-logo" />
+          <img src="/assets/Logo_light.png" alt="Sanctuari" className="auth-logo" />
           <h1>Complete Your Profile</h1>
           <p>Your email has been verified! Let's finish setting up your account.</p>
         </div>

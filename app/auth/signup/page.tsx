@@ -121,7 +121,7 @@ export default function SignupPage() {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
-          <img src="/assets/Logo_dark.png" alt="Sanctuari" className="auth-logo" />
+          <img src="/assets/Logo_light.png" alt="Sanctuari" className="auth-logo" />
           <h1>Create Your Account</h1>
           <p>Start procuring insurance the smart way</p>
         </div>

@@ -24,7 +24,7 @@ export default function HomePage() {
   return (
     <div className="loading-container">
       <div className="loading-content">
-        <img src="/assets/Logo_dark.png" alt="Sanctuari" className="loading-logo" />
+        <img src="/assets/Logo_light.png" alt="Sanctuari" className="loading-logo" />
         <div className="loading-spinner"></div>
         <p>Loading Sanctuari Platform...</p>
       </div>

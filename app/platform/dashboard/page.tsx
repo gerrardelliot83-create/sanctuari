@@ -106,7 +106,7 @@ export default function DashboardPage() {
 
         <div className="stats-grid">
           <div className="stat-card">
-            <div className="stat-icon">📋</div>
+            <div className="stat-icon icon-document"></div>
             <div className="stat-content">
               <span className="stat-value">{stats.totalRFQs}</span>
               <span className="stat-label">Total RFQs</span>
@@ -114,7 +114,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="stat-card">
-            <div className="stat-icon">🔄</div>
+            <div className="stat-icon icon-clock"></div>
             <div className="stat-content">
               <span className="stat-value">{stats.activeRFQs}</span>
               <span className="stat-label">Active RFQs</span>
@@ -122,7 +122,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="stat-card">
-            <div className="stat-icon">📊</div>
+            <div className="stat-icon icon-chart"></div>
             <div className="stat-content">
               <span className="stat-value">{stats.totalQuotes}</span>
               <span className="stat-label">Quotes Received</span>
@@ -130,7 +130,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="stat-card">
-            <div className="stat-icon">💰</div>
+            <div className="stat-icon icon-currency"></div>
             <div className="stat-content">
               <span className="stat-value">₹{stats.savedAmount.toLocaleString()}</span>
               <span className="stat-label">Amount Saved</span>
@@ -222,7 +222,6 @@ export default function DashboardPage() {
           }
 
           .stat-icon {
-            font-size: 2rem;
             width: 60px;
             height: 60px;
             background: var(--color-primary-light);
@@ -230,6 +229,33 @@ export default function DashboardPage() {
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+          }
+
+          .stat-icon::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background-color: var(--color-primary);
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+          }
+
+          .icon-document::before {
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'/%3E%3C/svg%3E");
+          }
+
+          .icon-clock::before {
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E");
+          }
+
+          .icon-chart::before {
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'/%3E%3C/svg%3E");
+          }
+
+          .icon-currency::before {
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E");
           }
 
           .stat-content {

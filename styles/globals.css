@@ -303,7 +303,10 @@ button {
 
 .auth-logo {
   height: 48px;
+  width: auto;
+  max-width: 200px;
   margin-bottom: var(--spacing-lg);
+  object-fit: contain;
 }
 
 .auth-header h1 {

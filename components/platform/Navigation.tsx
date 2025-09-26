@@ -11,10 +11,10 @@ export default function Navigation() {
   const pathname = usePathname()
 
   const navItems = [
-    { href: '/platform/dashboard', label: 'Dashboard', icon: '📊' },
-    { href: '/platform/rfq/create', label: 'Create RFQ', icon: '➕' },
-    { href: '/platform/rfqs', label: 'My RFQs', icon: '📋' },
-    { href: '/platform/bid-centre', label: 'Bid Centre', icon: '💼' },
+    { href: '/platform/dashboard', label: 'Dashboard', icon: 'dashboard' },
+    { href: '/platform/rfq/create', label: 'Create RFQ', icon: 'plus' },
+    { href: '/platform/rfqs', label: 'My RFQs', icon: 'list' },
+    { href: '/platform/bid-centre', label: 'Bid Centre', icon: 'briefcase' },
   ]
 
   const handleSignOut = async () => {
@@ -27,7 +27,7 @@ export default function Navigation() {
       <div className="nav-container">
         {/* Logo */}
         <Link href="/platform/dashboard" className="nav-logo">
-          <img src="/assets/Logo_dark.png" alt="Sanctuari" />
+          <img src="/assets/Logo_light.png" alt="Sanctuari" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -38,7 +38,7 @@ export default function Navigation() {
               href={item.href}
               className={`nav-item ${pathname.startsWith(item.href) ? 'active' : ''}`}
             >
-              <span className="nav-icon">{item.icon}</span>
+              <span className={`nav-icon icon-${item.icon}`}></span>
               {item.label}
             </Link>
           ))}
@@ -76,7 +76,7 @@ export default function Navigation() {
               className={`mobile-nav-item ${pathname.startsWith(item.href) ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              <span className="nav-icon">{item.icon}</span>
+              <span className={`nav-icon icon-${item.icon}`}></span>
               {item.label}
             </Link>
           ))}
@@ -108,6 +108,8 @@ export default function Navigation() {
         .nav-logo img {
           height: 32px;
           width: auto;
+          max-width: 140px;
+          object-fit: contain;
         }
 
         .nav-menu {
@@ -139,7 +141,37 @@ export default function Navigation() {
         }
 
         .nav-icon {
-          font-size: var(--font-size-base);
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          position: relative;
+        }
+
+        .nav-icon::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: currentColor;
+          mask-size: contain;
+          mask-repeat: no-repeat;
+          mask-position: center;
+        }
+
+        .icon-dashboard::before {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'/%3E%3C/svg%3E");
+        }
+
+        .icon-plus::before {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6v6m0 0v6m0-6h6m-6 0H6'/%3E%3C/svg%3E");
+        }
+
+        .icon-list::before {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'/%3E%3C/svg%3E");
+        }
+
+        .icon-briefcase::before {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6m8 0l4 6-4 6H8l-4-6 4-6h8z'/%3E%3C/svg%3E");
         }
 
         .user-menu {

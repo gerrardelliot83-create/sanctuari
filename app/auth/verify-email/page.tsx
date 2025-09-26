@@ -7,7 +7,7 @@ export default function VerifyEmailPage() {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
-          <img src="/assets/Logo_dark.png" alt="Sanctuari" className="auth-logo" />
+          <img src="/assets/Logo_light.png" alt="Sanctuari" className="auth-logo" />
           <h1>Check Your Email</h1>
           <p>We've sent you a verification link</p>
         </div>
