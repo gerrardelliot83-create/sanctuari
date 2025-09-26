@@ -68,7 +68,7 @@ export default function SignupPage() {
         email: data.email,
         password: data.password,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/verify`,
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
           data: {
             company_name: data.companyName,
             contact_person: data.contactPerson,
@@ -78,8 +78,19 @@ export default function SignupPage() {
 
       if (authError) throw authError
 
-      // Create user profile
-      if (authData.user) {
+      // Create user profile (only if user signup was successful)
+      if (authData.user && !authData.user.email_confirmed_at) {
+        // User needs email confirmation first - store data temporarily
+        // Profile will be created after email confirmation via trigger
+        localStorage.setItem('pendingUserProfile', JSON.stringify({
+          id: authData.user.id,
+          company_name: data.companyName,
+          contact_person: data.contactPerson,
+          phone: `+91${data.phone}`,
+          gst_number: data.gstNumber,
+        }))
+      } else if (authData.user && authData.user.email_confirmed_at) {
+        // User is confirmed, create profile immediately
         const { error: profileError } = await supabase
           .from('users')
           .insert({
@@ -91,7 +102,10 @@ export default function SignupPage() {
             gst_number: data.gstNumber,
           } as any)
 
-        if (profileError) throw profileError
+        if (profileError) {
+          console.error('Profile creation error:', profileError)
+          throw profileError
+        }
       }
 
       toast.success('Account created! Please check your email to verify.')
