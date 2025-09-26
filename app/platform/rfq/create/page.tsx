@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { useAuth } from '@/contexts/AuthContext'
-import RFQForm from '@/components/platform/RFQForm'
+import RFQFormNew from '@/components/platform/RFQFormNew'
 import Navigation from '@/components/platform/Navigation'
 import { parseRFQCsv } from '@/utils/rfqParser'
 import { ProductType } from '@/lib/supabase/types'
@@ -13,7 +13,6 @@ import toast from 'react-hot-toast'
 
 export default function CreateRFQPage() {
   const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null)
-  const [template, setTemplate] = useState<any>(null)
   const [loading, setLoading] = useState(false)
   const [freeRFQUsed, setFreeRFQUsed] = useState(false)
   const { user, profile } = useAuth()
@@ -35,38 +34,6 @@ export default function CreateRFQPage() {
     setFreeRFQUsed((count || 0) > 0)
   }
 
-  const loadTemplate = async (productType: ProductType) => {
-    setLoading(true)
-    try {
-      // First try to load from database
-      const { data: dbTemplate } = await supabase
-        .from('rfq_templates')
-        .select('*')
-        .eq('product_type', productType)
-        .eq('is_active', true)
-        .single()
-
-      if (dbTemplate) {
-        setTemplate({
-          productType: (dbTemplate as any).product_type,
-          name: (dbTemplate as any).name,
-          description: (dbTemplate as any).description,
-          fields: (dbTemplate as any).fields,
-          sections: [...new Set((dbTemplate as any).fields.map((f: any) => f.section))],
-          guidanceContent: (dbTemplate as any).guidance_content
-        })
-      } else {
-        // Fallback: Load from CSV (for development)
-        // This would be replaced with proper template loading in production
-        toast.error('Template not found. Please contact support.')
-      }
-    } catch (error) {
-      toast.error('Failed to load template')
-      console.error(error)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   const handleProductSelect = async (productType: ProductType) => {
     // Check if user needs to pay
@@ -76,7 +43,7 @@ export default function CreateRFQPage() {
     }
 
     setSelectedProduct(productType)
-    await loadTemplate(productType)
+    // No need to load template anymore, form is self-contained
   }
 
   const showPaymentModal = async (): Promise<boolean> => {
@@ -141,21 +108,20 @@ export default function CreateRFQPage() {
     }
   }
 
-  if (template && selectedProduct) {
+  if (selectedProduct) {
     return (
       <>
         <Navigation />
         <div className="create-rfq-container">
         <button
           onClick={() => {
-            setTemplate(null)
             setSelectedProduct(null)
           }}
           className="back-button"
         >
           ← Back to Product Selection
         </button>
-        <RFQForm template={template} onSubmit={handleRFQSubmit} />
+        <RFQFormNew productId={selectedProduct} />
         </div>
       </>
     )

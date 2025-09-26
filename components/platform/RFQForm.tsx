@@ -321,18 +321,113 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
           width: '100%',
           minHeight: '600px'
         }}>
-          {/* Section Navigation */}
-          <div className="rfq-section-tabs">
-            {fieldsBySection.map((section, index) => (
-              <button
-                key={section.name}
-                className={`rfq-section-tab ${index === currentSection ? 'active' : ''} ${index < currentSection ? 'completed' : ''}`}
-                onClick={() => setCurrentSection(index)}
-              >
-                <span className="rfq-section-number">{index + 1}</span>
-                <span className="rfq-section-name">{section.name}</span>
-              </button>
-            ))}
+          {/* Section Navigation - Minimalist Progress Stepper */}
+          <div style={{
+            background: '#fafbfc',
+            borderBottom: '1px solid #e1e4e8',
+            padding: '24px 32px',
+            position: 'relative'
+          }}>
+            {/* Progress Steps */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              maxWidth: '600px',
+              margin: '0 auto',
+              position: 'relative'
+            }}>
+              {/* Progress Line */}
+              <div style={{
+                position: 'absolute',
+                top: '20px',
+                left: '30px',
+                right: '30px',
+                height: '2px',
+                background: '#e1e4e8',
+                zIndex: 0
+              }} />
+
+              {/* Active Progress Line */}
+              <div style={{
+                position: 'absolute',
+                top: '20px',
+                left: '30px',
+                width: `${(currentSection / (fieldsBySection.length - 1)) * (600 - 60)}px`,
+                height: '2px',
+                background: '#6B46C1',
+                transition: 'width 0.3s ease',
+                zIndex: 0
+              }} />
+
+              {/* Step Indicators */}
+              {fieldsBySection.map((section, index) => (
+                <div
+                  key={section.name}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    position: 'relative',
+                    zIndex: 1,
+                    cursor: 'pointer'
+                  }}
+                  onClick={() => setCurrentSection(index)}
+                >
+                  {/* Circle */}
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: index === currentSection ? '#6B46C1' :
+                               index < currentSection ? '#10B981' :
+                               '#fff',
+                    border: index === currentSection ? 'none' :
+                            index < currentSection ? 'none' :
+                            '2px solid #e1e4e8',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '14px',
+                    fontWeight: '600',
+                    color: index === currentSection ? '#fff' :
+                           index < currentSection ? '#fff' :
+                           '#6b7280',
+                    transition: 'all 0.3s ease',
+                    boxShadow: index === currentSection ? '0 4px 6px rgba(107, 70, 193, 0.2)' : 'none'
+                  }}>
+                    {index < currentSection ? '✓' : index + 1}
+                  </div>
+
+                  {/* Label - Only show for active section */}
+                  {index === currentSection && (
+                    <div style={{
+                      marginTop: '8px',
+                      fontSize: '13px',
+                      fontWeight: '500',
+                      color: '#6B46C1',
+                      whiteSpace: 'nowrap',
+                      position: 'absolute',
+                      top: '100%'
+                    }}>
+                      {section.name}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Section Title for Mobile */}
+            <div style={{
+              display: 'none',
+              marginTop: '16px',
+              textAlign: 'center',
+              fontSize: '14px',
+              fontWeight: '500',
+              color: '#374151'
+            }} className="mobile-section-title">
+              Step {currentSection + 1} of {fieldsBySection.length}: {currentSectionData.name}
+            </div>
           </div>
 
           {/* Introduction Screen for First Section */}
@@ -470,6 +565,15 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
           </div>
         </div>
       </div>
+
+      {/* Responsive Styles */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .mobile-section-title {
+            display: block !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }
