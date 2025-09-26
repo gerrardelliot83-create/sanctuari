@@ -106,10 +106,9 @@ export default function Navigation() {
         }
 
         .nav-logo img {
-          height: 28px;
+          height: 24px;
           width: auto;
-          max-width: 120px;
-          object-fit: contain;
+          display: block;
         }
 
         .nav-menu {

@@ -9,6 +9,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useAuth } from '@/contexts/AuthContext'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
+import '@/styles/rfq-form.css'
 
 interface RFQFormProps {
   template: RFQTemplate
@@ -123,13 +124,13 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
       placeholder: field.placeholder,
       onFocus: () => setFocusedField(fieldKey),
       onBlur: () => setFocusedField(null),
-      className: `form-input ${error ? 'error' : ''}`
+      className: `rfq-form-input ${error ? 'error' : ''}`
     }
 
     switch (field.fieldType) {
       case 'select':
         return (
-          <select {...commonProps}>
+          <select {...commonProps} className={`rfq-form-select ${error ? 'error' : ''}`}>
             <option value="">Select an option</option>
             {field.options?.map(option => (
               <option key={option} value={option}>{option}</option>
@@ -141,6 +142,7 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
         return (
           <textarea
             {...commonProps}
+            className={`rfq-form-textarea ${error ? 'error' : ''}`}
             rows={4}
             maxLength={field.validation?.maxLength}
           />
@@ -148,15 +150,16 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
 
       case 'checkbox':
         return (
-          <label className="checkbox-label">
+          <div className="rfq-checkbox-wrapper">
             <input
               type="checkbox"
               {...register(fieldKey)}
               id={fieldKey}
+              className="rfq-checkbox-input"
               onFocus={() => setFocusedField(fieldKey)}
             />
-            <span>Yes</span>
-          </label>
+            <label htmlFor={fieldKey} className="rfq-checkbox-label">Yes</label>
+          </div>
         )
 
       case 'file':
@@ -274,39 +277,43 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
   const focusedGuidance = focusedField ? template.guidanceContent?.[focusedField] : null
 
   return (
-    <div className="rfq-form-container">
-      <div className="form-header">
-        <h1>{template.name}</h1>
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${formProgress}%` }} />
+    <div className="rfq-form-wrapper">
+      <div className="rfq-form-header">
+        <div className="rfq-form-header-content">
+          <h1 className="rfq-form-title">{template.name}</h1>
+          <div className="rfq-progress-container">
+            <div className="rfq-progress-bar">
+              <div className="rfq-progress-fill" style={{ width: `${formProgress}%` }} />
+            </div>
+            <p className="rfq-progress-text">{Math.round(formProgress)}% Complete</p>
+          </div>
         </div>
-        <p className="progress-text">{Math.round(formProgress)}% Complete</p>
       </div>
 
-      <div className="form-layout">
-        <div className="form-content">
+      <div className="rfq-form-layout">
+        <div className="rfq-form-content">
           {/* Section Navigation */}
-          <div className="section-tabs">
+          <div className="rfq-section-tabs">
             {fieldsBySection.map((section, index) => (
               <button
                 key={section.name}
-                className={`section-tab ${index === currentSection ? 'active' : ''} ${index < currentSection ? 'completed' : ''}`}
+                className={`rfq-section-tab ${index === currentSection ? 'active' : ''} ${index < currentSection ? 'completed' : ''}`}
                 onClick={() => setCurrentSection(index)}
               >
-                <span className="section-number">{index + 1}</span>
-                <span className="section-name">{section.name}</span>
+                <span className="rfq-section-number">{index + 1}</span>
+                <span className="rfq-section-name">{section.name}</span>
               </button>
             ))}
           </div>
 
           {/* Introduction Screen for First Section */}
           {currentSection === 0 && (
-            <div className="section-intro">
+            <div className="rfq-section-intro">
               <h2>Let's Get Started</h2>
               <p>{template.description}</p>
-              <div className="info-box">
+              <div className="rfq-info-box">
                 <h3>What You'll Need:</h3>
-                <ul>
+                <ul className="rfq-info-list">
                   <li>Company registration details</li>
                   <li>GST and PAN information</li>
                   <li>Details about your business operations</li>
@@ -317,17 +324,17 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
           )}
 
           {/* Form Fields */}
-          <form onSubmit={handleSubmit(handleFormSubmit)}>
-            <div className="section-content">
-              <h2>{currentSectionData.name}</h2>
+          <form onSubmit={handleSubmit(handleFormSubmit)} className="rfq-form-body">
+            <div className="rfq-section-content">
+              <h2 className="rfq-section-title">{currentSectionData.name}</h2>
 
               {currentSectionData.fields.map((field) => {
                 const fieldKey = `${field.section}-${field.questionNumber}`
                 const error = errors[fieldKey]
 
                 return (
-                  <div key={fieldKey} className="form-field">
-                    <label htmlFor={fieldKey}>
+                  <div key={fieldKey} className="rfq-form-field">
+                    <label htmlFor={fieldKey} className="rfq-form-label">
                       {field.question}
                       {field.required && <span className="required">*</span>}
                     </label>
@@ -335,11 +342,11 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
                     {renderField(field)}
 
                     {field.helperText && !error && (
-                      <span className="helper-text">{field.helperText}</span>
+                      <span className="rfq-helper-text">{field.helperText}</span>
                     )}
 
                     {error && (
-                      <span className="error-text">{(error as any).message || 'This field is required'}</span>
+                      <span className="rfq-error-text">{(error as any).message || 'This field is required'}</span>
                     )}
                   </div>
                 )
@@ -347,11 +354,11 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="form-navigation">
+            <div className="rfq-form-navigation">
               <button
                 type="button"
                 onClick={prevSection}
-                className="btn-secondary"
+                className="rfq-btn rfq-btn-secondary"
                 disabled={currentSection === 0}
               >
                 Previous
@@ -360,7 +367,7 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
               <button
                 type="button"
                 onClick={handleSaveProgress}
-                className="btn-outline"
+                className="rfq-btn rfq-btn-outline"
                 disabled={isSaving}
               >
                 {isSaving ? 'Saving...' : 'Save Progress'}
@@ -370,14 +377,14 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
                 <button
                   type="button"
                   onClick={nextSection}
-                  className="btn-primary"
+                  className="rfq-btn rfq-btn-primary"
                 >
                   Next Section
                 </button>
               ) : (
                 <button
                   type="submit"
-                  className="btn-primary"
+                  className="rfq-btn rfq-btn-primary"
                 >
                   Submit RFQ
                 </button>
@@ -387,14 +394,14 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
         </div>
 
         {/* Guidance Panel */}
-        <div className="guidance-panel">
-          <div className="guidance-sticky">
+        <div className="rfq-guidance-panel">
+          <div className="rfq-guidance-content">
             {focusedGuidance ? (
               <>
-                <h3>{focusedGuidance.title}</h3>
-                <p>{focusedGuidance.content}</p>
+                <h3 className="rfq-guidance-title">{focusedGuidance.title}</h3>
+                <p className="rfq-guidance-text">{focusedGuidance.content}</p>
                 {focusedGuidance.mediaUrl && (
-                  <div className="guidance-media">
+                  <div className="rfq-guidance-media">
                     {focusedGuidance.mediaType === 'video' ? (
                       <video src={focusedGuidance.mediaUrl} controls />
                     ) : (
@@ -405,12 +412,12 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
               </>
             ) : (
               <>
-                <h3>Need Help?</h3>
-                <p>Click on any field to see helpful guidance and tips for filling it correctly.</p>
+                <h3 className="rfq-guidance-title">Need Help?</h3>
+                <p className="rfq-guidance-text">Click on any field to see helpful guidance and tips for filling it correctly.</p>
 
-                <div className="tips-section">
-                  <h4>Quick Tips:</h4>
-                  <ul>
+                <div className="rfq-tips-section">
+                  <h4 className="rfq-tips-title">Quick Tips:</h4>
+                  <ul className="rfq-tips-list">
                     <li>Fill all required fields marked with *</li>
                     <li>Provide accurate information for better quotes</li>
                     <li>Save your progress regularly</li>
@@ -422,384 +429,6 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .rfq-form-container {
-          min-height: 100vh;
-          background: var(--color-gray-50);
-        }
-
-        .form-header {
-          background: var(--color-white);
-          border-bottom: 1px solid var(--color-gray-200);
-          padding: var(--spacing-lg) 0;
-          margin-bottom: var(--spacing-xl);
-          position: sticky;
-          top: 64px;
-          z-index: 10;
-        }
-
-        .form-header h1 {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 var(--spacing-xl);
-          font-size: var(--font-size-2xl);
-          font-weight: 600;
-          color: var(--color-gray-900);
-          margin-bottom: var(--spacing-md);
-        }
-
-        .progress-bar {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 var(--spacing-xl);
-          height: 4px;
-          background: var(--color-gray-200);
-          border-radius: var(--radius-full);
-          overflow: hidden;
-        }
-
-        .progress-fill {
-          height: 100%;
-          background: var(--color-primary);
-          transition: width 0.3s ease;
-        }
-
-        .progress-text {
-          max-width: 1200px;
-          margin: var(--spacing-xs) auto 0;
-          padding: 0 var(--spacing-xl);
-          font-size: var(--font-size-xs);
-          color: var(--color-gray-500);
-        }
-
-        .form-layout {
-          max-width: 1200px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 2fr 1fr;
-          gap: var(--spacing-xl);
-          padding: 0 var(--spacing-xl) var(--spacing-2xl);
-        }
-
-        .form-content {
-          background: var(--color-white);
-          border: 1px solid var(--color-gray-200);
-          border-radius: var(--radius-lg);
-          padding: var(--spacing-xl);
-        }
-
-        .section-tabs {
-          display: flex;
-          gap: var(--spacing-xs);
-          margin-bottom: var(--spacing-xl);
-          overflow-x: auto;
-          border-bottom: 1px solid var(--color-gray-200);
-          padding-bottom: 0;
-        }
-
-        .section-tab {
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-xs);
-          padding: var(--spacing-sm) var(--spacing-md);
-          background: transparent;
-          border: none;
-          border-bottom: 2px solid transparent;
-          cursor: pointer;
-          transition: all 0.2s;
-          white-space: nowrap;
-          font-size: var(--font-size-sm);
-          color: var(--color-gray-600);
-          margin-bottom: -1px;
-        }
-
-        .section-tab:hover {
-          color: var(--color-primary);
-        }
-
-        .section-tab.active {
-          color: var(--color-primary);
-          border-bottom-color: var(--color-primary);
-          font-weight: 500;
-        }
-
-        .section-tab.completed {
-          color: var(--color-success);
-        }
-
-        .section-number {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 20px;
-          height: 20px;
-          background: var(--color-gray-200);
-          color: var(--color-gray-600);
-          border-radius: var(--radius-full);
-          font-size: var(--font-size-xs);
-          font-weight: 600;
-        }
-
-        .section-tab.active .section-number {
-          background: var(--color-primary);
-          color: var(--color-white);
-        }
-
-        .section-tab.completed .section-number {
-          background: var(--color-success);
-          color: var(--color-white);
-        }
-
-        .section-intro {
-          background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-white) 100%);
-          border-radius: var(--radius-lg);
-          padding: var(--spacing-lg);
-          margin-bottom: var(--spacing-xl);
-        }
-
-        .section-intro h2 {
-          font-size: var(--font-size-xl);
-          color: var(--color-gray-900);
-          margin-bottom: var(--spacing-sm);
-          font-weight: 600;
-        }
-
-        .info-box {
-          background: var(--color-white);
-          border-radius: var(--radius-md);
-          padding: var(--spacing-lg);
-          margin-top: var(--spacing-lg);
-        }
-
-        .info-box h3 {
-          font-size: var(--font-size-lg);
-          margin-bottom: var(--spacing-md);
-        }
-
-        .info-box ul {
-          list-style: none;
-          padding: 0;
-        }
-
-        .info-box li {
-          padding: var(--spacing-xs) 0;
-          padding-left: var(--spacing-lg);
-          position: relative;
-        }
-
-        .info-box li::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 8px;
-          width: 4px;
-          height: 4px;
-          background: var(--color-primary);
-          border-radius: var(--radius-full);
-        }
-
-        .section-content h2 {
-          font-size: var(--font-size-2xl);
-          margin-bottom: var(--spacing-xl);
-          color: var(--color-gray-900);
-        }
-
-        .form-field {
-          margin-bottom: var(--spacing-lg);
-        }
-
-        .form-field label {
-          display: block;
-          margin-bottom: var(--spacing-xs);
-          font-weight: 500;
-          color: var(--color-gray-700);
-        }
-
-        .required {
-          color: var(--color-error);
-          margin-left: var(--spacing-xs);
-        }
-
-        .form-input {
-          width: 100%;
-          padding: var(--spacing-sm) var(--spacing-md);
-          border: 1px solid var(--color-gray-300);
-          border-radius: var(--radius-md);
-          font-size: var(--font-size-base);
-          transition: all 0.2s;
-        }
-
-        .form-input:focus {
-          outline: none;
-          border-color: var(--color-primary);
-          box-shadow: 0 0 0 3px var(--color-primary-light);
-        }
-
-        .form-input.error {
-          border-color: var(--color-error);
-        }
-
-        .checkbox-label {
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-sm);
-          cursor: pointer;
-        }
-
-        .helper-text {
-          display: block;
-          margin-top: var(--spacing-xs);
-          font-size: var(--font-size-sm);
-          color: var(--color-gray-600);
-        }
-
-        .error-text {
-          display: block;
-          margin-top: var(--spacing-xs);
-          font-size: var(--font-size-sm);
-          color: var(--color-error);
-        }
-
-        .form-navigation {
-          display: flex;
-          justify-content: space-between;
-          gap: var(--spacing-md);
-          margin-top: var(--spacing-2xl);
-          padding-top: var(--spacing-xl);
-          border-top: 1px solid var(--color-gray-200);
-        }
-
-        .guidance-panel {
-          position: sticky;
-          top: 140px;
-          height: fit-content;
-        }
-
-        .guidance-sticky {
-          background: var(--color-white);
-          border-radius: var(--radius-lg);
-          padding: var(--spacing-lg);
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-        }
-
-        .guidance-panel h3 {
-          font-size: var(--font-size-base);
-          margin-bottom: var(--spacing-sm);
-          color: var(--color-gray-900);
-          font-weight: 600;
-        }
-
-        .guidance-panel p {
-          color: var(--color-gray-600);
-          line-height: 1.5;
-          font-size: var(--font-size-sm);
-        }
-
-        .guidance-media {
-          margin-top: var(--spacing-lg);
-          border-radius: var(--radius-md);
-          overflow: hidden;
-        }
-
-        .guidance-media img,
-        .guidance-media video {
-          width: 100%;
-          height: auto;
-        }
-
-        .tips-section {
-          margin-top: var(--spacing-xl);
-          padding-top: var(--spacing-lg);
-          border-top: 1px solid var(--color-gray-200);
-        }
-
-        .tips-section h4 {
-          font-size: var(--font-size-lg);
-          margin-bottom: var(--spacing-md);
-        }
-
-        .tips-section ul {
-          list-style: none;
-          padding: 0;
-        }
-
-        .tips-section li {
-          padding: var(--spacing-xs) 0;
-          padding-left: var(--spacing-lg);
-          position: relative;
-          color: var(--color-gray-700);
-        }
-
-        .tips-section li::before {
-          content: '•';
-          position: absolute;
-          left: 0;
-          color: var(--color-primary);
-        }
-
-        @media (max-width: 1024px) {
-          .form-layout {
-            grid-template-columns: 1fr;
-            padding: 0 var(--spacing-lg);
-          }
-
-          .guidance-panel {
-            position: static;
-            margin-bottom: var(--spacing-lg);
-          }
-
-          .guidance-sticky {
-            display: none;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .form-header {
-            position: static;
-          }
-
-          .form-header h1,
-          .progress-bar,
-          .progress-text {
-            padding: 0 var(--spacing-md);
-          }
-
-          .form-layout {
-            padding: 0 var(--spacing-md);
-          }
-
-          .form-content {
-            padding: var(--spacing-md);
-          }
-
-          .section-tabs {
-            gap: 0;
-          }
-
-          .section-tab {
-            flex-direction: column;
-            padding: var(--spacing-xs) var(--spacing-sm);
-          }
-
-          .section-name {
-            display: none;
-          }
-
-          .form-navigation {
-            flex-direction: column-reverse;
-            gap: var(--spacing-sm);
-          }
-
-          .form-navigation button {
-            width: 100%;
-          }
-
-          .btn-outline {
-            order: 1;
-          }
-        }
-      `}</style>
     </div>
   )
 }

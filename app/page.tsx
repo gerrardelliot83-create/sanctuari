@@ -1,24 +1,26 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/contexts/AuthContext'
 
 export default function HomePage() {
   const { user, loading } = useAuth()
   const router = useRouter()
+  const [isRedirecting, setIsRedirecting] = useState(false)
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading && !isRedirecting) {
+      setIsRedirecting(true)
       if (user) {
         // If user is authenticated, redirect to dashboard
-        router.push('/platform/dashboard')
+        router.replace('/platform/dashboard')
       } else {
         // If not authenticated, redirect to login
-        router.push('/auth/login')
+        router.replace('/auth/login')
       }
     }
-  }, [user, loading, router])
+  }, [user, loading, router, isRedirecting])
 
   // Show loading spinner while checking auth
   return (
@@ -47,10 +49,9 @@ export default function HomePage() {
         }
 
         .loading-logo {
-          height: 40px;
+          height: 36px;
           width: auto;
-          max-width: 180px;
-          object-fit: contain;
+          display: block;
         }
 
         .loading-spinner {
