@@ -51,6 +51,8 @@ export default function HomePage() {
         .loading-logo {
           height: 36px;
           width: auto;
+          max-width: 160px;
+          object-fit: contain;
           display: block;
         }
 

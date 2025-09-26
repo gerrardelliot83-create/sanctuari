@@ -4,12 +4,13 @@
 .rfq-form-wrapper {
   min-height: 100vh;
   background: #f8f9fa;
+  width: 100%;
 }
 
 .rfq-form-container {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   padding: 0;
 }
 
@@ -25,9 +26,10 @@
 }
 
 .rfq-form-header-content {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .rfq-form-title {
@@ -62,12 +64,14 @@
 
 /* Main Layout Grid */
 .rfq-form-layout {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   margin: 24px auto;
-  padding: 0 24px;
+  padding: 0 32px;
   display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 24px;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
 }
 
 /* Form Content Area */
@@ -76,6 +80,8 @@
   border-radius: 8px;
   border: 1px solid #e1e4e8;
   overflow: hidden;
+  width: 100%;
+  min-height: 600px;
 }
 
 /* Section Tabs */
@@ -157,7 +163,8 @@
 
 /* Form Sections */
 .rfq-form-body {
-  padding: 24px;
+  padding: 32px;
+  width: 100%;
 }
 
 .rfq-section-intro {
@@ -477,13 +484,16 @@
   position: sticky;
   top: 140px;
   height: fit-content;
+  width: 100%;
 }
 
 .rfq-guidance-content {
   background: white;
   border-radius: 8px;
   border: 1px solid #e1e4e8;
-  padding: 20px;
+  padding: 24px;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .rfq-guidance-title {
@@ -548,9 +558,10 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .rfq-form-layout {
     grid-template-columns: 1fr;
+    max-width: 900px;
   }
 
   .rfq-guidance-panel {

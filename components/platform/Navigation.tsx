@@ -105,10 +105,18 @@ export default function Navigation() {
           height: 64px;
         }
 
+        .nav-logo {
+          display: flex;
+          align-items: center;
+          height: 40px;
+        }
+
         .nav-logo img {
-          height: 24px;
+          height: 32px;
           width: auto;
           display: block;
+          object-fit: contain;
+          max-width: 150px;
         }
 
         .nav-menu {

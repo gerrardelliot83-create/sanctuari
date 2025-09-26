@@ -304,7 +304,9 @@ button {
 .auth-logo {
   height: 32px;
   width: auto;
-  margin-bottom: var(--spacing-lg);
+  max-width: 150px;
+  object-fit: contain;
+  margin: 0 auto var(--spacing-lg) auto;
   display: block;
 }
 

@@ -227,9 +227,9 @@ export default function CreateRFQPage() {
 
       <style jsx>{`
         .create-rfq-container {
-          max-width: 1200px;
+          max-width: 1400px;
           margin: 0 auto;
-          padding: var(--spacing-2xl);
+          padding: var(--spacing-2xl) var(--spacing-xl);
         }
 
         .page-header {
