@@ -233,6 +233,9 @@ CREATE POLICY "Users can view own profile" ON public.users
 CREATE POLICY "Users can update own profile" ON public.users
     FOR UPDATE USING (auth.uid() = id);
 
+CREATE POLICY "Users can create own profile during signup" ON public.users
+    FOR INSERT WITH CHECK (auth.uid() = id);
+
 -- RLS Policies for RFQs
 CREATE POLICY "Users can view own RFQs" ON public.rfqs
     FOR SELECT USING (auth.uid() = user_id);

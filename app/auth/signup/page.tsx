@@ -51,6 +51,10 @@ export default function SignupPage() {
       toast.error('Please fill in all required fields')
       return false
     }
+    if (data.phone.length !== 10) {
+      toast.error('Please enter a valid 10-digit mobile number')
+      return false
+    }
     return true
   }
 
@@ -83,7 +87,7 @@ export default function SignupPage() {
             role: 'business',
             company_name: data.companyName,
             contact_person: data.contactPerson,
-            phone: data.phone,
+            phone: `+91${data.phone}`,
             gst_number: data.gstNumber,
           } as any)
 
@@ -188,16 +192,25 @@ export default function SignupPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
-                <input
-                  id="phone"
-                  type="tel"
-                  value={data.phone}
-                  onChange={(e) => updateData('phone', e.target.value)}
-                  placeholder="+91 98765 43210"
-                  required
-                  disabled={loading}
-                />
+                <label htmlFor="phone">Mobile Number</label>
+                <div className="phone-input-container">
+                  <span className="country-code">+91</span>
+                  <input
+                    id="phone"
+                    type="tel"
+                    value={data.phone}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/\D/g, '').slice(0, 10)
+                      updateData('phone', value)
+                    }}
+                    placeholder="9876543210"
+                    maxLength={10}
+                    pattern="[0-9]{10}"
+                    required
+                    disabled={loading}
+                  />
+                </div>
+                <small className="form-help">Enter your 10-digit mobile number</small>
               </div>
 
               <div className="form-group">
