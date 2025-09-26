@@ -47,8 +47,10 @@ export default function HomePage() {
         }
 
         .loading-logo {
-          height: 64px;
+          height: 40px;
           width: auto;
+          max-width: 180px;
+          object-fit: contain;
         }
 
         .loading-spinner {

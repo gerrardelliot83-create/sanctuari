@@ -8,45 +8,8 @@ import RFQForm from '@/components/platform/RFQForm'
 import Navigation from '@/components/platform/Navigation'
 import { parseRFQCsv } from '@/utils/rfqParser'
 import { ProductType } from '@/lib/supabase/types'
+import { productCategories } from '@/data/products'
 import toast from 'react-hot-toast'
-
-const productCategories = [
-  {
-    name: 'Property Insurance',
-    products: [
-      { type: 'fire_special_perils', name: 'Fire & Special Perils', icon: 'shield' },
-      { type: 'burglary', name: 'Burglary Insurance', icon: 'lock' },
-      { type: 'business_interruption', name: 'Business Interruption', icon: 'trending' },
-      { type: 'contractors_all_risk', name: "Contractors' All Risk", icon: 'tools' },
-      { type: 'erection_all_risk', name: 'Erection All Risk', icon: 'cog' }
-    ]
-  },
-  {
-    name: 'Liability Insurance',
-    products: [
-      { type: 'public_liability', name: 'Public Liability', icon: 'users' },
-      { type: 'product_liability', name: 'Product Liability', icon: 'package' },
-      { type: 'professional_indemnity', name: 'Professional Indemnity', icon: 'briefcase' },
-      { type: 'directors_officers', name: 'Directors & Officers', icon: 'user-tie' },
-      { type: 'cyber_liability', name: 'Cyber Liability', icon: 'shield-check' }
-    ]
-  },
-  {
-    name: 'Employee Benefits',
-    products: [
-      { type: 'group_health', name: 'Group Health', icon: 'heart' },
-      { type: 'group_personal_accident', name: 'Group Personal Accident', icon: 'medical' },
-      { type: 'group_term_life', name: 'Group Term Life', icon: 'life' },
-      { type: 'workmen_compensation', name: "Workmen's Compensation", icon: 'hard-hat' }
-    ]
-  },
-  {
-    name: 'Marine & Cargo',
-    products: [
-      { type: 'marine_cargo', name: 'Marine Cargo', icon: 'ship' }
-    ]
-  }
-]
 
 export default function CreateRFQPage() {
   const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null)
@@ -329,21 +292,23 @@ export default function CreateRFQPage() {
 
         .product-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          gap: var(--spacing-lg);
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: var(--spacing-md);
         }
 
         .product-card {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: var(--spacing-md);
-          padding: var(--spacing-xl);
+          gap: var(--spacing-sm);
+          padding: var(--spacing-md) var(--spacing-sm);
           background: var(--color-white);
-          border: 2px solid var(--color-gray-200);
-          border-radius: var(--radius-lg);
+          border: 1px solid var(--color-gray-200);
+          border-radius: var(--radius-md);
           cursor: pointer;
           transition: all 0.2s;
+          min-height: 120px;
+          justify-content: center;
         }
 
         .product-card:hover {
@@ -358,8 +323,8 @@ export default function CreateRFQPage() {
         }
 
         .product-icon {
-          width: 48px;
-          height: 48px;
+          width: 36px;
+          height: 36px;
           position: relative;
           display: flex;
           align-items: center;
@@ -368,8 +333,8 @@ export default function CreateRFQPage() {
 
         .product-icon::before {
           content: '';
-          width: 32px;
-          height: 32px;
+          width: 24px;
+          height: 24px;
           background-color: var(--color-primary);
           mask-size: contain;
           mask-repeat: no-repeat;
@@ -436,11 +401,52 @@ export default function CreateRFQPage() {
           mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'/%3E%3C/svg%3E");
         }
 
+        /* Additional icons for new products */
+        .icon-factory::before,
+        .icon-shop::before,
+        .icon-crane::before,
+        .icon-boiler::before,
+        .icon-wrench::before,
+        .icon-gear::before,
+        .icon-chip::before,
+        .icon-clock::before {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'/%3E%3C/svg%3E");
+        }
+
+        .icon-currency::before,
+        .icon-glass::before,
+        .icon-sign::before,
+        .icon-code::before,
+        .icon-leaf::before,
+        .icon-truck::before,
+        .icon-badge::before,
+        .icon-container::before {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'/%3E%3C/svg%3E");
+        }
+
+        .icon-route::before,
+        .icon-anchor::before,
+        .icon-box::before,
+        .icon-luggage::before,
+        .icon-store::before,
+        .icon-credit::before,
+        .icon-handshake::before {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'/%3E%3C/svg%3E");
+        }
+
+        .icon-document::before,
+        .icon-chart::before,
+        .icon-stop::before,
+        .icon-cow::before {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'/%3E%3C/svg%3E");
+        }
+
         .product-name {
-          font-size: var(--font-size-base);
-          font-weight: 600;
+          font-size: var(--font-size-sm);
+          font-weight: 500;
           color: var(--color-gray-900);
           text-align: center;
+          line-height: 1.2;
         }
 
         .product-price {

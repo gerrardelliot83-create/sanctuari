@@ -425,28 +425,38 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
 
       <style jsx>{`
         .rfq-form-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: var(--spacing-xl);
+          min-height: 100vh;
+          background: var(--color-gray-50);
         }
 
         .form-header {
-          text-align: center;
-          margin-bottom: var(--spacing-2xl);
+          background: var(--color-white);
+          border-bottom: 1px solid var(--color-gray-200);
+          padding: var(--spacing-lg) 0;
+          margin-bottom: var(--spacing-xl);
+          position: sticky;
+          top: 64px;
+          z-index: 10;
         }
 
         .form-header h1 {
-          font-size: var(--font-size-3xl);
-          margin-bottom: var(--spacing-lg);
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 var(--spacing-xl);
+          font-size: var(--font-size-2xl);
+          font-weight: 600;
+          color: var(--color-gray-900);
+          margin-bottom: var(--spacing-md);
         }
 
         .progress-bar {
-          width: 100%;
-          height: 8px;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 var(--spacing-xl);
+          height: 4px;
           background: var(--color-gray-200);
           border-radius: var(--radius-full);
           overflow: hidden;
-          margin-bottom: var(--spacing-sm);
         }
 
         .progress-fill {
@@ -456,14 +466,20 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
         }
 
         .progress-text {
-          font-size: var(--font-size-sm);
-          color: var(--color-gray-600);
+          max-width: 1200px;
+          margin: var(--spacing-xs) auto 0;
+          padding: 0 var(--spacing-xl);
+          font-size: var(--font-size-xs);
+          color: var(--color-gray-500);
         }
 
         .form-layout {
+          max-width: 1200px;
+          margin: 0 auto;
           display: grid;
-          grid-template-columns: 1fr 400px;
-          gap: var(--spacing-2xl);
+          grid-template-columns: 2fr 1fr;
+          gap: var(--spacing-xl);
+          padding: 0 var(--spacing-xl) var(--spacing-2xl);
         }
 
         .form-content {
@@ -475,63 +491,78 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
 
         .section-tabs {
           display: flex;
-          gap: var(--spacing-md);
-          margin-bottom: var(--spacing-2xl);
+          gap: var(--spacing-xs);
+          margin-bottom: var(--spacing-xl);
           overflow-x: auto;
+          border-bottom: 1px solid var(--color-gray-200);
+          padding-bottom: 0;
         }
 
         .section-tab {
           display: flex;
           align-items: center;
-          gap: var(--spacing-sm);
-          padding: var(--spacing-sm) var(--spacing-lg);
-          background: var(--color-gray-50);
-          border: 1px solid var(--color-gray-200);
-          border-radius: var(--radius-md);
+          gap: var(--spacing-xs);
+          padding: var(--spacing-sm) var(--spacing-md);
+          background: transparent;
+          border: none;
+          border-bottom: 2px solid transparent;
           cursor: pointer;
           transition: all 0.2s;
           white-space: nowrap;
+          font-size: var(--font-size-sm);
+          color: var(--color-gray-600);
+          margin-bottom: -1px;
         }
 
         .section-tab:hover {
-          background: var(--color-gray-100);
+          color: var(--color-primary);
         }
 
         .section-tab.active {
-          background: var(--color-primary);
-          color: var(--color-white);
-          border-color: var(--color-primary);
+          color: var(--color-primary);
+          border-bottom-color: var(--color-primary);
+          font-weight: 500;
         }
 
         .section-tab.completed {
-          background: var(--color-success);
-          color: var(--color-white);
-          border-color: var(--color-success);
+          color: var(--color-success);
         }
 
         .section-number {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 24px;
-          height: 24px;
-          background: rgba(255, 255, 255, 0.2);
+          width: 20px;
+          height: 20px;
+          background: var(--color-gray-200);
+          color: var(--color-gray-600);
           border-radius: var(--radius-full);
-          font-size: var(--font-size-sm);
+          font-size: var(--font-size-xs);
           font-weight: 600;
         }
 
+        .section-tab.active .section-number {
+          background: var(--color-primary);
+          color: var(--color-white);
+        }
+
+        .section-tab.completed .section-number {
+          background: var(--color-success);
+          color: var(--color-white);
+        }
+
         .section-intro {
-          background: var(--color-primary-lighter);
-          border: 1px solid var(--color-primary-light);
-          border-radius: var(--radius-md);
-          padding: var(--spacing-xl);
+          background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-white) 100%);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-lg);
           margin-bottom: var(--spacing-xl);
         }
 
         .section-intro h2 {
-          color: var(--color-primary);
-          margin-bottom: var(--spacing-md);
+          font-size: var(--font-size-xl);
+          color: var(--color-gray-900);
+          margin-bottom: var(--spacing-sm);
+          font-weight: 600;
         }
 
         .info-box {
@@ -558,10 +589,14 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
         }
 
         .info-box li::before {
-          content: '✓';
+          content: '';
           position: absolute;
           left: 0;
-          color: var(--color-success);
+          top: 8px;
+          width: 4px;
+          height: 4px;
+          background: var(--color-primary);
+          border-radius: var(--radius-full);
         }
 
         .section-content h2 {
@@ -637,26 +672,28 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
 
         .guidance-panel {
           position: sticky;
-          top: var(--spacing-xl);
+          top: 140px;
           height: fit-content;
         }
 
         .guidance-sticky {
           background: var(--color-white);
-          border: 1px solid var(--color-gray-200);
           border-radius: var(--radius-lg);
-          padding: var(--spacing-xl);
+          padding: var(--spacing-lg);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
         }
 
         .guidance-panel h3 {
-          font-size: var(--font-size-xl);
-          margin-bottom: var(--spacing-md);
-          color: var(--color-primary);
+          font-size: var(--font-size-base);
+          margin-bottom: var(--spacing-sm);
+          color: var(--color-gray-900);
+          font-weight: 600;
         }
 
         .guidance-panel p {
-          color: var(--color-gray-700);
-          line-height: 1.6;
+          color: var(--color-gray-600);
+          line-height: 1.5;
+          font-size: var(--font-size-sm);
         }
 
         .guidance-media {
@@ -704,30 +741,62 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
         @media (max-width: 1024px) {
           .form-layout {
             grid-template-columns: 1fr;
+            padding: 0 var(--spacing-lg);
           }
 
           .guidance-panel {
             position: static;
-            order: -1;
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+          }
+
+          .guidance-sticky {
+            display: none;
           }
         }
 
         @media (max-width: 768px) {
-          .rfq-form-container {
-            padding: var(--spacing-lg);
+          .form-header {
+            position: static;
+          }
+
+          .form-header h1,
+          .progress-bar,
+          .progress-text {
+            padding: 0 var(--spacing-md);
+          }
+
+          .form-layout {
+            padding: 0 var(--spacing-md);
+          }
+
+          .form-content {
+            padding: var(--spacing-md);
           }
 
           .section-tabs {
+            gap: 0;
+          }
+
+          .section-tab {
             flex-direction: column;
+            padding: var(--spacing-xs) var(--spacing-sm);
+          }
+
+          .section-name {
+            display: none;
           }
 
           .form-navigation {
-            flex-direction: column;
+            flex-direction: column-reverse;
+            gap: var(--spacing-sm);
           }
 
           .form-navigation button {
             width: 100%;
+          }
+
+          .btn-outline {
+            order: 1;
           }
         }
       `}</style>
