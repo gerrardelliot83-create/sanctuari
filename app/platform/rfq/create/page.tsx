@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { useAuth } from '@/contexts/AuthContext'
 import RFQForm from '@/components/platform/RFQForm'
+import Navigation from '@/components/platform/Navigation'
 import { parseRFQCsv } from '@/utils/rfqParser'
 import { ProductType } from '@/lib/supabase/types'
 import toast from 'react-hot-toast'
@@ -179,7 +180,9 @@ export default function CreateRFQPage() {
 
   if (template && selectedProduct) {
     return (
-      <div className="create-rfq-container">
+      <>
+        <Navigation />
+        <div className="create-rfq-container">
         <button
           onClick={() => {
             setTemplate(null)
@@ -190,12 +193,15 @@ export default function CreateRFQPage() {
           ← Back to Product Selection
         </button>
         <RFQForm template={template} onSubmit={handleRFQSubmit} />
-      </div>
+        </div>
+      </>
     )
   }
 
   return (
-    <div className="create-rfq-container">
+    <>
+      <Navigation />
+      <div className="create-rfq-container">
       <div className="page-header">
         <h1>Create New RFQ</h1>
         <p>Select an insurance product to get started with your request for quote</p>
@@ -465,6 +471,7 @@ export default function CreateRFQPage() {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   )
 }
