@@ -277,9 +277,22 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
   const focusedGuidance = focusedField ? template.guidanceContent?.[focusedField] : null
 
   return (
-    <div className="rfq-form-wrapper">
-      <div className="rfq-form-header">
-        <div className="rfq-form-header-content">
+    <div className="rfq-form-wrapper" style={{ minHeight: '100vh', background: '#f8f9fa', width: '100%' }}>
+      <div className="rfq-form-header" style={{
+        background: 'white',
+        borderBottom: '1px solid #e1e4e8',
+        padding: '20px 0',
+        position: 'sticky' as any,
+        top: '64px',
+        zIndex: 100,
+        width: '100%'
+      }}>
+        <div className="rfq-form-header-content" style={{
+          width: '100%',
+          maxWidth: '1400px',
+          margin: '0 auto',
+          padding: '0 32px'
+        }}>
           <h1 className="rfq-form-title">{template.name}</h1>
           <div className="rfq-progress-container">
             <div className="rfq-progress-bar">
@@ -290,8 +303,24 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
         </div>
       </div>
 
-      <div className="rfq-form-layout">
-        <div className="rfq-form-content">
+      <div className="rfq-form-layout" style={{
+        width: '100%',
+        maxWidth: '1400px',
+        margin: '24px auto',
+        padding: '0 32px',
+        display: 'grid',
+        gridTemplateColumns: '1fr 400px',
+        gap: '32px',
+        alignItems: 'start'
+      }}>
+        <div className="rfq-form-content" style={{
+          background: 'white',
+          borderRadius: '8px',
+          border: '1px solid #e1e4e8',
+          overflow: 'hidden',
+          width: '100%',
+          minHeight: '600px'
+        }}>
           {/* Section Navigation */}
           <div className="rfq-section-tabs">
             {fieldsBySection.map((section, index) => (
@@ -394,8 +423,20 @@ export default function RFQForm({ template, onSubmit }: RFQFormProps) {
         </div>
 
         {/* Guidance Panel */}
-        <div className="rfq-guidance-panel">
-          <div className="rfq-guidance-content">
+        <div className="rfq-guidance-panel" style={{
+          position: 'sticky' as any,
+          top: '140px',
+          height: 'fit-content',
+          width: '100%'
+        }}>
+          <div className="rfq-guidance-content" style={{
+            background: 'white',
+            borderRadius: '8px',
+            border: '1px solid #e1e4e8',
+            padding: '24px',
+            width: '100%',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
+          }}>
             {focusedGuidance ? (
               <>
                 <h3 className="rfq-guidance-title">{focusedGuidance.title}</h3>

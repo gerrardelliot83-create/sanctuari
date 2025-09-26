@@ -10,23 +10,42 @@ export default function HomePage() {
   const [isRedirecting, setIsRedirecting] = useState(false)
 
   useEffect(() => {
-    if (!loading && !isRedirecting) {
-      setIsRedirecting(true)
+    // Only run when loading is complete
+    if (loading) return
+
+    // Prevent multiple redirects
+    if (isRedirecting) return
+
+    setIsRedirecting(true)
+
+    // Small delay to ensure state is ready
+    setTimeout(() => {
       if (user) {
         // If user is authenticated, redirect to dashboard
-        router.replace('/platform/dashboard')
+        router.push('/platform/dashboard')
       } else {
         // If not authenticated, redirect to login
-        router.replace('/auth/login')
+        router.push('/auth/login')
       }
-    }
+    }, 100)
   }, [user, loading, router, isRedirecting])
 
   // Show loading spinner while checking auth
   return (
     <div className="loading-container">
       <div className="loading-content">
-        <img src="/assets/Logo_light.png" alt="Sanctuari" className="loading-logo" />
+        <img
+          src="/assets/Logo_light.png"
+          alt="Sanctuari"
+          className="loading-logo"
+          style={{
+            height: '36px',
+            width: 'auto',
+            maxWidth: '160px',
+            objectFit: 'contain' as any,
+            display: 'block'
+          }}
+        />
         <div className="loading-spinner"></div>
         <p>Loading Sanctuari Platform...</p>
       </div>
@@ -49,10 +68,6 @@ export default function HomePage() {
         }
 
         .loading-logo {
-          height: 36px;
-          width: auto;
-          max-width: 160px;
-          object-fit: contain;
           display: block;
         }
 

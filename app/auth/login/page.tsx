@@ -63,7 +63,19 @@ export default function LoginPage() {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
-          <img src="/assets/Logo_light.png" alt="Sanctuari" className="auth-logo" />
+          <img
+            src="/assets/Logo_light.png"
+            alt="Sanctuari"
+            className="auth-logo"
+            style={{
+              height: '32px',
+              width: 'auto',
+              maxWidth: '140px',
+              objectFit: 'contain' as any,
+              display: 'block',
+              margin: '0 auto 24px auto'
+            }}
+          />
           <h1>Welcome Back</h1>
           <p>Sign in to access your procurement dashboard</p>
         </div>

@@ -27,7 +27,17 @@ export default function Navigation() {
       <div className="nav-container">
         {/* Logo */}
         <Link href="/platform/dashboard" className="nav-logo">
-          <img src="/assets/Logo_light.png" alt="Sanctuari" />
+          <img
+            src="/assets/Logo_light.png"
+            alt="Sanctuari"
+            style={{
+              height: '32px',
+              width: 'auto',
+              maxWidth: '140px',
+              objectFit: 'contain' as any,
+              display: 'block'
+            }}
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -109,14 +119,6 @@ export default function Navigation() {
           display: flex;
           align-items: center;
           height: 40px;
-        }
-
-        .nav-logo img {
-          height: 32px;
-          width: auto;
-          display: block;
-          object-fit: contain;
-          max-width: 150px;
         }
 
         .nav-menu {
