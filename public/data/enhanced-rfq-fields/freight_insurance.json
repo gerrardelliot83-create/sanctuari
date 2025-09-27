@@ -1,0 +1,432 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your company's registered name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your company as per the documents.",
+    "guidanceTitle": "Guidance for Entering Company Name",
+    "guidanceTips": [
+      "Enter the full legal name of your company as it appears on your GST registration, PAN card, or other official documents.",
+      "Avoid using abbreviations, acronyms, or informal names. The name should match your official business registration.",
+      "If your company has multiple locations, use the name of the headquarters or primary place of business."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your business registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your business registration number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is the unique identification number assigned to your business by the government. It is typically a 10-15 digit alphanumeric code.",
+    "guidanceTitle": "Guidance for Business Registration Number",
+    "guidanceTips": [
+      "The business registration number is typically your Goods and Services Tax Identification Number (GSTIN) or Permanent Account Number (PAN).",
+      "The number should be entered exactly as it appears on your business registration documents, including any letters and special characters.",
+      "Ensure that you provide the correct and complete business registration number, as this is a critical piece of information required for your freight insurance policy."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your company's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number assigned to your business by the Indian government. It is mandatory for all businesses registered under the GST Act.",
+    "guidanceTitle": "Guidance for providing your GST number",
+    "guidanceTips": [
+      "Ensure you enter the exact 15-digit GST number as it appears on your GST registration certificate.",
+      "The GST number follows a specific format: XX-AAAAA-NNNN-Z-Y-Z, where XX is the state code, AAAAA is the PAN-based business entity number, NNNN is a unique number, and Z and Y are check digits.",
+      "If you have recently registered for GST, make sure to use the new GST number and not the old VAT/Service Tax registration number."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your company's Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "PAN is a unique 10-digit alphanumeric number issued by the Income Tax Department of India. It is mandatory for all businesses to have a valid PAN for tax and regulatory purposes.",
+    "guidanceTitle": "Guidance for Providing PAN Number",
+    "guidanceTips": [
+      "The PAN number should be entered exactly as it appears on your company's PAN card, including the uppercase letters and digits.",
+      "Ensure that the PAN number you provide is currently active and registered in the name of your business.",
+      "If you do not have a PAN number yet, you will need to apply for one before proceeding with the insurance application."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business type or industry of your company?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type",
+    "options": [
+      "Manufacturing",
+      "Trading/Wholesale",
+      "Retail",
+      "Services",
+      "Construction",
+      "Transportation",
+      "IT/ITES",
+      "Healthcare",
+      "Education",
+      "Agriculture",
+      "Other"
+    ],
+    "helperText": "Select the option that best describes your primary business activities.",
+    "guidanceTitle": "Selecting the Correct Business Type",
+    "guidanceTips": [
+      "Choose the industry that accounts for the majority of your company's revenue and operations.",
+      "If your business activities span multiple industries, select the one that is most relevant for your freight insurance needs.",
+      "If your business type is not listed, select 'Other' and provide a brief description in the next field."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your business was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your business was officially registered or started operations.",
+    "guidanceTitle": "Providing the Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment is the year your business was officially registered or started operations, not necessarily the year you started planning the business.",
+      "This information is important for the insurer to understand the experience and longevity of your business operations.",
+      "Ensure you enter the exact 4-digit year, as this field does not accept ranges or partial years."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your business?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 10000
+    },
+    "helperText": "Provide the current total number of employees in your business. This information is required to calculate the appropriate freight insurance coverage and premium.",
+    "guidanceTitle": "Guidance for Providing the Number of Employees",
+    "guidanceTips": [
+      "Count all full-time, part-time, and contractual employees working for your business.",
+      "Ensure the number you provide is the exact current total, not a range.",
+      "This information is crucial for the insurance provider to assess the risk and offer the right coverage for your business."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to calculate the appropriate freight insurance coverage.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the revenue figure includes all sources of income, such as sales, services, and other business activities.",
+      "If your company's financial year is different from the calendar year, provide the revenue for the most recent completed financial year."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the registered business address of your company?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your complete business address",
+    "validation": {
+      "minLength": 20,
+      "maxLength": 200
+    },
+    "helperText": "Provide the full registered address of your business, including the building name, street, locality, city, state, and PIN code.",
+    "guidanceTitle": "Tips for Entering the Business Address",
+    "guidanceTips": [
+      "Ensure the address matches your company's registration documents like GST, PAN, etc.",
+      "Include all relevant details like building name, street, locality, city, state, and PIN code.",
+      "Avoid abbreviations and use the full names of the city, state, and other details."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where the freight is being transported from?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter city name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Please enter the exact city name where the freight is being transported from.",
+    "guidanceTitle": "Guidance for Entering the City",
+    "guidanceTips": [
+      "Provide the city name in title case (e.g., Mumbai, New Delhi, Bengaluru).",
+      "Avoid using abbreviations or short forms for the city name.",
+      "Ensure the city name matches the address details provided for the freight shipment."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your business located?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your state",
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your business is registered and operating.",
+    "guidanceTitle": "Guidance for Selecting the State",
+    "guidanceTips": [
+      "Choose the state that matches the registered address of your business.",
+      "If your business operates in multiple states, select the state where your primary operations are located.",
+      "Ensure that the state selected matches the information provided in your GST registration and other business documents."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN code of your business location?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The PIN code is a 6-digit postal code used in India to facilitate mail delivery. It is an essential piece of information required for freight insurance coverage.",
+    "guidanceTitle": "Guidance for Entering the PIN Code",
+    "guidanceTips": [
+      "The PIN code must be a 6-digit number without any spaces or special characters.",
+      "Ensure that you enter the correct PIN code for the location where the insured goods will be transported from or to.",
+      "You can find the PIN code for your business location by searching online or referring to your business address details."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "Who is the primary contact person for this insurance policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the name of the person who will be the main point of contact for this insurance policy.",
+    "guidanceTitle": "Guidance for Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name of the primary contact person, including first, middle, and last name.",
+      "This should be an authorized representative of the business who has the authority to make decisions about the insurance policy.",
+      "Ensure the name matches the government-issued ID (such as PAN card) that will be used for policy documentation."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your official business email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "name@company.com",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please provide the email address registered for your business. This will be used for all policy-related communication.",
+    "guidanceTitle": "Entering your business email address",
+    "guidanceTips": [
+      "Use the official email address associated with your registered business, not a personal email.",
+      "Ensure the email address is spelled correctly and does not contain any typos.",
+      "If you have multiple business email addresses, provide the one you use for official correspondence."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "What is your business's primary contact phone number?",
+    "inputType": "phone",
+    "required": true,
+    "placeholder": "Enter your 10-digit mobile or landline number",
+    "validation": {
+      "pattern": "^[6-9]\\d{9}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "Please provide a valid 10-digit phone number where you can be reached.",
+    "guidanceTitle": "Providing Your Business Phone Number",
+    "guidanceTips": [
+      "Enter your primary business contact number, which can be a mobile or landline.",
+      "The number should be 10 digits long and start with 6, 7, 8, or 9.",
+      "Ensure the number provided is active and regularly monitored, as the insurance provider may need to contact you regarding your policy."
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "When would you like the freight insurance policy to start?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the next 12 months.",
+    "guidanceTitle": "Selecting the Policy Start Date",
+    "guidanceTips": [
+      "Choose a start date that aligns with your business operations and freight shipment schedule.",
+      "Ensure the start date is at least a few days after the current date to allow for policy processing.",
+      "Consider any upcoming holidays or peak shipping seasons when selecting the start date."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "When does the freight insurance policy need to end?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Enter the date when the policy should end.",
+    "guidanceTitle": "Guidance for Freight Insurance Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be exactly 1 year after the policy start date.",
+      "Ensure the end date is within the allowed range of 1 year from the current date.",
+      "Double-check the end date to make sure it matches your business requirements and the insurance provider's terms."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total value of the goods you need to insure for freight insurance?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the total value in INR",
+    "validation": {
+      "min": 1,
+      "max": 10000000
+    },
+    "helperText": "This is the total value of the goods you need to cover for the freight insurance policy.",
+    "guidanceTitle": "Determining the Coverage Amount",
+    "guidanceTips": [
+      "The coverage amount should be the total value of the goods you are shipping, including the cost of the goods, freight charges, and any other associated costs.",
+      "Consider the maximum value of a single shipment or the total value of goods you plan to ship over the policy period (typically 1 year).",
+      "Ensure the coverage amount is sufficient to cover the full replacement value of the goods in case of loss or damage during transit."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "Who is your current freight insurance provider?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current freight insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the full legal name of your current freight insurance company.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Make sure to enter the exact legal name of your current freight insurance provider, as it appears on your policy documents.",
+      "If you have multiple freight insurance policies, provide the name of the primary provider.",
+      "Avoid abbreviations or short forms, as the insurance company will need the full legal name for verification purposes.",
+      "Ensure that the name you provide matches the information on your current freight insurance policy."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous insurance claims made by your business in the last 3 years.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims",
+    "validation": {
+      "maxLength": 500
+    },
+    "helperText": "Provide a brief summary of any insurance claims made, including the claim amount, date, and reason.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed and accurate as possible when describing previous claims. This helps the insurance provider assess the risk profile of your business.",
+      "If you have not made any previous claims, simply state 'No previous claims' in the field.",
+      "Ensure that the information provided matches any documentation you have, such as claim settlement letters from the insurance provider."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "What risk management measures do you have in place for your freight operations?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Describe your risk management measures in detail",
+    "validation": {
+      "minLength": 50,
+      "maxLength": 500
+    },
+    "helperText": "Provide information on your cargo security, safety protocols, and any other measures to mitigate risks during freight transportation.",
+    "guidanceTitle": "Guidance on Effective Risk Management for Freight Insurance",
+    "guidanceTips": [
+      "Outline your procedures for loading, unloading, and securing cargo to prevent damage or theft.",
+      "Explain how you monitor shipments and respond to any incidents or delays during transit.",
+      "Describe any training programs or safety equipment you provide to your drivers and logistics staff.",
+      "Mention any certifications, licenses, or insurance coverage you have to demonstrate your commitment to risk management."
+    ]
+  }
+]

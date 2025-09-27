@@ -7,28 +7,30 @@ import { useAuth } from '@/contexts/AuthContext'
 export default function HomePage() {
   const { user, loading } = useAuth()
   const router = useRouter()
-  const [isRedirecting, setIsRedirecting] = useState(false)
+  const [debugInfo, setDebugInfo] = useState({ loading: true, user: false, redirecting: false })
 
   useEffect(() => {
-    // Only run when loading is complete
-    if (loading) return
+    // Update debug info
+    setDebugInfo({ loading, user: !!user, redirecting: false })
 
-    // Prevent multiple redirects
-    if (isRedirecting) return
+    // Don't do anything while auth is still loading
+    if (loading) {
+      console.log('Auth still loading...')
+      return
+    }
 
-    setIsRedirecting(true)
+    console.log('Auth loaded. User:', user ? 'Logged in' : 'Not logged in')
+    setDebugInfo({ loading, user: !!user, redirecting: true })
 
-    // Small delay to ensure state is ready
-    setTimeout(() => {
-      if (user) {
-        // If user is authenticated, redirect to dashboard
-        router.push('/platform/dashboard')
-      } else {
-        // If not authenticated, redirect to login
-        router.push('/auth/login')
-      }
-    }, 100)
-  }, [user, loading, router, isRedirecting])
+    // Use window.location for more reliable redirect
+    if (user) {
+      console.log('Redirecting to dashboard...')
+      window.location.href = '/platform/dashboard'
+    } else {
+      console.log('Redirecting to login...')
+      window.location.href = '/auth/login'
+    }
+  }, [user, loading])
 
   // Show loading spinner while checking auth
   return (
@@ -48,6 +50,13 @@ export default function HomePage() {
         />
         <div className="loading-spinner"></div>
         <p>Loading Sanctuari Platform...</p>
+
+        {/* Debug info - remove in production */}
+        <div style={{ marginTop: '20px', fontSize: '12px', color: '#888' }}>
+          <p>Loading: {debugInfo.loading ? 'Yes' : 'No'}</p>
+          <p>User: {debugInfo.user ? 'Logged in' : 'Not logged in'}</p>
+          <p>Redirecting: {debugInfo.redirecting ? 'Yes' : 'No'}</p>
+        </div>
       </div>
 
       <style jsx>{`

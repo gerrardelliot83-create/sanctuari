@@ -17,36 +17,103 @@ const getFormSections = (productType: string) => {
     {
       id: 'business',
       name: 'Business Information',
-      icon: '🏢',
       description: 'Tell us about your business'
     },
     {
       id: 'coverage',
       name: 'Coverage Details',
-      icon: '🛡️',
       description: 'Specify your coverage requirements'
     },
     {
       id: 'risk',
       name: 'Risk Assessment',
-      icon: '📊',
       description: 'Help us understand your risk profile'
     },
     {
       id: 'additional',
       name: 'Additional Information',
-      icon: '📋',
       description: 'Any other relevant details'
     },
     {
       id: 'review',
       name: 'Review & Submit',
-      icon: '✅',
       description: 'Review your application'
     }
   ]
 
   return commonSections
+}
+
+// Dynamic guidance based on focused field
+const getFieldGuidance = (fieldName: string | null) => {
+  const guidance: { [key: string]: { title: string; tips: string[] } } = {
+    companyName: {
+      title: 'Company Name',
+      tips: [
+        'Use your official registered company name',
+        'Include legal entity type (Pvt Ltd, LLP, etc.)',
+        'This should match your GST registration'
+      ]
+    },
+    businessType: {
+      title: 'Business Type',
+      tips: [
+        'Select the category that best describes your primary business',
+        'This helps insurers assess industry-specific risks',
+        'Choose "Other" if your industry is not listed'
+      ]
+    },
+    employeeCount: {
+      title: 'Employee Count',
+      tips: [
+        'Include all full-time and part-time employees',
+        'Contract workers on payroll should be included',
+        'This affects your liability and group insurance needs'
+      ]
+    },
+    annualRevenue: {
+      title: 'Annual Revenue',
+      tips: [
+        'Use figures from your last financial year',
+        'Include all revenue streams',
+        'This helps determine appropriate coverage limits'
+      ]
+    },
+    policyStartDate: {
+      title: 'Policy Start Date',
+      tips: [
+        'Coverage typically starts from 12:00 AM on this date',
+        'Cannot be earlier than today',
+        'End date will auto-set to 1 year from start'
+      ]
+    },
+    policyEndDate: {
+      title: 'Policy End Date',
+      tips: [
+        'Standard policy period is 12 months',
+        'Can be adjusted if needed',
+        'Renewal reminders will be sent 30 days before expiry'
+      ]
+    },
+    coverageAmount: {
+      title: 'Coverage Amount',
+      tips: [
+        'Consider your business value and assets',
+        'Factor in potential liability claims',
+        'Higher coverage may have lower per-unit cost'
+      ]
+    },
+    default: {
+      title: 'Quick Tips',
+      tips: [
+        'Fill all required fields marked with asterisk',
+        'Provide accurate information for better quotes',
+        'Save your progress regularly'
+      ]
+    }
+  }
+
+  return guidance[fieldName || 'default'] || guidance.default
 }
 
 export default function RFQFormNew({ productId }: RFQFormNewProps) {
@@ -59,6 +126,7 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
   const [currentSection, setCurrentSection] = useState(0)
   const [formData, setFormData] = useState<any>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [focusedField, setFocusedField] = useState<string | null>(null)
 
   if (!product) {
     return <div>Product not found</div>
@@ -123,6 +191,8 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
                 placeholder="Enter your company name"
                 value={formData.companyName || ''}
                 onChange={(e) => updateFormData('companyName', e.target.value)}
+                onFocus={() => setFocusedField('companyName')}
+                onBlur={() => setFocusedField(null)}
               />
               <span style={styles.helperText}>
                 Use your official registered company name for accurate quotes
@@ -137,6 +207,8 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
                 style={styles.select}
                 value={formData.businessType || ''}
                 onChange={(e) => updateFormData('businessType', e.target.value)}
+                onFocus={() => setFocusedField('businessType')}
+                onBlur={() => setFocusedField(null)}
               >
                 <option value="">Select business type</option>
                 <option value="manufacturing">Manufacturing</option>
@@ -152,36 +224,38 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
               <label style={styles.label}>
                 Number of Employees <span style={styles.required}>*</span>
               </label>
-              <select
-                style={styles.select}
+              <input
+                type="number"
+                style={styles.input}
+                placeholder="Enter exact number of employees"
                 value={formData.employeeCount || ''}
                 onChange={(e) => updateFormData('employeeCount', e.target.value)}
-              >
-                <option value="">Select range</option>
-                <option value="1-10">1-10</option>
-                <option value="11-50">11-50</option>
-                <option value="51-200">51-200</option>
-                <option value="201-500">201-500</option>
-                <option value="500+">500+</option>
-              </select>
+                min="1"
+                onFocus={() => setFocusedField('employeeCount')}
+                onBlur={() => setFocusedField(null)}
+              />
+              <span style={styles.helperText}>
+                Enter the total number of employees in your organization
+              </span>
             </div>
 
             <div style={styles.fieldGroup}>
               <label style={styles.label}>
-                Annual Revenue <span style={styles.required}>*</span>
+                Annual Revenue (₹) <span style={styles.required}>*</span>
               </label>
-              <select
-                style={styles.select}
+              <input
+                type="number"
+                style={styles.input}
+                placeholder="Enter annual revenue in rupees"
                 value={formData.annualRevenue || ''}
                 onChange={(e) => updateFormData('annualRevenue', e.target.value)}
-              >
-                <option value="">Select range</option>
-                <option value="<1cr">Less than ₹1 Crore</option>
-                <option value="1-5cr">₹1-5 Crore</option>
-                <option value="5-25cr">₹5-25 Crore</option>
-                <option value="25-100cr">₹25-100 Crore</option>
-                <option value="100cr+">Above ₹100 Crore</option>
-              </select>
+                min="0"
+                onFocus={() => setFocusedField('annualRevenue')}
+                onBlur={() => setFocusedField(null)}
+              />
+              <span style={styles.helperText}>
+                Enter your company's total annual revenue in Indian Rupees
+              </span>
             </div>
 
             <div style={styles.fieldGroup}>
@@ -233,6 +307,8 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
                 style={styles.select}
                 value={formData.coverageAmount || ''}
                 onChange={(e) => updateFormData('coverageAmount', e.target.value)}
+                onFocus={() => setFocusedField('coverageAmount')}
+                onBlur={() => setFocusedField(null)}
               >
                 <option value="">Select coverage amount</option>
                 <option value="10L">Up to ₹10 Lakhs</option>
@@ -253,8 +329,19 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
                   type="date"
                   style={styles.dateInput}
                   value={formData.policyStartDate || ''}
-                  onChange={(e) => updateFormData('policyStartDate', e.target.value)}
+                  onChange={(e) => {
+                    updateFormData('policyStartDate', e.target.value)
+                    // Auto-set end date to 1 year from start date
+                    if (e.target.value) {
+                      const startDate = new Date(e.target.value)
+                      const endDate = new Date(startDate)
+                      endDate.setFullYear(endDate.getFullYear() + 1)
+                      updateFormData('policyEndDate', endDate.toISOString().split('T')[0])
+                    }
+                  }}
                   min={new Date().toISOString().split('T')[0]}
+                  onFocus={() => setFocusedField('policyStartDate')}
+                  onBlur={() => setFocusedField(null)}
                 />
                 <span style={styles.helperText}>When do you want coverage to begin?</span>
               </div>
@@ -267,10 +354,11 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
                   type="date"
                   style={styles.dateInput}
                   value={formData.policyEndDate || ''}
-                  onChange={(e) => updateFormData('policyEndDate', e.target.value)}
-                  min={formData.policyStartDate || new Date().toISOString().split('T')[0]}
+                  readOnly
+                  onFocus={() => setFocusedField('policyEndDate')}
+                  onBlur={() => setFocusedField(null)}
                 />
-                <span style={styles.helperText}>Typically 1 year from start date</span>
+                <span style={styles.helperText}>Auto-set to 1 year from start date</span>
               </div>
             </div>
 
@@ -414,7 +502,7 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
               <p><strong>Company:</strong> {formData.companyName || 'Not provided'}</p>
               <p><strong>Type:</strong> {formData.businessType || 'Not provided'}</p>
               <p><strong>Employees:</strong> {formData.employeeCount || 'Not provided'}</p>
-              <p><strong>Revenue:</strong> {formData.annualRevenue || 'Not provided'}</p>
+              <p><strong>Revenue:</strong> ₹{formData.annualRevenue || 'Not provided'}</p>
             </div>
 
             <div style={styles.reviewCard}>
@@ -451,6 +539,7 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
 
   const currentSectionData = sections[currentSection]
   const progress = ((currentSection + 1) / sections.length) * 100
+  const currentGuidance = getFieldGuidance(focusedField)
 
   return (
     <div style={styles.container}>
@@ -477,7 +566,6 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
         <div style={styles.formCard}>
           {/* Section Header */}
           <div style={styles.sectionHeader}>
-            <span style={styles.sectionIcon}>{currentSectionData.icon}</span>
             <div>
               <h2 style={styles.sectionTitle}>{currentSectionData.name}</h2>
               <p style={styles.sectionDescription}>{currentSectionData.description}</p>
@@ -518,66 +606,19 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
           </div>
         </div>
 
-        {/* Right Side - Guidance */}
+        {/* Right Side - Dynamic Guidance */}
         <div style={styles.guidanceCard}>
           <h3 style={styles.guidanceTitle}>
-            💡 Helpful Tips
+            {currentGuidance.title}
           </h3>
 
-          {currentSection === 0 && (
-            <div style={styles.guidanceContent}>
-              <p><strong>Accurate Information Matters</strong></p>
-              <ul style={styles.tipsList}>
-                <li>Use your official company name as registered</li>
-                <li>Ensure employee count is current</li>
-                <li>Revenue figures help get accurate quotes</li>
-              </ul>
-            </div>
-          )}
-
-          {currentSection === 1 && (
-            <div style={styles.guidanceContent}>
-              <p><strong>Coverage Guidelines</strong></p>
-              <ul style={styles.tipsList}>
-                <li>Consider your business size when selecting coverage</li>
-                <li>Factor in future growth plans</li>
-                <li>Review your current policy gaps</li>
-              </ul>
-            </div>
-          )}
-
-          {currentSection === 2 && (
-            <div style={styles.guidanceContent}>
-              <p><strong>Risk Disclosure</strong></p>
-              <ul style={styles.tipsList}>
-                <li>Be transparent about past claims</li>
-                <li>Highlight safety measures in place</li>
-                <li>Mention certifications if any</li>
-              </ul>
-            </div>
-          )}
-
-          {currentSection === 3 && (
-            <div style={styles.guidanceContent}>
-              <p><strong>Contact Information</strong></p>
-              <ul style={styles.tipsList}>
-                <li>Provide direct contact details</li>
-                <li>Use business email for faster processing</li>
-                <li>Ensure phone number is reachable</li>
-              </ul>
-            </div>
-          )}
-
-          {currentSection === 4 && (
-            <div style={styles.guidanceContent}>
-              <p><strong>Before Submitting</strong></p>
-              <ul style={styles.tipsList}>
-                <li>Review all information carefully</li>
-                <li>You'll receive quotes within 24-48 hours</li>
-                <li>Our team will contact you if clarification is needed</li>
-              </ul>
-            </div>
-          )}
+          <div style={styles.guidanceContent}>
+            <ul style={styles.tipsList}>
+              {currentGuidance.tips.map((tip, index) => (
+                <li key={index}>{tip}</li>
+              ))}
+            </ul>
+          </div>
 
           <div style={styles.helpBox}>
             <p style={styles.helpText}>
@@ -602,7 +643,13 @@ export default function RFQFormNew({ productId }: RFQFormNewProps) {
             }}
             onClick={() => index <= currentSection && setCurrentSection(index)}
           >
-            <div style={styles.stepCircle}>
+            <div style={{
+              ...styles.stepCircle,
+              background: index === currentSection ? '#6B46C1' :
+                         index < currentSection ? '#10B981' :
+                         '#e5e7eb',
+              color: index <= currentSection ? '#fff' : '#6b7280'
+            }}>
               {index < currentSection ? '✓' : index + 1}
             </div>
             <span style={styles.stepLabel}>{section.name}</span>
@@ -675,9 +722,6 @@ const styles = {
     marginBottom: '32px',
     paddingBottom: '24px',
     borderBottom: '1px solid #e5e7eb'
-  },
-  sectionIcon: {
-    fontSize: '32px'
   },
   sectionTitle: {
     fontSize: '20px',
@@ -888,13 +932,11 @@ const styles = {
     width: '32px',
     height: '32px',
     borderRadius: '50%',
-    background: '#e5e7eb',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: '14px',
-    fontWeight: '500',
-    color: '#6b7280'
+    fontWeight: '500'
   },
   stepLabel: {
     fontSize: '11px',

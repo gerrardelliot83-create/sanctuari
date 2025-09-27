@@ -1,0 +1,431 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your company's registered name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your company as per the documents.",
+    "guidanceTitle": "Entering the Company Name",
+    "guidanceTips": [
+      "The company name should match the legal registration documents like the Certificate of Incorporation, GST registration, or PAN card.",
+      "Avoid using abbreviations, acronyms, or informal names. Use the full registered name.",
+      "Double-check the spelling and capitalization to ensure it is entered correctly."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your business registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your business registration number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is the unique identification number assigned to your business by the government. It is typically a combination of letters and numbers.",
+    "guidanceTitle": "Guidance for Business Registration Number",
+    "guidanceTips": [
+      "The business registration number is typically a 10-15 character alphanumeric code issued by the government, such as your GST registration number or PAN (Permanent Account Number).",
+      "Make sure to enter the exact number as it appears on your business registration documents, including any letters and special characters.",
+      "If you are unsure of your business registration number, you can find it on official documents like your GST registration certificate, PAN card, or trade license."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your business's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number assigned to your business by the Indian government. It is mandatory for all businesses registered under the GST Act.",
+    "guidanceTitle": "Guidance for providing your GST number",
+    "guidanceTips": [
+      "Ensure you enter the exact 15-digit GST number as it appears on your GST registration certificate.",
+      "The GST number follows a specific format: XX-AAAAA-NNNN-Z-Y-Z, where XX is the state code, AAAAA is the PAN-based business entity number, NNNN is a unique number, and Z and Y are check digits.",
+      "Double-check your GST number to avoid any errors, as it is a critical piece of information required for insurance and other business purposes."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your company's Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "The PAN is a unique 10-digit alphanumeric number issued by the Income Tax Department of India. It is mandatory for all businesses to have a valid PAN for tax and regulatory purposes.",
+    "guidanceTitle": "Guidance for Providing PAN Number",
+    "guidanceTips": [
+      "The PAN number should be entered exactly as it appears on your company's registration documents or tax filings.",
+      "Ensure that there are no typos or errors in the PAN number, as it is a critical identifier for your business.",
+      "If you do not have a PAN number yet, you will need to apply for one before proceeding with this insurance application."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business type or industry of your organization?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type",
+    "options": [
+      "Manufacturing",
+      "Retail",
+      "IT/Software Services",
+      "Healthcare",
+      "Education",
+      "Construction",
+      "Hospitality",
+      "Transportation",
+      "Agriculture",
+      "Other"
+    ],
+    "helperText": "Select the option that best describes your primary business activities.",
+    "guidanceTitle": "Guidance on Selecting Business Type/Industry",
+    "guidanceTips": [
+      "Choose the industry that most closely matches your organization's core business functions and revenue sources.",
+      "If your business operates in multiple industries, select the one that accounts for the majority of your revenue.",
+      "For diversified businesses, you can select 'Other' and provide more details in the next field."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your business was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your business was officially registered or started operations.",
+    "guidanceTitle": "Providing the Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment is the year your business was officially registered or started operations, not necessarily the year you started planning the business.",
+      "This information is important for the insurance provider to understand the longevity and experience of your business.",
+      "Ensure you enter a valid 4-digit year between 1900 and the current year."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your organization?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 10000
+    },
+    "helperText": "Provide the current total number of employees in your organization. This information is used to assess the risk profile and determine the appropriate insurance coverage.",
+    "guidanceTitle": "Guidance for Providing the Number of Employees",
+    "guidanceTips": [
+      "Count all full-time, part-time, and contractual employees in your organization.",
+      "Ensure the number provided is the exact current total, not an estimate or range.",
+      "This information is crucial for the insurance provider to accurately evaluate the risk and provide a suitable quote for your electronic equipment coverage."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to calculate the appropriate insurance coverage.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the amount you provide is for the most recent completed financial year.",
+      "If your company operates across multiple locations in India, include the total consolidated annual revenue.",
+      "Review your company's audited financial statements or GST returns to find the accurate annual revenue figure."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the registered address of your business?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your complete business address",
+    "validation": {
+      "minLength": 20,
+      "maxLength": 200
+    },
+    "helperText": "Provide the full address where your business operations are based, including the building name, street, locality, city, state, and PIN code.",
+    "guidanceTitle": "Tips for Providing Your Business Address",
+    "guidanceTips": [
+      "Ensure the address matches your GST registration and other official documents.",
+      "Include the complete address details - building name, street, locality, city, state, and PIN code.",
+      "Avoid using abbreviations or short forms in the address."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where the electronic equipment is located?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter city name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the exact city name where the insured electronic equipment is situated.",
+    "guidanceTitle": "Guidance for Entering the City",
+    "guidanceTips": [
+      "Enter the full city name without any abbreviations or short forms.",
+      "Ensure the spelling is accurate as per the official records.",
+      "If the equipment is located in a small town or village, provide the nearest major city name."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your business located?",
+    "inputType": "select",
+    "required": true,
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your business is located.",
+    "guidanceTitle": "Selecting the State",
+    "guidanceTips": [
+      "Ensure you select the correct state where your business is registered and operating.",
+      "The state selection is important for determining the applicable taxes, regulations, and insurance requirements.",
+      "If your business has multiple locations, select the state where your primary or registered office is located."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN code of the location where the electronic equipment is installed?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The PIN code is a 6-digit postal code used in India to facilitate mail delivery. It is essential for the insurance provider to have the exact location of the insured electronic equipment.",
+    "guidanceTitle": "Guidance for Entering the PIN Code",
+    "guidanceTips": [
+      "The PIN code must be a 6-digit number without any spaces or special characters.",
+      "You can find the PIN code for your location by entering your address on the India Post website or by contacting your local post office.",
+      "Ensure that the PIN code you provide matches the actual location of the electronic equipment, as this information is crucial for the insurance coverage and any potential claims."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "Who is the primary contact person for this insurance policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "pattern": "^[a-zA-Z ]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the full name of the person who will be the primary point of contact for this insurance policy.",
+    "guidanceTitle": "Guidance for Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name of the contact person, including first, middle (if applicable), and last name.",
+      "Ensure the name matches the government-issued ID (such as PAN card or Aadhaar) of the contact person.",
+      "Avoid using abbreviations or nicknames in the name field."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your official business email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "name@business.com",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please provide the email address registered for your business. This will be used for all policy-related communication.",
+    "guidanceTitle": "Entering your business email address",
+    "guidanceTips": [
+      "Use the official email address registered for your business, not a personal email.",
+      "Ensure the email address is spelled correctly and does not contain any typos.",
+      "Avoid using generic email addresses like info@, contact@, or admin@. Use a specific person's email if possible."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "What is your business's primary contact phone number?",
+    "inputType": "phone",
+    "required": true,
+    "placeholder": "Enter your 10-digit mobile or landline number",
+    "validation": {
+      "pattern": "^[6-9]\\d{9}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "Please provide a valid 10-digit phone number where you can be reached.",
+    "guidanceTitle": "Providing Your Business Phone Number",
+    "guidanceTips": [
+      "Enter your primary business contact number, which can be a mobile or landline.",
+      "The number should be 10 digits long and start with 6, 7, 8, or 9.",
+      "Ensure the number provided is active and regularly monitored, as the insurance provider may need to contact you regarding your policy."
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "When would you like the policy to start?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-01-01"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the next 12 months.",
+    "guidanceTitle": "Selecting the Policy Start Date",
+    "guidanceTips": [
+      "Choose a start date that aligns with your business operations and insurance needs.",
+      "Ensure the start date is at least a few days after the current date to allow for processing.",
+      "Consider any upcoming events, seasonal changes, or planned equipment upgrades that may impact the optimal start date."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "When would you like the insurance policy to end?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select the desired end date for your electronic equipment insurance coverage.",
+    "guidanceTitle": "Guidance for Selecting the Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be 1 year from the start date of the coverage.",
+      "Ensure the end date falls within the current Indian financial year (April 1st to March 31st).",
+      "Consider your business operations and equipment replacement cycle when selecting the end date."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total value of your electronic equipment that needs to be covered under the insurance policy?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the total value in INR",
+    "validation": {
+      "min": 50000,
+      "max": 50000000
+    },
+    "helperText": "Provide the exact total value of your electronic equipment assets that need to be insured.",
+    "guidanceTitle": "Guidance for Determining Coverage Amount",
+    "guidanceTips": [
+      "Make a detailed list of all your electronic equipment, including computers, servers, printers, scanners, and any other devices.",
+      "Determine the current market value of each item on the list. Consider the age, condition, and replacement cost of the equipment.",
+      "Add up the total value of all the electronic equipment to arrive at the Coverage Amount Required.",
+      "Keep in mind that the Coverage Amount should be sufficient to cover the full replacement cost of your electronic equipment in case of a covered loss or damage."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "Who is your current insurance provider for your electronic equipment?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the full legal name of your current insurance company.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Make sure to enter the exact legal name of your current insurance provider, as it appears on your policy documents.",
+      "If you have multiple insurance policies, provide the name of the provider for your electronic equipment coverage.",
+      "Avoid abbreviations or short forms, as the insurance company will need the full legal name for verification purposes."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous insurance claims made for your electronic equipment in the last 5 years.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims",
+    "validation": {
+      "maxLength": 500
+    },
+    "helperText": "Provide a brief summary of the nature, date, and amount of any previous claims. This will help us assess the risk profile accurately.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed and accurate as possible in describing the previous claims. Include the date, nature of the incident, the amount claimed, and whether the claim was approved or rejected.",
+      "If you have not made any previous claims, please mention 'No previous claims' in the field.",
+      "Providing complete information on previous claims helps us offer you the most suitable coverage and premium for your electronic equipment insurance."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "What risk management measures do you have in place for your electronic equipment?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Describe your risk management measures in detail",
+    "validation": {
+      "minLength": 50,
+      "maxLength": 500
+    },
+    "helperText": "Provide information on how you protect your electronic equipment from risks such as theft, damage, or power surges.",
+    "guidanceTitle": "Guidance on Risk Management Measures",
+    "guidanceTips": [
+      "List the specific measures you have implemented, such as security systems, backup power, maintenance contracts, and employee training.",
+      "Explain how these measures help mitigate the risks associated with your electronic equipment.",
+      "Ensure that your risk management plan covers both preventive and reactive measures to address potential incidents."
+    ]
+  }
+]

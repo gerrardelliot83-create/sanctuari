@@ -1,0 +1,427 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your company's registered name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your company as per the documents.",
+    "guidanceTitle": "Guidance for Entering Company Name",
+    "guidanceTips": [
+      "Enter the full legal name of your company as it appears on your GST registration, PAN card, or other official documents.",
+      "Avoid using abbreviations, acronyms, or informal names. The name should match your company's legal registration.",
+      "If your company has multiple locations, use the name of the principal/registered office location."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your business registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your business registration number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is the unique registration number assigned to your business, such as your GST registration number or PAN (Permanent Account Number).",
+    "guidanceTitle": "Providing Your Business Registration Number",
+    "guidanceTips": [
+      "Enter the exact 10-15 character alphanumeric business registration number as issued by the government.",
+      "Make sure to include any leading zeros or special characters as part of the number.",
+      "This number is crucial for verifying your business identity and eligibility for the insurance policy."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your company's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number issued by the Government of India for your business. This is a mandatory requirement for all Indian companies.",
+    "guidanceTitle": "Guidance for providing your GST number",
+    "guidanceTips": [
+      "Ensure you enter the exact 15-digit GST number as it appears on your GST registration certificate.",
+      "The GST number follows a specific format: XX-AAAAA-NNNN-Z-Y-Z, where XX is the state code, AAAAA is the PAN-based business entity number, NNNN is a unique number, and Z and Y are check digits.",
+      "Double-check your GST number to avoid any errors, as it is a critical identifier for your business in the insurance application process."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your company's Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "The PAN number is a unique 10-digit alphanumeric identifier issued by the Income Tax Department of India. It is mandatory for all businesses to have a valid PAN number.",
+    "guidanceTitle": "Guidance for Providing PAN Number",
+    "guidanceTips": [
+      "The PAN number should be entered exactly as it appears on your company's registration documents, including any uppercase letters and digits.",
+      "Ensure that the PAN number you provide is currently active and registered under your business name.",
+      "If you do not have a PAN number yet, you will need to apply for one before proceeding with this insurance application."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business activity/industry of your company?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type",
+    "options": [
+      "Construction",
+      "Manufacturing",
+      "Retail",
+      "IT/ITES",
+      "Healthcare",
+      "Hospitality",
+      "Transportation",
+      "Real Estate",
+      "Other (please specify)"
+    ],
+    "helperText": "Select the industry that best describes your primary business activities.",
+    "guidanceTitle": "Guidance on selecting the right business type/industry",
+    "guidanceTips": [
+      "Choose the industry that accounts for the majority of your company's revenue and operations.",
+      "If your business activities span multiple industries, select the one that is most relevant to the contractors all risk insurance policy.",
+      "If your business type is not listed, select 'Other' and provide a brief description of your primary activities."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your business was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your business was officially registered or started operations.",
+    "guidanceTitle": "Guidance for Entering Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment should be the year your business was officially registered or started operations, not the year you obtained your PAN card or GST registration.",
+      "If your business was established before the current year, enter the 4-digit year (e.g., 2015, not 15).",
+      "Ensure the year entered is valid and corresponds to when your business commenced, as this information is important for underwriting the Contractors All Risk insurance policy."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your company?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 10000
+    },
+    "helperText": "Provide the total number of full-time and part-time employees in your company. This information is required to calculate the appropriate insurance coverage.",
+    "guidanceTitle": "Guidance for Providing the Number of Employees",
+    "guidanceTips": [
+      "Count all full-time and part-time employees, including owners and directors, to get the total number.",
+      "Ensure the number you provide is accurate and up-to-date, as it directly impacts the insurance premium calculation.",
+      "If your company has seasonal workers or temporary staff, include them in the total count for the policy period."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to calculate the appropriate insurance coverage.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the revenue figure includes all sources of income for your business, including sales, services, and any other revenue streams.",
+      "If your company's fiscal year is different from the calendar year, provide the revenue for the most recently completed fiscal year."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the complete address of your business?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your business address",
+    "validation": {
+      "minLength": 10,
+      "maxLength": 200
+    },
+    "helperText": "Provide the full address including street, city, state, and PIN code.",
+    "guidanceTitle": "Guidance for Entering Business Address",
+    "guidanceTips": [
+      "Include the building number, street name, locality, city, state, and PIN code.",
+      "Ensure the address is accurate and matches your business registration documents (GST, PAN, etc.).",
+      "Avoid using abbreviations and provide the complete address details."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where the construction project is located?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the city name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the exact city name where the construction project is taking place.",
+    "guidanceTitle": "Guidance for Entering the City",
+    "guidanceTips": [
+      "Enter the full city name, not abbreviations or short forms.",
+      "Ensure the spelling is accurate as per official records.",
+      "If the project is located in a suburb or locality, provide the main city name."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your business located?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your state",
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your business is located.",
+    "guidanceTitle": "Guidance for Selecting the State",
+    "guidanceTips": [
+      "Choose the state that matches the registered address of your business.",
+      "If your business has multiple locations, select the state where your primary operations are based.",
+      "Ensure that the state selected matches the information provided in your GST registration and other official documents."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN code of the project location?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The PIN code is a 6-digit postal code used in India. Provide the PIN code of the primary project location.",
+    "guidanceTitle": "Guidance for Entering the PIN Code",
+    "guidanceTips": [
+      "The PIN code must be a valid 6-digit number without any leading zeros.",
+      "Ensure the PIN code corresponds to the correct project location, as this information is used to determine applicable taxes, regulations, and insurance coverage.",
+      "If the project has multiple locations, provide the PIN code of the primary or headquarters location."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "What is the name of the primary contact person for this insurance policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "pattern": "^[a-zA-Z ]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the full name of the person who will be the primary point of contact for this insurance policy.",
+    "guidanceTitle": "Guidance for Entering Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name of the contact person, including first, middle (if applicable), and last name.",
+      "Ensure the name matches the government-issued ID (such as PAN card or Aadhaar) of the contact person.",
+      "Avoid using abbreviations or nicknames, as the name should be entered exactly as it appears on official documents."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "Enter your email address",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please enter a valid email address where we can reach you.",
+    "guidanceTitle": "Email Address",
+    "guidanceTips": [
+      "Use an email address that you check regularly, as this will be our primary mode of communication.",
+      "Ensure the email address is spelled correctly and does not contain any typos.",
+      "Avoid using shared or generic email addresses, as we need to be able to reach you directly."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "What is your business's primary contact phone number?",
+    "inputType": "phone",
+    "required": true,
+    "placeholder": "Enter your 10-digit mobile or landline number",
+    "validation": {
+      "pattern": "^[6-9]\\d{9}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "Please provide a valid 10-digit phone number where you can be reached. This will be used for all communication regarding your insurance policy.",
+    "guidanceTitle": "Providing your business phone number",
+    "guidanceTips": [
+      "Enter your primary business contact number, which can be a mobile or landline.",
+      "Ensure the number is active and regularly monitored, as this will be the primary way the insurance provider reaches you.",
+      "The number should be in the Indian format of 10 digits, starting with 6, 7, 8, or 9."
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "When would you like the policy to start?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the next 12 months.",
+    "guidanceTitle": "Selecting the Policy Start Date",
+    "guidanceTips": [
+      "Choose a start date that aligns with your business operations and project timelines.",
+      "Ensure the start date is at least 7 days from the current date to allow for processing.",
+      "Consider any upcoming holidays or shutdowns that may impact your business during the policy period."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "When does the policy need to end?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please enter the exact date when the policy should end.",
+    "guidanceTitle": "Guidance for Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be exactly 1 year after the policy start date.",
+      "Ensure the policy end date is a valid calendar date and not a weekend or holiday.",
+      "The policy end date must be after the current date and before the maximum allowed policy period end date."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total value of the project or contract that you need to insure?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the total project/contract value",
+    "validation": {
+      "min": 100000,
+      "max": 1000000000
+    },
+    "helperText": "This is the total value of the construction project or contract that needs to be covered under the Contractors All Risk insurance policy.",
+    "guidanceTitle": "Determining the Coverage Amount",
+    "guidanceTips": [
+      "The coverage amount should be the total estimated value of the construction project or contract, including the cost of materials, labor, equipment, and any other associated expenses.",
+      "Consider the duration of the project and account for potential cost escalations or changes in scope when determining the coverage amount.",
+      "Ensure that the coverage amount is sufficient to cover the complete replacement or repair of the project in case of any unforeseen events or damages."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "Who is your current insurance provider for the Contractors All Risk policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the full legal name of your current insurance company for the Contractors All Risk policy.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Enter the complete legal name of the insurance company, not just the brand name.",
+      "Ensure the name matches the policy documents exactly.",
+      "If you have multiple Contractors All Risk policies, provide the name of the primary insurer.",
+      "This information helps us understand your current insurance coverage and provide an accurate quote."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous claims made on your insurance policies in the last 5 years.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims",
+    "validation": {
+      "maxLength": 1000
+    },
+    "helperText": "Provide a brief summary of any claims made, including the claim amount, date, and reason.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed as possible in describing the previous claims, including the policy type, claim amount, date of incident, and reason for the claim.",
+      "Mention any steps taken to mitigate or prevent similar claims in the future.",
+      "Provide supporting documentation, such as claim settlement letters or invoices, if available.",
+      "Honesty and transparency in disclosing previous claims history is crucial for the insurer to accurately assess the risk and provide the most suitable coverage."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "Please provide details on the risk management measures in place for your contracting operations.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Describe the risk management procedures, safety protocols, and loss prevention measures implemented",
+    "helperText": "Provide a detailed overview of your risk management approach to ensure the safety and security of your contracting projects.",
+    "guidanceTitle": "Guidance on Effective Risk Management Measures",
+    "guidanceTips": [
+      "Outline the specific safety protocols and procedures followed on your construction sites, such as use of personal protective equipment, regular safety inspections, and employee training.",
+      "Explain the loss prevention measures in place, including fire safety systems, security arrangements, and emergency response plans.",
+      "Describe how you monitor and mitigate potential risks throughout the lifecycle of your contracting projects, such as through regular risk assessments and implementation of corrective actions."
+    ]
+  }
+]

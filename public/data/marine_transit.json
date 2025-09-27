@@ -1,0 +1,428 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your company's registered name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your company as per the documents.",
+    "guidanceTitle": "Guidance for Entering Company Name",
+    "guidanceTips": [
+      "Enter the full legal name of your company as it appears on your GST registration, PAN card, or other official documents.",
+      "Avoid using abbreviations, acronyms, or informal names. The name should match your company's official registration.",
+      "If your company has multiple locations, use the name of the headquarters or primary place of business."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your business registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your business registration number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is the unique identification number assigned to your business by the government. It is typically a combination of letters and numbers.",
+    "guidanceTitle": "Guidance for Providing Business Registration Number",
+    "guidanceTips": [
+      "The business registration number is typically a 10-15 character alphanumeric code issued by the government, such as your GST registration number or PAN (Permanent Account Number).",
+      "Ensure you enter the exact number as it appears on your business registration documents, without any spaces or special characters.",
+      "If you are unsure of your business registration number, you can find it on official documents like your GST registration certificate, PAN card, or trade license."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your company's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number issued by the Government of India for your business. This is a mandatory requirement for all Indian companies.",
+    "guidanceTitle": "Guidance for providing your GST number",
+    "guidanceTips": [
+      "Ensure you enter the exact 15-digit GST number as it appears on your GST registration certificate.",
+      "The GST number follows a specific format: XX-AAAAA-NNNN-Z-Y-Z, where XX is the state code, AAAAA is the PAN-based business entity number, NNNN is a unique number, and Z and Y are check digits.",
+      "Double-check your GST number to avoid any errors, as it is a critical identifier for your business in the insurance application process."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your company's Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "The PAN is a unique 10-digit alphanumeric number issued by the Income Tax Department of India. It is mandatory for all businesses to have a valid PAN for tax and regulatory purposes.",
+    "guidanceTitle": "Guidance for Providing PAN Number",
+    "guidanceTips": [
+      "The PAN number should be in the format of 5 uppercase letters, 4 digits, and 1 uppercase letter (e.g., ABCDE1234F).",
+      "Ensure that the PAN number you provide is registered in the name of your business entity, not an individual.",
+      "Double-check the PAN number to avoid any typos or errors, as it is a critical identifier for your business."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business type or industry of your company?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type",
+    "options": [
+      "Manufacturing",
+      "Trading/Wholesale",
+      "Retail",
+      "Services",
+      "Construction",
+      "Transportation",
+      "IT/ITES",
+      "Healthcare",
+      "Education",
+      "Agriculture",
+      "Other"
+    ],
+    "helperText": "Select the option that best describes your primary business activities.",
+    "guidanceTitle": "Guidance on Selecting Business Type/Industry",
+    "guidanceTips": [
+      "Choose the industry that accounts for the majority of your company's revenue and operations.",
+      "If your business activities span multiple industries, select the one that is most relevant to your marine transit insurance needs.",
+      "If your business type is not listed, select 'Other' and provide a brief description in the next field."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your business was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your business was officially registered or started operations.",
+    "guidanceTitle": "Guidance for Entering Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment should be the year your business was officially registered or started operations, not the year you started planning the business.",
+      "If you're not sure of the exact year, provide your best estimate based on official records or founding documents.",
+      "The year should be a 4-digit number between 1900 and the current year. Do not enter a range of years."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your organization?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 10000
+    },
+    "helperText": "Please provide the exact number of employees in your organization. This information is required to accurately assess the risk profile and provide a suitable insurance quote.",
+    "guidanceTitle": "Guidance for Providing the Number of Employees",
+    "guidanceTips": [
+      "The number of employees is a crucial factor in determining the appropriate marine transit insurance coverage and premium for your business.",
+      "Provide the total number of employees, including full-time, part-time, and contract workers, as this helps the insurance provider understand the scale and operations of your organization.",
+      "Ensure that the number you provide is accurate and up-to-date, as this information may be verified during the underwriting process."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to calculate the appropriate insurance coverage.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the amount entered is for the most recent completed financial year.",
+      "If your company has multiple locations or divisions, provide the consolidated annual revenue across all operations."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the complete address of your business?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your business address",
+    "validation": {
+      "minLength": 20,
+      "maxLength": 300
+    },
+    "helperText": "Provide the full address including street, city, state, and PIN code. This should match the address registered with GST and other government authorities.",
+    "guidanceTitle": "Guidance for Providing Business Address",
+    "guidanceTips": [
+      "Ensure the address you provide is the same as the one registered with the GST and other government authorities.",
+      "Include details like the building name, street, area, city, state, and PIN code.",
+      "Double-check the spelling and accuracy of the address to avoid any delays in policy issuance."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where the goods will be transported from?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the city name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the exact city name where the goods will be loaded for transit.",
+    "guidanceTitle": "Entering the City of Origin",
+    "guidanceTips": [
+      "Enter the name of the city in India where the goods will begin their journey.",
+      "Ensure the city name is spelled correctly and matches the address on your GST registration.",
+      "Avoid abbreviations or short forms - use the full city name."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your business located?",
+    "inputType": "select",
+    "required": true,
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your business is located.",
+    "guidanceTitle": "Guidance for Selecting the State",
+    "guidanceTips": [
+      "Ensure you select the correct state where your business is registered and operating.",
+      "The state selected should match the address details provided in other parts of the insurance application.",
+      "If your business has operations in multiple states, select the state where the majority of your marine transit activities take place."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN code of the location where the goods will be transported?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The PIN code is a 6-digit postal code used in India to facilitate mail delivery. It is essential for accurately identifying the location and ensuring timely transit of the goods.",
+    "guidanceTitle": "Guidance for Entering the PIN Code",
+    "guidanceTips": [
+      "The PIN code must be a valid 6-digit number without any leading zeros.",
+      "Ensure the PIN code corresponds to the exact location where the goods will be transported, as this information is crucial for the insurance coverage.",
+      "If you are unsure about the PIN code, you can look it up on the India Post website or consult with the local postal authorities."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "Who is the primary contact person for this marine transit insurance policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the name of the person who will be the main point of contact for this policy.",
+    "guidanceTitle": "Guidance for Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name of the primary contact person, including first, middle, and last name.",
+      "This should be an authorized representative of the business who has decision-making power for the insurance policy.",
+      "Ensure the name matches the government-issued ID (such as PAN card) that will be used for policy documentation."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your official business email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "name@company.com",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please provide the email address registered for your business. This will be used for all policy-related communication.",
+    "guidanceTitle": "Entering your business email address",
+    "guidanceTips": [
+      "Use the official email address associated with your registered business, not a personal email.",
+      "Ensure the email address is spelled correctly and does not contain any typos.",
+      "If you have multiple business email addresses, provide the one you use for official correspondence."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "What is your business's primary contact phone number?",
+    "inputType": "phone",
+    "required": true,
+    "placeholder": "Enter your 10-digit mobile or landline number",
+    "validation": {
+      "pattern": "^[6-9]\\d{9}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "Please provide a valid 10-digit phone number where you can be reached. This will be used for policy-related communications.",
+    "guidanceTitle": "Providing your business phone number",
+    "guidanceTips": [
+      "Enter your primary business contact number, which can be a mobile or landline.",
+      "The number should be 10 digits long and start with 6, 7, 8, or 9.",
+      "Ensure the number provided is active and regularly monitored, as it will be used for important policy updates and claims-related communications."
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "When would you like the marine transit insurance policy to start?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-01-01"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the next 12 months.",
+    "guidanceTitle": "Guidance for Selecting Policy Start Date",
+    "guidanceTips": [
+      "Choose a start date that aligns with your business operations and shipping schedules.",
+      "Ensure the start date is at least a few days after the current date to allow for policy processing.",
+      "Consider any upcoming holidays or peak shipping seasons when selecting the start date."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "When does the marine transit insurance policy need to end?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "Enter the date when the marine transit insurance policy should end. The policy period is typically 1 year.",
+    "guidanceTitle": "Guidance for Entering the Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be exactly 1 year after the policy start date.",
+      "Ensure the end date is within the valid range of 1 year from the current date.",
+      "Double-check the date format is correct (DD/MM/YYYY)."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total value of goods you need to insure for the marine transit policy?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the total value in INR",
+    "validation": {
+      "min": 50000,
+      "max": 500000000
+    },
+    "helperText": "This is the total value of goods you need to cover for the marine transit insurance policy. The minimum coverage is ₹50,000 and the maximum is ₹500,000,000.",
+    "guidanceTitle": "Determining the Coverage Amount",
+    "guidanceTips": [
+      "Calculate the total value of the goods you need to transport, including the cost of the goods, packaging, freight, and any other related expenses.",
+      "Consider the maximum value of goods you may need to transport in a single shipment over the 1-year policy period.",
+      "Review your past shipping records to estimate the highest value shipment you have made, and use that as a starting point.",
+      "Ensure the coverage amount is sufficient to fully protect your business in case of any losses or damages during the marine transit."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "Who is your current marine transit insurance provider?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the full legal name of your current marine transit insurance company.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Enter the exact legal name of your current marine transit insurance provider, as shown on your policy documents.",
+      "If you have multiple marine transit insurance policies, provide the name of the primary/main provider.",
+      "Ensure the name is spelled correctly and matches your policy documents to avoid any delays in processing your request."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous insurance claims made in the last 5 years.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims",
+    "validation": {
+      "maxLength": 1000
+    },
+    "helperText": "Provide a brief summary of any insurance claims made, including the claim amount, date, and reason.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed as possible in describing the previous claims, including the policy type, claim amount, date of incident, and reason for the claim.",
+      "Ensure that all relevant documentation, such as claim settlement letters or invoices, are available to support the information provided.",
+      "Transparency about previous claims is important for the insurer to accurately assess the risk and provide an appropriate quote.",
+      "If there have been no previous claims, simply state 'No previous claims' in the field."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "Please describe the risk management measures in place for the marine transit operations.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Provide details on security, packaging, tracking, and other risk mitigation measures",
+    "helperText": "Describe the specific steps taken to manage risks during marine transit of goods.",
+    "guidanceTitle": "Guidance on Effective Risk Management for Marine Transit",
+    "guidanceTips": [
+      "Outline the security protocols in place, such as GPS tracking, tamper-proof packaging, and secure loading/unloading procedures.",
+      "Explain any contingency plans or emergency response measures for incidents during transit, such as accidents, theft, or delays.",
+      "Highlight any certifications or industry best practices followed to ensure the safety and integrity of the goods during marine transportation.",
+      "Provide details on how you monitor and continuously improve the risk management processes for your marine transit operations."
+    ]
+  }
+]

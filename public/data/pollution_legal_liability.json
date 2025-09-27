@@ -1,0 +1,433 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your company's registered name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your company as per the documents.",
+    "guidanceTitle": "Guidance for Entering Company Name",
+    "guidanceTips": [
+      "Enter the full legal name of your company as it appears on your GST registration, PAN card, or other official documents.",
+      "Avoid using abbreviations or short forms unless they are part of the registered name.",
+      "Double-check the spelling and capitalization to ensure it matches your official records."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your business registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your business registration number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is the unique identification number assigned to your business by the government, such as your GST registration number or PAN (Permanent Account Number).",
+    "guidanceTitle": "Guidance for Providing Business Registration Number",
+    "guidanceTips": [
+      "Ensure you enter the exact 10-15 character alphanumeric business registration number as issued by the government.",
+      "Common business registration numbers in India include the GST registration number (15 characters) and the PAN (Permanent Account Number, 10 characters).",
+      "Double-check that the number you provide matches the official documentation for your business."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your company's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number assigned to your business by the Indian government. It is mandatory for all businesses in India to have a valid GST registration.",
+    "guidanceTitle": "Guidance for providing your GST number",
+    "guidanceTips": [
+      "Ensure you enter the exact 15-digit GST number as it appears on your GST registration certificate.",
+      "The GST number follows a specific format: XX-AAAAA-NNNN-A-Z-Z-NNNNNN, where 'XX' represents the state code, 'AAAAA' is the PAN-based business entity number, 'NNNN' is a unique number, and the last 6 digits are a unique serial number.",
+      "If you have recently registered for GST, make sure to use the new GST number and not the old VAT/Service Tax registration number."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your company's Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "The PAN is a unique 10-digit alphanumeric number issued by the Income Tax Department of India. It is mandatory for all businesses to have a valid PAN for tax and regulatory purposes.",
+    "guidanceTitle": "Guidance for Providing PAN Number",
+    "guidanceTips": [
+      "The PAN number should be entered exactly as it appears on your company's registration documents, without any spaces or hyphens.",
+      "Ensure that the PAN number you provide is currently active and registered under your business name.",
+      "If you do not have a PAN number yet, you will need to apply for one before proceeding with this insurance application."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business activity or industry of your organization?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type/industry",
+    "options": [
+      "Manufacturing",
+      "Retail",
+      "Services",
+      "Construction",
+      "IT/ITES",
+      "Healthcare",
+      "Education",
+      "Hospitality",
+      "Real Estate",
+      "Transportation",
+      "Agriculture",
+      "Energy/Utilities",
+      "Chemicals/Petrochemicals",
+      "Mining/Metals",
+      "Other (please specify)"
+    ],
+    "helperText": "Select the option that best describes your primary business activity or industry.",
+    "guidanceTitle": "Guidance on Selecting Business Type/Industry",
+    "guidanceTips": [
+      "Choose the industry that most closely matches your organization's core business activities.",
+      "If your business operates in multiple industries, select the one that accounts for the majority of your revenue or operations.",
+      "If your business does not fit into any of the provided options, select 'Other' and specify your industry in the text field."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your business was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your business was officially registered or started operations.",
+    "guidanceTitle": "Guidance for Entering Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment should be the year your business was officially registered or started operations, not the year you obtained your GST or PAN registration.",
+      "For businesses that have been operating for many years, please enter the original year of establishment, even if the ownership or legal structure has changed over time.",
+      "Ensure you enter a valid 4-digit year between 1900 and the current year. Do not use a 2-digit year or leave any digits blank."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your organization?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 10000
+    },
+    "helperText": "Please provide the exact number of employees in your organization. This information is required to accurately assess your pollution legal liability coverage needs.",
+    "guidanceTitle": "Guidance for Providing the Number of Employees",
+    "guidanceTips": [
+      "The number of employees should include all full-time, part-time, and contract workers in your organization.",
+      "Ensure that the number you provide is the current, accurate count of employees and not an estimate or range.",
+      "This information is crucial for the insurance provider to determine the appropriate coverage limits and premium for your pollution legal liability policy."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to calculate the appropriate insurance coverage.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the revenue figure includes all sources of income for your business, including sales, services, and any other revenue streams.",
+      "If your company's fiscal year is different from the calendar year, provide the revenue for the most recently completed fiscal year."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the complete address of your business?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your business address",
+    "validation": {
+      "minLength": 10,
+      "maxLength": 300
+    },
+    "helperText": "Provide the full address including street, city, state, and PIN code.",
+    "guidanceTitle": "Guidance for Entering Business Address",
+    "guidanceTips": [
+      "Include the building number, street name, locality, city, state, and PIN code.",
+      "Ensure the address matches your GST and PAN registration details.",
+      "Provide the address where the insured operations are conducted."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where the business operations are located?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the city name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the exact city name where the business is located.",
+    "guidanceTitle": "Guidance for Entering the City",
+    "guidanceTips": [
+      "Enter the full city name, not abbreviations or short forms.",
+      "Ensure the spelling is accurate as per official records.",
+      "If the business has multiple locations, provide the primary city of operations."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your business located?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your state",
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your business is located.",
+    "guidanceTitle": "Guidance for Selecting the State",
+    "guidanceTips": [
+      "Choose the state that matches the registered address of your business.",
+      "If your business has multiple locations, select the state where your primary operations are based.",
+      "Ensure that the state selected matches the information provided in your GST registration and other official documents."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN code of the location where the business operations are conducted?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The PIN code is a 6-digit postal code used in India to facilitate mail delivery. It is an important identifier for your business location.",
+    "guidanceTitle": "Guidance for Entering the PIN Code",
+    "guidanceTips": [
+      "The PIN code must be a 6-digit number without any spaces or special characters.",
+      "Ensure you enter the correct PIN code for the location where your business operations are conducted, as this information is required for insurance coverage.",
+      "You can find the PIN code for your business address by searching online or contacting your local post office."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "Who is the primary contact person for this insurance policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the name of the person who will be the main point of contact for this insurance policy.",
+    "guidanceTitle": "Guidance for Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name of the primary contact person, including first, middle, and last name.",
+      "This should be an authorized representative of the business who has the authority to make decisions related to the insurance policy.",
+      "Ensure the name provided matches the government-issued ID (such as PAN card or Aadhaar) of the contact person."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your business email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "name@business.com",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please provide a valid business email address. This will be used for all communication regarding your insurance policy.",
+    "guidanceTitle": "Entering Your Business Email Address",
+    "guidanceTips": [
+      "Use your official business email address, not a personal email.",
+      "Ensure the email address is spelled correctly without any typos.",
+      "Avoid using generic email addresses like info@, contact@, etc. Use a specific individual's email if possible."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "What is your business's primary contact phone number?",
+    "inputType": "phone",
+    "required": true,
+    "placeholder": "Enter your 10-digit mobile or landline number",
+    "validation": {
+      "pattern": "^[6-9]\\d{9}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "Please provide a valid 10-digit phone number where you can be reached. This will be used for all communication regarding your policy.",
+    "guidanceTitle": "Providing your business phone number",
+    "guidanceTips": [
+      "Enter your primary business contact number, which can be a mobile or landline.",
+      "The number should be 10 digits long and start with 6, 7, 8, or 9.",
+      "Ensure the number provided is active and regularly monitored, as this will be the primary way for the insurance provider to reach you."
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "When would you like the pollution legal liability policy to start?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the next 12 months.",
+    "guidanceTitle": "Selecting the Policy Start Date",
+    "guidanceTips": [
+      "Choose a start date that aligns with your business operations and risk management needs.",
+      "Ensure the start date is not in the past, as policies cannot be backdated.",
+      "Consider any upcoming business events or activities that may impact the optimal policy period."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "What is the desired end date for the pollution legal liability insurance policy?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-04-01",
+      "max": "2024-03-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select the desired end date for the coverage.",
+    "guidanceTitle": "Guidance for Selecting the Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be 1 year from the desired start date of coverage.",
+      "Ensure the end date falls within the current Indian financial year (April 1st to March 31st).",
+      "Consider your business operations and potential pollution risks when selecting the appropriate policy period."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total coverage amount required for your pollution legal liability insurance policy?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter coverage amount in INR",
+    "validation": {
+      "min": 1000000,
+      "max": 500000000
+    },
+    "helperText": "The coverage amount should be the total limit of liability you need for your business operations. This typically ranges from 10 million INR to 500 million INR based on your risk exposure.",
+    "guidanceTitle": "Determining the Right Coverage Amount",
+    "guidanceTips": [
+      "Consider your business activities, locations, and potential pollution risks to estimate the maximum liability you could face.",
+      "Review your current insurance policies and claims history to understand your past exposures.",
+      "Consult with your insurance broker or risk management advisor to determine an appropriate coverage limit based on your specific needs.",
+      "Keep in mind that higher coverage limits will result in higher premiums, so balance your risk tolerance with the cost of coverage."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "Who is your current provider for pollution legal liability insurance?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact name of the insurance company currently providing your pollution legal liability coverage.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Be sure to enter the full legal name of the insurance company, not just an abbreviation or nickname.",
+      "If you have recently switched providers, enter the name of your previous insurer here.",
+      "Providing the current provider name helps us understand your insurance history and needs."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous claims related to pollution liability in the last 5 years.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims",
+    "validation": {
+      "maxLength": 1000
+    },
+    "helperText": "Provide a brief summary of any claims made, the amounts involved, and the current status.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed as possible in describing the nature of the previous claims, including the type of pollution incident, the location, the date, and the amount claimed.",
+      "Mention whether the claims were successfully settled, are still pending, or were denied, and provide the reasons if known.",
+      "If there are no previous claims, simply state 'No previous claims' in the field.",
+      "Accurate disclosure of previous claims history is important for the insurer to assess the risk and provide appropriate coverage."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "Please describe the risk management measures in place to mitigate pollution-related risks for your business operations.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Provide details on your pollution prevention, monitoring, and emergency response procedures",
+    "helperText": "Describe the specific steps and systems you have implemented to manage and control pollution risks.",
+    "guidanceTitle": "Guidance on Effective Risk Management Measures",
+    "guidanceTips": [
+      "Outline your pollution prevention and control measures, such as waste treatment, spill containment, and emissions control.",
+      "Explain your environmental monitoring and reporting procedures to ensure compliance with regulations.",
+      "Detail your emergency response plan and procedures to mitigate the impact of any pollution incidents.",
+      "Highlight any certifications or accreditations your business has related to environmental management and sustainability."
+    ]
+  }
+]

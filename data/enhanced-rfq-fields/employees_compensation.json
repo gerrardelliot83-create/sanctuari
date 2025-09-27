@@ -1,0 +1,459 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your company's registered name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your company as per the PAN card or GST registration.",
+    "guidanceTitle": "Tips for Entering Company Name",
+    "guidanceTips": [
+      "Enter the full legal name of your company, including any prefixes or suffixes like 'Private Limited', 'LLP', etc.",
+      "Ensure the name matches your PAN card and GST registration documents exactly.",
+      "Avoid using abbreviations or short forms unless they are part of your registered name."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your business registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your business registration number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is the unique identification number assigned to your business by the government, such as your GST registration number or PAN (Permanent Account Number).",
+    "guidanceTitle": "Guidance for Providing Business Registration Number",
+    "guidanceTips": [
+      "Ensure you enter the exact 10-15 character alphanumeric business registration number as it appears on your official documents.",
+      "Common business registration numbers in India include the GST registration number (15 characters) and the PAN (10 characters).",
+      "Double-check your entry to avoid any typos or mistakes, as this information is crucial for your insurance policy."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your company's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number issued by the Government of India for your business. This is a mandatory requirement for availing the employees' compensation insurance policy.",
+    "guidanceTitle": "Guidelines for providing your GST number",
+    "guidanceTips": [
+      "The GST number should be a valid 15-digit number as per the prescribed format.",
+      "Ensure that the GST number you provide matches the one registered for your business with the tax authorities.",
+      "If you have recently registered for GST, please use the new GST number and not the old VAT/Service Tax registration number."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your company's Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "PAN is a unique 10-digit alphanumeric number issued by the Income Tax Department of India. It is mandatory for all businesses to have a valid PAN for tax and regulatory purposes.",
+    "guidanceTitle": "Guidance for Entering PAN Number",
+    "guidanceTips": [
+      "The PAN number should be entered exactly as it appears on your company's registration documents.",
+      "PAN numbers always start with 5 uppercase letters followed by 4 digits and 1 uppercase letter.",
+      "Ensure there are no spaces, hyphens, or special characters in the PAN number."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business activity or industry of your organization?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type",
+    "options": [
+      "Manufacturing",
+      "Retail",
+      "Services",
+      "IT/ITES",
+      "Construction",
+      "Healthcare",
+      "Education",
+      "Agriculture",
+      "Hospitality",
+      "Transportation",
+      "Financial Services",
+      "Other (please specify)"
+    ],
+    "helperText": "Select the option that best describes your primary business activity.",
+    "guidanceTitle": "Guidance on Selecting Business Type/Industry",
+    "guidanceTips": [
+      "Choose the industry that most closely matches your organization's core business activities.",
+      "If your business falls under multiple categories, select the one that accounts for the majority of your revenue or operations.",
+      "If your business type is not listed, select 'Other' and provide a brief description in the next field."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your business was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your business was officially registered or started operations.",
+    "guidanceTitle": "Guidance for Entering Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment should be the year your business was officially registered or started operations, not the year you started planning the business.",
+      "If you're not sure of the exact year, provide your best estimate based on official records or founding documents.",
+      "The year should be a 4-digit number between 1900 and the current year. Do not enter a range of years."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your organization?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 10000
+    },
+    "helperText": "Provide the total number of employees, including full-time, part-time, and contractual workers.",
+    "guidanceTitle": "Guidance for Entering the Number of Employees",
+    "guidanceTips": [
+      "The number of employees is a critical factor in determining the employees' compensation insurance premium.",
+      "Ensure that you provide the exact number of employees as of the policy start date. Do not include any employees who have left the organization.",
+      "If you have seasonal or temporary workers, include them in the total count as well."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to calculate the appropriate insurance coverage and premium.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the revenue figure includes all sources of income for your business, including sales, services, and any other revenue streams.",
+      "If your company's financial year is different from the calendar year, provide the revenue for the most recently completed financial year."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the complete address of your business?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your business address",
+    "validation": {
+      "minLength": 10,
+      "maxLength": 200
+    },
+    "helperText": "Provide the full address including street, city, state, and PIN code.",
+    "guidanceTitle": "Guidance for Entering Business Address",
+    "guidanceTips": [
+      "Include the complete address with all relevant details like building name, street, area, city, state, and PIN code.",
+      "Ensure the address matches the one registered with government authorities like GST and PAN.",
+      "Provide the address where the majority of your business operations are conducted."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where your business is located?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your city",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "options": [
+      "Mumbai",
+      "Delhi",
+      "Bangalore",
+      "Chennai",
+      "Kolkata",
+      "Hyderabad",
+      "Ahmedabad",
+      "Pune",
+      "Surat",
+      "Jaipur",
+      "Lucknow",
+      "Kanpur",
+      "Nagpur",
+      "Indore",
+      "Thane",
+      "Bhopal",
+      "Visakhapatnam",
+      "Patna",
+      "Vadodara",
+      "Ghaziabad",
+      "Ludhiana",
+      "Agra",
+      "Nashik",
+      "Faridabad",
+      "Meerut"
+    ],
+    "helperText": "Select the city where your business is located. This is required for accurate insurance coverage and pricing.",
+    "guidanceTitle": "Guidance for Filling the City Field",
+    "guidanceTips": [
+      "Provide the exact city where your business is registered and operating from.",
+      "If your business has multiple locations, select the primary or headquarters location.",
+      "Ensure the city name is spelled correctly and matches your business registration documents."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your business located?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your state",
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your business is registered and operating.",
+    "guidanceTitle": "Guidance for Selecting the State",
+    "guidanceTips": [
+      "Ensure you select the correct state where your business is headquartered or has its primary operations.",
+      "The state selected should match the address registered with the government authorities like GST and PAN.",
+      "If your business operates in multiple states, select the state where the majority of your employees are based."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN code of your business location?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The 6-digit PIN code is required to determine the applicable state and local taxes for your employees' compensation insurance policy.",
+    "guidanceTitle": "Entering the Correct PIN Code",
+    "guidanceTips": [
+      "The PIN code is a 6-digit number that uniquely identifies the geographic area where your business is located.",
+      "You can find the PIN code for your business address on any utility bill, bank statement, or by searching online using your city/town name.",
+      "Entering the correct PIN code is important to ensure the proper application of GST and other local taxes in your employees' compensation insurance policy."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "Who is the primary contact person for this insurance policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the full name of the person who will be the primary point of contact for this insurance policy.",
+    "guidanceTitle": "Guidance for Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name of the contact person, including first, middle (if applicable), and last name.",
+      "Ensure the name matches the government-issued ID (such as PAN card or Aadhaar) of the contact person.",
+      "Avoid using abbreviations or nicknames in the name field."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your official business email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "name@company.com",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please provide the email address registered with your business. This will be used for all policy-related communication.",
+    "guidanceTitle": "Entering your business email address",
+    "guidanceTips": [
+      "Use the official email address associated with your company, not a personal email.",
+      "Ensure the email address is spelled correctly without any typos.",
+      "If you have multiple business email addresses, provide the primary one used for official communications."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "What is the primary contact phone number for your business?",
+    "inputType": "phone",
+    "required": true,
+    "placeholder": "Enter your 10-digit mobile number",
+    "validation": {
+      "pattern": "^[6-9]\\d{9}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "Please provide a valid 10-digit mobile number starting with 6, 7, 8, or 9.",
+    "guidanceTitle": "Guidance for Providing Your Business Phone Number",
+    "guidanceTips": [
+      "The phone number should be a valid 10-digit mobile number registered in India.",
+      "Ensure the number provided is the primary contact number for your business.",
+      "This number may be used by the insurance provider to reach out to you regarding your policy."
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "When would you like the employees' compensation policy to start?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-04-01",
+      "max": "2024-03-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the current financial year (April 1st to March 31st).",
+    "guidanceTitle": "Guidance for Selecting the Policy Start Date",
+    "guidanceTips": [
+      "The policy start date should be within the current financial year, which runs from April 1st to March 31st.",
+      "Consider the date when you want the coverage to begin for your employees. This is typically the date when you onboard new employees or when your previous policy expires.",
+      "Ensure that the policy start date is not backdated, as this may not be allowed by the insurance provider. Select a date that is at least a few days in the future to allow for processing time."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "When does the employees' compensation insurance policy end?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "Enter the date when the current policy period ends. The policy is typically valid for 1 year.",
+    "guidanceTitle": "Guidance for Entering the Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be exactly 1 year after the policy start date.",
+      "Ensure the end date is within the valid range of 1 year from the current date.",
+      "Double-check the date format is correct (DD/MM/YYYY)."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total coverage amount required for your employees' compensation insurance?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the total coverage amount",
+    "validation": {
+      "min": 100000,
+      "max": 50000000
+    },
+    "helperText": "The coverage amount should be based on the total number of employees and their average salaries. The minimum coverage required is ₹1,00,000 as per Indian regulations.",
+    "guidanceTitle": "Guidance for Determining Coverage Amount",
+    "guidanceTips": [
+      "Calculate the coverage amount by multiplying the total number of employees by their average annual salary.",
+      "Consider any additional coverage required for high-risk or specialized roles within your organization.",
+      "Review the regulatory minimum coverage requirements and ensure your requested amount meets or exceeds these standards."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "Who is your current insurance provider for employees' compensation coverage?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact name of the insurance company currently providing your employees' compensation coverage.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Enter the full legal name of the insurance company, not just the brand name.",
+      "If you have multiple policies, provide the name of the insurance provider for your primary employees' compensation coverage.",
+      "Ensure the information you provide is accurate, as it will be used to verify your current coverage."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous insurance claims made by your business in the last 3 years.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims",
+    "validation": {
+      "maxLength": 1000
+    },
+    "helperText": "Provide a brief summary of any insurance claims made, including the claim amount, date, and reason.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed as possible in describing the nature and outcome of any previous claims.",
+      "Mention the policy under which the claim was made, the claim amount, and the date the claim was filed.",
+      "Explain the reason for the claim, such as property damage, employee injury, or liability issues."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "Please describe the risk management measures in place for your employees' compensation coverage.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Describe your risk management measures...",
+    "validation": {
+      "minLength": 50,
+      "maxLength": 500
+    },
+    "helperText": "Provide details on the safety protocols, training programs, and other measures you have implemented to manage risks for your employees.",
+    "guidanceTitle": "Guidance on Risk Management Measures",
+    "guidanceTips": [
+      "Outline the specific steps you take to identify, assess, and mitigate risks related to employee injuries and illnesses.",
+      "Explain how you ensure compliance with relevant labor laws and regulations, such as the Employees' Compensation Act.",
+      "Describe any safety committees, emergency response plans, or other initiatives you have in place to promote a safe work environment."
+    ]
+  }
+]

@@ -1,0 +1,437 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the registered company name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your company as per the Certificate of Incorporation or Memorandum of Association.",
+    "guidanceTitle": "Guidance for Entering Company Name",
+    "guidanceTips": [
+      "Enter the full legal name of your company, including any prefixes, suffixes, or abbreviations (e.g., 'Pvt. Ltd.', 'LLP', etc.).",
+      "Ensure the name matches the documentation provided for your business registration, PAN card, and GST registration.",
+      "Avoid using abbreviations or nicknames, unless they are officially part of your registered company name."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your company's Business Registration Number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your Business Registration Number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is typically your company's Goods and Services Tax (GST) Identification Number or Permanent Account Number (PAN).",
+    "guidanceTitle": "Guidance for Business Registration Number",
+    "guidanceTips": [
+      "The Business Registration Number is a unique identifier assigned to your company by the government. This is typically your GST number or PAN.",
+      "The number should be 10-15 characters long and contain a mix of letters and numbers, without any special characters.",
+      "Ensure that you enter the exact number as it appears on your company's registration documents or certificates."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your company's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number issued by the Government of India for your business. This is a mandatory requirement for public offering of securities.",
+    "guidanceTitle": "Guidance for providing your GST number",
+    "guidanceTips": [
+      "Ensure you enter the exact 15-digit GST number as it appears on your GST registration certificate.",
+      "The GST number follows a specific format - the first 2 digits represent the state code, followed by a 10-digit PAN number, then a 1-digit entity number, and finally a 2-digit registration number.",
+      "Double-check your GST number to avoid any errors, as this is a critical piece of information required for the public offering process."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your company's Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "The PAN is a unique 10-digit alphanumeric number issued by the Income Tax Department of India. It is mandatory for all businesses to have a valid PAN for tax and regulatory purposes.",
+    "guidanceTitle": "Guidance for Providing PAN Number",
+    "guidanceTips": [
+      "The PAN number should be entered exactly as it appears on your company's registration documents, without any spaces or hyphens.",
+      "Ensure that the PAN number you provide is currently active and registered under your company's legal name.",
+      "If you do not have a PAN number yet, you will need to apply for one before proceeding with this insurance application."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business type or industry of your organization?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type/industry",
+    "options": [
+      "Manufacturing",
+      "Retail",
+      "Services",
+      "IT/Technology",
+      "Healthcare",
+      "Education",
+      "Real Estate",
+      "Construction",
+      "Agriculture",
+      "Finance/Banking",
+      "Transportation",
+      "Hospitality",
+      "Energy/Utilities",
+      "Telecommunications",
+      "Other (please specify)"
+    ],
+    "helperText": "Select the option that best describes your primary business activities.",
+    "guidanceTitle": "Guidance on Selecting Business Type/Industry",
+    "guidanceTips": [
+      "Choose the industry that most closely matches your organization's core business activities.",
+      "If your business operates in multiple industries, select the one that accounts for the majority of your revenue or operations.",
+      "If your business type is not listed, select 'Other' and provide a brief description in the next field."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your company was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your company was officially registered or started operations.",
+    "guidanceTitle": "Guidance for Entering Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment should be the exact year your company was registered or started operations, not an approximate year.",
+      "Ensure you enter a valid 4-digit year between 1900 and the current year.",
+      "This information is important for the insurance provider to understand the history and longevity of your business."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your organization?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 10000
+    },
+    "helperText": "Provide the current total number of employees in your organization. This information is required to assess the risk profile for your public offering securities insurance policy.",
+    "guidanceTitle": "Guidance for Providing the Number of Employees",
+    "guidanceTips": [
+      "Enter the exact number of employees, including full-time, part-time, and contractual workers.",
+      "The number of employees is a key factor in determining the appropriate insurance coverage and premium for your public offering securities policy.",
+      "Be accurate in reporting the employee count, as this information will be verified during the underwriting process. Providing inaccurate information may impact the policy terms or coverage."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to assess the appropriate insurance coverage.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the revenue amount includes all sources of income, such as sales, services, and other business activities.",
+      "If your company's financial year is different from the calendar year, provide the revenue for the most recent completed financial year."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the registered business address of your company?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your complete business address",
+    "validation": {
+      "minLength": 50,
+      "maxLength": 300
+    },
+    "helperText": "Provide the full registered address of your business, including the building name, street, locality, city, state, and PIN code.",
+    "guidanceTitle": "Guidance for Entering Business Address",
+    "guidanceTips": [
+      "Ensure the address matches your company's registration documents like GST certificate, PAN card, etc.",
+      "Include all relevant details like building name, street, locality, city, state, and PIN code.",
+      "Double-check the spelling and accuracy of the address to avoid any delays in policy issuance."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where your business is located?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your city",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the exact city name where your business is registered and operating from.",
+    "guidanceTitle": "Guidance for Entering the City",
+    "guidanceTips": [
+      "Enter the full city name without any abbreviations or short forms.",
+      "Ensure the spelling is accurate as per your business registration documents.",
+      "If your business has multiple locations, provide the city of your registered/head office address."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your business registered?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your state",
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your business is registered.",
+    "guidanceTitle": "Guidance for Selecting the State",
+    "guidanceTips": [
+      "Ensure that the state selected matches the address on your business registration documents, such as the GST certificate or PAN card.",
+      "If your business has multiple locations across different states, select the state where your registered office or headquarters is located.",
+      "If you are unsure about the state, refer to your business registration documents or consult with your accountant or legal advisor."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN (Postal Index Number) code of your business location?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The 6-digit PIN code is required to identify the exact location of your business for insurance coverage purposes.",
+    "guidanceTitle": "Guidance for Entering the Correct PIN Code",
+    "guidanceTips": [
+      "The PIN code is a 6-digit number assigned by the Indian postal department to identify a specific geographic area.",
+      "You can find the PIN code for your business location on any official document like utility bills, bank statements, or by searching online using your city/town name.",
+      "Ensure you enter the PIN code accurately as it is an important identifier for your insurance policy and any future claims processing."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "What is the name of the primary contact person for this public offering?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the full legal name of the primary point of contact for this public offering.",
+    "guidanceTitle": "Guidance for Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name as it appears on official documents.",
+      "Avoid using initials or nicknames.",
+      "Ensure the name matches the details provided in other sections of the application."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your official business email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "name@company.com",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please provide the email address registered with your business. This will be used for all communication regarding your public offering.",
+    "guidanceTitle": "Entering your business email address",
+    "guidanceTips": [
+      "Use the official email address associated with your company, not a personal email.",
+      "Ensure the email address is spelled correctly and does not contain any typos.",
+      "If you have multiple business email addresses, provide the one you use for official communications."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "What is your business's primary contact phone number?",
+    "inputType": "phone",
+    "required": true,
+    "placeholder": "Enter your 10-digit phone number",
+    "validation": {
+      "pattern": "^[6-9]\\d{9}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "Please provide a valid 10-digit mobile or landline number starting with 6, 7, 8, or 9.",
+    "guidanceTitle": "Guidance for Phone Number",
+    "guidanceTips": [
+      "The phone number should be the primary contact number for your business.",
+      "Ensure the number is active and regularly monitored, as the insurance provider may need to reach you regarding your policy.",
+      "If you have a landline number, you can provide that. Otherwise, a mobile number is preferred."
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "What is the desired start date for your public offering securities insurance policy?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-01-01"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the next 12 months.",
+    "guidanceTitle": "Guidance for Selecting the Policy Start Date",
+    "guidanceTips": [
+      "Choose a start date that aligns with your planned public offering timeline.",
+      "The policy should start on or before the date of your public offering to ensure adequate coverage.",
+      "Consider any regulatory or compliance requirements that may impact the policy start date."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "What is the desired end date for the public offering securities insurance policy?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select the desired end date for the coverage.",
+    "guidanceTitle": "Guidance for Selecting the Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be 1 year from the start of the policy period.",
+      "Ensure the end date falls within the current financial year, as insurance policies are typically renewed annually.",
+      "Consider your business needs and the duration of the public offering to determine the appropriate policy end date."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total coverage amount required for your public offering securities?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the coverage amount in INR",
+    "validation": {
+      "min": 1000000,
+      "max": 1000000000
+    },
+    "helperText": "The coverage amount should be between INR 10 lakhs to INR 100 crores, as per industry standards for public offering securities insurance.",
+    "guidanceTitle": "Guidance for Determining Coverage Amount",
+    "guidanceTips": [
+      "Consider the total value of securities you plan to offer to the public.",
+      "Factor in the potential risks and liabilities associated with the public offering.",
+      "Consult with your financial advisor or legal counsel to determine the appropriate coverage amount.",
+      "Keep in mind that the coverage amount should be sufficient to protect your business in case of any claims or lawsuits related to the public offering."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "Who is your current insurance provider for your public offering securities?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the full legal name of your current insurance provider for your public offering securities coverage.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Ensure you enter the complete legal name of your current insurance provider, as it appears on your policy documents.",
+      "If you have multiple insurance providers for your public offering securities, list the primary provider.",
+      "Avoid abbreviations or short forms, as the insurance company name is required for verification purposes."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous insurance claims made by your business in the last 5 years.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims, including claim amounts, dates, and reasons",
+    "validation": {
+      "maxLength": 1000
+    },
+    "helperText": "Provide comprehensive details of any past insurance claims to help us assess your risk profile accurately.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed as possible in describing the nature, dates, and amounts of any previous insurance claims.",
+      "Mention the insurance policies under which the claims were made, and the outcomes (e.g., claims paid, denied, or pending).",
+      "Explain the reasons for the claims and the steps taken to mitigate similar risks in the future.",
+      "Transparency about your claims history will help us provide the most suitable coverage and pricing for your business."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "Please describe the risk management measures in place for your public offering securities.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Provide details on your risk management framework, processes, and controls",
+    "validation": {
+      "minLength": 100,
+      "maxLength": 1000
+    },
+    "helperText": "Outline the key elements of your risk management program for the public offering securities, including identification, assessment, mitigation, and monitoring of risks.",
+    "guidanceTitle": "Guidance on Effective Risk Management for Public Offering Securities",
+    "guidanceTips": [
+      "Clearly explain the risk governance structure, including roles and responsibilities of the board, management, and risk committees.",
+      "Describe the risk assessment methodology used to identify, analyze, and prioritize risks related to the public offering.",
+      "Outline the risk mitigation strategies and controls implemented, such as limits, hedging, insurance, and business continuity planning.",
+      "Discuss the risk monitoring and reporting processes to ensure timely identification and escalation of issues."
+    ]
+  }
+]

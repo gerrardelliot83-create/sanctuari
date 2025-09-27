@@ -1,0 +1,447 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your company's registered name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your business as per your GST/PAN documents.",
+    "guidanceTitle": "Tips for Entering Company Name",
+    "guidanceTips": [
+      "Enter the full legal name of your company as it appears on your GST registration certificate and PAN card.",
+      "Avoid using abbreviations, acronyms, or informal names. The name should match your official business documents.",
+      "If your company has multiple locations, use the name of the primary/registered office location."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your business registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your business registration number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is the unique identification number assigned to your business by the government. It is typically a combination of letters and numbers.",
+    "guidanceTitle": "Guidance for Providing Business Registration Number",
+    "guidanceTips": [
+      "The business registration number is typically a 10-15 digit alphanumeric code that uniquely identifies your business entity.",
+      "This number is often referred to as the Goods and Services Tax Identification Number (GSTIN) or the Permanent Account Number (PAN).",
+      "Make sure to enter the exact number as it appears on your business registration documents or certificates."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your business's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number assigned to your business by the Indian government. It is mandatory for all businesses registered under the GST Act.",
+    "guidanceTitle": "Guidance for providing your GST number",
+    "guidanceTips": [
+      "Ensure you enter the exact 15-digit GST number as it appears on your GST registration certificate.",
+      "The GST number follows a specific format: XX-AAAAA-NNNN-Z-Y-Z, where XX is the state code, AAAAA is the PAN-based business entity number, NNNN is a unique number, and Z and Y are check digits.",
+      "If you have recently registered for GST, make sure to use the new GST number and not the old VAT/Service Tax registration number."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your company's Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "PAN is a unique 10-digit alphanumeric number issued by the Income Tax Department of India. It is mandatory for all businesses to have a valid PAN.",
+    "guidanceTitle": "Guidance for Providing PAN Number",
+    "guidanceTips": [
+      "The PAN number should be in the format: ABCDE1234X, where A-E are uppercase letters and 1234 are digits.",
+      "Ensure that the PAN number you provide is registered in the name of your business entity.",
+      "If you do not have a PAN number yet, you can apply for one through the Income Tax Department's e-filing portal."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business type or industry of your organization?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type",
+    "options": [
+      "Manufacturing",
+      "Retail",
+      "Service",
+      "IT/ITES",
+      "Healthcare",
+      "Education",
+      "Real Estate",
+      "Hospitality",
+      "Construction",
+      "Agriculture",
+      "Other"
+    ],
+    "helperText": "Select the option that best describes your primary business activities.",
+    "guidanceTitle": "Guidance on selecting the right business type",
+    "guidanceTips": [
+      "Choose the industry that accounts for the majority of your revenue and operations.",
+      "If your business activities span multiple industries, select the one that is the core focus.",
+      "If your business type is not listed, select 'Other' and provide more details in the next field."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your business was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your business was officially registered or started operations.",
+    "guidanceTitle": "Guidance for Entering Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment should be the year your business was officially registered or started operations, not the year you started planning the business.",
+      "If you're not sure of the exact year, provide your best estimate based on official records or founding documents.",
+      "The year should be a 4-digit number between 1900 and the current year. Do not enter a range of years."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your business?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 1000
+    },
+    "helperText": "Please provide the current total number of employees in your business. This information is required to calculate the appropriate insurance coverage and premium.",
+    "guidanceTitle": "Guidance on Providing the Number of Employees",
+    "guidanceTips": [
+      "Count all full-time, part-time, and contractual employees working in your business.",
+      "Ensure the number you provide is the exact current total, not a range or estimate.",
+      "This information is crucial for the insurance provider to assess the risk and offer the right business package coverage."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to calculate the appropriate insurance coverage and premium.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the revenue figure includes all sources of income for your business, such as sales, services, and other operating revenue.",
+      "If your business operates on a fiscal year different from the calendar year, provide the revenue for the most recently completed fiscal year."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the complete address of your business?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your business address",
+    "validation": {
+      "minLength": 10,
+      "maxLength": 200
+    },
+    "helperText": "Provide the full address including street, city, state, and PIN code.",
+    "guidanceTitle": "Tips for Entering Your Business Address",
+    "guidanceTips": [
+      "Include the building number, street name, locality, city, state, and PIN code.",
+      "Ensure the address matches your GST and PAN registration documents.",
+      "Provide the address where the majority of your business operations take place."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where your business is located?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your city",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "options": [
+      "Mumbai",
+      "Delhi",
+      "Bangalore",
+      "Chennai",
+      "Kolkata",
+      "Hyderabad",
+      "Ahmedabad",
+      "Pune",
+      "Surat",
+      "Jaipur",
+      "Lucknow",
+      "Kanpur",
+      "Nagpur",
+      "Indore",
+      "Thane",
+      "Bhopal",
+      "Visakhapatnam",
+      "Patna",
+      "Vadodara",
+      "Ghaziabad",
+      "Ludhiana",
+      "Agra",
+      "Nashik",
+      "Faridabad",
+      "Meerut"
+    ],
+    "helperText": "Select the city where your business is registered or headquartered.",
+    "guidanceTitle": "Guidance for Filling the City Field",
+    "guidanceTips": [
+      "Provide the exact city where your business is located, not the broader state or region.",
+      "If your business has multiple locations, select the primary or registered office address.",
+      "Ensure the city name is spelled correctly and matches the legal registration documents."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your business located?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your state",
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your business is registered and operating.",
+    "guidanceTitle": "Guidance for Selecting the State",
+    "guidanceTips": [
+      "Choose the state that matches the registered address of your business.",
+      "If your business operates in multiple states, select the state where your primary operations are located.",
+      "Ensure that the state selected matches the information provided in your GST registration and other official documents."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN code of your business location?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The PIN code is a 6-digit postal code used in India to facilitate mail delivery. Please enter the PIN code of your primary business location.",
+    "guidanceTitle": "Guidance for entering the PIN code",
+    "guidanceTips": [
+      "The PIN code must be a 6-digit number without any spaces or special characters.",
+      "The first digit cannot be 0, as Indian PIN codes start from 100001.",
+      "You can find the PIN code of your business location by searching online or contacting your local post office."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "Who is the primary contact person for this insurance policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "pattern": "^[a-zA-Z ]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the full legal name of the primary contact person for this policy.",
+    "guidanceTitle": "Guidance for Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name as it appears on government-issued ID documents like Aadhaar or PAN card.",
+      "Avoid using initials or nicknames. The name should match official records.",
+      "If the contact person is not an employee (e.g., insurance broker), provide their full legal name."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your business email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "name@business.com",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please provide a valid email address associated with your business. This will be used for all communication regarding your insurance policy.",
+    "guidanceTitle": "Entering a Valid Business Email Address",
+    "guidanceTips": [
+      "Use an email address that is associated with your registered business, not a personal email.",
+      "Ensure the email address is spelled correctly and does not contain any typos.",
+      "Avoid using generic email addresses like info@, contact@, or hello@. Use a more specific address if possible.",
+      "If you don't have a dedicated business email, consider setting one up with your domain name or a professional email service."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "Phone Number",
+    "inputType": "text",
+    "required": false,
+    "helperText": "Enter Phone Number",
+    "guidanceTitle": "Phone Number",
+    "guidanceTips": [
+      "Enter accurate information for Phone Number"
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "When would you like your business insurance policy to start?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the next 12 months.",
+    "guidanceTitle": "Selecting the Correct Policy Start Date",
+    "guidanceTips": [
+      "Choose a start date that aligns with your business operations and renewal preferences.",
+      "Ensure the start date is not in the past, as policies cannot be backdated.",
+      "Consider factors like your current insurance expiry, GST filing, and business planning when selecting the start date."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "When would you like the policy to end?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select the desired end date for your coverage.",
+    "guidanceTitle": "Guidance for Selecting the Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be 1 year from the start date of the coverage.",
+      "Ensure the end date falls within the current Indian financial year (April 1st to March 31st).",
+      "Consider your business operations and any seasonal factors that may impact your insurance needs."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total coverage amount required for your business package insurance?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the total coverage amount",
+    "validation": {
+      "min": 100000,
+      "max": 50000000
+    },
+    "helperText": "The coverage amount should be the total value of your business assets, inventory, and potential liabilities that you want to insure.",
+    "guidanceTitle": "Determining the Right Coverage Amount",
+    "guidanceTips": [
+      "Consider the total value of your business premises, equipment, furniture, inventory, and any potential legal liabilities.",
+      "Review your previous insurance policies or financial statements to estimate the appropriate coverage amount.",
+      "Keep in mind that the coverage amount should be sufficient to fully protect your business in case of any unforeseen events or claims."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "What is the name of your current insurance provider for your business?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact name of the insurance company that currently provides coverage for your business.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Be sure to enter the full legal name of the insurance company, not just a shortened version or abbreviation.",
+      "If you have multiple insurance policies, provide the name of the provider for your primary or most comprehensive business insurance policy.",
+      "Ensure the spelling and capitalization matches the official name used by the insurance provider."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous insurance claims made by your business in the last 5 years.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims",
+    "validation": {
+      "maxLength": 1000
+    },
+    "helperText": "Provide a brief summary of the nature, date, and amount of any previous insurance claims. This will help us assess the risk profile of your business.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed and accurate as possible when describing previous claims. This information is crucial for the insurer to evaluate your risk profile.",
+      "Include the policy number, claim date, nature of the claim (e.g., fire, theft, liability), and the amount claimed and/or settled.",
+      "If you have not made any previous claims, simply state 'No previous claims' in the field."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "Please describe the risk management measures in place for your business operations.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Describe your risk management practices",
+    "helperText": "Provide details on the safety, security, and risk mitigation measures implemented in your business.",
+    "guidanceTitle": "Guidance on Risk Management Measures",
+    "guidanceTips": [
+      "Outline the specific procedures, policies, and systems you have in place to identify, assess, and mitigate risks to your business operations.",
+      "Explain how you monitor and review your risk management practices to ensure they remain effective.",
+      "Highlight any industry-specific risk management certifications or standards your business has achieved, such as ISO 31000 or COSO ERM."
+    ]
+  }
+]

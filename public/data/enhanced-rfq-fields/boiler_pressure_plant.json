@@ -1,0 +1,427 @@
+[
+  {
+    "fieldName": "Company Name",
+    "question": "What is the legal name of your company?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your company's registered name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact registered name of your company as per the documents.",
+    "guidanceTitle": "Tips for Entering Company Name",
+    "guidanceTips": [
+      "Enter the full legal name of your company as it appears on your GST registration, PAN card, or other official documents.",
+      "Avoid using abbreviations, acronyms, or informal names. The name should match your official business registration.",
+      "If your company has multiple locations, use the name of the primary or registered office location."
+    ]
+  },
+  {
+    "fieldName": "Business Registration Number",
+    "question": "What is your business registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your business registration number",
+    "validation": {
+      "pattern": "^[A-Z0-9]{10,15}$",
+      "minLength": 10,
+      "maxLength": 15
+    },
+    "helperText": "This is the unique identification number assigned to your business by the government. It is typically a combination of letters and numbers.",
+    "guidanceTitle": "Providing Your Business Registration Number",
+    "guidanceTips": [
+      "The business registration number is typically a 10-15 character alphanumeric code issued by the government when you registered your business.",
+      "Ensure you enter the exact number as it appears on your business registration certificate or documents.",
+      "This number is important for verifying your business identity and eligibility for the insurance policy."
+    ]
+  },
+  {
+    "fieldName": "GST Number",
+    "question": "What is your business's Goods and Services Tax (GST) registration number?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 15-digit GST number",
+    "validation": {
+      "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+      "minLength": 15,
+      "maxLength": 15
+    },
+    "helperText": "The GST number is a unique 15-digit identification number assigned to your business by the Indian government. It is mandatory for all businesses registered under the GST regime.",
+    "guidanceTitle": "Guidance for providing your GST number",
+    "guidanceTips": [
+      "Ensure you enter the exact 15-digit GST number as it appears on your GST registration certificate.",
+      "The GST number follows a specific format: XX-AAAAA-NNNN-Z-Y-Z, where XX is the state code, AAAAA is the PAN-based business entity number, NNNN is a unique number, and Z and Y are check digits.",
+      "If you have recently registered for GST, make sure to use the new GST number and not the old VAT or service tax registration number."
+    ]
+  },
+  {
+    "fieldName": "PAN Number",
+    "question": "What is your Permanent Account Number (PAN)?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter your 10-digit PAN number",
+    "validation": {
+      "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "PAN is a unique 10-digit alphanumeric number issued by the Income Tax Department. It is mandatory for various financial transactions in India.",
+    "guidanceTitle": "How to find and enter your PAN number correctly",
+    "guidanceTips": [
+      "Your PAN number is printed on your PAN card, which you would have received when you applied for a PAN.",
+      "Ensure that you enter the PAN number exactly as it appears on your PAN card, including the uppercase letters and digits.",
+      "Double-check the PAN number before submitting the form to avoid any errors or delays in processing your insurance application."
+    ]
+  },
+  {
+    "fieldName": "Business Type/Industry",
+    "question": "What is the primary business activity or industry of your organization?",
+    "inputType": "select",
+    "required": true,
+    "placeholder": "Select your business type",
+    "options": [
+      "Manufacturing",
+      "Retail",
+      "Service",
+      "Construction",
+      "IT/ITES",
+      "Healthcare",
+      "Education",
+      "Hospitality",
+      "Agriculture",
+      "Other"
+    ],
+    "helperText": "Select the option that best describes your primary business activity.",
+    "guidanceTitle": "Guidance on Selecting Business Type/Industry",
+    "guidanceTips": [
+      "Choose the industry that aligns most closely with your core business operations.",
+      "If your business activities span multiple industries, select the one that accounts for the majority of your revenue or operations.",
+      "If your business type is not listed, select 'Other' and provide a brief description in the next field."
+    ]
+  },
+  {
+    "fieldName": "Year of Establishment",
+    "question": "What is the year your business was established?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "YYYY",
+    "validation": {
+      "pattern": "^\\d{4}$",
+      "min": "1900",
+      "max": "2023"
+    },
+    "helperText": "Enter the 4-digit year your business was officially registered or started operations.",
+    "guidanceTitle": "Guidance for Entering Year of Establishment",
+    "guidanceTips": [
+      "The year of establishment should be the exact year your business was registered or started operations, not an approximate year.",
+      "Ensure you enter a valid 4-digit year between 1900 and the current year.",
+      "This information is important for the insurance provider to understand the history and longevity of your business."
+    ]
+  },
+  {
+    "fieldName": "Number of Employees",
+    "question": "What is the total number of employees in your organization?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the exact number of employees",
+    "validation": {
+      "min": 1,
+      "max": 10000
+    },
+    "helperText": "Provide the current total number of employees in your organization. This information is required to assess the risk profile and provide an accurate insurance quote.",
+    "guidanceTitle": "Guidance for Providing the Number of Employees",
+    "guidanceTips": [
+      "Count all full-time, part-time, and contractual employees working in your organization.",
+      "Ensure the number you provide is the exact current total, not an estimate or range.",
+      "This information is crucial for the insurance provider to evaluate the risk and offer a tailored quote for your business."
+    ]
+  },
+  {
+    "fieldName": "Annual Revenue",
+    "question": "What is your company's total annual revenue?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter your annual revenue in INR",
+    "validation": {
+      "min": 0,
+      "max": 999999999999
+    },
+    "helperText": "Please provide your company's total revenue for the last financial year. This information is required to calculate the appropriate insurance coverage and premium.",
+    "guidanceTitle": "Guidance for Providing Annual Revenue",
+    "guidanceTips": [
+      "Enter the exact annual revenue figure, do not provide a range.",
+      "Ensure the revenue figure includes all sources of income for your business, including sales, services, and any other revenue streams.",
+      "If your company's financial year is different from the calendar year, provide the revenue for the most recent completed financial year."
+    ]
+  },
+  {
+    "fieldName": "Business Address",
+    "question": "What is the complete address of your business premises?",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter your business address",
+    "validation": {
+      "minLength": 20,
+      "maxLength": 300
+    },
+    "helperText": "Provide the full address including street, locality, city, state, and PIN code.",
+    "guidanceTitle": "Tips for Entering Business Address",
+    "guidanceTips": [
+      "Include the complete address with all relevant details like building name, street, locality, city, state, and PIN code.",
+      "Ensure the address matches your GST and PAN registration documents.",
+      "If your business has multiple locations, provide the primary/registered office address."
+    ]
+  },
+  {
+    "fieldName": "City",
+    "question": "What is the city where the boiler/pressure plant is located?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter city name",
+    "validation": {
+      "pattern": "^[a-zA-Z\\s]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the exact city name where the boiler/pressure plant is situated.",
+    "guidanceTitle": "Guidance for Entering the City",
+    "guidanceTips": [
+      "Enter the full city name, not abbreviations or short forms.",
+      "Ensure the spelling is accurate as per official records.",
+      "If the plant is located in a suburb or locality, provide the main city name.",
+      "Avoid including any additional details like state or pincode in this field."
+    ]
+  },
+  {
+    "fieldName": "State",
+    "question": "In which state is your boiler/pressure plant located?",
+    "inputType": "select",
+    "required": true,
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Lakshadweep",
+      "Puducherry"
+    ],
+    "helperText": "Select the state where your boiler/pressure plant is located.",
+    "guidanceTitle": "Guidance for Selecting the State",
+    "guidanceTips": [
+      "Ensure you select the correct state where your boiler/pressure plant is physically located.",
+      "If your plant is located in a union territory, select the appropriate union territory from the list.",
+      "Provide the state information accurately as it is crucial for determining the applicable regulations and insurance requirements."
+    ]
+  },
+  {
+    "fieldName": "PIN Code",
+    "question": "What is the PIN code of the location where the boiler/pressure plant is installed?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter 6-digit PIN code",
+    "validation": {
+      "pattern": "^[1-9][0-9]{5}$",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "helperText": "The 6-digit PIN code is required to determine the location and assess the risk factors.",
+    "guidanceTitle": "Guidance for Entering the PIN Code",
+    "guidanceTips": [
+      "The PIN code is a 6-digit number that uniquely identifies the geographical location in India.",
+      "Ensure you enter the correct 6-digit PIN code for the exact location where the boiler/pressure plant is installed.",
+      "The PIN code can be found on utility bills, government documents, or by searching online using the address."
+    ]
+  },
+  {
+    "fieldName": "Contact Person Name",
+    "question": "What is the name of the primary contact person for this insurance policy?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter full name of contact person",
+    "validation": {
+      "pattern": "^[a-zA-Z ]+$",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "helperText": "Provide the full legal name of the primary point of contact for this insurance policy.",
+    "guidanceTitle": "Guidance for Entering Contact Person Name",
+    "guidanceTips": [
+      "Enter the full legal name as it appears on government-issued ID documents like Aadhaar or PAN card.",
+      "Avoid using initials or nicknames. Use the person's complete first and last name.",
+      "Ensure the name is spelled correctly and matches the contact person's official records."
+    ]
+  },
+  {
+    "fieldName": "Email Address",
+    "question": "What is your official business email address?",
+    "inputType": "email",
+    "required": true,
+    "placeholder": "name@business.com",
+    "validation": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "minLength": 6,
+      "maxLength": 320
+    },
+    "helperText": "Please provide the email address registered for your business. This will be used for all policy-related communication.",
+    "guidanceTitle": "Entering your business email address",
+    "guidanceTips": [
+      "Use the official email address associated with your registered business, not a personal email.",
+      "Ensure the email address is spelled correctly and does not contain any typos.",
+      "Avoid using generic email addresses like info@, contact@, or admin@. Use a more specific address if possible."
+    ]
+  },
+  {
+    "fieldName": "Phone Number",
+    "question": "What is your business's primary contact phone number?",
+    "inputType": "phone",
+    "required": true,
+    "placeholder": "Enter your 10-digit mobile or landline number",
+    "validation": {
+      "pattern": "^[6-9]\\d{9}$",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "helperText": "Please provide a valid 10-digit phone number where you can be reached.",
+    "guidanceTitle": "Providing Your Business Phone Number",
+    "guidanceTips": [
+      "Enter your primary business contact number, which can be a mobile or landline.",
+      "The number should be 10 digits long and start with 6, 7, 8, or 9.",
+      "Ensure the number provided is active and regularly monitored, as the insurance provider may need to contact you regarding your policy."
+    ]
+  },
+  {
+    "fieldName": "Policy Start Date",
+    "question": "When would you like the policy to start?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select a start date within the next 12 months.",
+    "guidanceTitle": "Selecting the Policy Start Date",
+    "guidanceTips": [
+      "Choose a start date that aligns with your business operations and insurance needs.",
+      "The policy period is usually 1 year, so select a date that provides coverage for the full year.",
+      "Ensure the start date is not in the past and falls within the next 12 months."
+    ]
+  },
+  {
+    "fieldName": "Policy End Date",
+    "question": "When would you like the policy to end?",
+    "inputType": "date",
+    "required": true,
+    "placeholder": "DD/MM/YYYY",
+    "validation": {
+      "min": "2023-01-01",
+      "max": "2024-12-31"
+    },
+    "helperText": "The policy period is typically 1 year. Please select the desired end date for your coverage.",
+    "guidanceTitle": "Guidance for Selecting Policy End Date",
+    "guidanceTips": [
+      "The policy end date should be exactly 1 year from the start date of the policy.",
+      "Ensure the end date falls within the current financial year (April 1st to March 31st).",
+      "Consider your business operations and maintenance schedules when selecting the end date."
+    ]
+  },
+  {
+    "fieldName": "Coverage Amount Required",
+    "question": "What is the total value of your boiler and pressure plant assets that you would like to insure?",
+    "inputType": "number",
+    "required": true,
+    "placeholder": "Enter the total value in INR",
+    "validation": {
+      "min": 100000,
+      "max": 500000000
+    },
+    "helperText": "The coverage amount should represent the full replacement value of your boiler and pressure plant assets.",
+    "guidanceTitle": "Determining the Appropriate Coverage Amount",
+    "guidanceTips": [
+      "Consider the current market value of your boiler, pressure vessels, and associated equipment.",
+      "Factor in the cost of replacing these assets with new, equivalent equipment in case of a total loss.",
+      "Review your past insurance policies or asset valuations to get an accurate estimate of the total value.",
+      "Consult with a professional valuator or your insurance agent if you need assistance in determining the right coverage amount."
+    ]
+  },
+  {
+    "fieldName": "Current Insurance Provider",
+    "question": "Who is your current insurance provider for your boiler and pressure plant coverage?",
+    "inputType": "text",
+    "required": true,
+    "placeholder": "Enter the name of your current insurance provider",
+    "validation": {
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "helperText": "Provide the exact name of the insurance company currently providing coverage for your boiler and pressure plant.",
+    "guidanceTitle": "Guidance for Entering Current Insurance Provider",
+    "guidanceTips": [
+      "Be sure to enter the full legal name of the insurance company, not just a shortened version or abbreviation.",
+      "If you have multiple policies or coverages, provide the name of the insurance provider for your boiler and pressure plant specifically.",
+      "Ensure the information you provide matches your current insurance documents and policy."
+    ]
+  },
+  {
+    "fieldName": "Previous Claims History",
+    "question": "Please provide details of any previous claims made on your boiler or pressure plant insurance policy.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Enter details of previous claims",
+    "validation": {
+      "maxLength": 1000
+    },
+    "helperText": "Provide a brief summary of any claims made in the last 5 years, including the claim amount, date, and reason.",
+    "guidanceTitle": "Guidance for Providing Previous Claims History",
+    "guidanceTips": [
+      "Be as detailed as possible in describing the previous claims, including the date, amount, and reason for the claim.",
+      "If you have not made any previous claims, please state 'No previous claims' in the field.",
+      "Providing accurate and complete information about your previous claims history will help the insurance provider assess the risk and provide an appropriate quote."
+    ]
+  },
+  {
+    "fieldName": "Risk Management Measures",
+    "question": "Please describe the risk management measures in place for the boiler and pressure plant operations.",
+    "inputType": "textarea",
+    "required": true,
+    "placeholder": "Provide details on safety procedures, maintenance protocols, emergency response plans, etc.",
+    "helperText": "Describe the comprehensive risk management measures implemented to ensure the safe and reliable operation of the boiler and pressure plant.",
+    "guidanceTitle": "Guidance on Effective Risk Management Measures",
+    "guidanceTips": [
+      "Outline the specific safety procedures followed, such as regular inspections, pressure testing, and maintenance schedules.",
+      "Explain the emergency response plan in place, including employee training, firefighting equipment, and emergency shutdown protocols.",
+      "Describe any automation or monitoring systems used to detect and mitigate potential risks, such as pressure sensors, temperature controls, and automatic shut-off valves."
+    ]
+  }
+]
