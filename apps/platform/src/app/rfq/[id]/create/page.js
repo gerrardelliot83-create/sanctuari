@@ -8,13 +8,15 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { ProgressBar, QuestionRenderer, GuidancePanel } from '@sanctuari/ui';
+import { ProgressBar, QuestionRenderer, GuidancePanel, Sidebar, TopBar } from '@sanctuari/ui';
+import { getUser, signOut } from '@sanctuari/database/lib/auth';
 import './page.css';
 
 export default function RFQWizardPage({ params }) {
   const router = useRouter();
   const rfqId = params.id;
 
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [sections, setSections] = useState([]);
@@ -25,6 +27,24 @@ export default function RFQWizardPage({ params }) {
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
   const autoSaveTimerRef = useRef(null);
+
+  // Load user for TopBar
+  useEffect(() => {
+    async function loadUser() {
+      const { user: currentUser } = await getUser();
+      setUser(currentUser);
+    }
+    loadUser();
+  }, []);
+
+  const handleSignOut = async () => {
+    await signOut();
+    router.push('/login');
+  };
+
+  const handleCreateRFQ = () => {
+    router.push('/rfq/create');
+  };
 
   // Load questions and existing responses
   useEffect(() => {
@@ -279,9 +299,21 @@ export default function RFQWizardPage({ params }) {
   }
 
   return (
-    <div className="rfq-wizard">
-      {/* Progress Bar */}
-      <div className="rfq-wizard__progress">
+    <>
+      <Sidebar />
+
+      <div className="dashboard-main-wrapper">
+        <TopBar
+          userName={user?.user_metadata?.full_name || user?.email}
+          userEmail={user?.email}
+          onSignOut={handleSignOut}
+          onCreateRFQ={handleCreateRFQ}
+        />
+
+        <div className="dashboard-content-wrapper">
+          <div className="rfq-wizard">
+            {/* Progress Bar */}
+            <div className="rfq-wizard__progress">
         <ProgressBar
           currentSection={currentSectionIndex}
           totalSections={sections.length}
@@ -395,8 +427,10 @@ export default function RFQWizardPage({ params }) {
         {/* Right Panel - Guidance (40%) */}
         <div className="rfq-wizard__guidance">
           <GuidancePanel question={activeQuestion} isSticky={true} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

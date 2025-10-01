@@ -19,7 +19,12 @@
       "Bash(cat:*)",
       "Bash(for:*)",
       "Bash(do cut -d',' -f1 \"$file\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(find:*)",
+      "Bash(xargs ls:*)",
+      "Bash(sudo apt-get:*)",
+      "Bash(sudo apt-get install:*)",
+      "Bash(fold:*)"
     ],
     "deny": [],
     "ask": []

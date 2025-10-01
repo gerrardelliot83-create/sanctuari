@@ -4,33 +4,45 @@
  */
 
 .rfq-wizard {
-  min-height: 100vh;
+  height: 100%;
   background: var(--fog);
-  padding: 32px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Progress Bar Section */
 .rfq-wizard__progress {
+  flex-shrink: 0;
   max-width: 1400px;
-  margin: 0 auto 32px;
+  width: 100%;
+  margin: 0 auto 24px;
+  padding: 0 32px;
 }
 
 /* Main Content - Split Screen */
 .rfq-wizard__content {
+  flex: 1;
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 32px 32px;
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 32px;
   align-items: start;
+  overflow: hidden;
+  min-height: 0;
 }
 
-/* Left Panel - Form */
+/* Left Panel - Form (SCROLLABLE) */
 .rfq-wizard__form {
   background: var(--white);
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(7, 9, 33, 0.06), 0 4px 6px rgba(7, 9, 33, 0.04);
   padding: 32px;
+  overflow-y: auto;
+  max-height: 100%;
+  height: fit-content;
 }
 
 .rfq-wizard__form-header {
@@ -178,9 +190,12 @@
   background: rgba(111, 79, 255, 0.05);
 }
 
-/* Right Panel - Guidance */
+/* Right Panel - Guidance (FIXED POSITION) */
 .rfq-wizard__guidance {
-  /* Guidance panel is sticky via its own component CSS */
+  height: 100%;
+  position: sticky;
+  top: 0;
+  align-self: start;
 }
 
 /* Loading State */
