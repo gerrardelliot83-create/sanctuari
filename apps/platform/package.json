@@ -22,6 +22,7 @@
     "uploadthing": "^6.12.0",
     "@uploadthing/react": "^6.6.0",
     "razorpay": "^2.9.4",
+    "geist": "^1.3.0",
     "@sanctuari/ui": "*",
     "@sanctuari/database": "*",
     "@sanctuari/utils": "*",
