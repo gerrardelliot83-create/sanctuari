@@ -271,15 +271,30 @@ export default function RFQWizardPage({ params }) {
               const conditionalLogic = question.conditional_logic;
               if (conditionalLogic && conditionalLogic.show_if) {
                 const { field, value } = conditionalLogic.show_if;
-                const dependentQuestion = currentSection.questions.find(
-                  q => q.field_name === field
-                );
-                if (dependentQuestion) {
-                  const dependentValue = responses[dependentQuestion.id]?.value;
-                  if (dependentValue !== value) {
-                    return null; // Hide this question
+
+                // Find dependent question (could be in any section, not just current)
+                let dependentQuestion = null;
+                let dependentValue = undefined;
+
+                // Search in all sections for the dependent field
+                for (const section of sections) {
+                  dependentQuestion = section.questions.find(q => q.field_name === field);
+                  if (dependentQuestion) {
+                    dependentValue = responses[dependentQuestion.id]?.value;
+                    break;
                   }
                 }
+
+                // Only hide if:
+                // 1. Dependent question exists
+                // 2. Dependent question has been answered (not undefined)
+                // 3. The answer does NOT match the required value
+                if (dependentQuestion && dependentValue !== undefined && dependentValue !== value) {
+                  return null; // Hide this question
+                }
+
+                // If dependent question not found or not answered yet, show the question
+                // This prevents questions from being hidden incorrectly
               }
 
               return (
