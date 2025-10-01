@@ -81,6 +81,7 @@ export default function CompanyOnboardingPage() {
         .insert({
           name: formData.companyName,
           industry: formData.industry || null,
+          created_by: userId,
         })
         .select()
         .single();
@@ -94,6 +95,9 @@ export default function CompanyOnboardingPage() {
           company_id: company.id,
           user_id: userId,
           role: 'owner',
+          invited_by: userId,
+          joined_at: new Date().toISOString(),
+          status: 'active',
         });
 
       if (memberError) throw memberError;

@@ -6,7 +6,9 @@
       "Bash(node:*)",
       "Bash(yarn install)",
       "Read(//mnt/c/Users/DELL/Desktop/sanctuari/Resources/**)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -m pip install python-docx)"
     ],
     "deny": [],
     "ask": []

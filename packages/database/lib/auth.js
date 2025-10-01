@@ -29,21 +29,8 @@ export async function signUp(email, password, fullName = null) {
 
     if (error) throw error;
 
-    // Create user profile
-    if (data.user) {
-      const { error: profileError } = await supabase.from('users').insert({
-        id: data.user.id,
-        email: data.user.email,
-        full_name: fullName,
-        onboarding_completed: false,
-        role: 'client',
-      });
-
-      if (profileError) {
-        console.error('Profile creation error:', profileError);
-        throw new Error('Failed to create user profile');
-      }
-    }
+    // Note: User profile is automatically created by database trigger
+    // See: handle_new_user() function in Supabase
 
     return { data, error: null };
   } catch (error) {
