@@ -431,6 +431,7 @@ export default function RFQWizardPage({ params }) {
       </div>
           </div>
         </div>
+      </div>
     </>
   );
 }
