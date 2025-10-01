@@ -1,0 +1,235 @@
+/**
+ * CompanySwitcher Styles
+ * Elegant dropdown for switching between companies
+ */
+
+.company-switcher {
+  position: relative;
+  width: 100%;
+}
+
+.company-switcher__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border: 1px solid rgba(7, 9, 33, 0.12);
+  border-radius: 8px;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.company-switcher__trigger:hover {
+  background-color: rgba(7, 9, 33, 0.02);
+  border-color: rgba(7, 9, 33, 0.16);
+}
+
+.company-switcher__current {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.company-switcher__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--iris) 0%, #5A3FE5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.company-switcher__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.company-switcher__icon span {
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.company-switcher__info {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.company-switcher__name {
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.company-switcher__count {
+  font-family: var(--font-geist-sans);
+  font-size: 12px;
+  color: rgba(7, 9, 33, 0.5);
+}
+
+.company-switcher__arrow {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  color: rgba(7, 9, 33, 0.5);
+}
+
+.company-switcher__arrow--open {
+  transform: rotate(180deg);
+}
+
+.company-switcher__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(7, 9, 33, 0.12);
+  border: 1px solid rgba(7, 9, 33, 0.08);
+  padding: 8px;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.15s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.company-switcher__list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.company-switcher__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: left;
+}
+
+.company-switcher__item:hover {
+  background-color: rgba(7, 9, 33, 0.04);
+}
+
+.company-switcher__item--active {
+  background-color: rgba(111, 79, 255, 0.08);
+}
+
+.company-switcher__item--active:hover {
+  background-color: rgba(111, 79, 255, 0.12);
+}
+
+.company-switcher__item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(111, 79, 255, 0.1) 0%, rgba(90, 63, 229, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.company-switcher__item-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.company-switcher__item-icon span {
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--iris);
+}
+
+.company-switcher__item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.company-switcher__item-name {
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.company-switcher__item-meta {
+  font-family: var(--font-geist-sans);
+  font-size: 12px;
+  color: rgba(7, 9, 33, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.company-switcher__item svg {
+  flex-shrink: 0;
+  color: var(--iris);
+}
+
+.company-switcher__divider {
+  height: 1px;
+  background-color: rgba(7, 9, 33, 0.08);
+  margin: 8px 0;
+}
+
+.company-switcher__add {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--iris);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: left;
+}
+
+.company-switcher__add:hover {
+  background-color: rgba(111, 79, 255, 0.08);
+}
+
+.company-switcher__add svg {
+  flex-shrink: 0;
+}

@@ -8,7 +8,12 @@
       "Read(//mnt/c/Users/DELL/Desktop/sanctuari/Resources/**)",
       "Bash(grep:*)",
       "Bash(pip3 install:*)",
-      "Bash(python3 -m pip install python-docx)"
+      "Bash(python3 -m pip install python-docx)",
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Read(//tmp/**)",
+      "Read(//mnt/c/Users/DELL/Desktop/sanctuari/packages/database/migrations/**)",
+      "Read(//mnt/c/Users/DELL/Desktop/sanctuari/**)"
     ],
     "deny": [],
     "ask": []

@@ -9,5 +9,15 @@
 // Export all components here as they are created
 export { default as Button } from './components/Button/Button';
 export { default as Input } from './components/Input/Input';
+export { default as Label } from './components/Label/Label';
+export { default as ErrorMessage } from './components/ErrorMessage/ErrorMessage';
+export { default as FormField } from './components/FormField/FormField';
+export { default as PasswordInput } from './components/PasswordInput/PasswordInput';
+export { default as LoadingSpinner } from './components/LoadingSpinner/LoadingSpinner';
 export { default as Card } from './components/Card/Card';
-// More components will be added as we build them
+export { default as Container } from './components/Container/Container';
+export { default as Sidebar } from './components/Sidebar/Sidebar';
+export { default as TopBar } from './components/TopBar/TopBar';
+export { default as CompanySwitcher } from './components/CompanySwitcher/CompanySwitcher';
+export { default as EmptyState } from './components/EmptyState/EmptyState';
+export { default as DashboardLayout } from './components/DashboardLayout/DashboardLayout';
