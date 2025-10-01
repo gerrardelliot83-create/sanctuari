@@ -2,8 +2,8 @@
 
 **Date Started:** October 1, 2025
 **Current Status:** Phase 2 - Multi-Step Wizard (COMPLETE) + Critical Bug Fixes
-**Completion:** 55%
-**Last Updated:** October 2, 2025 - 12:30 AM
+**Completion:** 60%
+**Last Updated:** October 2, 2025 - 1:15 AM
 
 ---
 
@@ -485,6 +485,52 @@ if (dependentQuestion && dependentValue !== undefined && dependentValue !== valu
    - **Files**: `/apps/platform/src/app/rfq/[id]/create/page.js`
    - **Status**: ✅ Fixed
 
+### **Session 4 (October 2, 2025 - 1:15 AM) - UI COMPONENT FIXES:**
+
+12. **ProgressBar Component - Array.from().map() Error**
+   - **Issue**: `TypeError: e.map is not a function` in ProgressBar component
+   - **Root Cause**:
+     - `Array.from({ length: totalSections })` fails if `totalSections` is undefined, NaN, or not a number
+     - No validation of props before using them
+   - **Impact**: Entire wizard crashed during initial render
+   - **Fix**:
+     - Added defensive prop validation
+     - Defaults: `currentSection=0`, `totalSections=1` if invalid
+     - Used validated values throughout component
+   - **File**: `/packages/ui/components/ProgressBar/ProgressBar.js:13-16`
+   - **Status**: ✅ Fixed
+
+13. **QuestionRenderer Component - options.map() Errors**
+   - **Issue**: Multiple `.map()` calls on `question.options` which could be non-array
+   - **Root Cause**:
+     - Database stores `options` as JSONB
+     - Could be null, string, object, or malformed JSON
+     - Code used `question.options || []` but this doesn't guarantee array type
+   - **Impact**: Questions with select/multiselect/radio fields crashed
+   - **Fix**: Changed all to explicit array check:
+     - `const options = Array.isArray(question.options) ? question.options : []`
+     - Applied to: select (line 110), multiselect (line 136), radio (line 174)
+   - **File**: `/packages/ui/components/QuestionRenderer/QuestionRenderer.js` (3 locations)
+   - **Status**: ✅ Fixed
+
+14. **GuidancePanel Component - guidance_text.split().map() Error**
+   - **Issue**: `question.guidance_text.split('\n').map()` fails if guidance_text is null
+   - **Root Cause**: No null check before calling `.split()`
+   - **Fix**: Changed to `(question.guidance_text || '').split('\n').map()`
+   - **File**: `/packages/ui/components/GuidancePanel/GuidancePanel.js:56`
+   - **Status**: ✅ Fixed
+
+15. **Enhanced Diagnostic Logging for Empty Questions**
+   - **Issue**: Some products show "0 questions" but unclear why
+   - **Fix**: Added comprehensive debugging when no questions found:
+     - Log RFQ details (id, product_id, title)
+     - Look up product name from insurance_products table
+     - Count total questions in DB for that product
+     - Provide specific troubleshooting steps
+   - **File**: `/apps/platform/src/app/api/rfq/[id]/questions/route.js:62-102`
+   - **Status**: ✅ Fixed
+   - **Note**: This will help diagnose product_id mismatch issues
+
 ---
 
 ## 🔗 **Important File Paths**
@@ -677,6 +723,25 @@ Most complex part - can be done later:
    - Implemented intelligent section priority system (88 lines of code)
    - Added pattern matching for unknown section names
    - Ensures logical section ordering across all 60+ products
+
+### **Session 4 Files Modified (4 files):**
+
+1. `/packages/ui/components/ProgressBar/ProgressBar.js` - **CRITICAL FIX**:
+   - Added prop validation (lines 13-16)
+   - Safe defaults for invalid values
+   - Prevents Array.from() errors
+
+2. `/packages/ui/components/QuestionRenderer/QuestionRenderer.js` - **CRITICAL FIXES**:
+   - Added `Array.isArray()` checks for options in 3 places (lines 110, 136, 174)
+   - Prevents .map() errors on select/multiselect/radio fields
+
+3. `/packages/ui/components/GuidancePanel/GuidancePanel.js` - **FIX**:
+   - Added null check before split() (line 56)
+   - Prevents errors when guidance_text is missing
+
+4. `/apps/platform/src/app/api/rfq/[id]/questions/route.js` - **ENHANCED DEBUGGING**:
+   - Added comprehensive logging for empty question scenarios (lines 62-102)
+   - Helps diagnose product_id mismatch issues
 
 ---
 

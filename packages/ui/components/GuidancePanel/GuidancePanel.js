@@ -53,7 +53,7 @@ export default function GuidancePanel({ question, isSticky = true }) {
           <div className="guidance-panel__guidance">
             <h4 className="guidance-panel__guidance-label">How to answer:</h4>
             <div className="guidance-panel__guidance-text">
-              {question.guidance_text.split('\n').map((line, index) => (
+              {(question.guidance_text || '').split('\n').map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
             </div>

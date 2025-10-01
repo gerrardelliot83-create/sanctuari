@@ -10,23 +10,26 @@
 import './ProgressBar.css';
 
 export default function ProgressBar({ currentSection, totalSections, sectionName }) {
-  const progress = ((currentSection + 1) / totalSections) * 100;
+  // Defensive checks
+  const validCurrentSection = typeof currentSection === 'number' ? currentSection : 0;
+  const validTotalSections = typeof totalSections === 'number' && totalSections > 0 ? totalSections : 1;
+  const progress = ((validCurrentSection + 1) / validTotalSections) * 100;
 
   return (
     <div className="progress-bar">
       <div className="progress-bar__info">
         <div className="progress-bar__dots">
-          {Array.from({ length: totalSections }).map((_, index) => (
+          {Array.from({ length: validTotalSections }).map((_, index) => (
             <div
               key={index}
               className={`progress-bar__dot ${
-                index <= currentSection ? 'progress-bar__dot--active' : ''
+                index <= validCurrentSection ? 'progress-bar__dot--active' : ''
               }`}
             />
           ))}
         </div>
         <div className="progress-bar__text">
-          Section {currentSection + 1} of {totalSections}: {sectionName}
+          Section {validCurrentSection + 1} of {validTotalSections}: {sectionName || 'Loading...'}
         </div>
       </div>
 

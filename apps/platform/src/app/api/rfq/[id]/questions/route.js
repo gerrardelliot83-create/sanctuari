@@ -60,11 +60,34 @@ export async function GET(request, { params }) {
 
     // Handle case where no questions found
     if (!questions || questions.length === 0) {
-      console.warn('[Questions API] No questions found for product_id:', rfq.product_id);
-      console.warn('[Questions API] This could mean:');
-      console.warn('  1. No questions have been loaded for this product in the database');
-      console.warn('  2. RLS policies are blocking the query');
-      console.warn('  3. product_id mismatch between rfqs and rfq_questions tables');
+      console.error('[Questions API] ❌ NO QUESTIONS FOUND');
+      console.error('[Questions API] RFQ Details:', {
+        rfq_id: rfqId,
+        product_id: rfq.product_id,
+        title: rfq.title
+      });
+
+      // Try to find product details
+      const { data: product } = await supabase
+        .from('insurance_products')
+        .select('id, name')
+        .eq('id', rfq.product_id)
+        .single();
+
+      console.error('[Questions API] Product lookup:', product || 'NOT FOUND');
+
+      // Check if ANY questions exist for this product (bypass potential RLS issues)
+      const { count: totalQuestionsCount } = await supabase
+        .from('rfq_questions')
+        .select('*', { count: 'exact', head: true })
+        .eq('product_id', rfq.product_id);
+
+      console.error('[Questions API] Total questions in DB for this product:', totalQuestionsCount);
+
+      console.error('[Questions API] Possible causes:');
+      console.error('  1. No questions loaded for this product yet');
+      console.error('  2. product_id mismatch between tables');
+      console.error('  3. Questions exist but RLS policy blocking (unlikely with public read)');
 
       return NextResponse.json({
         sections: [],
@@ -72,6 +95,10 @@ export async function GET(request, { params }) {
         totalSections: 0,
         warning: 'No questions configured for this product',
         product_id: rfq.product_id,
+        product_name: product?.name || 'Unknown',
+        debug: {
+          questionsInDB: totalQuestionsCount || 0,
+        }
       });
     }
 

@@ -107,7 +107,7 @@ export default function QuestionRenderer({ question, value, onChange, error }) {
         );
 
       case 'select':
-        const options = question.options || [];
+        const options = Array.isArray(question.options) ? question.options : [];
         return (
           <div className="question-select-wrapper">
             <select
@@ -133,7 +133,7 @@ export default function QuestionRenderer({ question, value, onChange, error }) {
         );
 
       case 'multiselect':
-        const multiselectOptions = question.options || [];
+        const multiselectOptions = Array.isArray(question.options) ? question.options : [];
         const selectedValues = Array.isArray(localValue) ? localValue : (localValue ? localValue.split(',') : []);
 
         const toggleOption = (option) => {
@@ -171,7 +171,7 @@ export default function QuestionRenderer({ question, value, onChange, error }) {
         );
 
       case 'radio':
-        const radioOptions = question.options || [];
+        const radioOptions = Array.isArray(question.options) ? question.options : [];
         return (
           <div className="question-radio-group">
             {radioOptions.map((option, index) => (
