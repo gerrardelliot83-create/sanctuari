@@ -26,7 +26,7 @@ export default function DashboardPage() {
     async function loadData() {
       const { user: currentUser } = await getUser();
       if (!currentUser) {
-        router.push('/auth/login');
+        router.push('/login');
         return;
       }
 
@@ -51,7 +51,7 @@ export default function DashboardPage() {
 
   const handleSignOut = async () => {
     await signOut();
-    router.push('/auth/login');
+    router.push('/login');
   };
 
   if (loading) {

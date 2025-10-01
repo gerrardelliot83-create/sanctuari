@@ -24,11 +24,14 @@ export async function middleware(request) {
   const isOnboardingPath = request.nextUrl.pathname.startsWith('/onboarding');
 
   // Auth paths (login, signup, etc.)
-  const isAuthPath = request.nextUrl.pathname.startsWith('/auth');
+  const authPaths = ['/login', '/signup', '/forgot-password', '/reset-password', '/verify-email'];
+  const isAuthPath = authPaths.some((path) =>
+    request.nextUrl.pathname.startsWith(path)
+  );
 
   // If accessing protected path without session, redirect to login
   if (!session && isProtectedPath) {
-    const redirectUrl = new URL('/auth/login', request.url);
+    const redirectUrl = new URL('/login', request.url);
     redirectUrl.searchParams.set('redirect', request.nextUrl.pathname);
     return NextResponse.redirect(redirectUrl);
   }
@@ -77,7 +80,11 @@ export const config = {
     '/bids/:path*',
     '/settings/:path*',
     '/profile/:path*',
-    '/auth/:path*',
+    '/login',
+    '/signup',
+    '/forgot-password',
+    '/reset-password',
+    '/verify-email',
     '/onboarding/:path*',
   ],
 };

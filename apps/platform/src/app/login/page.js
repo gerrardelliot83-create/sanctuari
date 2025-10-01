@@ -137,7 +137,7 @@ export default function LoginPage() {
           </FormField>
 
           <div className="login-form__forgot">
-            <a href="/auth/forgot-password" className="login-form__link">
+            <a href="/forgot-password" className="login-form__link">
               Forgot password?
             </a>
           </div>
@@ -155,7 +155,7 @@ export default function LoginPage() {
 
         <p className="login-page__signup-link">
           Don't have an account?{' '}
-          <a href="/auth/signup" className="login-page__link">
+          <a href="/signup" className="login-page__link">
             Sign up
           </a>
         </p>

@@ -20,7 +20,7 @@ export async function signUp(email, password, fullName = null) {
       email,
       password,
       options: {
-        emailRedirectTo: `${process.env.NEXT_PUBLIC_PLATFORM_URL}/auth/callback`,
+        emailRedirectTo: `${process.env.NEXT_PUBLIC_PLATFORM_URL}/callback`,
         data: {
           full_name: fullName,
         },
@@ -95,7 +95,7 @@ export async function resetPasswordForEmail(email) {
 
   try {
     const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${process.env.NEXT_PUBLIC_PLATFORM_URL}/auth/reset-password`,
+      redirectTo: `${process.env.NEXT_PUBLIC_PLATFORM_URL}/reset-password`,
     });
 
     if (error) throw error;

@@ -1,23 +1,28 @@
 'use client';
 
 /**
- * Page: Reset Password
- * Purpose: Set new password after clicking reset link from email
+ * Page: Signup
+ * Purpose: User registration with email and password
+ * Flow: Signup → Email verification → Onboarding
+ *
+ * Minimal signup: Email + Password only
  */
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { updatePassword } from '@sanctuari/database/lib/auth';
+import { signUp } from '@sanctuari/database/lib/auth';
 import AuthLayout from '@/components/layouts/AuthLayout';
 import Button from '@sanctuari/ui/components/Button/Button';
+import Input from '@sanctuari/ui/components/Input/Input';
 import PasswordInput from '@sanctuari/ui/components/PasswordInput/PasswordInput';
 import FormField from '@sanctuari/ui/components/FormField/FormField';
 import ErrorMessage from '@sanctuari/ui/components/ErrorMessage/ErrorMessage';
-import './reset-password.css';
+import './signup.css';
 
-export default function ResetPasswordPage() {
+export default function SignupPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
+    email: '',
     password: '',
     confirmPassword: '',
   });
@@ -28,12 +33,21 @@ export default function ResetPasswordPage() {
   const validateForm = () => {
     const newErrors = {};
 
+    // Email validation
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    // Password validation
     if (!formData.password) {
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 8) {
       newErrors.password = 'Password must be at least 8 characters';
     }
 
+    // Confirm password validation
     if (!formData.confirmPassword) {
       newErrors.confirmPassword = 'Please confirm your password';
     } else if (formData.password !== formData.confirmPassword) {
@@ -47,6 +61,7 @@ export default function ResetPasswordPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
@@ -63,38 +78,58 @@ export default function ResetPasswordPage() {
     setLoading(true);
     setGlobalError('');
 
-    const { error } = await updatePassword(formData.password);
+    const { data, error } = await signUp(formData.email, formData.password);
 
     if (error) {
-      setGlobalError('Failed to update password. Please try again.');
+      setGlobalError(error.message || 'Failed to create account. Please try again.');
       setLoading(false);
       return;
     }
 
-    // Redirect to login with success message
-    router.push('/auth/login?reset=success');
+    // Redirect to email verification page
+    router.push('/verify-email');
   };
 
   return (
     <AuthLayout
-      title="Create a new password"
-      subtitle="Choose a strong password to secure your account."
+      title="Start simplifying insurance today"
+      subtitle="Join businesses across India in streamlining their insurance procurement process."
     >
-      <div className="reset-password-page">
-        <h1 className="reset-password-page__title">Set new password</h1>
-        <p className="reset-password-page__subtitle">
-          Your new password must be different from previous passwords
+      <div className="signup-page">
+        <h1 className="signup-page__title">Create your account</h1>
+        <p className="signup-page__subtitle">
+          Get started with your first RFQ for free
         </p>
 
-        <form onSubmit={handleSubmit} className="reset-password-form">
+        <form onSubmit={handleSubmit} className="signup-form">
           {globalError && (
-            <div className="reset-password-form__error">
+            <div className="signup-form__error">
               <ErrorMessage>{globalError}</ErrorMessage>
             </div>
           )}
 
           <FormField
-            label="New password"
+            label="Email address"
+            htmlFor="email"
+            required
+            error={errors.email}
+          >
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="you@company.com"
+              required
+              autoComplete="email"
+              autoFocus
+              error={!!errors.email}
+            />
+          </FormField>
+
+          <FormField
+            label="Password"
             htmlFor="password"
             required
             error={errors.password}
@@ -107,13 +142,12 @@ export default function ResetPasswordPage() {
               onChange={handleChange}
               placeholder="Create a strong password"
               required
-              autoFocus
               error={!!errors.password}
             />
           </FormField>
 
           <FormField
-            label="Confirm new password"
+            label="Confirm password"
             htmlFor="confirmPassword"
             required
             error={errors.confirmPassword}
@@ -134,15 +168,27 @@ export default function ResetPasswordPage() {
             variant="primary"
             size="large"
             loading={loading}
-            className="reset-password-form__submit"
+            className="signup-form__submit"
           >
-            Reset password
+            Create account
           </Button>
         </form>
 
-        <p className="reset-password-page__back">
-          <a href="/auth/login" className="reset-password-page__link">
-            ← Back to login
+        <p className="signup-page__login-link">
+          Already have an account?{' '}
+          <a href="/login" className="signup-page__link">
+            Log in
+          </a>
+        </p>
+
+        <p className="signup-page__terms">
+          By creating an account, you agree to our{' '}
+          <a href="/terms" className="signup-page__link">
+            Terms of Service
+          </a>{' '}
+          and{' '}
+          <a href="/privacy" className="signup-page__link">
+            Privacy Policy
           </a>
         </p>
       </div>

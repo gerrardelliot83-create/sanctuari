@@ -59,7 +59,7 @@ function VerifyEmailContent() {
             <Button
               variant="secondary"
               size="medium"
-              onClick={() => (window.location.href = '/auth/login')}
+              onClick={() => (window.location.href = '/login')}
             >
               Back to login
             </Button>

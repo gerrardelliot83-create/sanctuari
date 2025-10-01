@@ -34,7 +34,7 @@ export default function CompanyOnboardingPage() {
     async function checkAuth() {
       const { user } = await getUser();
       if (!user) {
-        router.push('/auth/login');
+        router.push('/login');
         return;
       }
       setUserId(user.id);

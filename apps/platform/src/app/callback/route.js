@@ -44,5 +44,5 @@ export async function GET(request) {
   }
 
   // Return to login if something went wrong
-  return NextResponse.redirect(new URL('/auth/login', requestUrl.origin));
+  return NextResponse.redirect(new URL('/login', requestUrl.origin));
 }

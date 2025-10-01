@@ -1,28 +1,23 @@
 'use client';
 
 /**
- * Page: Signup
- * Purpose: User registration with email and password
- * Flow: Signup → Email verification → Onboarding
- *
- * Minimal signup: Email + Password only
+ * Page: Reset Password
+ * Purpose: Set new password after clicking reset link from email
  */
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { signUp } from '@sanctuari/database/lib/auth';
+import { updatePassword } from '@sanctuari/database/lib/auth';
 import AuthLayout from '@/components/layouts/AuthLayout';
 import Button from '@sanctuari/ui/components/Button/Button';
-import Input from '@sanctuari/ui/components/Input/Input';
 import PasswordInput from '@sanctuari/ui/components/PasswordInput/PasswordInput';
 import FormField from '@sanctuari/ui/components/FormField/FormField';
 import ErrorMessage from '@sanctuari/ui/components/ErrorMessage/ErrorMessage';
-import './signup.css';
+import './reset-password.css';
 
-export default function SignupPage() {
+export default function ResetPasswordPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    email: '',
     password: '',
     confirmPassword: '',
   });
@@ -33,21 +28,12 @@ export default function SignupPage() {
   const validateForm = () => {
     const newErrors = {};
 
-    // Email validation
-    if (!formData.email) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
-    }
-
-    // Password validation
     if (!formData.password) {
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 8) {
       newErrors.password = 'Password must be at least 8 characters';
     }
 
-    // Confirm password validation
     if (!formData.confirmPassword) {
       newErrors.confirmPassword = 'Please confirm your password';
     } else if (formData.password !== formData.confirmPassword) {
@@ -61,7 +47,6 @@ export default function SignupPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
@@ -78,58 +63,38 @@ export default function SignupPage() {
     setLoading(true);
     setGlobalError('');
 
-    const { data, error } = await signUp(formData.email, formData.password);
+    const { error } = await updatePassword(formData.password);
 
     if (error) {
-      setGlobalError(error.message || 'Failed to create account. Please try again.');
+      setGlobalError('Failed to update password. Please try again.');
       setLoading(false);
       return;
     }
 
-    // Redirect to email verification page
-    router.push('/auth/verify-email');
+    // Redirect to login with success message
+    router.push('/login?reset=success');
   };
 
   return (
     <AuthLayout
-      title="Start simplifying insurance today"
-      subtitle="Join businesses across India in streamlining their insurance procurement process."
+      title="Create a new password"
+      subtitle="Choose a strong password to secure your account."
     >
-      <div className="signup-page">
-        <h1 className="signup-page__title">Create your account</h1>
-        <p className="signup-page__subtitle">
-          Get started with your first RFQ for free
+      <div className="reset-password-page">
+        <h1 className="reset-password-page__title">Set new password</h1>
+        <p className="reset-password-page__subtitle">
+          Your new password must be different from previous passwords
         </p>
 
-        <form onSubmit={handleSubmit} className="signup-form">
+        <form onSubmit={handleSubmit} className="reset-password-form">
           {globalError && (
-            <div className="signup-form__error">
+            <div className="reset-password-form__error">
               <ErrorMessage>{globalError}</ErrorMessage>
             </div>
           )}
 
           <FormField
-            label="Email address"
-            htmlFor="email"
-            required
-            error={errors.email}
-          >
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="you@company.com"
-              required
-              autoComplete="email"
-              autoFocus
-              error={!!errors.email}
-            />
-          </FormField>
-
-          <FormField
-            label="Password"
+            label="New password"
             htmlFor="password"
             required
             error={errors.password}
@@ -142,12 +107,13 @@ export default function SignupPage() {
               onChange={handleChange}
               placeholder="Create a strong password"
               required
+              autoFocus
               error={!!errors.password}
             />
           </FormField>
 
           <FormField
-            label="Confirm password"
+            label="Confirm new password"
             htmlFor="confirmPassword"
             required
             error={errors.confirmPassword}
@@ -168,27 +134,15 @@ export default function SignupPage() {
             variant="primary"
             size="large"
             loading={loading}
-            className="signup-form__submit"
+            className="reset-password-form__submit"
           >
-            Create account
+            Reset password
           </Button>
         </form>
 
-        <p className="signup-page__login-link">
-          Already have an account?{' '}
-          <a href="/auth/login" className="signup-page__link">
-            Log in
-          </a>
-        </p>
-
-        <p className="signup-page__terms">
-          By creating an account, you agree to our{' '}
-          <a href="/terms" className="signup-page__link">
-            Terms of Service
-          </a>{' '}
-          and{' '}
-          <a href="/privacy" className="signup-page__link">
-            Privacy Policy
+        <p className="reset-password-page__back">
+          <a href="/login" className="reset-password-page__link">
+            ← Back to login
           </a>
         </p>
       </div>

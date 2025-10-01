@@ -93,7 +93,7 @@ export default function ForgotPasswordPage() {
             <Button
               variant="secondary"
               size="medium"
-              onClick={() => (window.location.href = '/auth/login')}
+              onClick={() => (window.location.href = '/login')}
             >
               Back to login
             </Button>
@@ -156,7 +156,7 @@ export default function ForgotPasswordPage() {
         </form>
 
         <p className="forgot-password-page__back">
-          <a href="/auth/login" className="forgot-password-page__link">
+          <a href="/login" className="forgot-password-page__link">
             ← Back to login
           </a>
         </p>
