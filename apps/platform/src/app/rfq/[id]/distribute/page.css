@@ -1,0 +1,240 @@
+/* Distribution Page Styles */
+
+.distribute-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.distribute-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Success Header */
+.distribute-success {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: #10b981;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.distribute-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.distribute-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.75;
+}
+
+.distribute-subtitle strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Details Card */
+.distribute-details-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.distribute-details-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.detail-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.status-published {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* Distribution Options */
+.distribute-options {
+  margin-bottom: 2rem;
+}
+
+.distribute-options h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.distribute-description {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.options-placeholder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.placeholder-card {
+  background: white;
+  border: 2px dashed #d1d5db;
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.placeholder-card:hover {
+  border-color: #9ca3af;
+}
+
+.placeholder-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.placeholder-card p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.placeholder-btn {
+  padding: 0.625rem 1.5rem;
+  background: #e5e7eb;
+  color: #9ca3af;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
+/* Actions */
+.distribute-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e5e7eb;
+}
+
+.distribute-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.distribute-btn-secondary {
+  background: white;
+  color: #374151;
+  border: 2px solid #d1d5db;
+}
+
+.distribute-btn-secondary:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.distribute-btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.distribute-btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .distribute-container {
+    padding: 1rem;
+  }
+
+  .distribute-title {
+    font-size: 1.5rem;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .options-placeholder {
+    grid-template-columns: 1fr;
+  }
+
+  .distribute-actions {
+    flex-direction: column;
+  }
+
+  .distribute-btn {
+    width: 100%;
+  }
+}
