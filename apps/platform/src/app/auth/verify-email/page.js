@@ -5,12 +5,13 @@
  * Purpose: Inform user to check email for verification link
  */
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AuthLayout from '@/components/layouts/AuthLayout';
 import Button from '@sanctuari/ui/components/Button/Button';
 import './verify-email.css';
 
-export default function VerifyEmailPage() {
+function VerifyEmailContent() {
   const searchParams = useSearchParams();
   const email = searchParams.get('email') || 'your email';
 
@@ -66,5 +67,13 @@ export default function VerifyEmailPage() {
         </div>
       </div>
     </AuthLayout>
+  );
+}
+
+export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <VerifyEmailContent />
+    </Suspense>
   );
 }
