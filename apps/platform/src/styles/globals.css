@@ -122,6 +122,25 @@ body {
   background: rgba(7, 9, 33, 0.2);
 }
 
+/* ===== Layout Components ===== */
+
+/* Dashboard Layout - Shared across all authenticated pages */
+.dashboard-main-wrapper {
+  margin-left: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fog);
+  overflow: hidden;
+}
+
+.dashboard-content-wrapper {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 /* ===== Typography ===== */
 
 h1, h2, h3, h4, h5, h6 {
@@ -171,4 +190,16 @@ button {
 ::selection {
   background-color: var(--iris-light);
   color: var(--ink);
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 768px) {
+  .dashboard-main-wrapper {
+    margin-left: 0;
+  }
+
+  .dashboard-content-wrapper {
+    padding: 20px;
+  }
 }

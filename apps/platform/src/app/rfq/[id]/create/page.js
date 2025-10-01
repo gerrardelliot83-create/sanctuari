@@ -214,10 +214,22 @@ export default function RFQWizardPage({ params }) {
     );
   }
 
+  if (!sections || sections.length === 0) {
+    return (
+      <div className="rfq-wizard">
+        <div className="rfq-wizard-error">
+          <h2>No Questions Available</h2>
+          <p>There are no questions configured for this insurance product yet.</p>
+          <p>Please contact support or try a different product.</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!currentSection) {
     return (
       <div className="rfq-wizard-error">
-        <p>No questions found for this RFQ.</p>
+        <p>Section not found.</p>
       </div>
     );
   }

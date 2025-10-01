@@ -42,6 +42,15 @@ export async function GET(request, { params }) {
       );
     }
 
+    // Handle case where no questions found
+    if (!questions || questions.length === 0) {
+      return NextResponse.json({
+        sections: [],
+        totalQuestions: 0,
+        totalSections: 0,
+      });
+    }
+
     // Group questions by section
     const groupedQuestions = {};
     questions.forEach(question => {
