@@ -1,0 +1,32 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Organization Details,1,Legal Name of Organization,[Enter Name],,"Enter name, e.g., 'ABC Corp'."
+Organization Details,1,Registered & Communication Address,[Enter Address],,Enter full address.
+Organization Details,1,Nature of Business / Services Provided,[Enter Nature],,"Enter, e.g., 'IT Services'."
+Organization Details,1,Contact Person (Name & Designation),"[Enter Name, Designation]",,"Enter, e.g., 'John Doe, HR Manager'."
+Organization Details,1,Email ID,[Enter Email],,Enter email.
+Organization Details,1,Mobile Number,[Enter Number],,"Enter, e.g., '+91 9876543210'."
+Employee Coverage & Classification,2,Total Employees on Payroll,[Enter Number],,Enter number.
+Employee Coverage & Classification,2,Number of Employees to be Insured,[Enter Number],,Enter number.
+Employee Coverage & Classification,2,Sum Insured Structure,"[Select: Flat Sum Insured, Graded (Attach Data- EMP_ID | Name | Age | SI)]",Upload,Enter selection; attach table if Graded.
+Coverage Options,3,Accidental Death (AD),"[Yes/No, Sum Insured]",,"Enter 'Yes, Amount' or 'No'."
+Coverage Options,3,Permanent Total Disability (PTD),"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Permanent Partial Disability (PPD),"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Temporary Total Disability (TTD Weekly Benefit),"[Yes/No, Weekly Benefit]",,"Enter 'Yes, Amount' or 'No'."
+Coverage Options,3,Accidental Medical Expenses (IPD & OPD),"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Hospital Cash Allowance,"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Repatriation of Mortal Remains,"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Education Grant (for two dependent children),"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Broken Bones / Fracture Benefit,"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Burns / Cosmetic Surgery Benefit,"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Ambulance Charges,"[Yes/No, Sum Insured]",,Format as above.
+Coverage Options,3,Funeral Expenses,"[Yes/No, Sum Insured]",Default: ₹5000,"Enter 'Yes, 5000' or 'No'."
+Coverage Options,3,Terrorism Cover,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options,3,24x7 Worldwide Coverage (Including Non-Working Hours),[Yes/No],,Enter 'Yes' or 'No'.
+Claims Experience,4,Claims Experience (Past 3 Years),"[Enter for each: Year, Insurer, Policy Period, Premium, Claims Paid]",Add rows for each year,"Add rows in Excel, e.g., '2024, ABC Ins, 01/01/2024-31/12/2024, 100000, 50000'."
+Workplace Accident History,5,Any workplace accidents in the last 3 years?,"[Yes/No, Details if Yes]","If Yes, provide table","Enter 'No' or 'Yes: Type, Cause, No. Affected, Injured/Deceased, Preventive Steps'."
+Policy Details,6,Desired Policy Period,[Annual / Short-Term (Months)],,Enter 'Annual' or 'Short-Term: Months'.
+Policy Details,6,Share the details of Expiring policy,[Enter Details],Mention the name of Insurance company if Previous Insurance available,Enter the Previous Policy details if available 
+Policy Details,6,Preferred Policy Start Date,[Enter DD/MM/YYYY],,Enter date.
+Policy Details,6,Policy End Date,[Enter DD/MM/YYYY],,Enter date.
+Premium Payment Details,7,Premium Payer,"[Select: Company, Employees via Payroll Deduction]",,Enter selection.
+Additional Notes,8,Additional Notes / Customization,[Enter Details],"Mention specific exclusions, extensions, riders",Enter if applicable.

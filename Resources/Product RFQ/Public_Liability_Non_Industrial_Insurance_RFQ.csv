@@ -1,0 +1,30 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Information,1,Name of Insured,[Enter Name],,"Enter, e.g., 'ABC Retail'."
+Proposer Information,2,Communication Address,[Enter Address],,Enter full address.
+Proposer Information,3,Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Proposer Information,4,Risk Location Address,[Enter Address],,Enter address.
+Proposer Information,5,Multiple Risk Locations?,"[Yes/No, Annexure if Yes]",,Enter 'No' or 'Yes: Attach Annexure A'.
+Proposer Information,6,Nature of Business / Occupancy,[Enter Nature],,"Enter, e.g., 'Retail'."
+Proposer Information,7,Company Website,[Enter URL],,Enter or 'None'.
+Coverage Requirements,8,Type of Coverage,"[Select: Occurrence Based, Claims Made]",Claim made ,Enter selection.
+Coverage Requirements,9,Retroactive Date (if Claims Made),[Enter DD/MM/YYYY],,Enter date or 'N/A'.
+Coverage Requirements,10,AOA : AOY Ratio,[Enter Ratio],,"Enter, e.g., '1:3'."
+Coverage Requirements,11,Territorial Scope,[Enter Scope],,"Enter, e.g., 'India'."
+Coverage Requirements,12,Legal Jurisdiction,[Enter Jurisdiction],,"Enter, e.g., 'India'."
+Coverage Requirements,13,Annual Turnover,[Enter ₹ Amount],,"Enter, e.g., '50000000'."
+Coverage Requirements,14,Limit of Indemnity,"[Enter AOA, AOY]","AOA: ₹, AOY: ₹","Enter, e.g., 'AOA: 5000000, AOY: 15000000'."
+Coverage Requirements,15,Expiring Insurer,[Enter Insurer],,Enter name or 'None'.
+Coverage Requirements,16,Claims in Last 3 Years,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Provide details'.
+Coverage Requirements,17,Premium Expectation,[Enter ₹ Amount],,Enter amount or 'N/A'.
+Add-On Cover Options,18,Sudden & Accidental Pollution,[Yes/No],,"Enter 'No' or 'Yes"""
+Add-On Cover Options,18,Liability Arising Out of Transportation,[Yes/No],,"Enter 'No' or 'Yes"""
+Add-On Cover Options,18,"Act of God Perils (Flood, Earthquake, etc.)",[Yes/No],,"Enter 'No' or 'Yes"""
+Add-On Cover Options,18,Lift Liability,[Yes/No],,"Enter 'No' or 'Yes"""
+Add-On Cover Options,18,Terrorism Cover,[Yes/No],,"Enter 'No' or 'Yes"""
+Add-On Cover Options,18,"Care, Custody & Control",[Yes/No],,"Enter 'No' or 'Yes"""
+Add-On Cover Options,18,Food & Beverage Liability,[Yes/No],,"Enter 'No' or 'Yes"""
+Add-On Cover Options,18,Swimming Pool Liability,[Yes/No],,"Enter 'No' or 'Yes"""
+Add-On Cover Options,18,Sports Facilities,[Yes/No],,"Enter 'No' or 'Yes"""
+Additional Disclosures,19,Are other assets insured with the same insurer?,[Yes/No],,"Enter 'No' or 'Yes"""
+Additional Disclosures,19,Any Additional Remarks or Notes?,[Enter Remarks],,Enter if applicable.
+Annexure A: Risk Location Details,20,Risk Location Details,"[Enter for each: Sr. No., Address, Construction, Age, Floors/Height, Elevator, Occupants]",If applicable,"Add rows in Excel, e.g., '1, Mumbai, Brick, 10 years, 5 floors, 2 elevators, Retail'."

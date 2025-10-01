@@ -1,0 +1,28 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer & Business Information,1,Name of Proposer,[Enter Name],,"Enter, e.g., 'ABC Retail'."
+Proposer & Business Information,1,Nature of Business,[Enter Type],"e.g., Retail, Hospitality","Enter, e.g., 'Retail'."
+Proposer & Business Information,1,Registered Address,[Enter Address],,Enter full address.
+Proposer & Business Information,1,Risk Location Address,[Enter Address],,Enter address.
+Proposer & Business Information,1,Contact Person Name,[Enter Name],,Enter name.
+Proposer & Business Information,1,Mobile Number / Email ID,[Enter Contact],,"Enter, e.g., '+91 9876543210, info@abc.com'."
+Risk Coverage Details,2,Type of Glass to be Insured,"[Select: Plain, Toughened, Frosted, Etched, Others]",,"Enter selection, e.g., 'Toughened'."
+Risk Coverage Details,2,Location of Glass Installation,"[Select: Main , Door, Interior partition, Display window]",,Enter selection.
+Risk Coverage Details,2,Total Number of Panels,[Enter Number],,"Enter, e.g., '10'."
+Risk Coverage Details,2,Size of Each Panel (approximate),[Enter Size],"e.g., 5ft x 8ft",Enter size.
+Risk Coverage Details,2,Area of Glass to be Covered (sq. ft.),[Enter Area],,"Enter, e.g., '400'."
+Risk Coverage Details,2,Sum Insured,"[Enter , Amount]",Replacement Cost incl. fixing/labor,"Enter amount, e.g., '500000'."
+Risk Coverage Details,2,Year of Installation,[Enter Year],,"Enter, e.g., '2020'."
+Risk Coverage Details,2,Has the glass been laminated or reinforced?,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Coverage Details,2,Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Additional Risk Factors,3,Is the building protected by CCTV and/or security personnel?,"[Yes/No, Remarks]",,Enter 'No' or 'Yes: Details'.
+Additional Risk Factors,3,Is the glass vulnerable to accidental external impacts?,"[Yes/No, Remarks]",,Enter 'No' or 'Yes: Details'.
+Additional Risk Factors,3,Has the premises or glass installation sustained damage in the past 3 years?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Additional Risk Factors,3,"Is the glass engraved, colored, or containing artwork/advertising?","[Yes/No, Remarks]",,Enter 'No' or 'Yes: Details'.
+Optional Add-Ons,4,"Damage due to Riots, Strike & Malicious Acts (RSMD)","[Y/N, Sub-Limit]",,"Enter 'Y, Amount' or 'N'."
+Optional Add-Ons,4,Cost of Temporary Fixing/Boarding,"[Y/N, Sub-Limit]",,Format as above.
+Optional Add-Ons,4,Loss of Advertising/Signage on Glass,"[Y/N, Sub-Limit]",,Format as above.
+Optional Add-Ons,4,"Cost of Tinting, Frosting, or Design","[Y/N, Sub-Limit]",,Format as above.
+Past Insurance History,5,Currently Insured with (if any),[Enter Insurer],,Enter name or 'None'.
+Past Insurance History,5,Existing Policy Expiry Date,[Enter DD/MM/YYYY],,Enter date or 'N/A'.
+Past Insurance History,5,Claim History (last 3 years),[Enter Details],No Claims / Details,Enter 'No Claims' or details.
+Declaration,6,Declaration,"[Enter Place, Date, Signatory]",,"Enter 'Place: City, Date: DD/MM/YYYY, Signatory: Name'."

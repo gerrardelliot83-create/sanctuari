@@ -1,0 +1,31 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Details,1,Name of Insured,[Enter Name],,"Enter, e.g., 'XYZ Industries'."
+Proposer Details,2,Communication Address,[Enter Address],,Enter full address.
+Proposer Details,3,Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Proposer Details,4,Risk Location Address,[Enter Address],,Enter address.
+Proposer Details,5,Multiple Risk Locations,"[Yes/No, Annexure if Yes]",,Enter 'No' or 'Yes: Fill Annexure A & B'.
+Proposer Details,6,Nature of Business (Occupancy),[Enter Nature],,"Enter, e.g., 'Manufacturing'."
+Proposer Details,7,Website (if any),[Enter URL],,Enter or 'None'.
+Coverage Information,8,Type of Coverage,"[Select: Occurrence, Claims Made]",,Enter selection.
+Coverage Information,9,Retroactive Date (If Claims Made),[Enter DD/MM/YYYY],,Enter date or 'N/A'.
+Coverage Information,10,AOA : AOY Ratio,[Enter Ratio],,"Enter, e.g., '1:3'."
+Coverage Information,11,Territorial Limit,[Enter Limit],,"Enter, e.g., 'India'."
+Coverage Information,12,Legal Jurisdiction,[Enter Jurisdiction],,"Enter, e.g., 'India'."
+Coverage Information,13,Annual Turnover,[Enter ₹ Amount],,"Enter, e.g., '100000000'."
+Coverage Information,14,Limit of Indemnity,"[Enter AOA, AOY]",,"Enter, e.g., 'AOA: 5000000, AOY: 15000000'."
+Coverage Information,15,Other Assets Insured with Same Insurer,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Coverage Information,16,Expiring Insurer,[Enter Insurer],,Enter name or 'None'.
+Coverage Information,17,Claim History – Last 3 Years,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Attach details'.
+Coverage Information,18,Additional Remarks (if any),[Enter Remarks],,Enter if applicable.
+Coverage Information,19,Expected Premium or Rate (%),[Enter Amount or %],,"Enter, e.g., '500000' or '2%'."
+Optional Add-On Covers,20,Sudden and Accidental Pollution,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Optional Add-On Covers,20,Liability from Transportation,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Optional Add-On Covers,20,"Act of God Extension (Flood, EQ, etc.)","[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Optional Add-On Covers,20,Lift Liability,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Optional Add-On Covers,20,Terrorism Cover,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Optional Add-On Covers,20,"Custody, Care, and Control","[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Optional Add-On Covers,20,Food & Beverage Liability,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Optional Add-On Covers,20,Swimming Pool Liability,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Optional Add-On Covers,20,Hazardous Sports Liability,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes'.
+Annexure A: Manufacturing Units,21,Manufacturing Units,"[Enter for each: Sr. No., Location, Nature, Surrounding]",Add rows for each unit,"Add rows in Excel, e.g., '1, Mumbai, Factory, Industrial'."
+Annexure B: Warehouses/Depots,22,Warehouses / Depots / Shops / Offices / Tank Farms,"[Enter for each: Sr. No., Location, Nature, Surrounding]",Add rows for each,"Add rows in Excel, e.g., '1, Delhi, Warehouse, Residential'."

@@ -1,0 +1,27 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Information,1,Name of the Employer,[Enter Name],,"Enter name, e.g., 'XYZ Construction Ltd'."
+Proposer Information,1,Nature of Business,[Enter Nature],"e.g. Construction, IT, Factory",Enter type.
+Proposer Information,1,Type of Entity,"[Select: Proprietorship, Pvt Ltd, LLP, Others]",,Enter selection.
+Proposer Information,1,Registered Office Address,[Enter Address],,Enter address.
+Proposer Information,1,Contact Person Name,[Enter Name],,Enter name.
+Proposer Information,1,Mobile Number & Email ID,[Enter Contact],,"Enter, e.g., '+91 9876543210, info@xyz.com'."
+Policy Details,2,Policy Type,[Employees Compensation / EC + CL],EC: Covers employer’s statutory liability for employee injury/death under the Employees’ Compensation Act; EC + CL: Also includes additional liability if employees/families claim higher compensation under Common Law,Enter type.
+Policy Details,2,Coverage Type,[Act Only / Act + Common Law],Act Only: Covers liability strictly under the Employees’ Compensation Act; Act + CL: Covers both statutory liability and additional legal compensation under Common Law.,Enter type.
+Policy Details,2,Policy Period,[Enter From To],From DD/MM/YYYY to DD/MM/YYYY,Enter dates.
+Policy Details,2,Is Policy Renewal or Fresh,[Renewal / Fresh],,Enter 'Renewal' or 'Fresh'.
+Policy Details,2,Expiring Insurer (if any),[Enter Insurer],,Enter name or 'None'.
+Policy Details,2,Retroactive Date (for CL cover),[Enter Date],Risk Date,Enter date if applicable.
+Policy Details,2,Any Claims in the last 3 years,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Worksite & Risk Details,3,Location(s) of Risk / Site Operations,"[Multiple / One Location, Details]",,Enter 'One: Details' or 'Multiple: Details'.
+Worksite & Risk Details,3,Nature of Work Performed by Employees,[Enter Nature],"e.g., Masonry, Welding, Admin, Driver",Enter types.
+Worksite & Risk Details,3,Safety Measures Implemented,"[Select: PPE, Safety Training, First Aid, Others]",PPE / Safety Training / First Aid / Others,Enter selections.
+Worksite & Risk Details,3,Site Security,"[Select: Gated, Guarded, CCTV, None]",,Enter selections.
+Worksite & Risk Details,3,Medical Tie-up / ESI / In-house Clinic,[Yes/No],,Enter 'Yes' or 'No'.
+Schedule of Employees,4,Schedule of Employees,"[Enter for each: Sl. No., Category, No. of Employees, Monthly Wages, Annual Wages, Work Type]",Compulsory Section,"Add rows, e.g., '1, Skilled Fitter, 10, 20000, 240000, Welding'."
+Additional Cover Requirements,5,Common Law Liability,"[Yes/No, Limit]",,"Enter 'Yes, Amount' or 'No'."
+Additional Cover Requirements,5,Medical Expenses,"[Yes/No, Limit]",,Format as above.
+Additional Cover Requirements,5,Occupational Disease Cover,"[Yes/No, Included/Not Included]",,"Enter 'Yes, Included' or 'No'."
+Additional Cover Requirements,5,Terrorism Cover,"[Yes/No, Included/Not Included]",,Format as above.
+Additional Cover Requirements,5,Contractor Labour (Third-party staff),"[Yes/No, Covered/Not Covered]",,Format as above.
+Additional Cover Requirements,5,24x7 Worldwide Personal Accident Cover,"[Yes/No, Limit]",,"Enter 'Yes, Amount' or 'No'."
+Declaration,6,Declaration,"[Place, Date, Signatory]",,"Enter 'Place: City, Date: DD/MM/YYYY, Signatory: Name'."

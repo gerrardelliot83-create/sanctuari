@@ -1,0 +1,105 @@
+/**
+ * Global styles for Sanctuari Platform
+ * Design System: Fog, Iris, Rose, Sun, Ink color palette
+ * Typography: Geist Sans and Geist Mono
+ */
+
+:root {
+  /* Color Palette - Sanctuari Design System */
+  --fog-50: #f8f9fa;
+  --fog-100: #f1f3f5;
+  --fog-200: #e9ecef;
+  --fog-300: #dee2e6;
+  --fog-400: #ced4da;
+  --fog-500: #adb5bd;
+  --fog-600: #868e96;
+
+  --iris-50: #f0f0ff;
+  --iris-100: #e5e5ff;
+  --iris-200: #c7c7ff;
+  --iris-300: #a8a8ff;
+  --iris-400: #7676ff;
+  --iris-500: #4d4dff;
+  --iris-600: #3636cc;
+
+  --rose-50: #fff0f5;
+  --rose-100: #ffe0eb;
+  --rose-200: #ffc2d6;
+  --rose-300: #ffa3c2;
+  --rose-400: #ff7099;
+  --rose-500: #ff3d70;
+  --rose-600: #cc3159;
+
+  --sun-50: #fffef0;
+  --sun-100: #fffce0;
+  --sun-200: #fff9c2;
+  --sun-300: #fff6a3;
+  --sun-400: #fff066;
+  --sun-500: #ffea29;
+  --sun-600: #ccbb21;
+
+  --ink-50: #f6f6f7;
+  --ink-100: #e8e9eb;
+  --ink-200: #d1d3d7;
+  --ink-300: #b9bdc3;
+  --ink-400: #8a919b;
+  --ink-500: #5b6573;
+  --ink-600: #49515c;
+  --ink-700: #373d46;
+  --ink-800: #252930;
+  --ink-900: #13151a;
+
+  /* Typography */
+  --font-sans: var(--geist-sans);
+  --font-mono: var(--geist-mono);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  color: var(--ink-900);
+  background-color: var(--fog-50);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}

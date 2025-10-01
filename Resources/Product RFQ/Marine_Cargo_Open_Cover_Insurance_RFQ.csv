@@ -1,0 +1,18 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Applicant Details,1,Name & Address of the Applicant,"[Enter Name, Address]",,"Enter name and full address, e.g., 'XYZ Trading, 456 Trade St, Chennai'."
+Applicant Details,2,"Phone, Fax & Email Address",[Enter Contact],,"Enter, e.g., 'Phone: +91 9876543210, Email: info@xyz.com'."
+Cargo Details,3,Merchandise / Goods to be Insured,[Enter Goods],,"Enter, e.g., 'Electronics, Textiles'."
+Cargo Details,4,Nature of Packing,"[Select: Bales, Crates, Cases, Cartons, Drums, Bags, Loose]",,"Enter selection, e.g., 'Crates, Cartons'."
+Cargo Details,5,Mode of Conveyance,"[Select: Road, Rail, Sea, Air, Courier]",,"Enter selections, e.g., 'Sea, Air'."
+Cargo Details,6,Voyage / Transit Route,[Enter From To],,"Enter, e.g., 'Mumbai to Singapore'."
+Insurance Period,7,Period of Insurance,[Enter From To],FROM: TO:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Terms of Cover Required,8,Cover Type Required,"[Select: Basic, All Risk, War, SRCC, Excess % for Leakage]",,"Enter selections and %, e.g., 'All Risk, 2% Excess'."
+Financial Details,9,Annual Turnover (Including Duties and Taxes),"[Enter , Amount]",,"Enter amount, e.g., '1000000000'."
+Financial Details,10,Sum Insured (Not exceeding 110% of CIF + Import Duty & Taxes),"[Enter , Amount]",,"Enter amount, e.g., '50000000'."
+Financial Details,11,Limit per Shipment / Bottom,"[Enter , Amount]",,"Enter amount, e.g., '10000000'."
+Financial Details,11,Limit per Location,"[Enter , Amount]",,"Enter amount, e.g., '20000000'."
+Financial Details,12,Terms of Sale Contract to be Covered,"[Select: CIF, FOB, C&F, Other (Specify)]",,"Enter selection, specify if Other."
+Financial Details,13,Do you wish to cover Seller Interest for FOB / C&F?,[Yes/No],,Enter 'Yes' or 'No'.
+Financial Details,14,Declaration Submission Frequency,"[Select: Monthly, E-Marine, Excel Format]",,"Enter selection, e.g., 'Monthly'."
+Financial Details,15,Loading & Unloading Risks Coverage Required?,[Yes/No],,Enter 'Yes' or 'No'.
+Claims History,16,Details of Losses on Similar Cargo (Claims exceeding Rs. 1 lakh),"[Enter for each: Year, Premium, Nature, Amount Received, Amount Outstanding]",Add rows for each claim,"Add rows in Excel, e.g., '2024, 500000, Theft, 200000, 0'."

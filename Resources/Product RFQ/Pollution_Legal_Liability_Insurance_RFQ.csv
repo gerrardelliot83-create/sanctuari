@@ -1,0 +1,25 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Company Information,1,Company Name,[Enter Name],,"Enter, e.g., 'XYZ Chemicals Ltd'."
+Company Information,1,Site Address,[Enter Address],,Enter full address.
+Company Information,1,Contact Person,[Enter Name],,Enter name.
+Company Information,1,Designation,[Enter Designation],,"Enter, e.g., 'Manager'."
+Company Information,1,Phone / Email,[Enter Contact],,"Enter, e.g., '+91 9876543210, info@xyz.com'."
+Company Information,1,Nature of Business/Operations,[Enter Description],,"Describe, e.g., 'Chemical Manufacturing'."
+Coverage Requirement,2,Limit of Liability Required,[Enter ₹ Amount],,"Enter, e.g., '10000000'."
+Coverage Requirement,2,Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Coverage Requirement,2,Specific Coverage Required,"[Select: On-site Cleanup, Off-site Cleanup, Third Party Injury/Damage, Sudden & Accidental, Gradual Pollution, Transportation Pollution, Contractor’s Pollution, Other (Specify)]",,"Enter selections, e.g., 'On-site Cleanup, Sudden & Accidental'."
+Previous Insurance,3,Do you currently have Pollution Liability Insurance?,"[Yes/No, Details if Yes]",,"Enter 'No' or 'Yes: Insurer, Policy No., Period, Limit, Premium'."
+Previous Insurance,3,Any Claims in Past 5 Years?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Attach details'.
+Site Details,4,Years at Current Site,[Enter Years],,"Enter, e.g., '10'."
+Site Details,4,Total Area (acres/sq. m),[Enter Area],,"Enter, e.g., '5 acres'."
+Site Details,4,Number of Buildings,[Enter Number],,"Enter, e.g., '3'."
+Site Details,4,Surrounding Environment,"[Select: Industrial, Residential, Waterbody, School, Agricultural Land, Others]",,"Enter selections, e.g., 'Industrial, Waterbody'."
+Environmental Infrastructure,5,Site Features,"[Select: Underground Storage Tanks, Aboveground Tanks, Drum Storage, Wastewater Treatment, Air Pollution Control]",,Enter selections.
+Environmental Infrastructure,5,Plans in Place,"[Select: Emergency Response Plan, Spill Control Plan, Fire Protection System, Environmental Training Plan]",,Enter selections.
+Environmental History,6,"Any pollution incidents (spills, leaks, fires)?","[Yes/No, Attach Documents if Yes]",Upload,Enter 'No' or 'Yes: Attach documents'.
+Environmental History,6,Any contamination or clean-up at site?,"[Yes/No, Attach Documents if Yes]",Upload,Enter 'No' or 'Yes: Attach documents'.
+Environmental History,6,Any environmental fines or lawsuits in last 5 years?,"[Yes/No, Attach Documents if Yes]",Upload,Enter 'No' or 'Yes: Attach documents'.
+Waste Management & Transport,7,Waste sent off-site for disposal?,[Yes/No],,Enter 'Yes' or 'No'.
+Waste Management & Transport,7,Use of 3rd party carriers for hazardous materials?,[Yes/No],,Enter 'Yes' or 'No'.
+Waste Management & Transport,7,Company-owned transportation of materials?,[Yes/No],,Enter 'Yes' or 'No'.
+Attachments,8,Attachments,"[Select: Site Plan, Tank List, Raw Materials List, Policy Copy, Environmental Reports, Pollution Control Permits, Attached]",,"Enter selections, e.g., 'Site Plan, Yes'."

@@ -1,0 +1,31 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Business Information,1,Company Name (including subsidiaries),[Enter Name],,"Enter, e.g., 'XYZ Manufacturing Ltd'."
+Business Information,2,Registered Address,[Enter Address],,Enter full address.
+Business Information,3,Include Subsidiaries in Cover?,[Yes/No],,Enter 'Yes' or 'No'.
+Business Information,4,Main Business Location,[Enter Location],,Enter location.
+Business Information,5,Product Distribution Location(s),[Enter Locations],,"Enter, e.g., 'India, EU'."
+Business Information,6,Years in Business,[Enter Years],,"Enter, e.g., '15'."
+Business Information,7,Do you manufacture the full product?,"[Yes/No, Sourced Parts if No]",,Enter 'Yes' or 'No: List parts'.
+Business Information,8,Is the manufacturing date marked on the product?,[Yes/No],,Enter 'Yes' or 'No'.
+Business Information,9,Operate in USA/Canada/Other Countries?,"[Yes/No, Countries if Yes]",,Enter 'No' or 'Yes: List countries'.
+Business Information,10,Affiliated with suppliers/vendors?,[Yes/No],,Enter 'Yes' or 'No'.
+Product Information,11,Estimated value of Goods Manufactured (past 3 years),[Enter  Amount],,"Enter amount, e.g., '50000000'."
+Product Information,11,Estimated value of Goods Sold/Supplied (past 3 years),[Enter  Amount],,Enter amount.
+Product Information,11,Estimated value of Goods Repaired/Serviced (past 3 years),[Enter  Amount],,Enter amount.
+Product Information,12,Product Details,"[Enter for each: Name, Components, Units, Sales, Years, Usage Duration, End-Use, Warranties, Tech Support, R&D, Risks, Warnings, New Launch, Recalled]",Add rows for each product,"Add rows in Excel, e.g., 'Widget, Plastic, 10000 units, 5000000, 5 years, 2 years, Consumer, 1-year warranty, Yes, Yes, No, Yes: Text, No, No'."
+Quality & Safety Controls,13,Customer Complaint/Incident Handling Process,[Enter Process],,Describe process.
+Quality & Safety Controls,14,Product Testing / Quality Checks,[Enter Checks],,Describe checks.
+Quality & Safety Controls,15,"Quality Certifications (e.g., ISI)?",[Yes/No],,Enter 'Yes' or 'No'.
+Quality & Safety Controls,16,Govt. Safety Investigations in Past?,[Yes/No],,Enter 'Yes' or 'No'.
+Quality & Safety Controls,17,Average Product Defect Rate,[Enter Rate],,"Enter, e.g., '0.5%'."
+Quality & Safety Controls,18,Warranties Provided?,"[Yes/No, Duration if Yes]",,Enter 'No' or 'Yes: Duration'.
+Quality & Safety Controls,19,User Instructions Provided,"[Select: On Product, In Leaflet, Website, Hazard Warnings Visible]",,"Enter selections, e.g., 'Leaflet, Website'."
+Claims & Risk History,20,Past 3-Year Claims Summary,"[Enter for each: Year, No. of Claims, Amount Paid, Pending]",Add rows for each year,"Add rows in Excel, e.g., '2024, 2, 1000000, 0'."
+Claims & Risk History,21,Known Product Defects That May Lead to Claims?,[Yes/No],,Enter 'Yes' or 'No'.
+Claims & Risk History,22,Previous Insurance?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Explain'.
+Coverage Requirements,24,Aggregate Limit (Policy Period),[Enter Amount],,"Enter, e.g., '15000000'."
+Sales & Export Details,25,Turnover (Last 3 Years),"[Enter for each: Segment, FY1, FY2, FY3]","Domestic, USA/Canada, Others","Add rows in Excel, e.g., 'Domestic, 50000000, 60000000, 70000000'."
+Sales & Export Details,26,Export Coverage Required,"[Enter for each: Region, Years Exported, Cover Needed]","USA/Canada, OECD, Others","Add rows in Excel, e.g., 'USA/Canada, 5 yrs, Yes'."
+Sales & Export Details,27,Do You Require Vendor Cover?,"[Yes/No, Attach Contracts if Yes]",,Enter 'No' or 'Yes: Attach contracts'.
+Sales & Export Details,28,Do Your Exports Meet US/Canada Regulations?,[Yes/No],,Enter 'Yes' or 'No'.
+Disclosure,29,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

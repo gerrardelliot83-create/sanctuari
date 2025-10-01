@@ -1,0 +1,37 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer & Company Information,1,Full Legal Name of Organization,[Enter Name],,"Enter name, e.g., 'ABC Solutions Ltd'."
+Proposer & Company Information,1,Complete Mailing Address,[Enter Address],,Enter address.
+Proposer & Company Information,1,"City, State, and PIN Code","[Enter City, State, PIN]",,Enter details.
+Proposer & Company Information,1,Official Contact Number,[Enter Number],,"Enter, e.g., '+91 1234567890'."
+Proposer & Company Information,1,Official Email ID,[Enter Email],,Enter email.
+Proposer & Company Information,1, Nature of Business,[Enter Nature],,Enter type.
+Proposer & Company Information,1,Organization Type,"[Select: Individual, Partnership, Pvt Ltd, Others]",,Enter selection.
+Proposer & Company Information,1,Business Location Category,[Urban / Rural],,Enter 'Urban' or 'Rural'.
+Insured Member Details,2,Are all members part of the same group/corporate entity?,[Yes/No],,Enter 'Yes' or 'No'.
+Insured Member Details,2,Insured Member Details,"[Enter for each: Name, Relation, DOB, Age, Gender, Sum Insured, PED]",Upload ,"Add rows, e.g., 'John Doe, Employee, 01/01/1980, 45, Male, 500000, No'."
+Previous Policy Details,3,Any existing/previous group health policy in the last 3 years?,"[Yes/No, Details if Yes]",Provide table if Yes,"Enter 'No' or 'Yes: Insurer, Policy No., Period, Premium, Claims'."
+Coverage Options & Add-ons,4,In-patient Hospitalization,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Pre & Post Hospitalization Expenses,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Day Care Procedures,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Ambulance Charges,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Maternity Benefits,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Newborn Baby Coverage,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Pre-existing Disease Cover,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Domiciliary Hospitalisation,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Organ Donor Expenses,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Mental Health Treatment,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Health Check-up Reimbursement,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Emergency Care (ER) Treatment,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Hospital Cash Benefit,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,AYUSH (Alternative Medicine),[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Vaccination Charges,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Critical Illness Cover,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Surgical Expenses,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Options & Add-ons,4,Teleconsultation Services,[Yes/No],,Enter 'Yes' or 'No'.
+Optional Exclusions to Lower Premium,5,Domiciliary Hospitalisation,[Yes/No],,Enter 'Yes' to exclude or 'No'.
+Optional Exclusions to Lower Premium,5,Pre & Post Hospitalisation,[Yes/No],,Enter 'Yes' to exclude or 'No'.
+Optional Exclusions to Lower Premium,5,Maternity Benefits,[Yes/No],,Enter 'Yes' to exclude or 'No'.
+Optional Exclusions to Lower Premium,5,Ambulance Charges,[Yes/No],,Enter 'Yes' to exclude or 'No'.
+Policy Duration & Member Count,6,Desired Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Policy Duration & Member Count,6,Total Members to be Insured,[Enter Number],,Enter number.
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

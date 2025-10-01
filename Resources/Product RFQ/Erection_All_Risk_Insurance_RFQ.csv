@@ -1,0 +1,37 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Policy & Proposer Information,1,Policy Type,[New/Renewal],,Enter 'New' or 'Renewal'.
+Policy & Proposer Information,2,Name of Insured / Proposer,[Enter Name],,"Enter name, e.g., 'XYZ Engineering Ltd'."
+Policy & Proposer Information,3,Communication Address,[Enter Address],,Enter full address.
+Policy & Proposer Information,4,Project Start Date,[Enter DD/MM/YYYY],,Enter date.
+Policy & Proposer Information,5,Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Policy & Proposer Information,6,Project Scope,[Enter Scope],"e.g., Transformer Erection, Plant Setup",Describe scope.
+Policy & Proposer Information,7,Total Project Duration (Months),[Enter Months],,"Enter number, e.g., '18'."
+Policy & Proposer Information,8,% of Project Completed,[Enter %],,"Enter percentage, e.g., '20'."
+Policy & Proposer Information,9,Project Location Address,[Enter Address],,Enter address.
+Policy & Proposer Information,10,Sum Insured,[Enter� Amount],,Enter amount.
+Policy & Proposer Information,11,Share the details of Expiring policy,[Enter Details],Mention the name of Insurance company if Previous Insurance available,Enter the Previous Policy details if available 
+Policy & Proposer Information,12,Material Storage Method,[Enter Method],"e.g., Covered shed / Open / Secured",Describe method.
+Policy & Proposer Information,13,Deductible / Excess Expected,5%,,Prefilled
+Policy & Proposer Information,14,Security Arrangements in Place,"[Yes/No, Specify if Yes]",,Enter 'No' or 'Yes: Details'.
+Policy & Proposer Information,15,Client Experience in Similar Projects,[Yes/No],,Enter 'Yes' or 'No'.
+Policy & Proposer Information,16,Past Claim History in Similar Works,[Nil / Provide Details],,Enter 'Nil' or details.
+Policy & Proposer Information,17,Exposure to STFI,Yes,,Prefilled
+Policy & Proposer Information,18,FLEXA Discount Required,10% of SI,,Prefilled
+Add-On Covers Required,19,Add-On: Earthquake (Fire & Shock),Yes,,Prefilled
+Add-On Covers Required,20,Add-On: Terrorism,Yes,,Prefilled
+Add-On Covers Required,21,Add-On: Third Party Liability (AOA up to ₹10 Cr),Yes,,Prefilled
+Add-On Covers Required,22,Add-On: Owners Surrounding Property,Yes,,Prefilled
+Add-On Covers Required,23,Add-On: Debris Removal,Yes,,Prefilled
+Add-On Covers Required,24,Add-On: Additional Customs Duty,Yes,,Prefilled
+Add-On Covers Required,25,Add-On: Contractors Plant & Machinery (up to ₹25L / 5%),Yes,,Prefilled
+Add-On Covers Required,26,Add-On: Offsite Fabrication / Storage,Yes,,Prefilled
+Add-On Covers Required,27,Add-On: Maintenance Visit Cover,Yes,,Prefilled
+Add-On Covers Required,28,Add-On: Extended Maintenance Cover,Yes,,Prefilled
+Add-On Covers Required,29,"Add-On: Design Defect Cover (e.g., DE2)",Yes,,Prefilled
+Add-On Covers Required,30,"Add-On: Express Freight, Holiday & Overtime Wages",Yes,,Prefilled
+Add-On Covers Required,31,Add-On: Air Freight,Yes,,Prefilled
+Add-On Covers Required,32,Add-On: Escalation Clause,Yes,,Prefilled
+Add-On Covers Required,33,Add-On: Breakage of Glass,Yes,,Prefilled
+Add-On Covers Required,34,Add-On: Free Automatic Reinstatement (up to 10% of SI),Yes,,Prefilled
+Add-On Covers Required,35,Add-On: Waiver of Subrogation,Yes,,Prefilled
+Add-On Covers Required,36,Add-On: Valuable Documents & Drawings,Yes,,Prefilled

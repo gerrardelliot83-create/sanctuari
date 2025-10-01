@@ -1,0 +1,12 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Insured Details,1,Name of Proposer,[Enter Name],,"Enter the full name of the person or entity proposing the insurance, e.g., 'John Doe'."
+Insured Details,2,Policy Period,[Enter Period],,"Enter the policy duration, e.g., '01/01/2025 to 31/12/2025'."
+Insured Details,3,Communication Address,[Enter Address],,"Provide full address, e.g., '123 Main St, City, State, Country, PIN'."
+Risk Information,4,Who will be traveling (Name/Designation),[Enter Names/Designations],,"List travelers, e.g., 'John Doe (CEO), Jane Smith (Manager)'."
+Risk Information,5,Nature & Purpose of Travel,[Enter Details],,"Describe, e.g., 'Business meetings in Europe'."
+Risk Information,6,Type of Baggage Covered,[Enter Types],"personal, business, laptop, etc.","List types, e.g., 'personal, laptop'."
+Risk Information,7,Maximum Number of Trips Annually,[Enter Number],,"Enter a number, e.g., '10'."
+Risk Information,8,Sum Insured per Trip,[Enter Amount],,"Enter amount, e.g., '500000'."
+Risk Information,9,Covers Required,"[Select: Loss due to Theft, Damage due to Fire/Accident, Airline/Transit Loss]",Select one or more,"List selected covers, e.g., 'Loss due to Theft, Airline/Transit Loss'."
+Others,10,Expiring Insurer (if any),[Enter Insurer],,"Enter name if applicable, e.g., 'ABC Insurance', or 'None'."
+Others,11,Claim History (if any),[Enter Details],,"Provide details, e.g., 'Claim for lost baggage in 2024, ₹100000', or 'None'."

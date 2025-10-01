@@ -1,0 +1,36 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Information,1,Name of Insured,[Enter Name],,Enter name.
+Proposer Information,2,Communication Address,[Enter Address],,Enter address.
+Proposer Information,3,Policy Period,[Enter From To],From (DD/MM/YYYY): To (DD/MM/YYYY):,Enter dates.
+Proposer Information,4,Risk Location Address,[Enter Address],,Enter address.
+Proposer Information,5,Do you have multiple risk locations?,"[Yes/No, Annexure A/B if Yes]",,Enter 'No' or 'Yes: Provide details in Annexure A (Manufacturing) and B (Warehouses)'.
+Business Details,6,Please specify your insured business or occupancy type,[Enter Type],,Enter type.
+Business Details,7,Do you have a company website?,"[Yes/No, URL if Yes]",,Enter 'No' or 'Yes: URL'.
+Business Details,8,What type of coverage is required?,[Occurrence Made / Claims Made],Kindly choose between Occurrence (covers events happening during the policy period) or Claims-Made (covers claims reported during the policy period),Enter type.
+Business Details,9,Retroactive date (if Claims Made coverage selected),[Enter DD/MM/YYYY],,Enter date if applicable.
+Business Details,10,Please specify the ratio (if applicable),[Enter Ratio],,Enter if applicable.
+Business Details,11,Territory of coverage required,[Enter Territory],Default: India,"Enter, e.g., 'India'."
+Business Details,12,Jurisdiction for legal matters,[Enter Jurisdiction],Default: India,"Enter, e.g., 'India'."
+Product and Sales Information,13,Product Information,"[Enter for each product: Product, M/I/D]",Provide details in Annexure C,"Add rows for each, e.g., 'Product1, M'."
+Product and Sales Information,14,Annual Operating Assets (AOA) and Annual Operating Yield (AOY),"[Enter AOA, AOY]",,"Enter 'AOA: Amount, AOY: Amount'."
+Product and Sales Information,15,Sales Turnover for all products in the last 3 years by region,"[Enter for each region: Region, Projected, Current, Last]","Regions: India, USA/Canada, OECD (Specify), Other (Specify)","Add rows, e.g., 'India, 100000000, 90000000, 80000000'."
+Insurance History and Risk Details,16,Are any other assets insured with LVGI?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Insurance History and Risk Details,17,Who is the expiring insurer?,[Enter Insurer],,Enter name.
+Insurance History and Risk Details,18,Claim experience details for the past 3 years,[Enter Details],,Provide details.
+Insurance History and Risk Details,19,Any other details relevant for underwriting or risk assessment?,[Enter Details],,Enter if applicable.
+Coverage and Add-ons,20,Add-On: Vendors Liability Extension,"[Yes/No, Sub Limit]",,"Enter 'Yes, Amount' or 'No'."
+Coverage and Add-ons,20,Add-On: Inclusion of Technical Collaborators Liability,"[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,Add-On: Sudden and Accidental Pollution Extension,"[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,Add-On: Liability arising out of Transportation,"[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,Add-On: Act of God Extension,"[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,Add-On: Terrorism Extension,"[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,"Add-On: Goods kept in Care, Custody and Control","[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,Add-On: Food and Beverages Extension,"[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,Add-On: Swimming Pools Extension,"[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,"Add-On: Sports Facilities Extension (for Hazardous Sports, please specify sports)","[Yes/No, Sub Limit, Sports if Hazardous]",,"Enter 'Yes, Amount, Sports: List' or 'No'."
+Coverage and Add-ons,20,Add-On: Medical Expenses,"[Yes/No, Sub Limit]",,Format as above.
+Coverage and Add-ons,20,Add-On: Personal & Advertising Injury,"[Yes/No, Sub Limit]",,Format as above.
+Annexure A - Manufacturing Units,,Annexure A Details,"[Enter for each: Sr. No., Location, Nature & Type, Surrounding Description]",Add rows,Add rows in Excel.
+Annexure B - Warehouses etc.,,Annexure B Details,"[Enter for each: Sr. No., Location, Nature, Surrounding Description]",Add rows,Add rows in Excel.
+Annexure C - Product Information,,Annexure C Details,"[Enter for each: Sr. No., Product Description, M/I/D, Total Turnover, Exports, Destinations]",Add rows,Add rows in Excel.
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

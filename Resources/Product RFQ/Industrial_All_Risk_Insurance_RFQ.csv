@@ -1,0 +1,39 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Basic Information,1,Name of Insured / Proposer,[Enter Name],,"Enter name, e.g., 'XYZ Industries Limited'."
+Basic Information,2,Contact Person Name,[Enter Name],,Enter full name.
+Basic Information,3,Mobile Number,[Enter Number],,"Enter 10-digit number, e.g., '+91 9876543210'."
+Basic Information,4,Email ID,[Enter Email],,Enter official email.
+Basic Information,5,Communication Address,[Enter Address],,"Enter full address with city, state, PIN."
+Risk & Property Details,6,Number of Locations Covered,"[Select: Single, Multiple (Provide List)]",,Enter selection; attach list if Multiple.
+Risk & Property Details,7,Risk Address / Location to be Covered,[Enter Address],,Enter full address with PIN.
+Risk & Property Details,8,Nature of Business / Manufacturing Activity,[Enter Activity],,"Enter, e.g., 'Steel Rolling Mill'."
+Risk & Property Details,9,Age of Building / Plant,[Enter Years],,"Enter, e.g., '10 years'."
+Risk & Property Details,10,Risk Type,"[Select: Manufacturing, Processing, Storage, Office/R&D, Others (Specify)]",,"Enter selection, specify if Others."
+Risk & Property Details,11,Does the risk include Basement Storage?,[Yes/No],,Enter 'Yes' or 'No'.
+Risk & Property Details,12,Is there any history of Fire or Property Damage Claims in last 3 years?,"[No/Yes, Details]",,Enter 'No' or 'Yes: Details'.
+Risk & Property Details,13,"STFI Exposure (Storm, Tempest, Flood, Inundation)",[Yes/No],,Enter 'Yes' or 'No'.
+Risk & Property Details,14,Distance from nearest Fire Station,[Enter km],,"Enter, e.g., '2 km'."
+Risk & Property Details,15,Fire Protection Measures Installed,"[Select: Fire Extinguishers, Hydrant System, Sprinklers, Smoke Detectors, Fire Alarm System, Water Storage Tank, Others]",,"Enter selections, e.g., 'Fire Extinguishers, Sprinklers'."
+History,16,Share the details of Expiring policy,[Enter Details],Mention the name of Insurance company if Previous Insurance available,Enter the Previous Policy details if available 
+Sum Insured Details,17,Sum Insured Details,"[Enter for each: Particular, Sum Insured]","Building, Plant, FFF, Stocks, etc.","Add rows in Excel, e.g., 'Building, 50000000'."
+Business Interruption,18,Do you require Business Interruption (Fire Loss of Profit) Cover?,[Yes/No],,Enter 'Yes' or 'No'.
+Business Interruption,19,Estimated Annual Gross Profit (for BI Cover),[Enter ₹ Amount],,"Enter amount, e.g., '100000000'."
+Business Interruption,20,Indemnity Period Required (Months),"[Select: 3, 6, 12, 18, 24]",,"Enter selection, e.g., '12'."
+Add-On Covers Required,21,Earthquake (Fire & Shock),[Yes/NO],,"Enter 'Required, Amount' or 'Not Required'."
+Add-On Covers Required,22,Terrorism,[Yes/NO],,Format as above.
+Add-On Covers Required,23,Escalation Clause,[Yes/NO],,"Enter 'Required, %' or 'Not Required'."
+Add-On Covers Required,24,Debris Removal (in excess of 1% of claim),[Yes/NO],,Format as above.
+Add-On Covers Required,25,"Architect, Surveyor & Engineer Fees (in excess of 3% of claim)",[Yes/NO],,Format as above.
+Add-On Covers Required,26,Spontaneous Combustion,[Yes/NO],,Format as above.
+Add-On Covers Required,27,Omission to Insure (Additions / Alterations / Extensions),[Yes/NO],,"Enter 'Required, %' or 'Not Required'."
+Add-On Covers Required,28,Leakage & Contamination,[Yes/NO],,Format as above.
+Add-On Covers Required,29,Impact Damage by Own Vehicle,[Yes/NO],,Format as above.
+Add-On Covers Required,30,Start-up / Shut-down Expenses,[Yes/NO],,Format as above.
+Add-On Covers Required,31,Molten Material Spillage,[Yes/NO],,Format as above.
+Add-On Covers Required,32,Fire Fighting Expense Cover,[Yes/NO],,Format as above.
+Add-On Covers Required,33,Forest Fire,[Yes/NO],,Format as above.
+Add-On Covers Required,34,Loss of Rent,[Yes/NO],,"Enter 'Required, Months' or 'Not Required'."
+Add-On Covers Required,35,Alternate Accommodation Expenses,[Yes/NO],,Format as above.
+Add-On Covers Required,36,Nominated Adjuster Clause,[Yes/NO],,Format as above.
+Add-On Covers Required,37,Valuable Documents & Records,[Yes/NO],,Format as above.
+Other Remarks / Risk Details,38,"Any Additional Information to Share about Risk, Claims or Property Use",[Enter Details],,Enter if applicable.

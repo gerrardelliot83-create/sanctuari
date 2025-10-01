@@ -1,0 +1,26 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Business Information,1,Business name,[Enter Name],,"Enter, e.g., 'Elegant Salon'."
+Business Information,1,Business address,[Enter Address],,Enter full address.
+Business Information,1,Contact person & designation,"[Enter Name, Designation]",,"Enter, e.g., 'Jane Doe, Owner'."
+Business Information,1,Is your business registered?,[Yes/No],,Enter 'Yes' or 'No'.
+Business Information,1,Number of years in operation,[Enter Years],,"Enter, e.g., '5'."
+Business Information,1,Do you have employees (full-time or part-time)?,[Yes/No],,Enter 'Yes' or 'No'.
+Business Information,1,Number of employees,[Enter Number],,Enter number or 'N/A'.
+Services Offered,2,Main services provided,[Enter Description],"e.g., haircuts, beauty treatments","Describe, e.g., 'Haircuts, manicures'."
+Services Offered,2,Do you provide any professional advice or consultancy?,[Yes/No],,Enter 'Yes' or 'No'.
+Services Offered,2,"Do you use any special products, chemicals, or equipment?","[Yes/No, Description if Yes]",,Enter 'No' or 'Yes: Describe'.
+Client Interaction & Agreements,3,"Do you provide written contracts, service agreements, or consent forms?",[Yes/No],,Enter 'Yes' or 'No'.
+Client Interaction & Agreements,3,Do you offer guarantees or warranties on your services?,[Yes/No],,Enter 'Yes' or 'No'.
+Client Interaction & Agreements,3,How do you handle client complaints or disputes?,[Enter Description],,Describe process.
+Revenue & Business Scale,4,Approximate annual revenue (last financial year),[Enter ₹ Amount],,"Enter, e.g., '500000'."
+Revenue & Business Scale,4,Average number of clients served per month,[Enter Number],,"Enter, e.g., '200'."
+Claims & Incidents History,5,Claims or complaints in past 5 years?,"[Yes/No, Details if Yes]",,"Enter 'No' or 'Yes: Nature, Date, Outcome'."
+Claims & Incidents History,5,Any current or potential claims?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Specify'.
+Insurance Coverage Requirements,6,Desired limit of indemnity,[Enter Amount],,"Enter, e.g., '1000000'."
+Insurance Coverage Requirements,6,Cover for legal defense costs inside the indemnity limit?,[Yes/No],,Enter 'Yes' or 'No'.
+Insurance Coverage Requirements,6,Retroactive cover for previous services?,[Yes/No],,Enter 'Yes' or 'No'.
+Insurance Coverage Requirements,6,Retroactive date,[ Date],,
+Risk Management & Safety Practices,7,Do you follow health and safety protocols?,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Management & Safety Practices,7,Do you have staff training programs to minimize errors or accidents?,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Management & Safety Practices,7,Do you maintain records of client consent or service approvals?,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Information,8,Any special risks related to your business?,[Enter Details],,Enter if applicable.

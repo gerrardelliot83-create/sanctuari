@@ -1,0 +1,18 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Insured Party Details,1,Name of Insured,[Enter Name],Full legal name of the entity to be insured,"Enter, e.g., 'ABC Traders Pvt Ltd'."
+Insured Party Details,2,Communication Address,[Enter Address],"Complete address including city, state, and PIN code","Enter full address, e.g., '456 Trade St, Chennai, Tamil Nadu, 600001'."
+Policy & Transit Information,3,Policy Period,[Enter Duration],Specify the desired insurance duration,"Enter, e.g., '1 year' or 'From DD/MM/YYYY To DD/MM/YYYY'."
+Policy & Transit Information,4,Start Date of Transit,[Enter DD/MM/YYYY],,"Enter date, e.g., '01/01/2026'."
+Policy & Transit Information,5,End Date of Transit,[Enter DD/MM/YYYY or End of Voyage],Or mention “End of Voyage” if applicable,Enter date or 'End of Voyage'.
+Policy & Transit Information,6,Expected Date of Voyage/Shipment,[Enter DD/MM/YYYY],Usually same as policy start date,Enter date.
+Transit Route & Transport Details,7,Place of Origin (From),[Enter City/Port],City/Port of Dispatch,"Enter, e.g., 'Mumbai Port'."
+Transit Route & Transport Details,8,Destination (To),[Enter City/Port],City/Port of Delivery,"Enter, e.g., 'Singapore Port'."
+Transit Route & Transport Details,9,Mode of Transport,"[Select: Road, Rail, Air, Sea, Multimodal]",Please specify the applicable modes,"Enter selections, e.g., 'Sea, Multimodal'."
+Transit Route & Transport Details,10,Type of Packing Used,"[Select: Standard, Wooden, Palletized, Cartons, Customary, Other (Specify)]",,"Enter selection, e.g., 'Wooden, Other: Bubble Wrap'."
+Cargo Details,11,Cargo Description,[Enter Description],Brief description of goods being transported,"Enter, e.g., 'Electronics Accessories'."
+Cargo Details,12,Nature of Cargo,[Enter Nature],"E.g., Electronics, Machinery, Perishables, Chemicals, etc.","Enter, e.g., 'Electronics'."
+Cargo Details,13,Total Cargo Value (INR/USD),[Enter Value],,"Enter, e.g., '1000000 INR'."
+Import Shipment & Duty Coverage,14,Is this an Import Shipment?,[Yes/No],,Enter 'Yes' or 'No'.
+Import Shipment & Duty Coverage,15,Do you wish to cover Import Duty?,[Yes/No],,Enter 'Yes' or 'No'.
+Import Shipment & Duty Coverage,16,"If Yes, Sum Insured for Import Duty",[Enter Rs.],,"Enter amount if Yes, e.g., '200000' or 'N/A'."
+Attachments,17,Attachments,"[Select: Product Photographs, Commercial Invoice, Attached (Yes/No)]",,"Enter selections, e.g., 'Product Photographs, Yes'."

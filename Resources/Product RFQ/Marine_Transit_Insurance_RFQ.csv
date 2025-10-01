@@ -1,0 +1,13 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Application for Marine Transit Insurance,1,Name & Address of the applicant,"[Enter Name, Address]",,"Enter name and full address, e.g., 'XYZ Logistics, 789 Port Rd, Mumbai'."
+Application for Marine Transit Insurance,2,Phone & Fax nos. & e-mail address,[Enter Contact],,"Enter, e.g., 'Phone: +91 9876543210, Email: info@xyz.com'."
+Application for Marine Transit Insurance,3,Goods / Merchandise to be insured,[Enter Goods],,"Enter, e.g., 'Machinery Parts'."
+Application for Marine Transit Insurance,4,Nature of Packing,"[Select: Bales, Crates, Cases, Cartons, Drums, Bags, Loose]",,"Enter selection, e.g., 'Crates'."
+Application for Marine Transit Insurance,5,Mode of Conveyance,"[Select: Road, Rail, Sea, Air, Courier]",,"Enter selections, e.g., 'Sea, Road'."
+Application for Marine Transit Insurance,6,Voyage / Transit,[Enter From To],,"Enter, e.g., 'Mumbai to London'."
+Application for Marine Transit Insurance,7,Period of Insurance,[Enter From To],FROM: TO:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Application for Marine Transit Insurance,8,Sum Insured,"[Enter,  Amount]",,"Enter amount, e.g., '2000000'."
+Application for Marine Transit Insurance,9,Terms of Sale Contract,"[Select: CIF, FOB, C&F, Other (Specify)]",,"Enter selection, specify if Other."
+Application for Marine Transit Insurance,10,Loading and Unloading Risks Coverage Required,[Yes/No],,Enter 'Yes' or 'No'.
+Application for Marine Transit Insurance,11,Details of Previous Claims (Last 3 Years),"[Enter for each: Year, Nature, Amount, Status]","Year, Nature of Loss, Claim Amount (Rs.), Status (Paid/Pending)","Add rows in Excel, e.g., '2024, Damage, 1000000, Paid'."
+Terms of Cover Required,8,Cover Type Required,"[Select: Basic, All Risk, War, SRCC, Excess % for Leakage]",,

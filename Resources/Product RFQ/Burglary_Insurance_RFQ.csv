@@ -1,0 +1,24 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Information,1,Name of the Insured,[Enter Name],,Enter name.
+Proposer Information,2,Communication Address,[Enter Address],,Enter address.
+Proposer Information,3,Policy type,[New/Renewal],,Enter 'New' or 'Renewal'.
+Proposer Information,4,Policy Period,[Enter From To],From: ___ / ___ / ______ To: ___ / ___ / ______,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Proposer Information,5,Risk Location Address (if different from above),[Enter Address],,Enter if different.
+Risk Details,5,First Loss Basis Required,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Details,,"If Yes, First Loss % of Total Sum Insured",[Enter %],,Enter percentage if Yes.
+Risk Details,6,Floater Basis Required (for multiple locations),[Yes/No],,Enter 'Yes' or 'No'.
+Risk Details,7,Watchman Deployment,"[Select: Day, Night, 24x7, None]",,Enter selection.
+Risk Details,8,Security System Available: Burglar Alarm System,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Details,8,Security System Available: CCTV Surveillance,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Details,9,"Type of Storage (e.g., office stock, warehouse, retail)",[Enter Type],,Enter type.
+Risk Details,10,Height of Boundary Walls (in feet/meters),[Enter Height],,"Enter, e.g., '10 feet'."
+Risk Details,11,"Are all Entry/Exit Points secured with iron grills, locking systems?",[Yes/No],,Enter 'Yes' or 'No'.
+Risk Details,12,Any Security Guards Deployed at Night?,[Yes/No],,Enter 'Yes' or 'No'.
+Schedule of Items to be Insured,13,Schedule of Items,"[Enter for each: Sr. No., Description, Sum Insured (INR)]",Add rows for each item,"Add rows, e.g., '1, Stock, 10000000'."
+Schedule of Items to be Insured,14,Total Sum Insured,[Enter INR Amount],,Enter total.
+Current Insurance Information,15,Expiring Insurer (if any),[Enter Insurer],,Enter name.
+Current Insurance Information,16,Expiry Date of Current Policy,[Enter DD/MM/YYYY],,Enter date.
+Current Insurance Information,17,Claim Experience for Past 3 Years,"[No Claims / Yes (Details: Year, Amount, Nature)]",,Enter 'No Claims' or details for each year.
+Optional Add-Ons Requested,18,Add-On: Theft,"[Yes/No, Sum Insured]",,"Enter 'Yes, 5000000' or 'No'."
+Optional Add-Ons Requested,,"Add-On: RSMD (Riot, Strike, Malicious Damage)","[Yes/No, Sum Insured]",,Format as above.
+Any Other Information or Requirements,,Any Other Information or Requirements,[Enter Details],,Enter if applicable.

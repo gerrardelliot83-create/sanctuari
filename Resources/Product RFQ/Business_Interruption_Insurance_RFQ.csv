@@ -1,0 +1,27 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Your Business Details,,Business Name,[Enter Name],The legal name of your business to be insured,"Enter legal name, e.g., 'XYZ Corp'."
+Your Business Details,,Business Physical Address,[Enter Address],Where the business is located include full address,"Enter full address, e.g., '456 Elm St, City, State, PIN'."
+Your Business Details,,Type of Business/Operations,[Enter Description],Briefly describe what your business does,"Describe, e.g., 'Manufacturing of electronics'."
+Your Business Details,,Postal/Communication Address,[Enter Address],If different from physical address,"Enter if different, e.g., 'PO Box 123, City', or 'Same as physical'."
+Your Business Details,,Contact Numbers: Mobile,[Enter Number],,"Enter mobile, e.g., '+91 9876543210'."
+Your Business Details,,Email Address,[Enter Email],For official communication and document sharing,"Enter email, e.g., 'info@xyz.com'."
+Disclosure Information,1,Has any insurer ever: Refused to insure or renew your insurance on standard terms?,[Yes/No],,"Enter 'Yes' or 'No'; if Yes, provide details in full details field."
+Disclosure Information,1,Has any insurer ever: Refused to pay a claim?,[Yes/No],,"Enter 'Yes' or 'No'; if Yes, provide details in full details field."
+,,Share the details of Expiring policy,[Enter Details],,Selection
+Disclosure Information,2,Have you made any insurance claims in the last 5 years?,[Yes/No],,"Enter 'Yes' or 'No'; if Yes, provide details in full details field."
+Disclosure Information,3,Do you or your employees have any criminal convictions or are currently under prosecution (including traffic but excluding parking offenses)?,[Yes/No],,"Enter 'Yes' or 'No'; if Yes, provide full details."
+Disclosure Information,,"If yes to any above, provide full details",[Enter Details],Disclosure is mandatory for underwriting decisions. Failure to disclose may void your coverage.,Provide detailed explanation if Yes to any of 1-3.
+Fire Insurance Background,1,Do you already have fire insurance coverage on: Machinery and plant?,[Yes/No],,Enter 'Yes' or 'No'.
+Fire Insurance Background,1,Do you already have fire insurance coverage on: Stock and stock-in-process?,[Yes/No],,Enter 'Yes' or 'No'.
+Fire Insurance Background,2,Name(s) of the current fire insurance provider(s),[Enter Names],,"Enter provider names, e.g., 'ABC Insurance'."
+Coverage & Sums Insured,,Indemnity Period (in weeks),[Enter Weeks],The number of weeks you want to be covered for loss of income,"Enter number, e.g., '52'."
+Coverage & Sums Insured,,Cover Amounts Required: Reduction in Profit,"[Enter ,Amount]",Estimated loss of net profit during interruption,"Enter amount, e.g., '10000000'."
+Coverage & Sums Insured,,Cover Amounts Required: Reduction in Revenue,"[Enter ,Amount]",Estimated decline in total business income/sales,"Enter amount, e.g., '20000000'."
+Coverage & Sums Insured,,Cover Amounts Required: Reduction in Rents (if applicable),"[Enter ,Amount]",Loss of rental income if premises unusable,Enter amount or 'N/A'.
+Coverage & Sums Insured,,Cover Amounts Required: Wages (Dual Basis),"[Enter ,Amount]",Wages of key employees during disruption,"Enter amount, e.g., '5000000'."
+Coverage & Sums Insured,,Cover Amounts Required: Wages in Lieu of Notice,"[Enter ,Amount]",Compensation for terminated employees,"Enter amount, e.g., '3000000'."
+Coverage & Sums Insured,,Cover Amounts Required: Payroll,"[Enter ,Amount]",Combining partial and full payroll support,"Enter amount, e.g., '8000000'."
+Coverage & Sums Insured,,Cover Amounts Required: Additional Increased Cost of Working,"[Enter ,Amount]",Extra costs to keep business running,"Enter amount, e.g., '4000000'."
+Coverage & Sums Insured,,Cover Amounts Required: Book Debts,"[Enter ,Amount]",Loss of receivables if records lost,"Enter amount, e.g., '6000000'."
+Coverage & Sums Insured,,"Do you require Natural Disaster Cover (e.g., earthquake, flood)?",[Yes/No],,Enter 'Yes' or 'No'.
+Any Additional Information,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

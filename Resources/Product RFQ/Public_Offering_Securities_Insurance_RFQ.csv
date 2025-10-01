@@ -1,0 +1,30 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+General Information,1,Principal Organisation,[Enter Name],,"Enter, e.g., 'XYZ Corp'."
+General Information,2,Principal Address,[Enter Address],,Enter full address.
+General Information,3,Nature of Activities,[Enter Activities],,"Enter, e.g., 'Financial Services'."
+General Information,4,Duration of continuous business operation,[Enter Years],,"Enter, e.g., '10'."
+General Information,5,Former names and dates (if applicable),"[Enter Names, Dates]",,Enter or 'None'.
+General Information,6,Date and place of incorporation,"[Enter Date, Place]",,"Enter, e.g., '01/01/2010, Mumbai'."
+General Information,7,Is the Principal Organisation Public or Private?,[Yes/No],,"Enter 'Yes' for Public, 'No' for Private."
+General Information,8,Stock exchange(s) where listed,[Enter Exchanges],,"Enter, e.g., 'BSE, NSE' or 'None'."
+Requested Limit,9,Limit of Indemnity Requested,Numeric Field,Coverage amount in INR,State total limit sought
+Requested Limit,10,Deductible Requested,Numeric Field,Amount proposer retains per claim,Enter in INR
+Requested Limit,11,Policy Period,Date Range,Start & end date,Enter required policy term
+North American Operations,12,Total gross assets of North American subsidiaries,[Enter Amount],,Enter amount or 'N/A'.
+North American Operations,13,Shares traded on any US Stock Exchange?,[Yes/No],,Enter 'Yes' or 'No'.
+North American Operations,14,Issue American Depository Receipts (ADRs) in the US?,[Yes/No],,Enter 'Yes' or 'No'.
+Outside Directorship Coverage,15,Require coverage for Outside Directorships?,"[Yes/No, Details if Yes]","Include Name, Activities, Insurance, % Ownership, etc.",Enter 'No' or 'Yes: Add rows with details'.
+Announced Changes,16,"Ongoing acquisitions, tender offers, or mergers?",[Yes/No],,Enter 'Yes' or 'No'.
+Announced Changes,17,Proposals for Principal Organisation to be acquired?,[Yes/No],,Enter 'Yes' or 'No'.
+Announced Changes,18,Intention to make a new public offering within next year?,[Yes/No],,Enter 'Yes' or 'No'.
+Announced Changes,19,Changes to board of directors or officers since last report,[Enter Details],,Enter details or 'None'.
+Prior Insurance,20,Refused or cancelled this type of insurance?,[Yes/No],,Enter 'Yes' or 'No'.
+Prior Insurance,21,Current Directors and Officers liability insurance?,[Yes/No],,Enter 'Yes' or 'No'.
+Prior Insurance,22,Notice given under prior/current D&O policy?,[Yes/No],,Enter 'Yes' or 'No'.
+Prior Insurance,23,Loss payments made under D&O insurance?,[Yes/No],,Enter 'Yes' or 'No'.
+Prior Insurance,24,Pending or past claims against directors/officers?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Attach details'.
+Continuity with Prior Coverage,25,Requested continuity date for coverage,[Enter DD/MM/YYYY],,Enter date or 'N/A'.
+Continuity with Prior Coverage,26,"Details of prior insurer(s), policy limits, deductibles, periods",[Enter Details],,Enter or 'N/A'.
+Additional Information,27,Facts or circumstances that might give rise to a claim?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Disclosure,28,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else
+Prior Insurance,29,Share the details of Expiring policy,[Enter Details],Mention the name of Insurance company if Previous Insurance available,Enter the Previous Policy details if available 

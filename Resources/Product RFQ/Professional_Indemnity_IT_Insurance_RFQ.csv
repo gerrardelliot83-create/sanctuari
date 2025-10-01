@@ -1,0 +1,36 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Information,1,Name of the Insured Entity,[Enter Name],,"Enter full legal name, e.g., 'XYZ Consultancy Ltd'."
+Proposer Information,2,Type of Business / Profession,[Enter Type],,"Enter, e.g., 'Legal Services'."
+Proposer Information,3,Year of Establishment,[Enter Year],,"Enter, e.g., '2010'."
+Proposer Information,4,Registered Communication Address,[Enter Address],,Enter full address.
+Proposer Information,5,Contact Person Name & Title,"[Enter Name, Title]",,"Enter, e.g., 'John Doe, Director'."
+Proposer Information,6,Email ID,[Enter Email],,"Enter, e.g., 'info@xyz.com'."
+Proposer Information,7,Mobile Number,[Enter Number],,"Enter, e.g., '+91 9876543210'."
+Proposer Information,8,Company Website (if any),[Enter URL],,"Enter, e.g., 'www.xyz.com' or 'None'."
+Proposer Information,9,Policy Period Required,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Professional Activity Details,10,Description of Services Offered,[Enter Description],,"Describe, e.g., 'Legal advice, contract drafting'."
+Professional Activity Details,11,Countries Where Services Are Provided,[Enter Countries],,"Enter, e.g., 'India, UK'."
+Professional Activity Details,12,Number of Employees,[Enter Number],,"Enter, e.g., '50'."
+Professional Activity Details,13,Do You Use Subcontractors?,"[Yes/No, % if Yes]",,Enter 'No' or 'Yes: % of work'.
+Professional Activity Details,14,Have You Signed Contracts with Hold Harmless Clauses?,[Yes/No],,Enter 'Yes' or 'No'.
+Professional Activity Details,15,Are Services Provided to U.S. Clients?,[Yes/No],,Enter 'Yes' or 'No'.
+Coverage Requirements,16,Type of Coverage,"[Select: Claims Made, Retroactive Inception]",,Enter selection.
+Coverage Requirements,17,Retroactive Date (if applicable),[Enter DD/MM/YYYY],,Enter date or 'N/A'.
+Coverage Requirements,18,Territory / Jurisdiction,[Enter Territory],,"Enter, e.g., 'India, Worldwide'."
+Coverage Requirements,19,Limit of Indemnity Required,"[Enter AOA, AOY]",,"Enter, e.g., 'AOA: 10000000, AOY: 30000000'."
+Coverage Requirements,20,Deductible / Excess Preferred,[Enter Amount],,"Enter, e.g., '500000'."
+Coverage Requirements,21,Turnover (Last 3 Financial Years),"[Enter FY1, FY2, FY3]",,"Enter, e.g., 'FY1: 50000000, FY2: 60000000, FY3: 70000000'."
+Coverage Requirements,22,Expected Turnover Current FY,[Enter ₹ Amount],,"Enter, e.g., '80000000'."
+Coverage Requirements,23,Expected Premium (if any),[Enter ₹ Amount],,Enter amount or 'N/A'.
+Past Insurance & Claims History,24,Is Professional Indemnity Cover Currently in Place?,[Yes/No],,Enter 'Yes' or 'No'.
+Past Insurance & Claims History,25,Name of Current Insurer (if applicable),[Enter Insurer],,Enter name or 'N/A'.
+Past Insurance & Claims History,26,Claims in the Past 5 Years?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Attach details'.
+Past Insurance & Claims History,27,Any Circumstance or Incident That May Lead to a Claim?,[Yes/No],,Enter 'Yes' or 'No'.
+Optional Add-On Covers,28,Dishonesty of Employees,[Yes/No],,Enter 'Yes' or 'No'.
+Optional Add-On Covers,28,Loss of Documents,[Yes/No],,Enter 'Yes' or 'No'.
+Optional Add-On Covers,28,Breach of Confidentiality,[Yes/No],,Enter 'Yes' or 'No'.
+Optional Add-On Covers,28,Defamation / Libel / Slander,[Yes/No],,Enter 'Yes' or 'No'.
+Optional Add-On Covers,28,Intellectual Property Infringement (Unintentional),[Yes/No],,Enter 'Yes' or 'No'.
+Optional Add-On Covers,28,Cyber & Technology Risk Extension,[Yes/No],,Enter 'Yes' or 'No'.
+Optional Add-On Covers,28,Legal Defence / Court Attendance Cost,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Remarks,29,Remarks / Special Requirements,[Enter Details],,Enter if applicable.

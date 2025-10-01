@@ -1,0 +1,31 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Details,1,Insured Name,[Enter Name],,"Enter name, e.g., 'ABC Retail Ltd'."
+Proposer Details,2,Insured Address,[Enter Address],,Enter full address.
+Proposer Details,3,Policy Period,[Enter From To],From __ / __ / ____ to __ / __ / ____,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Employee Coverage,4,Employee Coverage Details,"[Enter for each: Category, No. of Employees, Limit per Employee (INR), Total Sum Insured (INR)]",Add rows for each category,"Add rows in Excel, e.g., 'Cashiers, 10, 500000, 5000000'."
+Risk Info,5,Pre-Employment Background Checks,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Info,6,Dual Cash Control Measures,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Info,7,Periodic Internal Audits,[Yes/No],,Enter 'Yes' or 'No'.
+Risk Info,8,Employee Access to Funds/Assets,[Yes/No],,Enter 'Yes' or 'No'.
+Others,9,Current/Expiring Insurer,[Enter Insurer],,Enter name or 'None'.
+Others,10,Claims History (Last 3 Years),[Enter Details],,Enter details or 'None'.
+Others,11,Special Conditions / Extensions Requested,[Enter Details],,Enter if applicable.
+Risk Info,12,Maximum Cash Exposure at Any Time,Numeric Field,Peak exposure,Provide in INR
+Risk Info,13,Employee Authority to Disburse Funds,Yes/No,Cash handling rights,Select Yes/No
+Risk Info,14,Frequency of Receipt Statement Submission,Frequency Field,"e.g., Daily/Weekly/Monthly",Enter reporting frequency
+Risk Info,15,Frequency & Method of Fund Remittance,Text Field,Remittance rules,Describe process
+Risk Info,16,Retention of Balances by Employees (Limit),Numeric Field,Max cash retained,Specify INR value
+Risk Info,17,Frequency of Balance Verification,Frequency Field,Audit frequency,"e.g., Weekly/Monthly"
+Risk Info,18,Frequency of Cash-Book Reconciliation,Frequency Field,Internal audit controls,Enter details
+Risk Info,19,Frequency of Book Balancing,Frequency Field,General ledger closure,Provide frequency
+Risk Info,21,Maximum Stock Exposure at Any Time,Numeric Field,Peak stock exposure,Provide INR value
+Risk Info,22,Frequency of Physical Stock Verification,Frequency Field,Stock audit,Provide frequency
+Risk Info,23,Frequency of Customer Account Statements,Frequency Field,External confirmation,Enter details
+Miscellaneous,24,Salary Deductions Towards Bad Debts,Yes/No + Details,Recovery policy,"If yes, specify terms"
+Miscellaneous,25,Employee Liabilities/Debts Known to Proposer,Yes/No + Details,Employee liabilities,Provide details if Yes
+Miscellaneous,26,Past Employee Fraud/Defalcation (Details & Controls),Yes/No + Text,History of fraud,Enter details
+Miscellaneous,27,Other Material Risk Information,Text Field,Material disclosures,Add details
+Claims History,28,Past Fraud/Dishonesty Losses (Details),Yes/No + Text,Past loss history,Enter details
+Claims History,29,Previous Fidelity Guarantee Claims,Yes/No + Table,"Claim details (Date, Loss, Insurer, Recovery)",Enter as per format
+Claims History,30,Insurer Decline/Cancellation/Restrictions History,Yes/No + Details,Insurance history,Provide insurer & reason
+Disclosure,,Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

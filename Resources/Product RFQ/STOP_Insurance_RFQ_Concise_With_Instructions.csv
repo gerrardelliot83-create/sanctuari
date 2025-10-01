@@ -1,0 +1,22 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Insured & Contact Details,1,Name of the Insured,[Enter Full Legal Name],Full legal name of the insured entity,"Enter the exact registered name of your company, e.g., 'ABC Enterprises Pvt Ltd'."
+Insured & Contact Details,2,Communication Address,[Enter Complete Postal Address],"Complete postal address including city, state, and country","Provide full address, e.g., '123 Main St, Mumbai, Maharashtra, India, 400001'."
+Insured & Contact Details,3,Contact Person Name,[Enter Name],Name of the person filling this form or authorized contact,"Enter full name, e.g., 'John Doe'."
+Insured & Contact Details,4,Contact Person Phone Number,[Enter Phone/Mobile Number],Phone/mobile number,"Enter number with country code, e.g., '+91 9876543210'."
+Insured & Contact Details,5,Contact Person Email Address,[Enter Email ID],Email ID,"Enter a valid email, e.g., 'john.doe@company.com'."
+Policy Details,6,Policy Period,"[Enter Start DD/MM/YYYY, End DD/MM/YYYY]",,"Enter both dates in DD/MM/YYYY format, e.g., '01/01/2026, 31/12/2026'."
+Policy Details,7,Share the details of Expiring policy,[Enter Details],Mention the name of Insurance company if Previous Insurance available,Enter the Previous Policy details if available 
+Policy Details,8,Type of Transit,"[Select: Imports, Exports, Domestic Sales, Inter-Unit Transfers, To and Fro Job Work, Other (Specify)]",Select one or more; specify if Other,"Select multiple options by listing them, e.g., 'Imports, Exports, Other: Custom Transit'."
+Policy Details,9,Voyage / Transit From,[Enter Origin Location],"Origin location of transit city, state","Enter city and state, e.g., 'Delhi, India'."
+Policy Details,10,Voyage / Transit To,[Enter Destination Location],Destination location of transit,"Enter city and state, e.g., 'New York, USA'."
+Policy Details,11,Are there multiple routes or transit legs involved?,[Yes (Specify Details)/No],"If Yes, include details","Enter 'Yes' with details (e.g., 'Yes: Delhi-Mumbai, Mumbai-Dubai') or 'No'."
+Policy Details,12,Mode of Conveyance / Transport,"[Select: Road, Rail, Air, Sea, Other (Specify)]",Select one or more; specify if Other,"Select multiple options by listing them, e.g., 'Road, Air, Other: Courier'."
+Cargo & Valuation,13,Basis of Valuation,[Enter Valuation Basis],"e.g., CIF + 10%, Invoice value, Market value, Other - please specify","Enter valuation method, e.g., 'CIF + 10%' or 'Invoice value'."
+Cargo & Valuation,14,Packing Details,[Enter Packing Details],"e.g., cartons, drums, pallets, special handling","Describe packing, e.g., 'Cartons on pallets, fragile handling'."
+Cargo & Valuation,15,Per Bottom Limit,[Enter Rs.],Specify the per bottom limit for insurance coverage,"Enter amount in Rs., e.g., '1000000'."
+Cargo & Valuation,16,Per Location Limit,[Enter Rs.],Specify the per location limit for insurance coverage,"Enter amount in Rs., e.g., '5000000'."
+Cargo & Valuation,17,Sales Legs Details,"[Enter for each leg: Description, Transit Type, Sum Insured (Rs.), PSL (Rs.), PLL (Rs.)]",Add rows for each leg; Transit Type: Imports/Exports/Domestic/etc.,"Add rows in Excel for each leg, e.g., 'Electronics, Imports, 2000000, 1500000, 1000000'."
+Claims & Risk History,18,Past Claim Experience (Last 5 Years),"[Enter for each year: Year, Claims Paid (Rs.), Claims Outstanding (Rs.), Total (Rs.), Nature/Cause]",Provide details for each of the last 5 years,"Add rows in Excel for each year, e.g., '2024, 500000, 200000, 700000, Theft'."
+Claims & Risk History,19,Have you implemented any risk mitigation measures to reduce claims?,[Yes (Describe)/No],"If Yes, include description","Enter 'Yes' with details (e.g., 'Yes: Enhanced packaging') or 'No'."
+Claims & Risk History,20,Are there any pending or ongoing claims related to this policy?,[Yes (Provide Details)/No],"If Yes, include details","Enter 'Yes' with details (e.g., 'Yes: Claim for damaged cargo, Rs. 300000') or 'No'."
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

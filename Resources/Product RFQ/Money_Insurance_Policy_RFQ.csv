@@ -1,0 +1,19 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Details,1,Name of the Insured,[Enter Name],,"Enter name, e.g., 'ABC Retail Ltd'."
+Proposer Details,2,Communication Address,[Enter Address],,Enter full address.
+Proposer Details,3,Policy Period,[Enter From To],From __ / __ / ____ to __ / __ / ____,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Proposer Details,4,Risk Location Address (if different),[Enter Address],,Enter address or 'Same'.
+Coverage Required,5,Cash in Transit,"[Yes/No, Limit]",,"Enter 'Yes, Amount' or 'No'."
+Coverage Required,5,Cash in Safe/Strong Room at Office Premises,"[Yes/No, Limit]",,Format as above.
+Coverage Required,5,Cash on Counter,"[Yes/No, Limit]",,Format as above.
+Coverage Required,5,Cash in ATM,"[Yes/No, Limit]",,Format as above.
+Operational Details,6,Nature of Business,[Enter Nature],,"Enter, e.g., 'Retail'."
+Operational Details,7,How is the cash transported?,[Enter Method],"e.g., vehicle, guards",Describe method.
+Operational Details,8,Maximum Cash Carrying Limit at Any One Time,"[Enter ,Amount]",,"Enter amount, e.g., '500000'."
+Operational Details,9,Maximum Cash Retained Overnight,"[Enter ,Amount]",,"Enter amount, e.g., '200000'."
+Operational Details,10,Is there a Burglar Alarm / CCTV system installed?,[Yes/No],,Enter 'Yes' or 'No'.
+Operational Details,11,Security Personnel Deployment,[Yes/No],,Enter 'Yes' or 'No'.
+Operational Details,12,Safe Type & Brand (for office premises),"[Enter Type, Brand]",,"Enter, e.g., 'Fireproof, Godrej'."
+Previous History ,13,Expiring Insurer (if any),[Enter Insurer],,Enter name or 'None'.
+Previous History ,14,Past 3 Years Claim Experience,[Enter Details],,Enter details or 'None'.
+Previous History ,15,Any Special Conditions or Coverage Requested,[Enter Details],,Enter if applicable.

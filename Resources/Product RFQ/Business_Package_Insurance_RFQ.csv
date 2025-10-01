@@ -1,0 +1,35 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer & Business Information,1,Name of the Insured,[Enter Name],,Enter name.
+Proposer & Business Information,1,Type of Entity,"[Select: Proprietorship, Partnership, Pvt Ltd, LLP, Others]",,"Enter selection, specify if Others."
+Proposer & Business Information,1,Nature of Business,[Enter Nature],Office / Retail / Clinic / Other (Specify),"Enter, specify if Other."
+Proposer & Business Information,1,Communication Address,[Enter Address],,Enter address.
+Proposer & Business Information,1,Location of Business Premises,[Enter Location],,Enter location.
+Proposer & Business Information,1,Business Since,[Enter YYYY],,"Enter year, e.g., '2010'."
+Proposer & Business Information,1,Contact Person Name,[Enter Name],,Enter name.
+Proposer & Business Information,1,Email / Mobile Number,[Enter Contact],,Enter 'email@example.com / +91 1234567890'.
+Policy Details,2,Policy Period,[Enter From To],From DD/MM/YYYY to DD/MM/YYYY,Enter dates.
+Policy Details,2,Is Policy Renewal or Fresh,[Fresh / Renewal],,Enter 'Fresh' or 'Renewal'.
+Policy Details,2,Previous Insurer,[Enter Insurer],"If renewal, mention insurer",Enter if renewal.
+Policy Details,2,Expiry Date of Previous Policy,[Enter Date],,Enter date if renewal.
+Policy Details,2,Existing Claims (last 3 yrs),"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Sections to be Covered,3,Coverage: Building (If owned),"[Yes/No, Sum Insured]",,"Enter 'Yes, 10000000' or 'No'."
+Sections to be Covered,3,"Coverage: Office Furniture, Fixtures, Equipment","[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Electronic Equipment,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Burglary & Theft,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Money Insurance (Cash in safe / transit),"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Plate Glass,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Fidelity Guarantee,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Machinery Breakdown,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Portable Equipment,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Personal Accident for Owner / Staff,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Public Liability,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Workmen Compensation,"[Yes/No, Sum Insured]",,Format as above.
+Sections to be Covered,3,Coverage: Loss of Profit (Business Interruption),"[Yes/No, Sum Insured]",,Format as above.
+Risk & Site Specific Details,4,Nature of Premises (Owned/Rented),[Enter Nature],,Enter 'Owned' or 'Rented'.
+Risk & Site Specific Details,4,Age of Premises,[Enter Age],,Enter age in years.
+Risk & Site Specific Details,4,"Floor of Operation (e.g. Ground, 2nd)",[Enter Floor],,"Enter, e.g., 'Ground'."
+Risk & Site Specific Details,4,Fire Safety Measures,[Enter Measures],Extinguisher / Hydrant / NA,"Enter, e.g., 'Extinguisher, Hydrant'."
+Risk & Site Specific Details,4,24x7 Security Arrangement,[Yes/No],,Enter 'Yes' or 'No'.
+Risk & Site Specific Details,4,Nearest Fire Brigade Distance,[Enter Distance],,"Enter, e.g., '2 km'."
+Risk & Site Specific Details,4,Nearest Police Station Distance,[Enter Distance],,"Enter, e.g., '1 km'."
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

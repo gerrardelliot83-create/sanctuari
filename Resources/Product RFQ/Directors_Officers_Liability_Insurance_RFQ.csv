@@ -1,0 +1,33 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer & Company Information,1,Company Name,[Enter Name],,"Enter name, e.g., 'Tech Corp Ltd'."
+Proposer & Company Information,1,Nature of Business,[Enter Nature],"e.g., Manufacturing, Tech, NBFC, etc.","Enter type, e.g., 'Tech'."
+Proposer & Company Information,1,Type of Entity,"[Select: Pvt Ltd, Public Ltd, LLP, Section 8]",,Enter selection.
+Proposer & Company Information,1,Year of Incorporation,[Enter Year],,"Enter year, e.g., '2015'."
+Proposer & Company Information,1,CIN Number / GST Number,[Enter Number],,Enter CIN or GST.
+Proposer & Company Information,1,Registered Address,[Enter Address],,Enter address.
+Proposer & Company Information,1,Website,[Enter URL],,"Enter URL, e.g., 'www.techcorp.com'."
+Proposer & Company Information,1,Contact Person Name,[Enter Name],,Enter name.
+Proposer & Company Information,1,Email ID and Phone Number,[Enter Contact],,"Enter, e.g., 'info@techcorp.com, +91 9876543210'."
+Policy Coverage Details,2,Coverage Required for,[Enter Types],Directors / Officers / Key Personnel,"List types, e.g., 'Directors, Officers'."
+Policy Coverage Details,2,Limit of Indemnity (LOI),"[Enter , Amount]",,"Enter amount, e.g., '100000000'."
+Policy Coverage Details,2,Defense Cost Inside or Outside LOI,[Inside/Outside],,Enter 'Inside' or 'Outside'.
+Policy Coverage Details,2,Retroactive Date,[Enter DD/MM/YYYY or Full],,Enter date or 'Full Retroactive Cover'.
+Policy Coverage Details,2,Territory and Jurisdiction,[Enter Territory],India / Worldwide / USA & Canada,"Enter, e.g., 'India'."
+Policy Coverage Details,2,Policy Period,[Enter From To],From DD/MM/YYYY to DD/MM/YYYY,Enter dates.
+Policy Coverage Details,2,Claims Made or Occurrence Basis,[Claims Made],Preselected ,Enter 'Claims Made'.
+Policy Coverage Details,2,Share the details of Expiring policy,[Enter Details],Mention the name of Insurance company if Previous Insurance available,Enter the Previous Policy details if available 
+Financial Details,3,Financial Details,"[Enter for each year: FY, Gross Revenue, Net Profit/Loss, Net Worth, Employees, Board Members, Shareholders >5%]",Required for underwriting,"Add rows in Excel, e.g., '2022-23, 100000000, 5000000, 20000000, 50, 5, 2'."
+Claim & Litigation History,4,Any prior D&O claims in last 5 years?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Claim & Litigation History,4,Any pending litigation or notice against Directors/Officers?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Claim & Litigation History,4,Any known facts/circumstances that may lead to a future claim?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Claim & Litigation History,4,Has company filed for bankruptcy or restructuring in last 3 years?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Additional Information,5,Any foreign operations or subsidiaries?,"[Yes/No, Remarks]",,Enter 'No' or 'Yes: Remarks'.
+Additional Information,5,Any intention of IPO / fundraising / merger in next 12 months?,"[Yes/No, Remarks]",,Enter 'No' or 'Yes: Remarks'.
+Additional Information,5,"Any past regulatory violations (SEBI, RBI, MCA, etc.)?","[Yes/No, Remarks]",,Enter 'No' or 'Yes: Remarks'.
+Additional Information,5,Has company availed D&O in past?,"[Yes/No, Insurer Name]",,Enter 'No' or 'Yes: Insurer Name'.
+Optional Extensions,6,Entity Securities Cover,"[Y/N, Limit]",,"Enter 'Y, Amount' or 'N'."
+Optional Extensions,6,Employment Practice Liability (EPL),"[Y/N, Limit]",,Format as above.
+Optional Extensions,6,Outside Directorship Cover (ODL),"[Y/N, Limit]",,Format as above.
+Optional Extensions,6,Cyber Liability Extension,"[Y/N, Limit]",,Format as above.
+Optional Extensions,6,Retired Directors Run-Off Cover,"[Y/N, Years]",,"Enter 'Y, Number of Years' or 'N'."
+Declaration,7,Declaration,"[Place, Date, Signatory]",,"Enter 'Place: City, Date: DD/MM/YYYY, Signatory: Name'."

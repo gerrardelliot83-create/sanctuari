@@ -1,0 +1,24 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+General Information,1,Name of Insured,[Enter Name],,"Enter full legal name, e.g., 'XYZ Industries Ltd'."
+General Information,2,Communication / Risk Location Address,[Enter Address],,Enter address where machinery is installed.
+General Information,3,Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+General Information,4,Number of Locations to be Insured,[Enter Number],,"Enter number, e.g., '2'."
+General Information,5,Occupancy / Nature of Business,[Enter Description],,"Describe, e.g., 'Textile Manufacturing'."
+General Information,6,Description of Machinery Covered,[Enter Description],,"Describe, e.g., 'CNC machines, generators'."
+General Information,7,Type of Production Process,[Enter Description],,"Describe, e.g., 'Automated weaving'."
+General Information,8,Number of Production Lines,[Enter Number],,"Enter number, e.g., '3'."
+General Information,9,Number of Shifts for Production,[Enter Number],,"Enter, e.g., '2'."
+General Information,10,Period of Indemnity Required,[Enter Months],,"Enter duration, e.g., '12 months'."
+General Information,11,Gross Profit / Turnover,[Enter Amount],For last financial year,"Enter amount, e.g., '100000000'."
+General Information,12,Details of Expiring Insurer,[Enter Insurer],,Enter name or 'None'.
+General Information,13,Claim History,[Enter Details],Claims in past 3 years,Enter details or 'None'.
+Add-On Covers Requested,14,Loss due to accidental failure of public utilities,[Enter Sub-Limit],,"Enter amount, e.g., '5000000'."
+Add-On Covers Requested,14,Supplier's Premises Extension,"[Enter Sub-Limit, Suppliers]",,"Enter 'Amount, Supplier1, Supplier2'."
+Add-On Covers Requested,14,Customer's Premises Extension,"[Enter Sub-Limit, Customers]",,"Enter 'Amount, Customer1, Customer2'."
+Add-On Covers Requested,14,Auditors Fees,[Enter Sub-Limit],,Enter amount.
+Add-On Covers Requested,14,Lay-off and Retrenchment Compensation,"[Enter Sub-Limit, Period]",,"Enter 'Amount, Months'."
+Add-On Covers Requested,14,Consequential Loss due to Spoilage,[Enter Sub-Limit],,Enter amount.
+Add-On Covers Requested,14,Terrorism Damage Cover,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Details,15,Dependence on Suppliers and Customers,[Enter % or Description],,"Enter, e.g., '30% raw materials from Supplier1'."
+Additional Details,16,Insured Property Stored at Other Locations,[Enter Locations],,Enter locations or 'None'.
+Additional Details,17,Wages Basis,"[Select: Prorata, Dual]",,Enter selection.

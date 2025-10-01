@@ -1,0 +1,24 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Company / Group Information,1,Name of the Company / Group,[Enter Name],,"Enter name, e.g., 'ABC Corp'."
+Company / Group Information,1,Registered Office Address,[Enter Address],,Enter full address.
+Company / Group Information,1,City,[Enter City],,Enter city.
+Company / Group Information,1,State,[Enter State],,Enter state.
+Company / Group Information,1,PIN Code,[Enter PIN],,Enter PIN code.
+Company / Group Information,1,Head Office Address (if different),[Enter Address],,Enter address or 'Same'.
+Company / Group Information,1,Authorized Officials Name & Designation,"[Enter Name, Designation]",,"Enter, e.g., 'Jane Doe, HR Head'."
+Company / Group Information,1,Official Email IDs for Correspondence,[Enter Emails],,"Enter, e.g., 'hr@abc.com, admin@abc.com'."
+Policy Details,2,Proposed Policy Commencement Date,[Enter DD/MM/YYYY],,Enter date.
+Policy Details,2,Minimum Age at Entry (Last Birthday),[Enter Years],,"Enter, e.g., '18'."
+Policy Details,2,Maximum Age at Entry (Last Birthday),[Enter Years],,"Enter, e.g., '65'."
+Policy Details,2,Premium Payment Responsibility,"[Select: Employer, Employee, Shared (Specify)]",,"Enter selection, specify if Shared."
+Policy Details,2,Total Number of Members to be Covered,[Enter Number],,"Enter number, e.g., '100'."
+Policy Details,2,Premium Payment Frequency,"[Select: Single Premium, Half-Yearly, Quarterly, Monthly]",,Enter selection.
+Coverage Structure,3,Coverage Basis (Per Member),"[Select: Flat Sum Assured, Based on Salary/Grade (Attach Data)]",,Enter selection; attach data if Salary/Grade.
+Coverage Structure,3,If Flat  Sum Assured Per Employee,[Enter¹ Amount],,"Enter amount if Flat, e.g., '500000'."
+Coverage Structure,3,Member-wise Sum Assured,"[Enter for each: Sr No., Employee ID, Name, DOB, Joining Date, Designation, Grade, Gender, CTC, Sum Assured]",Attach Excel if needed,"Add rows in Excel, e.g., '1, E001, John Doe, 01/01/1980, 01/01/2020, Manager, A, Male, 1200000, 1000000'."
+Coverage Structure,3,Rider Benefits,"[Select: Accidental Death Benefit (ADB), Total Permanent Disability (TPD), Total & Partial Permanent Disability (TPPD)]",,"Enter selections, e.g., 'ADB, TPD'."
+Member Eligibility & Claims Declaration,4,Policy Type,[New / Renewal],,Enter 'New' or 'Renewal'.
+Member Eligibility & Claims Declaration,4,Actively at Work Declaration,"[Select: Not on medical/maternity leave, No â‰¥15 days medical leave past year]",,Enter selections.
+Member Eligibility & Claims Declaration,4,Existing Insurance Coverage & Claims Experience,[No / Yes (Details)],,"Enter 'No' or 'Yes: Previous Insurer, Coverage Period, Premium, Claims, Amount'."
+Member Eligibility & Claims Declaration,4,Claims Report,"[Enter for each: Year, Insurer, Policy Period, Premium, Claims Paid]",If applicable,"Add rows in Excel, e.g., '2024, ABC Ins, 01/01/2024-31/12/2024, 100000, 50000'."
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

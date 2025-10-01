@@ -1,0 +1,74 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Applicant Information,Q1,What is the full legal name of your company?,[Enter Legal Name],The registered name of your business entity,"Enter, e.g., 'ABC Exports Pvt Ltd'."
+Applicant Information,Q2,What is your company's registered address?,"[Enter Street, City, State, Postal Code]","Please include street, city, state, and postal code",Enter full address.
+Applicant Information,Q3,What are your contact details? Mobile number,[Enter Mobile Number],,"Enter, e.g., '+91 9876543210'."
+Applicant Information,Q3,What are your contact details? Email address,[Enter Email Address],,"Enter, e.g., 'info@abc.com'."
+Applicant Information,Q3,What are your contact details? Website URL,[Enter Website URL],,"Enter, e.g., 'www.abc.com' or 'N/A'."
+Applicant Information,Q4,What is your company's PAN or Tax Identification Number?,[Enter Tax ID],Unique tax ID issued by the relevant authority,"Enter, e.g., 'AAACA1234F'."
+Applicant Information,Q5,What is your company's registration number and a brief description of your business?,"[Enter Registration Number, Description]",,"Enter, e.g., 'U12345MH2010PTC123456, Export of textiles'."
+Applicant Information,Q6,Who is the primary contact person for this insurance proposal? Name,[Enter Name],,"Enter, e.g., 'Jane Doe'."
+Applicant Information,Q6,Who is the primary contact person for this insurance proposal? Position/Designation,[Enter Position],,"Enter, e.g., 'Finance Manager'."
+Applicant Information,Q7,"Who is your current credit insurer? If you are changing insurers, please specify the reason for shifting.","[Enter Insurer, Reason]",,"Enter, e.g., 'Previous Insurer, Higher premiums' or 'None'."
+Applicant Information,Q8,Previous Insurance (if any),[Yes/No],,Enter 'Yes' or 'No'.
+Applicant Information,Q8,Insurer Name,[Enter Insurer Name],If Yes,"Enter if Yes, e.g., 'Old Insurer'."
+Applicant Information,Q8,Policy Number,[Enter Policy Number],If Yes,Enter if Yes.
+Applicant Information,Q8,Policy Period,[Enter Policy Period],If Yes,"Enter, e.g., '01/01/2024 to 31/12/2024'."
+Applicant Information,Q8,Coverage Limit,[Enter Coverage Limit],If Yes,"Enter amount, e.g., '100000000'."
+Applicant Information,Q8,Premium Paid,[Enter Premium Paid],If Yes,"Enter amount, e.g., '500000'."
+Applicant Information,Q8,Any Claims in Past 5 Years?,"[Yes/No, Details if Yes]","If Yes, provide claim details separately",Enter 'No' or 'Yes: Attach details'.
+Estimated Insurable Sales Turnover,Q9,Estimated insurable sales turnover for the next 12 months: Domestic sales turnover ,[Enter Amount],,"Enter amount, e.g., '500000000'."
+Estimated Insurable Sales Turnover,Q9,Estimated insurable sales turnover for the next 12 months: Export sales turnover ,[Enter Amount],,Enter amount.
+Estimated Insurable Sales Turnover,Q9,Estimated insurable sales turnover for the next 12 months: Total turnover ,[Enter Amount],,Enter amount.
+Estimated Insurable Sales Turnover,Q10,What percentage of your total turnover is from domestic sales?,[Enter Percentage],,"Enter, e.g., '70'."
+Estimated Insurable Sales Turnover,Q10,What percentage of your total turnover is from export sales?,[Enter Percentage],,"Enter, e.g., '30'."
+Buyer Default and Loss History,Q11,"Total gross losses , from defaults",[Enter Amount],,"Enter amount, e.g., '1000000'."
+Buyer Default and Loss History,Q11,Recoveries  made on losses,[Enter Amount],,Enter amount.
+Buyer Default and Loss History,Q11,Net losses  after recoveries,[Enter Amount],,Enter amount.
+Buyer Default and Loss History,Q11,Number of default incidents,[Enter Number],,"Enter, e.g., '5'."
+Buyer Default and Loss History,Q11,Largest single loss amount    and name of the buyer involved,"[Enter Amount, Buyer Name]",,"Enter, e.g., '500000, BuyerX'."
+Buyer Default and Loss History,Q12,What is your average loss ratio?,[Enter Percentage],Loss ratio = (Net Losses / Total Sales) x 100%,"Enter, e.g., '2'."
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: 0 -“ 250,000   ",Make table,,"Enter, e.g., '100'."
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: 250,001   - 500,000   ",Make table,,Enter.
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: 500,001   - 1,000,000   ",Make table,,Enter.
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: 1,000,001   - 2,000,000   ",Make table,,Enter.
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: 2,000,001   - 3,000,000   ",Make table,,Enter.
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: 3,000,001   - 4,000,000   ",Make table,,Enter.
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: 4,000,001   - 5,000,000   ",Make table,,Enter.
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: 5,000,001   - 7,500,000   ",Make table,,Enter.
+Trade Balance and Debtor Analysis,Q13,"Count of debtor accounts: Over 7,500,000   ",Make table,,Enter.
+Trade Balance and Debtor Analysis,Q14,Aged debt analysis: Current (not yet due),Make table,,Enter amount.
+Trade Balance and Debtor Analysis,Q14,Aged debt analysis: 1 to 30 days overdue,Make table,,Enter amount.
+Trade Balance and Debtor Analysis,Q14,Aged debt analysis: 31 to 60 days overdue,Make table,,Enter amount.
+Trade Balance and Debtor Analysis,Q14,Aged debt analysis: 61 to 90 days overdue,Make table,,Enter amount.
+Trade Balance and Debtor Analysis,Q14,Aged debt analysis: Over 90 days overdue,Make table,,Enter amount.
+Sales and Credit Mix,Q15,Percentage of sales: Credit sales,[Enter Percentage],,"Enter, e.g., '80'."
+Sales and Credit Mix,Q15,Percentage of sales: Cash sales,[Enter Percentage],,Enter.
+Sales and Credit Mix,Q15,Percentage of sales: Secured sales (backed by collateral),[Enter Percentage],,Enter.
+Sales and Credit Mix,Q15,Percentage of sales: Inter-company sales,[Enter Percentage],,Enter.
+Country Sales Breakdown,Q16,Estimated sales turnover by country for the last 4 quarters,"[Enter for each: Country, Amount   ]","Excluding public sector buyers, private individuals, and related companies","Add rows in Excel, e.g., 'India, 400000000'."
+Major Customers Details,Q17,Major customers details,"[Enter for each: Full legal company name, Registered address, Country, VAT ID or tax registration number, Annual sales to the customer    for the last year, Credit limit requested   ]",List your major customers,"Add rows in Excel, e.g., 'Buyer Corp, 123 St, India, VAT123, 10000000, 5000000'."
+Credit Management System,Q18,Who is responsible for managing your company's credit system? (Name and designation),"[Enter Name, Designation]",,"Enter, e.g., 'Alice Smith, Credit Manager'."
+Credit Management System,Q19,On what basis are credit limits established for buyers?,[Enter Basis],"Examples: Credit agency reports, trade references, bank reports, financial statements","Enter, e.g., 'Credit agency reports, financial statements'."
+Credit Management System,Q20,Which bank or agency do you use for credit reports?,[Enter Bank/Agency],,"Enter, e.g., 'Dun & Bradstreet'."
+Credit Management System,Q21,"If payment is not received, after how many days do you: Stop further supplies?",[Enter Days],,"Enter, e.g., '30'."
+Credit Management System,Q21,"If payment is not received, after how many days do you: Initiate collection action?",[Enter Days],,Enter.
+Credit Management System,Q21,"If payment is not received, after how many days do you: Initiate legal action?",[Enter Days],,Enter.
+Credit Management System,Q22,Describe your credit management department: Date established,[Enter Date],,"Enter, e.g., '01/01/2015'."
+Credit Management System,Q22,Describe your credit management department: Number of staff,[Enter Number],,"Enter, e.g., '5'."
+Credit Management System,Q22,Describe your credit management department: Authority levels for approving credit limits or changes,[Enter Details],,"Enter, e.g., 'Manager up to 1000000, Director above'."
+Credit Management System,Q22,"Describe your credit management department: Is there anyone who can overrule credit department decisions? If yes, who?",[Enter Details],,"Enter, e.g., 'Yes, CEO' or 'No'."
+Credit Management System,Q23,How do you assess creditworthiness of new customers?,[Enter Process],,"Describe, e.g., 'Review financial statements, check references'."
+Credit Management System,Q24,"Are regular visits made to customers for credit monitoring? If yes, who makes these visits and how often?",[Enter Details],,"Enter, e.g., 'Yes, Sales team, Quarterly' or 'No'."
+Credit Management System,Q25,How often are credit limits reviewed?,[Enter Frequency],,"Enter, e.g., 'Annually'."
+Credit Management System,Q26,"Are terms of payment mentioned on all invoices? If not, how are they captured?",[Enter Details],,"Enter, e.g., 'Yes' or 'No, In contract'."
+Debt Collection Procedures,Q27,After how many days overdue do you stop deliveries?,[Enter Days],,"Enter, e.g., '45'."
+Debt Collection Procedures,Q28,Reminder process for overdue payments: 1st reminder,[Enter Days],Table,"Enter, e.g., '15 days overdue'."
+Debt Collection Procedures,Q28,Reminder process for overdue payments: 2nd reminder,[Enter Days],Table,Enter.
+Debt Collection Procedures,Q28,Reminder process for overdue payments: 3rd reminder,[Enter Days],Table,Enter.
+Debt Collection Procedures,Q28,Reminder process for overdue payments: Further reminders,[Enter Details],Table,"Enter, e.g., 'Weekly after 3rd'."
+Debt Collection Procedures,Q29,When are collection agents or legal actions engaged?,[Enter Details],,"Enter, e.g., 'After 60 days overdue'."
+Additional Business Information,Q30,Do your sales terms include retention of title?,[Yes/No],Ownership of goods remains with the seller until payment is made,Enter 'Yes' or 'No'.
+Additional Business Information,Q31,Do you offer customized products?,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Business Information,Q32,Do you hold securities such as bank guarantees or bills of exchange?,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Business Information,Q33,Do you use consignment stock arrangements?,[Yes/No],,Enter 'Yes' or 'No'.
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

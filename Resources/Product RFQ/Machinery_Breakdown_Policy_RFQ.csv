@@ -1,0 +1,19 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+General Information,1,Name of Insured,[Enter Name],,"Enter name, e.g., 'ABC Manufacturing Ltd'."
+General Information,2,Communication Address,[Enter Address],,Enter full address.
+General Information,3,Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+General Information,4,Risk Location Address,[Enter Address],,Enter address where machinery is installed.
+General Information,5,Sum Insured for Top Location,[Enter ₹ Amount],,"Enter amount, e.g., '10000000'."
+General Information,6,Insured Business (Occupancy),[Enter Type],"e.g., Automobile Manufacturer, Textile Mill",Enter type.
+General Information,7,Is Spare Parts and Repair Services for Imported Equipment Available in India?,[Yes/No],,Enter 'Yes' or 'No'.
+General Information,8,Is Annual Maintenance Contract (AMC) in Place?,"[Yes/No, Scope, Duration]",,"Enter 'No' or 'Yes: Scope, Duration'."
+Description of Machinery,9,Description of Machinery,"[Enter for each: Make, Model, Year, Sum Insured, Usage, Location]",Add rows for each machine,"Add rows in Excel, e.g., 'Tata, CNC-X1, 2020, 5000000, Cutting, Plant 1'."
+Add-ons Requested,10,Escalation Clause,[Enter Sub-Limit],Protects against inflation,"Enter amount, e.g., '1000000'."
+Add-ons Requested,10,Express Freight (excluding Air Freight),[Enter Sub-Limit],For urgent replacement,Enter amount.
+Add-ons Requested,10,Air Freight,[Enter Sub-Limit],For air shipment of parts,Enter amount.
+Add-ons Requested,10,Owner's Surrounding Property Damage,[Enter Sub-Limit],,Enter amount.
+Add-ons Requested,10,Third Party Liability,[Enter Sub-Limit],For claims from machinery operations,Enter amount.
+Add-ons Requested,10,Additional Customs Duty,[Enter Sub-Limit],For imported parts,Enter amount.
+Insurance History,11,Expiring Insurer,[Enter Insurer],,Enter name or 'None'.
+Insurance History,12,Claim Experience for the Past 3 Years,"[Enter for each: Year, Claims Paid, Claims Outstanding, Nature]",Add rows for each claim,"Add rows in Excel, e.g., '2024, 100000, 0, Breakdown'."
+Other Information,13,Other Important Information or Special Conditions,[Enter Details],"e.g., second-hand machinery, power backup",Enter if applicable.

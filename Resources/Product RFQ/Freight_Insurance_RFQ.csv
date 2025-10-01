@@ -1,0 +1,17 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Insured Details,1,Name of Insured,Text Field,Full legal name of company,Enter as per registration
+Insured Details,2,Address of Insured,Text Field,Communication / registered office,Provide full address
+Policy Details,3,Policy Period,Date Range,From shipment start to arrival,Specify intended period
+Policy Details,4,Type of Cover Required,Dropdown,Voyage Policy / Open Policy / Annual Cover,Select applicable option
+Shipment Details,5,Nature of Goods,Text Field,Commodity type,Provide exact description
+Shipment Details,6,Packaging Description,Text Field,Mode of packing,"E.g., cartons, pallets, drums"
+Shipment Details,7,Sum Insured / Invoice Value,Numeric Field,Cargo value + 10% (if CIF),Enter in INR/USD
+Shipment Details,8,Voyage Details,Text Field,From – To,Specify ports/locations
+Shipment Details,9,Mode of Transport,Dropdown,Sea / Air / Road / Rail / Multimodal,Select applicable
+Shipment Details,10,Frequency of Shipments,Numeric Field,Approx. shipments per month/year,Enter expected count
+Shipment Details,11,Carrier Details,Text Field,Shipping line / airline / transporter,Provide known details
+Insurance Coverage,12,Coverage Clauses Required,Dropdown,"Institute Cargo Clauses (A/B/C), War, SRCC",Autoselect All
+Insurance Coverage,14,Special Covers Required,Text Field,"e.g., Theft, Leakage, Delay, Temperature Risk",Specify if needed
+Loss Experience,15,Past Claim Experience,Table Field,"Year, Claim, Cause, Settlement",Provide last 3 years
+Loss Experience,16,Previous Insurer,Text Field,If any,Mention insurer name
+Declarations,17,Any Additional Information,Text Field,Material facts affecting risk,Disclose fully

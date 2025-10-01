@@ -1,0 +1,19 @@
+Section,Q. No.,Question,Response Field,Notes,Instructions
+Proposer Details,1,Proposer’s Name & Address,Text Field,Legal name & full address,Enter registered details
+Proposer Details,2,Bank/Financier (if applicable),Text Field,If vessel is financed,Enter name & address
+Vessel Details,3,Vessel Name & Type,Text Field,Registered name & category,Provide as per registry
+Vessel Details,4,Year Built / Rebuilt,Numeric Field,Year of build or major rebuild,Enter YYYY
+Vessel Details,5,Builder & Material of Construction,Text Field,Shipyard & hull material,"E.g., steel, wood"
+Vessel Details,6,"Dimensions (Length, Breadth, Depth, Draft)",Numeric Field,Registered vessel dimensions,Provide in meters/feet
+Vessel Details,7,Gross Registered Tonnage,Numeric Field,Official tonnage,Enter value
+Vessel Details,8,Port & Authority of Registry,Text Field,Port of registry & issuing authority,Enter details
+Valuation,9,"Estimated Value (Hull, Machinery, Equipment)",Numeric Field,As per valuation report,Enter breakup if available
+Valuation,10,Amount Proposed for Insurance,Numeric Field,Total sum insured,Enter in INR/USD
+Employment,11,Purpose of Vessel Use & Trading Limits,Text Field,Nature of use & navigation limits,Provide full details
+Employment,12,Laid-up Period (if any),Text Field,Seasonal suspension,Mention place & duration
+Employment,13,Towage Undertaken?,Yes/No,Towage liability exposure,Attach conditions if Yes
+Crew,14,Master’s Qualification & Licence,Text Field,Competence proof,Enter qualifications/licence
+Crew,15,Number of Crew on board,Numeric Field,Crew strength,Enter exact number
+Insurance History,16,Previous Insurer & Claim Experience,Text Field,Prior cover & last 3 years’ claims,Provide details
+Coverage,17,"Risks Required (TL/CTL, Salvage, SRCC, Wider Cover)",Dropdown,Standard Marine Hull covers,Select required
+Coverage,18,Policy Period / Voyage Required,Date Range,Start & end date,Enter required period

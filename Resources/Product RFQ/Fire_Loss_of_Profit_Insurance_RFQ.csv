@@ -1,0 +1,31 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+General Information,1,Name of the Insured,[Enter Name],,"Enter full legal name, e.g., 'XYZ Industries Ltd'."
+General Information,2,Location/Risk Address,[Enter Address],,Enter full address of the insured location.
+General Information,3,Policy Period,[Enter From To],From (DD/MM/YYYY) to (DD/MM/YYYY),"Enter dates, e.g., '01/01/2025 to 31/12/2025'."
+General Information,4,Number of Locations Covered,[Enter Number],,"Enter number, e.g., '2'."
+General Information,5,Type of Occupancy,[Enter Type],"e.g., factory, warehouse, office","Enter type, e.g., 'Factory'."
+Coverage Details,7,Type of Process,[Enter Description],Describe your manufacturing/production/service process,"Describe, e.g., 'Automobile manufacturing'."
+Coverage Details,8,Period of Indemnity,[Enter Duration],How long loss of profit cover lasts after event,"Enter duration, e.g., '12 months'."
+Production & Machinery Details,9,Number of Production Lines,[Enter Number],,"Enter number, e.g., '3'."
+Production & Machinery Details,10,Number of Shifts per day for Production,[Enter Number],,"Enter number, e.g., '2'."
+Production & Machinery Details,11,Type of Machinery used,[Enter Types],,"List machinery, e.g., 'CNC machines, conveyors'."
+Production & Machinery Details,12,Type of Process Machinery,[Enter Types],,"List process machinery, e.g., 'Assembly robots'."
+Risk and Financial Information,15,Expiring Insurer,[Enter Insurer],"Name of current insurer, if any",Enter name or 'None'.
+Risk and Financial Information,16,Past Claims Experience,[Enter Details],Brief summary of claims in last 3 years,Enter details or 'None'.
+Add-On Coverage Options,17,Loss due to accidental failure of public electricity/gas/water supply,"[Enter Days, %]",Number of days & % of annual gross profit,"Enter, e.g., '7 days, 10%'."
+Add-On Coverage Options,18,Suppliers Premises Extension: Named suppliers,[Enter List],,"List suppliers, e.g., 'Supplier1, Supplier2'."
+Add-On Coverage Options,19,Suppliers Premises Extension: Number of suppliers,[Enter Number],,"Enter number, e.g., '5'."
+Add-On Coverage Options,20,Dependency on Suppliers,[Enter % or Description],,Enter percentage or describe.
+Add-On Coverage Options,21,Customer Premises Extension: Named customers,[Enter List],,List customers.
+Add-On Coverage Options,22,Customer Premises Extension: Number of customers,[Enter Number],,Enter number.
+Add-On Coverage Options,23,Dependency on Customers,[Enter % or Description],,Enter percentage or describe.
+Add-On Coverage Options,24,Auditors Fees,"[Enter, Amount]",Sum insured,"Enter amount, e.g., '500000'."
+Add-On Coverage Options,25,Lay-off and Retrenchment Compensation,[Enter Duration],Indemnity period,"Enter duration, e.g., '6 months'."
+Add-On Coverage Options,26,Lay-off Compensation alone,[Enter Duration],Indemnity period,Enter duration or 'N/A'.
+Add-On Coverage Options,27,Retrenchment Compensation,"[Enter , Amount or Details]",Sum insured / details,Enter amount or details.
+Add-On Coverage Options,28,Insured property stored at other locations,[Enter Number],Number of locations,Enter number.
+Add-On Coverage Options,29,Wages on Pro-rata basis,[Yes/No],,Enter 'Yes' or 'No'.
+Add-On Coverage Options,30,Wages on Dual basis,[Yes/No],,Enter 'Yes' or 'No'.
+Add-On Coverage Options,31,Consequential loss due to spoilage,"[Enter , Amount or Details]",Sum insured / details,Enter amount or details.
+Add-On Coverage Options,32,Terrorism Damage Cover,[Yes/No],,Enter 'Yes' or 'No'.
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

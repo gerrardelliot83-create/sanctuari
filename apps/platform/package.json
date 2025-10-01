@@ -1,0 +1,41 @@
+{
+  "name": "@sanctuari/platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Main user platform for Sanctuari (platform.sanctuari.io)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "clean": "rm -rf .next node_modules"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@supabase/supabase-js": "^2.43.0",
+    "@supabase/ssr": "^0.3.0",
+    "langchain": "^0.2.5",
+    "@langchain/anthropic": "^0.2.0",
+    "uploadthing": "^6.12.0",
+    "@uploadthing/react": "^6.6.0",
+    "razorpay": "^2.9.4",
+    "@sanctuari/ui": "*",
+    "@sanctuari/database": "*",
+    "@sanctuari/utils": "*",
+    "@sanctuari/config": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "jest": "^29.7.0",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/jest-dom": "^6.4.0"
+  }
+}

@@ -1,0 +1,18 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Information,1,Name of Proposer,[Enter Name],,"Enter name, e.g., 'John Doe'."
+Proposer Information,1,Contact Number,[Enter Number],,"Enter, e.g., '+91 9876543210'."
+Proposer Information,1,Email ID,[Enter Email],,"Enter email, e.g., 'john@example.com'."
+Proposer Information,1,Address,[Enter Address],,Enter full address.
+Policy Details,2,Policy Type,"[Select: New, Renewal, Rollover]",,Enter selection.
+Policy Details,2,Policy Period,[Enter From To],From: To:,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Animals to be Insured,3,Animals to be Insured,"[Enter for each: Type, Number, Age Range, Breed, Sum Insured]",Add rows for each type,"Add rows in Excel, e.g., 'Cattle, 50, 2-5 years, Holstein, 50000'."
+Additional Coverage Required,4,Permanent Total Disablement (PTD),[Yes/No],,Enter 'Yes' or 'No'.
+Additional Coverage Required,4,Theft of Animal (Only for Cattle),[Yes/No],,Enter 'Yes' or 'No'.
+Additional Coverage Required,4,Transit Cover beyond 80 Kms (Rail/Road),[Yes/No],,Enter 'Yes' or 'No'.
+Additional Coverage Required,4,Waiver of Waiting Period,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Coverage Required,4,Waiver of Deductible,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Coverage Required,4,Others,[Enter Details],,Enter details if applicable.
+Animal Use,5,Animal Use,"[Select: Own Use, Commercial Use, Others (Specify)]",,"Enter selection, specify if Others."
+Previous Insurance & Claims History,6,Were these animals insured previously?,"[Yes/No, Insurer if Yes]",,Enter 'No' or 'Yes: Insurer Name'.
+Previous Insurance & Claims History,6,Any claims in last 3 years?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Disclosure,6,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

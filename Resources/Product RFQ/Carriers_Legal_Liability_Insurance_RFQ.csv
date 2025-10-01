@@ -1,0 +1,32 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Carrier Details,1,Name of Carrier,[Enter Full Legal Name],Full legal name of the company or individual,"Enter name, e.g., 'Logistics Co Ltd'."
+Carrier Details,2,Address of Principal Office,[Enter Address],,Enter full address.
+Carrier Type and Registration Details,3a,Carrier Type,"[Select: Individual, Partnership, Private Limited Company, Public Limited Company]",Type of business entity,Enter selection.
+Carrier Type and Registration Details,3b,Date of Registration,[Enter DD/MM/YYYY],,"Enter date, e.g., '01/01/2015'."
+Vehicle Particulars and Area of Operation,4a,Vehicle Ownership Status,"[Select: Owned, Hire Purchase]",,Enter selection.
+Vehicle Particulars and Area of Operation,4b,Vehicle Registration Number,[Enter Number],,"Enter reg number, e.g., 'DL1ABC1234'."
+Vehicle Particulars and Area of Operation,4c,Make and Year Built,[Enter Make and Year],,"Enter, e.g., 'Tata, 2020'."
+Vehicle Particulars and Area of Operation,4d,Licensed Carrying Capacity (in tons/kg),[Enter Capacity],,"Enter, e.g., '10 tons'."
+Vehicle Particulars and Area of Operation,4e,Type of Vehicle Body,"[Select: Open, Side-walled, Closed Body, Tanker, Special Products Carrier, Other (Specify)]",,"Enter selection, specify if Other."
+Vehicle Particulars and Area of Operation,4f,Is there a Trailer Attached?,"[Yes/No, Specify if Yes]",,Enter 'No' or 'Yes: Nature and type'.
+Vehicle Particulars and Area of Operation,4g,Area of Operation (Geographical),[Enter Areas],,"Enter regions, e.g., 'North India'."
+Vehicle Particulars and Area of Operation,4h,Does the Carrier have a fixed schedule for servicing and maintenance?,"[Yes/No, Details if Yes]",,Enter 'No' or 'Yes: Details'.
+Vehicle Particulars and Area of Operation,4i,Is a detailed logbook maintained for the vehicle?,"[Yes/No, Period if Yes]",,Enter 'No' or 'Yes: From DD/MM/YYYY To DD/MM/YYYY'.
+Comprehensive Motor Insurance Policy Details,5,Name of Insurer,[Enter Name],,Enter insurer name.
+Comprehensive Motor Insurance Policy Details,5,Policy Number,[Enter Number],,Enter policy number.
+Comprehensive Motor Insurance Policy Details,5,Policy Period,[Enter From To],,Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Comprehensive Motor Insurance Policy Details,5,No Claim Bonus for Current Year (%),[Enter %],,"Enter percentage, e.g., '20'."
+Certified Copies of Relevant Documents,6,Certified Copies Attached?,"[Attached / Not Attached, Comments]",,Enter 'Attached' or 'Not Attached: Comments'.
+Practices Related to Goods Handling,7a,Describe the practice followed for granting open delivery or damage/shortage certificates,[Enter Description],,Describe process.
+Practices Related to Goods Handling,7b,Are goods weighed before booking in all cases?,[Yes/No],,Enter 'Yes' or 'No'.
+Practices Related to Goods Handling,7c,Is adequacy of packing checked in all cases?,[Yes/No],,Enter 'Yes' or 'No'.
+Practices Related to Goods Handling,7c,"If no, is any deficiency recorded in the consignment note?",[Yes/No],,Enter 'Yes' or 'No' if applicable.
+Nature of Cargo Normally Carried,8,Nature of Cargo Normally Carried,[Enter Description],,"Enter type of goods, e.g., 'Electronics'."
+Previous Carrier’s Legal Liability Insurance (Last 3 Years),9,Previous Insurance Details,[Enter Details],"Insurer, Scope, Period, Premium, Claims","Enter if yes, e.g., 'Insurer: ABC, Period: 2022-2025, Claims: None'."
+Insurance History Related to Risks Proposed,10a,Has any insurer ever: Declined your proposal?,[Yes/No],,Enter 'Yes' or 'No'; details if Yes.
+Insurance History Related to Risks Proposed,10b,Has any insurer ever: Refused to renew or cancelled your policy?,[Yes/No],,Enter 'Yes' or 'No'; details if Yes.
+Insurance History Related to Risks Proposed,10c,Has any insurer ever: Required increased premium or imposed special conditions?,[Yes/No],,Enter 'Yes' or 'No'; details if Yes.
+Insurance History Related to Risks Proposed,,"If yes to any, provide details",[Enter Details],,Provide details for 10a-c.
+Limits of Liability and Coverage Details,11a,Limits of liability required per accident (INR),[Enter Amount],,"Enter amount, e.g., '10000000'."
+Limits of Liability and Coverage Details,11b,Do you require coverage for Riot and Strike risk?,[Yes/No],,Enter 'Yes' or 'No'.
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

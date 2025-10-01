@@ -1,0 +1,28 @@
+Section,Question,Response Field,Notes,Instructions
+General Information,Insured Name,[Enter Name],,Enter name.
+General Information,Policy Period,[Enter From To],From: [DD/MM/YYYY] To: [DD/MM/YYYY],Enter 'From DD/MM/YYYY To DD/MM/YYYY'.
+Proposer & Risk Location Details,Name of the Proposer,[Enter Name],"e.g., ABC Boilers Pvt. Ltd.",Enter name.
+Proposer & Risk Location Details,Business Type,[Enter Type],"e.g., Manufacturing“ Thermal Power",Enter type.
+Proposer & Risk Location Details,Communication Address,[Enter Address],Registered Office Address,Enter address.
+Proposer & Risk Location Details,Risk Location Address,[Enter Address],Exact plant location with pincode,Enter address.
+Proposer & Risk Location Details,Nearest Railway Station,[Enter Station],"e.g., Durgapur “ 5 km",Enter station and distance.
+Equipment / Boiler Details,Equipment Details,"[Enter for each: Sr. No., Description, Make, Model, Year, Pressure, Capacity, Location, Sum Insured]",Add rows for each equipment,"Add rows in Excel, e.g., '1, Water Tube Steam Boiler, Thermax, Model-X1, 2020, 21, 10000, Plant 1, 10000000'."
+Statutory & Operational Compliance,Boilers Act Registration,[Yes/No],,Enter 'Yes' or 'No'.
+Statutory & Operational Compliance,Valid IBR Certificate Available,[Yes/No],,Enter 'Yes' or 'No'.
+Statutory & Operational Compliance,Last Hydraulic Test Date,[Enter DD/MM/YYYY],,Enter date.
+Statutory & Operational Compliance,"Pressure Gauge, Safety Valve & Mountings Fitted",[Yes/No],,Enter 'Yes' or 'No'.
+Statutory & Operational Compliance,Trained Boiler Operator Appointed,[Yes/No],,Enter 'Yes' or 'No'.
+Statutory & Operational Compliance,Annual Maintenance/Servicing in Place,[Yes/No],,Enter 'Yes' or 'No'.
+Statutory & Operational Compliance,AMC / Maintenance Contract Available,[Yes/No],,Enter 'Yes' or 'No'.
+Add-On Covers Required,Add-On: Surrounding Property,"[Yes/No, Sub-limit]",,"Enter 'Yes, 5000000' or 'No'."
+Add-On Covers Required,Add-On: Third Party Liability â€“ Per Accident,"[Yes/No, Sub-limit]",,Format as above.
+Add-On Covers Required,Add-On: Third Party Liability â€“ Aggregate Limit,"[Yes/No, Sub-limit]",,Format as above.
+Add-On Covers Required,Add-On: Express Freight & Holiday Wages,"[Yes/No, Sub-limit]",,Format as above.
+Add-On Covers Required,Add-On: Air Freight,"[Yes/No, Sub-limit]",,Format as above.
+Add-On Covers Required,Add-On: Dismantling & Debris Removal,"[Yes/No, Sub-limit]",,Format as above.
+Add-On Covers Required,Add-On: Additional Custom Duty,"[Yes/No, Sub-limit]",,Format as above.
+Loss History & Risk Experience,Existing Insurer (if renewal),[Enter Name],,Enter name.
+Loss History & Risk Experience,Policy Expiry Date,[Enter DD/MM/YYYY],,Enter date.
+Loss History & Risk Experience,Claims in Last 3 Years,[No / Yes (Details)],,"Enter 'No' or 'Yes: Cause, Amount'."
+Loss History & Risk Experience,Any Known Defects in Boiler,[No / Yes (Repairs Details)],,Enter 'No' or 'Yes: Details'.
+Disclosure,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else

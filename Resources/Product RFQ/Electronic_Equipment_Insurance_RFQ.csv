@@ -1,0 +1,27 @@
+Section,Question Number,Question,Response Field,Notes,Instructions
+Proposer Information,1,Name of Insured,[Enter Name],"e.g., ABC & Co.",Enter name.
+Proposer Information,1,Communication Address,[Enter Address],"e.g., Gandhi Nagar, Nariman Point, Mumbai",Enter address.
+Policy Details,2,Policy Period,[Enter From To],From: [DD/MM/YYYY] To: [DD/MM/YYYY],Enter dates.
+Policy Details,2,Risk Location Address,[Enter Address],,Enter address.
+Policy Details,2,Sum Insured,"[Enter , Amount]",,"Enter amount, e.g., '10000000'."
+Business Details,3,Business Occupancy Type,[Enter Type],"e.g., Office",Enter type.
+Business Details,3,Are spare parts and repair services for imported equipment available in India?,[Yes/No],,Enter 'Yes' or 'No'.
+Business Details,3,Is AMC (Annual Maintenance Contract) in place?,"[Yes/No, Attach if Yes]",,Enter 'No' or 'Yes: Attach copy'.
+Machinery/Equipment Details,4,Machinery/Equipment Details,"[Enter for each: S. No., Description, Make, Model, Year, Sum Insured]","Key electronics like servers, computers, etc.","Add rows in Excel, e.g., '1, Server, Dell, PowerEdge, 2020, 5000000'."
+Existing Policy Details,5,Expiring Insurer,[Enter Insurer],,Enter name or 'None'.
+Claim Experience,6,Claim Experience,"[Enter for each: Year, Claims, Amount Paid, Amount Outstanding, Nature]",Add rows for each year,"Add rows, e.g., '2024, 1, 100000, 0, Equipment Failure'."
+Coverage & Add-Ons Required,7,Add-On: Escalation Clause,"[Yes/No, Sub-Limit]",,"Enter 'Yes, Amount' or 'No'."
+Coverage & Add-Ons Required,7,"Add-On: Express Freight (Excl. Air), Holiday & Overtime Wages","[Yes/No, Sub-Limit]",,Format as above.
+Coverage & Add-Ons Required,7,Add-On: Air Freight,"[Yes/No, Sub-Limit]",,Format as above.
+Coverage & Add-Ons Required,7,Add-On: Ownener Surrounding Property,"[Yes/No, Sub-Limit]",,Format as above.
+Coverage & Add-Ons Required,7,Add-On: Third Party Liability (arising out of equipment failure),"[Yes/No, Sub-Limit]",,Format as above.
+Coverage & Add-Ons Required,7,Add-On: Additional Customs Duty,"[Yes/No, Sub-Limit]",,Format as above.
+Coverage & Add-Ons Required,7,Add-On: Loss Minimization Expenses,"[Yes/No, Sub-Limit]",,Format as above.
+Coverage & Add-Ons Required,7,Add-On: Temporary Removal (Equipment sent for repairs or temporary use),"[Yes/No, Sub-Limit]",,Format as above.
+Coverage & Add-Ons Required,7,Add-On: Coverage for Mobile Equipment,"[Yes/No, Sub-Limit]",,Format as above.
+Coverage & Add-Ons Required,7,Add-On: Coverage for Data Restoration / EDP,"[Yes/No, Sub-Limit]",,Format as above.
+Additional Risk Details,8,Flood Prone Area,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Risk Details,8,Presence of Water Lines / Steam / Vibrations / Acidic Atmosphere in Equipment Area,"[Enter Details, Mitigation if Yes]",,Enter 'No' or 'Yes: Mitigation measures'.
+Additional Risk Details,8,Air Conditioning Present for Equipment Room,[Yes/No],,Enter 'Yes' or 'No'.
+Additional Risk Details,8,Security and Fire Protection Available,"[Select: CCTV, Fire Extinguishers, Smoke Detectors, FM200, Others]",CCTV / Fire Extinguishers / Smoke Detectors / FM200 / Others,"Enter selections, e.g., 'CCTV, Fire Extinguishers'."
+Disclosure,,Any Additional Information,[Enter Details],Disclose any details if want to share,Enter Detailed explanation about the business or anything else
