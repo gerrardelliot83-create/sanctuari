@@ -21,3 +21,8 @@ export { default as TopBar } from './components/TopBar/TopBar';
 export { default as CompanySwitcher } from './components/CompanySwitcher/CompanySwitcher';
 export { default as EmptyState } from './components/EmptyState/EmptyState';
 export { default as DashboardLayout } from './components/DashboardLayout/DashboardLayout';
+export { default as ProductCard } from './components/ProductCard/ProductCard';
+export { default as CategoryFilter } from './components/CategoryFilter/CategoryFilter';
+export { default as ProgressBar } from './components/ProgressBar/ProgressBar';
+export { default as QuestionRenderer } from './components/QuestionRenderer/QuestionRenderer';
+export { default as GuidancePanel } from './components/GuidancePanel/GuidancePanel';

@@ -14,7 +14,9 @@
       "Read(//tmp/**)",
       "Read(//mnt/c/Users/DELL/Desktop/sanctuari/packages/database/migrations/**)",
       "Read(//mnt/c/Users/DELL/Desktop/sanctuari/**)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(unzip:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,72 @@
+/**
+ * ProgressBar Styles
+ * Visual progress indicator for multi-step forms
+ */
+
+.progress-bar {
+  margin-bottom: 32px;
+}
+
+.progress-bar__info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.progress-bar__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.progress-bar__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(7, 9, 33, 0.1);
+  transition: background-color 0.3s;
+}
+
+.progress-bar__dot--active {
+  background-color: var(--iris);
+}
+
+.progress-bar__text {
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(7, 9, 33, 0.7);
+}
+
+.progress-bar__track {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(7, 9, 33, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--iris) 0%, #5A3FE5 100%);
+  border-radius: 3px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .progress-bar__info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .progress-bar__text {
+    font-size: 13px;
+  }
+
+  .progress-bar__dot {
+    width: 6px;
+    height: 6px;
+  }
+}

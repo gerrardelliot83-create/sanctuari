@@ -1,0 +1,94 @@
+/**
+ * ProductCard Styles
+ * Clean card design for insurance product selection
+ */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: var(--white);
+  border: 1px solid rgba(7, 9, 33, 0.08);
+  border-radius: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.product-card:hover {
+  border-color: var(--iris);
+  box-shadow: 0 4px 16px rgba(111, 79, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.product-card:active {
+  transform: translateY(0);
+}
+
+.product-card__category {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-family: var(--font-geist-sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.product-card__name {
+  font-family: var(--font-cabinet);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.product-card__description {
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(7, 9, 33, 0.6);
+  margin: 0 0 20px 0;
+  flex: 1;
+}
+
+.product-card__cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--iris);
+  margin-top: auto;
+}
+
+.product-card__cta svg {
+  transition: transform 0.2s;
+}
+
+.product-card:hover .product-card__cta svg {
+  transform: translateX(4px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .product-card {
+    padding: 20px;
+  }
+
+  .product-card__name {
+    font-size: 16px;
+  }
+
+  .product-card__description {
+    font-size: 13px;
+  }
+}
