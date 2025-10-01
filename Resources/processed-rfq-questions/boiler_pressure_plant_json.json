@@ -1,0 +1,535 @@
+{
+  "product_name": "Boiler and Pressure Plant Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Insured Company Name",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your company's full legal name as registered with the Registrar of Companies. This should match your incorporation certificate and GST registration. The insurance policy will be issued in this name.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd"
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST identification number. This unique number helps verify your business registration and determines applicable tax rates on the insurance premium. Format: First 2 digits represent state code.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PAN Number",
+      "field_name": "pan_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide your company's 10-character Permanent Account Number issued by the Income Tax Department. This is required for tax documentation and claim settlements exceeding certain limits.",
+      "placeholder": "e.g., AABCU9603R",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Business Type",
+      "field_name": "business_type",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing - Textiles",
+        "Manufacturing - Chemicals",
+        "Manufacturing - Pharmaceuticals",
+        "Manufacturing - Food Processing",
+        "Manufacturing - Paper & Pulp",
+        "Manufacturing - Sugar",
+        "Manufacturing - Steel & Metal",
+        "Power Generation",
+        "Oil & Gas Refineries",
+        "Hospitality - Hotels",
+        "Healthcare - Hospitals",
+        "Cold Storage & Warehousing",
+        "Other Industrial"
+      ],
+      "guidance_text": "Select the category that best describes your primary business activity. This helps insurers understand the operational environment of your boilers and pressure vessels, as different industries have varying risk levels and safety requirements.",
+      "placeholder": "Select your business type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "business_type_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "business_type",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Year of Establishment",
+      "field_name": "establishment_year",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "min": 1850,
+        "max": 2025
+      },
+      "guidance_text": "Enter the year your company was established or incorporated. Older, established companies often have better safety records and maintenance practices, which can positively influence premium rates.",
+      "placeholder": "e.g., 1995",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Annual Turnover (₹)",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your company's total annual revenue in rupees for the last financial year. This helps insurers assess your business size and determine appropriate coverage limits. Use the figure from your latest audited financial statements.",
+      "placeholder": "e.g., 50000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Contact Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete address where all policy documents and correspondence should be sent. Include building name, street, area, city, state, and PIN code. This may be your registered office or corporate headquarters.",
+      "placeholder": "e.g., 5th Floor, ABC Tower, Industrial Area, Phase-2, Pune, Maharashtra - 411018",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Risk Location Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter the exact address where your boilers and pressure vessels are installed and operating. This is the location that will be insured and inspected. If different from communication address, provide complete details including nearest landmark.",
+      "placeholder": "e.g., Plot No. 45, MIDC Industrial Estate, Taloja, Navi Mumbai, Maharashtra - 410208",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Multiple Locations",
+      "field_name": "multiple_locations",
+      "field_type": "radio",
+      "section": "Risk Location Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Single Location",
+        "Multiple Locations"
+      ],
+      "guidance_text": "Indicate if you have boilers/pressure vessels at multiple locations that need coverage. Multiple location policies can be structured as a single floater policy or separate policies for each location based on your preference.",
+      "placeholder": "Select location type"
+    },
+    {
+      "question_text": "Additional Location Details",
+      "field_name": "additional_locations",
+      "field_type": "textarea",
+      "section": "Risk Location Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "multiple_locations",
+          "value": "Multiple Locations"
+        }
+      },
+      "guidance_text": "List all additional locations with complete addresses where boilers/pressure vessels are installed. Include the number and type of equipment at each location. This helps in accurate risk assessment and premium calculation.",
+      "placeholder": "e.g., Location 2: Plot 78, GIDC Vapi, Gujarat - 2 Boilers\nLocation 3: Industrial Park, Chennai - 1 Boiler, 3 Pressure Vessels"
+    },
+    {
+      "question_text": "Nearest Railway Station",
+      "field_name": "nearest_railway_station",
+      "field_type": "text",
+      "section": "Risk Location Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "maxLength": 100
+      },
+      "guidance_text": "Mention the nearest railway station to your risk location. This helps insurers and surveyors plan inspections and assists in emergency response planning. Include approximate distance from your facility.",
+      "placeholder": "e.g., Kalyan Junction - 15 km"
+    },
+    {
+      "question_text": "Policy Period Required",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Select the coverage duration you need. Annual policies are standard, but long-term policies (2-3 years) often come with premium discounts and protect against rate increases. Multi-year policies also reduce administrative burden.",
+      "placeholder": "Select policy period",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Choose when you want the insurance coverage to begin. If replacing existing coverage, ensure this date immediately follows your current policy expiry to avoid coverage gaps. Coverage starts at 00:00 hours on the selected date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Number of Boilers",
+      "field_name": "number_of_boilers",
+      "field_type": "number",
+      "section": "Equipment Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100
+      },
+      "guidance_text": "Enter the total number of boilers you want to insure. Include all steam boilers, hot water boilers, and thermal fluid heaters at your facility. Each boiler will need detailed specifications for accurate premium calculation.",
+      "placeholder": "e.g., 3",
+      "format": "integer"
+    },
+    {
+      "question_text": "Number of Pressure Vessels",
+      "field_name": "number_of_pressure_vessels",
+      "field_type": "number",
+      "section": "Equipment Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 200
+      },
+      "guidance_text": "Enter the total number of pressure vessels requiring coverage. This includes air receivers, autoclaves, digesters, reactors, and storage vessels operating under pressure. Vessels with different pressure ratings may have different premium rates.",
+      "placeholder": "e.g., 8",
+      "format": "integer"
+    },
+    {
+      "question_text": "Equipment Details Schedule",
+      "field_name": "equipment_details",
+      "field_type": "textarea",
+      "section": "Equipment Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 3000
+      },
+      "guidance_text": "Provide detailed specifications for each boiler and pressure vessel including make, model, year of manufacture, capacity, working pressure, and current replacement value. This information is crucial for risk assessment and determining sum insured.",
+      "placeholder": "e.g., Boiler 1: Make-Thermax, Model-Shellmax, Year-2018, Capacity-10 TPH, Pressure-21 kg/cm2, Value-₹75,00,000"
+    },
+    {
+      "question_text": "Total Sum Insured (₹)",
+      "field_name": "total_sum_insured",
+      "field_type": "number",
+      "section": "Equipment Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 1000000000
+      },
+      "guidance_text": "Enter the total current replacement value of all boilers and pressure vessels to be insured. This should reflect the cost to replace the equipment with new items of similar capacity, not depreciated or book value. Underinsuring can lead to proportionate claim settlements.",
+      "placeholder": "e.g., 25000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Boilers Act Registration Available",
+      "field_name": "boilers_act_registration",
+      "field_type": "radio",
+      "section": "Compliance & Safety",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Confirm if your boilers are registered under the Indian Boilers Act, 1923. Registration is mandatory for most boilers and indicates compliance with safety standards. Insurance is typically not available for unregistered boilers.",
+      "placeholder": "Select registration status"
+    },
+    {
+      "question_text": "Valid IBR Certificate Available",
+      "field_name": "ibr_certificate",
+      "field_type": "radio",
+      "section": "Compliance & Safety",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No",
+        "Renewal in Process"
+      ],
+      "guidance_text": "Indian Boiler Regulation (IBR) certification confirms your equipment meets national safety standards. Valid certificates are essential for insurance coverage and indicate regular statutory inspections are being conducted.",
+      "placeholder": "Select IBR status"
+    },
+    {
+      "question_text": "Last Statutory Inspection Date",
+      "field_name": "last_inspection_date",
+      "field_type": "date",
+      "section": "Compliance & Safety",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter the date of the most recent statutory inspection by the Boiler Inspector. Regular inspections (usually annual) are mandatory and help identify potential issues before they become serious problems. Recent inspection reports may be required.",
+      "placeholder": "e.g., 15/12/2024"
+    },
+    {
+      "question_text": "Safety Valves Testing Frequency",
+      "field_name": "safety_valve_testing",
+      "field_type": "select",
+      "section": "Compliance & Safety",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Weekly",
+        "Fortnightly",
+        "Monthly",
+        "Quarterly",
+        "Half-Yearly",
+        "Annual",
+        "No Regular Testing"
+      ],
+      "guidance_text": "Indicate how often safety valves on your boilers and pressure vessels are tested. Regular testing ensures these critical safety devices will function when needed. More frequent testing demonstrates better safety practices and may result in lower premiums.",
+      "placeholder": "Select testing frequency"
+    },
+    {
+      "question_text": "Explosion Coverage Required",
+      "field_name": "explosion_coverage",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Standard boiler insurance covers damage to the boiler itself from explosion. Select 'Yes' if you also want coverage for damage to surrounding property and third-party liability arising from boiler explosion. This significantly enhances your protection.",
+      "placeholder": "Select coverage option"
+    },
+    {
+      "question_text": "Loss of Profit Coverage Required",
+      "field_name": "loss_of_profit_coverage",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Business interruption coverage compensates for lost profits if boiler breakdown stops your operations. This covers continuing expenses and lost income during repairs. Essential for businesses where boilers are critical to production.",
+      "placeholder": "Select coverage option"
+    },
+    {
+      "question_text": "Indemnity Period for Loss of Profit (months)",
+      "field_name": "indemnity_period",
+      "field_type": "select",
+      "section": "Coverage Options",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "loss_of_profit_coverage",
+          "value": "Yes"
+        }
+      },
+      "options": [
+        "3 months",
+        "6 months",
+        "9 months",
+        "12 months",
+        "18 months",
+        "24 months"
+      ],
+      "guidance_text": "Select the maximum period for which you want business interruption coverage. This should reflect the time needed to repair/replace equipment and resume normal operations. Longer periods provide better protection but increase premium.",
+      "placeholder": "Select indemnity period"
+    },
+    {
+      "question_text": "Previous Insurer (if any)",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If you currently have or previously had boiler insurance, mention the insurance company name. Continuous coverage history and claim-free years may qualify you for better rates and no-claim bonuses.",
+      "placeholder": "e.g., National Insurance Company Ltd",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Claims History (Last 5 Years)",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Claims",
+        "1-2 Claims",
+        "3-5 Claims",
+        "More than 5 Claims"
+      ],
+      "guidance_text": "Indicate your boiler-related insurance claims in the past 5 years. This includes claims for boiler damage, explosion, or business interruption. Your claims history significantly impacts premium rates and coverage terms.",
+      "placeholder": "Select claims history"
+    },
+    {
+      "question_text": "Claim Details",
+      "field_name": "claim_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history",
+          "value": [
+            "1-2 Claims",
+            "3-5 Claims",
+            "More than 5 Claims"
+          ]
+        }
+      },
+      "guidance_text": "Provide details of past claims including date, nature of damage, cause, amount claimed, and corrective actions taken. This helps insurers assess whether previous issues have been adequately addressed.",
+      "placeholder": "e.g., Date: 15/03/2023, Cause: Tube failure due to scaling, Amount: ₹5,00,000, Action: Implemented water treatment system"
+    },
+    {
+      "question_text": "Upload IBR Certificate",
+      "field_name": "ibr_certificate_file",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload a copy of your current IBR certificate or latest inspection report. This document validates the safety compliance of your equipment. Accepted formats: PDF, JPG, PNG (max 5MB).",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload Equipment List with Specifications",
+      "field_name": "equipment_list_file",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload a detailed list of all boilers and pressure vessels with their technical specifications, if available in a separate document. This helps expedite the quotation process. Excel or PDF format preferred.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Additional Requirements or Remarks",
+      "field_name": "additional_remarks",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any special circumstances, additional coverage needs, or specific concerns about your boiler operations. Include information about planned upgrades, unique operating conditions, or specific exclusions you want to avoid.",
+      "placeholder": "e.g., Planning to add 2 new boilers in Q3 2025, need provision for mid-term inclusion"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.279Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

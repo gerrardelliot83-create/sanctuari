@@ -1,0 +1,447 @@
+{
+  "product_name": "Livestock/Cattle/Animal Insurance",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Name of Proposer/Farm Owner",
+      "field_name": "proposer_name",
+      "field_type": "text",
+      "section": "Proposer Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the full name of the individual or company that owns the animals. For dairy farms or commercial operations, use the registered business name. This name will appear on the insurance policy and will be used for all claims and communications.",
+      "placeholder": "e.g., Shri Ramesh Kumar or Green Valley Dairy Farm Pvt Ltd"
+    },
+    {
+      "question_text": "Contact Number",
+      "field_name": "contact_number",
+      "field_type": "text",
+      "section": "Proposer Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide a mobile number that's always accessible, especially during emergencies. This number will be used for claim intimation, veterinary coordination, and policy updates. SMS alerts about policy renewal and claim status will be sent here.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email_id",
+      "field_type": "text",
+      "section": "Proposer Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Enter an email address for receiving policy documents, premium receipts, and claim forms. If you don't check email regularly, provide an email of someone who can help you with documentation. Many insurers now send policies digitally to this email.",
+      "placeholder": "e.g., ramesh.dairy@gmail.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Complete Farm/Residence Address",
+      "field_name": "farm_address",
+      "field_type": "textarea",
+      "section": "Proposer Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 30,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete address where the animals are kept, including village/town name, tehsil, district, state, and pincode. Include landmarks for easy location during veterinary inspection or claim assessment. This address determines the risk zone for premium calculation.",
+      "placeholder": "e.g., House No. 45, Village Kesharpur, Post Office Majra, Tehsil Ambala, District Ambala, Haryana - 134003, Near Primary Health Center",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number (if applicable)",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Proposer Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "If you're a registered dairy farm or commercial livestock business, provide your GST number for tax benefits. Individual farmers or small holders can leave this blank. Having GST registration may qualify you for input tax credit on insurance premium.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Insurance Policy",
+      "field_name": "policy_type",
+      "field_type": "radio",
+      "section": "Policy Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "New Policy",
+        "Renewal",
+        "Rollover from Another Insurer"
+      ],
+      "guidance_text": "Select 'New Policy' if these animals have never been insured before. Choose 'Renewal' if continuing with the same insurer, or 'Rollover' if switching from another insurance company. Renewal and rollover may qualify for no-claim bonus if applicable.",
+      "placeholder": "Select policy type"
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from which you want insurance coverage to begin. For renewals, this should be the day after your current policy expires to avoid coverage gaps. New policies typically start from the day after veterinary inspection and tag attachment.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Animal insurance policies are typically for 1 year (annual) or 3 years (triennial). Three-year policies often have premium discounts. The end date should be exactly 1 or 3 years from the start date, depending on your chosen term.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Type of Animals",
+      "field_name": "animal_type",
+      "field_type": "select",
+      "section": "Animals to be Insured",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Milch Cattle (Cows)",
+        "Milch Buffaloes",
+        "Bulls/Bullocks (Draught)",
+        "Calves/Heifers",
+        "Sheep",
+        "Goats",
+        "Pigs",
+        "Horses",
+        "Camels",
+        "Yak",
+        "Mithun",
+        "Poultry (Layers)",
+        "Poultry (Broilers)",
+        "Mixed Animals"
+      ],
+      "guidance_text": "Select the primary type of animals you want to insure. Different animals have different premium rates based on mortality risk. If you have multiple types, select 'Mixed Animals' and provide details of each type in the next section.",
+      "placeholder": "Select animal type"
+    },
+    {
+      "question_text": "Number of Animals",
+      "field_name": "number_of_animals",
+      "field_type": "number",
+      "section": "Animals to be Insured",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 10000
+      },
+      "guidance_text": "Enter the total number of animals to be insured. For large-scale poultry or pig farms, you can insure in batches. Each animal must be individually identifiable (through ear tags) except for poultry which can be insured as a flock.",
+      "placeholder": "e.g., 25",
+      "format": "integer"
+    },
+    {
+      "question_text": "Age Range of Animals",
+      "field_name": "age_range",
+      "field_type": "text",
+      "section": "Animals to be Insured",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 100
+      },
+      "guidance_text": "Specify the age range of animals (e.g., '2 to 8 years' or '6 months to 5 years'). Animals are typically insurable from 3-6 months to 8-12 years of age depending on species. Very young or very old animals may have coverage restrictions or higher premiums.",
+      "placeholder": "e.g., 2 to 7 years"
+    },
+    {
+      "question_text": "Breed of Animals",
+      "field_name": "animal_breed",
+      "field_type": "text",
+      "section": "Animals to be Insured",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Mention the specific breed(s) of your animals (e.g., Holstein Friesian, Murrah Buffalo, Gir Cow). For crossbreeds, mention both parent breeds. Indigenous breeds may have different premium rates than exotic breeds. For mixed breeds, list all major breeds.",
+      "placeholder": "e.g., Holstein Friesian Crossbred, Jersey, Indigenous Gir"
+    },
+    {
+      "question_text": "Sum Insured per Animal (₹)",
+      "field_name": "sum_insured_per_animal",
+      "field_type": "number",
+      "section": "Animals to be Insured",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 5000,
+        "max": 500000
+      },
+      "guidance_text": "Enter the current market value per animal which will be the maximum claim amount per animal death. This is typically based on the animal's purchase price, milk yield, or local market rates. The veterinary officer will verify this during inspection. For different valued animals, provide average here and details separately.",
+      "placeholder": "e.g., 60000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Detailed Animal Information",
+      "field_name": "animal_details",
+      "field_type": "textarea",
+      "section": "Animals to be Insured",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "For multiple animal types or different values, provide details in format: 'Animal Type - Number - Age - Breed - Value per head'. Example: 'HF Cows - 10 - 3-6 years - Crossbred - ₹70,000 each'. Include identification numbers if already tagged.",
+      "placeholder": "e.g., \n1. Milch Cows - 15 animals - 3-6 years - HF Crossbred - ₹65,000 each\n2. Buffaloes - 8 animals - 2-5 years - Murrah - ₹75,000 each\n3. Calves - 5 animals - 6-12 months - Mixed - ₹15,000 each"
+    },
+    {
+      "question_text": "Permanent Total Disability (PTD) Cover",
+      "field_name": "ptd_cover",
+      "field_type": "checkbox",
+      "section": "Additional Coverage",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "This covers permanent disability where the animal survives but can't be used for its intended purpose (milk production, draught work). The insurer pays compensation and you keep the animal. Useful for high-value breeding or milch animals. Adds about 1% to premium.",
+      "placeholder": "Check to include PTD cover"
+    },
+    {
+      "question_text": "Theft Cover (Only for Cattle)",
+      "field_name": "theft_cover",
+      "field_type": "checkbox",
+      "section": "Additional Coverage",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Available only for cattle (cows, buffaloes, bulls). Covers loss due to theft with FIR requirement. Premium increases by about 0.5-1%. Recommended in areas with cattle theft history. You must file FIR within 24 hours of discovering theft for valid claims.",
+      "placeholder": "Check to include theft cover"
+    },
+    {
+      "question_text": "Transit Cover (Rail/Road beyond 80 km)",
+      "field_name": "transit_cover",
+      "field_type": "checkbox",
+      "section": "Additional Coverage",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Standard policy covers transit up to 80 km. This extension covers longer distance transportation by rail or road for sales, exhibitions, or breeding. Important if you regularly transport animals to distant markets or participate in cattle fairs.",
+      "placeholder": "Check to include extended transit cover"
+    },
+    {
+      "question_text": "Waiver of Waiting Period",
+      "field_name": "waiting_period_waiver",
+      "field_type": "checkbox",
+      "section": "Additional Coverage",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Standard policies have a 15-day waiting period where claims aren't payable except for accidents. This waiver provides immediate coverage from day one but requires veterinary certification of good health. Useful when buying expensive animals that need immediate coverage.",
+      "placeholder": "Check to waive waiting period"
+    },
+    {
+      "question_text": "Primary Use of Animals",
+      "field_name": "animal_use",
+      "field_type": "select",
+      "section": "Animal Management",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Dairy/Milk Production",
+        "Breeding",
+        "Draught/Agricultural Work",
+        "Commercial Farming",
+        "Personal/Household Use",
+        "Mixed Use"
+      ],
+      "guidance_text": "Select the primary purpose for which you keep these animals. Commercial operations may have different terms than personal use. This helps insurers understand the risk profile - commercial operations typically have better veterinary care but higher disease transmission risk.",
+      "placeholder": "Select primary use"
+    },
+    {
+      "question_text": "Veterinary Care Arrangements",
+      "field_name": "veterinary_care",
+      "field_type": "select",
+      "section": "Animal Management",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Government Veterinary Hospital",
+        "Private Veterinarian on Call",
+        "In-house Veterinary Staff",
+        "Veterinary Dispensary Nearby",
+        "Mobile Veterinary Unit Access"
+      ],
+      "guidance_text": "Indicate your primary source of veterinary care. Quick access to veterinary services reduces mortality risk and may positively impact premiums. Animals must be treated by qualified veterinarians for claims to be valid. Distance to veterinary facility affects emergency response.",
+      "placeholder": "Select veterinary care type"
+    },
+    {
+      "question_text": "Were these animals insured previously?",
+      "field_name": "previous_insurance",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if these specific animals had insurance before. If yes, you may be eligible for no-claim bonus or continuity benefits. Previous insurance shows good risk management and may result in better terms. Keep previous policy documents ready for verification.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Previous Insurer Details",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If previously insured, provide the insurance company name and policy number. This helps in verifying claims history and ensuring continuity of coverage. If switching insurers, you may be asked for a no-claim certificate from the previous insurer.",
+      "placeholder": "e.g., ABC Insurance Co., Policy No: CAT/2024/123456",
+      "conditional_logic": {
+        "show_if": {
+          "field": "previous_insurance",
+          "value": "Yes"
+        }
+      },
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Any insurance claims in last 3 years?",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Claims",
+        "Yes - Had Claims"
+      ],
+      "guidance_text": "Declare any livestock insurance claims made in the past 3 years, even with different insurers or for different animals. Your claims history affects premium calculation but doesn't mean coverage will be denied. Being transparent helps avoid claim rejection later.",
+      "placeholder": "Select claim status"
+    },
+    {
+      "question_text": "Claim Details",
+      "field_name": "claim_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "If you had claims, provide details including year, cause of loss (disease/accident), number of animals affected, and claim amount. This information helps assess risk and may lead to suggestions for better animal management practices to prevent future losses.",
+      "placeholder": "e.g., 2023 - 2 cows died from Foot and Mouth Disease, Claim paid: ₹1,20,000. Have since implemented vaccination schedule.",
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history",
+          "value": "Yes - Had Claims"
+        }
+      }
+    },
+    {
+      "question_text": "Vaccination Status",
+      "field_name": "vaccination_status",
+      "field_type": "select",
+      "section": "Health Management",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Fully Vaccinated as per Schedule",
+        "Partially Vaccinated",
+        "Vaccination in Progress",
+        "Not Vaccinated"
+      ],
+      "guidance_text": "Indicate the vaccination status of your animals. Regular vaccination against FMD, HS, BQ, and other diseases is often mandatory for insurance. Well-vaccinated herds have lower premiums and better claim acceptance rates. Keep vaccination certificates ready for inspection.",
+      "placeholder": "Select vaccination status"
+    },
+    {
+      "question_text": "Additional Information",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Other Details",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1500
+      },
+      "guidance_text": "Share any other relevant information about your animals, farming practices, or special circumstances. Mention if you have biosecurity measures, feed quality controls, or participate in government livestock schemes. Include any specific risks or protective measures at your farm.",
+      "placeholder": "e.g., Farm is registered under National Dairy Plan. Have automatic drinking water system. Participate in state livestock census. Regular deworming schedule maintained. Animals are housed in covered sheds with proper ventilation."
+    },
+    {
+      "question_text": "Upload Documents",
+      "field_name": "supporting_documents",
+      "field_type": "file",
+      "section": "Documents",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload relevant documents such as previous insurance policy (for renewal), purchase receipts (for new high-value animals), vaccination certificates, or photographs of animals. Documents should be clear and readable. Maximum file size 5MB per document.",
+      "placeholder": "Choose files to upload"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.527Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

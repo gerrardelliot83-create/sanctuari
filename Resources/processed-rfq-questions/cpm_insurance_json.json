@@ -1,0 +1,755 @@
+{
+  "product_name": "Contractors Plant and Machinery Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of the Proposer",
+      "field_name": "proposer_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the full legal name of the company owning the construction equipment. This should match your registration documents. The insurance policy will be issued in this name and all claims will be payable to this entity.",
+      "placeholder": "e.g., NKG Infrastructure Ltd"
+    },
+    {
+      "question_text": "Business Type",
+      "field_name": "business_type",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Infrastructure Development",
+        "Building Construction",
+        "Road Construction",
+        "Mining Operations",
+        "Equipment Rental Company",
+        "EPC Contractor",
+        "Civil Contractor",
+        "Mechanical Contractor",
+        "Electrical Contractor",
+        "Others"
+      ],
+      "guidance_text": "Select your primary business activity. Different businesses have varying risk profiles - mining operations face higher risks than building construction. Your business type directly impacts premium rates and coverage terms.",
+      "placeholder": "Select business type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "business_type_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "business_type",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete registered office address for all policy-related correspondence. Include building name, street, area, city, state, and pincode. Policy documents and claim settlements will be sent to this address.",
+      "placeholder": "e.g., 456, Industrial Estate, Sector 37, Noida, Uttar Pradesh - 201301",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST registration number for tax compliance. GST at 18% will be charged on the insurance premium. This should be your active GST number linked to the business address provided.",
+      "placeholder": "e.g., 09AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PAN Number",
+      "field_name": "pan_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter your company's 10-character PAN. This is required for regulatory compliance and TDS purposes if applicable. The PAN should match with your GST registration details.",
+      "placeholder": "e.g., AABCU9603R",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the name of the person responsible for insurance matters and equipment management. This person will be contacted for policy servicing, renewals, and claims. Should be someone with decision-making authority.",
+      "placeholder": "e.g., Suresh Kumar Verma"
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide the 10-digit mobile number for immediate contact during emergencies or claims. This number will receive SMS alerts for policy updates and renewal reminders. Ensure it's always active and accessible.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Email Address",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the official email address for receiving policy documents and correspondence. Use a regularly monitored company email, not personal email. Digital policy copies and endorsements will be sent here.",
+      "placeholder": "e.g., insurance@nkginfra.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Risk Location Type",
+      "field_name": "risk_location_type",
+      "field_type": "select",
+      "section": "Equipment Location Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Single Fixed Location",
+        "Multiple Fixed Locations",
+        "Floater - Anywhere in State",
+        "Floater - Anywhere in India",
+        "Floater - India and Neighboring Countries"
+      ],
+      "guidance_text": "Select how your equipment operates. 'Floater' policies cover equipment moving between sites and are ideal for contractors. Fixed location policies are cheaper but restrict coverage to specified sites only. Most contractors need floater coverage.",
+      "placeholder": "Select location type"
+    },
+    {
+      "question_text": "Risk Location Details",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Equipment Location Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "For fixed locations, provide complete address. For floater policies, specify the geographic area of operations (e.g., 'Anywhere in Maharashtra' or 'Anywhere in India'). Wider coverage area means higher premium.",
+      "placeholder": "e.g., Anywhere in India",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Primary Storage/Parking Location",
+      "field_name": "primary_storage_location",
+      "field_type": "textarea",
+      "section": "Equipment Location Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter the address where equipment is primarily stored when not in use. This could be your yard, warehouse, or main project site. Security arrangements at this location affect premium rates.",
+      "placeholder": "e.g., Company Yard, Plot 25, MIDC, Pune - 411018"
+    },
+    {
+      "question_text": "Total Number of Equipment/Machinery",
+      "field_name": "total_equipment_count",
+      "field_type": "number",
+      "section": "Equipment Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 10000
+      },
+      "guidance_text": "Enter the total count of all construction equipment and machinery you want to insure. Include all items from excavators to small generators. Each item should be listed separately in the equipment schedule.",
+      "placeholder": "e.g., 25",
+      "format": "integer"
+    },
+    {
+      "question_text": "Total Sum Insured (All Equipment)",
+      "field_name": "total_sum_insured",
+      "field_type": "number",
+      "section": "Equipment Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter the total current market value of all equipment to be insured in INR. This should be the replacement value, not book value. Underinsuring leads to proportionate claim settlement. Include accessories and attachments value.",
+      "placeholder": "e.g., 150000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Equipment Schedule Upload",
+      "field_name": "equipment_schedule_file",
+      "field_type": "file",
+      "section": "Equipment Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload Excel/PDF listing all equipment with: Make, Model, Year, Serial/Chassis Number, Current Value, and Engine/Registration Number. Accurate details are crucial for claims. Group similar items if you have large quantities.",
+      "placeholder": "Upload equipment list Excel/PDF"
+    },
+    {
+      "question_text": "Equipment Categories",
+      "field_name": "equipment_categories",
+      "field_type": "multiselect",
+      "section": "Equipment Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Earthmoving Equipment (Excavators, Loaders)",
+        "Cranes (Mobile, Tower, Crawler)",
+        "Concrete Equipment (Mixers, Pumps, Batching Plants)",
+        "Road Construction Equipment (Pavers, Rollers)",
+        "Drilling & Piling Equipment",
+        "Generators & Compressors",
+        "Welding Equipment",
+        "Material Handling (Forklifts, Telehandlers)",
+        "Crushing & Screening Plants",
+        "Tunneling Equipment",
+        "Marine Equipment (Barges, Dredgers)",
+        "Others"
+      ],
+      "guidance_text": "Select all categories of equipment you own. Different categories have different risk profiles - cranes are higher risk than generators. This helps in accurate premium calculation and ensures appropriate coverage terms.",
+      "placeholder": "Select all applicable categories"
+    },
+    {
+      "question_text": "Age of Oldest Equipment (Years)",
+      "field_name": "oldest_equipment_age",
+      "field_type": "number",
+      "section": "Equipment Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 50
+      },
+      "guidance_text": "Enter the age of your oldest equipment in years. Equipment over 10 years may have restricted coverage or higher deductibles. Very old equipment (>15 years) might be covered for total loss only, not partial damages.",
+      "placeholder": "e.g., 8",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Age of Newest Equipment (Years)",
+      "field_name": "newest_equipment_age",
+      "field_type": "number",
+      "section": "Equipment Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 50
+      },
+      "guidance_text": "Enter the age of your newest equipment. New equipment (< 3 years) usually gets better coverage terms and lower deductibles. Mix of new and old equipment helps balance premium costs.",
+      "placeholder": "e.g., 1",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Is equipment leased/under finance?",
+      "field_name": "equipment_financed",
+      "field_type": "radio",
+      "section": "Equipment Details",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No",
+        "Partially (Some Equipment)"
+      ],
+      "guidance_text": "Indicate if equipment is purchased on loan/lease. Financed equipment requires the financier to be added as co-insured. The claim cheque may be jointly issued to you and the financier. This doesn't affect premium.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Financier Details",
+      "field_name": "financier_details",
+      "field_type": "textarea",
+      "section": "Equipment Details",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "If equipment is financed, provide financier names and addresses. Multiple financiers can be added. They will be noted on the policy as loss payees. Include account/loan numbers for each financed equipment if available.",
+      "placeholder": "e.g., ABC Bank Ltd, Commercial Branch, Mumbai - Loan A/c: 1234567890",
+      "conditional_logic": {
+        "show_if": {
+          "field": "equipment_financed",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Type of Work/Projects",
+      "field_name": "work_type",
+      "field_type": "multiselect",
+      "section": "Risk & Operations",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Building Construction",
+        "Road/Highway Construction",
+        "Bridge/Flyover Construction",
+        "Dam/Canal Construction",
+        "Tunneling Work",
+        "Mining/Quarrying",
+        "Port/Marine Works",
+        "Railway Projects",
+        "Metro Rail Projects",
+        "Power Plant Construction",
+        "Industrial Projects",
+        "Demolition Work",
+        "Equipment Rental Only"
+      ],
+      "guidance_text": "Select all types of projects where your equipment operates. High-risk work like tunneling, mining, or marine works attract higher premiums. Equipment rental to others also increases risk due to varied usage patterns.",
+      "placeholder": "Select all applicable work types"
+    },
+    {
+      "question_text": "Operating Conditions",
+      "field_name": "operating_conditions",
+      "field_type": "multiselect",
+      "section": "Risk & Operations",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Normal Ground Conditions",
+        "Marshy/Soft Soil Areas",
+        "Rocky/Hard Terrain",
+        "High Altitude (Above 3000m)",
+        "Underground/Tunnel Operations",
+        "Near Water Bodies/Marine",
+        "Dense Urban Areas",
+        "Remote/Forest Areas",
+        "Desert/Extreme Temperature",
+        "Monsoon/High Rainfall Areas"
+      ],
+      "guidance_text": "Select all conditions where equipment operates. Harsh conditions increase wear-and-tear and accident risks. Marine and underground operations are highest risk. Multiple challenging conditions compound the risk and premium.",
+      "placeholder": "Select all operating conditions"
+    },
+    {
+      "question_text": "Average Daily Operating Hours",
+      "field_name": "daily_operating_hours",
+      "field_type": "select",
+      "section": "Risk & Operations",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Up to 8 hours",
+        "8-12 hours",
+        "12-16 hours",
+        "16-20 hours",
+        "20-24 hours (Round the clock)"
+      ],
+      "guidance_text": "Select average daily usage of equipment. Higher utilization means more wear-and-tear and accident exposure. 24-hour operations significantly increase risk. Premium rates increase with operating hours.",
+      "placeholder": "Select operating hours"
+    },
+    {
+      "question_text": "Operator Training & Certification",
+      "field_name": "operator_certification",
+      "field_type": "select",
+      "section": "Risk & Operations",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "All operators certified/trained",
+        "Most operators certified (>75%)",
+        "Some operators certified (50-75%)",
+        "Few operators certified (<50%)",
+        "No formal certification"
+      ],
+      "guidance_text": "Indicate the training level of equipment operators. Certified operators reduce accident risks significantly. Many insurers offer premium discounts for fully trained operator teams. Mention if you have in-house training programs.",
+      "placeholder": "Select operator certification level"
+    },
+    {
+      "question_text": "Maintenance Arrangement",
+      "field_name": "maintenance_arrangement",
+      "field_type": "select",
+      "section": "Risk & Operations",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "OEM Service Contract",
+        "Professional Third-Party Service",
+        "In-House Maintenance Team",
+        "Mixed (OEM + In-House)",
+        "Ad-hoc/As Needed"
+      ],
+      "guidance_text": "Select how equipment maintenance is handled. Regular professional maintenance reduces breakdown risks and can lower premiums. OEM service contracts are viewed most favorably. Ad-hoc maintenance increases risk.",
+      "placeholder": "Select maintenance type"
+    },
+    {
+      "question_text": "Maintenance Records Available?",
+      "field_name": "maintenance_records",
+      "field_type": "radio",
+      "section": "Risk & Operations",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - Complete Records",
+        "Yes - Partial Records",
+        "No Records"
+      ],
+      "guidance_text": "Indicate if you maintain equipment service history. Good maintenance records help in claims settlement and can reduce premiums. Digital maintenance tracking systems are viewed positively by insurers.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Security Arrangements at Storage Location",
+      "field_name": "security_arrangements",
+      "field_type": "multiselect",
+      "section": "Risk & Operations",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Boundary Wall/Fencing",
+        "24x7 Security Guards",
+        "CCTV Surveillance",
+        "Access Control System",
+        "Proper Lighting",
+        "GPS Tracking on Equipment",
+        "Immobilizers/Lock Systems",
+        "Alarm Systems",
+        "No Specific Security"
+      ],
+      "guidance_text": "Select all security measures at your equipment storage yard. Better security reduces theft risk and can lower premiums by 5-10%. GPS tracking is particularly important for high-value mobile equipment.",
+      "placeholder": "Select all applicable security measures"
+    },
+    {
+      "question_text": "Type of Coverage Required",
+      "field_name": "coverage_type",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Comprehensive (All Risks)",
+        "Total Loss Only",
+        "Fire & Allied Perils Only",
+        "Specified Perils Only"
+      ],
+      "guidance_text": "Select coverage scope. Comprehensive covers all risks including accidents, theft, and breakdowns. Total Loss Only is cheaper but covers only complete destruction. Most contractors need Comprehensive coverage for financed equipment.",
+      "placeholder": "Select coverage type",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period Required",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years",
+        "Project Period (Specify)",
+        "Short Term (< 1 Year)"
+      ],
+      "guidance_text": "Select insurance duration. Annual policies are standard. Multi-year policies may offer premium discounts but lock in terms. Project-specific periods align coverage with project duration. Short-term available for specific needs.",
+      "placeholder": "Select policy period",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 29,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from which insurance coverage should begin. If renewing, this should be immediately after current policy expiry to avoid coverage gaps. Coverage starts at 00:01 hours on this date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Third Party Liability Required?",
+      "field_name": "third_party_liability",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Select if you want coverage for damage/injury to third parties caused by your equipment. Highly recommended as equipment can cause severe third-party damages. Adds 5-10% to premium but provides crucial protection.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Third Party Liability Limit",
+      "field_name": "tpl_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select the maximum amount payable for third-party claims. Higher limits recommended for equipment operating in populated areas. Rs. 5-10 crores is standard for most contractors.",
+      "placeholder": "Select TPL limit",
+      "conditional_logic": {
+        "show_if": {
+          "field": "third_party_liability",
+          "value": "Yes"
+        }
+      },
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Voluntary Deductible Amount",
+      "field_name": "voluntary_deductible",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 32,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select the amount you'll bear per claim before insurance pays. Higher deductibles reduce premium significantly (10-30% discount) but increase your out-of-pocket costs during claims. Balance premium savings with risk retention capacity. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible amount",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Terrorism Coverage Required?",
+      "field_name": "terrorism_coverage",
+      "field_type": "checkbox",
+      "section": "Additional Coverages",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check if you want coverage against terrorism-related damages. Recommended for equipment in sensitive areas or government projects. Adds minimal premium but provides peace of mind. Standard policies exclude terrorism.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Escalation Clause Required?",
+      "field_name": "escalation_clause",
+      "field_type": "checkbox",
+      "section": "Additional Coverages",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check to automatically increase sum insured by 10-15% during policy period to account for inflation. Prevents underinsurance as equipment values appreciate. Useful for imported equipment subject to currency fluctuations.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Electrical/Mechanical Breakdown Cover?",
+      "field_name": "breakdown_cover",
+      "field_type": "checkbox",
+      "section": "Additional Coverages",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check for coverage of internal mechanical/electrical failures not caused by external accidents. Important for sophisticated equipment like cranes and concrete pumps. Adds 15-20% premium but covers expensive breakdown repairs.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Claims History (Last 3 Years)",
+      "field_name": "claims_history",
+      "field_type": "select",
+      "section": "Insurance History & Declaration",
+      "order_index": 36,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Claims",
+        "1-2 Claims",
+        "3-5 Claims",
+        "More than 5 Claims"
+      ],
+      "guidance_text": "Select your claims frequency in past 3 years across all equipment insurance. Good claims history (no claims) can get you NCB discount of 10-20%. High claims frequency may result in higher premiums or coverage restrictions.",
+      "placeholder": "Select claims history"
+    },
+    {
+      "question_text": "Claims Details Upload",
+      "field_name": "claims_details_file",
+      "field_type": "file",
+      "section": "Insurance History & Declaration",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If you had claims, upload details including dates, equipment involved, cause of loss, claim amounts, and settlement status. Even for nil claims, a declaration helps. Transparency in claims history ensures smooth future settlements.",
+      "placeholder": "Upload claims history if applicable"
+    },
+    {
+      "question_text": "Previous Insurer Name",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Insurance History & Declaration",
+      "order_index": 38,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter name of current/last insurer if renewing or switching. Leave blank if buying insurance for first time. Previous insurer's claims history report helps in getting competitive quotes.",
+      "placeholder": "e.g., National Insurance Company Ltd",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Any Equipment Under Repair/Breakdown?",
+      "field_name": "equipment_under_repair",
+      "field_type": "radio",
+      "section": "Insurance History & Declaration",
+      "order_index": 39,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose if any equipment is currently broken down or under repair. Such equipment may be excluded from coverage until repaired and certified fit. Non-disclosure can lead to claim rejection.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Equipment Under Repair Details",
+      "field_name": "repair_details",
+      "field_type": "textarea",
+      "section": "Insurance History & Declaration",
+      "order_index": 40,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide details of equipment under repair including nature of damage, expected repair completion date, and repair cost. This equipment can be added to policy once repairs are complete and certified.",
+      "placeholder": "e.g., JCB Excavator Model 3DX, Engine repair, Expected completion 15/04/2025",
+      "conditional_logic": {
+        "show_if": {
+          "field": "equipment_under_repair",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Additional Information",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Insurance History & Declaration",
+      "order_index": 41,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide any other relevant information about your equipment, operations, or specific insurance requirements. Include details about safety improvements, operator training programs, or unique risks. Full disclosure ensures appropriate coverage.",
+      "placeholder": "Enter any additional information relevant to the insurance"
+    },
+    {
+      "question_text": "Declaration",
+      "field_name": "declaration_acceptance",
+      "field_type": "checkbox",
+      "section": "Declaration",
+      "order_index": 42,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "By checking this box, you declare that all information provided is true and complete. You understand that any misrepresentation or suppression of material facts will void the insurance coverage and lead to claim rejection.",
+      "placeholder": ""
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.367Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 6
+}

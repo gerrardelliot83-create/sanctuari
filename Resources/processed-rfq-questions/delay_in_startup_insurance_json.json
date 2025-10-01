@@ -1,0 +1,396 @@
+{
+  "product_name": "Delay in Start Up Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of the Assured including Joint Venture Partners and/or Lender Banks",
+      "field_name": "assured_name_with_partners",
+      "field_type": "textarea",
+      "section": "General Details",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete names of all entities that have an insurable interest in this project. This includes your company, any joint venture partners sharing project risks, and lending banks financing the project. Accurate listing ensures all parties are properly covered under the policy.",
+      "placeholder": "e.g., ABC Infrastructure Pvt Ltd (Lead Partner), XYZ Construction Ltd (JV Partner 40%), State Bank of India (Project Lender)"
+    },
+    {
+      "question_text": "Names of Contractors Appointed or Under Bid",
+      "field_name": "contractor_names",
+      "field_type": "textarea",
+      "section": "General Details",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 500
+      },
+      "guidance_text": "List all contractors involved in the project, including main contractors, sub-contractors, and those currently bidding. This helps insurers assess the expertise and reliability of parties handling critical project components. Include both confirmed and potential contractors.",
+      "placeholder": "e.g., Larsen & Toubro (Main Contractor - Confirmed), Siemens India (Equipment Supplier - Under Bid), KEC International (Electrical Works - Confirmed)"
+    },
+    {
+      "question_text": "Specialized Equipment or Cargo Details",
+      "field_name": "specialized_equipment",
+      "field_type": "textarea",
+      "section": "General Details",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe all critical machinery, equipment, or cargo essential for project completion. Focus on items whose delay would impact project startup, such as turbines, generators, control systems, or custom-manufactured components. Include make, model, and specifications where known.",
+      "placeholder": "e.g., Gas Turbine - GE 9HA.02 (420 MW capacity), Steam Generator - BHEL 660 MW, DCS Control System - Yokogawa Centum VP"
+    },
+    {
+      "question_text": "Type of Coverage Required",
+      "field_name": "coverage_type",
+      "field_type": "select",
+      "section": "General Details",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Project Cargo Only",
+        "Project Cargo and DSU",
+        "DSU Only"
+      ],
+      "guidance_text": "Select the scope of coverage needed. 'Project Cargo' covers physical loss/damage during transit. 'DSU (Delay in Start Up)' covers financial losses from delayed project commissioning. Most projects require both for comprehensive protection against transit risks and consequential delays.",
+      "placeholder": "Select coverage type",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Coverage Start Date",
+      "field_name": "coverage_start_date",
+      "field_type": "date",
+      "section": "General Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter the date when insurance coverage should begin. This is typically when the first critical equipment starts its journey from the manufacturer or port. Coverage should start before any project cargo movement begins to ensure complete protection.",
+      "placeholder": "e.g., 01/04/2025"
+    },
+    {
+      "question_text": "Coverage End Date",
+      "field_name": "coverage_end_date",
+      "field_type": "date",
+      "section": "General Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter the expected project commissioning date plus a buffer period. This should cover the entire project timeline including testing and commissioning phases. Consider potential delays when setting this date to avoid coverage gaps.",
+      "placeholder": "e.g., 31/03/2027"
+    },
+    {
+      "question_text": "Project Description",
+      "field_name": "project_description",
+      "field_type": "textarea",
+      "section": "Project Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide a comprehensive overview of your project including its purpose, scale, and key components. Describe the type of facility (power plant, factory, infrastructure), capacity, technology used, and project phases. This helps insurers understand the complexity and risk profile.",
+      "placeholder": "e.g., Setting up a 1320 MW (2x660 MW) ultra-supercritical thermal power plant using imported coal. Project includes boiler-turbine-generator sets, coal handling plant, ash handling system, water treatment plant, and 400 KV switchyard. Total project cost ₹9,600 crores with expected COD in 36 months."
+    },
+    {
+      "question_text": "Project Site Location",
+      "field_name": "project_site_location",
+      "field_type": "textarea",
+      "section": "Project Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete address of your project site including plot/survey numbers, village/area, district, state, and PIN code. Include landmarks and GPS coordinates if available. This helps assess location-specific risks like floods, earthquakes, or accessibility issues.",
+      "placeholder": "e.g., Plot No. 45-50, MIDC Industrial Area, Village Khalapur, Taluka Khalapur, District Raigad, Maharashtra - 410203, Near Mumbai-Pune Expressway (18.7469° N, 73.2806° E)"
+    },
+    {
+      "question_text": "Nearest Railway Station",
+      "field_name": "nearest_railway_station",
+      "field_type": "text",
+      "section": "Project Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Specify the nearest railway station capable of handling heavy cargo. Include distance from project site and whether the station has goods handling facilities. This information helps assess transportation logistics and associated transit risks.",
+      "placeholder": "e.g., Khalapur Railway Station - 12 km (Goods handling available)"
+    },
+    {
+      "question_text": "Nearest Ocean Port / Other Port",
+      "field_name": "nearest_port",
+      "field_type": "text",
+      "section": "Project Information",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Identify the nearest port through which imported equipment will arrive. Include distance from project site and the port's cargo handling capacity. This helps evaluate marine transit risks and inland transportation challenges.",
+      "placeholder": "e.g., Jawaharlal Nehru Port Trust (JNPT), Mumbai - 85 km"
+    },
+    {
+      "question_text": "Critical Items Under Project Cargo",
+      "field_name": "critical_items_list",
+      "field_type": "textarea",
+      "section": "Details of Critical Items",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 2000
+      },
+      "guidance_text": "List all equipment and materials whose delayed arrival would postpone project commissioning. Include items with long manufacturing lead times or those on the critical path. Specify whether items are imported or indigenous, as import items carry higher transit risk.",
+      "placeholder": "e.g., 1. Steam Turbine Rotor - Imported from Germany, 2. Generator Stator - Imported from Japan, 3. Boiler Drum - Indigenous from BHEL, 4. DCS Control Panels - Imported from USA"
+    },
+    {
+      "question_text": "Equipment Details Table",
+      "field_name": "equipment_details_file",
+      "field_type": "file",
+      "section": "Details of Critical Items",
+      "order_index": 12,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload a detailed spreadsheet listing all critical equipment with columns for: Equipment Name, Quantity, Unit Value, Total Value, Supplier Name, Country of Origin, Expected Delivery Date, and Installation Sequence. Use the Excel template if provided by your broker.",
+      "placeholder": "Upload Excel/CSV file with equipment details"
+    },
+    {
+      "question_text": "Details of Project Cargo Handlers",
+      "field_name": "cargo_handlers_details",
+      "field_type": "textarea",
+      "section": "Details of Project Cargo and Handlers",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide names and credentials of logistics companies handling your project cargo. Include freight forwarders, customs clearance agents, and inland transporters. Their experience with similar projects affects risk assessment and premium calculation.",
+      "placeholder": "e.g., International Freight: DHL Project Logistics, Custom Clearance: Jeena & Company, Inland Transport: VRL Logistics (ODC specialist with 15 years experience)"
+    },
+    {
+      "question_text": "Transportation Details from Origin to Destination",
+      "field_name": "transportation_route",
+      "field_type": "textarea",
+      "section": "Details of Project Cargo and Handlers",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "minLength": 30,
+        "maxLength": 1500
+      },
+      "guidance_text": "Describe the complete journey of critical equipment from manufacturer to project site. Include all modes of transport (sea, air, rail, road), transshipment points, and approximate transit times. Highlight any challenging segments like ghat sections or river crossings.",
+      "placeholder": "e.g., Hamburg Port (Germany) → JNPT Mumbai by sea (35 days) → Custom clearance (7 days) → Road transport via NH-48 to project site (2 days with police escort for ODC cargo)"
+    },
+    {
+      "question_text": "Expected Time for Commissioning After Receipt of Material",
+      "field_name": "commissioning_timeline",
+      "field_type": "number",
+      "section": "Delay in Start Up Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 365
+      },
+      "guidance_text": "Enter the number of days required to complete installation, testing, and commissioning after all critical equipment arrives at site. This baseline helps calculate actual delay if equipment arrival is delayed. Be realistic to avoid claim disputes.",
+      "placeholder": "e.g., 180",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Business Interruption/Advance Loss of Profit Sum Insured",
+      "field_name": "bi_alop_sum_insured",
+      "field_type": "number",
+      "section": "Delay in Start Up Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter the estimated gross profit or revenue loss per day if project commissioning is delayed. This should reflect expected daily earnings once operational minus variable costs. Calculate based on projected capacity utilization and contracted sale prices.",
+      "placeholder": "e.g., 25000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Maximum Indemnity Period Required (Days)",
+      "field_name": "max_indemnity_period",
+      "field_type": "number",
+      "section": "Delay in Start Up Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "min": 30,
+        "max": 730
+      },
+      "guidance_text": "Specify the maximum number of days for which you want delay compensation. Standard periods are 180-365 days. Longer periods provide better protection but increase premium. Consider worst-case scenarios like equipment re-manufacturing time.",
+      "placeholder": "e.g., 365",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Time Excess/Deductible (Days)",
+      "field_name": "time_excess_days",
+      "field_type": "number",
+      "section": "Delay in Start Up Details",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true,
+        "min": 14,
+        "max": 90
+      },
+      "guidance_text": "Enter the waiting period (in days) before delay compensation begins. This is similar to a deductible where you bear the initial delay period. Standard is 30-45 days. Lower excess means higher premium but better protection.",
+      "placeholder": "e.g., 30",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Total Contract Value of the Project",
+      "field_name": "total_contract_value",
+      "field_type": "number",
+      "section": "Values & Limits",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true,
+        "min": 1000000,
+        "max": 1000000000000
+      },
+      "guidance_text": "Enter the total project cost including civil works, equipment, installation, and all other components. This helps insurers understand project scale and set appropriate coverage limits. Include all phases if the project is being executed in stages.",
+      "placeholder": "e.g., 9600000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Value of Critical Items",
+      "field_name": "critical_items_value",
+      "field_type": "number",
+      "section": "Values & Limits",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 1000000000000
+      },
+      "guidance_text": "Enter the combined value of all critical equipment and materials identified earlier. This forms the base sum insured for project cargo coverage. Ensure values are at replacement cost including freight, duties, and installation charges.",
+      "placeholder": "e.g., 3500000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Single Cargo Maximum Limit",
+      "field_name": "single_cargo_limit",
+      "field_type": "number",
+      "section": "Values & Limits",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 100000000000
+      },
+      "guidance_text": "Specify the highest value of cargo that will be transported in a single shipment or vehicle. This helps determine per-occurrence limits and affects risk assessment. Consider your most valuable single equipment piece plus transportation costs.",
+      "placeholder": "e.g., 500000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Annual Cargo Movement Value",
+      "field_name": "annual_cargo_value",
+      "field_type": "number",
+      "section": "Values & Limits",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 1000000000000
+      },
+      "guidance_text": "Enter the total value of all project cargo expected to be transported in a 12-month period. This aggregate value helps structure the policy with appropriate annual limits. Include all equipment, materials, and spare parts movements.",
+      "placeholder": "e.g., 2000000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Claims History in Last 5 Years",
+      "field_name": "claims_history_5years",
+      "field_type": "radio",
+      "section": "Claims History",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate whether your organization has filed any insurance claims related to project cargo, marine transit, or project delays in the past 5 years. Be transparent as insurers verify this through industry databases. Good claims history results in better premiums.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Previous Claims",
+      "field_name": "previous_claims_details",
+      "field_type": "textarea",
+      "section": "Claims History",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "minLength": 20,
+        "maxLength": 2000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history_5years",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide details of each claim including date, cause of loss, amount claimed, amount settled, and corrective measures taken. Explain how you've improved risk management since then. Demonstrating lessons learned can positively influence underwriting.",
+      "placeholder": "e.g., March 2023 - Generator damaged during inland transit due to road accident. Claimed: ₹2.5 Cr, Settled: ₹2.2 Cr. Now use specialized ODC transporters with escort vehicles."
+    },
+    {
+      "question_text": "Upload Previous Policy Documents",
+      "field_name": "previous_policy_upload",
+      "field_type": "file",
+      "section": "Attachments",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your existing or expired DSU/Marine policy documents if available. This helps insurers understand your coverage history and maintain continuity. Include policy schedule, terms, and claims experience letter if available.",
+      "placeholder": "Upload PDF of previous policy"
+    },
+    {
+      "question_text": "Upload Project Documents",
+      "field_name": "project_documents_upload",
+      "field_type": "file",
+      "section": "Attachments",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload relevant project documents such as project report, equipment procurement contracts, logistics agreements, or project timeline charts. Comprehensive documentation expedites underwriting and can result in better terms.",
+      "placeholder": "Upload project reports, contracts (PDF/ZIP)"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.399Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 2
+}

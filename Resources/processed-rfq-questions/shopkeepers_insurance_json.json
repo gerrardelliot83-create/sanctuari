@@ -1,0 +1,619 @@
+{
+  "product_name": "Shopkeepers Package Insurance Policy",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Full Name of Insured",
+      "field_name": "insured_full_name",
+      "field_type": "text",
+      "section": "Proposer & Business Details",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the shop owner's full legal name as per PAN card or business registration. For proprietorship, use owner's name; for partnership or company, use registered business name. This name will appear on the policy and must match your KYC documents.",
+      "placeholder": "e.g., Rajesh Kumar or ABC Retail Store Pvt Ltd"
+    },
+    {
+      "question_text": "Full Address of Shop/Business Premises",
+      "field_name": "shop_address",
+      "field_type": "textarea",
+      "section": "Proposer & Business Details",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide complete address of your shop to be insured including shop number, building name, street, locality, city, state and PIN code. This location will be covered under the policy. If you have multiple locations, each needs separate coverage.",
+      "placeholder": "e.g., Shop No. 15, Ground Floor, Karol Bagh Market, New Delhi, Delhi, 110005",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business/Trade",
+      "field_name": "business_nature",
+      "field_type": "select",
+      "section": "Proposer & Business Details",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Grocery/Kirana Store",
+        "Clothing/Garments Shop",
+        "Electronics/Mobile Shop",
+        "Pharmacy/Medical Store",
+        "Jewelry Shop",
+        "Hardware Store",
+        "Stationery/Book Store",
+        "Footwear Shop",
+        "Cosmetics/Beauty Products",
+        "Restaurant/Food Outlet",
+        "Bakery/Sweet Shop",
+        "Furniture Store",
+        "Optical/Eyewear Store",
+        "Sports Goods Shop",
+        "Gift/Novelty Store",
+        "Auto Parts/Accessories",
+        "Other Retail Business"
+      ],
+      "guidance_text": "Select the type of retail business you operate. Your business category determines risk level and premium rates. Shops handling inflammable goods or high-value items like jewelry typically have higher premiums than general stores.",
+      "placeholder": "e.g., Clothing/Garments Shop"
+    },
+    {
+      "question_text": "Business Occupancy Type",
+      "field_name": "occupancy_type",
+      "field_type": "radio",
+      "section": "Proposer & Business Details",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Shop Only",
+        "Shop with Godown",
+        "Shop with Residence Above"
+      ],
+      "guidance_text": "Specify if your premises is purely commercial or has mixed use. 'Shop with Godown' means you have storage area attached. 'Shop with Residence' means living quarters above or behind shop. Mixed occupancy may affect premium calculation.",
+      "placeholder": "Select occupancy type",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Preferred Insurance Period",
+      "field_name": "insurance_period",
+      "field_type": "select",
+      "section": "Proposer & Business Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Choose your policy duration. Annual policies are standard, but longer terms often provide premium discounts and protection against rate increases. Multi-year policies save renewal hassles and ensure continuous coverage.",
+      "placeholder": "e.g., 1 Year"
+    },
+    {
+      "question_text": "Do you own the shop premises?",
+      "field_name": "shop_ownership",
+      "field_type": "radio",
+      "section": "Fire & Allied Perils Coverage",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - Owned",
+        "No - Rented/Leased"
+      ],
+      "guidance_text": "Indicate if you own or rent the shop premises. Owners should insure the building structure, while tenants only need to insure contents and stock. Landlord's property is not covered under tenant's policy.",
+      "placeholder": "Select ownership status"
+    },
+    {
+      "question_text": "Sum Insured for Building (if owned)",
+      "field_name": "building_sum_insured",
+      "field_type": "number",
+      "section": "Fire & Allied Perils Coverage",
+      "order_index": 7,
+      "validation_rules": {
+        "required": false,
+        "min": 100000,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter the current reconstruction cost of your shop building, not the market value or purchase price. This should cover complete rebuilding costs including materials and labor at today's rates. Under-insurance will result in proportionate claim settlement.",
+      "placeholder": "e.g., 2500000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "shop_ownership",
+          "value": "Yes - Owned"
+        }
+      },
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Sum Insured for Contents (Furniture, Fixtures, Fittings)",
+      "field_name": "contents_sum_insured",
+      "field_type": "number",
+      "section": "Fire & Allied Perils Coverage",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "min": 50000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter total value of shop furniture, fixtures, counters, shelving, air conditioners, computers, and other permanent fittings. Calculate replacement cost at current market prices. Include everything except stock that's for sale.",
+      "placeholder": "e.g., 500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Sum Insured for Stock-in-Trade",
+      "field_name": "stock_sum_insured",
+      "field_type": "number",
+      "section": "Fire & Allied Perils Coverage",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter the maximum value of inventory/goods you keep for sale at any time. Consider peak season stock levels. This covers your merchandise against fire, theft, and other perils. Review and adjust annually based on business growth.",
+      "placeholder": "e.g., 1500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Any Other Items to be Covered",
+      "field_name": "other_items_description",
+      "field_type": "textarea",
+      "section": "Fire & Allied Perils Coverage",
+      "order_index": 10,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "List any specific valuable items needing coverage like signboards, generators, CCTV systems, or specialized equipment. Mention each item with its value. High-value items may need separate declaration for adequate coverage.",
+      "placeholder": "e.g., LED Signboard - ₹50,000, Generator 5KV - ₹75,000, CCTV System - ₹30,000"
+    },
+    {
+      "question_text": "Coverage for Money in Transit Required?",
+      "field_name": "money_transit_required",
+      "field_type": "radio",
+      "section": "Money Insurance Coverage",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Select if you need coverage for cash being transported between your shop and bank. This protects against robbery or theft while carrying daily collections to bank or bringing change. Essential for cash-heavy businesses.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Maximum Amount Carried in Single Transit",
+      "field_name": "money_transit_limit",
+      "field_type": "number",
+      "section": "Money Insurance Coverage",
+      "order_index": 12,
+      "validation_rules": {
+        "required": false,
+        "min": 10000,
+        "max": 10000000
+      },
+      "guidance_text": "Enter the maximum cash amount you typically carry to the bank in one trip. Coverage applies from shop to bank and back. Higher limits mean higher premiums. Consider your peak business days when estimating.",
+      "placeholder": "e.g., 200000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "money_transit_required",
+          "value": "Yes"
+        }
+      },
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Coverage for Money in Safe Required?",
+      "field_name": "money_safe_required",
+      "field_type": "radio",
+      "section": "Money Insurance Coverage",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you keep cash overnight in shop premises and need coverage. This protects money stored in safe/strong room against burglary. Insurers may inspect safe quality and specify minimum security requirements.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Maximum Amount Kept in Safe",
+      "field_name": "money_safe_limit",
+      "field_type": "number",
+      "section": "Money Insurance Coverage",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false,
+        "min": 10000,
+        "max": 5000000
+      },
+      "guidance_text": "Enter maximum cash amount stored in your shop safe at any time. Weekend and holiday accumulations should be considered. The safe must meet insurer's specifications - typically double-walled with quality locks.",
+      "placeholder": "e.g., 100000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "money_safe_required",
+          "value": "Yes"
+        }
+      },
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Coverage for Money at Counter Required?",
+      "field_name": "money_counter_required",
+      "field_type": "radio",
+      "section": "Money Insurance Coverage",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Select if you need coverage for cash kept at billing counter during business hours. This covers robbery or theft of money from cash drawer or counter while shop is open. Important for retail businesses with high cash transactions.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Maximum Amount at Counter During Business Hours",
+      "field_name": "money_counter_limit",
+      "field_type": "number",
+      "section": "Money Insurance Coverage",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "min": 5000,
+        "max": 500000
+      },
+      "guidance_text": "Enter the maximum cash typically present at your billing counter during business hours. Consider busy periods when change requirement is high. This covers daytime robbery or theft by employees or customers.",
+      "placeholder": "e.g., 50000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "money_counter_required",
+          "value": "Yes"
+        }
+      },
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Personal Accident Cover for Owner Required?",
+      "field_name": "personal_accident_required",
+      "field_type": "radio",
+      "section": "Additional Coverages",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This provides compensation to shop owner in case of accidental death or disability. Cover includes 24x7 protection anywhere in India. Provides financial security to family if owner suffers accident affecting business operations.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Sum Insured for Personal Accident",
+      "field_name": "personal_accident_sum_insured",
+      "field_type": "number",
+      "section": "Additional Coverages",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select compensation amount for accidental death or permanent disability. Consider your family's financial needs and business loans. Higher cover provides better protection but increases premium. Usually capped at 100 times monthly income. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "e.g., ₹10 Lakhs",
+      "conditional_logic": {
+        "show_if": {
+          "field": "personal_accident_required",
+          "value": "Yes"
+        }
+      },
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Burglary & Theft Coverage Required?",
+      "field_name": "burglary_coverage_required",
+      "field_type": "radio",
+      "section": "Additional Coverages",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers loss of stock and contents due to burglary involving forcible entry. Different from robbery which involves violence or threat. Essential coverage for shops with valuable inventory or those in areas with higher crime rates.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Electronic Equipment Insurance Required?",
+      "field_name": "electronic_equipment_required",
+      "field_type": "radio",
+      "section": "Additional Coverages",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers computers, printers, billing machines, and other electronic equipment against breakdown and damage beyond standard fire coverage. Important if your business relies heavily on electronic systems for operations.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Total Value of Electronic Equipment",
+      "field_name": "electronic_equipment_value",
+      "field_type": "number",
+      "section": "Additional Coverages",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false,
+        "min": 10000,
+        "max": 10000000
+      },
+      "guidance_text": "Enter combined value of all electronic equipment including computers, servers, POS systems, printers, and AC units. List current market value, not purchase price. Regular equipment over 5 years old may have reduced coverage.",
+      "placeholder": "e.g., 250000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "electronic_equipment_required",
+          "value": "Yes"
+        }
+      },
+      "format": "decimal"
+    },
+    {
+      "question_text": "Public Liability Insurance Required?",
+      "field_name": "public_liability_required",
+      "field_type": "radio",
+      "section": "Additional Coverages",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Protects against legal liability if customers or visitors suffer injury or property damage at your shop. Covers legal costs and compensation. Essential protection as even minor accidents can lead to expensive lawsuits.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Public Liability Coverage Limit",
+      "field_name": "public_liability_limit",
+      "field_type": "number",
+      "section": "Additional Coverages",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select maximum compensation amount per incident for third-party injury or property damage claims. Higher footfall businesses should opt for higher limits. Consider worst-case scenarios like customer slip-and-fall injuries. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "e.g., ₹10 Lakhs",
+      "conditional_logic": {
+        "show_if": {
+          "field": "public_liability_required",
+          "value": "Yes"
+        }
+      },
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Previous Insurance Policy Number (if any)",
+      "field_name": "previous_policy_number",
+      "field_type": "text",
+      "section": "Previous Insurance History",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 50
+      },
+      "guidance_text": "If renewing existing policy, provide your current policy number. This helps transfer no-claim bonus and ensures continuous coverage. New customers can leave blank. Having claims-free history may qualify you for discounts.",
+      "placeholder": "e.g., POL/2024/12345678",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Any Claims in Last 3 Years?",
+      "field_name": "previous_claims",
+      "field_type": "radio",
+      "section": "Previous Insurance History",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare if you've made any insurance claims in past 3 years, even with different insurers. Claims history affects premium and acceptance. Be truthful as insurers verify through shared databases. Non-disclosure can void your policy.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Previous Claims",
+      "field_name": "claims_details",
+      "field_type": "textarea",
+      "section": "Previous Insurance History",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of each claim including date, cause of loss, and amount claimed. Mention if claims were settled, rejected, or withdrawn. This helps insurers assess risk and may affect terms offered.",
+      "placeholder": "e.g., Fire claim on 15/03/2023, caused by electrical short circuit, claimed ₹2,00,000, settled ₹1,80,000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "previous_claims",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Construction Type of Building",
+      "field_name": "building_construction",
+      "field_type": "select",
+      "section": "Risk Assessment Information",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Pucca/RCC (Concrete)",
+        "Semi-Pucca (Brick & Concrete)",
+        "Kutcha (Mud/Thatch)",
+        "Metal Sheet/Prefab"
+      ],
+      "guidance_text": "Specify your shop building's construction material. RCC (reinforced concrete) structures have lowest fire risk and get better rates. Kutcha constructions with thatched roofs have higher risk. This significantly impacts your premium.",
+      "placeholder": "e.g., Pucca/RCC (Concrete)"
+    },
+    {
+      "question_text": "Age of Building",
+      "field_name": "building_age",
+      "field_type": "select",
+      "section": "Risk Assessment Information",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Less than 5 years",
+        "5-10 years",
+        "10-20 years",
+        "20-30 years",
+        "More than 30 years"
+      ],
+      "guidance_text": "Select age of the building housing your shop. Newer buildings generally have better safety features and lower risk. Very old buildings may need inspection and could have coverage restrictions or higher premiums.",
+      "placeholder": "e.g., 5-10 years"
+    },
+    {
+      "question_text": "Security Arrangements Available",
+      "field_name": "security_arrangements",
+      "field_type": "multiselect",
+      "section": "Risk Assessment Information",
+      "order_index": 29,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "24/7 Security Guard",
+        "CCTV Cameras",
+        "Burglar Alarm",
+        "Central Monitoring",
+        "Fire Alarm System",
+        "Sprinkler System",
+        "Rolling Shutters",
+        "Collapsible Gates",
+        "None"
+      ],
+      "guidance_text": "Select all security measures installed at your shop. Better security reduces theft risk and may qualify for premium discounts. Insurers may verify these during inspection. Some covers mandate minimum security requirements.",
+      "placeholder": "Select all applicable options"
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Compliance & Documentation",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-digit GST identification number. This is mandatory for claiming input tax credit on insurance premium. Format should be like 27AABCU9603R1ZM. Ensure accuracy as it will be verified with GST database.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PAN Number",
+      "field_name": "pan_number",
+      "field_type": "text",
+      "section": "Compliance & Documentation",
+      "order_index": 31,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide 10-character PAN of proprietor or business entity. Required for policies above ₹50,000 premium as per regulations. Format is 5 letters, 4 numbers, 1 letter (e.g., AABCU9603R). Must match name given earlier.",
+      "placeholder": "e.g., AABCU9603R",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 32,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter 10-digit mobile number for policy communications and claim intimation. You'll receive policy documents and renewal reminders on this number. Ensure it's active and accessible to authorized persons.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email_address",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 33,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide active email address where policy documents will be sent. Digital policies are legally valid and environment-friendly. Check email regularly for important updates about claims procedures and renewal notices.",
+      "placeholder": "e.g., shopowner@example.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.615Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 5
+}

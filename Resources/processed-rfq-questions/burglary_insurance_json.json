@@ -1,0 +1,646 @@
+{
+  "product_name": "Burglary Insurance",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Name of the Insured",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the full legal name of your business as registered with authorities. This name will appear on the policy document and should match your GST registration and other official records. For individuals, provide your full name as per PAN card.",
+      "placeholder": "e.g., ABC Jewellers Pvt Ltd"
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Provide your 15-digit GST identification number for business verification and tax purposes. This helps establish your business credentials and determines the applicable GST rate on insurance premium.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PAN Number",
+      "field_name": "pan_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter your company's or individual's 10-character PAN issued by Income Tax Department. This is mandatory for policy issuance and claim settlements above specified limits.",
+      "placeholder": "e.g., AABCU9603R",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business",
+      "field_name": "business_nature",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Retail - Jewelry",
+        "Retail - Electronics",
+        "Retail - Textiles/Garments",
+        "Retail - General Store",
+        "Wholesale Trading",
+        "Manufacturing Unit",
+        "Warehouse/Godown",
+        "Office/Corporate",
+        "Bank/Financial Institution",
+        "Educational Institution",
+        "Healthcare Facility",
+        "Hotel/Restaurant",
+        "Residential Property",
+        "Other Commercial"
+      ],
+      "guidance_text": "Select the category that best describes your business or property type. Different businesses have varying burglary risk profiles - jewelry stores face different risks than offices. This helps determine appropriate coverage and security requirements.",
+      "placeholder": "Select business type"
+    },
+    {
+      "question_text": "Annual Turnover (₹)",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your total annual revenue for the last financial year. This helps insurers understand your business scale and the value of goods typically present at your premises, which influences the sum insured and premium calculation.",
+      "placeholder": "e.g., 25000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Contact Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete mailing address for all policy-related correspondence. Include building/shop name, street, locality, city, state, and PIN code. This address will be used for sending policy documents and renewal notices.",
+      "placeholder": "e.g., Shop No. 12, Gold Plaza, MG Road, Fort, Mumbai, Maharashtra - 400001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Email",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide a valid email address for receiving policy documents, claim updates, and important notifications. Ensure this email is regularly monitored as time-sensitive communications will be sent here.",
+      "placeholder": "e.g., admin@abcjewellers.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter your 10-digit mobile number for urgent communications and claim intimation. This number will be used for SMS alerts about policy status and may be contacted in case of claim emergencies.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Type",
+      "field_name": "policy_type",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "New Policy",
+        "Renewal",
+        "Port from Another Insurer"
+      ],
+      "guidance_text": "Indicate if this is your first burglary insurance, renewal of existing policy, or switching from another insurer. Renewals and ports may qualify for no-claim bonuses if you have a clean claims history.",
+      "placeholder": "Select policy type"
+    },
+    {
+      "question_text": "Policy Period",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Choose your desired coverage duration. Annual policies are standard, but multi-year policies often come with premium discounts and protect against rate increases. Longer terms also reduce renewal hassles.",
+      "placeholder": "Select policy period",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select when you want the burglary coverage to begin. If renewing, ensure this immediately follows your current policy expiry to avoid gaps. Coverage typically starts at 00:00 hours on the specified date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Risk Location Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter the exact address of the premises to be insured against burglary. This is where your stock/assets are located and will be the insured location. Include floor number, building name, and nearest landmark for easy identification.",
+      "placeholder": "e.g., Ground Floor, Shop No. 45, Zaveri Bazaar, Kalbadevi, Mumbai - 400002",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Premises",
+      "field_name": "premises_type",
+      "field_type": "select",
+      "section": "Risk Location Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Ground Floor Shop",
+        "Upper Floor Shop/Office",
+        "Basement Shop/Storage",
+        "Standalone Building",
+        "Shop in Mall/Complex",
+        "Industrial Unit",
+        "Warehouse/Godown",
+        "Residential Premises",
+        "Bank Branch",
+        "Mixed Use (Shop + Residence)"
+      ],
+      "guidance_text": "Specify the type of premises where your insured property is located. Ground floor shops typically have higher burglary risk than upper floors. Standalone buildings may need different security measures than mall shops.",
+      "placeholder": "Select premises type"
+    },
+    {
+      "question_text": "Building Construction Type",
+      "field_name": "building_construction",
+      "field_type": "select",
+      "section": "Risk Location Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "RCC (Pucca Construction)",
+        "Brick and Mortar",
+        "Mixed Construction",
+        "Prefabricated Structure",
+        "Temporary Structure"
+      ],
+      "guidance_text": "Indicate the construction type of your premises. RCC (Reinforced Cement Concrete) buildings offer better security than temporary structures. Building construction affects the ease of forced entry and influences premium rates.",
+      "placeholder": "Select construction type"
+    },
+    {
+      "question_text": "First Loss Basis Required",
+      "field_name": "first_loss_basis",
+      "field_type": "radio",
+      "section": "Coverage Structure",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "First Loss insurance covers only a percentage of total stock value, assuming burglars cannot steal everything in one incident. This reduces premium significantly while providing adequate coverage for most burglary scenarios. Ideal for businesses with large inventories.",
+      "placeholder": "Select coverage basis"
+    },
+    {
+      "question_text": "First Loss Percentage of Total Sum Insured",
+      "field_name": "first_loss_percentage",
+      "field_type": "select",
+      "section": "Coverage Structure",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "first_loss_basis",
+          "value": "Yes"
+        }
+      },
+      "options": [
+        "10%",
+        "20%",
+        "25%",
+        "30%",
+        "40%",
+        "50%"
+      ],
+      "guidance_text": "Select what percentage of your total stock value you want covered under first loss basis. For example, if total stock is ₹1 crore and you choose 30%, coverage will be ₹30 lakhs. Premium is calculated only on this reduced amount.",
+      "placeholder": "Select first loss percentage"
+    },
+    {
+      "question_text": "Floater Basis Required (Multiple Locations)",
+      "field_name": "floater_basis",
+      "field_type": "radio",
+      "section": "Coverage Structure",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - Multiple Locations",
+        "No - Single Location"
+      ],
+      "guidance_text": "Floater policy covers stocks at multiple locations under a single sum insured, useful if you move inventory between branches. The total coverage can be claimed at any location. Single location policies cover only the specified premises.",
+      "placeholder": "Select floater option"
+    },
+    {
+      "question_text": "Additional Location Details",
+      "field_name": "additional_locations",
+      "field_type": "textarea",
+      "section": "Coverage Structure",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "floater_basis",
+          "value": "Yes - Multiple Locations"
+        }
+      },
+      "guidance_text": "List all locations to be covered under the floater policy with complete addresses and approximate stock values at each. All locations should have similar security arrangements for uniform risk assessment.",
+      "placeholder": "e.g., Location 2: Shop 23, Commercial Complex, Pune - Stock Value ₹20 lakhs\nLocation 3: Warehouse, MIDC Nashik - Stock Value ₹30 lakhs"
+    },
+    {
+      "question_text": "Total Sum Insured (₹)",
+      "field_name": "total_sum_insured",
+      "field_type": "number",
+      "section": "Sum Insured Details",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true,
+        "min": 50000,
+        "max": 1000000000
+      },
+      "guidance_text": "Enter the total value of property/stock you want to insure against burglary. This should reflect current market value of all items at risk including inventory, cash, furniture, and equipment. Underinsuring leads to proportionate claim settlements.",
+      "placeholder": "e.g., 5000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Breakup of Sum Insured",
+      "field_name": "sum_insured_breakup",
+      "field_type": "textarea",
+      "section": "Sum Insured Details",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide category-wise breakup of the sum insured. This helps in accurate risk assessment and ensures proper coverage for different asset types. Different categories may have different coverage limits or conditions.",
+      "placeholder": "e.g., Stock/Inventory: ₹35,00,000\nCash in Safe: ₹2,00,000\nFurniture & Fixtures: ₹5,00,000\nComputers/Electronics: ₹8,00,000",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Cash Coverage Required",
+      "field_name": "cash_coverage",
+      "field_type": "radio",
+      "section": "Sum Insured Details",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you want coverage for cash kept on premises. Cash coverage typically has sub-limits and requires specific safe specifications. Higher cash limits need better quality safes and may increase premium.",
+      "placeholder": "Select cash coverage option"
+    },
+    {
+      "question_text": "Maximum Cash Kept on Premises (₹)",
+      "field_name": "max_cash_amount",
+      "field_type": "number",
+      "section": "Sum Insured Details",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "cash_coverage",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the maximum amount of cash that may be present at your premises at any time. This includes cash in safe and till. Insurance companies have specific limits for cash coverage based on safe quality and security measures.",
+      "placeholder": "e.g., 200000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Watchman Deployment",
+      "field_name": "watchman_deployment",
+      "field_type": "select",
+      "section": "Security Measures",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "24x7 Watchman",
+        "Night Watchman Only",
+        "Day Watchman Only",
+        "No Watchman"
+      ],
+      "guidance_text": "Specify your security guard arrangements at the insured premises. Round-the-clock security significantly reduces burglary risk and can lead to premium discounts. Professional security services are preferred over individual watchmen.",
+      "placeholder": "Select watchman deployment"
+    },
+    {
+      "question_text": "Burglar Alarm System",
+      "field_name": "burglar_alarm",
+      "field_type": "radio",
+      "section": "Security Measures",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - Connected to Police/Security Agency",
+        "Yes - Local Alarm Only",
+        "No"
+      ],
+      "guidance_text": "Indicate if you have electronic burglar alarm installed. Alarms connected to police stations or security agencies provide better protection than standalone systems. Modern alarm systems can qualify you for significant premium discounts.",
+      "placeholder": "Select alarm system status"
+    },
+    {
+      "question_text": "CCTV Surveillance System",
+      "field_name": "cctv_system",
+      "field_type": "radio",
+      "section": "Security Measures",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - With Recording",
+        "Yes - Live Monitoring Only",
+        "No"
+      ],
+      "guidance_text": "CCTV systems deter burglars and help in claim investigations. Systems with recording capability provide evidence in case of incidents. Ensure cameras cover all entry points and valuable asset storage areas.",
+      "placeholder": "Select CCTV status"
+    },
+    {
+      "question_text": "Safe/Strong Room Available",
+      "field_name": "safe_available",
+      "field_type": "radio",
+      "section": "Security Measures",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - ISI Marked Safe",
+        "Yes - Regular Safe",
+        "Yes - Strong Room",
+        "No"
+      ],
+      "guidance_text": "Quality of safe directly impacts coverage for cash and valuables. ISI marked safes meeting Indian Standards provide best protection. Strong rooms offer even better security for high-value items. Safe specifications may be required for underwriting.",
+      "placeholder": "Select safe/strong room availability"
+    },
+    {
+      "question_text": "Type of Locks on Main Doors",
+      "field_name": "door_locks_type",
+      "field_type": "multiselect",
+      "section": "Security Measures",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Double Lock System",
+        "Multi-Point Locking",
+        "Electronic/Digital Locks",
+        "Rolling Shutters with Locks",
+        "Collapsible Gates",
+        "Standard Padlocks",
+        "Mortise Locks"
+      ],
+      "guidance_text": "Select all types of locks securing your premises. Multiple locking systems provide layered security. Electronic locks with audit trails are preferred for high-value premises. Quality of locks affects both premium and claim settlement.",
+      "placeholder": "Select all applicable lock types"
+    },
+    {
+      "question_text": "Previous Insurer Name",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If you have existing or past burglary insurance, mention the insurance company name. Continuous coverage without claims can earn you no-claim bonus up to 50% discount on premium.",
+      "placeholder": "e.g., United India Insurance Company Ltd",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Previous Policy Number",
+      "field_name": "previous_policy_number",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter your current or most recent burglary insurance policy number. This helps verify your insurance history and no-claim bonus eligibility. Keep your policy copy ready for verification.",
+      "placeholder": "e.g., BUR/2024/MUM/123456",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Burglary/Theft Incidents (Last 5 Years)",
+      "field_name": "theft_incidents",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Incidents",
+        "1 Incident",
+        "2-3 Incidents",
+        "More than 3 Incidents"
+      ],
+      "guidance_text": "Disclose any burglary, theft, or attempted break-in incidents at your premises in the past 5 years, whether claimed or not. This includes minor thefts by employees. Honest disclosure ensures smooth claim settlement.",
+      "placeholder": "Select incident history"
+    },
+    {
+      "question_text": "Incident Details",
+      "field_name": "incident_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "theft_incidents",
+          "value": [
+            "1 Incident",
+            "2-3 Incidents",
+            "More than 3 Incidents"
+          ]
+        }
+      },
+      "guidance_text": "Provide details of burglary/theft incidents including date, items lost, approximate value, whether FIR was filed, and security improvements made afterward. This helps insurers assess current risk levels.",
+      "placeholder": "e.g., Date: 10/06/2023, Loss: Electronic items worth ₹75,000, FIR filed, Subsequently installed CCTV and alarm system"
+    },
+    {
+      "question_text": "Claims History (if insured previously)",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "No Claims",
+        "1 Claim",
+        "2-3 Claims",
+        "More than 3 Claims"
+      ],
+      "guidance_text": "If you had burglary insurance before, indicate your claims history. Multiple claims may result in higher premiums or special terms. No-claim history over multiple years earns significant discounts.",
+      "placeholder": "Select claims history"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy",
+      "field_name": "previous_policy_document",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your current/previous burglary insurance policy for verification of coverage history and no-claim bonus. This expedites the underwriting process. PDF or image format accepted (max 5MB).",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload Property Documents",
+      "field_name": "property_documents",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload property ownership or rental agreement documents for the insured premises. This establishes your insurable interest in the property. Required for high sum insured values.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload Stock/Asset Register",
+      "field_name": "stock_register",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "For businesses with significant inventory, upload recent stock register or asset list. This supports the sum insured value declared and helps in faster claim processing. Excel or PDF format preferred.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Special Requirements or Additional Information",
+      "field_name": "special_requirements",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 36,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any special circumstances, unique security arrangements, or specific coverage requirements not covered above. Include information about seasonal stock variations, special events, or upcoming security upgrades.",
+      "placeholder": "e.g., Stock value increases by 50% during festival season (Oct-Nov), planning to install biometric access control next month"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.295Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 6
+}

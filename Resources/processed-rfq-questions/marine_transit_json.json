@@ -1,0 +1,384 @@
+{
+  "product_name": "Marine Transit Insurance",
+  "product_category": "marine",
+  "questions": [
+    {
+      "question_text": "Name of the Applicant",
+      "field_name": "applicant_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the legal name of the company or individual requiring insurance for this specific shipment. This name will appear as the insured party on the transit policy covering your cargo during this journey.",
+      "placeholder": "e.g., ABC Trading Company Pvt Ltd"
+    },
+    {
+      "question_text": "Business Address",
+      "field_name": "business_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete address of your business including building, street, area, city, state and pincode. This address is used for policy documentation and any claim-related correspondence for this transit insurance.",
+      "placeholder": "e.g., 201, Commerce House, Fort Area, Mumbai, Maharashtra - 400001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Phone Number",
+      "field_name": "phone_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a mobile number where you can be reached immediately in case of any transit emergency or claim situation. Quick communication is crucial for marine claims to arrange surveys and minimize losses.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email_address",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide your email address for receiving the transit policy document and claim forms. Ensure this email is monitored regularly as marine insurance requires prompt action for claims and documentation.",
+      "placeholder": "e.g., logistics@abctrading.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Goods / Merchandise to be Insured",
+      "field_name": "goods_description",
+      "field_type": "textarea",
+      "section": "Cargo Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Describe the specific goods being shipped in this consignment. Include product type, quantity, whether new or used, and any special characteristics. Accurate description ensures proper coverage and smooth claim settlement if needed.",
+      "placeholder": "e.g., 500 cartons of cotton readymade garments, new, for export"
+    },
+    {
+      "question_text": "Nature of Packing",
+      "field_name": "packing_nature",
+      "field_type": "select",
+      "section": "Cargo Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Wooden Crates",
+        "Corrugated Cartons",
+        "Palletized Cargo",
+        "Drums/Barrels",
+        "Bags/Sacks",
+        "Bales",
+        "Cases/Boxes",
+        "Loose/Unpacked",
+        "Container Stuffed",
+        "Special Packaging"
+      ],
+      "guidance_text": "Select how your goods are packed for this shipment. Proper packaging significantly reduces damage risk during transit. Export-quality packing with adequate cushioning and waterproofing is recommended for marine shipments.",
+      "placeholder": "Select packing type"
+    },
+    {
+      "question_text": "Mode of Conveyance",
+      "field_name": "conveyance_mode",
+      "field_type": "select",
+      "section": "Transit Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Sea Freight",
+        "Air Freight",
+        "Road Transport",
+        "Rail Transport",
+        "Multimodal (Multiple modes)",
+        "Courier Service",
+        "Coastal Shipping"
+      ],
+      "guidance_text": "Select the primary transportation mode for this shipment. Different modes have different risk levels and premium rates. Multimodal means using combination of sea/air/road/rail for door-to-door coverage.",
+      "placeholder": "Select transport mode"
+    },
+    {
+      "question_text": "Voyage / Transit Details",
+      "field_name": "transit_details",
+      "field_type": "textarea",
+      "section": "Transit Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide complete journey details from origin to final destination. Include warehouse addresses, ports/airports, and any intermediate stops. For example: 'From ABC Factory, Chennai to Hamburg Port, Germany via Chennai Port and Colombo transhipment'.",
+      "placeholder": "e.g., From: Warehouse at MIDC Pune TO: JFK Airport New York via Mumbai Airport"
+    },
+    {
+      "question_text": "Expected Transit Start Date",
+      "field_name": "transit_start_date",
+      "field_type": "date",
+      "section": "Transit Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter the date when goods will leave your warehouse or when risk commences. Marine transit insurance typically covers from warehouse to warehouse, starting when goods leave for shipment until delivery at destination.",
+      "placeholder": "e.g., 15/04/2025"
+    },
+    {
+      "question_text": "Expected Transit End Date",
+      "field_name": "transit_end_date",
+      "field_type": "date",
+      "section": "Transit Information",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter the expected delivery date at final destination. The policy covers the entire transit period plus usually 60 days after arrival at destination port for customs clearance and final delivery delays.",
+      "placeholder": "e.g., 30/04/2025"
+    },
+    {
+      "question_text": "Sum Insured (Total Value to be Insured)",
+      "field_name": "sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the total value requiring insurance coverage. This typically includes invoice value plus freight plus 10-15% to cover additional expenses and profit margin. Underinsuring may result in proportionate claim settlement.",
+      "placeholder": "e.g., 5000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Invoice Value of Goods",
+      "field_name": "invoice_value",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the commercial invoice value of the goods being shipped. This is the base value on which insurance calculation is done. For exports, this is typically the FOB/FCA value; for imports, it's the cost paid to supplier.",
+      "placeholder": "e.g., 4500000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Terms of Sale Contract",
+      "field_name": "sale_terms",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "CIF (Cost, Insurance & Freight)",
+        "CIP (Carriage & Insurance Paid)",
+        "FOB (Free on Board)",
+        "FCA (Free Carrier)",
+        "CFR/C&F (Cost & Freight)",
+        "CPT (Carriage Paid To)",
+        "EXW (Ex Works)",
+        "DDP (Delivered Duty Paid)",
+        "DAP (Delivered at Place)",
+        "Other"
+      ],
+      "guidance_text": "Select the Incoterm used in your sales/purchase contract. This determines who (buyer or seller) is responsible for insurance at different stages. Under FOB/FCA, buyer arranges insurance; under CIF/CIP, seller provides insurance.",
+      "placeholder": "Select applicable term"
+    },
+    {
+      "question_text": "Type of Coverage Required",
+      "field_name": "coverage_type",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "All Risk Cover (Institute Cargo Clause A)",
+        "Named Perils Cover (Institute Cargo Clause B)",
+        "Basic Cover (Institute Cargo Clause C)",
+        "Air Cargo All Risk",
+        "Inland Transit Only"
+      ],
+      "guidance_text": "All Risk Cover (ICC-A) provides widest protection including theft, shortage, and damage from any cause. Basic Cover (ICC-C) only covers major perils like fire, collision, sinking. Most shipments benefit from All Risk coverage.",
+      "placeholder": "Select coverage type",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Loading and Unloading Risks Coverage Required?",
+      "field_name": "loading_unloading_coverage",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers damage during loading onto and unloading from vessels, trucks, or aircraft. Important for fragile or heavy machinery where handling poses significant risk. Most claims occur during these operations rather than actual transit.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "War and SRCC Coverage Required?",
+      "field_name": "war_srcc_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "War Risk covers losses from war, terrorism, mines. SRCC covers strikes, riots, civil commotion. Essential for shipments through unstable regions or during periods of unrest. Usually adds 0.05-0.15% to premium.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Bill of Lading / Airway Bill Number (if available)",
+      "field_name": "bill_number",
+      "field_type": "text",
+      "section": "Shipment Documents",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 50
+      },
+      "guidance_text": "Enter the Bill of Lading (for sea) or Airway Bill (for air) number if already issued. This helps track your shipment and speeds up claim processing. If not yet available, you can update this later.",
+      "placeholder": "e.g., MAEU123456789"
+    },
+    {
+      "question_text": "Container Number (if applicable)",
+      "field_name": "container_number",
+      "field_type": "text",
+      "section": "Shipment Documents",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 20
+      },
+      "guidance_text": "For containerized cargo, provide the container number(s). This helps in tracking and claim investigation if needed. Standard format is 4 letters followed by 7 digits (e.g., MSKU1234567).",
+      "placeholder": "e.g., MSKU1234567"
+    },
+    {
+      "question_text": "Previous Marine Claims in Last 5 Years?",
+      "field_name": "previous_claims",
+      "field_type": "radio",
+      "section": "Claims History",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare any marine cargo insurance claims you've made in the past 5 years. Honesty is important as insurers verify claim history. Previous claims don't automatically mean rejection but help assess risk accurately.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Upload Commercial Invoice",
+      "field_name": "commercial_invoice",
+      "field_type": "file",
+      "section": "Shipment Documents",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload the commercial invoice for this shipment showing goods description and value. This is the primary document for insurance valuation and claim settlement. PDF format preferred, maximum 5MB.",
+      "placeholder": "Choose PDF file (max 5MB)"
+    },
+    {
+      "question_text": "Upload Packing List",
+      "field_name": "packing_list",
+      "field_type": "file",
+      "section": "Shipment Documents",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload the detailed packing list showing contents, quantities, and how goods are packed. This document is crucial for claim assessment if damage occurs. Include weight, dimensions, and package numbers if available.",
+      "placeholder": "Choose PDF file (max 5MB)"
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST registration number for tax invoice generation. Marine insurance attracts 18% GST. For imports, the insurance premium forms part of assessable value for customs duty calculation.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Special Instructions or Requirements",
+      "field_name": "special_instructions",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "Mention any special handling requirements, temperature controls needed, or specific clauses required by your LC (Letter of Credit). Include any unique risks or circumstances the insurer should know about this shipment.",
+      "placeholder": "e.g., Temperature-sensitive cargo requiring cold chain maintenance at 2-8°C throughout transit"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.553Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 2
+}

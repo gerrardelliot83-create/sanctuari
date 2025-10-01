@@ -1,0 +1,932 @@
+{
+  "product_name": "Cyber Liability Insurance",
+  "product_category": "cyber",
+  "questions": [
+    {
+      "question_text": "Name of Organization",
+      "field_name": "organization_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your organization's legal name as registered with the government. This should match exactly with your incorporation documents and GST registration. The insurer will use this name on all policy documents and claim settlements.",
+      "placeholder": "e.g., Tech Solutions Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business",
+      "field_name": "nature_of_business",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Software as a Service (SaaS)",
+        "E-commerce / Online Retail",
+        "Healthcare Services",
+        "Financial Services / Fintech",
+        "Educational Technology",
+        "IT Services / Consulting",
+        "Manufacturing with IT Systems",
+        "Media / Entertainment",
+        "Logistics / Supply Chain",
+        "Other Technology Business"
+      ],
+      "guidance_text": "Select the primary industry or business type that best describes your organization. Your industry determines your cyber risk profile - for example, financial services face higher ransomware risks, while e-commerce companies are more prone to data breach claims. This directly impacts your premium calculation.",
+      "placeholder": "Select your business type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "nature_of_business_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "nature_of_business",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Registered Office Address",
+      "field_name": "registered_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete registered office address including building name, street, area, city, state, and pincode. This address should match your incorporation documents and will be used for all official policy correspondence and legal documentation.",
+      "placeholder": "e.g., 5th Floor, Tech Park, Bandra Kurla Complex, Mumbai, Maharashtra - 400051",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Risk Location (If different from registered office)",
+      "field_name": "risk_location",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": false,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "If your data center, servers, or main IT operations are located at a different address than your registered office, provide that address here. The physical location of your IT infrastructure affects risk assessment, especially for natural disasters and physical security breaches. Leave blank if same as registered office.",
+      "placeholder": "e.g., Data Center, Plot 45, MIDC, Pune, Maharashtra - 411018"
+    },
+    {
+      "question_text": "Website / App URL",
+      "field_name": "website_url",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})([/\\w .-]*)*/?$",
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your primary website or mobile app URL where customers interact with your services. Insurers will assess your digital footprint and online exposure to cyber threats. Include multiple URLs if you operate multiple platforms, separated by commas.",
+      "placeholder": "e.g., www.techsolutions.com, app.techsolutions.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the name of the primary contact person for this insurance policy, typically the IT Head, CTO, or Risk Manager. This person will receive all policy communications and will be the main point of contact during claim processing.",
+      "placeholder": "e.g., Rahul Sharma"
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter the 10-digit mobile number of the contact person without country code or spaces. This number will be used for urgent communications during cyber incidents and for claim intimation. Ensure this number is actively monitored.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email_address",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the official email address for policy correspondence. All policy documents, renewal reminders, and claim forms will be sent to this email. Use a group email if possible to ensure continuity even if the contact person changes.",
+      "placeholder": "e.g., it.admin@techsolutions.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST identification number if applicable. This helps verify your business legitimacy and ensures proper tax treatment on your insurance premium. Format should be like 27AABCU9603R1ZM.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Corporate Identification Number (CIN)",
+      "field_name": "cin_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 10,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^[UL][0-9]{5}[A-Z]{2}[0-9]{4}[A-Z]{3}[0-9]{6}$",
+        "minLength": 21,
+        "maxLength": 21
+      },
+      "guidance_text": "Provide your 21-character CIN if you're a registered company. This unique identifier helps insurers verify your corporate status and assess your business stability. Required for private limited and public limited companies.",
+      "placeholder": "e.g., U74999MH2020PTC123456"
+    },
+    {
+      "question_text": "Business Start Date",
+      "field_name": "business_start_date",
+      "field_type": "date",
+      "section": "Business Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date when your business operations officially commenced. Companies operating for longer periods typically have more mature IT systems and security protocols, which can positively impact premium rates. Newer companies may face higher premiums due to untested security measures.",
+      "placeholder": "e.g., 01/04/2018"
+    },
+    {
+      "question_text": "Annual Revenue (Last Financial Year)",
+      "field_name": "annual_revenue",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your total revenue in rupees for the last completed financial year as per audited financials. Higher revenues typically mean larger digital operations and more cyber exposure, directly impacting your coverage limits and premium. This helps determine appropriate sum insured for business interruption losses.",
+      "placeholder": "e.g., 50000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Number of Employees",
+      "field_name": "employee_count",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100000
+      },
+      "guidance_text": "Provide the total number of employees including full-time, part-time, and contractors who have access to your IT systems. More employees mean more potential entry points for cyber attacks through phishing or social engineering. This number helps assess your human factor risk.",
+      "placeholder": "e.g., 150",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "integer"
+    },
+    {
+      "question_text": "Number of Active Customers",
+      "field_name": "customer_count",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000
+      },
+      "guidance_text": "Enter the approximate number of active customers whose data you store or process. This includes registered users, subscribers, or clients with accounts in your system. Higher customer counts mean greater third-party liability exposure in case of a data breach.",
+      "placeholder": "e.g., 10000",
+      "format": "integer"
+    },
+    {
+      "question_text": "Do you store or process Personal Identifiable Information (PII)?",
+      "field_name": "stores_pii",
+      "field_type": "radio",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "PII includes names, addresses, phone numbers, email addresses, Aadhaar numbers, PAN, or any data that can identify an individual. If you handle customer data, employee records, or user accounts, you likely store PII. This significantly impacts your liability under privacy laws like India's Data Protection Bill.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Do you store or process credit card/payment data?",
+      "field_name": "stores_payment_data",
+      "field_type": "radio",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This includes credit/debit card numbers, CVV codes, UPI IDs, net banking credentials, or any financial transaction data. Companies handling payment data face higher risks of financial fraud claims and must comply with PCI-DSS standards. Even if you use payment gateways, temporary storage counts.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Type of sensitive data handled",
+      "field_name": "sensitive_data_types",
+      "field_type": "multiselect",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Personal Identifiable Information (PII)",
+        "Protected Health Information (PHI)",
+        "Payment Card Information (PCI)",
+        "Intellectual Property (IP)",
+        "Government/Regulatory Data",
+        "Biometric Data",
+        "Financial Records",
+        "None of the above"
+      ],
+      "guidance_text": "Select all types of sensitive data your organization handles. Different data types have different regulatory requirements and breach notification obligations. PHI relates to health records, PCI to payment cards, and IP includes trade secrets or proprietary information. This helps determine specific coverage needs.",
+      "placeholder": "Select all that apply"
+    },
+    {
+      "question_text": "Cloud Service Providers Used",
+      "field_name": "cloud_providers",
+      "field_type": "multiselect",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Amazon Web Services (AWS)",
+        "Microsoft Azure",
+        "Google Cloud Platform (GCP)",
+        "IBM Cloud",
+        "Oracle Cloud",
+        "Alibaba Cloud",
+        "On-Premise Only",
+        "Hybrid (Cloud + On-Premise)",
+        "Other Cloud Providers"
+      ],
+      "guidance_text": "Select all cloud platforms where you host applications, store data, or run services. Cloud usage affects your risk profile - while major providers offer strong security, misconfigurations can lead to breaches. This helps assess third-party dependency risks and potential cloud outage impacts.",
+      "placeholder": "Select all that apply"
+    },
+    {
+      "question_text": "Do you use Endpoint Security/Firewall?",
+      "field_name": "has_endpoint_security",
+      "field_type": "radio",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Endpoint security includes antivirus software, firewalls, intrusion detection systems, and EDR solutions on all devices. Having these basic security measures can reduce your premium by 10-20% as they prevent common attacks. Insurers may require proof of active licenses and regular updates.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Do you have a documented Data Backup Policy?",
+      "field_name": "has_backup_policy",
+      "field_type": "radio",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "A backup policy ensures regular data backups with off-site storage and tested restoration procedures. This is crucial for ransomware recovery - companies with good backups can restore operations without paying ransom. Insurers favor businesses with daily backups and quarterly restoration tests.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Is Multi-Factor Authentication (MFA) implemented?",
+      "field_name": "has_mfa",
+      "field_type": "radio",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "MFA requires users to provide two or more verification factors to access systems (password plus OTP, biometric, or security token). MFA prevents 99.9% of automated attacks and is increasingly becoming mandatory for cyber insurance. Implementation across all critical systems is ideal.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Frequency of Vulnerability Assessments or Penetration Testing",
+      "field_name": "security_testing_frequency",
+      "field_type": "select",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Monthly",
+        "Quarterly",
+        "Semi-Annually",
+        "Annually",
+        "Ad-hoc/When needed",
+        "Never conducted"
+      ],
+      "guidance_text": "Regular security testing identifies weaknesses before hackers exploit them. Quarterly testing is considered best practice for high-risk businesses, while annual testing is minimum for most. Companies that never test face higher premiums or may be declined coverage for high-value policies.",
+      "placeholder": "Select frequency"
+    },
+    {
+      "question_text": "Do you have an Incident Response Plan documented and tested?",
+      "field_name": "has_incident_response_plan",
+      "field_type": "radio",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "An incident response plan outlines steps to detect, respond to, and recover from cyber attacks. It should include team roles, communication protocols, and vendor contacts. Tested plans (through simulations) can reduce breach costs by 45% and demonstrate cyber maturity to insurers.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Any cyber incidents in the past 3 years?",
+      "field_name": "past_incidents",
+      "field_type": "radio",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Include any data breaches, ransomware attacks, business email compromises, website defacements, or system intrusions, even if no claim was filed. Prior incidents don't automatically disqualify coverage but help insurers assess improved security measures. Hiding incidents can void your policy.",
+      "placeholder": "Select No or Yes"
+    },
+    {
+      "question_text": "Details of past cyber incidents (if any)",
+      "field_name": "incident_details",
+      "field_type": "textarea",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "past_incidents",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe each incident including date, type of attack, data affected, financial impact, and remedial measures taken. Be specific about improvements made post-incident. Demonstrating lessons learned and enhanced security can help maintain reasonable premiums despite past incidents.",
+      "placeholder": "e.g., March 2023 - Ransomware attack on email server, no data loss due to backups, implemented EDR solution and MFA post-incident"
+    },
+    {
+      "question_text": "Do you have existing Cyber Insurance?",
+      "field_name": "existing_insurance",
+      "field_type": "radio",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "If you currently have cyber insurance from another provider, you'll need to provide policy details for seamless transition. Continuous coverage history demonstrates risk awareness and can lead to better terms. First-time buyers may face higher premiums initially.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Existing Policy Limit (Sum Insured)",
+      "field_name": "existing_policy_limit",
+      "field_type": "number",
+      "section": "Cyber Infrastructure Details",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_insurance",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the sum insured amount of your current cyber insurance policy in rupees. This helps insurers understand your current coverage level and assess if you're looking to increase, decrease, or maintain similar limits. Include aggregate limit if available.",
+      "placeholder": "e.g., 10000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Data Breach Response Costs - Required?",
+      "field_name": "data_breach_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers costs to respond to a data breach including forensic investigation, legal fees, customer notification, credit monitoring, and call center setup. This is typically the most claimed coverage as even minor breaches trigger notification obligations under privacy laws.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Data Breach Response - Coverage Limit",
+      "field_name": "data_breach_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 1000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "data_breach_required",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the maximum coverage amount you want for data breach costs. Consider that average breach costs in India range from ₹50 lakhs to ₹5 crores depending on data volume. Calculate based on your customer count multiplied by ₹500-1000 per record as a baseline.",
+      "placeholder": "e.g., 50000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Cyber Extortion/Ransomware - Required?",
+      "field_name": "ransomware_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers ransom payments and negotiation costs if your systems are locked by ransomware. While paying ransom isn't recommended, this coverage includes expert negotiators and covers business losses during downtime. Essential for businesses that can't afford extended outages.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Cyber Extortion - Coverage Limit",
+      "field_name": "ransomware_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 1000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "ransomware_required",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Set limit based on your ability to restore from backups and tolerable downtime. Typical ransom demands range from ₹10 lakhs to ₹10 crores based on company size. Include costs for negotiators, system restoration, and business interruption in your calculation.",
+      "placeholder": "e.g., 20000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Business Interruption from Cyber Events - Required?",
+      "field_name": "business_interruption_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 32,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Compensates for lost income and extra expenses when cyber attacks disrupt operations. Critical for online businesses, SaaS companies, and e-commerce where even hours of downtime mean significant revenue loss. Coverage typically starts after a waiting period of 8-12 hours.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Business Interruption - Coverage Limit",
+      "field_name": "business_interruption_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 1000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "business_interruption_required",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Calculate based on your average daily revenue multiplied by maximum tolerable downtime (typically 7-30 days). For SaaS businesses, consider monthly recurring revenue. Include costs for emergency operations, overtime, and temporary solutions in your estimate.",
+      "placeholder": "e.g., 100000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Third-party Liability - Required?",
+      "field_name": "third_party_liability_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 34,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers legal costs and damages if customers or partners sue you for data breaches, privacy violations, or system failures that affect them. Essential if you handle third-party data or provide technology services. This is often the largest claim category for B2B companies.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Third-party Liability - Coverage Limit",
+      "field_name": "third_party_liability_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 1000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "third_party_liability_required",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Should be your highest limit as third-party claims are typically most expensive. Consider your largest client contracts and potential class action exposure. B2B companies should have at least ₹5-10 crores; B2C companies with large customer bases need ₹25 crores or more.",
+      "placeholder": "e.g., 250000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Social Engineering/Phishing Attack Coverage - Required?",
+      "field_name": "social_engineering_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 36,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers financial losses from fraudulent fund transfers due to email spoofing, fake vendor invoices, or CEO fraud. These attacks bypass technical controls by manipulating human psychology. Particularly important for companies that frequently make large payments or wire transfers.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Reputational Harm/PR Expenses - Required?",
+      "field_name": "reputation_harm_required",
+      "field_type": "radio",
+      "section": "Optional Add-Ons",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers costs for public relations firms, crisis management consultants, and advertising to restore reputation after a cyber incident. Important for consumer-facing brands where trust is crucial. Can include costs for customer retention programs and positive media campaigns.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Hardware Damage from Malware (Bricking) - Required?",
+      "field_name": "hardware_damage_required",
+      "field_type": "radio",
+      "section": "Optional Add-Ons",
+      "order_index": 38,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers physical damage to hardware caused by malware that overwrites firmware or BIOS, rendering devices permanently unusable. While rare, such attacks on industrial systems, IoT devices, or server infrastructure can be extremely costly to replace.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Cloud Service Provider Downtime Coverage - Required?",
+      "field_name": "cloud_downtime_required",
+      "field_type": "radio",
+      "section": "Optional Add-Ons",
+      "order_index": 39,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Compensates for losses when your cloud provider (AWS, Azure, etc.) experiences outages affecting your business. Standard policies exclude this, but it's valuable for cloud-dependent businesses. Note that provider SLAs offer credits, not loss compensation.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Technology Errors & Omissions Coverage - Required?",
+      "field_name": "tech_eo_required",
+      "field_type": "radio",
+      "section": "Optional Add-Ons",
+      "order_index": 40,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers claims arising from failures in your technology products or services, including software bugs, system integration errors, or project delays. Essential for IT service companies, software developers, and system integrators. Bridges gap between cyber and professional liability.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Number of cyber claims in past 3 years",
+      "field_name": "claims_count",
+      "field_type": "number",
+      "section": "Claims History",
+      "order_index": 41,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100
+      },
+      "guidance_text": "Enter the total number of cyber insurance claims filed in the last 3 years, including those that were rejected or withdrawn. Include claims under any cyber or crime policy. Zero claims history can qualify you for no-claim bonuses or preferential rates.",
+      "placeholder": "e.g., 0",
+      "format": "integer"
+    },
+    {
+      "question_text": "Total claim amount paid (if any)",
+      "field_name": "total_claims_paid",
+      "field_type": "number",
+      "section": "Claims History",
+      "order_index": 42,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_count",
+          "value": ">0"
+        }
+      },
+      "guidance_text": "Enter the cumulative amount received from insurance companies for all cyber claims in the past 3 years. This helps insurers assess your loss ratio and determine if additional underwriting or higher premiums are needed. Include settlements from all cyber-related policies.",
+      "placeholder": "e.g., 0",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Any regulatory fines or penalties for data breaches?",
+      "field_name": "regulatory_fines",
+      "field_type": "radio",
+      "section": "Claims History",
+      "order_index": 43,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Include any fines from authorities like RBI, SEBI, or upcoming Data Protection Authority for privacy violations, data breaches, or non-compliance. Regulatory actions indicate systemic issues and may require additional compliance coverage. Be transparent as these are publicly available.",
+      "placeholder": "Select No or Yes"
+    },
+    {
+      "question_text": "Details of regulatory fines (if any)",
+      "field_name": "regulatory_fine_details",
+      "field_type": "textarea",
+      "section": "Claims History",
+      "order_index": 44,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "regulatory_fines",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe the nature of violation, regulatory body involved, fine amount, and remedial actions taken. Include dates and current compliance status. Demonstrating corrective measures and ongoing compliance can help mitigate the impact on your insurability.",
+      "placeholder": "e.g., RBI fine of ₹5 lakhs in Jan 2023 for inadequate customer data protection, implemented ISO 27001 and appointed DPO"
+    },
+    {
+      "question_text": "Preferred Policy Period",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Policy Details",
+      "order_index": 45,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Select your preferred policy duration. Annual policies offer flexibility to adjust coverage as your business grows. Multi-year policies lock in rates and may offer discounts but have limited mid-term modification options. Most businesses start with annual policies.",
+      "placeholder": "Select period",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Preferred Deductible Amount",
+      "field_name": "deductible_amount",
+      "field_type": "number",
+      "section": "Policy Details",
+      "order_index": 46,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "The deductible is the amount you pay out-of-pocket before insurance coverage kicks in for each claim. Higher deductibles mean lower premiums but more financial risk. Choose based on your risk tolerance and ability to handle smaller incidents internally. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Upload Latest Financial Statements",
+      "field_name": "financial_statements",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 47,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your audited financial statements or annual reports from the last fiscal year in PDF format. These help insurers assess your financial stability and determine appropriate coverage limits. Include balance sheet, P&L statement, and auditor's report if available.",
+      "placeholder": "Choose PDF file (max 10MB)",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Upload IT Security Audit Report (if available)",
+      "field_name": "security_audit_report",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 48,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If you've conducted ISO 27001, SOC 2, or other security audits, upload the certificate or summary report. Security certifications can reduce premiums by 15-30% as they demonstrate mature security practices. Recent reports (within last 12 months) are most valuable.",
+      "placeholder": "Choose PDF file (max 10MB)"
+    },
+    {
+      "question_text": "Upload Current/Previous Cyber Insurance Policy (if any)",
+      "field_name": "previous_policy",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 49,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your existing or recently expired cyber insurance policy document. This helps insurers understand your current coverage, claims history, and ensure continuity. Include the complete policy wording, not just the schedule or certificate.",
+      "placeholder": "Choose PDF file (max 10MB)"
+    },
+    {
+      "question_text": "Special Requirements or Additional Information",
+      "field_name": "additional_info",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 50,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Mention any specific coverage requirements, unique business risks, planned security improvements, or questions for the insurer. Include information about upcoming mergers, new product launches, or entering regulated markets that might affect your risk profile.",
+      "placeholder": "e.g., Planning to launch payment gateway services in Q3 2025, implementing Zero Trust architecture"
+    },
+    {
+      "question_text": "Declaration & Consent",
+      "field_name": "declaration_consent",
+      "field_type": "checkbox",
+      "section": "Declaration",
+      "order_index": 51,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "By checking this box, you declare that all information provided is true and complete to the best of your knowledge. Any misrepresentation or concealment of material facts may void the insurance coverage. You also consent to insurers verifying the information and conducting risk assessments.",
+      "placeholder": "I agree to the declaration and provide consent"
+    },
+    {
+      "question_text": "Authorized Signatory Name",
+      "field_name": "signatory_name",
+      "field_type": "text",
+      "section": "Declaration",
+      "order_index": 52,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the full name of the authorized person submitting this application, typically a Director, CEO, CFO, or authorized manager. This person should have the authority to make insurance decisions and will be responsible for the accuracy of information provided.",
+      "placeholder": "e.g., Amit Kumar Singh"
+    },
+    {
+      "question_text": "Designation of Signatory",
+      "field_name": "signatory_designation",
+      "field_type": "text",
+      "section": "Declaration",
+      "order_index": 53,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the official designation or job title of the person signing this application. This helps establish their authority to bind the organization to insurance contracts and make declarations on behalf of the company.",
+      "placeholder": "e.g., Chief Technology Officer"
+    },
+    {
+      "question_text": "Date of Application",
+      "field_name": "application_date",
+      "field_type": "date",
+      "section": "Declaration",
+      "order_index": 54,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select today's date as the date of submitting this insurance application. This date is important for determining the validity of information provided and starts the underwriting timeline. Most quotes are valid for 15-30 days from this date.",
+      "placeholder": "Select today's date"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.383Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 2
+}

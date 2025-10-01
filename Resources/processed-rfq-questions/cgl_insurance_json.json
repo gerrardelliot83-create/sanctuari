@@ -1,0 +1,629 @@
+{
+  "product_name": "Commercial General Liability Insurance",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Name of Insured Company",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the full legal name of your company as registered with the Registrar of Companies. This name will appear on your insurance policy and all official documents. Ensure it matches exactly with your incorporation certificate.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your registered office address where all insurance-related correspondence will be sent. Include building name/number, street, area, city, state, and pincode. This address will be used for policy delivery and claim communications.",
+      "placeholder": "e.g., 123, Industrial Area, Phase II, Sector 25, Mumbai, Maharashtra - 400001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from which you want your insurance coverage to begin. This is typically the day after your current policy expires or immediately if you're purchasing insurance for the first time. Coverage starts at 00:01 hours on this date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date when you want your insurance coverage to end. Most commercial liability policies are annual (12 months), but you can choose shorter or longer periods. Coverage ends at 23:59 hours on this date.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Primary Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter the address of your main business operations where most of your activities take place. This is where the insurer will assess risk exposure. If different from communication address, provide complete details including landmarks.",
+      "placeholder": "e.g., Plot 45, MIDC Industrial Estate, Andheri East, Mumbai, Maharashtra - 400093",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Do you have multiple risk locations?",
+      "field_name": "multiple_locations",
+      "field_type": "radio",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Select 'Yes' if your business operates from multiple locations like factories, warehouses, offices, or retail outlets. Each location where you conduct business activities needs to be declared for comprehensive coverage. Additional locations affect your premium calculation.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Additional Locations Details",
+      "field_name": "additional_locations_file",
+      "field_type": "file",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If you have multiple locations, upload an Excel or PDF file listing all addresses with location type (manufacturing unit, warehouse, office, etc.). Include complete addresses and nature of operations at each location for accurate risk assessment.",
+      "placeholder": "Upload Excel/PDF with location details",
+      "conditional_logic": {
+        "show_if": {
+          "field": "multiple_locations",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST identification number. This helps verify your business registration and determines applicable taxes on your insurance premium. Format: First 2 digits are state code, next 10 are PAN, followed by entity number and check codes.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Business/Occupancy Type",
+      "field_name": "business_type",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing",
+        "Trading/Distribution",
+        "Service Provider",
+        "Retail",
+        "Construction/Contractor",
+        "IT/Software",
+        "Healthcare",
+        "Hospitality",
+        "Educational Institution",
+        "Professional Services",
+        "Others"
+      ],
+      "guidance_text": "Select the category that best describes your primary business activity. This helps insurers understand your operational risks. Manufacturing involves higher product liability, while service businesses face professional liability risks. Choose 'Others' only if your business doesn't fit standard categories.",
+      "placeholder": "Select your business type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "business_type_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "business_type",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Detailed Business Description",
+      "field_name": "business_description",
+      "field_type": "textarea",
+      "section": "Business Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe your business operations in detail including products manufactured or services provided, key processes, target customers, and any unique aspects. This helps underwriters accurately assess your liability exposure and provide appropriate coverage. Be specific about hazardous activities if any.",
+      "placeholder": "e.g., We manufacture automotive spare parts including brake pads and clutch plates. Our facility operates 24x7 with 150 employees across production, quality control, and administration. We supply to major OEMs and aftermarket dealers across India."
+    },
+    {
+      "question_text": "Company Website URL",
+      "field_name": "website_url",
+      "field_type": "text",
+      "section": "Business Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^(https?://)?(www\\.)?[a-zA-Z0-9-]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?(/.*)?$",
+        "maxLength": 200
+      },
+      "guidance_text": "Provide your company website address if available. This helps insurers understand your business scale, operations, and public exposure. Include the complete URL starting with http:// or https://. Leave blank if you don't have a website.",
+      "placeholder": "e.g., https://www.abcmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Coverage Required",
+      "field_name": "coverage_type",
+      "field_type": "radio",
+      "section": "Business Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Occurrence Based",
+        "Claims Made"
+      ],
+      "guidance_text": "Occurrence Based covers incidents that happen during the policy period regardless of when claims are filed. Claims Made covers only claims filed during the policy period. Occurrence Based offers broader protection but costs more. Most businesses prefer Occurrence Based for comprehensive coverage.",
+      "placeholder": "",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Retroactive Date",
+      "field_name": "retroactive_date",
+      "field_type": "date",
+      "section": "Business Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "For Claims Made policies only - this is the earliest date from which an incident can be covered. Any incident before this date won't be covered even if the claim is made during the policy period. Typically set as the first date you purchased Claims Made coverage.",
+      "placeholder": "e.g., 01/04/2020",
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_type",
+          "value": "Claims Made"
+        }
+      }
+    },
+    {
+      "question_text": "Manufacturing to Trading Ratio (%)",
+      "field_name": "manufacturing_trading_ratio",
+      "field_type": "text",
+      "section": "Business Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^[0-9]{1,2}:[0-9]{1,2}$",
+        "maxLength": 7
+      },
+      "guidance_text": "If you do both manufacturing and trading, specify the percentage split of your revenue. For example, enter '70:30' if 70% revenue is from manufacturing and 30% from trading. This ratio affects your risk profile and premium calculation.",
+      "placeholder": "e.g., 70:30",
+      "conditional_logic": {
+        "show_if": {
+          "field": "business_type",
+          "value": "Manufacturing"
+        }
+      }
+    },
+    {
+      "question_text": "Territory of Coverage",
+      "field_name": "coverage_territory",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "India Only",
+        "India and Nepal/Bhutan/Sri Lanka/Bangladesh",
+        "India and SAARC Countries",
+        "India and Asia",
+        "Worldwide excluding USA/Canada",
+        "Worldwide including USA/Canada"
+      ],
+      "guidance_text": "Select the geographic area where you want liability coverage. If you export products or provide services internationally, choose accordingly. Wider territorial coverage increases premium. USA/Canada coverage is most expensive due to high litigation costs in these countries.",
+      "placeholder": "Select coverage territory"
+    },
+    {
+      "question_text": "Jurisdiction for Legal Matters",
+      "field_name": "legal_jurisdiction",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "India Only",
+        "India and neighboring countries",
+        "Asia Pacific",
+        "Worldwide excluding USA/Canada",
+        "Worldwide including USA/Canada"
+      ],
+      "guidance_text": "Select which country's courts will have authority over any legal disputes arising from your business operations. This should match or be narrower than your territory of coverage. Higher jurisdiction areas mean higher legal defense costs and premiums.",
+      "placeholder": "Select legal jurisdiction"
+    },
+    {
+      "question_text": "Annual Turnover (Current Year)",
+      "field_name": "annual_turnover_current",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your company's total revenue for the current financial year in INR. This is your gross income before any deductions. Turnover directly impacts your liability exposure and premium calculation - higher turnover typically means higher premiums.",
+      "placeholder": "e.g., 50000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Products/Services Information",
+      "field_name": "products_services_file",
+      "field_type": "file",
+      "section": "Product and Sales Information",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload a detailed list of all products you manufacture or services you provide. Include product specifications, annual production volumes, and any hazardous materials used. This helps assess product liability risks. Format: Excel or PDF with clear categorization.",
+      "placeholder": "Upload product/service catalog"
+    },
+    {
+      "question_text": "Annual Operating Assets (AOA)",
+      "field_name": "annual_operating_assets",
+      "field_type": "number",
+      "section": "Product and Sales Information",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the total value of assets used in your operations including machinery, equipment, and inventory in INR. This represents your operational capacity and helps insurers understand your business scale. Include only assets directly used in business operations.",
+      "placeholder": "e.g., 100000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Sales Turnover Breakup (Last 3 Years)",
+      "field_name": "sales_turnover_breakup_file",
+      "field_type": "file",
+      "section": "Product and Sales Information",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload your sales data for the past 3 years broken down by product category and geographic region. This helps insurers understand your growth trajectory and risk concentration. Include domestic vs export sales split. Format: Excel with year-wise data.",
+      "placeholder": "Upload 3-year sales breakup"
+    },
+    {
+      "question_text": "Are any other assets insured with us?",
+      "field_name": "other_assets_insured",
+      "field_type": "radio",
+      "section": "Insurance History and Risk Details",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you have any other insurance policies (Fire, Marine, Motor, etc.) with the same insurer. Having multiple policies with one insurer often qualifies you for package discounts and simplified claim processing.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Other Insurance Policy Details",
+      "field_name": "other_policies_details",
+      "field_type": "textarea",
+      "section": "Insurance History and Risk Details",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "If you have other policies with us, provide policy numbers and types (Fire, Marine, Motor, etc.). This helps in cross-referencing and may qualify you for multi-policy discounts.",
+      "placeholder": "e.g., Fire Policy: FP/2024/12345, Marine Policy: MP/2024/67890",
+      "conditional_logic": {
+        "show_if": {
+          "field": "other_assets_insured",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Current/Expiring Insurer Name",
+      "field_name": "expiring_insurer",
+      "field_type": "text",
+      "section": "Insurance History and Risk Details",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the name of your current insurance company if you're renewing or switching insurers. This helps in obtaining your claims history and ensuring continuous coverage. Leave blank if purchasing insurance for the first time.",
+      "placeholder": "e.g., ABC General Insurance Company Ltd"
+    },
+    {
+      "question_text": "Claims Experience (Last 3 Years)",
+      "field_name": "claims_history_file",
+      "field_type": "file",
+      "section": "Insurance History and Risk Details",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload your claims history for the past 3 years including claim dates, amounts, causes, and settlement status. Even if you had no claims, provide a 'Nil Claim' declaration. Good claims history results in better premiums. Include both filed and withdrawn claims.",
+      "placeholder": "Upload claims history document"
+    },
+    {
+      "question_text": "Additional Risk Information",
+      "field_name": "additional_risk_info",
+      "field_type": "textarea",
+      "section": "Insurance History and Risk Details",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any additional information relevant for risk assessment such as safety certifications, quality standards (ISO, etc.), risk management practices, or upcoming business changes. This helps underwriters better understand your risk profile and may lead to premium discounts.",
+      "placeholder": "e.g., ISO 9001:2015 certified, monthly safety audits conducted, automated fire suppression system installed"
+    },
+    {
+      "question_text": "Vendors Liability Extension Required?",
+      "field_name": "vendors_liability",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if you want coverage for liabilities arising from your vendors' or suppliers' operations at your premises. Useful if vendors regularly work at your location. Adds 5-10% to premium but provides comprehensive protection against third-party vendor risks.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Technical Collaborators Liability Required?",
+      "field_name": "technical_collaborators",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if you have technical partnerships or joint ventures and want coverage for liabilities arising from your collaborators' actions. Important for businesses with technology transfer agreements or foreign technical collaborations.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Pollution Coverage Required?",
+      "field_name": "pollution_coverage",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this for coverage against sudden and accidental pollution incidents. Essential for manufacturing units handling chemicals or generating industrial waste. Covers cleanup costs and third-party damages from unexpected pollution events, not gradual contamination.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Transportation Liability Required?",
+      "field_name": "transportation_liability",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if you want coverage for liabilities during transportation of goods. Covers damages to third parties during loading, unloading, and transit. Important if you handle your own logistics rather than using third-party transporters.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Act of God Extension Required?",
+      "field_name": "act_of_god",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this for coverage against natural calamities like earthquakes, floods, storms that cause third-party damages. Standard policies often exclude these 'Acts of God'. Important for businesses in disaster-prone areas.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Terrorism Extension Required?",
+      "field_name": "terrorism_extension",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this for coverage against third-party liabilities arising from terrorist activities. Covers bodily injury and property damage to others caused by terrorism at your premises. Recommended for high-profile businesses or those in sensitive locations.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Care, Custody & Control Extension Required?",
+      "field_name": "care_custody_control",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if you handle customer goods for processing, storage, or servicing. Covers damage to third-party property in your custody. Essential for warehouses, service centers, and job-work manufacturers handling client materials.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Food & Beverages Extension Required?",
+      "field_name": "food_beverages",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if you have a canteen or serve food/beverages to employees or visitors. Covers food poisoning and related liabilities. Mandatory for hotels, restaurants, and companies with large cafeterias serving external guests.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Swimming Pool Extension Required?",
+      "field_name": "swimming_pool",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if your premises has a swimming pool accessible to employees or guests. Covers drowning, injury, and infection-related liabilities. Essential for hotels, clubs, and corporate campuses with pool facilities.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Sports Facilities Extension Required?",
+      "field_name": "sports_facilities",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if you have sports facilities like gym, cricket ground, or courts. Covers injuries during sporting activities. For hazardous sports like rock climbing or martial arts, additional details and premium apply.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Hazardous Sports Details",
+      "field_name": "hazardous_sports_details",
+      "field_type": "textarea",
+      "section": "Coverage and Add-ons",
+      "order_index": 36,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "If you offer hazardous sports facilities, describe them in detail including safety measures, trained instructors, and equipment standards. This affects premium calculation significantly.",
+      "placeholder": "e.g., Rock climbing wall with certified instructors, safety harnesses inspected monthly",
+      "conditional_logic": {
+        "show_if": {
+          "field": "sports_facilities",
+          "value": true
+        }
+      }
+    },
+    {
+      "question_text": "Medical Expenses Coverage Required?",
+      "field_name": "medical_expenses",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this for immediate medical expense reimbursement for third-party injuries at your premises, regardless of liability determination. Helps maintain goodwill by covering ambulance and first-aid costs. Usually capped at ₹25,000-50,000 per incident.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Personal & Advertising Injury Required?",
+      "field_name": "personal_advertising_injury",
+      "field_type": "checkbox",
+      "section": "Coverage and Add-ons",
+      "order_index": 38,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this for coverage against non-physical injuries like defamation, false arrest, invasion of privacy, or copyright infringement in advertisements. Important for businesses with significant marketing activities or customer-facing operations.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Any Additional Information",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 39,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide any other information that might help in accurate risk assessment and premium calculation. Include recent safety improvements, business expansion plans, or specific coverage requirements not covered above. Transparency helps get better coverage terms.",
+      "placeholder": "Enter any additional relevant information about your business or insurance requirements"
+    },
+    {
+      "question_text": "Declaration",
+      "field_name": "declaration_acceptance",
+      "field_type": "checkbox",
+      "section": "Declaration",
+      "order_index": 40,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "By checking this box, you declare that all information provided is true and complete to the best of your knowledge. Any misrepresentation or concealment of facts may result in claim rejection or policy cancellation. This forms the basis of your insurance contract.",
+      "placeholder": ""
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.351Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 3
+}

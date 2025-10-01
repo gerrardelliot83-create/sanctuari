@@ -1,0 +1,327 @@
+{
+  "product_name": "Baggage Insurance",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Name of Proposer",
+      "field_name": "proposer_name",
+      "field_type": "text",
+      "section": "Insured Details",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the full legal name of the person or company applying for baggage insurance coverage. This should match the name on your official documents like PAN or Aadhaar card. The proposer will be responsible for premium payments and will be the primary contact for all policy matters.",
+      "placeholder": "e.g., ABC Trading Pvt Ltd or Rajesh Kumar"
+    },
+    {
+      "question_text": "Policy Period",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Insured Details",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Annual (12 months)",
+        "Semi-Annual (6 months)",
+        "Quarterly (3 months)",
+        "Single Trip (specify dates)",
+        "Multi-Trip Annual"
+      ],
+      "guidance_text": "Select the duration for which you need baggage coverage. Annual policies offer year-round protection for multiple trips, while single-trip covers specific journeys. Multi-trip annual is ideal for frequent travelers, covering unlimited trips within a year with per-trip limits.",
+      "placeholder": "Select policy duration",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Insured Details",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Choose when you want your baggage insurance coverage to begin. For travel policies, this should be at least one day before your first trip. Coverage typically starts at 00:00 hours on the selected date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Insured Details",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete mailing address where all policy documents and correspondence should be sent. Include building name/number, street, locality, city, state, and PIN code. This address will be used for all official communications regarding your policy.",
+      "placeholder": "e.g., 301, ABC Tower, MG Road, Fort, Mumbai, Maharashtra - 400001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Email",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Insured Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide a valid email address for receiving policy documents, renewal reminders, and claim-related communications. Ensure this email is regularly checked as important policy updates will be sent here.",
+      "placeholder": "e.g., contact@abctrading.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Insured Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter your 10-digit Indian mobile number for SMS alerts and urgent communications. This number will be used for claim intimation and emergency assistance during travel.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Traveler Details",
+      "field_name": "traveler_details",
+      "field_type": "textarea",
+      "section": "Risk Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 1000
+      },
+      "guidance_text": "List all individuals who will be covered under this policy with their full names and designations or relationships. For corporate policies, include employee names and roles. For family policies, specify relationship to proposer. Each traveler's baggage will be covered up to the per-person limit.",
+      "placeholder": "e.g., 1. Rajesh Kumar - Managing Director\n2. Priya Sharma - Sales Head\n3. Amit Verma - Technical Lead"
+    },
+    {
+      "question_text": "Nature and Purpose of Travel",
+      "field_name": "travel_purpose",
+      "field_type": "select",
+      "section": "Risk Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Business Travel - Domestic",
+        "Business Travel - International",
+        "Business Travel - Both",
+        "Leisure Travel - Domestic",
+        "Leisure Travel - International",
+        "Leisure Travel - Both",
+        "Mixed (Business + Leisure)",
+        "Educational/Training",
+        "Medical Tourism"
+      ],
+      "guidance_text": "Select the primary purpose of travel covered under this policy. Business travel typically has different risk profiles than leisure travel. This helps insurers assess risk and determine appropriate coverage terms and premium rates.",
+      "placeholder": "Select travel purpose"
+    },
+    {
+      "question_text": "Type of Baggage Covered",
+      "field_name": "baggage_type",
+      "field_type": "multiselect",
+      "section": "Risk Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Personal Effects (Clothing, Toiletries)",
+        "Business Equipment (Laptop, Projector)",
+        "Electronic Gadgets (Camera, Mobile, Tablet)",
+        "Sports Equipment",
+        "Medical Equipment",
+        "Jewelry and Valuables",
+        "Documents and Papers",
+        "Sample Goods (for trade)",
+        "Musical Instruments"
+      ],
+      "guidance_text": "Select all types of items you want covered under this policy. Different items have different coverage limits and some may require additional premium. High-value items like jewelry may need separate declaration and have sub-limits on coverage.",
+      "placeholder": "Select all applicable baggage types"
+    },
+    {
+      "question_text": "Maximum Number of Trips Annually",
+      "field_name": "max_trips_annually",
+      "field_type": "number",
+      "section": "Risk Information",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 365
+      },
+      "guidance_text": "Estimate the maximum number of trips you or your covered travelers will take in a year. For frequent travelers, consider a multi-trip policy which covers unlimited trips. Each trip typically has a maximum duration limit (usually 30-45 days).",
+      "placeholder": "e.g., 25",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Sum Insured per Trip (₹)",
+      "field_name": "sum_insured_per_trip",
+      "field_type": "number",
+      "section": "Risk Information",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 1000000
+      },
+      "guidance_text": "Enter the maximum coverage amount you need per trip in rupees. This is the total limit the insurer will pay for lost or damaged baggage during a single trip. Consider the total value of items you typically carry and add a buffer for unexpected purchases during travel.",
+      "placeholder": "e.g., 100000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Covers Required",
+      "field_name": "covers_required",
+      "field_type": "multiselect",
+      "section": "Coverage Requirements",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Loss of Checked-in Baggage",
+        "Loss of Cabin Baggage",
+        "Delay in Baggage Arrival (>12 hours)",
+        "Damage to Baggage",
+        "Theft from Hotel Room",
+        "Loss of Documents/Passport",
+        "Emergency Purchase due to Baggage Delay",
+        "Loss of Cash/Credit Cards",
+        "Worldwide Coverage",
+        "Domestic Only Coverage"
+      ],
+      "guidance_text": "Select all the coverage types you need for your baggage insurance. Standard coverage includes loss and damage, while additional covers like delay compensation and emergency purchases provide extra protection. Worldwide coverage is essential for international travel.",
+      "placeholder": "Select all required covers"
+    },
+    {
+      "question_text": "Previous Insurer Name",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Policy History",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If you had baggage insurance before, mention the insurance company's name. Having continuous coverage history may help in getting better terms or no-claim bonuses. Leave blank if this is your first baggage insurance policy.",
+      "placeholder": "e.g., ABC General Insurance Company Ltd",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Previous Policy Number",
+      "field_name": "previous_policy_number",
+      "field_type": "text",
+      "section": "Policy History",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter your previous baggage insurance policy number if you had coverage before. This helps in verifying your claims history and ensuring continuous coverage without gaps.",
+      "placeholder": "e.g., BAG/2024/123456",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Claims History (Last 3 Years)",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Policy History",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Claims",
+        "1-2 Claims",
+        "3 or More Claims"
+      ],
+      "guidance_text": "Indicate if you've made any baggage insurance claims in the past 3 years. Your claims history affects premium rates - a clean record may qualify you for discounts. Be honest as insurers verify this information.",
+      "placeholder": "Select claims history"
+    },
+    {
+      "question_text": "Claim Details (if any)",
+      "field_name": "claim_details",
+      "field_type": "textarea",
+      "section": "Policy History",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history",
+          "value": [
+            "1-2 Claims",
+            "3 or More Claims"
+          ]
+        }
+      },
+      "guidance_text": "If you've made claims before, provide brief details including date, reason for claim, and amount claimed. This helps insurers assess risk accurately. Include information like 'Lost baggage at Mumbai Airport in Jan 2024, claimed ₹50,000'.",
+      "placeholder": "e.g., Date: 15/01/2024, Reason: Baggage lost by airline, Amount: ₹45,000, Status: Settled"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy",
+      "field_name": "previous_policy_document",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload a copy of your previous baggage insurance policy if available. This helps in understanding your existing coverage and ensures proper renewal benefits. Accepted formats: PDF, JPG, PNG (max 5MB).",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Special Requirements or Remarks",
+      "field_name": "special_requirements",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "Mention any special coverage requirements, high-value items that need specific coverage, or other relevant information. For example, if you regularly carry expensive equipment or have specific destinations not covered under standard policies.",
+      "placeholder": "e.g., Need coverage for professional camera equipment worth ₹3 lakhs"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.263Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 5
+}

@@ -1,0 +1,534 @@
+{
+  "product_name": "Directors and Officers Liability Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Company Name",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your company's full legal name exactly as registered with the Registrar of Companies. This name will appear on the policy document and must match your incorporation certificate for the coverage to be valid.",
+      "placeholder": "e.g., ABC Technologies Private Limited",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business",
+      "field_name": "business_nature",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing",
+        "Information Technology",
+        "Financial Services/NBFC",
+        "Healthcare/Pharmaceuticals",
+        "Real Estate/Construction",
+        "Retail/E-commerce",
+        "Education",
+        "Hospitality",
+        "Media/Entertainment",
+        "Logistics/Transportation",
+        "Professional Services",
+        "Others"
+      ],
+      "guidance_text": "Select the primary industry sector your company operates in. This helps insurers assess industry-specific director liabilities such as regulatory compliance risks, shareholder activism levels, and typical litigation patterns in your sector.",
+      "placeholder": "Select your industry"
+    },
+    {
+      "question_text": "Type of Entity",
+      "field_name": "entity_type",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Private Limited Company",
+        "Public Limited Company",
+        "Limited Liability Partnership (LLP)",
+        "Section 8 Company (Non-Profit)",
+        "One Person Company (OPC)",
+        "Unlisted Public Company"
+      ],
+      "guidance_text": "Select your company's legal structure. Different entity types face different compliance requirements and director exposures. Public companies typically face higher litigation risks from shareholders, while private companies may have more concentrated ownership disputes.",
+      "placeholder": "Select entity type"
+    },
+    {
+      "question_text": "Year of Incorporation",
+      "field_name": "incorporation_year",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "min": 1850,
+        "max": 2025
+      },
+      "guidance_text": "Enter the year your company was formally incorporated. Companies with longer operating history generally demonstrate stability, but newer companies may face different risks. This helps insurers assess your corporate governance maturity.",
+      "placeholder": "e.g., 2015",
+      "format": "decimal"
+    },
+    {
+      "question_text": "CIN Number / GST Number",
+      "field_name": "cin_gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 25
+      },
+      "guidance_text": "Provide your Corporate Identification Number (CIN) for companies or GST number for LLPs/others. This unique identifier helps insurers verify your company's legal status, compliance history, and check for any regulatory actions.",
+      "placeholder": "e.g., U74999MH2015PTC123456 or 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the name of the authorized person handling this insurance procurement. This should be someone familiar with the company's operations and board structure, typically the CFO, Company Secretary, or Chief Compliance Officer.",
+      "placeholder": "e.g., Rajesh Kumar"
+    },
+    {
+      "question_text": "Contact Email",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide an official email address where policy documents and correspondence can be sent. Use a company email domain rather than personal email to ensure continuity even if the contact person changes.",
+      "placeholder": "e.g., cfo@abctech.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a 10-digit Indian mobile number for urgent communications regarding your policy. This number may be used for policy renewals, claim intimations, or important updates about coverage changes.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Coverage Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select when you want the D&O coverage to begin. If you have an expiring policy, ensure no gap in coverage. For new purchases, coverage typically starts from the next day or a future board meeting date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Coverage Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "D&O policies are typically annual (12 months). Multi-year policies may offer premium discounts but reduce flexibility to change insurers. Consider your company's growth trajectory when selecting the policy period.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Limit of Liability Required",
+      "field_name": "liability_limit",
+      "field_type": "number",
+      "section": "Policy Coverage Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select the maximum amount the insurer will pay for all claims during the policy period. Consider your company's size, board composition, and potential litigation exposure. Listed companies and those with foreign operations typically need higher limits. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select limit amount",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Aggregate Deductible Amount",
+      "field_name": "aggregate_deductible",
+      "field_type": "number",
+      "section": "Policy Coverage Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000
+      },
+      "guidance_text": "Enter the amount you'll pay out-of-pocket before insurance coverage applies. Higher deductibles reduce premium but increase your retention. Typically ranges from ₹25,000 to ₹10 lakhs based on company size and selected limit.",
+      "placeholder": "e.g., 100000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Retroactive Date Required",
+      "field_name": "retroactive_date",
+      "field_type": "date",
+      "section": "Policy Coverage Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "This date determines how far back the policy will cover wrongful acts. Claims can be made during the policy period for acts occurring after this date. For first-time buyers, this is usually the policy start date. For renewals, maintain the original date for continuous coverage.",
+      "placeholder": "e.g., 01/04/2020"
+    },
+    {
+      "question_text": "Total Number of Directors",
+      "field_name": "total_directors",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 50
+      },
+      "guidance_text": "Enter the current number of board directors including independent, executive, and non-executive directors. Don't forget to include alternate and nominee directors. More directors generally means higher premium due to increased exposure.",
+      "placeholder": "e.g., 7",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Number of Independent Directors",
+      "field_name": "independent_directors",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 50
+      },
+      "guidance_text": "Specify how many directors are independent as per Companies Act requirements. Independent directors often face unique liabilities and their presence indicates stronger corporate governance, which can positively impact premium rates.",
+      "placeholder": "e.g., 3",
+      "format": "decimal"
+    },
+    {
+      "question_text": "List of Past Directors (Last 3 Years)",
+      "field_name": "past_directors_list",
+      "field_type": "textarea",
+      "section": "Business Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "minLength": 5,
+        "maxLength": 1000
+      },
+      "guidance_text": "List directors who resigned or retired in the past 3 years with their tenure periods. D&O policies typically cover past directors for acts during their tenure. This helps ensure complete protection against legacy claims.",
+      "placeholder": "e.g., Mr. Amit Shah (CFO, 2018-2023), Ms. Priya Verma (Independent Director, 2020-2023)"
+    },
+    {
+      "question_text": "Annual Turnover (Last Financial Year)",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Financial Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 1000000000000
+      },
+      "guidance_text": "Enter your company's total revenue for the most recent completed financial year. Turnover is a key factor in premium calculation as larger companies typically face more complex risks and higher potential claim amounts.",
+      "placeholder": "e.g., 500000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Net Profit/Loss (Last Financial Year)",
+      "field_name": "net_profit_loss",
+      "field_type": "number",
+      "section": "Financial Details",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true,
+        "min": -1000000000000,
+        "max": 1000000000000
+      },
+      "guidance_text": "Enter the net profit after tax from your latest audited financials. Use negative value for losses. Companies with consistent losses or declining profits may face higher shareholder litigation risk, affecting coverage terms.",
+      "placeholder": "e.g., 50000000 or -10000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Total Assets Value",
+      "field_name": "total_assets",
+      "field_type": "number",
+      "section": "Financial Details",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 1000000000000
+      },
+      "guidance_text": "Provide the total assets value from your latest balance sheet. Asset size indicates the scale of directors' fiduciary responsibilities. Companies with substantial assets may need higher liability limits to adequately protect directors.",
+      "placeholder": "e.g., 750000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Is the Company Listed on Stock Exchange?",
+      "field_name": "is_listed",
+      "field_type": "radio",
+      "section": "Financial Details",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Listed companies face additional regulatory scrutiny from SEBI and higher shareholder litigation risk. They require specialized coverage for securities claims, prospectus liability, and regulatory investigations which affects premium and coverage scope.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Stock Exchange Details",
+      "field_name": "stock_exchange_details",
+      "field_type": "text",
+      "section": "Financial Details",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "is_listed",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Specify where your shares are listed (BSE, NSE, or both) and your ticker symbol. Companies listed on multiple exchanges or with international listings face different risk profiles requiring specialized coverage considerations.",
+      "placeholder": "e.g., NSE: ABCTECH, BSE: 543210"
+    },
+    {
+      "question_text": "Any D&O Claims in Last 5 Years?",
+      "field_name": "dno_claims_history",
+      "field_type": "radio",
+      "section": "Claim & Litigation History",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose any claims made against directors or officers in the past 5 years, whether covered by insurance or not. Include shareholder disputes, regulatory penalties, or employment-related claims against board members.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Previous D&O Claims",
+      "field_name": "previous_claims_details",
+      "field_type": "textarea",
+      "section": "Claim & Litigation History",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "minLength": 20,
+        "maxLength": 2000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "dno_claims_history",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide comprehensive details of each claim including date, nature of allegation, parties involved, current status, and settlement amount if any. Include steps taken to prevent recurrence. Full disclosure ensures valid coverage and may help negotiate better terms.",
+      "placeholder": "e.g., 2022 - Minority shareholder dispute regarding related party transaction. Settled through mediation for ₹25 lakhs. Strengthened independent director approval process."
+    },
+    {
+      "question_text": "Any Ongoing Legal Proceedings?",
+      "field_name": "ongoing_legal_proceedings",
+      "field_type": "radio",
+      "section": "Claim & Litigation History",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose any active litigation, arbitration, or regulatory proceedings involving the company or its directors. Include tax disputes, labor cases, or consumer complaints that could potentially involve director liability.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Ongoing Legal Proceedings",
+      "field_name": "ongoing_proceedings_details",
+      "field_type": "textarea",
+      "section": "Claim & Litigation History",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "minLength": 20,
+        "maxLength": 2000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "ongoing_legal_proceedings",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe each ongoing matter including forum, parties, subject matter, potential liability, and expected resolution timeline. Known circumstances may be excluded from coverage, so early disclosure during renewal helps maintain continuous protection.",
+      "placeholder": "e.g., Income tax appeal regarding transfer pricing adjustment for FY 2021-22. Disputed amount ₹3 crores. Pending before ITAT. Company has strong grounds for appeal."
+    },
+    {
+      "question_text": "Any Regulatory Actions or Penalties?",
+      "field_name": "regulatory_actions",
+      "field_type": "radio",
+      "section": "Claim & Litigation History",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if any regulatory body (SEBI, RBI, CCI, NCLT, etc.) has taken action against your company or directors in the past 5 years. Include warning letters, penalties, or compliance directives even if subsequently resolved.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Any Planned M&A or IPO Activity?",
+      "field_name": "ma_ipo_plans",
+      "field_type": "radio",
+      "section": "Additional Information",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Mergers, acquisitions, and IPOs significantly increase director liability exposure due to enhanced disclosure requirements and scrutiny. If planning such activities, you'll need specialized coverage extensions for prospectus liability and warranty claims.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Worldwide Coverage Required?",
+      "field_name": "worldwide_coverage",
+      "field_type": "radio",
+      "section": "Optional Extensions",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No - India Only"
+      ],
+      "guidance_text": "If your company has foreign subsidiaries, international operations, or directors may face claims abroad, worldwide coverage is essential. This is particularly important for companies with US exposure due to higher litigation risks.",
+      "placeholder": "Select coverage territory"
+    },
+    {
+      "question_text": "Employment Practices Liability Coverage Needed?",
+      "field_name": "epl_coverage",
+      "field_type": "radio",
+      "section": "Optional Extensions",
+      "order_index": 29,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "EPL extends D&O coverage to include employment-related claims like wrongful termination, discrimination, or harassment allegations against directors. Important for companies with large workforce or history of labor disputes.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Crisis Management Extension Required?",
+      "field_name": "crisis_management",
+      "field_type": "radio",
+      "section": "Optional Extensions",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers PR consultancy costs to manage reputational damage when directors face public allegations. Valuable for high-profile companies or those in sensitive sectors where reputation directly impacts business value.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Upload Latest Annual Report",
+      "field_name": "annual_report_upload",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your most recent annual report including audited financials and board report. This helps underwriters assess financial health, governance practices, and business risks comprehensively for accurate pricing.",
+      "placeholder": "Upload PDF of annual report"
+    },
+    {
+      "question_text": "Additional Comments or Special Requirements",
+      "field_name": "additional_comments",
+      "field_type": "textarea",
+      "section": "Declaration",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Mention any specific coverage requirements, unique risk factors, or additional information that may help insurers understand your needs better. Include any recent governance improvements or risk mitigation measures implemented.",
+      "placeholder": "e.g., Recently implemented quarterly compliance audits and established a separate risk management committee"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.414Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 3
+}

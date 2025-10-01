@@ -1,0 +1,716 @@
+{
+  "product_name": "Contractors All Risk Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of Insured/Proposer",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the full legal name of the contracting company or project owner as registered with ROC. This entity will be the primary policyholder. For joint ventures, include all partner names. The policy will be issued in this name.",
+      "placeholder": "e.g., XYZ Infrastructure Development Pvt Ltd"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your registered office address for all policy correspondence. Include complete details with landmark for courier delivery. This address will be used for policy documents, endorsements, and claim-related communications.",
+      "placeholder": "e.g., Tower A, 5th Floor, Business Park, Sector 18, Gurugram, Haryana - 122001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST registration number. This is required for tax compliance and invoice generation. GST will be charged on the insurance premium as per applicable rates (currently 18% for most construction insurances).",
+      "placeholder": "e.g., 06AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PAN Number",
+      "field_name": "pan_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter your company's 10-character Permanent Account Number. Required for regulatory compliance and tax deduction purposes. This should match the PAN in your GST registration.",
+      "placeholder": "e.g., AABCU9603R",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the name of the person authorized to handle insurance matters. This should be someone familiar with project details who can coordinate during claims. Typically the project manager, finance head, or authorized insurance coordinator.",
+      "placeholder": "e.g., Rajesh Kumar Sharma"
+    },
+    {
+      "question_text": "Contact Person Mobile",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter the 10-digit mobile number of the contact person. This number will be used for urgent communications, claim intimations, and SMS alerts. Ensure this is an active number that's always accessible.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Email",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the official email address for policy correspondence. Policy documents, renewal notices, and claim forms will be sent here. Use a regularly monitored official email, not personal email addresses.",
+      "placeholder": "e.g., insurance@xyzinfra.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Project Name",
+      "field_name": "project_name",
+      "field_type": "text",
+      "section": "Project Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 300
+      },
+      "guidance_text": "Enter the complete official name of the construction project. Include the type of construction (residential, commercial, infrastructure) for clarity. This name will appear on the policy schedule and all related documents.",
+      "placeholder": "e.g., Construction of 200 Bed Multi-Specialty Hospital at Pune"
+    },
+    {
+      "question_text": "Project Start Date",
+      "field_name": "project_start_date",
+      "field_type": "date",
+      "section": "Project Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the actual date when construction work begins at site (not planning/design phase). This is when foundation work or site preparation starts. Insurance coverage typically starts from this date to avoid premium for non-construction periods.",
+      "placeholder": "e.g., 01/04/2025"
+    },
+    {
+      "question_text": "Expected Completion Date",
+      "field_name": "expected_completion_date",
+      "field_type": "date",
+      "section": "Project Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter the realistic project completion date including buffer time. CAR policies cover the entire construction period plus testing/commissioning. Underestimating duration may leave you uninsured during crucial final stages.",
+      "placeholder": "e.g., 31/03/2027"
+    },
+    {
+      "question_text": "Policy Period Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Project Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from when you want insurance coverage to begin. This could be the project start date or current date if work has already begun. Coverage starts at 00:01 hours on this date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Project Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the insurance coverage end date. Should cover entire construction period plus testing phase. Include 2-3 months buffer beyond expected completion for delays. Can be extended later if project extends.",
+      "placeholder": "e.g., 30/06/2027",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Number of Project Locations",
+      "field_name": "number_of_locations",
+      "field_type": "select",
+      "section": "Project Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Single Location",
+        "Multiple Locations"
+      ],
+      "guidance_text": "Select whether construction is at one site or multiple sites. Multiple locations mean different geographic sites for the same project (like a highway project). Each location needs separate risk assessment affecting premium.",
+      "placeholder": "Select number of locations"
+    },
+    {
+      "question_text": "Multiple Locations Details",
+      "field_name": "multiple_locations_file",
+      "field_type": "file",
+      "section": "Project Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If multiple locations, upload an Excel/PDF with complete addresses, work scope at each location, and values. Include GPS coordinates if available. Each location's risk profile affects overall premium calculation.",
+      "placeholder": "Upload location details file",
+      "conditional_logic": {
+        "show_if": {
+          "field": "number_of_locations",
+          "value": "Multiple Locations"
+        }
+      }
+    },
+    {
+      "question_text": "Project Site Address",
+      "field_name": "project_site_address",
+      "field_type": "textarea",
+      "section": "Risk & Site Information",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter the complete project site address with landmarks and PIN code. Include survey numbers if available. This is where the actual construction happens and risk assessment will be done. For multiple sites, enter primary location here.",
+      "placeholder": "e.g., Survey No. 123/4, Village Kharadi, Pune-Ahmednagar Highway, Pune, Maharashtra - 411014",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Project",
+      "field_name": "project_type",
+      "field_type": "select",
+      "section": "Risk & Site Information",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Residential Building",
+        "Commercial Complex",
+        "Industrial Plant",
+        "Infrastructure - Roads/Highways",
+        "Infrastructure - Bridges/Flyovers",
+        "Infrastructure - Dams/Canals",
+        "Infrastructure - Tunnels",
+        "Power Plant",
+        "Hospital/Healthcare",
+        "Educational Institution",
+        "Hotel/Hospitality",
+        "IT Park/SEZ",
+        "Mixed Development",
+        "Others"
+      ],
+      "guidance_text": "Select the category that best describes your project. Different project types have different risk profiles - tunnels and dams are higher risk than residential buildings. This significantly impacts your premium rate.",
+      "placeholder": "Select project type"
+    },
+    {
+      "question_text": "Construction Type",
+      "field_name": "construction_type",
+      "field_type": "select",
+      "section": "Risk & Site Information",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "RCC Framed Structure",
+        "Steel Structure",
+        "Composite Structure",
+        "Pre-fabricated Structure",
+        "Load Bearing Structure",
+        "Others"
+      ],
+      "guidance_text": "Select the primary structural system being used. RCC (Reinforced Cement Concrete) structures have different risks than steel structures. This affects both construction period risks and natural catastrophe vulnerability.",
+      "placeholder": "Select construction type"
+    },
+    {
+      "question_text": "Total Built-up Area (Sq. Ft.)",
+      "field_name": "total_builtup_area",
+      "field_type": "number",
+      "section": "Risk & Site Information",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true,
+        "min": 100,
+        "max": 10000000
+      },
+      "guidance_text": "Enter the total constructed area in square feet including all floors. This is the sum of all floor areas including basement, podium, and tower areas. Used to assess project scale and calculate premium rates.",
+      "placeholder": "e.g., 250000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Number of Floors (Including Basement)",
+      "field_name": "number_of_floors",
+      "field_type": "number",
+      "section": "Risk & Site Information",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 200
+      },
+      "guidance_text": "Enter total number of floors including all basements and upper floors. Height increases construction risks, especially for material handling and worker safety. Buildings over 15 floors typically attract higher premium rates.",
+      "placeholder": "e.g., 25",
+      "format": "integer"
+    },
+    {
+      "question_text": "Nearest Water Body Distance (meters)",
+      "field_name": "water_body_distance",
+      "field_type": "number",
+      "section": "Risk & Site Information",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000
+      },
+      "guidance_text": "Enter distance to nearest river, lake, sea, or major drain in meters. Sites near water bodies have higher flood risk. Properties within 500 meters of water bodies usually need flood coverage and attract additional premium.",
+      "placeholder": "e.g., 1500",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Is the site in Earthquake Zone III, IV or V?",
+      "field_name": "earthquake_zone",
+      "field_type": "select",
+      "section": "Risk & Site Information",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Zone II (Low Risk)",
+        "Zone III (Moderate Risk)",
+        "Zone IV (High Risk)",
+        "Zone V (Very High Risk)"
+      ],
+      "guidance_text": "Select the seismic zone of your project location as per IS 1893. Zones III, IV, and V have progressively higher earthquake risk. Check your location's zone from official seismic maps. Higher zones require additional earthquake premium.",
+      "placeholder": "Select earthquake zone"
+    },
+    {
+      "question_text": "Is the site flood-prone?",
+      "field_name": "flood_prone",
+      "field_type": "radio",
+      "section": "Risk & Site Information",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if the site has history of flooding or is in a low-lying area prone to waterlogging. Check municipal records for past flooding incidents. Flood-prone sites require STFI (Storm, Tempest, Flood, Inundation) coverage at additional premium.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Total Project Cost",
+      "field_name": "total_project_cost",
+      "field_type": "number",
+      "section": "Project Cost Breakup",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter the complete project cost including all civil work, materials, labor, and equipment in INR. This becomes your sum insured. Undervaluing leads to proportionate claim settlement. Include contingencies but exclude land cost.",
+      "placeholder": "e.g., 500000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Civil Works Cost",
+      "field_name": "civil_works_cost",
+      "field_type": "number",
+      "section": "Project Cost Breakup",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter the cost of all civil construction work including structure, finishing, and external development. Typically 40-60% of total project cost. This covers the permanent works being constructed.",
+      "placeholder": "e.g., 300000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Equipment & Machinery Cost (Permanent)",
+      "field_name": "permanent_equipment_cost",
+      "field_type": "number",
+      "section": "Project Cost Breakup",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter value of equipment/machinery being permanently installed (elevators, HVAC, electrical panels, generators). These become part of the building. Different from construction equipment which is covered separately.",
+      "placeholder": "e.g., 100000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Construction Plant & Machinery Value",
+      "field_name": "construction_equipment_value",
+      "field_type": "number",
+      "section": "Project Cost Breakup",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter total value of construction equipment like cranes, excavators, concrete pumps used during construction. These are temporary and removed after project completion. Can be covered under same policy at additional premium.",
+      "placeholder": "e.g., 50000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Materials at Site Value (Average)",
+      "field_name": "materials_at_site_value",
+      "field_type": "number",
+      "section": "Project Cost Breakup",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter average value of construction materials stored at site at any time (cement, steel, tiles, etc.). This fluctuates during project but estimate the typical/average value. Higher storage means higher risk and premium.",
+      "placeholder": "e.g., 20000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Detailed Cost Breakup Document",
+      "field_name": "cost_breakup_file",
+      "field_type": "file",
+      "section": "Project Cost Breakup",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload detailed project cost breakup showing all components - civil, MEP, finishes, external development, equipment, etc. BOQ (Bill of Quantities) or cost estimate from consultant/contractor. Helps in accurate sum insured determination.",
+      "placeholder": "Upload cost breakup Excel/PDF"
+    },
+    {
+      "question_text": "Third Party Liability Limit Required",
+      "field_name": "tpl_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 29,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select the liability coverage limit for third-party bodily injury and property damage. Higher limits recommended for projects in populated areas or near existing structures. Most projects opt for Rs. 10-25 crores. Premium impact is minimal for higher limits.",
+      "placeholder": "Select TPL limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Custom TPL Limit Amount",
+      "field_name": "custom_tpl_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false,
+        "min": 1000000000,
+        "max": 10000000000
+      },
+      "guidance_text": "If you selected 'Above Rs. 100 Crores', enter the specific limit required in INR. Very high limits may require reinsurance approval.",
+      "placeholder": "e.g., 2000000000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "tpl_limit",
+          "value": "Above Rs. 100 Crores - Specify"
+        }
+      },
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Maintenance Period Required",
+      "field_name": "maintenance_period",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 31,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Maintenance Cover",
+        "3 Months",
+        "6 Months",
+        "12 Months",
+        "24 Months",
+        "36 Months"
+      ],
+      "guidance_text": "Select the defects liability period coverage after project completion. Covers damage during maintenance/warranty period due to construction defects or maintenance operations. Standard contracts have 12-month defect liability. Additional premium applies.",
+      "placeholder": "Select maintenance period"
+    },
+    {
+      "question_text": "Testing & Commissioning Period",
+      "field_name": "testing_period_days",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 365
+      },
+      "guidance_text": "Enter number of days required for testing and commissioning of equipment/systems. Covers hot testing of machinery, load testing of structures. Standard is 30-90 days for most projects. Included in base premium up to 4 weeks.",
+      "placeholder": "e.g., 30",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Debris Removal Limit",
+      "field_name": "debris_removal_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 33,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select the coverage limit for debris removal costs after an insured loss. Higher percentage recommended for congested sites where debris removal is expensive. Standard is 1-2% but high-rise projects may need 5-10%. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select debris removal limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Professional Fees Coverage Limit",
+      "field_name": "professional_fees_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 34,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select coverage for architect/engineer fees for claim preparation and redesign after loss. These professionals help assess damage and plan reconstruction. Complex projects need higher limits. Standard is 5% of claim amount. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select professional fees limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Escalation Clause Percentage",
+      "field_name": "escalation_percentage",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 35,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Escalation",
+        "10%",
+        "15%",
+        "20%",
+        "25%"
+      ],
+      "guidance_text": "Select the percentage increase in sum insured to account for inflation during construction period. Long-duration projects need higher escalation. 10-15% typical for 2-year projects. Prevents underinsurance due to cost inflation.",
+      "placeholder": "Select escalation percentage"
+    },
+    {
+      "question_text": "STFI (Flood/Storm) Coverage Required?",
+      "field_name": "stfi_coverage",
+      "field_type": "checkbox",
+      "section": "Add-On Coverages Required",
+      "order_index": 36,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this for coverage against Storm, Tempest, Flood, and Inundation damage. Mandatory for flood-prone areas or monsoon construction. Adds 15-25% to base premium but essential for weather-related risks. Standard deductible of 5% applies.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Earthquake Coverage Required?",
+      "field_name": "earthquake_coverage",
+      "field_type": "checkbox",
+      "section": "Add-On Coverages Required",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this for earthquake damage coverage. Highly recommended for Zones III, IV, and V. Adds significant premium (0.05% to 0.25% of sum insured) but critical for seismic areas. Higher deductibles apply based on zone.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Cross Liability Coverage Required?",
+      "field_name": "cross_liability",
+      "field_type": "checkbox",
+      "section": "Add-On Coverages Required",
+      "order_index": 38,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if multiple contractors/principals are involved who could sue each other. Treats each party as separately insured. Essential for projects with main contractor and multiple sub-contractors. Minimal premium impact.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Surrounding Property Coverage Required?",
+      "field_name": "surrounding_property",
+      "field_type": "checkbox",
+      "section": "Add-On Coverages Required",
+      "order_index": 39,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this for coverage of existing property belonging to principal that might be damaged during construction. Important when building extensions or working near existing structures. Specify which properties need coverage.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Express Freight (Air/Sea) Coverage?",
+      "field_name": "express_freight",
+      "field_type": "checkbox",
+      "section": "Add-On Coverages Required",
+      "order_index": 40,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this to cover additional air/sea freight costs for urgent replacement of damaged items. Useful for projects with imported equipment or tight deadlines. Typically limited to 10% of claim amount. Helps avoid project delays.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Overtime & Holiday Work Coverage?",
+      "field_name": "overtime_coverage",
+      "field_type": "checkbox",
+      "section": "Add-On Coverages Required",
+      "order_index": 41,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this to cover additional costs of overtime, night work, and holiday work for repairs after a loss. Helps expedite repairs to avoid delays. Usually limited to 20% of claim amount. Important for time-critical projects.",
+      "placeholder": ""
+    },
+    {
+      "question_text": "Previous Insurance Claims (Last 5 Years)",
+      "field_name": "previous_claims_file",
+      "field_type": "file",
+      "section": "Insurance History",
+      "order_index": 42,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload details of any construction insurance claims in past 5 years. Include dates, causes, amounts, and settlement status. Even if nil claims, provide a declaration. Good claims history can reduce premium by 5-10%.",
+      "placeholder": "Upload claims history or nil declaration"
+    },
+    {
+      "question_text": "Project Consultants Details",
+      "field_name": "consultants_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 43,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide names of architect, structural consultant, MEP consultant, and main contractor with their experience. Reputed consultants with good track records can positively impact premium. Include any quality certifications they hold.",
+      "placeholder": "e.g., Architect: ABC Associates (25 years), Structural: XYZ Consultants (30 years), Main Contractor: LMN Constructions (ISO 9001 certified, 20 years)"
+    },
+    {
+      "question_text": "Safety Management Practices",
+      "field_name": "safety_practices",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 44,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe safety measures at site - safety officer deployment, worker training, equipment inspection schedules, emergency procedures. Good safety practices can reduce premium and improve claim experience. Mention any safety certifications.",
+      "placeholder": "e.g., Full-time safety officer, weekly safety training, monthly equipment audits, ISO 45001 certified"
+    },
+    {
+      "question_text": "Any Additional Requirements",
+      "field_name": "additional_requirements",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 45,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Mention any specific coverage requirements, special conditions, or clarifications needed. Include details about unique project risks or innovative construction methods. This helps underwriters provide appropriate coverage.",
+      "placeholder": "Enter any specific requirements or additional information about the project"
+    },
+    {
+      "question_text": "Declaration",
+      "field_name": "declaration_acceptance",
+      "field_type": "checkbox",
+      "section": "Declaration",
+      "order_index": 46,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "By checking this, you confirm all information provided is accurate and complete. Any misrepresentation can lead to claim rejection. The insurance contract is based on utmost good faith and full disclosure of all material facts.",
+      "placeholder": ""
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.328Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 2
+}

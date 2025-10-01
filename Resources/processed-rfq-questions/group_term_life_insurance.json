@@ -1,0 +1,418 @@
+{
+  "product_name": "Group Term Life Insurance",
+  "product_category": "life",
+  "questions": [
+    {
+      "question_text": "Name of the Company / Group",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company / Group Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your company's registered legal name as per ROC records. This must match your PAN and GST registration. The life insurer will verify this name against IRDAI's database and your KYC documents.",
+      "placeholder": "e.g., XYZ Technologies Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Registered Office Address",
+      "field_name": "registered_office_address",
+      "field_type": "textarea",
+      "section": "Company / Group Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete registered office address as per your incorporation documents. This address will be used for all legal correspondence and policy documentation. Include building name, floor, street, and landmarks for clarity.",
+      "placeholder": "e.g., Tower A, 5th Floor, Tech Park, Whitefield Main Road, Bangalore, Karnataka - 560066",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "City",
+      "field_name": "city",
+      "field_type": "text",
+      "section": "Company / Group Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 50
+      },
+      "guidance_text": "Enter the city where your registered office is located. This helps insurers identify the service zone and assign the appropriate branch office for policy servicing and claims processing.",
+      "placeholder": "e.g., Bangalore",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "State",
+      "field_name": "state",
+      "field_type": "select",
+      "section": "Company / Group Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar",
+        "Chhattisgarh",
+        "Delhi",
+        "Goa",
+        "Gujarat",
+        "Haryana",
+        "Himachal Pradesh",
+        "Jharkhand",
+        "Karnataka",
+        "Kerala",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Manipur",
+        "Meghalaya",
+        "Mizoram",
+        "Nagaland",
+        "Odisha",
+        "Punjab",
+        "Rajasthan",
+        "Sikkim",
+        "Tamil Nadu",
+        "Telangana",
+        "Tripura",
+        "Uttar Pradesh",
+        "Uttarakhand",
+        "West Bengal"
+      ],
+      "guidance_text": "Select your state from the dropdown. Different states may have varying stamp duty charges and documentation requirements for life insurance policies. This also determines the regional office handling your policy.",
+      "placeholder": "e.g., Karnataka",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PIN Code",
+      "field_name": "pin_code",
+      "field_type": "text",
+      "section": "Company / Group Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[1-9][0-9]{5}$",
+        "minLength": 6,
+        "maxLength": 6
+      },
+      "guidance_text": "Enter the 6-digit postal code of your registered office. This PIN code helps determine the serviceable area and nearest branch for document collection and claim settlement services.",
+      "placeholder": "e.g., 560066",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Head Office Address (if different from Registered Office)",
+      "field_name": "head_office_address",
+      "field_type": "textarea",
+      "section": "Company / Group Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": false,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "If your operational head office differs from the registered address, provide it here. Policy servicing and day-to-day correspondence will be sent to this address. Leave blank if same as registered office.",
+      "placeholder": "e.g., Building B, DLF Cyber City, Sector 24, Gurgaon, Haryana - 122002",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Authorized Official's Name & Designation",
+      "field_name": "authorized_official",
+      "field_type": "text",
+      "section": "Company / Group Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the name and designation of the person authorized to sign the master policy agreement. This should be a senior official like CEO, CFO, or HR Head who has board authorization to enter into insurance contracts on behalf of the company.",
+      "placeholder": "e.g., Priya Sharma, Chief Human Resources Officer"
+    },
+    {
+      "question_text": "Official Email IDs for Correspondence",
+      "field_name": "official_emails",
+      "field_type": "text",
+      "section": "Company / Group Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 200
+      },
+      "guidance_text": "Provide official email addresses (comma-separated if multiple) for receiving policy documents, premium notices, and claim communications. Use role-based emails like hr@company.com for continuity even if personnel change.",
+      "placeholder": "e.g., hr@xyztech.com, insurance@xyztech.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Proposed Policy Commencement Date",
+      "field_name": "policy_commencement_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from which you want life insurance coverage to begin. For renewals, ensure this is immediately after current policy expiry to maintain continuity. New policies typically need 15-20 days for underwriting and approval.",
+      "placeholder": "e.g., 01/04/2025"
+    },
+    {
+      "question_text": "Minimum Age at Entry (Last Birthday)",
+      "field_name": "minimum_age_entry",
+      "field_type": "number",
+      "section": "Policy Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 18,
+        "max": 65
+      },
+      "guidance_text": "Enter the minimum age for employees to be eligible for coverage. Standard is 18 years (legal adult age). 'Last Birthday' means the age on their most recent birthday. This determines which employees qualify for automatic coverage.",
+      "placeholder": "e.g., 18",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Maximum Age at Entry (Last Birthday)",
+      "field_name": "maximum_age_entry",
+      "field_type": "number",
+      "section": "Policy Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "min": 18,
+        "max": 70
+      },
+      "guidance_text": "Enter the maximum age for new employees to join the group life insurance. Typically 60-65 years as retirement age approaches. Employees already covered can continue beyond this age, but new joiners above this age won't be eligible.",
+      "placeholder": "e.g., 60",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Premium Payment Responsibility",
+      "field_name": "premium_payment_responsibility",
+      "field_type": "number",
+      "section": "Policy Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select who pays the premium. 'Employer Paid' means company bears full cost as employee benefit (tax-deductible for company). 'Employee Paid' means deducted from salary (tax benefit under 80C for employees). 'Shared' splits the cost between both parties. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Employer Paid (Non-contributory)",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Total Number of Members to be Covered",
+      "field_name": "total_members_covered",
+      "field_type": "number",
+      "section": "Policy Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 10,
+        "max": 100000
+      },
+      "guidance_text": "Enter the exact number of employees to be covered under this group term life policy. Minimum group size is typically 10 members. Include all eligible employees - the larger the group, the better the premium rates due to risk pooling.",
+      "placeholder": "e.g., 250",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Premium Payment Frequency",
+      "field_name": "premium_payment_frequency",
+      "field_type": "number",
+      "section": "Policy Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Choose how often you want to pay premiums. Annual payment usually offers 2-4% discount compared to monthly. Monthly payment helps with cash flow but has higher total cost. Consider your company's financial cycle when choosing. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Annual",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Coverage Basis (Per Member)",
+      "field_name": "coverage_basis",
+      "field_type": "select",
+      "section": "Coverage Structure",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Flat Sum Assured (Same for all)",
+        "Multiple of Annual Salary",
+        "Graded by Designation",
+        "Graded by Salary Slab"
+      ],
+      "guidance_text": "Select how sum assured (death benefit amount) is determined. 'Flat' gives everyone same coverage. 'Multiple of Salary' (typically 1x to 3x annual CTC) is most common and equitable. 'Graded' provides different amounts based on seniority or salary bands.",
+      "placeholder": "Multiple of Annual Salary"
+    },
+    {
+      "question_text": "If Flat Sum Assured - Amount Per Employee (₹)",
+      "field_name": "flat_sum_assured",
+      "field_type": "number",
+      "section": "Coverage Structure",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "min": 100000,
+        "max": 100000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_basis",
+          "value": "Flat Sum Assured (Same for all)"
+        }
+      },
+      "guidance_text": "Enter the life cover amount each employee will receive. Common amounts range from ₹5 lakhs to ₹50 lakhs. Consider your employee demographics and industry standards. Higher sum assured means better protection but increases premium.",
+      "placeholder": "e.g., 1000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Member-wise Sum Assured Details",
+      "field_name": "member_wise_sum_assured",
+      "field_type": "file",
+      "section": "Coverage Structure",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload an Excel file with employee details including name, age, salary, and proposed sum assured for each member. Use the insurer's template for correct format. This is required for customized coverage structures and helps in accurate premium calculation.",
+      "placeholder": "Upload Excel file with member details",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Additional Rider Benefits Required",
+      "field_name": "rider_benefits",
+      "field_type": "multiselect",
+      "section": "Coverage Structure",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Accidental Death Benefit (ADB)",
+        "Accidental Total & Permanent Disability",
+        "Critical Illness Cover",
+        "Terminal Illness Benefit",
+        "Partial & Permanent Disability",
+        "None Required"
+      ],
+      "guidance_text": "Select additional coverages to enhance the basic life insurance. ADB doubles the payout for accidental death. Critical Illness provides lump sum on diagnosis of specified diseases. These riders increase protection for small additional premium (typically 10-20% extra).",
+      "placeholder": "Select applicable riders"
+    },
+    {
+      "question_text": "Policy Type",
+      "field_name": "policy_type",
+      "field_type": "radio",
+      "section": "Member Eligibility & Claims Declaration",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "New Policy",
+        "Renewal"
+      ],
+      "guidance_text": "Select 'New Policy' if this is your first group term life insurance or switching insurers. Select 'Renewal' if continuing with same or different insurer. Renewals may get better rates if claim experience is favorable.",
+      "placeholder": "New Policy"
+    },
+    {
+      "question_text": "Actively at Work Declaration",
+      "field_name": "actively_at_work",
+      "field_type": "radio",
+      "section": "Member Eligibility & Claims Declaration",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes, all employees are actively at work",
+        "No, some employees are on leave/absent"
+      ],
+      "guidance_text": "Confirm that all employees to be covered are actively working and not on long-term sick leave or disability. This is a standard insurability condition. Employees on extended medical leave may need individual underwriting or may be excluded temporarily.",
+      "placeholder": "Yes, all employees are actively at work"
+    },
+    {
+      "question_text": "Existing Insurance Coverage & Claims Experience",
+      "field_name": "existing_coverage_claims",
+      "field_type": "textarea",
+      "section": "Member Eligibility & Claims Declaration",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of current/previous group life insurance including insurer name, sum assured, number of death claims in last 3 years, and total claim amounts. If first-time buyer, mention 'No previous coverage'. This significantly impacts your premium rates.",
+      "placeholder": "e.g., Current insurer: LIC, Policy period: Apr 2023-Mar 2024, Sum Assured: ₹10 lakhs per employee, Claims: 2 death claims totaling ₹20 lakhs in last year"
+    },
+    {
+      "question_text": "Claims Report (if renewal/existing coverage)",
+      "field_name": "claims_report",
+      "field_type": "file",
+      "section": "Member Eligibility & Claims Declaration",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "policy_type",
+          "value": "Renewal"
+        }
+      },
+      "guidance_text": "Upload the claims experience report from your current insurer showing claims history for the last 3-5 years. This document is crucial for underwriting and helps secure competitive renewal rates. Include details of all death and disability claims.",
+      "placeholder": "Upload PDF/Excel claims report"
+    },
+    {
+      "question_text": "Any Additional Information",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Disclosure",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any relevant information that might affect underwriting such as hazardous work conditions, high-stress roles, frequent travel, or recent workplace incidents. Full disclosure ensures smooth claims settlement and avoids policy disputes later.",
+      "placeholder": "e.g., 30% of employees travel internationally monthly. Company operates 24x7 shifts. Manufacturing unit has safety certification. No major workplace incidents in last 5 years."
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.509Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

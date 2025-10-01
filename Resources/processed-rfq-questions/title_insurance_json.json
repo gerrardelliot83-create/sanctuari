@@ -1,0 +1,364 @@
+{
+  "product_name": "Title Insurance for Commercial Property",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Full Legal Name of the Property Owner/Company",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the complete legal name of the entity that owns or will own the property. This should match exactly with property documents and registration papers. For companies, include the full legal suffix like Pvt Ltd, LLP, or Ltd.",
+      "placeholder": "e.g., ABC Developers Pvt Ltd"
+    },
+    {
+      "question_text": "Property Address (Street/Building Details)",
+      "field_name": "property_address",
+      "field_type": "textarea",
+      "section": "Property Details",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete street address of the property being insured, including plot number, street name, landmark, and locality. This address will be verified against land records and must match the property documents exactly.",
+      "placeholder": "e.g., Plot No. 45, Sector 18, Industrial Area, Near HDFC Bank",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "City",
+      "field_name": "city",
+      "field_type": "text",
+      "section": "Property Details",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the city where the property is located. This helps determine jurisdiction for legal matters and local municipal regulations that may affect the title.",
+      "placeholder": "e.g., Mumbai",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "State",
+      "field_name": "state",
+      "field_type": "select",
+      "section": "Property Details",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar",
+        "Chhattisgarh",
+        "Goa",
+        "Gujarat",
+        "Haryana",
+        "Himachal Pradesh",
+        "Jharkhand",
+        "Karnataka",
+        "Kerala",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Manipur",
+        "Meghalaya",
+        "Mizoram",
+        "Nagaland",
+        "Odisha",
+        "Punjab",
+        "Rajasthan",
+        "Sikkim",
+        "Tamil Nadu",
+        "Telangana",
+        "Tripura",
+        "Uttar Pradesh",
+        "Uttarakhand",
+        "West Bengal",
+        "Delhi",
+        "Jammu and Kashmir",
+        "Ladakh",
+        "Puducherry",
+        "Chandigarh"
+      ],
+      "guidance_text": "Select the state where the property is located. State laws regarding property ownership and transfer vary significantly and affect title insurance coverage.",
+      "placeholder": "e.g., Maharashtra",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Pin Code",
+      "field_name": "pin_code",
+      "field_type": "text",
+      "section": "Property Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[1-9][0-9]{5}$",
+        "minLength": 6,
+        "maxLength": 6
+      },
+      "guidance_text": "Enter the 6-digit postal code of the property location. This helps identify the exact area and jurisdiction for the property records.",
+      "placeholder": "e.g., 400001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Office Telephone Number",
+      "field_name": "office_telephone",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^[0-9]{8,12}$",
+        "maxLength": 12
+      },
+      "guidance_text": "Provide your office landline number with STD code. While mobile contact is preferred, having an office number helps establish business credibility.",
+      "placeholder": "e.g., 02267894561",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Fax Number",
+      "field_name": "fax_number",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^[0-9]{8,12}$",
+        "maxLength": 12
+      },
+      "guidance_text": "If available, provide your fax number for receiving official documents. Though less common now, some legal documents may still be sent via fax.",
+      "placeholder": "e.g., 02267894562"
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter the 10-digit mobile number of the primary contact person. This will be used for all urgent communications regarding your title insurance policy and claims.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email_address",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide a valid email address that is regularly monitored. All policy documents, updates, and important communications will be sent to this email.",
+      "placeholder": "e.g., contact@abcdevelopers.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Total Developed Value of Property (in ₹)",
+      "field_name": "developed_value",
+      "field_type": "number",
+      "section": "Property Valuation",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the current market value of the fully developed property including land and construction costs. This amount determines your insurance coverage limit and premium. Get a professional valuation done if unsure about the current market value.",
+      "placeholder": "e.g., 50000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Planning Permission/Building Permit Details",
+      "field_name": "planning_permission_details",
+      "field_type": "textarea",
+      "section": "Legal Documentation",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of all planning permissions and building permits obtained from municipal authorities. Include permit numbers, dates of approval, and issuing authority names. This helps verify that the property development is legally compliant.",
+      "placeholder": "e.g., Building Permit No. BMC/2024/BP/12345 dated 15/03/2024, issued by Mumbai Municipal Corporation for construction of commercial complex on Plot 45"
+    },
+    {
+      "question_text": "Law Firm Name and Details",
+      "field_name": "law_firm_details",
+      "field_type": "textarea",
+      "section": "Legal Documentation",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the name and contact details of the law firm that conducted the title verification for this property. Their legal opinion forms the basis of the title insurance assessment.",
+      "placeholder": "e.g., XYZ Legal Associates, Mumbai, Contact: Mr. Sharma - 9876543210"
+    },
+    {
+      "question_text": "Upload Title Report from Law Firm",
+      "field_name": "title_report_upload",
+      "field_type": "file",
+      "section": "Legal Documentation",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload the complete title report prepared by your law firm. This report should include the entire chain of title, encumbrance certificate, and legal opinion. Accepted formats: PDF, DOC, DOCX (Max 10MB).",
+      "placeholder": "Choose title report file"
+    },
+    {
+      "question_text": "Details of Known Defects in Title (if any)",
+      "field_name": "known_title_defects",
+      "field_type": "textarea",
+      "section": "Risk Assessment",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 1000
+      },
+      "guidance_text": "Disclose any known issues with the property title such as pending litigation, unclear ownership, missing documents, or encroachments. Full disclosure is mandatory for valid insurance coverage. Write 'None' if there are no known defects.",
+      "placeholder": "e.g., Minor boundary dispute with adjacent property owner regarding 50 sq ft area on eastern boundary, currently under discussion"
+    },
+    {
+      "question_text": "Are there any third-party challenges or contentious issues relating to title or planning?",
+      "field_name": "third_party_challenges",
+      "field_type": "radio",
+      "section": "Risk Assessment",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if any third parties have raised objections or legal challenges regarding the property ownership or development permissions. This includes neighbor disputes, government notices, or public interest litigations.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "If yes, provide details of third-party challenges",
+      "field_name": "third_party_challenges_details",
+      "field_type": "textarea",
+      "section": "Risk Assessment",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "minLength": 10,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "third_party_challenges",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe the nature of any third-party challenges, including who has raised them, what claims they're making, and current status of resolution.",
+      "placeholder": "e.g., Local residents association has raised concerns about commercial development in residential zone, matter pending with municipal corporation"
+    },
+    {
+      "question_text": "Have any approaches been made to third parties likely to challenge the title?",
+      "field_name": "approaches_to_third_parties",
+      "field_type": "radio",
+      "section": "Risk Assessment",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you have proactively contacted or negotiated with any parties who might have claims or objections to the property title. This shows good faith efforts to resolve potential disputes.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Any other relevant information about the property or title",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Share any other information that might affect the title insurance coverage such as upcoming infrastructure projects, zoning changes, or special property features. This helps insurers better understand and price the risk.",
+      "placeholder": "e.g., Property is located in area marked for metro rail development in next 5 years which may increase value"
+    },
+    {
+      "question_text": "Project Start Date",
+      "field_name": "project_start_date",
+      "field_type": "date",
+      "section": "Policy Period",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date when construction or development of this property began or will begin. This helps determine the retroactive coverage period for the title insurance.",
+      "placeholder": "e.g., 01/04/2024"
+    },
+    {
+      "question_text": "Policy Commencement Date",
+      "field_name": "policy_commencement_date",
+      "field_type": "date",
+      "section": "Policy Period",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from which you want the title insurance coverage to begin. This is typically the date of property purchase or start of development. Coverage cannot begin before proper title verification is completed.",
+      "placeholder": "e.g., 01/01/2025"
+    },
+    {
+      "question_text": "Policy Expiry Date",
+      "field_name": "policy_expiry_date",
+      "field_type": "date",
+      "section": "Policy Period",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date when you want the insurance coverage to end. Title insurance typically provides coverage for the entire ownership period, but some policies may have specific terms. Standard period is 10-15 years for commercial properties.",
+      "placeholder": "e.g., 31/12/2035"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.645Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 0
+}

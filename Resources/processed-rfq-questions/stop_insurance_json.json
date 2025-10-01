@@ -1,0 +1,542 @@
+{
+  "product_name": "Sales Turnover Open Policy (STOP) Insurance",
+  "product_category": "marine",
+  "questions": [
+    {
+      "question_text": "Name of the Insured Company",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your company's full legal name exactly as registered with the Registrar of Companies. This name will appear on your insurance policy and must match your GST registration and other legal documents for smooth claim processing.",
+      "placeholder": "e.g., ABC Trading Company Pvt Ltd"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete business address where all insurance-related communications will be sent. Include building name/number, street, area, city, state, and pincode for accurate delivery of policy documents and correspondence.",
+      "placeholder": "e.g., 304, Sunrise Tower, MG Road, Andheri West, Mumbai, Maharashtra - 400058",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Name of the authorized person who will handle all insurance matters and can make decisions on behalf of your company. This person will receive all policy updates and be the primary point of contact for claims.",
+      "placeholder": "e.g., Rajesh Kumar Sharma"
+    },
+    {
+      "question_text": "Contact Person Mobile Number",
+      "field_name": "contact_phone",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter the 10-digit mobile number without country code or spaces. This number will be used for urgent communications about your shipments, claims notifications, and policy renewals. Ensure it's always reachable during business hours.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Email Address",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide an active business email address that is checked regularly. All policy documents, renewal notices, and claim forms will be sent to this email. Avoid using personal email addresses for better business continuity.",
+      "placeholder": "e.g., insurance@abctrading.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period",
+      "field_name": "policy_period",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the policy start date (typically should be at least 2-3 days from today to allow processing time). STOP policies usually run for one year and automatically cover all your shipments during this period based on your declared annual turnover.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the policy end date (typically one year from start date). All shipments dispatched between start and end dates will be automatically covered without needing individual declarations.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Type of Transit Coverage Required",
+      "field_name": "transit_type",
+      "field_type": "multiselect",
+      "section": "Policy Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Imports",
+        "Exports",
+        "Domestic Sales",
+        "Inter-Unit Transfers",
+        "To and Fro Job Work",
+        "Raw Material Purchase",
+        "Finished Goods Distribution",
+        "Other"
+      ],
+      "guidance_text": "Select all types of goods movement your business undertakes. STOP insurance can cover multiple transit types under one policy, eliminating the need for separate policies. This helps ensure no shipment goes uninsured.",
+      "placeholder": "Select all applicable transit types"
+    },
+    {
+      "question_text": "Other Transit Type (Please Specify)",
+      "field_name": "transit_type_other",
+      "field_type": "text",
+      "section": "Policy Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "transit_type",
+          "value": "Other"
+        }
+      },
+      "guidance_text": "If you selected 'Other' above, please describe the specific type of transit or goods movement that needs coverage. This helps insurers understand your unique requirements.",
+      "placeholder": "e.g., Exhibition goods movement, Sample transfers"
+    },
+    {
+      "question_text": "Primary Origin Location(s)",
+      "field_name": "transit_from",
+      "field_type": "textarea",
+      "section": "Policy Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 500
+      },
+      "guidance_text": "List the main locations from where your goods typically originate. Include city and state for domestic shipments, or country and port for international. You can mention multiple locations if your business operates from various points.",
+      "placeholder": "e.g., Mumbai Port (Maharashtra) for imports, Pune Factory (Maharashtra) for domestic sales"
+    },
+    {
+      "question_text": "Primary Destination Location(s)",
+      "field_name": "transit_to",
+      "field_type": "textarea",
+      "section": "Policy Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 500
+      },
+      "guidance_text": "List the main destinations where your goods are typically delivered. This helps insurers assess route risks and determine appropriate coverage terms. Include major cities, states, or countries you regularly ship to.",
+      "placeholder": "e.g., Delhi, Bangalore, Chennai for domestic; Dubai, Singapore for exports"
+    },
+    {
+      "question_text": "Are there multiple routes or transit legs involved?",
+      "field_name": "multiple_routes",
+      "field_type": "radio",
+      "section": "Policy Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Select 'Yes' if your shipments typically involve transshipment, multi-modal transport (like sea + road), or pass through multiple warehouses. This is common for import/export businesses or hub-and-spoke distribution models.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Multiple Routes/Transit Legs",
+      "field_name": "multiple_routes_details",
+      "field_type": "textarea",
+      "section": "Policy Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "multiple_routes",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe the typical journey of your goods including all intermediate stops, warehouses, or transshipment points. This helps ensure coverage throughout the entire supply chain without gaps.",
+      "placeholder": "e.g., China Port → Mumbai Port (Sea) → Mumbai Warehouse → Various cities across India (Road)"
+    },
+    {
+      "question_text": "Mode of Transport",
+      "field_name": "transport_mode",
+      "field_type": "multiselect",
+      "section": "Policy Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Road (Truck/Lorry)",
+        "Rail (Train)",
+        "Air (Cargo Flight)",
+        "Sea (Container Ship)",
+        "Coastal Shipping",
+        "Courier/Parcel Service",
+        "Multi-modal",
+        "Own Vehicle"
+      ],
+      "guidance_text": "Select all transportation modes used for your shipments. Different modes have different risk levels - air cargo has less risk but higher value exposure, while road transport may have more frequent but smaller claims. Premium rates vary by mode.",
+      "placeholder": "Select all applicable transport modes"
+    },
+    {
+      "question_text": "Basis of Valuation for Insurance",
+      "field_name": "valuation_basis",
+      "field_type": "select",
+      "section": "Coverage & Valuation",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Invoice Value",
+        "Invoice Value + 10%",
+        "CIF Value",
+        "CIF + 10%",
+        "Manufacturing Cost + Margin",
+        "Market Value",
+        "Agreed Value",
+        "Other"
+      ],
+      "guidance_text": "This determines how much you'll be compensated in case of a claim. 'Invoice + 10%' is common as it covers the goods value plus incidental costs. For exports, CIF (Cost, Insurance, Freight) + 10% is standard. Choose based on your business model.",
+      "placeholder": "Select valuation method"
+    },
+    {
+      "question_text": "Other Valuation Basis (Please Specify)",
+      "field_name": "valuation_basis_other",
+      "field_type": "text",
+      "section": "Coverage & Valuation",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "valuation_basis",
+          "value": "Other"
+        }
+      },
+      "guidance_text": "If you selected 'Other', please explain your specific valuation method. Some businesses use custom formulas based on their unique pricing models.",
+      "placeholder": "e.g., Purchase cost + 15% profit margin + freight"
+    },
+    {
+      "question_text": "Packing Details",
+      "field_name": "packing_details",
+      "field_type": "textarea",
+      "section": "Coverage & Valuation",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Describe how your goods are typically packed for transit. Better packing reduces damage risk and can lower premiums. Include details like cartons, wooden crates, pallets, bubble wrap, or special handling for fragile items.",
+      "placeholder": "e.g., Electronic goods in individual boxes with foam padding, 20 boxes per wooden crate, shrink-wrapped on pallets"
+    },
+    {
+      "question_text": "Per Bottom Limit (Maximum value per vehicle/vessel)",
+      "field_name": "per_bottom_limit",
+      "field_type": "number",
+      "section": "Coverage & Valuation",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the maximum value of goods you would load in a single vehicle, vessel, or aircraft. This is your maximum risk exposure per conveyance. If a truck carrying ₹50 lakhs of goods meets an accident, this should be at least ₹50 lakhs for full coverage.",
+      "placeholder": "e.g., 5000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Per Location Limit (Maximum value stored at any location)",
+      "field_name": "per_location_limit",
+      "field_type": "number",
+      "section": "Coverage & Valuation",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the maximum value of goods that might be stored at any single warehouse or location during transit. This covers temporary storage during transshipment or at intermediate points. Consider your peak inventory periods.",
+      "placeholder": "e.g., 10000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Estimated Annual Sales Turnover for Transit Insurance",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Coverage & Valuation",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true,
+        "min": 1000000,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter the total estimated value of all goods that will be transported during the policy period. This is the basis for STOP insurance premium calculation. Include all sales, transfers, and movements you want covered. Underestimating can lead to penalties.",
+      "placeholder": "e.g., 250000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Sales/Transit Breakdown",
+      "field_name": "transit_breakdown",
+      "field_type": "textarea",
+      "section": "Coverage & Valuation",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Optional: Break down your annual turnover by transit type (e.g., 40% imports, 30% domestic sales, 30% exports). This helps insurers better understand your risk profile and may result in more competitive premiums.",
+      "placeholder": "e.g., Imports: ₹10 Cr (40%), Domestic Sales: ₹7.5 Cr (30%), Exports: ₹7.5 Cr (30%)"
+    },
+    {
+      "question_text": "Claims History - Last 5 Years",
+      "field_name": "claims_history",
+      "field_type": "textarea",
+      "section": "Claims & Risk History",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide details of all transit-related insurance claims in the last 5 years, even if with different insurers. Include year, claim amount, cause (damage, theft, accident), and current status. Write 'No claims' if claim-free. Honest disclosure ensures smooth future claims.",
+      "placeholder": "e.g., FY 2023-24: ₹2,50,000 - Road accident damage, Settled\nFY 2022-23: No claims\nFY 2021-22: ₹75,000 - Water damage during monsoon, Settled"
+    },
+    {
+      "question_text": "Risk Mitigation Measures Implemented",
+      "field_name": "risk_mitigation",
+      "field_type": "radio",
+      "section": "Claims & Risk History",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Have you implemented any measures to reduce transit risks? This includes GPS tracking, approved transporter lists, route planning, security escorts, or improved packaging. Such measures can significantly reduce your premium.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Risk Mitigation Measures",
+      "field_name": "risk_mitigation_details",
+      "field_type": "textarea",
+      "section": "Claims & Risk History",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "risk_mitigation",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe all safety measures you've implemented. Include technology (GPS, locks), processes (verified transporters, defined routes), and packaging improvements. Demonstrating proactive risk management often leads to premium discounts.",
+      "placeholder": "e.g., 1) GPS tracking on all vehicles 2) Use only empaneled transporters 3) Avoid night travel for high-value goods 4) Enhanced packaging standards 5) Regular driver training"
+    },
+    {
+      "question_text": "Any Pending or Ongoing Claims?",
+      "field_name": "pending_claims",
+      "field_type": "radio",
+      "section": "Claims & Risk History",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare if you have any unsettled claims with current or previous insurers. This won't necessarily increase your premium but non-disclosure can void your policy. Transparency is crucial for valid coverage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Pending Claims",
+      "field_name": "pending_claims_details",
+      "field_type": "textarea",
+      "section": "Claims & Risk History",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "pending_claims",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide details of all pending claims including date of incident, estimated claim amount, current status, and reason for delay. Include claim numbers if available for faster verification.",
+      "placeholder": "e.g., Claim dated 15/01/2025, Amount: ₹3,50,000, Status: Under survey, Reason: Damage during transit, Claim No: 2025/MAR/1234"
+    },
+    {
+      "question_text": "Nature of Goods Transported",
+      "field_name": "goods_nature",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Describe the types of products you transport. Be specific - electronics, textiles, machinery, perishables, chemicals, etc. Different goods have different risk profiles and coverage requirements. Hazardous goods may need special coverage.",
+      "placeholder": "e.g., Consumer electronics (mobiles, laptops), Home appliances, Electronic components and spare parts"
+    },
+    {
+      "question_text": "Special Coverage Requirements or Remarks",
+      "field_name": "special_requirements",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any specific coverage needs, exclusions you want removed, or special conditions for your business. Include seasonal variations, new routes planned, or any other information that helps insurers understand your needs better.",
+      "placeholder": "e.g., Need coverage for exhibition goods, Require war risk coverage for Middle East exports, Peak season October-December with 40% higher turnover"
+    },
+    {
+      "question_text": "Previous Insurer Name (if any)",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Additional Information",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If you had STOP or marine insurance before, mention the insurance company name. This helps in getting your claims history and can expedite the quotation process.",
+      "placeholder": "e.g., New India Assurance Co. Ltd.",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Previous Policy Number (if any)",
+      "field_name": "previous_policy_number",
+      "field_type": "text",
+      "section": "Additional Information",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 100
+      },
+      "guidance_text": "If you had previous marine/STOP insurance, provide the policy number for reference. This helps verify your claims history and may qualify you for no-claim bonuses.",
+      "placeholder": "e.g., MAR/2024/1234567",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy",
+      "field_name": "previous_policy_document",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your previous year's STOP/Marine policy if available (PDF format preferred). This helps insurers understand your current coverage and offer better terms. Maximum file size 5MB.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload Claims Experience Certificate",
+      "field_name": "claims_experience_cert",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If available, upload a claims experience certificate from your previous insurer. This document validates your claims history and can help secure better premium rates for good claims experience.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload Transit/Sales Data",
+      "field_name": "transit_sales_data",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload supporting documents showing your annual transit volume or sales turnover (like audited financials, GST returns, or transit registers). This helps validate the declared turnover and ensures accurate premium calculation.",
+      "placeholder": "Choose file to upload"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.633Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

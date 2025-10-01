@@ -1,0 +1,427 @@
+{
+  "product_name": "Business Interruption Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Legal Name of Business",
+      "field_name": "business_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the exact legal name of your business as registered with the Registrar of Companies. This name should match your GST certificate and other legal documents. Accurate naming ensures proper policy issuance and claim settlement.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Business Physical Address",
+      "field_name": "physical_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete physical address where your business operations are conducted. This is the location that will be covered under the policy. Include building name/number, street, area, city, state, and PIN code for accurate risk assessment.",
+      "placeholder": "e.g., Unit 5, Infinity Tower, Sector 21, MG Road, Gurugram, Haryana - 122001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Postal/Communication Address",
+      "field_name": "postal_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": false,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter your mailing address if different from the physical address. This is where all policy documents and correspondence will be sent. Leave blank or enter 'Same as physical address' if both addresses are identical.",
+      "placeholder": "e.g., PO Box 123, Central Mumbai, Maharashtra - 400001 or 'Same as physical address'",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide the primary mobile number for insurance-related communications. This should be of the authorized person who can make decisions about the policy. We'll use this for urgent notifications and claim updates.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email_address",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the official email address for receiving policy documents, premium notices, and claim correspondence. Use a monitored business email rather than personal email to ensure important communications aren't missed.",
+      "placeholder": "e.g., insurance@abcmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Business/Nature of Operations",
+      "field_name": "business_type",
+      "field_type": "textarea",
+      "section": "Business Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe your business activities in detail including products manufactured, services provided, or goods traded. This helps insurers understand your operational risks and potential business interruption scenarios. Be specific about processes, materials used, and customer base.",
+      "placeholder": "e.g., Manufacturing of automotive spare parts including engine components and brake systems. We operate 2 production lines with 150 employees serving domestic OEMs and aftermarket dealers.",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Has any insurer ever refused to insure or renew your insurance on standard terms?",
+      "field_name": "insurance_refused",
+      "field_type": "radio",
+      "section": "Disclosure Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose if any insurance company has declined your application or refused renewal in the past. This includes being offered coverage only with special conditions or higher premiums. Honest disclosure is legally required and helps ensure valid coverage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Has any insurer ever refused to pay a claim?",
+      "field_name": "claim_refused",
+      "field_type": "radio",
+      "section": "Disclosure Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you've had any insurance claims rejected or disputed by insurers. This includes partial rejections or claims settled under protest. Full disclosure prevents policy cancellation due to non-disclosure.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Have you made any insurance claims in the last 5 years?",
+      "field_name": "previous_claims",
+      "field_type": "radio",
+      "section": "Disclosure Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Report all insurance claims filed in the past 5 years across any type of business insurance. This includes settled, pending, and withdrawn claims. Claims history helps insurers assess risk patterns and determine appropriate coverage terms.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Do you or your employees have any criminal convictions or are currently under prosecution?",
+      "field_name": "criminal_convictions",
+      "field_type": "radio",
+      "section": "Disclosure Information",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose any criminal convictions or ongoing prosecutions involving business owners, directors, or key employees. Include traffic violations except parking tickets. This information affects the insurer's risk assessment and is legally required.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "If yes to any disclosure questions above, provide full details",
+      "field_name": "disclosure_details",
+      "field_type": "textarea",
+      "section": "Disclosure Information",
+      "order_index": 11,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide comprehensive details for any 'Yes' answers above including dates, circumstances, claim amounts, and outcomes. Complete disclosure is mandatory for valid coverage. Non-disclosure or misrepresentation can void your policy when you need it most.",
+      "placeholder": "e.g., Fire claim in March 2023 for ₹25 lakhs at warehouse, fully settled. Cause was electrical short circuit, preventive measures now implemented.",
+      "conditional_logic": {
+        "show_if": {
+          "field": "insurance_refused",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Details of Current/Expiring Business Interruption Policy",
+      "field_name": "expiring_policy_details",
+      "field_type": "textarea",
+      "section": "Disclosure Information",
+      "order_index": 12,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "If you have existing business interruption coverage, provide policy number, insurer name, expiry date, and sum insured. This helps ensure continuous coverage and understand your insurance history. Leave blank if this is your first business interruption policy.",
+      "placeholder": "e.g., Policy No: BI/2024/123456 with New India Assurance, expires 31/03/2025, Sum Insured: ₹2 crores"
+    },
+    {
+      "question_text": "Do you have fire insurance coverage on Machinery and Plant?",
+      "field_name": "fire_insurance_machinery",
+      "field_type": "radio",
+      "section": "Fire Insurance Background",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Business Interruption Insurance works alongside your fire insurance policy. Indicate if your machinery and equipment are covered under fire insurance. BI claims are typically triggered by damage covered under the base fire policy.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Do you have fire insurance coverage on Stock and Stock-in-Process?",
+      "field_name": "fire_insurance_stock",
+      "field_type": "radio",
+      "section": "Fire Insurance Background",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Confirm if your inventory, raw materials, and work-in-progress are insured under fire policy. Business interruption coverage coordinates with your property insurance to cover income loss when stock damage disrupts operations.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Name(s) of Current Fire Insurance Provider(s)",
+      "field_name": "fire_insurance_providers",
+      "field_type": "text",
+      "section": "Fire Insurance Background",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "List all insurance companies providing your current fire/property insurance. Business interruption insurance is usually purchased from the same insurer as your fire policy for seamless claim coordination. Separate multiple insurers with commas.",
+      "placeholder": "e.g., ICICI Lombard, HDFC ERGO",
+      "conditional_logic": {
+        "show_if": {
+          "field": "fire_insurance_machinery",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Indemnity Period Required (in weeks)",
+      "field_name": "indemnity_period",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "min": 4,
+        "max": 104
+      },
+      "guidance_text": "The indemnity period is how long you want coverage for lost income after an insured event. Consider your worst-case recovery time including rebuilding, replacing equipment, and regaining market share. Most businesses choose 26-52 weeks, but complex operations may need longer.",
+      "placeholder": "e.g., 52",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Cover Required for Reduction in Profit (₹)",
+      "field_name": "cover_reduction_profit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Estimate your net profit loss during the indemnity period if operations stop completely. This should be your annual net profit multiplied by the indemnity period fraction. For example, if annual profit is ₹1 crore and indemnity period is 6 months, enter ₹50 lakhs.",
+      "placeholder": "e.g., 10000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Cover Required for Reduction in Revenue (₹)",
+      "field_name": "cover_reduction_revenue",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 50000000000
+      },
+      "guidance_text": "Calculate potential gross revenue loss during the indemnity period. This covers your total turnover loss and helps maintain cash flow for fixed expenses. Base this on your highest earning period to avoid underinsurance during peak business times.",
+      "placeholder": "e.g., 50000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Cover Required for Reduction in Rents (₹)",
+      "field_name": "cover_reduction_rents",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 1000000000
+      },
+      "guidance_text": "If you earn rental income from your premises (like subletting warehouse space), estimate the rental loss during interruption. Leave as 0 if you don't receive any rental income. This ensures you're compensated if tenants can't occupy damaged premises.",
+      "placeholder": "e.g., 2400000 or 0",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Cover Required for Wages - Dual Basis (₹)",
+      "field_name": "cover_wages_dual",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 20,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Dual basis wage cover protects salary costs for essential employees you must retain during interruption. Calculate wages for key staff whose expertise is critical for resuming operations. This typically covers 50-100% of wages for specified period.",
+      "placeholder": "e.g., 5000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Cover Required for Wages in Lieu of Notice (₹)",
+      "field_name": "cover_wages_notice",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 1000000000
+      },
+      "guidance_text": "This covers statutory compensation you must pay if forced to terminate employees due to business interruption. Calculate based on notice period wages as per employment laws. Helps manage workforce costs if extended closure requires downsizing.",
+      "placeholder": "e.g., 3000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Cover Required for Payroll (₹)",
+      "field_name": "cover_payroll",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Total payroll coverage combining all employee wages during interruption. This ensures you can maintain your workforce and restart quickly. Calculate your monthly payroll multiplied by the indemnity period to retain skilled employees.",
+      "placeholder": "e.g., 15000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Cover for Additional Increased Cost of Working (₹)",
+      "field_name": "cover_increased_cost",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 5000000000
+      },
+      "guidance_text": "Estimate extra expenses to minimize business interruption like renting temporary premises, overtime wages, express shipping, or outsourcing production. These costs help you maintain operations and customer relationships during recovery. Typically 10-20% of revenue cover.",
+      "placeholder": "e.g., 8000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Cover Required for Book Debts (₹)",
+      "field_name": "cover_book_debts",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Protection for outstanding customer receivables if accounting records are destroyed and debts become irrecoverable. Calculate your average accounts receivable balance. This ensures cash flow protection if you can't collect payments due to lost records.",
+      "placeholder": "e.g., 12000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Do you require Natural Disaster Cover (earthquake, flood, cyclone)?",
+      "field_name": "natural_disaster_cover",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Standard policies exclude natural catastrophes. Select 'Yes' to add coverage for business interruption caused by earthquakes, floods, cyclones, or tsunamis. Premium increases but essential if you're in disaster-prone areas. Check your area's risk zone before deciding.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Additional Information or Special Requirements",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Share any other relevant information about your business continuity plans, seasonal variations in revenue, dependency on key suppliers, or specific coverage needs. Include details about risk management measures that might reduce your premium.",
+      "placeholder": "e.g., We have backup power systems and maintain 30% production capacity at alternate location. Peak business season is October-March accounting for 70% annual revenue."
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.305Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 0
+}

@@ -1,0 +1,566 @@
+{
+  "product_name": "Electronic Equipment Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of Insured",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your organization's full legal name as registered. This name will appear on the policy and must match your GST registration and other legal documents to ensure claims are processed smoothly.",
+      "placeholder": "e.g., ABC InfoTech Private Limited"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete office address where all policy-related correspondence should be sent. Include building name, street, area, city, state, and PIN code for accurate delivery of policy documents.",
+      "placeholder": "e.g., 5th Floor, Tech Park, Bandra Kurla Complex, Mumbai, Maharashtra - 400051",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST identification number. This is required for GST input credit on premium paid and helps verify your business credentials. Ensure accuracy as incorrect GST numbers can delay policy issuance.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the name of the person responsible for this insurance who can be contacted for clarifications. This is typically the IT head, facility manager, or administrative officer familiar with your electronic equipment.",
+      "placeholder": "e.g., Suresh Sharma"
+    },
+    {
+      "question_text": "Contact Email",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide a valid email address for receiving policy documents, renewal reminders, and claim-related communications. Use an official company email that is regularly monitored to avoid missing important updates.",
+      "placeholder": "e.g., it.admin@abcinfotech.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a 10-digit mobile number for urgent communications. This number will be used for claim intimation confirmations and emergency assistance during equipment breakdowns or disasters.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from which you want insurance coverage to begin. For renewal cases, ensure this matches your expiry date to avoid coverage gaps. New policies typically start from 12:01 AM of the selected date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Electronic equipment policies are typically annual. Some insurers offer long-term policies (2-3 years) with premium discounts. Consider your equipment upgrade cycle when selecting the policy period.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Policy Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the exact address where your electronic equipment is installed and operated. If different from communication address, this is where risk assessment will be conducted. Include floor details for multi-story buildings.",
+      "placeholder": "e.g., Ground & First Floor, IT Building, Tech City, Whitefield, Bangalore - 560066",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Multiple Risk Locations?",
+      "field_name": "multiple_locations",
+      "field_type": "radio",
+      "section": "Policy Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if your electronic equipment is spread across multiple locations like branch offices, data centers, or warehouses. Multiple location coverage ensures protection regardless of where equipment is situated.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Additional Location Details",
+      "field_name": "additional_locations",
+      "field_type": "textarea",
+      "section": "Policy Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": false,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "multiple_locations",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "List all additional locations with complete addresses and approximate equipment values at each location. This helps structure the policy with appropriate location-wise sum insured and assess cumulative risks.",
+      "placeholder": "e.g., Location 2: Mumbai Office - ₹50 lakhs equipment, Location 3: Chennai Warehouse - ₹25 lakhs equipment"
+    },
+    {
+      "question_text": "Total Sum Insured for Electronic Equipment",
+      "field_name": "total_sum_insured",
+      "field_type": "number",
+      "section": "Policy Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the total current replacement value of all electronic equipment to be insured. This should be the cost to purchase new equipment of same kind and capacity, not depreciated or book value. Under-insurance can lead to proportionate claim settlements.",
+      "placeholder": "e.g., 50000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Type of Business/Industry",
+      "field_name": "business_type",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Information Technology/Software",
+        "Banking/Financial Services",
+        "Manufacturing",
+        "Healthcare/Hospital",
+        "Education Institution",
+        "Media/Broadcasting",
+        "Telecommunications",
+        "Retail/E-commerce",
+        "BPO/Call Center",
+        "Government/PSU",
+        "Hotel/Hospitality",
+        "Others"
+      ],
+      "guidance_text": "Select your primary business activity. Different industries have varying risk profiles - IT companies may have higher values of equipment, while manufacturing may have harsher operating conditions affecting premium rates.",
+      "placeholder": "Select your industry",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "business_type_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "business_type",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Electronic Equipment Usage",
+      "field_name": "equipment_usage",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Office Administration",
+        "Data Processing/Server Operations",
+        "Software Development",
+        "Manufacturing Process Control",
+        "Medical/Diagnostic",
+        "Broadcasting/Media Production",
+        "Educational/Training",
+        "Research & Development",
+        "Mixed Use"
+      ],
+      "guidance_text": "Describe the primary purpose for which electronic equipment is used. Equipment in controlled environments like offices face different risks than those in factories or medical facilities, affecting coverage terms and premium.",
+      "placeholder": "Select primary usage"
+    },
+    {
+      "question_text": "Operating Hours of Equipment",
+      "field_name": "operating_hours",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "8 Hours (Single Shift)",
+        "16 Hours (Double Shift)",
+        "24x7 Continuous Operation",
+        "Variable/Seasonal"
+      ],
+      "guidance_text": "Indicate typical daily operating hours of your electronic equipment. Continuous operation increases wear and breakdown risk but may also indicate critical systems with better maintenance. This affects risk assessment and pricing.",
+      "placeholder": "Select operating pattern"
+    },
+    {
+      "question_text": "Categories of Electronic Equipment",
+      "field_name": "equipment_categories",
+      "field_type": "multiselect",
+      "section": "Equipment Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Desktop Computers",
+        "Laptops/Notebooks",
+        "Servers",
+        "Network Equipment (Routers/Switches)",
+        "Storage Systems (SAN/NAS)",
+        "UPS/Power Backup Systems",
+        "CCTV/Security Systems",
+        "Telecom/EPABX Systems",
+        "Medical Equipment",
+        "Broadcasting Equipment",
+        "Industrial Control Systems",
+        "Testing/Measuring Instruments",
+        "Audio/Video Equipment",
+        "Printing/Scanning Equipment"
+      ],
+      "guidance_text": "Select all types of electronic equipment you want to insure. Different categories have varying risk profiles and depreciation rates. Ensure all valuable electronic assets are included to avoid gaps in coverage.",
+      "placeholder": "Select all applicable categories"
+    },
+    {
+      "question_text": "Details of High-Value Equipment (Above ₹10 Lakhs)",
+      "field_name": "high_value_equipment",
+      "field_type": "textarea",
+      "section": "Equipment Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false,
+        "minLength": 10,
+        "maxLength": 2000
+      },
+      "guidance_text": "List individual items worth more than ₹10 lakhs with make, model, serial number, and value. High-value items may need specific underwriting approval and might have sub-limits or special conditions applied.",
+      "placeholder": "e.g., IBM Power System E980 Server - Serial: 123ABC - Value: ₹85 lakhs, Cisco UCS B200 Blade Servers (5 units) - Value: ₹60 lakhs"
+    },
+    {
+      "question_text": "Age of Equipment (Predominant)",
+      "field_name": "equipment_age",
+      "field_type": "select",
+      "section": "Equipment Details",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Less than 2 years",
+        "2-5 years",
+        "5-8 years",
+        "8-10 years",
+        "Mixed Ages",
+        "More than 10 years"
+      ],
+      "guidance_text": "Indicate the average age of majority of your electronic equipment. Newer equipment has lower breakdown risk but higher values. Equipment over 10 years may have limited coverage or higher excess. Consider your refresh cycle.",
+      "placeholder": "Select predominant age range"
+    },
+    {
+      "question_text": "Is Equipment Under Warranty/AMC?",
+      "field_name": "warranty_amc_status",
+      "field_type": "select",
+      "section": "Equipment Details",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "All Under Warranty",
+        "All Under AMC",
+        "Partially Under Warranty/AMC",
+        "No Warranty/AMC"
+      ],
+      "guidance_text": "Equipment under warranty or Annual Maintenance Contract (AMC) indicates better maintenance and support, leading to favorable premium rates. Insurance covers risks not included in warranty/AMC like theft, fire, or accidental damage.",
+      "placeholder": "Select warranty/AMC status"
+    },
+    {
+      "question_text": "Do You Have Existing Electronic Equipment Insurance?",
+      "field_name": "existing_insurance",
+      "field_type": "radio",
+      "section": "Existing Policy Details",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you currently have or previously had electronic equipment insurance. Continuous coverage history demonstrates risk awareness and can help negotiate better terms. New buyers may face different terms.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Current Insurer Name",
+      "field_name": "current_insurer",
+      "field_type": "text",
+      "section": "Existing Policy Details",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 100
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_insurance",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide the name of your current insurance company. This helps in policy porting and ensures continuity benefits like no-claim bonus or waived waiting periods are transferred to the new policy.",
+      "placeholder": "e.g., New India Assurance Company Ltd"
+    },
+    {
+      "question_text": "Current Policy Expiry Date",
+      "field_name": "current_policy_expiry",
+      "field_type": "date",
+      "section": "Existing Policy Details",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_insurance",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter your existing policy expiry date to ensure seamless renewal without break in coverage. Gap in coverage may result in loss of continuity benefits and potential waiting periods for certain perils.",
+      "placeholder": "e.g., 31/03/2025"
+    },
+    {
+      "question_text": "Any Claims in Last 3 Years?",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Claims Experience",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare any insurance claims made for electronic equipment in the past 3 years. Claims history affects premium and terms but non-disclosure can lead to policy cancellation. No-claim history typically earns discounts.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Previous Claims",
+      "field_name": "claims_details",
+      "field_type": "textarea",
+      "section": "Claims Experience",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "minLength": 20,
+        "maxLength": 1500
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide details of each claim including date, cause of loss, equipment affected, claim amount, and preventive measures taken. Demonstrating improved risk management after claims can help maintain favorable terms.",
+      "placeholder": "e.g., June 2023 - Power surge damaged 5 computers, Claim: ₹2.5 lakhs, Settled: ₹2.2 lakhs. Installed voltage stabilizers afterward."
+    },
+    {
+      "question_text": "Coverage Extensions Required",
+      "field_name": "coverage_extensions",
+      "field_type": "multiselect",
+      "section": "Coverage & Add-Ons",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Portability Cover (Laptops/Portable Equipment)",
+        "Increased Cost of Working",
+        "Reinstatement Value Basis",
+        "Terrorism Cover",
+        "Express Freight/Air Freight",
+        "Newly Acquired Equipment (Automatic Cover)",
+        "Data Media and Restoration Costs",
+        "Debris Removal Expenses",
+        "Third Party Liability"
+      ],
+      "guidance_text": "Select additional coverages based on your specific needs. Portability cover is essential for laptops, terrorism cover for high-risk areas, and data restoration for critical systems. Each extension increases premium but provides comprehensive protection.",
+      "placeholder": "Select desired add-on covers"
+    },
+    {
+      "question_text": "Deductible/Excess Preference",
+      "field_name": "deductible_preference",
+      "field_type": "number",
+      "section": "Coverage & Add-Ons",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Deductible is the amount you pay per claim before insurance applies. Higher deductibles reduce premium significantly but increase your out-of-pocket expense during claims. Choose based on your risk appetite and claim frequency. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible preference",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Security and Safety Measures",
+      "field_name": "safety_measures",
+      "field_type": "multiselect",
+      "section": "Risk Management",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "24x7 Security Guards",
+        "CCTV Surveillance",
+        "Access Control Systems",
+        "Fire Detection and Suppression",
+        "UPS/Power Backup",
+        "Voltage Stabilizers",
+        "Air Conditioning/Climate Control",
+        "Anti-virus/Cybersecurity Software",
+        "Regular Data Backup",
+        "Burglar Alarm System",
+        "Water Leakage Detection"
+      ],
+      "guidance_text": "Select all safety measures implemented at your premises. Better security and preventive measures reduce risk and can earn premium discounts. Insurers may mandate certain measures for high-value equipment or specific locations.",
+      "placeholder": "Select all applicable measures"
+    },
+    {
+      "question_text": "Upload Equipment List/Asset Register",
+      "field_name": "equipment_list_upload",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your detailed equipment inventory in Excel format with columns for equipment type, make/model, serial number, purchase date, and current value. This helps accurate sum insured calculation and faster claim settlement.",
+      "placeholder": "Upload Excel/CSV file"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy",
+      "field_name": "previous_policy_upload",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If renewing or porting, upload your expiring policy document including schedule and endorsements. This ensures continuity of coverage terms and helps identify any gaps that need addressing in the new policy.",
+      "placeholder": "Upload PDF of existing policy"
+    },
+    {
+      "question_text": "Additional Information or Special Requirements",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Mention any specific requirements, upcoming equipment additions, planned relocations, or unique risk factors not covered above. Include any specific terms from existing policy you want retained or improved.",
+      "placeholder": "e.g., Planning to add a new data center in Q3 2025, need provision for mid-term inclusion"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.428Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

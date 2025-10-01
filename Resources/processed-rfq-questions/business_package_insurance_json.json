@@ -1,0 +1,1171 @@
+{
+  "product_name": "Business Package Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of the Insured Business",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the complete legal name of your business as registered with government authorities. This should match the name on your GST certificate, PAN card, and other official documents. Accurate business name ensures proper policy issuance and claim processing.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd"
+    },
+    {
+      "question_text": "Type of Business Entity",
+      "field_name": "entity_type",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Sole Proprietorship",
+        "Partnership Firm",
+        "Private Limited Company",
+        "Limited Liability Partnership (LLP)",
+        "Public Limited Company",
+        "One Person Company (OPC)",
+        "Others"
+      ],
+      "guidance_text": "Select your business structure as legally registered. The entity type affects your insurance requirements, liability coverage, and premium calculation. Different business structures have different risk profiles and legal obligations.",
+      "placeholder": "Select your entity type"
+    },
+    {
+      "question_text": "Please Specify Entity Type",
+      "field_name": "entity_type_other",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "entity_type",
+          "value": "Others"
+        }
+      },
+      "guidance_text": "Specify your business entity type if it's not listed above. Examples include Section 8 Company, Trust, Society, or Government Entity.",
+      "placeholder": "e.g., Section 8 Company"
+    },
+    {
+      "question_text": "Nature of Business Operations",
+      "field_name": "business_nature",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Corporate Office",
+        "Retail Store",
+        "Medical Clinic",
+        "Restaurant/Cafe",
+        "Professional Services",
+        "IT/Software Company",
+        "Manufacturing Unit",
+        "Trading Business",
+        "Educational Institution",
+        "Others"
+      ],
+      "guidance_text": "Select the primary nature of your business operations. This helps insurers understand your risk exposure - for instance, a manufacturing unit faces different risks than a corporate office. Your business type directly impacts coverage requirements and premium rates.",
+      "placeholder": "Select business type"
+    },
+    {
+      "question_text": "Specify Business Nature",
+      "field_name": "business_nature_other",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "business_nature",
+          "value": "Others"
+        }
+      },
+      "guidance_text": "Describe your specific business activity if not listed above. Be detailed about what products or services you provide.",
+      "placeholder": "e.g., Pharmaceutical Distribution"
+    },
+    {
+      "question_text": "Registered Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete registered office address where all official insurance correspondence will be sent. Include building name/number, street, locality, city, state, and pincode. This address will appear on your policy documents.",
+      "placeholder": "e.g., 401, Shree Complex, Andheri Kurla Road, Andheri East, Mumbai, Maharashtra - 400069",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Location of Business Premises to be Insured",
+      "field_name": "business_location",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete address of the business premises you want to insure. If different from registered address, this is the actual location where your business operations occur. Include landmarks for easier identification during risk inspection.",
+      "placeholder": "e.g., Plot No. 25, Phase 2, MIDC Industrial Area, Pune, Maharashtra - 411018"
+    },
+    {
+      "question_text": "Year Business Established",
+      "field_name": "business_since",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "min": 1850,
+        "max": 2025
+      },
+      "guidance_text": "Enter the year your business was established or incorporated. Insurers consider business age as a stability factor - established businesses often have better risk profiles and may qualify for better premium rates.",
+      "placeholder": "e.g., 2015",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Primary Contact Person Name",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Name of the authorized person who will handle all insurance-related communications and decisions. This should be someone with decision-making authority like the owner, director, or senior manager.",
+      "placeholder": "e.g., Rajesh Kumar"
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide a valid business email address for receiving policy documents, renewal reminders, and important communications. Ensure this email is regularly monitored to avoid missing critical insurance updates.",
+      "placeholder": "e.g., contact@abcmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a 10-digit Indian mobile number for urgent communications and OTP verifications. This number will be used for claim intimation and emergency contact purposes.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Registration Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 12,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Your 15-character GST number if applicable. This helps verify your business details and ensures GST benefits on insurance premium. Format: First 2 digits are state code, next 10 characters are PAN, followed by entity code.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PAN Number",
+      "field_name": "pan_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Your business PAN (Permanent Account Number) is mandatory for insurance purchase. This 10-character alphanumeric identifier is used for tax purposes and identity verification.",
+      "placeholder": "e.g., AABCU9603R",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from which you want insurance coverage to begin. For renewals, this should ideally be the day after your current policy expires to avoid coverage gaps. For new policies, coverage typically starts from midnight of the selected date.",
+      "placeholder": "Select start date",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Business Package policies are typically annual (12 months). The end date should be one year from the start date. Some insurers may offer multi-year policies with discounts.",
+      "placeholder": "Select end date",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Is this a New Policy or Renewal?",
+      "field_name": "policy_type",
+      "field_type": "radio",
+      "section": "Policy Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Fresh/New Policy",
+        "Renewal"
+      ],
+      "guidance_text": "Select 'Fresh' if you're buying business insurance for the first time or after a gap. Select 'Renewal' if you currently have an active or recently expired business insurance policy. Renewals often get continuity benefits and No Claim Bonus.",
+      "placeholder": "Select policy type"
+    },
+    {
+      "question_text": "Previous Insurance Company Name",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Policy Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "policy_type",
+          "value": "Renewal"
+        }
+      },
+      "guidance_text": "Name of your current or most recent insurance company. This information helps in policy portability and claiming continuity benefits. Accurate information ensures smooth transfer of No Claim Bonus if applicable.",
+      "placeholder": "e.g., ICICI Lombard General Insurance",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Previous Policy Expiry Date",
+      "field_name": "previous_policy_expiry",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "policy_type",
+          "value": "Renewal"
+        }
+      },
+      "guidance_text": "The expiry date of your current or most recent business insurance policy. Timely renewal (before or within 30 days of expiry) helps maintain continuity benefits and avoid re-inspection requirements.",
+      "placeholder": "Select expiry date"
+    },
+    {
+      "question_text": "Any Claims in Last 3 Years?",
+      "field_name": "has_claims",
+      "field_type": "radio",
+      "section": "Policy Details",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare if you've made any insurance claims in the past 3 years on any business insurance policy. Claims history affects your risk profile and premium. Honest disclosure is legally required and prevents claim rejection later.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Claims Details",
+      "field_name": "claims_details",
+      "field_type": "textarea",
+      "section": "Policy Details",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "has_claims",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide details of each claim: date of loss, type of claim (fire, theft, etc.), claim amount, and settlement status. Include policy number if available. Complete disclosure helps insurers assess risk accurately.",
+      "placeholder": "e.g., Fire claim on 15/03/2023, Claim amount: ₹5,00,000, Settled: ₹4,50,000, Policy No: 123456789"
+    },
+    {
+      "question_text": "Building Coverage Required?",
+      "field_name": "coverage_building",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select if you own the building and want coverage for the structure. This covers damage to walls, roof, foundation, and permanent fixtures from risks like fire, natural calamities, and other perils. Skip if you're renting the premises.",
+      "placeholder": "Check if building coverage needed"
+    },
+    {
+      "question_text": "Building Sum Insured (₹)",
+      "field_name": "building_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_building",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the current reconstruction cost of your building, not the market value or purchase price. This should be the amount needed to rebuild the structure from scratch at today's construction costs. Under-insuring can lead to proportionate claim settlement.",
+      "placeholder": "e.g., 10000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Office Furniture, Fixtures & Equipment Coverage?",
+      "field_name": "coverage_furniture",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select to cover office furniture, fixtures, non-electronic equipment, and fittings. This includes desks, chairs, cabinets, shelving, partitions, and general office equipment. Essential for protecting your workspace investments.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Furniture & Fixtures Sum Insured (₹)",
+      "field_name": "furniture_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true,
+        "min": 50000,
+        "max": 100000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_furniture",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the total current replacement value of all furniture, fixtures, and non-electronic equipment. Calculate based on what it would cost to buy similar new items today, not depreciated or second-hand value.",
+      "placeholder": "e.g., 2500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Electronic Equipment Coverage?",
+      "field_name": "coverage_electronics",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select to cover computers, servers, printers, UPS systems, air conditioners, and other electronic equipment. This provides comprehensive coverage including breakdown risks beyond standard fire policy. Critical for businesses dependent on technology.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Electronic Equipment Sum Insured (₹)",
+      "field_name": "electronics_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true,
+        "min": 50000,
+        "max": 100000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_electronics",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the total replacement value of all electronic and electrical equipment including computers, servers, AC units, and specialized electronic machinery. Include installation costs where applicable.",
+      "placeholder": "e.g., 3500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Burglary & Theft Coverage?",
+      "field_name": "coverage_burglary",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select to protect against losses from break-ins, theft, or burglary. This covers stolen goods and damage to premises during forced entry. Important for businesses with valuable inventory, equipment, or those in high-crime areas.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Burglary Coverage Sum Insured (₹)",
+      "field_name": "burglary_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true,
+        "min": 50000,
+        "max": 100000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_burglary",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the maximum value of goods, equipment, and cash that could be stolen in a single incident. Consider your highest inventory levels and valuable items on premises. This becomes your claim limit for theft losses.",
+      "placeholder": "e.g., 1500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Money Insurance Coverage (Cash in Safe/Transit)?",
+      "field_name": "coverage_money",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select if you handle significant cash in your business. This covers cash kept in safes, during business hours, and while being transported to/from banks. Essential for cash-intensive businesses like retail, restaurants, or collection agencies.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Money Insurance Sum Insured (₹)",
+      "field_name": "money_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true,
+        "min": 25000,
+        "max": 10000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_money",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the maximum cash amount you handle at any time - in safe, during business, or in transit. Consider your peak business periods and largest single-day collections. Separate limits apply for safe and transit.",
+      "placeholder": "e.g., 500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Plate Glass Coverage?",
+      "field_name": "coverage_glass",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select if you have expensive glass installations like storefronts, display windows, glass doors, or decorative glass panels. Covers accidental breakage from any cause except war and nuclear risks. Important for retail stores and showrooms.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Plate Glass Sum Insured (₹)",
+      "field_name": "glass_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 32,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 5000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_glass",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the total replacement cost of all glass installations including material and fitting charges. Consider special glasses like toughened, laminated, or designer glass which are expensive to replace.",
+      "placeholder": "e.g., 250000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Fidelity Guarantee Coverage (Employee Dishonesty)?",
+      "field_name": "coverage_fidelity",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select to protect against financial losses from employee fraud, embezzlement, or dishonesty. This covers losses from employees handling cash, inventory, or having financial authority. Important for businesses with multiple employees handling money.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Fidelity Guarantee Sum Insured (₹)",
+      "field_name": "fidelity_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 34,
+      "validation_rules": {
+        "required": true,
+        "min": 50000,
+        "max": 10000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_fidelity",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the maximum potential loss from employee dishonesty. Consider the highest amount any single employee or group could misappropriate. Coverage is usually position-based, covering specific roles with financial access.",
+      "placeholder": "e.g., 1000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Machinery Breakdown Coverage?",
+      "field_name": "coverage_machinery",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select if you have critical machinery or equipment whose breakdown would disrupt operations. Covers sudden and unforeseen physical damage to machinery including repair costs. Essential for manufacturing units and businesses dependent on specific equipment.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Machinery Breakdown Sum Insured (₹)",
+      "field_name": "machinery_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 36,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 500000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_machinery",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the total replacement/reinstatement value of all machinery to be covered. Include installation and commissioning costs. For imported machinery, consider current import costs and duties.",
+      "placeholder": "e.g., 15000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Portable Equipment Coverage?",
+      "field_name": "coverage_portable",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select to cover laptops, tablets, cameras, survey equipment, and other portable devices used outside office premises. Provides all-risk coverage including accidental damage, theft, and loss. Important for businesses with field staff.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Portable Equipment Sum Insured (₹)",
+      "field_name": "portable_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 38,
+      "validation_rules": {
+        "required": true,
+        "min": 25000,
+        "max": 10000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_portable",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the total value of all portable equipment regularly taken outside office premises. List high-value items separately in remarks. Consider replacement cost of latest models as technology depreciates quickly.",
+      "placeholder": "e.g., 750000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Personal Accident Coverage for Owner/Staff?",
+      "field_name": "coverage_personal_accident",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 39,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select to provide accident coverage for business owners and employees. Covers death and disability due to accidents, providing financial protection to affected individuals or families. Shows care for employee welfare and can be a valuable benefit.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Personal Accident Sum Insured Per Person (₹)",
+      "field_name": "personal_accident_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 40,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 50000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_personal_accident",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the coverage amount per person for accidental death or permanent disability. Common coverage is 24-60 months' salary or ₹10-50 lakhs. Higher covers may be needed for key persons whose loss would significantly impact business.",
+      "placeholder": "e.g., 2500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Number of Persons for Personal Accident Cover",
+      "field_name": "personal_accident_count",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 41,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_personal_accident",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the total number of people to be covered under personal accident insurance. Include owners, key employees, or all staff as per your requirement. Named or unnamed basis coverage available.",
+      "placeholder": "e.g., 25",
+      "format": "integer"
+    },
+    {
+      "question_text": "Public Liability Coverage?",
+      "field_name": "coverage_public_liability",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 42,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select to protect against legal liability for third-party bodily injury or property damage arising from your business operations. Covers legal costs and compensation. Essential for businesses with customer footfall or public interaction.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Public Liability Sum Insured (₹)",
+      "field_name": "public_liability_sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 43,
+      "validation_rules": {
+        "required": true,
+        "min": 500000,
+        "max": 500000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_public_liability",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the limit of liability per incident and aggregate for the policy period. Consider worst-case scenarios like multiple injuries or major property damage. Higher limits recommended for high-footfall businesses.",
+      "placeholder": "e.g., 10000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Workmen Compensation Coverage?",
+      "field_name": "coverage_workmen_compensation",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 44,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select if you have employees to cover your legal liability under the Workmen Compensation Act. Mandatory for businesses with workers engaged in manual labor or hazardous activities. Covers medical expenses and compensation for work-related injuries.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Number of Employees for Workmen Compensation",
+      "field_name": "workmen_compensation_count",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 45,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 10000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_workmen_compensation",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the total number of employees to be covered under Workmen Compensation. Include all workers, skilled and unskilled, permanent and contract. Premium depends on wages and risk category of work.",
+      "placeholder": "e.g., 50",
+      "format": "integer"
+    },
+    {
+      "question_text": "Total Annual Wages for Workmen Compensation (₹)",
+      "field_name": "workmen_compensation_wages",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 46,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 1000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_workmen_compensation",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter the total annual wages/salary of all employees to be covered. This forms the basis for premium calculation. Include basic salary, allowances, and overtime but exclude bonuses and ex-gratia payments.",
+      "placeholder": "e.g., 12000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Business Interruption/Loss of Profit Coverage?",
+      "field_name": "coverage_business_interruption",
+      "field_type": "checkbox",
+      "section": "Coverage Requirements",
+      "order_index": 47,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Select to cover loss of income and increased costs when business operations are disrupted by an insured peril. Covers ongoing expenses and lost profits during restoration period. Critical for businesses with high fixed costs or those that cannot operate from alternative locations.",
+      "placeholder": "Check if coverage needed"
+    },
+    {
+      "question_text": "Annual Gross Profit for Business Interruption (₹)",
+      "field_name": "business_interruption_gross_profit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 48,
+      "validation_rules": {
+        "required": true,
+        "min": 500000,
+        "max": 10000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_business_interruption",
+          "value": true
+        }
+      },
+      "guidance_text": "Enter your annual gross profit (turnover minus variable costs that would cease if operations stopped). This determines the maximum compensation for lost profits. Review your P&L statement or consult your accountant for accurate calculation.",
+      "placeholder": "e.g., 25000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Indemnity Period for Business Interruption (Months)",
+      "field_name": "business_interruption_period",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 49,
+      "validation_rules": {
+        "required": true,
+        "min": 3,
+        "max": 24
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_business_interruption",
+          "value": true
+        }
+      },
+      "guidance_text": "Select the maximum time (in months) you estimate would be needed to fully restore business operations after a major loss. Consider rebuilding time, equipment procurement, and customer recovery. Standard periods are 6, 12, or 24 months.",
+      "placeholder": "e.g., 12",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Is the Premises Owned or Rented?",
+      "field_name": "premises_ownership",
+      "field_type": "radio",
+      "section": "Risk Assessment Details",
+      "order_index": 50,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Owned",
+        "Rented",
+        "Leased"
+      ],
+      "guidance_text": "Specify your legal interest in the premises. Owned premises need building coverage while rented/leased premises typically need only contents coverage. This affects your insurable interest and coverage requirements.",
+      "placeholder": "Select ownership status"
+    },
+    {
+      "question_text": "Age of Building/Premises (Years)",
+      "field_name": "building_age",
+      "field_type": "number",
+      "section": "Risk Assessment Details",
+      "order_index": 51,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 200
+      },
+      "guidance_text": "Enter the age of the building in years since construction. Older buildings may have higher risk due to aging electrical systems, plumbing, and structural issues. Buildings over 30 years may need additional inspection.",
+      "placeholder": "e.g., 15",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Floor of Business Operation",
+      "field_name": "operation_floor",
+      "field_type": "select",
+      "section": "Risk Assessment Details",
+      "order_index": 52,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Basement",
+        "Ground Floor",
+        "1st Floor",
+        "2nd Floor",
+        "3rd Floor",
+        "4th Floor",
+        "5th Floor",
+        "6th Floor or Above",
+        "Multiple Floors"
+      ],
+      "guidance_text": "Select the primary floor where your business operates. Ground floor businesses face different risks (theft, flooding) than upper floors (fire evacuation challenges). Basement operations have unique flood and ventilation risks.",
+      "placeholder": "Select floor"
+    },
+    {
+      "question_text": "Construction Type of Building",
+      "field_name": "construction_type",
+      "field_type": "select",
+      "section": "Risk Assessment Details",
+      "order_index": 53,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Pucca/RCC (Reinforced Concrete)",
+        "Semi-Pucca (Mixed Construction)",
+        "Kutcha (Temporary Materials)",
+        "Steel Structure",
+        "Prefabricated Structure"
+      ],
+      "guidance_text": "Select the primary construction material of your building. RCC structures have better fire resistance and lower premiums. Kutcha or temporary constructions face higher risks and premiums. This significantly impacts your insurance rates.",
+      "placeholder": "Select construction type"
+    },
+    {
+      "question_text": "Fire Safety Equipment Available",
+      "field_name": "fire_safety_equipment",
+      "field_type": "multiselect",
+      "section": "Risk Assessment Details",
+      "order_index": 54,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Fire Extinguishers",
+        "Fire Hydrant System",
+        "Automatic Sprinkler System",
+        "Smoke Detectors",
+        "Fire Alarm System",
+        "Emergency Exit Signs",
+        "Fire Blankets",
+        "Water Hose Reels",
+        "None Available"
+      ],
+      "guidance_text": "Select all fire safety equipment installed at your premises. Better fire protection systems can reduce premium by 5-15%. Regular maintenance and certification of these systems is important for claims.",
+      "placeholder": "Select all applicable"
+    },
+    {
+      "question_text": "24x7 Security Arrangements Available?",
+      "field_name": "security_24x7",
+      "field_type": "radio",
+      "section": "Risk Assessment Details",
+      "order_index": 55,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you have round-the-clock security guards or surveillance. 24x7 security reduces theft and vandalism risks, potentially lowering premiums. Include electronic surveillance systems if monitored continuously.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Type of Security Arrangements",
+      "field_name": "security_type",
+      "field_type": "multiselect",
+      "section": "Risk Assessment Details",
+      "order_index": 56,
+      "validation_rules": {
+        "required": true
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "security_24x7",
+          "value": "Yes"
+        }
+      },
+      "options": [
+        "Security Guards",
+        "CCTV Cameras",
+        "Burglar Alarm System",
+        "Access Control System",
+        "Motion Sensors",
+        "Security Agency Contract",
+        "Watchman/Chowkidar"
+      ],
+      "guidance_text": "Select all security measures in place. Multiple security layers demonstrate risk consciousness and can qualify for premium discounts. Ensure systems are functional and maintained.",
+      "placeholder": "Select all applicable"
+    },
+    {
+      "question_text": "Distance to Nearest Fire Station (KM)",
+      "field_name": "fire_station_distance",
+      "field_type": "number",
+      "section": "Risk Assessment Details",
+      "order_index": 57,
+      "validation_rules": {
+        "required": true,
+        "min": 0.1,
+        "max": 100
+      },
+      "guidance_text": "Enter the approximate distance in kilometers to the nearest fire station. Closer proximity (under 5 KM) means faster response times and potentially lower damage in fire incidents. This affects your fire risk rating.",
+      "placeholder": "e.g., 3.5",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Distance to Nearest Police Station (KM)",
+      "field_name": "police_station_distance",
+      "field_type": "number",
+      "section": "Risk Assessment Details",
+      "order_index": 58,
+      "validation_rules": {
+        "required": true,
+        "min": 0.1,
+        "max": 100
+      },
+      "guidance_text": "Enter the approximate distance in kilometers to the nearest police station. Closer proximity ensures quicker response to theft, burglary, or riot situations. Areas with good police presence have lower crime-related risks.",
+      "placeholder": "e.g., 2.0",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Is the area prone to flooding?",
+      "field_name": "flood_prone",
+      "field_type": "radio",
+      "section": "Risk Assessment Details",
+      "order_index": 59,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if your business location has experienced flooding or is in a flood-prone zone. Flood-prone areas may need additional STFI (Storm, Tempest, Flood, Inundation) coverage with higher premiums. Check local municipal flood maps if unsure.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Annual Turnover of Business (₹)",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 60,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter your total annual business turnover/revenue for the last financial year. This helps insurers understand your business size and calculate appropriate coverage limits. Use audited figures from your financial statements for accuracy.",
+      "placeholder": "e.g., 50000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Total Number of Employees",
+      "field_name": "total_employees",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 61,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100000
+      },
+      "guidance_text": "Enter the total number of employees including full-time, part-time, and contract workers. Employee count affects liability risks and helps determine appropriate coverage for workmen compensation and personal accident.",
+      "placeholder": "e.g., 45",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy",
+      "field_name": "previous_policy_document",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 62,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "policy_type",
+          "value": "Renewal"
+        }
+      },
+      "guidance_text": "Upload your current/previous year's insurance policy document (PDF preferred). This helps insurers understand your existing coverage and ensure continuity. Include all pages including schedules and endorsements.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload Claims History (if any)",
+      "field_name": "claims_history_document",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 63,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "has_claims",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Upload documentation of previous claims including claim forms, settlement letters, or discharge vouchers. Complete claims history helps in accurate risk assessment and faster processing.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload Financial Statements",
+      "field_name": "financial_statements",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 64,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your latest audited financial statements or P&L statement. Required for high sum insured values and business interruption coverage. Helps validate declared values and business metrics.",
+      "placeholder": "Choose file to upload",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Any Additional Information or Special Requirements",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 65,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Share any additional information about your business, specific risks, special coverage requirements, or clarifications. Mention seasonal business variations, expansion plans, or unique business aspects that insurers should consider.",
+      "placeholder": "e.g., We operate seasonal business with 70% revenue during October-March. Planning to add new manufacturing unit next quarter..."
+    },
+    {
+      "question_text": "Declaration and Consent",
+      "field_name": "declaration_consent",
+      "field_type": "checkbox",
+      "section": "Additional Information",
+      "order_index": 66,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "By checking this box, you declare that all information provided is true and complete to the best of your knowledge. You understand that any misrepresentation or non-disclosure may result in claim rejection or policy cancellation.",
+      "placeholder": "I agree to the declaration"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.312Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 14
+}

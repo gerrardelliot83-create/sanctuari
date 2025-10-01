@@ -1,0 +1,513 @@
+{
+  "product_name": "Group Personal Accident Insurance",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Legal Name of Organization",
+      "field_name": "organization_legal_name",
+      "field_type": "text",
+      "section": "Organization Details",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the exact legal name of your company as registered with ROC (Registrar of Companies). This should match the name on your GST certificate and PAN card. The insurer will verify this against official records.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd"
+    },
+    {
+      "question_text": "Registered & Communication Address",
+      "field_name": "registered_address",
+      "field_type": "textarea",
+      "section": "Organization Details",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your company's complete registered office address including building name, street, area, city, state and pincode. This will be used for all official correspondence and policy documentation. Ensure this matches your GST registration address.",
+      "placeholder": "e.g., 301, Lotus Business Park, Andheri-Kurla Road, Andheri East, Mumbai, Maharashtra - 400059",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business / Services Provided",
+      "field_name": "business_nature",
+      "field_type": "select",
+      "section": "Organization Details",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing",
+        "IT Services",
+        "Trading",
+        "Healthcare",
+        "Education",
+        "Construction",
+        "Transportation & Logistics",
+        "Hospitality",
+        "Financial Services",
+        "Retail",
+        "Consulting",
+        "Other Services"
+      ],
+      "guidance_text": "Select your primary business activity from the dropdown. This helps insurers assess occupational hazards and risk levels. For example, manufacturing businesses typically have higher accident risks than IT services, which affects your premium rates.",
+      "placeholder": "e.g., Manufacturing"
+    },
+    {
+      "question_text": "Contact Person (Name & Designation)",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Organization Details",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the name and designation of the authorized person who will handle this insurance policy. This person will receive all policy-related communications and be responsible for claims coordination. Typically, this is the HR Head, Admin Manager, or Finance Head.",
+      "placeholder": "e.g., Rajesh Kumar, HR Manager"
+    },
+    {
+      "question_text": "Email ID",
+      "field_name": "email_id",
+      "field_type": "text",
+      "section": "Organization Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the official email address where you want to receive policy documents, renewal reminders, and claim-related communications. Use a company email address rather than personal email for better tracking and continuity.",
+      "placeholder": "e.g., hr@abcmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Organization Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide an active Indian mobile number for urgent communications and SMS alerts about policy status and claims. This should be the contact person's direct number for quick response during emergencies.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Total Employees on Payroll",
+      "field_name": "total_employees",
+      "field_type": "number",
+      "section": "Employee Coverage & Classification",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100000
+      },
+      "guidance_text": "Enter the total number of employees currently on your company's payroll including permanent, contractual, and temporary staff. This gives insurers context about your organization size and helps in risk assessment.",
+      "placeholder": "e.g., 150",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Number of Employees to be Insured",
+      "field_name": "employees_to_insure",
+      "field_type": "number",
+      "section": "Employee Coverage & Classification",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "min": 10,
+        "max": 100000
+      },
+      "guidance_text": "Specify how many employees you want to cover under this Group Personal Accident policy. Most insurers require a minimum of 10 employees for group policies. You can choose to cover all employees or specific categories like permanent staff only.",
+      "placeholder": "e.g., 125",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Sum Insured Structure",
+      "field_name": "sum_insured_structure",
+      "field_type": "number",
+      "section": "Employee Coverage & Classification",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Choose how you want to structure the sum insured (coverage amount) for employees. 'Multiple of salary' is most common where coverage equals 1-3 times annual salary. 'Uniform' means same amount for all. 'Grade-wise' provides different coverage based on employee seniority. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "e.g., Multiple of salary (2x)",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Accidental Death (AD) Cover Required?",
+      "field_name": "accidental_death_cover",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This is the basic coverage that pays 100% of sum insured to the nominee if an employee dies due to an accident. This is typically mandatory in group personal accident policies and provides crucial financial support to the deceased's family.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Permanent Total Disability (PTD) Cover Required?",
+      "field_name": "permanent_total_disability_cover",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "PTD coverage pays 100% of sum insured if an accident causes complete and permanent disability preventing the employee from working. Examples include loss of both eyes, both hands, or complete paralysis. This provides financial security when earning capacity is lost.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Permanent Partial Disability (PPD) Cover Required?",
+      "field_name": "permanent_partial_disability_cover",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "PPD coverage pays a percentage of sum insured based on the degree of disability from an accident. For example, loss of one hand might pay 50%, loss of thumb 20%. This helps employees cope with reduced earning capacity due to partial disabilities.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Temporary Total Disability (TTD) Weekly Benefit Required?",
+      "field_name": "temporary_total_disability_cover",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "TTD provides weekly compensation (typically 1% of sum insured per week) when an employee is temporarily unable to work due to accident injuries. Payment continues until recovery or up to a maximum period (usually 100 weeks). This helps replace lost income during recovery.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Accidental Medical Expenses Coverage Required?",
+      "field_name": "accidental_medical_expenses",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers actual medical expenses for treating accident injuries including hospitalization (IPD) and outpatient (OPD) treatment. Coverage is usually limited to a percentage of sum insured (typically 10-20%). This reduces out-of-pocket medical expenses after accidents.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Hospital Cash Allowance Required?",
+      "field_name": "hospital_cash_allowance",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Provides daily cash benefit (typically ₹500-5000 per day) for each day of hospitalization due to accident. This helps cover incidental expenses like attendant costs, food, and transport that aren't covered under medical reimbursement.",
+      "placeholder": "No"
+    },
+    {
+      "question_text": "Repatriation of Mortal Remains Cover Required?",
+      "field_name": "repatriation_mortal_remains",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers the cost of transporting the deceased employee's body to their hometown if death occurs away from home. Particularly important if employees travel frequently or work in remote locations. Usually covers actual expenses up to a specified limit.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Education Grant for Dependent Children Required?",
+      "field_name": "education_grant",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Provides education support (typically 10% of sum insured per child, max 2 children) if the insured employee dies or becomes permanently disabled. This ensures children's education continues despite loss of family income. Payment is usually made annually for a specified period.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Broken Bones / Fracture Benefit Required?",
+      "field_name": "broken_bones_benefit",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Pays a fixed amount or percentage of sum insured for fractures caused by accidents. Different bones have different payout percentages (e.g., femur 10%, rib 2%). This provides immediate financial relief for one of the most common accident injuries.",
+      "placeholder": "No"
+    },
+    {
+      "question_text": "Burns / Cosmetic Surgery Benefit Required?",
+      "field_name": "burns_benefit",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers treatment costs for burn injuries and necessary cosmetic surgery after accidents. Payout depends on the degree and extent of burns. Important for industries with fire/chemical exposure risks. Helps restore appearance and confidence after disfiguring injuries.",
+      "placeholder": "No"
+    },
+    {
+      "question_text": "Ambulance Charges Cover Required?",
+      "field_name": "ambulance_charges",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 20,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Reimburses actual ambulance costs for transporting injured employees to hospital after an accident. Usually has a per-incident limit (₹2000-10000). Essential coverage as ambulance costs can be significant, especially for air ambulance in remote areas.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Funeral Expenses Cover Required?",
+      "field_name": "funeral_expenses",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Provides immediate lump sum payment (typically ₹25000-100000) to cover funeral costs if an employee dies due to accident. This helps the family manage immediate expenses without financial stress during their time of grief.",
+      "placeholder": "No"
+    },
+    {
+      "question_text": "Terrorism Cover Required?",
+      "field_name": "terrorism_cover",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Extends coverage to include accidents caused by terrorist activities, which are typically excluded in standard policies. Important for businesses in high-risk areas or cities. Small additional premium provides protection against an increasingly relevant risk.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "24x7 Worldwide Coverage Required?",
+      "field_name": "worldwide_coverage",
+      "field_type": "radio",
+      "section": "Coverage Options",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Extends accident coverage beyond office hours and India's borders to provide 24-hour protection worldwide. Essential if employees travel internationally or you want round-the-clock coverage including personal time. Standard policies may only cover work hours and locations.",
+      "placeholder": "Yes"
+    },
+    {
+      "question_text": "Claims Experience (Past 3 Years)",
+      "field_name": "claims_experience",
+      "field_type": "textarea",
+      "section": "Claims Experience",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of any accident insurance claims made in the last 3 years including number of claims, amounts, and nature of accidents. If no claims, mention 'No claims'. This claims history significantly impacts your premium rates and policy terms.",
+      "placeholder": "e.g., FY 2022-23: 2 claims totaling ₹3,00,000 (1 death, 1 disability). FY 2023-24: 1 claim for ₹50,000 (medical expenses). FY 2024-25: No claims till date."
+    },
+    {
+      "question_text": "Any workplace accidents in the last 3 years?",
+      "field_name": "workplace_accidents",
+      "field_type": "radio",
+      "section": "Workplace Accident History",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if your workplace has experienced any accidents resulting in employee injury or death in the past 3 years. This helps insurers assess workplace safety standards and occupational hazards. Be honest as insurers can verify through industry databases.",
+      "placeholder": "No"
+    },
+    {
+      "question_text": "Desired Policy Period",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Policy Details",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Select your preferred policy duration. One year is standard with annual renewal. Multi-year policies often offer premium discounts and protection against rate increases. Consider your budget and need for premium stability when choosing.",
+      "placeholder": "1 Year",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Details of Expiring Policy (if renewal)",
+      "field_name": "expiring_policy_details",
+      "field_type": "textarea",
+      "section": "Policy Details",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "If renewing existing coverage, provide current insurer name, policy number, sum insured, premium, and expiry date. This helps in seamless transition and ensures no break in coverage. Insurers may offer better rates for claim-free renewals.",
+      "placeholder": "e.g., Current Insurer: ABC Insurance, Policy No: GPA/2024/123456, Sum Insured: ₹10,00,000 per employee, Annual Premium: ₹2,50,000, Expiry: 31-Mar-2025"
+    },
+    {
+      "question_text": "Preferred Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select when you want the insurance coverage to begin. If renewing, this should be the day after current policy expires to avoid coverage gap. For new policies, allow 7-10 days for underwriting and policy issuance process.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 29,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "This will be automatically calculated based on your policy start date and period selected. For annual policies, this will be one day less than a year from start date. Ensure this aligns with your financial year for easier accounting.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Premium Payment Responsibility",
+      "field_name": "premium_payer",
+      "field_type": "number",
+      "section": "Premium Payment Details",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Specify who will pay the insurance premium. Most companies pay 100% as an employee benefit. Cost-sharing reduces company expense but requires salary deductions. Voluntary schemes let employees opt-in and pay themselves. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "100% Company Paid",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Additional Notes / Special Requirements",
+      "field_name": "additional_notes",
+      "field_type": "textarea",
+      "section": "Additional Notes",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any special requirements, coverage customizations, or specific concerns you have about the policy. Include details about high-risk activities, frequent travel requirements, or any unique aspects of your business that insurers should consider.",
+      "placeholder": "e.g., Need coverage for employees traveling to high-risk countries. Require cashless claim settlement network. Need coverage for adventure sports during company outings."
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.503Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 5
+}

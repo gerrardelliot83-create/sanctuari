@@ -1,0 +1,423 @@
+{
+  "product_name": "Freight Insurance",
+  "product_category": "marine",
+  "questions": [
+    {
+      "question_text": "Full Legal Name of Insured Company",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your company's complete registered name as it appears on official documents like import-export license or GST certificate. This name will appear on your marine insurance policy and claim documents.",
+      "placeholder": "e.g., Global Traders Import Export Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Registered/Communication Address",
+      "field_name": "company_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your company's registered office or primary communication address. This is where all policy documents and correspondence will be sent. Include complete details with pincode.",
+      "placeholder": "e.g., 501, World Trade Center, Cuffe Parade, Mumbai, Maharashtra - 400005",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-digit GST identification number. This is required for import-export businesses and helps verify your business credentials. Format: 2 digits state code + 10 digit PAN + 1 digit entity + 1 digit default + 1 checksum.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Import Export Code (IEC)",
+      "field_name": "iec_code",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": false,
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "If you're involved in international trade, provide your 10-digit Import Export Code issued by DGFT. This helps insurers understand your trade profile and offer appropriate coverage.",
+      "placeholder": "e.g., 0400000123"
+    },
+    {
+      "question_text": "Policy Period Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from when you want freight insurance coverage to begin. For specific voyage policies, this should be the shipment date. For annual policies, it's typically the current date or renewal date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the coverage end date. For voyage policies, this is the expected delivery date plus buffer. For annual policies, it's typically one year from start date.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Type of Cover Required",
+      "field_name": "cover_type",
+      "field_type": "select",
+      "section": "Policy Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Single Voyage Policy",
+        "Open Policy",
+        "Annual Policy",
+        "Specific Voyage Policy",
+        "Open Cover (Declaration Basis)",
+        "Sales Turnover Policy"
+      ],
+      "guidance_text": "Select the policy type based on your shipping frequency. Single voyage covers one shipment, Open Policy covers multiple shipments up to a limit, Annual Policy covers all shipments for a year. Open Cover is ideal for regular exporters/importers.",
+      "placeholder": "Select cover type"
+    },
+    {
+      "question_text": "Nature of Goods/Commodity",
+      "field_name": "goods_nature",
+      "field_type": "textarea",
+      "section": "Shipment Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Describe the type of goods being shipped in detail. Include whether they're raw materials, finished products, machinery, perishables, or hazardous materials. Different commodities have different risk profiles and premium rates.",
+      "placeholder": "e.g., Electronic components and computer parts (non-hazardous), Textile fabrics and garments, Heavy machinery parts"
+    },
+    {
+      "question_text": "Packaging Description",
+      "field_name": "packaging_description",
+      "field_type": "textarea",
+      "section": "Shipment Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 300
+      },
+      "guidance_text": "Describe how goods are packed for transport. Include details like wooden crates, cartons, pallets, containers, or bulk. Proper packaging reduces damage risk and can lower premiums.",
+      "placeholder": "e.g., Packed in corrugated boxes on wooden pallets, shrink-wrapped, loaded in 20ft containers"
+    },
+    {
+      "question_text": "Sum Insured/Invoice Value (₹)",
+      "field_name": "sum_insured",
+      "field_type": "number",
+      "section": "Shipment Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the total value of goods to be insured. For CIF (Cost, Insurance, Freight) shipments, add 10% to invoice value to cover additional expenses. For FOB shipments, include the goods value plus freight charges.",
+      "placeholder": "e.g., 5000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Voyage Details (Origin to Destination)",
+      "field_name": "voyage_details",
+      "field_type": "textarea",
+      "section": "Shipment Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 300
+      },
+      "guidance_text": "Provide complete journey details from pickup point to final destination. Include city/port names, countries, and any transshipment points. This helps assess route risks and coverage requirements.",
+      "placeholder": "e.g., Mumbai Port, India to Rotterdam Port, Netherlands via Dubai (transshipment)"
+    },
+    {
+      "question_text": "Mode of Transport",
+      "field_name": "transport_mode",
+      "field_type": "select",
+      "section": "Shipment Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Sea Freight",
+        "Air Freight",
+        "Road Transport",
+        "Rail Transport",
+        "Multimodal (Sea + Road)",
+        "Multimodal (Air + Road)",
+        "Multimodal (Multiple Modes)",
+        "Courier/Parcel Service"
+      ],
+      "guidance_text": "Select the primary mode of transport for your shipment. Multimodal means using multiple transport modes in one journey. Different modes have different risk levels and premium rates.",
+      "placeholder": "Select transport mode"
+    },
+    {
+      "question_text": "Frequency of Shipments",
+      "field_name": "shipment_frequency",
+      "field_type": "select",
+      "section": "Shipment Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "One-time Shipment",
+        "1-5 Shipments per Month",
+        "6-10 Shipments per Month",
+        "11-20 Shipments per Month",
+        "21-50 Shipments per Month",
+        "More than 50 per Month",
+        "Seasonal/Irregular"
+      ],
+      "guidance_text": "Indicate how often you ship goods. Regular shippers may benefit from open or annual policies with better rates. This helps determine the most cost-effective policy type for your needs.",
+      "placeholder": "Select frequency"
+    },
+    {
+      "question_text": "Estimated Annual Turnover for Shipments (₹)",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Shipment Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "For regular shippers, provide your estimated annual value of all shipments. This helps in determining appropriate coverage limits for open or annual policies and may qualify you for volume discounts.",
+      "placeholder": "e.g., 100000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Carrier/Shipping Line Details",
+      "field_name": "carrier_details",
+      "field_type": "textarea",
+      "section": "Shipment Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 300
+      },
+      "guidance_text": "Provide names of shipping lines, airlines, or transport companies you typically use. Reputable carriers with good safety records may result in better premium rates. Include vessel names if known for specific voyages.",
+      "placeholder": "e.g., Maersk Line, Emirates SkyCargo, DHL Express"
+    },
+    {
+      "question_text": "Coverage Clauses Required",
+      "field_name": "coverage_clauses",
+      "field_type": "multiselect",
+      "section": "Insurance Coverage",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Institute Cargo Clauses (A) - All Risks",
+        "Institute Cargo Clauses (B) - Named Perils",
+        "Institute Cargo Clauses (C) - Basic Coverage",
+        "Institute War Clauses",
+        "Institute Strikes Clauses (SRCC)",
+        "Institute Classification Clause",
+        "Theft, Pilferage and Non-Delivery",
+        "Temperature Variation Clause"
+      ],
+      "guidance_text": "Select coverage levels needed. ICC (A) provides widest 'All Risks' coverage, ICC (B) covers major perils, ICC (C) covers basic risks only. War and SRCC clauses cover political risks. Choose based on cargo value and route risks.",
+      "placeholder": "Select all applicable clauses"
+    },
+    {
+      "question_text": "Special Covers Required",
+      "field_name": "special_covers",
+      "field_type": "textarea",
+      "section": "Insurance Coverage",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "List any special coverage needs like temperature control for pharmaceuticals, delay in transit, concealed damage, brand protection, or customs duty coverage. Special requirements may need specific endorsements.",
+      "placeholder": "e.g., Temperature maintenance between 2-8°C for pharmaceuticals, 30 days delay coverage, Customs duty coverage"
+    },
+    {
+      "question_text": "Basis of Valuation",
+      "field_name": "valuation_basis",
+      "field_type": "select",
+      "section": "Insurance Coverage",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "CIF + 10%",
+        "FOB + Freight + 10%",
+        "Invoice Value + 10%",
+        "Invoice Value + 15%",
+        "Agreed Value",
+        "Other"
+      ],
+      "guidance_text": "Select how the insured value is calculated. Standard practice is to add 10-15% to invoice value to cover additional costs like surveys, re-forwarding, and profit margin. This ensures full compensation in case of total loss.",
+      "placeholder": "Select valuation basis"
+    },
+    {
+      "question_text": "Deductible/Excess Preference (₹)",
+      "field_name": "deductible_amount",
+      "field_type": "number",
+      "section": "Insurance Coverage",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Deductible is the amount you pay from your pocket for each claim. Higher deductibles mean lower premiums but more out-of-pocket expense during claims. Choose based on your risk appetite and shipment values. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Past Claims Experience (Last 3 Years)",
+      "field_name": "claims_history",
+      "field_type": "textarea",
+      "section": "Loss Experience",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of any cargo insurance claims in the last 3 years. Include year, cause of loss, claim amount, and settlement status. Write 'No claims' if none. Good claims history can earn you better rates.",
+      "placeholder": "e.g., No claims in last 3 years OR 2023: Water damage during monsoon transit - ₹2,00,000 - Settled"
+    },
+    {
+      "question_text": "Previous/Current Insurer",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Loss Experience",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "Name your current or most recent marine cargo insurer if any. This helps in policy portability and understanding your insurance history. Leave blank if this is your first marine insurance policy.",
+      "placeholder": "e.g., Oriental Insurance Company Ltd.",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Additional Information or Special Requirements",
+      "field_name": "additional_info",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide any additional information about your cargo, special handling requirements, preferred surveyors, or specific policy conditions needed. Include details that might affect risk assessment or coverage requirements.",
+      "placeholder": "e.g., Goods require special handling due to fragile nature. Need coverage for exhibition goods with multiple stops."
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_name",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the name of the person handling insurance matters in your organization. This person will be contacted for clarifications and will receive policy documents.",
+      "placeholder": "e.g., Rajesh Kumar"
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide a 10-digit Indian mobile number for quick communication regarding quotes, policy updates, and claim assistance. Ensure this number is active and regularly monitored.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Email Address",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide an active email address where policy documents, renewal notices, and important communications will be sent. Use an official email that is checked regularly.",
+      "placeholder": "e.g., insurance@globaltraders.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.491Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 5
+}

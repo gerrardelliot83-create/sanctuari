@@ -1,0 +1,590 @@
+{
+  "product_name": "Professional Indemnity Insurance for IT Services",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of the Insured Entity",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the complete legal name of your company as registered with the Registrar of Companies. This should match your incorporation certificate exactly. For example, include 'Private Limited' or 'LLP' as applicable.",
+      "placeholder": "e.g., TechSoft Solutions Private Limited",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Business / Profession",
+      "field_name": "business_type",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Software Development",
+        "IT Consulting",
+        "System Integration",
+        "Cloud Services",
+        "Data Analytics",
+        "Cybersecurity Services",
+        "IT Support & Maintenance",
+        "Web Development",
+        "Mobile App Development",
+        "Other IT Services"
+      ],
+      "guidance_text": "Select the primary nature of your IT business. This helps insurers understand your main risk exposure. If you provide multiple services, choose the one that generates the most revenue.",
+      "placeholder": "Select your business type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "business_type_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "business_type",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Year of Establishment",
+      "field_name": "establishment_year",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "min": 1950,
+        "max": 2025
+      },
+      "guidance_text": "Enter the year your company was incorporated or started operations. Insurers consider business experience when assessing risk - established companies often get better premium rates than startups.",
+      "placeholder": "e.g., 2015",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Registered Communication Address",
+      "field_name": "registered_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your company's complete registered office address including building name/number, street, area, city, state, and pincode. This will be used for all policy correspondence and legal notices.",
+      "placeholder": "e.g., 401, Tech Park, Sector 62, Noida, Uttar Pradesh - 201301",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name & Title",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the name and designation of the authorized person handling this insurance. This person will receive all policy-related communications and should have decision-making authority.",
+      "placeholder": "e.g., Rajesh Kumar, Chief Financial Officer"
+    },
+    {
+      "question_text": "Email ID",
+      "field_name": "email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide an official email address that is regularly monitored. Policy documents, renewal notices, and claim-related communications will be sent to this email.",
+      "placeholder": "e.g., insurance@techsoft.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a 10-digit Indian mobile number without country code. This will be used for urgent communications and SMS alerts about your policy.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Company Website (if any)",
+      "field_name": "website",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^(https?://)?(www\\.)?[a-zA-Z0-9-]+(\\.[a-zA-Z]{2,})+(/.*)?$",
+        "maxLength": 200
+      },
+      "guidance_text": "Provide your company website URL if available. This helps insurers understand your business scale and online presence, which can impact your risk assessment.",
+      "placeholder": "e.g., www.techsoft.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period Required",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Select the desired policy duration. Annual policies are standard, but multi-year policies often come with discounts and protect against premium increases.",
+      "placeholder": "Select policy period",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Description of Services Offered",
+      "field_name": "services_description",
+      "field_type": "textarea",
+      "section": "Professional Activity Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe in detail all IT services your company provides. Include software development, consulting, support services, and any specialized offerings. This helps insurers understand your exact professional liability exposure.",
+      "placeholder": "e.g., We provide custom software development, cloud migration services, IT consulting for digital transformation, and 24/7 technical support for enterprise applications..."
+    },
+    {
+      "question_text": "Countries Where Services Are Provided",
+      "field_name": "service_countries",
+      "field_type": "multiselect",
+      "section": "Professional Activity Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "India Only",
+        "USA",
+        "Canada",
+        "UK",
+        "Europe",
+        "Australia",
+        "Singapore",
+        "Middle East",
+        "Other Asian Countries",
+        "Africa",
+        "Latin America"
+      ],
+      "guidance_text": "Select all countries where you provide services. International exposure, especially to litigious markets like USA, significantly impacts premium as legal costs and claim amounts vary by jurisdiction.",
+      "placeholder": "Select all applicable countries"
+    },
+    {
+      "question_text": "Number of Employees",
+      "field_name": "employee_count",
+      "field_type": "number",
+      "section": "Professional Activity Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100000
+      },
+      "guidance_text": "Enter the total number of employees including full-time, part-time, and contract staff. Larger teams mean higher exposure to errors and omissions, which affects your premium calculation.",
+      "placeholder": "e.g., 150",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "integer"
+    },
+    {
+      "question_text": "Do You Use Subcontractors?",
+      "field_name": "use_subcontractors",
+      "field_type": "radio",
+      "section": "Professional Activity Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you outsource any work to third-party contractors or freelancers. Using subcontractors increases liability as you're responsible for their work quality, which may affect coverage terms.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Have You Signed Contracts with Hold Harmless Clauses?",
+      "field_name": "hold_harmless_contracts",
+      "field_type": "radio",
+      "section": "Professional Activity Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Hold harmless clauses make you liable for losses even if not directly your fault. These significantly increase risk exposure and may require special coverage or higher premiums.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Are Services Provided to U.S. Clients?",
+      "field_name": "us_clients",
+      "field_type": "radio",
+      "section": "Professional Activity Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "US market exposure requires special consideration due to higher litigation costs and larger claim amounts. Policies may need specific US jurisdiction coverage which increases premium substantially.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Type of Coverage",
+      "field_name": "coverage_type",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Claims Made Basis",
+        "Occurrence Basis"
+      ],
+      "guidance_text": "Claims Made covers claims filed during policy period regardless of when incident occurred (needs retroactive date). Occurrence covers incidents during policy period regardless of when claim is filed. Claims Made is more common and affordable for PI insurance.",
+      "placeholder": "Select coverage type",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Retroactive Date (if applicable)",
+      "field_name": "retroactive_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "For Claims Made policies, this date determines how far back the coverage extends for past work. Typically matches your first PI policy start date. Earlier dates provide broader coverage but may increase premium.",
+      "placeholder": "e.g., 01/04/2020",
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_type",
+          "value": "Claims Made Basis"
+        }
+      }
+    },
+    {
+      "question_text": "Territory / Jurisdiction",
+      "field_name": "territory_jurisdiction",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "India Only",
+        "India and Asia Pacific",
+        "Worldwide Excluding USA/Canada",
+        "Worldwide Including USA/Canada"
+      ],
+      "guidance_text": "Select the geographical scope where you need coverage for claims. Broader territory means higher premium. If you have US clients, you must include USA/Canada jurisdiction.",
+      "placeholder": "Select territory"
+    },
+    {
+      "question_text": "Limit of Indemnity Required",
+      "field_name": "indemnity_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "This is the maximum amount the insurer will pay for all claims in the policy period. Choose based on your largest contract values and potential financial loss to clients from errors. Higher limits mean higher premiums but better protection. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select limit amount",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Deductible / Excess Preferred",
+      "field_name": "deductible_amount",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Deductible is the amount you pay out-of-pocket before insurance coverage kicks in for each claim. Higher deductibles reduce premium but mean more financial responsibility during claims. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible amount",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Turnover (Last 3 Financial Years)",
+      "field_name": "turnover_last_3_years",
+      "field_type": "textarea",
+      "section": "Coverage Requirements",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your annual revenue for the last 3 financial years (e.g., FY 2022-23: ₹5 Cr, FY 2023-24: ₹7 Cr, FY 2024-25: ₹10 Cr). Premium is often calculated as a percentage of turnover, so accurate figures ensure proper coverage.",
+      "placeholder": "FY 2022-23: ₹X Crores\nFY 2023-24: ₹Y Crores\nFY 2024-25: ₹Z Crores"
+    },
+    {
+      "question_text": "Expected Turnover Current FY",
+      "field_name": "expected_turnover",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your projected revenue for the current financial year in rupees. This helps determine appropriate coverage limits and ensures your policy remains valid if your business grows during the policy period.",
+      "placeholder": "e.g., 120000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Expected Premium (if any)",
+      "field_name": "expected_premium",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000
+      },
+      "guidance_text": "If you have a budget in mind for insurance premium, mention it here in rupees. This helps insurers structure coverage within your budget, though final premium depends on risk assessment.",
+      "placeholder": "e.g., 500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Is Professional Indemnity Cover Currently in Place?",
+      "field_name": "existing_pi_cover",
+      "field_type": "radio",
+      "section": "Past Insurance & Claims History",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you currently have or previously had PI insurance. Continuous coverage history usually results in better terms and ensures no gaps in retroactive coverage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Name of Current Insurer (if applicable)",
+      "field_name": "current_insurer",
+      "field_type": "text",
+      "section": "Past Insurance & Claims History",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 100
+      },
+      "guidance_text": "If you have existing PI coverage, mention your current insurance company name. This helps in policy portability and maintaining continuity benefits like no-claim bonus.",
+      "placeholder": "e.g., ICICI Lombard General Insurance",
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_pi_cover",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Claims in the Past 5 Years?",
+      "field_name": "past_claims",
+      "field_type": "radio",
+      "section": "Past Insurance & Claims History",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare any professional liability claims made against your company in the last 5 years. Claims history significantly impacts premium and coverage terms. Non-disclosure can void your policy.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Any Circumstance or Incident That May Lead to a Claim?",
+      "field_name": "potential_claims",
+      "field_type": "radio",
+      "section": "Past Insurance & Claims History",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose any known issues, disputes, or situations that might result in future claims. This includes unhappy clients, project delays, or any professional errors you're aware of. Full disclosure is legally required.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Dishonesty of Employees",
+      "field_name": "addon_employee_dishonesty",
+      "field_type": "checkbox",
+      "section": "Optional Add-On Covers",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers losses from fraudulent or dishonest acts by your employees like data theft or financial fraud. Essential if employees handle sensitive client data or have access to financial systems.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Loss of Documents",
+      "field_name": "addon_document_loss",
+      "field_type": "checkbox",
+      "section": "Optional Add-On Covers",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers costs to replace or restore client documents/data lost or damaged while in your custody. Important for companies handling critical client documentation or data.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Breach of Confidentiality",
+      "field_name": "addon_confidentiality_breach",
+      "field_type": "checkbox",
+      "section": "Optional Add-On Covers",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers claims arising from unintentional disclosure of confidential client information. Critical for IT companies handling sensitive business data, trade secrets, or personal information.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Defamation / Libel / Slander",
+      "field_name": "addon_defamation",
+      "field_type": "checkbox",
+      "section": "Optional Add-On Covers",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers legal costs if you're sued for defamation through your professional communications, reports, or published content. Useful if you publish industry reports or client testimonials.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Intellectual Property Infringement (Unintentional)",
+      "field_name": "addon_ip_infringement",
+      "field_type": "checkbox",
+      "section": "Optional Add-On Covers",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers claims for unintentional copyright, trademark, or patent infringement in your work. Essential for software development where code similarity or design elements might trigger IP disputes.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Cyber & Technology Risk Extension",
+      "field_name": "addon_cyber_risk",
+      "field_type": "checkbox",
+      "section": "Optional Add-On Covers",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Extends coverage to include cyber incidents like data breaches, network security failures, or transmission of malware to clients. Highly recommended given increasing cyber threats to IT companies.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Legal Defence / Court Attendance Cost",
+      "field_name": "addon_legal_defence",
+      "field_type": "checkbox",
+      "section": "Optional Add-On Covers",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers legal representation costs and compensation for time spent attending court proceedings. These costs can be substantial even if claims are ultimately dismissed.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Remarks / Special Requirements",
+      "field_name": "special_remarks",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any special coverage requirements, unique business aspects, or additional information that might help insurers better understand your risk profile and provide appropriate coverage.",
+      "placeholder": "e.g., We primarily work with healthcare clients and need coverage for HIPAA compliance related claims..."
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.572Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

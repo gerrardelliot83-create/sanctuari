@@ -1,0 +1,419 @@
+{
+  "product_name": "Signage Insurance Policy",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of the Insured",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Insured Party Details",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the legal name of the business or individual owning the signage. This should match your business registration documents and will appear on the insurance policy. For companies, use the registered name; for proprietorships, use the owner's full name.",
+      "placeholder": "e.g., ABC Enterprises Pvt Ltd"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Insured Party Details",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete office or business address where all policy-related correspondence will be sent. Include building name, street, area, city, state, and PIN code. This address is used for sending policy documents and claim-related communication.",
+      "placeholder": "e.g., 501, Commerce House, MG Road, Mumbai, Maharashtra, 400001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Insured Party Details",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a 10-digit mobile number for urgent communications and claim intimations. This number will receive SMS updates about policy status, renewal reminders, and claim processing updates. Ensure it's accessible to authorized personnel.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Email Address",
+      "field_name": "email_address",
+      "field_type": "text",
+      "section": "Insured Party Details",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide an active email address for receiving digital policy documents and important notifications. Soft copies of policies are legally valid and help in quick claim processing. Check this email regularly for updates from the insurer.",
+      "placeholder": "e.g., contact@abcenterprises.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name & Designation",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Insured Party Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Specify the authorized person handling insurance matters with their designation. This person will be the primary point of contact for all insurance-related queries and should have decision-making authority for claims.",
+      "placeholder": "e.g., Ramesh Sharma, Marketing Manager"
+    },
+    {
+      "question_text": "Type of Signage",
+      "field_name": "signage_type",
+      "field_type": "select",
+      "section": "Signage Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "LED Display Board",
+        "Neon Sign",
+        "Flex Banner/Hoarding",
+        "Acrylic Letter Board",
+        "Digital/Electronic Display",
+        "Illuminated Sign Board",
+        "Non-illuminated Board",
+        "Pylon Sign",
+        "Monument Sign",
+        "Billboard",
+        "Glow Sign Board",
+        "3D Letter Signage",
+        "Scrolling LED Display",
+        "Video Wall"
+      ],
+      "guidance_text": "Select the category that best describes your signage. Different types have varying risk profiles - electronic signs face electrical damage risks while flex banners are vulnerable to weather. The type affects coverage terms and premium calculation.",
+      "placeholder": "e.g., LED Display Board"
+    },
+    {
+      "question_text": "Description of Signage",
+      "field_name": "signage_description",
+      "field_type": "textarea",
+      "section": "Signage Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide detailed description including brand name displayed, materials used, special features, and whether it's illuminated. Mention if it has moving parts, digital displays, or special coatings. Detailed description ensures proper valuation and coverage.",
+      "placeholder": "e.g., Illuminated acrylic letter board with company name 'ABC Enterprises' in blue LED backlighting, mounted on aluminum frame with weather-resistant coating"
+    },
+    {
+      "question_text": "Dimensions of Signage",
+      "field_name": "signage_dimensions",
+      "field_type": "text",
+      "section": "Signage Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Specify the size of your signage in feet or meters (length x height). For 3D signs, include depth. Larger signs face higher wind load risks and may need additional structural coverage. Accurate dimensions help in proper risk assessment.",
+      "placeholder": "e.g., 20 feet x 10 feet or 6m x 3m x 0.5m"
+    },
+    {
+      "question_text": "Location of Signage Installation",
+      "field_name": "installation_location",
+      "field_type": "select",
+      "section": "Signage Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Building Rooftop",
+        "Building Facade/Wall",
+        "Ground Level (Standalone)",
+        "Over Shop/Store Entrance",
+        "Highway/Roadside",
+        "Inside Mall/Complex",
+        "Pole Mounted",
+        "Bridge/Flyover",
+        "Inside Building/Office",
+        "Parking Area"
+      ],
+      "guidance_text": "Select where your signage is installed. Rooftop signs face higher wind and lightning risks. Highway signs may face vehicle collision risks. Indoor signs have lower exposure to weather but may face other risks. Location significantly impacts premium.",
+      "placeholder": "e.g., Building Rooftop"
+    },
+    {
+      "question_text": "Complete Address of Installation Site",
+      "field_name": "installation_address",
+      "field_type": "textarea",
+      "section": "Signage Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide exact location where signage is installed, especially if different from business address. Include landmarks for easy identification during inspection. For multiple locations, each sign needs separate coverage with specific address.",
+      "placeholder": "e.g., Rooftop of Galaxy Mall, Link Road, Andheri West, Mumbai, Maharashtra, 400053",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Age of Signage",
+      "field_name": "signage_age",
+      "field_type": "select",
+      "section": "Signage Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "New Installation",
+        "Less than 1 year",
+        "1-2 years",
+        "2-3 years",
+        "3-5 years",
+        "5-10 years",
+        "More than 10 years"
+      ],
+      "guidance_text": "Indicate how old your signage is from installation date. Newer signs have manufacturer warranties and lower breakdown risk. Older signs may need inspection and could face depreciation in claim settlements. Age affects both premium and coverage.",
+      "placeholder": "e.g., 1-2 years"
+    },
+    {
+      "question_text": "Current Value/Cost of Signage",
+      "field_name": "signage_value",
+      "field_type": "number",
+      "section": "Valuation & Coverage",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 100000000
+      },
+      "guidance_text": "Enter the current replacement cost of your signage including installation charges. This becomes your sum insured - the maximum claim amount. Consider current market rates for materials and labor, not original purchase price. Under-insurance leads to proportionate claim settlement.",
+      "placeholder": "e.g., 500000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Perils to be Covered",
+      "field_name": "perils_covered",
+      "field_type": "multiselect",
+      "section": "Valuation & Coverage",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Fire",
+        "Lightning",
+        "Storm/Typhoon/Hurricane",
+        "Flood/Inundation",
+        "Earthquake",
+        "Riot/Strike/Malicious Damage",
+        "Terrorism",
+        "Accidental Damage",
+        "Electrical/Mechanical Breakdown",
+        "Theft",
+        "Impact by Vehicle/Aircraft",
+        "All Risk Coverage"
+      ],
+      "guidance_text": "Select all risks you want coverage against. Basic policies cover fire and allied perils. Extended coverage includes breakdown, theft, and accidents but costs more. All-risk coverage provides widest protection but has highest premium. Consider your location's specific risks.",
+      "placeholder": "Select all applicable perils"
+    },
+    {
+      "question_text": "Policy Period Required",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Valuation & Coverage",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Choose your insurance coverage duration. Annual policies are standard and allow flexibility to change coverage. Multi-year policies offer premium discounts and protection against rate increases but require upfront payment for entire period.",
+      "placeholder": "e.g., 1 Year",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Is the signage covered under any warranty?",
+      "field_name": "under_warranty",
+      "field_type": "radio",
+      "section": "Valuation & Coverage",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if manufacturer or installer warranty is still active. Insurance typically covers risks not included in warranty. Some insurers may exclude coverage for defects covered under warranty or offer reduced premiums during warranty period.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Warranty Expiry Date",
+      "field_name": "warranty_expiry",
+      "field_type": "date",
+      "section": "Valuation & Coverage",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Provide the date when manufacturer or installer warranty ends. After warranty expiry, insurance becomes primary protection. Keep warranty documents as insurers may need them during claims for determining coverage scope.",
+      "placeholder": "e.g., 31/12/2025",
+      "conditional_logic": {
+        "show_if": {
+          "field": "under_warranty",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Have you made any insurance claims for signage in the past?",
+      "field_name": "previous_claims",
+      "field_type": "radio",
+      "section": "Claims History",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare any previous signage insurance claims even with different insurers. Claims history affects acceptance and premium rates. Insurers verify this through industry databases. Non-disclosure can lead to policy cancellation and claim rejection.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Previous Claims",
+      "field_name": "previous_claims_details",
+      "field_type": "textarea",
+      "section": "Claims History",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide details including date of loss, cause, claimed amount, and settlement status for each previous claim. This helps insurers understand risk pattern and decide coverage terms. Be honest and complete in your disclosure.",
+      "placeholder": "e.g., Storm damage on 15/07/2023, claimed ₹1,50,000, settled ₹1,35,000 after depreciation",
+      "conditional_logic": {
+        "show_if": {
+          "field": "previous_claims",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Maintenance Contract Available?",
+      "field_name": "maintenance_contract",
+      "field_type": "radio",
+      "section": "Maintenance & Compliance",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you have annual maintenance contract (AMC) for the signage. Regular maintenance reduces breakdown risk and may qualify for premium discounts. Well-maintained signs have better claim acceptance rates for electrical/mechanical failures.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Name of Maintenance Agency",
+      "field_name": "maintenance_agency",
+      "field_type": "text",
+      "section": "Maintenance & Compliance",
+      "order_index": 20,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "Provide name of the company maintaining your signage. Professional maintenance by authorized agencies ensures proper care and documentation. Insurers may verify maintenance records during claim processing for breakdown-related damages.",
+      "placeholder": "e.g., XYZ Signage Solutions Pvt Ltd",
+      "conditional_logic": {
+        "show_if": {
+          "field": "maintenance_contract",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Municipal/Local Authority Permission Available?",
+      "field_name": "municipal_permission",
+      "field_type": "radio",
+      "section": "Maintenance & Compliance",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No",
+        "Applied - Pending"
+      ],
+      "guidance_text": "Confirm if you have required permissions from local municipal corporation or authority for signage display. Illegal signages may not be covered or face claim rejection. Some insurers mandate valid permissions as a policy condition.",
+      "placeholder": "Select appropriate status"
+    },
+    {
+      "question_text": "Any Special Requirements or Additional Information",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any specific coverage requirements, special circumstances, or additional information relevant to your signage insurance. Include details about unique features, high-risk factors, or specific concerns you want addressed in the policy.",
+      "placeholder": "e.g., Signage is located in cyclone-prone coastal area, require coverage for complete replacement including installation costs"
+    },
+    {
+      "question_text": "Upload Supporting Documents",
+      "field_name": "supporting_documents",
+      "field_type": "file",
+      "section": "Additional Information",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Attach relevant documents like signage purchase invoice, installation certificate, municipal permission, photographs of signage, and previous policy if renewal. Clear documentation expedites policy issuance and helps in smooth claim settlement.",
+      "placeholder": "Upload PDF, JPG, or PNG files (max 10MB each)"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.621Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 1
+}

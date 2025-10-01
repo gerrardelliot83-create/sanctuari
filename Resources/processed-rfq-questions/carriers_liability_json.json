@@ -1,0 +1,950 @@
+{
+  "product_name": "Carriers Legal Liability Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Full Legal Name of Carrier/Transport Company",
+      "field_name": "carrier_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the complete registered name of your transport company as it appears on your GST certificate or company registration documents. This must be the exact legal entity name that will be covered under the insurance policy.",
+      "placeholder": "e.g., XYZ Logistics Pvt Ltd"
+    },
+    {
+      "question_text": "Registered Office Address",
+      "field_name": "principal_office_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your company's complete registered office address including building name/number, street, area, city, state, and pincode. This address will be used for all policy documentation and official correspondence.",
+      "placeholder": "e.g., 123, Transport Hub, MG Road, Andheri East, Mumbai, Maharashtra - 400069",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Business Entity",
+      "field_name": "carrier_type",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Individual/Sole Proprietorship",
+        "Partnership Firm",
+        "Private Limited Company",
+        "Public Limited Company",
+        "Limited Liability Partnership (LLP)",
+        "One Person Company (OPC)"
+      ],
+      "guidance_text": "Select your company's legal structure. This affects your liability exposure and insurance requirements. Private/Public Limited companies have different risk profiles than sole proprietorships or partnerships.",
+      "placeholder": "Select business type"
+    },
+    {
+      "question_text": "Company Registration Date",
+      "field_name": "registration_date",
+      "field_type": "date",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter the date when your transport business was officially registered with the Registrar of Companies or started operations. Companies with longer operating history typically receive better premium rates due to established track records.",
+      "placeholder": "e.g., 01/04/2015"
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Your 15-character GST identification number is essential for verifying your business legitimacy and tax compliance. Format: First 2 digits are state code, next 10 are PAN, followed by entity code, Z, and check digit.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PAN Number",
+      "field_name": "pan_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Your company's 10-character Permanent Account Number issued by the Income Tax Department. This is used for financial verification and regulatory compliance checks.",
+      "placeholder": "e.g., AABCU9603R",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Vehicle Ownership Status",
+      "field_name": "vehicle_ownership_status",
+      "field_type": "select",
+      "section": "Fleet Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Fully Owned",
+        "Hire Purchase/Loan",
+        "Leased",
+        "Mixed (Owned + Hired)"
+      ],
+      "guidance_text": "Indicate how you've acquired your transport vehicles. Owned vehicles typically have lower insurance risks than hired ones. If vehicles are under finance, the lender may have specific insurance requirements.",
+      "placeholder": "Select ownership type"
+    },
+    {
+      "question_text": "Total Number of Vehicles in Fleet",
+      "field_name": "total_vehicles",
+      "field_type": "number",
+      "section": "Fleet Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 10000
+      },
+      "guidance_text": "Enter the total number of commercial vehicles you operate for goods transportation. Include all trucks, tempos, trailers, and specialized carriers. Larger fleets may qualify for volume discounts on premiums.",
+      "placeholder": "e.g., 25",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Vehicle Registration Numbers (Comma-separated for multiple)",
+      "field_name": "vehicle_registration_numbers",
+      "field_type": "textarea",
+      "section": "Fleet Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 2000
+      },
+      "guidance_text": "List all vehicle registration numbers separated by commas. For large fleets, you can upload a separate Excel file instead. These numbers help verify motor insurance coverage and assess overall fleet risk.",
+      "placeholder": "e.g., MH01AB1234, MH02CD5678, GJ01EF9012"
+    },
+    {
+      "question_text": "Fleet Details Document (Excel/PDF)",
+      "field_name": "fleet_details_upload",
+      "field_type": "file",
+      "section": "Fleet Information",
+      "order_index": 10,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "For fleets over 10 vehicles, upload an Excel or PDF with details: registration numbers, make/model, year, capacity, and current insurance status. This helps insurers assess your fleet composition and maintenance standards.",
+      "placeholder": "Upload fleet details document"
+    },
+    {
+      "question_text": "Average Vehicle Make and Manufacturing Year",
+      "field_name": "vehicle_make_year",
+      "field_type": "text",
+      "section": "Fleet Information",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 100
+      },
+      "guidance_text": "Describe the predominant makes (Tata, Ashok Leyland, Eicher, etc.) and average age of your fleet. Newer vehicles with modern safety features typically have lower claim frequencies and may qualify for better rates.",
+      "placeholder": "e.g., Tata 407, Average Year 2020"
+    },
+    {
+      "question_text": "Total Licensed Carrying Capacity (in MT)",
+      "field_name": "total_carrying_capacity",
+      "field_type": "number",
+      "section": "Fleet Information",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 0.5,
+        "max": 100000
+      },
+      "guidance_text": "Enter the combined maximum legal carrying capacity of all your vehicles in metric tons (MT). This determines your maximum liability exposure per trip and helps calculate appropriate coverage limits.",
+      "placeholder": "e.g., 250",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "decimal"
+    },
+    {
+      "question_text": "Type of Vehicle Bodies in Fleet",
+      "field_name": "vehicle_body_types",
+      "field_type": "multiselect",
+      "section": "Fleet Information",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Open Body",
+        "Half Body/Side-walled",
+        "Closed Container",
+        "Refrigerated Container",
+        "Tanker (Liquid)",
+        "Tanker (Gas/Chemical)",
+        "Car Carrier",
+        "Flatbed",
+        "Specialized/ODC Carrier",
+        "Other"
+      ],
+      "guidance_text": "Select all types of vehicle bodies in your fleet. Different body types carry different risks - open bodies have higher theft risk, while tankers carrying hazardous materials need specialized coverage.",
+      "placeholder": "Select all applicable types"
+    },
+    {
+      "question_text": "Do you operate with attached trailers?",
+      "field_name": "has_trailers",
+      "field_type": "radio",
+      "section": "Fleet Information",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if any of your vehicles operate with detachable trailers. Trailers increase carrying capacity but also add complexity to liability calculations and may require additional coverage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Number and Type of Trailers",
+      "field_name": "trailer_details",
+      "field_type": "text",
+      "section": "Fleet Information",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "has_trailers",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Specify the number of trailers and their types (flatbed, container, low-bed, etc.). Include their carrying capacities if significantly different from primary vehicles.",
+      "placeholder": "e.g., 5 flatbed trailers, 3 container trailers"
+    },
+    {
+      "question_text": "Primary Areas of Operation",
+      "field_name": "operation_areas",
+      "field_type": "multiselect",
+      "section": "Operations Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Within City Limits",
+        "Within State",
+        "Interstate - North India",
+        "Interstate - South India",
+        "Interstate - East India",
+        "Interstate - West India",
+        "Interstate - Northeast India",
+        "Pan India",
+        "International Routes"
+      ],
+      "guidance_text": "Select all geographical areas where your vehicles operate. Wider operational areas mean exposure to varied road conditions and regulations. Interstate operations typically require higher coverage due to longer distances and varied jurisdictions.",
+      "placeholder": "Select all operational areas"
+    },
+    {
+      "question_text": "Do you have a fixed vehicle maintenance schedule?",
+      "field_name": "has_maintenance_schedule",
+      "field_type": "radio",
+      "section": "Operations Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Regular maintenance reduces breakdown risks and accidents. Companies with documented maintenance schedules often receive premium discounts as it demonstrates risk management commitment.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Maintenance Schedule Details",
+      "field_name": "maintenance_details",
+      "field_type": "textarea",
+      "section": "Operations Details",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "has_maintenance_schedule",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe your maintenance protocol: frequency of servicing, authorized service centers used, and whether you maintain service records. Well-documented maintenance can significantly reduce your premium.",
+      "placeholder": "e.g., Monthly general inspection, quarterly comprehensive service at authorized centers, annual fitness certification"
+    },
+    {
+      "question_text": "Do you maintain detailed trip logbooks?",
+      "field_name": "maintains_logbooks",
+      "field_type": "radio",
+      "section": "Operations Details",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Trip logbooks help track driver hours, routes, fuel consumption, and cargo details. This documentation is crucial for claim settlements and demonstrates professional fleet management.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Logbook Retention Period",
+      "field_name": "logbook_retention_period",
+      "field_type": "select",
+      "section": "Operations Details",
+      "order_index": 20,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "maintains_logbooks",
+          "value": "Yes"
+        }
+      },
+      "options": [
+        "3 months",
+        "6 months",
+        "1 year",
+        "2 years",
+        "3 years or more"
+      ],
+      "guidance_text": "Indicate how long you retain trip records. Longer retention periods help in analyzing patterns, defending against claims, and demonstrating systematic operations management.",
+      "placeholder": "Select retention period"
+    },
+    {
+      "question_text": "Current Motor Insurance Company",
+      "field_name": "motor_insurer_name",
+      "field_type": "text",
+      "section": "Current Insurance Details",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the name of the insurance company providing comprehensive motor insurance for your vehicles. Carriers Legal Liability works alongside your motor insurance to cover goods-related liabilities.",
+      "placeholder": "e.g., New India Assurance Co. Ltd."
+    },
+    {
+      "question_text": "Motor Insurance Policy Number",
+      "field_name": "motor_policy_number",
+      "field_type": "text",
+      "section": "Current Insurance Details",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 50
+      },
+      "guidance_text": "Your current motor insurance policy number helps verify existing coverage and ensures there's no overlap or gap in protection. This is different from your carriers liability policy.",
+      "placeholder": "e.g., 1234567890123456",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Motor Insurance Policy Period",
+      "field_name": "motor_policy_period",
+      "field_type": "text",
+      "section": "Current Insurance Details",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 50
+      },
+      "guidance_text": "Enter the start and end dates of your current motor insurance policy. Your carriers liability coverage should align with this period to ensure continuous protection.",
+      "placeholder": "e.g., 01/04/2024 to 31/03/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "No Claim Bonus on Motor Policy (%)",
+      "field_name": "ncb_percentage",
+      "field_type": "number",
+      "section": "Current Insurance Details",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 50
+      },
+      "guidance_text": "Your No Claim Bonus percentage on motor insurance indicates your claims history. A higher NCB (20-50%) shows good risk management and may positively influence your carriers liability premium.",
+      "placeholder": "e.g., 35",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Upload Motor Insurance Policy Copy",
+      "field_name": "motor_policy_document",
+      "field_type": "file",
+      "section": "Current Insurance Details",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload a copy of your current motor insurance policy. This helps insurers verify vehicle coverage and understand your existing protection levels before quoting carriers liability insurance.",
+      "placeholder": "Upload motor policy document"
+    },
+    {
+      "question_text": "Upload Vehicle RC Books (Combined PDF)",
+      "field_name": "rc_books_document",
+      "field_type": "file",
+      "section": "Current Insurance Details",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload Registration Certificates (RC books) for your vehicles as a single PDF. These documents verify vehicle ownership, specifications, and fitness certificates essential for liability assessment.",
+      "placeholder": "Upload RC books PDF"
+    },
+    {
+      "question_text": "Procedure for Granting Open Delivery/Shortage Certificates",
+      "field_name": "delivery_certificate_practice",
+      "field_type": "textarea",
+      "section": "Cargo Handling Practices",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe your process for documenting damaged or short deliveries. Strong documentation practices (photos, signatures, immediate reporting) reduce dispute risks and expedite claim settlements. Include who issues certificates and verification steps.",
+      "placeholder": "e.g., Driver photographs any damage before loading, obtains consignor signature on condition report, recipient signs delivery challan noting any damages/shortages, office is informed within 2 hours"
+    },
+    {
+      "question_text": "Are goods weighed before accepting for transport?",
+      "field_name": "goods_weighed_before_booking",
+      "field_type": "radio",
+      "section": "Cargo Handling Practices",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - Always",
+        "Yes - For specific cargo types",
+        "No"
+      ],
+      "guidance_text": "Weight verification prevents overloading claims and disputes. Regular weighing demonstrates professional practices and helps defend against false shortage claims. It also ensures vehicle safety and compliance.",
+      "placeholder": "Select weighing practice"
+    },
+    {
+      "question_text": "Is packaging adequacy checked before acceptance?",
+      "field_name": "packing_adequacy_checked",
+      "field_type": "radio",
+      "section": "Cargo Handling Practices",
+      "order_index": 29,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - Always",
+        "Yes - For fragile/valuable items",
+        "No"
+      ],
+      "guidance_text": "Checking packaging quality before transport reduces damage claims. Refusing inadequately packed goods or noting packaging deficiencies protects you from liability for pre-existing conditions.",
+      "placeholder": "Select checking practice"
+    },
+    {
+      "question_text": "Are packaging deficiencies recorded in consignment notes?",
+      "field_name": "deficiency_recorded",
+      "field_type": "radio",
+      "section": "Cargo Handling Practices",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "packing_adequacy_checked",
+          "value": "No"
+        }
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "If you accept goods without checking packaging, recording any visible deficiencies in the consignment note is crucial. This documentation can protect you from claims arising from pre-existing packaging issues.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Primary Types of Cargo Transported",
+      "field_name": "cargo_types",
+      "field_type": "multiselect",
+      "section": "Cargo Information",
+      "order_index": 31,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "FMCG/Consumer Goods",
+        "Industrial Raw Materials",
+        "Machinery and Equipment",
+        "Electronics and IT Equipment",
+        "Textiles and Garments",
+        "Pharmaceuticals",
+        "Chemicals (Non-hazardous)",
+        "Hazardous Chemicals",
+        "Petroleum Products",
+        "Agricultural Produce",
+        "Perishable Goods",
+        "Automobiles/Auto Parts",
+        "Construction Materials",
+        "Fragile/Glass Items",
+        "High-Value Goods (Jewelry/Art)",
+        "E-commerce Parcels",
+        "Other"
+      ],
+      "guidance_text": "Select all cargo types you regularly transport. Different cargo carries different risk levels - electronics face theft risk, chemicals need special handling, perishables have time sensitivity. This helps determine appropriate coverage and exclusions.",
+      "placeholder": "Select all cargo types handled"
+    },
+    {
+      "question_text": "Detailed Description of Cargo and Special Handling",
+      "field_name": "cargo_description",
+      "field_type": "textarea",
+      "section": "Cargo Information",
+      "order_index": 32,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details about your typical cargo, any specialized equipment used (GPS tracking, temperature control), and special handling procedures. Include percentage split if you handle multiple cargo types. Mention any cargo you specifically exclude.",
+      "placeholder": "e.g., 60% FMCG products, 30% industrial materials, 10% electronics. All high-value cargo tracked via GPS. Temperature-controlled vehicles for pharmaceuticals. Don't transport livestock or explosives."
+    },
+    {
+      "question_text": "Have you had Carriers Liability Insurance before?",
+      "field_name": "had_previous_insurance",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 33,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No - First time buyer"
+      ],
+      "guidance_text": "Indicate if you've previously purchased carriers legal liability insurance. First-time buyers may need more coverage guidance, while renewal cases can benefit from claims-free discounts.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Previous Carriers Liability Insurance Details (Last 3 Years)",
+      "field_name": "previous_insurance_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "had_previous_insurance",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "List your carriers liability insurance history: insurer names, policy periods, sum insured, premiums paid, and any claims made. Include policy numbers if available. This helps insurers assess your risk profile and offer continuity benefits.",
+      "placeholder": "e.g., 2022-23: Oriental Insurance, SI ₹50L, Premium ₹75000, No claims; 2023-24: National Insurance, SI ₹75L, Premium ₹95000, 1 claim ₹5L (settled)"
+    },
+    {
+      "question_text": "Has any insurer declined your proposal?",
+      "field_name": "proposal_declined",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 35,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose if any insurance company has refused to provide you coverage. This won't necessarily disqualify you but helps insurers understand any past risk concerns. Full disclosure is legally required.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Has any insurer cancelled or refused renewal?",
+      "field_name": "policy_cancelled",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 36,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if any insurer has cancelled your policy mid-term or refused to renew it. This could be due to claims frequency, non-payment, or risk changes. Honest disclosure is mandatory for valid coverage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Has any insurer imposed special conditions or higher premium?",
+      "field_name": "special_conditions_imposed",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 37,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose if any insurer has required special terms like higher deductibles, restricted coverage, or increased premiums due to your risk profile. This helps set appropriate terms for your new policy.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Declined/Cancelled/Special Conditions",
+      "field_name": "adverse_history_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 38,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "proposal_declined",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide complete details about any adverse insurance history including insurer name, year, and reasons. Explain any corrective measures taken since then. Transparency helps insurers assess current risk accurately.",
+      "placeholder": "e.g., 2021 - ABC Insurance declined due to high claims ratio. Since then, implemented GPS tracking, driver training program, and improved cargo handling procedures."
+    },
+    {
+      "question_text": "Claims History (Last 5 Years)",
+      "field_name": "claims_history",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 39,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 2000
+      },
+      "guidance_text": "List all claims made on carriers liability or motor insurance related to cargo damage/loss in the last 5 years. Include dates, amounts, causes, and settlement status. Write 'No claims' if claim-free. Good claims history can significantly reduce premiums.",
+      "placeholder": "e.g., March 2023: ₹3L claim for water damage during transit (settled), June 2022: ₹1.5L theft claim (settled). Total 2 claims in 5 years."
+    },
+    {
+      "question_text": "Limit of Liability Required Per Accident (₹)",
+      "field_name": "liability_limit_per_accident",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 40,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 100000000
+      },
+      "guidance_text": "Enter the maximum amount you want the insurer to pay for any single accident/incident. Consider your highest value cargo typically transported. Common limits range from ₹10 lakhs for small operators to ₹5 crores for large fleets. Higher limits mean higher premiums.",
+      "placeholder": "e.g., 5000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Annual Aggregate Limit Required (₹)",
+      "field_name": "annual_aggregate_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 41,
+      "validation_rules": {
+        "required": true,
+        "min": 500000,
+        "max": 500000000
+      },
+      "guidance_text": "Enter the maximum total amount the insurer should pay for all claims during the policy year. This is typically 2-3 times your per-accident limit. Once exhausted, you'll need to bear any additional claims yourself.",
+      "placeholder": "e.g., 15000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Do you require Riot, Strike, and Terrorism coverage?",
+      "field_name": "rstm_coverage_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 42,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Riot, Strike, Terrorism, and Malicious damage (RSTM) coverage protects against losses from civil disturbances and terrorism. Essential for interstate operations or routes through sensitive areas. Adds 10-15% to premium but provides crucial protection.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Deductible Amount Preference (₹)",
+      "field_name": "deductible_preference",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 43,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "The deductible is the amount you pay out-of-pocket before insurance coverage kicks in for each claim. Higher deductibles reduce premiums but increase your financial exposure. Choose based on your risk appetite and financial capacity. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible amount",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period Required",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 44,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Select your desired policy duration. Annual policies offer flexibility to adjust coverage. Multi-year policies may offer premium discounts and protection against rate increases but have less flexibility.",
+      "placeholder": "Select policy period",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Required Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 45,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter when you want the insurance coverage to begin. Ensure this aligns with your motor insurance policy period and any existing carriers liability policy expiry to avoid coverage gaps.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Annual Turnover from Transportation Business (₹)",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Financial Information",
+      "order_index": 46,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your total annual revenue from transportation services for the last financial year. This helps insurers understand your business scale and calculate appropriate premiums. Higher turnover typically means more cargo movement and exposure.",
+      "placeholder": "e.g., 50000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Average Monthly Freight Movement (Number of Trips)",
+      "field_name": "monthly_trips",
+      "field_type": "number",
+      "section": "Financial Information",
+      "order_index": 47,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100000
+      },
+      "guidance_text": "Enter the average number of cargo trips your fleet completes per month. Higher trip frequency increases exposure to incidents but also demonstrates operational efficiency. Include both full-load and part-load trips.",
+      "placeholder": "e.g., 500",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Average Value of Goods Carried Per Trip (₹)",
+      "field_name": "average_cargo_value",
+      "field_type": "number",
+      "section": "Financial Information",
+      "order_index": 48,
+      "validation_rules": {
+        "required": true,
+        "min": 1000,
+        "max": 100000000
+      },
+      "guidance_text": "Enter the typical value of goods transported in a single trip. This helps determine if your requested liability limits are adequate. Consider your most common cargo types rather than exceptional high-value shipments.",
+      "placeholder": "e.g., 500000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Upload Last 3 Years Audited Financial Statements",
+      "field_name": "financial_statements",
+      "field_type": "file",
+      "section": "Financial Information",
+      "order_index": 49,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your audited balance sheets and P&L statements for the last 3 years as a single PDF. This helps insurers assess your financial stability and ability to manage risks. Strong financials may qualify you for better terms.",
+      "placeholder": "Upload financial statements",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Safety and Risk Management Measures",
+      "field_name": "safety_measures",
+      "field_type": "multiselect",
+      "section": "Risk Management",
+      "order_index": 50,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "GPS Tracking on All Vehicles",
+        "Driver Training Programs",
+        "Background Verification of Drivers",
+        "Regular Vehicle Fitness Checks",
+        "24x7 Control Room Monitoring",
+        "Authorized Parking Only Policy",
+        "Armed Guards for High-Value Cargo",
+        "Temperature Monitoring Systems",
+        "Lock and Seal Systems",
+        "Insurance for Individual Consignments",
+        "Route Risk Assessment",
+        "Driver Fatigue Management",
+        "Cargo Securing Protocols",
+        "None of the Above"
+      ],
+      "guidance_text": "Select all safety measures and risk management practices you've implemented. Strong risk management demonstrates professionalism and can significantly reduce premiums. Insurers value proactive safety measures.",
+      "placeholder": "Select all applicable measures"
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person_name",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 51,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the full name of the person authorized to handle insurance matters for your company. This person will receive all policy-related communications and should understand your operations well.",
+      "placeholder": "e.g., Rajesh Kumar"
+    },
+    {
+      "question_text": "Designation",
+      "field_name": "contact_designation",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 52,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 50
+      },
+      "guidance_text": "Enter the official designation/title of the contact person. Senior management involvement in insurance decisions often indicates better risk management culture.",
+      "placeholder": "e.g., Director - Operations"
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 53,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a 10-digit Indian mobile number for immediate communication regarding quotes, policy issuance, and claims. This should be actively monitored during business hours.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 54,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide an official email address for receiving quotations, policy documents, and important notifications. Ensure this email is checked regularly as time-sensitive communications may be sent.",
+      "placeholder": "e.g., insurance@xyzlogistics.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Any Additional Information or Special Requirements",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 55,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Share any additional details about your operations, specific coverage needs, past incidents, or special circumstances that might affect your insurance. Include any unique risks or innovative safety measures not covered in previous questions.",
+      "placeholder": "e.g., We specialize in just-in-time delivery for automotive industry. Have ISO certification for quality management. Planning to expand fleet by 30% next year."
+    },
+    {
+      "question_text": "Declaration and Consent",
+      "field_name": "declaration_consent",
+      "field_type": "checkbox",
+      "section": "Declaration",
+      "order_index": 56,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "By checking this box, you declare that all information provided is true and complete to the best of your knowledge. You understand that any misrepresentation or concealment may void the insurance coverage. You consent to insurers verifying this information.",
+      "placeholder": "I agree to the declaration and provide consent"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.337Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 5
+}

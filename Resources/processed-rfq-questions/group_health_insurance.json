@@ -1,0 +1,1022 @@
+{
+  "product_name": "Group Health Insurance",
+  "product_category": "health",
+  "questions": [
+    {
+      "question_text": "Full Legal Name of Organization",
+      "field_name": "organization_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your organization's complete registered name as it appears on official documents like incorporation certificate or GST registration. This will be the policyholder name on the group health insurance policy.",
+      "placeholder": "e.g., TechSolutions Software Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Complete Mailing Address",
+      "field_name": "mailing_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your organization's complete address where all insurance correspondence and documents should be sent. Include floor/building details for accurate delivery.",
+      "placeholder": "e.g., 3rd Floor, Tower B, Tech Park, Sector 125, Noida, Uttar Pradesh",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "City",
+      "field_name": "city",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 50
+      },
+      "guidance_text": "Enter the city where your organization is located. This helps determine network hospitals availability and zone-based premium rates.",
+      "placeholder": "e.g., Mumbai",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "State",
+      "field_name": "state",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar",
+        "Chhattisgarh",
+        "Goa",
+        "Gujarat",
+        "Haryana",
+        "Himachal Pradesh",
+        "Jharkhand",
+        "Karnataka",
+        "Kerala",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Manipur",
+        "Meghalaya",
+        "Mizoram",
+        "Nagaland",
+        "Odisha",
+        "Punjab",
+        "Rajasthan",
+        "Sikkim",
+        "Tamil Nadu",
+        "Telangana",
+        "Tripura",
+        "Uttar Pradesh",
+        "Uttarakhand",
+        "West Bengal",
+        "Delhi",
+        "Jammu and Kashmir",
+        "Ladakh",
+        "Puducherry",
+        "Chandigarh",
+        "Dadra and Nagar Haveli and Daman and Diu",
+        "Lakshadweep",
+        "Andaman and Nicobar Islands"
+      ],
+      "guidance_text": "Select your state from the list. Premium rates vary by state based on healthcare costs and claim patterns in different regions.",
+      "placeholder": "Select state",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PIN Code",
+      "field_name": "pincode",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[1-9][0-9]{5}$",
+        "minLength": 6,
+        "maxLength": 6
+      },
+      "guidance_text": "Enter your 6-digit postal PIN code. This helps identify your exact location for determining applicable premium zones and nearest network hospitals.",
+      "placeholder": "e.g., 400001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Official Contact Number",
+      "field_name": "contact_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide a 10-digit mobile number of the HR or Admin person handling employee insurance. This number will be used for all policy-related communications and claim assistance.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Official Email ID",
+      "field_name": "official_email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the official email address for insurance correspondence. Policy documents, claim forms, and renewal notices will be sent to this email. Use HR or admin email for better management.",
+      "placeholder": "e.g., hr@techsolutions.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your organization's 15-digit GST number. This is required for billing purposes and to claim input tax credit on insurance premiums. Ensure it matches your official GST registration.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "PAN Number",
+      "field_name": "pan_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide your organization's 10-character PAN. This is mandatory for tax compliance and policy issuance. Format: 5 letters + 4 numbers + 1 letter.",
+      "placeholder": "e.g., AABCU9603R",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business",
+      "field_name": "business_nature",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "IT/Software Services",
+        "Manufacturing",
+        "Banking/Financial Services",
+        "Healthcare/Hospitals",
+        "Education/Training",
+        "Retail/E-commerce",
+        "Construction/Real Estate",
+        "Hospitality/Tourism",
+        "Logistics/Transportation",
+        "Pharmaceuticals",
+        "Textiles/Garments",
+        "Agriculture/Food Processing",
+        "Media/Entertainment",
+        "Telecommunications",
+        "Professional Services",
+        "Government/Public Sector",
+        "NGO/Non-Profit",
+        "Other"
+      ],
+      "guidance_text": "Select your primary business activity. Different industries have different health risk profiles which affects premium calculation. For example, manufacturing may have higher accident risks than IT services.",
+      "placeholder": "Select business nature"
+    },
+    {
+      "question_text": "Organization Type",
+      "field_name": "organization_type",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Proprietorship",
+        "Partnership Firm",
+        "Private Limited Company",
+        "Public Limited Company",
+        "Limited Liability Partnership (LLP)",
+        "One Person Company (OPC)",
+        "Government Organization",
+        "Trust/Society/NGO",
+        "Multinational Corporation",
+        "Other"
+      ],
+      "guidance_text": "Select your organization's legal structure. This information is used for policy documentation and compliance requirements. Different entity types may have different documentation needs.",
+      "placeholder": "Select organization type"
+    },
+    {
+      "question_text": "Business Location Category",
+      "field_name": "location_category",
+      "field_type": "radio",
+      "section": "Business Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Urban",
+        "Rural",
+        "Semi-Urban"
+      ],
+      "guidance_text": "Indicate whether your business is in an urban or rural area. This affects premium rates as healthcare costs and facility availability vary between urban and rural locations.",
+      "placeholder": "Select location type"
+    },
+    {
+      "question_text": "Year of Establishment",
+      "field_name": "establishment_year",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 1800,
+        "max": 2025
+      },
+      "guidance_text": "Enter the year your organization was established. Older, established companies often get better rates due to perceived stability and better employee retention.",
+      "placeholder": "e.g., 2010",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Annual Turnover (₹)",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select your organization's annual turnover range. Larger organizations often get volume discounts on group health premiums. This also helps insurers assess your financial stability. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select turnover range",
+      "format": "indian_currency",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Are all members part of the same group/corporate entity?",
+      "field_name": "same_entity",
+      "field_type": "radio",
+      "section": "Employee Information",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Confirm if all employees to be insured work for the same organization. Group policies require all members to belong to a defined group like employees of one company. Different entities need separate policies.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Total Number of Employees to be Insured",
+      "field_name": "total_employees",
+      "field_type": "number",
+      "section": "Employee Information",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100000
+      },
+      "guidance_text": "Enter the total number of employees you want to cover. Minimum group size is typically 7-10 members. Larger groups get better premium rates due to risk pooling. Include only primary employees here.",
+      "placeholder": "e.g., 150",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Include Spouse Coverage?",
+      "field_name": "spouse_coverage",
+      "field_type": "radio",
+      "section": "Employee Information",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Decide if employees' spouses should be covered. Including family members increases premium but provides comprehensive protection and is a valued employee benefit.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Include Dependent Children Coverage?",
+      "field_name": "children_coverage",
+      "field_type": "radio",
+      "section": "Employee Information",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Decide if employees' children should be covered. Typically covers children from 3 months to 25 years (if financially dependent). Family coverage enhances employee satisfaction and retention.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Maximum Children per Employee",
+      "field_name": "max_children",
+      "field_type": "select",
+      "section": "Employee Information",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "No Limit"
+      ],
+      "conditional_logic": {
+        "show_if": {
+          "field": "children_coverage",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Specify how many children per employee can be covered. Most policies cover 2-3 children. Setting a limit helps control premium costs while providing adequate family coverage.",
+      "placeholder": "Select maximum children"
+    },
+    {
+      "question_text": "Include Parents/Parents-in-law Coverage?",
+      "field_name": "parents_coverage",
+      "field_type": "radio",
+      "section": "Employee Information",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Decide if employees' parents should be covered. Parent coverage significantly increases premiums due to higher age and health risks but is highly valued by employees as elder care is expensive.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Average Age of Employees",
+      "field_name": "average_age",
+      "field_type": "select",
+      "section": "Employee Information",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Below 30 years",
+        "30-35 years",
+        "35-40 years",
+        "40-45 years",
+        "45-50 years",
+        "Above 50 years",
+        "Mixed age groups"
+      ],
+      "guidance_text": "Select the average age range of your employees. Younger employee groups typically have lower health risks and get better premium rates. Mixed groups are rated based on age distribution.",
+      "placeholder": "Select average age"
+    },
+    {
+      "question_text": "Employee Data File Upload",
+      "field_name": "employee_data_file",
+      "field_type": "file",
+      "section": "Employee Information",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload an Excel/CSV file with employee details including Name, Employee ID, Date of Birth, Gender, Designation, and dependent details if applicable. Use the provided template for correct format. This speeds up policy issuance.",
+      "placeholder": "Choose file (Excel/CSV format)"
+    },
+    {
+      "question_text": "Any existing/previous group health policy?",
+      "field_name": "existing_policy",
+      "field_type": "radio",
+      "section": "Previous Policy Details",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if your organization currently has or previously had group health insurance. Existing policy details help in porting benefits like waived waiting periods and continuity benefits.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Current/Previous Insurer Name",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Previous Policy Details",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_policy",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Name your current or most recent group health insurer. This information is used for policy portability and to ensure continuity of coverage benefits.",
+      "placeholder": "e.g., ICICI Lombard General Insurance",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Previous Policy Number",
+      "field_name": "previous_policy_number",
+      "field_type": "text",
+      "section": "Previous Policy Details",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 50
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_policy",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide your existing policy number for reference. This helps in faster processing of portability benefits and claim history verification.",
+      "placeholder": "e.g., GHI/2024/123456",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Claims Experience in Last 3 Years",
+      "field_name": "claims_experience",
+      "field_type": "textarea",
+      "section": "Previous Policy Details",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_policy",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide details of major claims in the last 3 years including claim amounts and claim ratio if available. Good claims experience (below 70% ratio) can lead to better renewal terms. Be honest as insurers verify this information.",
+      "placeholder": "e.g., FY 2023-24: 45 claims totaling ₹35 lakhs, Claim ratio: 65%"
+    },
+    {
+      "question_text": "Sum Insured per Family (₹)",
+      "field_name": "sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select the insurance coverage amount per family. This is the maximum amount payable for medical expenses per family per year. Higher sum insured provides better protection but increases premium. Consider average hospitalization costs in your city. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select sum insured",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Coverage Type",
+      "field_name": "coverage_type",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Individual Sum Insured (per person)",
+        "Family Floater (shared by family)",
+        "Combination (Base + Top-up)"
+      ],
+      "guidance_text": "Choose how the sum insured is applied. Individual sum insured gives each person separate coverage. Family floater shares the amount among family members. Floater is cost-effective for young families.",
+      "placeholder": "Select coverage type",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Room Rent Preference",
+      "field_name": "room_rent",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 29,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Room Rent Limit",
+        "1% of Sum Insured",
+        "2% of Sum Insured",
+        "Single Private Room",
+        "Twin Sharing Room",
+        "General Ward",
+        "As per Grade/Designation"
+      ],
+      "guidance_text": "Select room category covered during hospitalization. 'No limit' provides flexibility but costs more. Room rent caps can significantly impact claim amounts as many charges are linked to room category.",
+      "placeholder": "Select room preference"
+    },
+    {
+      "question_text": "In-patient Hospitalization",
+      "field_name": "inpatient_hospitalization",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "This covers hospitalization expenses for treatments requiring 24+ hours stay. It's the core coverage including room charges, doctor fees, surgery costs, medicines, and diagnostic tests. This is typically always included.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Pre & Post Hospitalization Expenses",
+      "field_name": "pre_post_hospitalization",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers medical expenses 30-60 days before and 60-90 days after hospitalization related to the same illness. Includes diagnostics, medicines, and doctor consultations. Essential coverage as these costs can be significant.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Day Care Procedures",
+      "field_name": "daycare_procedures",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers 140+ medical procedures that don't require 24-hour hospitalization due to technological advances, like cataract surgery, chemotherapy, dialysis. Important coverage as many treatments are now done as day procedures.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Ambulance Charges",
+      "field_name": "ambulance_charges",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers emergency ambulance transportation to hospital. Usually capped at ₹2,000-5,000 per hospitalization. Though small amount, it's useful during emergencies when ambulance costs can be high.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Maternity Benefits",
+      "field_name": "maternity_benefits",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers pregnancy-related expenses including delivery (normal/cesarean) and complications. Usually has 9-12 month waiting period and sub-limits. Popular benefit for organizations with young workforce. Significantly increases premium.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Maternity Sum Insured Limit (₹)",
+      "field_name": "maternity_limit",
+      "field_type": "number",
+      "section": "Coverage Benefits Required",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "maternity_benefits",
+          "value": true
+        }
+      },
+      "guidance_text": "Select maximum amount payable for maternity expenses. Higher limits provide better coverage for complicated deliveries but increase premium. Consider average delivery costs in your city. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select maternity limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Newborn Baby Coverage",
+      "field_name": "newborn_coverage",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 36,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Automatically covers newborn babies from day one without waiting period. Includes vaccination, congenital conditions, and NICU expenses. Important addition if maternity benefit is selected.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Pre-existing Disease Coverage",
+      "field_name": "pre_existing_coverage",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers medical conditions existing before policy purchase like diabetes, hypertension. Standard policies have 2-4 year waiting period, but group policies can offer reduced or waived waiting periods. Important for older employees.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Pre-existing Disease Waiting Period",
+      "field_name": "ped_waiting_period",
+      "field_type": "select",
+      "section": "Coverage Benefits Required",
+      "order_index": 38,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "No waiting period",
+        "1 year",
+        "2 years",
+        "3 years",
+        "4 years"
+      ],
+      "conditional_logic": {
+        "show_if": {
+          "field": "pre_existing_coverage",
+          "value": true
+        }
+      },
+      "guidance_text": "Select waiting period for pre-existing diseases. Shorter waiting periods mean immediate coverage but higher premiums. Large groups can negotiate reduced waiting periods.",
+      "placeholder": "Select waiting period"
+    },
+    {
+      "question_text": "Domiciliary Hospitalization",
+      "field_name": "domiciliary_hospitalization",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 39,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers medical treatment at home when hospitalization is needed but not possible due to patient's condition or lack of hospital beds. Useful during situations like COVID-19. Usually has sub-limits and specific conditions.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Organ Donor Expenses",
+      "field_name": "organ_donor_expenses",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 40,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers medical expenses of organ donor during organ transplant surgery. Important if organ transplant is covered. Ensures financial protection for both recipient and donor's medical costs.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Mental Health Treatment",
+      "field_name": "mental_health",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 41,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers psychiatric treatments, counseling, and mental illness hospitalization. Increasingly important benefit for employee wellness. May have sub-limits and require minimum hospitalization period. Now mandated by IRDAI.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Annual Health Check-up",
+      "field_name": "health_checkup",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 42,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Provides free annual preventive health check-ups for employees. Helps in early detection of health issues. Usually covers basic tests like blood tests, ECG, X-ray. Amount typically 0.5-1% of sum insured.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Emergency Medical Evacuation",
+      "field_name": "emergency_evacuation",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 43,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers air ambulance or specialized transport for medical emergencies to nearest appropriate medical facility. Important for employees in remote locations or frequent travelers. Usually has monetary limits.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Hospital Cash Benefit",
+      "field_name": "hospital_cash",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 44,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Provides fixed daily cash amount (₹500-5000) during hospitalization to cover incidental expenses. Paid in addition to medical claims. Helpful for out-of-pocket expenses like attendant, food, transport.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "AYUSH Treatment",
+      "field_name": "ayush_treatment",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 45,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers alternative medicine treatments - Ayurveda, Yoga, Unani, Siddha, and Homeopathy in government recognized hospitals. Popular benefit as many prefer traditional treatments. Usually has sub-limits.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Vaccination Charges",
+      "field_name": "vaccination_charges",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 46,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers cost of preventive vaccinations for employees and families. May include routine vaccines, travel vaccines, or specific vaccines like flu shots. Usually has annual limits per person.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Critical Illness Cover",
+      "field_name": "critical_illness",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 47,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Provides lump sum payment on diagnosis of specified critical illnesses like cancer, heart attack, kidney failure. Paid regardless of actual treatment cost. Helps cover income loss and lifestyle changes. Increases premium significantly.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Critical Illness Sum Insured (₹)",
+      "field_name": "critical_illness_sum",
+      "field_type": "select",
+      "section": "Coverage Benefits Required",
+      "order_index": 48,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "₹1 Lakh",
+        "₹2 Lakhs",
+        "₹3 Lakhs",
+        "₹5 Lakhs",
+        "₹10 Lakhs",
+        "₹20 Lakhs"
+      ],
+      "conditional_logic": {
+        "show_if": {
+          "field": "critical_illness",
+          "value": true
+        }
+      },
+      "guidance_text": "Select lump sum amount payable on critical illness diagnosis. Should be enough to cover income loss during recovery and lifestyle adjustments. Higher amounts provide better financial security.",
+      "placeholder": "Select critical illness sum"
+    },
+    {
+      "question_text": "OPD (Outpatient) Coverage",
+      "field_name": "opd_coverage",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 49,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers doctor consultations, diagnostics, and medicines without hospitalization. High-usage benefit but significantly increases premium (20-40%). Usually has annual limits per person. Consider if employees value this benefit.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "OPD Coverage Limit (₹)",
+      "field_name": "opd_limit",
+      "field_type": "number",
+      "section": "Coverage Benefits Required",
+      "order_index": 50,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "opd_coverage",
+          "value": true
+        }
+      },
+      "guidance_text": "Select annual limit for outpatient expenses per person. Higher limits provide better coverage but increase premium substantially. Consider average OPD expenses in your location. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select OPD limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Teleconsultation Services",
+      "field_name": "teleconsultation",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 51,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Provides access to doctor consultations via phone/video. Convenient for minor ailments and follow-ups. Many insurers offer unlimited teleconsultations. Valuable post-COVID benefit with minimal premium impact.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Dental Treatment Coverage",
+      "field_name": "dental_coverage",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 52,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers dental treatments beyond accident-related injuries. Usually excludes cosmetic procedures. Has sub-limits and may require pre-authorization. Expensive add-on but valued by employees.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Vision/Optical Coverage",
+      "field_name": "vision_coverage",
+      "field_type": "checkbox",
+      "section": "Coverage Benefits Required",
+      "order_index": 53,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers eye examinations, spectacles, contact lenses, and vision correction procedures. Usually has biennial limits for spectacles. May exclude LASIK surgery or have separate sub-limits.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Co-payment Requirement",
+      "field_name": "copayment",
+      "field_type": "select",
+      "section": "Cost Sharing Options",
+      "order_index": 54,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Co-payment",
+        "10% Co-payment",
+        "20% Co-payment",
+        "Co-payment for specific treatments only",
+        "Co-payment for non-network hospitals"
+      ],
+      "guidance_text": "Co-payment means employees pay a percentage of claim amount from their pocket. It reduces premium (10-30% reduction) but increases employee's financial burden during claims. Consider employee satisfaction vs cost savings.",
+      "placeholder": "Select co-payment option"
+    },
+    {
+      "question_text": "Deductible per Claim (₹)",
+      "field_name": "deductible",
+      "field_type": "number",
+      "section": "Cost Sharing Options",
+      "order_index": 55,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Deductible is the initial amount paid by employee for each claim before insurance coverage starts. Higher deductibles reduce premium but increase employee expense. Balance cost savings with employee benefit value. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Desired Policy Period",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Policy Duration",
+      "order_index": 56,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Select policy duration. Multi-year policies offer premium discounts (5-10%) and protection against rate increases. However, they reduce flexibility to change insurers or coverage. One year is most common.",
+      "placeholder": "Select policy period",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Duration",
+      "order_index": 57,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select when you want the insurance coverage to begin. If renewing existing policy, ensure no gap in coverage. For new policies, consider starting at month beginning for easier administration.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Additional Information or Special Requirements",
+      "field_name": "additional_info",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 58,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide any additional information about your employee demographics, specific coverage needs, or special requirements. Include details about hazardous work conditions, international coverage needs, or specific network hospital preferences.",
+      "placeholder": "e.g., We need coverage for 10 employees posted abroad. Prefer insurers with good network hospitals in Bangalore and Chennai."
+    },
+    {
+      "question_text": "HR/Admin Contact Name",
+      "field_name": "hr_contact_name",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 59,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide name of the HR or Admin person who will coordinate the insurance implementation, handle employee queries, and manage claims. This person will be the primary point of contact.",
+      "placeholder": "e.g., Priya Sharma"
+    },
+    {
+      "question_text": "HR/Admin Designation",
+      "field_name": "hr_designation",
+      "field_type": "text",
+      "section": "Contact Information",
+      "order_index": 60,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the designation of the contact person. This helps insurers understand the decision-making authority and ensures communication reaches the right level.",
+      "placeholder": "e.g., HR Manager"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.497Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 7
+}

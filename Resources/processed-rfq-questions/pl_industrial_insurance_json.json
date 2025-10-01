@@ -1,0 +1,552 @@
+{
+  "product_name": "Public Liability Industrial Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of Insured",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the complete legal name of your company as registered with ROC. This should match your factory license and GST registration exactly for seamless claim processing.",
+      "placeholder": "e.g., Bharat Manufacturing Industries Pvt. Ltd.",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your head office or registered address where all policy documents and correspondence should be sent. Include complete details with landmark, city, state, and pincode.",
+      "placeholder": "e.g., Plot No. 45, Phase II, MIDC Industrial Area, Pune, Maharashtra - 411018",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Select the desired policy duration. Multi-year policies offer premium discounts and protection against rate increases, while annual policies provide flexibility to adjust coverage.",
+      "placeholder": "Select policy period",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the exact address of your industrial facility where coverage is needed. This is where your manufacturing, warehousing, or industrial operations take place. Include plot number and industrial area name.",
+      "placeholder": "e.g., Unit No. 12, Sector 3, GIDC Industrial Estate, Vapi, Gujarat - 396195",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Multiple Risk Locations",
+      "field_name": "multiple_locations",
+      "field_type": "radio",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you operate from multiple industrial locations. Each location needs to be declared for coverage. Multiple locations may require separate sum insured limits or a floater policy.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Nature of Business (Occupancy)",
+      "field_name": "nature_of_business",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing - Textiles",
+        "Manufacturing - Chemicals",
+        "Manufacturing - Pharmaceuticals",
+        "Manufacturing - Engineering Goods",
+        "Manufacturing - Food & Beverages",
+        "Manufacturing - Electronics",
+        "Manufacturing - Automobile Parts",
+        "Warehousing & Storage",
+        "Processing Industries",
+        "Power Generation",
+        "Construction Materials",
+        "Other Industrial Activity"
+      ],
+      "guidance_text": "Select your primary industrial activity. Different industries have varying risk levels - chemical plants have higher liability exposure than textile mills, which affects your premium calculation.",
+      "placeholder": "Select your industry type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "nature_of_business_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "nature_of_business",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Website (if any)",
+      "field_name": "website",
+      "field_type": "text",
+      "section": "Business Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^(https?://)?(www\\.)?[a-zA-Z0-9-]+(\\.[a-zA-Z]{2,})+(/.*)?$",
+        "maxLength": 200
+      },
+      "guidance_text": "Provide your company website URL if available. This helps insurers understand your business scale, operations, and safety commitments displayed on your site.",
+      "placeholder": "e.g., www.bharatmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Coverage",
+      "field_name": "coverage_type",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Act Only - Public Liability Insurance Act 1991",
+        "Act + Common Law",
+        "Common Law Only"
+      ],
+      "guidance_text": "Act Only covers statutory liability under PLI Act 1991 (mandatory for hazardous industries). Common Law covers broader third-party claims. Act + Common Law provides comprehensive protection recommended for all industries.",
+      "placeholder": "Select coverage type",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Retroactive Date (If Claims Made)",
+      "field_name": "retroactive_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 9,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "For claims-made policies, this date determines coverage for past incidents. Usually matches your first public liability policy date. Earlier retroactive dates provide broader coverage for historical incidents.",
+      "placeholder": "e.g., 01/04/2020"
+    },
+    {
+      "question_text": "AOA : AOY Ratio",
+      "field_name": "aoa_aoy_ratio",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1:1",
+        "1:2",
+        "1:3",
+        "1:Unlimited",
+        "As per standard policy"
+      ],
+      "guidance_text": "Any One Accident (AOA) to Any One Year (AOY) ratio determines claim limits. 1:2 means if AOA is ₹1 crore, total yearly claims can't exceed ₹2 crores. Higher ratios provide better protection for multiple incidents.",
+      "placeholder": "Select ratio"
+    },
+    {
+      "question_text": "Limit of Indemnity - AOA (Any One Accident)",
+      "field_name": "limit_aoa",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Maximum amount payable for a single accident/incident. Consider worst-case scenarios like multiple injuries, property damage, or environmental impact from one incident. Higher limits recommended for hazardous operations. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select AOA limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Limit of Indemnity - AOY (Any One Year)",
+      "field_name": "limit_aoy",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Maximum total amount payable for all claims in the policy year. Should be higher than AOA limit to cover multiple incidents. Consider your industry risk profile and potential for recurring claims. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select AOY limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Deductible Required",
+      "field_name": "deductible_amount",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Amount you pay per claim before insurance coverage begins. Higher deductibles significantly reduce premiums but mean more out-of-pocket expense during claims. Balance based on claim frequency expectations. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Annual Turnover (Last Year)",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Financial Information",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter your total revenue from the previous financial year in rupees. Turnover indicates business scale and activity level, directly impacting public exposure and premium calculation.",
+      "placeholder": "e.g., 500000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Expected Turnover (Current Year)",
+      "field_name": "expected_turnover",
+      "field_type": "number",
+      "section": "Financial Information",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter projected revenue for current financial year. If actual turnover exceeds this significantly, inform insurer immediately as under-declaration can affect claim settlements.",
+      "placeholder": "e.g., 600000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Total Number of Employees",
+      "field_name": "total_employees",
+      "field_type": "number",
+      "section": "Operations Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100000
+      },
+      "guidance_text": "Enter total workforce including permanent, temporary, and contract workers. More employees mean higher footfall and increased third-party exposure at your premises, affecting risk assessment.",
+      "placeholder": "e.g., 250",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Number of Visitors Per Day (Average)",
+      "field_name": "daily_visitors",
+      "field_type": "number",
+      "section": "Operations Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000
+      },
+      "guidance_text": "Estimate average daily visitors including customers, vendors, transporters, and other third parties. Higher visitor traffic increases probability of accidents and liability claims on your premises.",
+      "placeholder": "e.g., 50",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Do You Handle Hazardous Materials?",
+      "field_name": "hazardous_materials",
+      "field_type": "radio",
+      "section": "Risk Assessment",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you store, process, or handle chemicals, flammable materials, toxic substances, or any materials classified as hazardous. This significantly impacts risk profile and may require additional coverage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "List of Hazardous Materials",
+      "field_name": "hazardous_materials_list",
+      "field_type": "textarea",
+      "section": "Risk Assessment",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false,
+        "minLength": 10,
+        "maxLength": 1000
+      },
+      "guidance_text": "If handling hazardous materials, list them with quantities and storage methods. Include chemicals, gases, inflammables, or toxic substances. This helps determine if you need pollution liability or other special covers.",
+      "placeholder": "e.g., Sulfuric Acid - 500L monthly, stored in acid-proof tanks with secondary containment...",
+      "conditional_logic": {
+        "show_if": {
+          "field": "hazardous_materials",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Safety Measures in Place",
+      "field_name": "safety_measures",
+      "field_type": "multiselect",
+      "section": "Risk Assessment",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Fire Fighting Systems",
+        "Security Guards 24x7",
+        "CCTV Surveillance",
+        "Safety Signage",
+        "Regular Safety Training",
+        "Emergency Response Plan",
+        "First Aid Facilities",
+        "Safety Equipment (PPE)",
+        "Periodic Safety Audits",
+        "ISO Safety Certification",
+        "Pollution Control Equipment",
+        "Waste Management System"
+      ],
+      "guidance_text": "Select all safety measures implemented at your facility. Better safety infrastructure reduces accident probability and can qualify you for premium discounts. Insurers value proactive risk management.",
+      "placeholder": "Select all applicable"
+    },
+    {
+      "question_text": "Any Claims/Incidents in Last 5 Years?",
+      "field_name": "past_claims",
+      "field_type": "radio",
+      "section": "Claims History",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare any public liability claims, accidents, or incidents involving third parties at your premises in the past 5 years. Claims history affects premium but non-disclosure can void your policy.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Past Claims/Incidents",
+      "field_name": "claims_details",
+      "field_type": "textarea",
+      "section": "Claims History",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of past incidents including date, nature of incident, injuries/damages, claim amount, and settlement status. Complete disclosure helps insurers price risk accurately.",
+      "placeholder": "e.g., Jan 2023 - Visitor slipped in factory premises, minor injury, claimed ₹50,000, settled for ₹30,000...",
+      "conditional_logic": {
+        "show_if": {
+          "field": "past_claims",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Existing Public Liability Insurance?",
+      "field_name": "existing_insurance",
+      "field_type": "radio",
+      "section": "Current Insurance",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you currently have public liability insurance. Continuous coverage ensures no gaps in protection and may qualify for renewal discounts or no-claim bonus.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Current Insurer Name",
+      "field_name": "current_insurer",
+      "field_type": "text",
+      "section": "Current Insurance",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 100
+      },
+      "guidance_text": "If currently insured, provide your insurance company name. This helps in smooth policy portability and transferring any accumulated benefits.",
+      "placeholder": "e.g., National Insurance Company",
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_insurance",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Current Policy Expiry Date",
+      "field_name": "policy_expiry_date",
+      "field_type": "date",
+      "section": "Current Insurance",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Provide current policy expiration date to ensure continuous coverage. Even a day's gap can expose you to significant liability for incidents during the uninsured period.",
+      "placeholder": "e.g., 31/03/2025",
+      "conditional_logic": {
+        "show_if": {
+          "field": "existing_insurance",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Additional Covers Required",
+      "field_name": "additional_covers",
+      "field_type": "multiselect",
+      "section": "Additional Coverage",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Products Liability",
+        "Transportation Liability",
+        "Pollution Liability",
+        "Contractual Liability",
+        "Cross Liability",
+        "Loading/Unloading Operations",
+        "Work Away from Premises",
+        "Legal Defense Costs",
+        "Emergency Medical Expenses",
+        "Crisis Management Expenses"
+      ],
+      "guidance_text": "Select additional coverages based on your operations. Products liability covers defective products, pollution liability covers environmental damage, and transportation liability covers goods in transit. Each extends protection beyond basic coverage.",
+      "placeholder": "Select if required"
+    },
+    {
+      "question_text": "GST Registration Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Compliance Information",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Provide your 15-character GSTIN for verification and tax compliance. You can claim input tax credit on insurance premium paid, reducing your effective insurance cost.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Factory License Number",
+      "field_name": "factory_license",
+      "field_type": "text",
+      "section": "Compliance Information",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 50
+      },
+      "guidance_text": "Enter your factory license number issued under Factories Act. This confirms legal operation of your industrial facility and is mandatory for policy issuance for manufacturing units.",
+      "placeholder": "e.g., MH/12345/2023"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy",
+      "field_name": "previous_policy_upload",
+      "field_type": "file",
+      "section": "Documents",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your existing/expired policy document if available. This helps verify coverage history, claim record, and ensures appropriate renewal benefits are applied.",
+      "placeholder": "Upload PDF/Image file"
+    },
+    {
+      "question_text": "Special Remarks/Requirements",
+      "field_name": "special_remarks",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any unique aspects of your operations, special risk factors, or specific coverage requirements. Include any contractual obligations or compliance requirements that need special attention.",
+      "placeholder": "e.g., We operate in a chemical industrial zone and need coverage compliant with environmental regulations..."
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.578Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 3
+}

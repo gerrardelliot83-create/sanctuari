@@ -1,0 +1,522 @@
+{
+  "product_name": "Industrial All Risk Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of Company/Business Entity",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the official registered name of your company as it appears on legal documents. This name will be used on your insurance policy and all official communications. Make sure it matches your GST registration and other business documents.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Full Name",
+      "field_name": "contact_person_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the full name of the person who will be the primary contact for this insurance policy. This person should have authority to make insurance-related decisions and will receive all policy communications and claim-related correspondence.",
+      "placeholder": "e.g., Rajesh Kumar"
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a 10-digit Indian mobile number that's actively monitored. This will be used for urgent communications about your policy, claims updates, and renewal reminders. SMS alerts and WhatsApp notifications may be sent to this number.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email_id",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide an official email address that's checked regularly. Policy documents, premium invoices, and claim forms will be sent to this email. Ensure it's an address that won't bounce and is accessible by authorized personnel.",
+      "placeholder": "e.g., insurance@abcmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Company Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter your company's complete postal address where official correspondence should be sent. Include building/floor details, street name, area, city, state, and pincode. This address will be used for sending physical policy documents and important notices.",
+      "placeholder": "e.g., Plot No. 45, Phase II, MIDC Industrial Area, Pimpri-Chinchwad, Pune, Maharashtra - 411018",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Number of Locations to be Covered",
+      "field_name": "number_of_locations",
+      "field_type": "select",
+      "section": "Risk & Property Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Single Location",
+        "2-5 Locations",
+        "6-10 Locations",
+        "More than 10 Locations"
+      ],
+      "guidance_text": "Select how many physical locations need insurance coverage. Each factory, warehouse, office, or storage facility counts as a separate location. If you have multiple buildings at the same address, they're typically considered one location unless separated by public roads.",
+      "placeholder": "Select number of locations"
+    },
+    {
+      "question_text": "Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Risk & Property Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide the complete address of the property/properties to be insured. For multiple locations, list each address separately with clear labels (Location 1, Location 2, etc.). Include landmarks and GPS coordinates if available, as this helps in risk assessment and claims settlement.",
+      "placeholder": "e.g., Location 1: Manufacturing Unit - Plot A-12, Sector 5, Industrial Estate, Faridabad, Haryana - 121001\nLocation 2: Warehouse - Survey No. 234, Village Road, Bhiwandi, Maharashtra - 421302",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business/Manufacturing Activity",
+      "field_name": "nature_of_business",
+      "field_type": "textarea",
+      "section": "Risk & Property Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Describe your main business activities in detail. Include what products you manufacture or services you provide, raw materials used, and any hazardous processes involved. This information directly affects your risk profile and premium calculation. Be specific - 'textile manufacturing' is better detailed as 'cotton yarn spinning and fabric weaving'.",
+      "placeholder": "e.g., Manufacturing of automotive spare parts including metal casting, machining, and assembly. Raw materials include steel, aluminum, and plastic components. No hazardous chemicals used in the process.",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Age of Building/Plant (in years)",
+      "field_name": "building_age",
+      "field_type": "number",
+      "section": "Risk & Property Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100
+      },
+      "guidance_text": "Enter the age of your building or plant in completed years since construction. For renovated buildings, provide the original construction age. If you have multiple buildings of different ages, mention the age of the main/oldest building here and provide details of others in additional information.",
+      "placeholder": "e.g., 15",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Risk Type",
+      "field_name": "risk_type",
+      "field_type": "select",
+      "section": "Risk & Property Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing",
+        "Processing",
+        "Storage/Warehouse",
+        "Office/R&D",
+        "Mixed Use",
+        "Others"
+      ],
+      "guidance_text": "Select the primary use of the property being insured. Manufacturing involves creating products from raw materials, Processing involves treating or refining materials, Storage is for warehousing goods. Choose 'Mixed Use' if your property serves multiple purposes equally.",
+      "placeholder": "Select risk type"
+    },
+    {
+      "question_text": "Does the property include basement storage?",
+      "field_name": "basement_storage",
+      "field_type": "radio",
+      "section": "Risk & Property Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you store any goods, materials, or equipment in basement areas. Basement storage carries higher flood risk and may affect your premium. Even occasional or minimal basement storage should be declared as 'Yes'.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Any fire or property damage claims in last 3 years?",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Risk & Property Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Claims",
+        "Yes - Claims Made"
+      ],
+      "guidance_text": "Declare any insurance claims made for fire, flood, theft, or other property damage in the past 3 years, even if they were with a different insurer. This includes claims that were rejected or withdrawn. Your claims history affects premium calculation but doesn't necessarily mean coverage will be denied.",
+      "placeholder": "Select claim status"
+    },
+    {
+      "question_text": "Claim Details (if applicable)",
+      "field_name": "claim_details",
+      "field_type": "textarea",
+      "section": "Risk & Property Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "If you've had claims in the past 3 years, provide details including date of loss, cause of damage, claim amount, and settlement status. This helps insurers understand your risk profile better and may actually help in getting better terms if you've taken corrective measures since.",
+      "placeholder": "e.g., March 2023 - Fire in storage area due to electrical short circuit, Claim amount: ₹5,00,000, Settled: ₹4,50,000. Installed new electrical system and fire suppression after incident.",
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history",
+          "value": "Yes - Claims Made"
+        }
+      }
+    },
+    {
+      "question_text": "Property exposed to Storm, Tempest, Flood, or Inundation (STFI)?",
+      "field_name": "stfi_exposure",
+      "field_type": "radio",
+      "section": "Risk & Property Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if your property is in an area prone to natural calamities like storms, floods, or waterlogging. Consider your location's history over the past 10 years. Properties near rivers, coasts, or in low-lying areas typically have STFI exposure. This helps determine if additional coverage is needed.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Distance from Nearest Fire Station (in km)",
+      "field_name": "fire_station_distance",
+      "field_type": "number",
+      "section": "Risk & Property Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true,
+        "min": 0.1,
+        "max": 100
+      },
+      "guidance_text": "Enter the road distance in kilometers to the nearest operational fire station. This affects response time during emergencies and influences your premium. Properties within 5 km of a fire station typically get better rates. You can check this on Google Maps by searching for nearby fire stations.",
+      "placeholder": "e.g., 3.5",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Fire Protection Measures Installed",
+      "field_name": "fire_protection_measures",
+      "field_type": "multiselect",
+      "section": "Risk & Property Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Fire Extinguishers",
+        "Hydrant System",
+        "Automatic Sprinklers",
+        "Smoke Detectors",
+        "Fire Alarm System",
+        "Water Storage Tank",
+        "Fire Pumps",
+        "Emergency Exit Signs",
+        "Fire Doors",
+        "None"
+      ],
+      "guidance_text": "Select all fire safety equipment and systems installed at your property. Having multiple fire protection measures can significantly reduce your premium. Regular maintenance and certification of these systems is important for both safety and insurance validity.",
+      "placeholder": "Select all applicable measures"
+    },
+    {
+      "question_text": "Details of Current/Expiring Policy",
+      "field_name": "expiring_policy_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "If you have an existing policy, provide the current insurer's name, policy number, expiry date, and sum insured. This helps in ensuring continuous coverage and may qualify you for renewal discounts. For first-time buyers, leave this blank or write 'First Time Insurance'.",
+      "placeholder": "e.g., Current Insurer: XYZ Insurance Co., Policy No: IAR/2024/123456, Expiry: 31/03/2025, Sum Insured: ₹5 Crores"
+    },
+    {
+      "question_text": "Building/Structure Sum Insured (₹)",
+      "field_name": "building_sum_insured",
+      "field_type": "number",
+      "section": "Sum Insured Details",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the current reconstruction value of your building/structures, not the purchase price or market value. This should cover the cost to rebuild the structure completely if destroyed, including construction materials and labor at today's rates. Under-insuring can lead to proportionate claim settlements.",
+      "placeholder": "e.g., 50000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Plant & Machinery Sum Insured (₹)",
+      "field_name": "machinery_sum_insured",
+      "field_type": "number",
+      "section": "Sum Insured Details",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the total current replacement value of all machinery and equipment. This should be based on what it would cost to buy similar new equipment today, not the depreciated book value. Include installation and commissioning costs. For imported machinery, consider current exchange rates and customs duties.",
+      "placeholder": "e.g., 75000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Furniture, Fixtures & Fittings Sum Insured (₹)",
+      "field_name": "furniture_sum_insured",
+      "field_type": "number",
+      "section": "Sum Insured Details",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Include the replacement value of all office furniture, fixtures, fittings, electrical installations, and office equipment. This covers desks, chairs, AC units, electrical panels, and other non-production assets. Even if minimal, provide an accurate estimate to ensure complete coverage.",
+      "placeholder": "e.g., 5000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Stocks (Raw Material, WIP, Finished Goods) Sum Insured (₹)",
+      "field_name": "stocks_sum_insured",
+      "field_type": "number",
+      "section": "Sum Insured Details",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the maximum value of inventory you expect to hold at any time during the policy period, including raw materials, work-in-progress, and finished goods. Consider seasonal peaks and include goods in transit within premises. This should be at cost or market value, whichever is lower.",
+      "placeholder": "e.g., 25000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Other Assets Sum Insured (₹)",
+      "field_name": "other_assets_sum_insured",
+      "field_type": "number",
+      "section": "Sum Insured Details",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000000
+      },
+      "guidance_text": "Include any other insurable assets not covered above, such as computers, vehicles within premises, valuable documents, or specialized equipment. Specify what's included in the additional information section. Leave as 0 if not applicable.",
+      "placeholder": "e.g., 2000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Do you require Business Interruption (Loss of Profit) Cover?",
+      "field_name": "business_interruption_required",
+      "field_type": "radio",
+      "section": "Business Interruption",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Business Interruption insurance covers lost profits and continuing expenses if your operations stop due to insured damage. This is crucial for businesses with high fixed costs or those that cannot quickly resume operations elsewhere. It helps maintain cash flow during reconstruction periods.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Estimated Annual Gross Profit (₹)",
+      "field_name": "annual_gross_profit",
+      "field_type": "number",
+      "section": "Business Interruption",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your expected gross profit for the next 12 months (Net Sales minus Variable Costs). This forms the basis for Business Interruption coverage. Include only the profit that would be lost if operations stopped. Your accountant can help calculate this from your P&L statement.",
+      "placeholder": "e.g., 30000000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "business_interruption_required",
+          "value": "Yes"
+        }
+      },
+      "format": "decimal"
+    },
+    {
+      "question_text": "Indemnity Period Required",
+      "field_name": "indemnity_period",
+      "field_type": "select",
+      "section": "Business Interruption",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "3 months",
+        "6 months",
+        "12 months",
+        "18 months",
+        "24 months"
+      ],
+      "guidance_text": "Select how long you estimate it would take to fully restore operations after major damage. Consider reconstruction time, machinery procurement, regulatory approvals, and market recovery. Longer periods provide better protection but increase premium. Most businesses choose 12 months.",
+      "placeholder": "Select indemnity period",
+      "conditional_logic": {
+        "show_if": {
+          "field": "business_interruption_required",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Earthquake (Fire & Shock) Cover",
+      "field_name": "earthquake_cover",
+      "field_type": "checkbox",
+      "section": "Add-On Covers",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers damage from earthquakes including fire caused by earthquakes. Recommended for all locations, especially in seismic zones. The additional premium is usually minimal compared to the potential loss. Most lenders require this cover for loan-backed properties.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Terrorism Cover",
+      "field_name": "terrorism_cover",
+      "field_type": "checkbox",
+      "section": "Add-On Covers",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers physical damage to property due to terrorist activities. Important for businesses in urban areas, near sensitive locations, or high-value properties. Premium depends on location risk rating. Some states/areas may have higher terrorism risk premiums.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Escalation Clause",
+      "field_name": "escalation_clause",
+      "field_type": "checkbox",
+      "section": "Add-On Covers",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Automatically increases your sum insured during the policy period to account for inflation in rebuilding costs. Typically provides 10-25% escalation. Very useful in times of high inflation or for long reconstruction periods. Helps avoid under-insurance at claim time.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Debris Removal (beyond standard 1% of claim)",
+      "field_name": "debris_removal",
+      "field_type": "checkbox",
+      "section": "Add-On Covers",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Standard policies cover debris removal up to 1% of claim amount. This extension increases the limit to handle extensive debris clearing after major losses. Important for large buildings or hazardous material handling facilities where debris removal can be expensive.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Architects & Engineers Fees (beyond standard 3%)",
+      "field_name": "professional_fees",
+      "field_type": "checkbox",
+      "section": "Add-On Covers",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers fees for architects, engineers, and surveyors needed for reconstruction beyond the standard 3% limit. Essential for complex structures or specialized facilities requiring expert reconstruction planning. Can increase coverage to 5-7.5% of claim amount.",
+      "placeholder": "Check to include"
+    },
+    {
+      "question_text": "Additional Information or Special Requirements",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide any additional information about your business, special risk factors, recent safety improvements, or specific coverage requirements not covered above. Mention any unique aspects of your operations, seasonal variations in stock, or planned expansions that might affect insurance needs.",
+      "placeholder": "e.g., Planning major expansion in Q3 2025. Recently installed solar panels worth ₹50 lakhs. Have backup power generation system. Stock value peaks during festival season (October-November) up to ₹5 crores."
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.520Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 5
+}

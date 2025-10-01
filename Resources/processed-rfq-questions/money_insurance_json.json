@@ -1,0 +1,612 @@
+{
+  "product_name": "Money Insurance Policy",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Name of the Insured Company",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your company's registered legal name exactly as it appears on your GST certificate or incorporation documents. This ensures the policy is issued correctly and claims are processed smoothly.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Your 15-digit GST identification number is essential for tax compliance and verification. It helps insurers confirm your business registration and determine applicable tax rates on your premium.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete office address where all policy documents and correspondence should be sent. Include building name, street, area, city, state, and pincode for accurate delivery.",
+      "placeholder": "e.g., 201, Business Plaza, MG Road, Fort, Mumbai, Maharashtra - 400001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Name of the authorized person handling this insurance policy. This person will be the primary contact for all policy-related communications, renewals, and claim settlements.",
+      "placeholder": "e.g., Rajesh Kumar"
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide a 10-digit Indian mobile number for immediate communication regarding your policy. This number will receive SMS alerts for policy renewal, claim updates, and important notifications.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Your official email address for receiving policy documents, renewal reminders, and claim correspondence. Ensure this is an actively monitored email to avoid missing important communications.",
+      "placeholder": "e.g., contact@abcmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business",
+      "field_name": "nature_of_business",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing",
+        "Trading / Retail",
+        "Service Industry",
+        "Banking / Financial Services",
+        "Jewelry / Precious Metals",
+        "Cash Management Services",
+        "ATM Operations",
+        "E-commerce / Online Retail",
+        "Healthcare / Hospitals",
+        "Educational Institution",
+        "Others"
+      ],
+      "guidance_text": "Select the category that best describes your primary business activity. This helps insurers assess the typical cash handling patterns and risks associated with your industry, which affects your premium calculation.",
+      "placeholder": "Select your business type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "nature_of_business_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "nature_of_business",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Specify Nature of Business (if Others selected)",
+      "field_name": "nature_of_business_other",
+      "field_type": "text",
+      "section": "Business Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": false,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "nature_of_business",
+          "value": "Others"
+        }
+      },
+      "guidance_text": "If your business doesn't fit the standard categories, describe your main business activities here. Be specific about the type of operations that involve cash handling.",
+      "placeholder": "e.g., Event Management Company",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Risk Location Address (if different from communication address)",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Business Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": false,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "If your cash is stored or handled at a different location than your main office, provide that address here. This is the actual location where the insured money is kept, transported from, or processed.",
+      "placeholder": "e.g., Warehouse No. 5, Industrial Area, Phase 2, Pune, Maharashtra - 411018",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from when you want your money insurance coverage to begin. Typically, this should be at least 2-3 days from today to allow for policy processing and payment clearance.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select your desired policy end date. Most money insurance policies are annual (12 months), but shorter terms may be available. Longer terms often come with better premium rates.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Cash in Transit Coverage Required?",
+      "field_name": "cash_transit_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Cash in transit covers money while being transported between locations (bank to office, office to vendor, etc.). Select 'Yes' if your business regularly moves cash between locations.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Cash in Transit - Sum Insured Limit",
+      "field_name": "cash_transit_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false,
+        "min": 10000,
+        "max": 100000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "cash_transit_required",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the maximum amount of cash that might be in transit at any one time. This is your coverage limit for theft or loss during transportation. Consider your highest value transactions when setting this limit.",
+      "placeholder": "e.g., 500000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Cash in Safe/Strong Room Coverage Required?",
+      "field_name": "cash_safe_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers cash stored in your office safe or strong room against burglary, theft, or damage. Select 'Yes' if you keep cash overnight or for extended periods in your premises.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Cash in Safe/Strong Room - Sum Insured Limit",
+      "field_name": "cash_safe_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false,
+        "min": 10000,
+        "max": 100000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "cash_safe_required",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the maximum amount of cash that might be stored in your safe or strong room at any time. This should reflect your peak cash storage needs, such as during month-end or festival seasons.",
+      "placeholder": "e.g., 1000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Cash on Counter Coverage Required?",
+      "field_name": "cash_counter_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers cash at your business counters, tills, or cashier desks during business hours. Essential for retail stores, banks, or any business with customer-facing cash transactions.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Cash on Counter - Sum Insured Limit",
+      "field_name": "cash_counter_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false,
+        "min": 5000,
+        "max": 10000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "cash_counter_required",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the maximum cash amount that might be at your counters during business hours. Consider your busiest business days and peak transaction periods when determining this limit.",
+      "placeholder": "e.g., 200000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Cash in ATM Coverage Required?",
+      "field_name": "cash_atm_required",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Select 'Yes' only if you operate ATMs as part of your business. This covers cash stored in ATM machines against theft, burglary, or damage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Cash in ATM - Sum Insured Limit",
+      "field_name": "cash_atm_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false,
+        "min": 100000,
+        "max": 100000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "cash_atm_required",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the maximum cash capacity of your ATM(s). If you have multiple ATMs, enter the combined maximum amount that could be stored across all machines at any time.",
+      "placeholder": "e.g., 5000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "How is cash transported?",
+      "field_name": "cash_transport_method",
+      "field_type": "multiselect",
+      "section": "Operational Details",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Own Vehicle",
+        "Public Transport",
+        "Professional Cash Management Agency",
+        "Armed Guards",
+        "Bank's Cash Van",
+        "Courier Service",
+        "On Foot (Walking)",
+        "Two-wheeler"
+      ],
+      "guidance_text": "Select all methods used to transport cash for your business. The security level of your transportation method affects your risk profile and premium. Professional services with armed guards typically get better rates.",
+      "placeholder": "Select all applicable methods"
+    },
+    {
+      "question_text": "Maximum Cash Carrying Limit at Any One Time",
+      "field_name": "max_cash_carrying",
+      "field_type": "number",
+      "section": "Operational Details",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true,
+        "min": 1000,
+        "max": 100000000
+      },
+      "guidance_text": "Enter the highest amount of cash that would ever be transported in a single trip. This helps determine your peak risk exposure during transit and should align with your cash in transit coverage limit.",
+      "placeholder": "e.g., 500000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Maximum Cash Retained Overnight",
+      "field_name": "max_cash_overnight",
+      "field_type": "number",
+      "section": "Operational Details",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000
+      },
+      "guidance_text": "Enter the maximum amount of cash that remains in your premises after business hours. If you deposit all cash daily, enter 0. Higher overnight retention typically means higher risk and premium.",
+      "placeholder": "e.g., 100000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Is there a Burglar Alarm System installed?",
+      "field_name": "burglar_alarm",
+      "field_type": "radio",
+      "section": "Security Measures",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "A burglar alarm system that alerts security or police can significantly reduce your premium. This includes motion sensors, door/window sensors, and loud sirens that activate during break-ins.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Is there a CCTV System installed?",
+      "field_name": "cctv_system",
+      "field_type": "radio",
+      "section": "Security Measures",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "CCTV cameras that record your cash handling areas provide evidence for claims and deter theft. Having 24/7 recording with backup storage can reduce your insurance premium.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Security Personnel Deployment",
+      "field_name": "security_personnel",
+      "field_type": "radio",
+      "section": "Security Measures",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Having dedicated security guards (armed or unarmed) at your premises shows serious risk mitigation. This includes both in-house security staff and contracted security services.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Type of Security Personnel",
+      "field_name": "security_type",
+      "field_type": "select",
+      "section": "Security Measures",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "security_personnel",
+          "value": "Yes"
+        }
+      },
+      "options": [
+        "Armed Guards",
+        "Unarmed Guards",
+        "Both Armed and Unarmed",
+        "Ex-servicemen Security",
+        "Professional Security Agency"
+      ],
+      "guidance_text": "Specify the type of security personnel deployed. Armed guards and ex-servicemen typically indicate higher security standards and may qualify for better premium rates.",
+      "placeholder": "Select security type"
+    },
+    {
+      "question_text": "Safe Type & Brand (for office premises)",
+      "field_name": "safe_details",
+      "field_type": "text",
+      "section": "Security Measures",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "Provide details about your safe or strong room - brand name, type (fire-resistant, burglar-resistant), and specifications. Better quality safes with ISI marks or international certifications get preferential rates.",
+      "placeholder": "e.g., Godrej Defender Plus, Fire Resistant, Digital Lock"
+    },
+    {
+      "question_text": "Current/Previous Insurer Name",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 100
+      },
+      "guidance_text": "If you currently have or previously had money insurance, mention the insurance company name. A good claims history with your previous insurer can help negotiate better terms.",
+      "placeholder": "e.g., New India Assurance",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Previous Policy Number",
+      "field_name": "previous_policy_number",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 50
+      },
+      "guidance_text": "Your existing or expired policy number helps insurers verify your insurance history and claims record. This can speed up the underwriting process.",
+      "placeholder": "e.g., P/123456/01/2024/789",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Claims in Past 3 Years?",
+      "field_name": "past_claims",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Claims",
+        "Yes - Claims Made"
+      ],
+      "guidance_text": "Declare any money insurance claims made in the last 3 years, even if with different insurers. Being transparent about claims history is crucial as insurers verify this through industry databases.",
+      "placeholder": "Select claim status"
+    },
+    {
+      "question_text": "Past Claims Details",
+      "field_name": "claim_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "past_claims",
+          "value": "Yes - Claims Made"
+        }
+      },
+      "guidance_text": "Provide details of each claim: date of loss, cause (theft/burglary/transit loss), amount claimed, and amount settled. Include steps taken to prevent similar losses in future.",
+      "placeholder": "e.g., Date: 15/03/2023, Cause: Transit theft, Claimed: ₹2,00,000, Settled: ₹1,80,000, Preventive measures: Hired armed guards"
+    },
+    {
+      "question_text": "Any Special Conditions or Additional Coverage Required?",
+      "field_name": "special_requirements",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any specific requirements not covered above, such as coverage for contract workers handling cash, temporary high-value storage during festivals, or coverage for foreign currency.",
+      "placeholder": "e.g., Need coverage for Diwali season when cash handling increases by 300%"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy",
+      "field_name": "previous_policy_document",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your current or most recent money insurance policy document. This helps insurers understand your existing coverage and offer competitive renewal terms. Accept PDF, JPG, PNG formats.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload GST Certificate",
+      "field_name": "gst_certificate",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your GST registration certificate for business verification. This document confirms your business registration and helps expedite the proposal process.",
+      "placeholder": "Choose file to upload"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.558Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

@@ -1,0 +1,324 @@
+{
+  "product_name": "Surety Insurance Bond",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Legal Name of the Company/Individual (Proposer)",
+      "field_name": "proposer_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "options": [],
+      "guidance_text": "Enter the complete legal name of your company as registered with the Registrar of Companies (ROC) or your full name if applying as an individual. This name will appear on the surety bond and must match your official documents. Surety bonds guarantee your performance or compliance to a third party (beneficiary).",
+      "placeholder": "e.g., ABC Infrastructure Pvt Ltd",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Current Business/Operating Address",
+      "field_name": "current_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "options": [],
+      "guidance_text": "Provide the complete address where your business currently operates from, including building name, street, area, city, state, and pincode. This helps insurers verify your business presence and assess geographical risk factors. If different from registered address, both are needed for compliance.",
+      "placeholder": "e.g., Tower B, 5th Floor, Tech Park, Sector 62, Noida, Uttar Pradesh - 201301",
+      "conditional_logic": null,
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Registered Office Address",
+      "field_name": "registered_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "options": [],
+      "guidance_text": "Enter the official registered address as per your Certificate of Incorporation or GST registration. This is your legal address for all statutory communications and must match government records. For proprietorships, this may be your personal address used for business registration.",
+      "placeholder": "e.g., 45 MG Road, Fort, Mumbai, Maharashtra - 400001",
+      "conditional_logic": null,
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Brief Description of Business Activities",
+      "field_name": "business_description",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 1000
+      },
+      "options": [],
+      "guidance_text": "Describe your primary business activities, products or services offered, and the industry you operate in. Include information about your typical projects, contracts, or operations. This helps insurers understand the nature of obligations you're seeking the surety bond for and assess associated risks.",
+      "placeholder": "e.g., We are a civil engineering contractor specializing in government infrastructure projects including roads, bridges, and public buildings. Our services include project planning, construction, and maintenance with annual project values ranging from ₹5 crore to ₹50 crore.",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Year of Incorporation/Establishment",
+      "field_name": "establishment_year",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "min": 1850,
+        "max": 2025
+      },
+      "options": [],
+      "guidance_text": "Enter the year your business was formally incorporated with ROC or established as per your registration documents. Companies with longer operating history typically get better terms as they demonstrate stability and experience. For proprietorships, use the year you started business operations.",
+      "placeholder": "e.g., 2010",
+      "conditional_logic": null,
+      "format": "decimal"
+    },
+    {
+      "question_text": "Names and Designations of All Board Members/Directors",
+      "field_name": "board_members",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 2000
+      },
+      "options": [],
+      "guidance_text": "List all current board members or directors with their full names, designations (Chairman, MD, Executive Director, Independent Director, etc.), and their registered addresses. This information helps insurers assess management quality and verify authorized signatories. Format each entry on a new line for clarity.",
+      "placeholder": "e.g., 1. Mr. Rajesh Kumar - Chairman & Managing Director, 123 Green Park, New Delhi - 110016\n2. Mrs. Priya Sharma - Executive Director, 45 Bandra West, Mumbai - 400050\n3. Mr. Amit Patel - Independent Director, 78 Koramangala, Bengaluru - 560034",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Name and Address of the Chairman/Managing Director",
+      "field_name": "chairman_details",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "options": [],
+      "guidance_text": "Provide complete details of your company's Chairman or Managing Director including full name, official designation, and residential address. This person is typically the primary contact for high-value decisions and may need to provide personal guarantees for large surety bonds.",
+      "placeholder": "e.g., Mr. Rajesh Kumar, Chairman & Managing Director, House No. 123, Green Park Extension, New Delhi - 110016",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Total Value of Surety Bond Required (in ₹)",
+      "field_name": "bond_value",
+      "field_type": "number",
+      "section": "Surety Bond Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 10000000000
+      },
+      "options": [],
+      "guidance_text": "Enter the total amount in Indian Rupees that the surety bond needs to guarantee. This is typically specified in your contract or tender document and represents the maximum amount the beneficiary can claim if you fail to meet your obligations. Higher bond values require more stringent underwriting.",
+      "placeholder": "e.g., 5000000",
+      "conditional_logic": null,
+      "format": "decimal"
+    },
+    {
+      "question_text": "Bond Duration and Start Date",
+      "field_name": "bond_duration",
+      "field_type": "text",
+      "section": "Surety Bond Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 200
+      },
+      "options": [],
+      "guidance_text": "Specify the total duration of the bond (in months/years) and the date from which coverage should begin. The duration should match your contract period plus any defect liability period if applicable. Most surety bonds are issued for the contract duration plus 3-12 months claim period.",
+      "placeholder": "e.g., 24 months starting from 01/04/2025",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Name and Address of the Principal/Beneficiary",
+      "field_name": "beneficiary_details",
+      "field_type": "textarea",
+      "section": "Surety Bond Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "options": [],
+      "guidance_text": "Enter the complete name and address of the party in whose favor the surety bond is being issued (the beneficiary). This is typically your client, a government department, or the party awarding you the contract. They will have the right to invoke the bond if you default on your obligations.",
+      "placeholder": "e.g., National Highways Authority of India (NHAI), Plot No. G-5 & G-6, Sector-10, Dwarka, New Delhi - 110075",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Circumstances for Bond Invocation",
+      "field_name": "invocation_circumstances",
+      "field_type": "textarea",
+      "section": "Surety Bond Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 1500
+      },
+      "options": [],
+      "guidance_text": "Describe the specific conditions or events that would allow the beneficiary to invoke (claim) the surety bond. These are usually defined in your contract and may include non-performance, delays, quality issues, or breach of contract terms. Be specific about triggers and conditions as per your agreement.",
+      "placeholder": "e.g., The bond can be invoked if: 1) We fail to complete the project within the specified timeline including extensions, 2) Work quality doesn't meet contract specifications, 3) We abandon the project, 4) We fail to rectify defects during the defect liability period, 5) Any material breach of contract terms and conditions.",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Have any of your Bank Guarantees or Surety Bonds been invoked in the past?",
+      "field_name": "past_invocation",
+      "field_type": "radio",
+      "section": "Claims & Compliance History",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate whether any bank guarantee or surety bond provided by your company has ever been invoked (claimed) by a beneficiary. This includes partial or full invocations for any reason. Your claims history significantly impacts underwriting decisions and premium rates for new bonds.",
+      "placeholder": "",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Details of Past Bond/Guarantee Invocations",
+      "field_name": "invocation_details",
+      "field_type": "textarea",
+      "section": "Claims & Compliance History",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false,
+        "minLength": 50,
+        "maxLength": 2000
+      },
+      "options": [],
+      "guidance_text": "If you answered 'Yes' above, provide complete details including: beneficiary name, bond amount, reason for invocation, date of invocation, amount claimed vs settled, and current status. Explain the circumstances and any dispute resolution. Transparency here helps underwriters assess actual risk versus perceived risk.",
+      "placeholder": "e.g., In March 2022, XYZ Corporation invoked our performance bond of ₹50 lakhs due to project delay. The delay was caused by COVID-19 lockdowns. After arbitration, ₹15 lakhs was settled as the delay was partly due to force majeure. The matter was amicably resolved.",
+      "conditional_logic": {
+        "show_if": {
+          "field": "past_invocation",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Has any Government Agency initiated action against your company in the past 10 years?",
+      "field_name": "government_action",
+      "field_type": "radio",
+      "section": "Claims & Compliance History",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Disclose if any central or state government department, regulatory body, or statutory authority has initiated any legal action, penalty proceedings, blacklisting, or compliance action against your company. This includes tax disputes, regulatory violations, or contract-related actions that may affect your eligibility for bonds.",
+      "placeholder": "",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Details of Government Actions",
+      "field_name": "government_action_details",
+      "field_type": "textarea",
+      "section": "Claims & Compliance History",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false,
+        "minLength": 50,
+        "maxLength": 2000
+      },
+      "options": [],
+      "guidance_text": "If you answered 'Yes' above, provide complete details of each action including: agency name, nature of action, reasons, dates, penalties imposed, current status, and resolution. Include any ongoing disputes or appeals. Full disclosure helps insurers properly assess and price the risk rather than declining outright.",
+      "placeholder": "e.g., In 2021, GST department issued a show-cause notice for ₹25 lakhs regarding input tax credit claims. After providing documentation and clarification, the demand was reduced to ₹3 lakhs which was paid. The matter is now closed with no pending disputes.",
+      "conditional_logic": {
+        "show_if": {
+          "field": "government_action",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Upload Audited Financial Statements for Last 3 Years",
+      "field_name": "financial_statements",
+      "field_type": "file",
+      "section": "Financial Information",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [],
+      "guidance_text": "Upload your company's audited financial statements including Balance Sheet, Profit & Loss Statement, Cash Flow Statement, and Auditor's Report for the last 3 financial years. These documents help insurers assess your financial strength, ability to complete projects, and capacity to handle bond obligations. Combine all years into one PDF if possible.",
+      "placeholder": "Upload PDF (Max 25MB)",
+      "conditional_logic": null,
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Paid-up Capital and Authorized Capital (in ₹)",
+      "field_name": "capital_details",
+      "field_type": "text",
+      "section": "Financial Information",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 200
+      },
+      "options": [],
+      "guidance_text": "Enter both your paid-up capital (actual money invested by shareholders) and authorized capital (maximum capital company can raise) as per your latest financial statements. Higher paid-up capital indicates stronger financial backing and typically allows for larger bond values. Format: 'Paid-up: ₹X, Authorized: ₹Y'.",
+      "placeholder": "e.g., Paid-up: ₹5,00,00,000, Authorized: ₹10,00,00,000",
+      "conditional_logic": null
+    },
+    {
+      "question_text": "Any Other Material Information",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "options": [],
+      "guidance_text": "Provide any additional information that might be relevant for underwriting this surety bond. This could include: ongoing large projects, awards/recognitions, ISO certifications, major clients, counter-guarantees available, collateral offered, or any unique circumstances. Information that demonstrates your reliability and capacity strengthens your application.",
+      "placeholder": "e.g., We are ISO 9001:2015 certified and have successfully completed 50+ government projects in the last 5 years. We can provide 25% collateral in the form of FD. Our parent company (name) with net worth of ₹100 crores is willing to provide corporate guarantee.",
+      "conditional_logic": null
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.639Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 0
+}

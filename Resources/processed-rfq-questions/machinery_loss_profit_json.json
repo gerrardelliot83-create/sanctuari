@@ -1,0 +1,478 @@
+{
+  "product_name": "Machinery Loss of Profit Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of Insured",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the legal name of your business as registered with ROC or as shown on your GST certificate. This should be the exact name that will appear on the insurance policy. For example, if your company is ABC Manufacturing Private Limited, enter the complete name.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd"
+    },
+    {
+      "question_text": "Communication / Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete address of the factory or facility where the insured machinery is located. This is the location that will be covered under the policy. Include building number, street, area, city, state, and pincode for accurate risk assessment.",
+      "placeholder": "e.g., Plot No. 45, Phase II, MIDC Industrial Area, Pune, Maharashtra - 411018",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Policy Details",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "12 months",
+        "6 months",
+        "3 months",
+        "24 months",
+        "36 months"
+      ],
+      "guidance_text": "Select the duration for which you want insurance coverage. Most businesses opt for annual (12 months) coverage to avoid gaps. Longer terms may offer premium discounts while maintaining consistent protection against machinery breakdown losses.",
+      "placeholder": "e.g., 12 months",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Choose when you want the insurance coverage to begin. This should ideally be before your current policy expires to avoid any gap in coverage. The policy will be active from 12:01 AM on this date.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Number of Locations to be Insured",
+      "field_name": "number_of_locations",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100
+      },
+      "guidance_text": "Enter the total number of business locations where you have machinery that needs coverage. Each manufacturing unit, factory, or facility with critical machinery should be counted separately. Multiple locations may require separate risk assessments.",
+      "placeholder": "e.g., 3",
+      "format": "integer"
+    },
+    {
+      "question_text": "Occupancy / Nature of Business",
+      "field_name": "nature_of_business",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Textile Manufacturing",
+        "Food Processing",
+        "Chemical Manufacturing",
+        "Pharmaceutical Manufacturing",
+        "Automobile Manufacturing",
+        "Electronics Manufacturing",
+        "Plastic Manufacturing",
+        "Metal Processing",
+        "Paper Manufacturing",
+        "Engineering Goods",
+        "Other Manufacturing"
+      ],
+      "guidance_text": "Select your primary business activity from the list. This helps insurers understand the type of machinery you use and associated risks. Different industries have varying risk profiles which affect coverage terms and premium calculations.",
+      "placeholder": "Select your industry",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "nature_of_business_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "nature_of_business",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Description of Machinery Covered",
+      "field_name": "machinery_description",
+      "field_type": "textarea",
+      "section": "Machinery Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide detailed information about the critical machinery you want to insure. Include machine names, makes, models, capacities, and their role in production. Focus on machinery whose breakdown would cause significant business interruption and profit loss.",
+      "placeholder": "e.g., 2 x CNC Turning Centers (DMG MORI), 3 x Injection Molding Machines (150-500 ton capacity), 1 x Industrial Compressor (Atlas Copco 250 HP)"
+    },
+    {
+      "question_text": "Type of Production Process",
+      "field_name": "production_process_type",
+      "field_type": "textarea",
+      "section": "Machinery Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Describe your production process and how the insured machinery is critical to operations. Explain if it's continuous, batch, or job-based production. This helps assess how machinery breakdown would impact your profit generation capability.",
+      "placeholder": "e.g., Continuous 24x7 automated production line for plastic components with injection molding as the critical process"
+    },
+    {
+      "question_text": "Number of Production Lines",
+      "field_name": "production_lines",
+      "field_type": "number",
+      "section": "Machinery Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100
+      },
+      "guidance_text": "Enter the total number of separate production lines in your facility. Multiple lines may provide redundancy reducing profit loss during breakdown. Single line operations typically face higher profit loss risk when machinery fails.",
+      "placeholder": "e.g., 4",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Number of Shifts for Production",
+      "field_name": "production_shifts",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "1 shift (8 hours)",
+        "2 shifts (16 hours)",
+        "3 shifts (24 hours)",
+        "Flexible/Variable"
+      ],
+      "guidance_text": "Select your normal production schedule. Round-the-clock operations (3 shifts) typically have higher profit loss exposure during machinery breakdown. This information helps calculate potential daily profit loss during business interruption.",
+      "placeholder": "Select shift pattern"
+    },
+    {
+      "question_text": "Period of Indemnity Required (in months)",
+      "field_name": "indemnity_period",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "3 months",
+        "6 months",
+        "9 months",
+        "12 months",
+        "18 months",
+        "24 months"
+      ],
+      "guidance_text": "This is the maximum period for which you'll receive compensation for profit loss after machinery breakdown. Consider your worst-case repair/replacement time plus business recovery period. Longer indemnity periods provide better protection but increase premium.",
+      "placeholder": "e.g., 12 months"
+    },
+    {
+      "question_text": "Sum Insured for Loss of Profit (Annual)",
+      "field_name": "sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your estimated annual gross profit (turnover minus variable costs) that would be at risk if machinery breaks down. This should reflect your actual profit margins. Underestimating can leave you with inadequate compensation during claims.",
+      "placeholder": "e.g., 50000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Annual Turnover",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 1000000,
+        "max": 100000000000
+      },
+      "guidance_text": "Enter your company's total annual revenue from all operations for the last financial year. This helps insurers understand your business scale and validate the sum insured against your actual business volume.",
+      "placeholder": "e.g., 250000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Previous Year's Net Profit Percentage",
+      "field_name": "net_profit_percentage",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100
+      },
+      "guidance_text": "Enter your net profit margin as a percentage of turnover from the last audited financial year. This helps validate the sum insured for profit loss. For example, if your net profit was ₹2 crore on ₹20 crore turnover, enter 10.",
+      "placeholder": "e.g., 15",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Any Previous Machinery Breakdown Claims?",
+      "field_name": "previous_claims",
+      "field_type": "radio",
+      "section": "Claims History",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare if you've made any machinery breakdown or business interruption claims in the past 5 years. Being transparent about claims history is crucial as insurers verify this information. Previous claims may affect premium but won't necessarily lead to rejection.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Details of Previous Claims (if any)",
+      "field_name": "previous_claims_details",
+      "field_type": "textarea",
+      "section": "Claims History",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "If you've had previous claims, provide details including date, machinery affected, cause of breakdown, claim amount, and preventive measures taken. This transparency helps insurers assess risk accurately and may lead to better terms.",
+      "placeholder": "e.g., March 2023 - Compressor breakdown due to bearing failure, Claim: ₹15 lakhs, Installed redundant backup system",
+      "conditional_logic": {
+        "show_if": {
+          "field": "previous_claims",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Machinery Maintenance Contract in Place?",
+      "field_name": "maintenance_contract",
+      "field_type": "radio",
+      "section": "Risk Assessment",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you have annual maintenance contracts (AMC) for your critical machinery. Regular professional maintenance significantly reduces breakdown risk and can lead to premium discounts. Insurers view AMCs as positive risk mitigation.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Auditor's Certificate for Profit Figures Available?",
+      "field_name": "auditor_certificate",
+      "field_type": "radio",
+      "section": "Supporting Documents",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Certified profit figures from your auditor validate the sum insured and speed up claim settlement. This certificate should show your gross profit calculation methodology. Having this ready demonstrates professionalism and aids quick policy issuance.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Additional Expenses Coverage Required?",
+      "field_name": "additional_expenses_coverage",
+      "field_type": "checkbox",
+      "section": "Add-On Covers Requested",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Check this if you want coverage for extra expenses incurred to minimize profit loss during machinery breakdown (like overtime wages, express freight, temporary equipment rental). This add-on helps maintain business continuity during repairs.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Supplier's Extension Coverage Required?",
+      "field_name": "suppliers_extension",
+      "field_type": "checkbox",
+      "section": "Add-On Covers Requested",
+      "order_index": 20,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "This covers profit loss if your key suppliers' machinery breaks down affecting your production. Useful if you depend on specialized suppliers whose disruption would stop your operations. Consider this if you have limited supplier alternatives.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Customer's Extension Coverage Required?",
+      "field_name": "customers_extension",
+      "field_type": "checkbox",
+      "section": "Add-On Covers Requested",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "This covers profit loss if your major customers' machinery breaks down reducing demand for your products. Important if you supply to few large customers whose operations directly impact your sales. Typically relevant for B2B manufacturers.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Upload Latest Audited Financial Statements",
+      "field_name": "financial_statements",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Upload your last 2 years' audited balance sheets and profit & loss statements in PDF format. These documents help insurers verify your declared turnover and profit figures for accurate risk assessment and premium calculation.",
+      "placeholder": "Choose PDF file (max 10MB)",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Upload Machinery List with Values",
+      "field_name": "machinery_list",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload a detailed list of machinery to be covered including purchase dates, values, and specifications. Excel or PDF format preferred. This helps insurers understand your machinery assets and their criticality to operations.",
+      "placeholder": "Choose file (Excel/PDF, max 5MB)"
+    },
+    {
+      "question_text": "Any Additional Information or Special Requirements?",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any specific coverage requirements, unique business circumstances, or clarifications about your operations. Include information about seasonal variations, planned expansions, or special risk factors that might affect your profit loss exposure.",
+      "placeholder": "e.g., Planning to add new production line in Q3, seasonal peak during October-March period"
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide the name of the person handling this insurance matter who can be contacted for clarifications. This should be someone familiar with your operations and machinery details, typically the CFO, plant manager, or insurance coordinator.",
+      "placeholder": "e.g., Rajesh Kumar"
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "contact_mobile",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Enter a 10-digit Indian mobile number where the contact person can be reached during business hours. This number will be used for policy-related communications and urgent claim intimations.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Email Address",
+      "field_name": "contact_email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Provide a valid business email address for official correspondence. Policy documents, renewal reminders, and claim forms will be sent to this email. Ensure this is regularly monitored for time-sensitive communications.",
+      "placeholder": "e.g., insurance@abcmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST registration number. This is required for GST invoice generation and tax compliance. The premium will attract 18% GST which will be shown separately on your policy documents.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.541Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 3
+}

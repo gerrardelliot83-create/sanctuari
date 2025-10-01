@@ -1,0 +1,524 @@
+{
+  "product_name": "Fire and Loss of Profit Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Full Legal Name of the Insured Company",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the complete registered name of your company as it appears on official documents like GST certificate or incorporation certificate. This name will be used on your insurance policy and all legal documents.",
+      "placeholder": "e.g., ABC Manufacturing Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Location/Risk Address",
+      "field_name": "risk_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete address of the property to be insured, including building/plot number, street, area, city, state, and pincode. If multiple locations, provide the primary location here and mention additional locations separately.",
+      "placeholder": "e.g., Plot No. 45, Phase III, MIDC Industrial Area, Andheri East, Mumbai, Maharashtra - 400093",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from which you want your insurance coverage to begin. This is typically today's date or a future date when your current policy expires.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date when you want your insurance coverage to end. Standard policies are for 12 months, but you can choose a different period based on your needs.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Number of Locations Covered",
+      "field_name": "number_of_locations",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100
+      },
+      "guidance_text": "Enter the total number of physical locations (factories, warehouses, offices) you want covered under this policy. Each location with significant business assets or operations should be counted separately.",
+      "placeholder": "e.g., 3",
+      "format": "integer"
+    },
+    {
+      "question_text": "Type of Occupancy",
+      "field_name": "occupancy_type",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing Factory",
+        "Warehouse/Storage",
+        "Office Building",
+        "Retail Store",
+        "Hotel/Restaurant",
+        "Hospital/Healthcare",
+        "Educational Institution",
+        "Mixed Use",
+        "Other"
+      ],
+      "guidance_text": "Select the primary use of your insured premises. This helps insurers assess the fire risk associated with your business activities and determine appropriate coverage and premium.",
+      "placeholder": "Select occupancy type",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Process/Business Activity",
+      "field_name": "business_process",
+      "field_type": "textarea",
+      "section": "Business Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe your main business activities, manufacturing processes, or services provided. Include details about raw materials used, production methods, and final products. This helps assess operational risks and potential business interruption scenarios.",
+      "placeholder": "e.g., We manufacture plastic packaging materials using injection molding and extrusion processes. Raw materials include PET, HDPE granules. Products include bottles, containers, and packaging films."
+    },
+    {
+      "question_text": "Period of Indemnity (in months)",
+      "field_name": "indemnity_period",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "min": 3,
+        "max": 48
+      },
+      "guidance_text": "This is the maximum time period (in months) for which the insurer will compensate your loss of profits after a fire incident. Consider how long it would realistically take to rebuild and resume normal operations. Most businesses choose 12-24 months.",
+      "placeholder": "e.g., 12",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Number of Production Lines",
+      "field_name": "production_lines",
+      "field_type": "number",
+      "section": "Production & Machinery Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100
+      },
+      "guidance_text": "Enter the total number of separate production or assembly lines in your facility. This helps assess the complexity of your operations and potential partial loss scenarios. Enter 0 if not applicable to your business.",
+      "placeholder": "e.g., 5",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Number of Shifts per Day",
+      "field_name": "shifts_per_day",
+      "field_type": "select",
+      "section": "Production & Machinery Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Single Shift (8 hours)",
+        "Two Shifts (16 hours)",
+        "Three Shifts (24 hours)",
+        "Not Applicable"
+      ],
+      "guidance_text": "Select how many shifts your facility operates daily. Multiple shifts indicate higher utilization and may affect both risk assessment and potential loss calculations.",
+      "placeholder": "Select number of shifts"
+    },
+    {
+      "question_text": "Types of Machinery Used",
+      "field_name": "machinery_types",
+      "field_type": "textarea",
+      "section": "Production & Machinery Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "List the main types of machinery and equipment critical to your operations. Include high-value or specialized equipment that would be difficult to replace quickly. This helps assess replacement time and business interruption risk.",
+      "placeholder": "e.g., CNC machines, hydraulic presses, packaging machines, conveyor systems, boilers"
+    },
+    {
+      "question_text": "Process Machinery Details",
+      "field_name": "process_machinery",
+      "field_type": "textarea",
+      "section": "Production & Machinery Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "Describe specialized process equipment essential to your operations. Include any custom-built or imported machinery with long replacement lead times. This information affects the indemnity period calculation.",
+      "placeholder": "e.g., Imported injection molding machine from Germany, custom-built furnace with 6-month lead time"
+    },
+    {
+      "question_text": "Current/Expiring Insurer Name",
+      "field_name": "expiring_insurer",
+      "field_type": "text",
+      "section": "Risk and Financial Information",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If you have an existing or recently expired fire insurance policy, provide the insurance company name. This helps in policy transfer and understanding your insurance history. Leave blank if this is your first policy.",
+      "placeholder": "e.g., New India Assurance Co. Ltd."
+    },
+    {
+      "question_text": "Past Claims Experience (Last 3 Years)",
+      "field_name": "past_claims",
+      "field_type": "textarea",
+      "section": "Risk and Financial Information",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of any insurance claims made in the last 3 years, including date, cause, and amount. If no claims, write 'No claims'. Honest disclosure ensures valid coverage and may qualify you for no-claim discounts.",
+      "placeholder": "e.g., No claims in the last 3 years OR March 2023 - Minor fire in storage area - Claim amount: ₹2,50,000"
+    },
+    {
+      "question_text": "Coverage for Utility Supply Failure Required?",
+      "field_name": "utility_failure_coverage",
+      "field_type": "radio",
+      "section": "Add-On Coverage Options",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers loss of profits due to accidental failure of public electricity, gas, or water supply from the utility provider's premises. Useful if your operations heavily depend on continuous utility supply.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Utility Failure - Number of Days Coverage",
+      "field_name": "utility_failure_days",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "min": 1,
+        "max": 365
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "utility_failure_coverage",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Specify the maximum number of days of utility failure you want covered. Longer coverage periods provide better protection but increase premium. Consider your backup power arrangements when deciding.",
+      "placeholder": "e.g., 30",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Named Suppliers for Extension Coverage",
+      "field_name": "named_suppliers",
+      "field_type": "textarea",
+      "section": "Add-On Coverage Options",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "List critical suppliers whose premises you want covered. If fire at their location would disrupt your business, include them here. This extends your coverage to losses from incidents at supplier locations.",
+      "placeholder": "e.g., XYZ Raw Materials Ltd. (Mumbai), ABC Components Pvt. Ltd. (Pune)"
+    },
+    {
+      "question_text": "Number of Suppliers for Coverage",
+      "field_name": "number_of_suppliers",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 50
+      },
+      "guidance_text": "Enter the total number of supplier locations you want covered under the extension. More suppliers mean broader coverage but higher premium. Focus on suppliers critical to your operations.",
+      "placeholder": "e.g., 3",
+      "format": "integer"
+    },
+    {
+      "question_text": "Dependency on Suppliers (%)",
+      "field_name": "supplier_dependency",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100
+      },
+      "guidance_text": "Estimate what percentage of your business would be affected if your main suppliers couldn't deliver. High dependency (over 50%) suggests you should consider supplier premises extension coverage.",
+      "placeholder": "e.g., 60",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Named Customers for Extension Coverage",
+      "field_name": "named_customers",
+      "field_type": "textarea",
+      "section": "Add-On Coverage Options",
+      "order_index": 20,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "List major customers whose premises you want covered. If fire at their location would affect your sales significantly (they can't buy from you), include them. This covers your profit loss from incidents at customer locations.",
+      "placeholder": "e.g., Reliance Retail Ltd., Future Group Stores"
+    },
+    {
+      "question_text": "Number of Customers for Coverage",
+      "field_name": "number_of_customers",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 50
+      },
+      "guidance_text": "Enter the total number of customer locations you want covered. Consider customers who account for significant revenue share. Balance coverage needs with premium costs.",
+      "placeholder": "e.g., 5",
+      "format": "integer"
+    },
+    {
+      "question_text": "Dependency on Customers (%)",
+      "field_name": "customer_dependency",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100
+      },
+      "guidance_text": "Estimate what percentage of your revenue comes from your largest customers. If a few customers account for over 40% of revenue, customer premises extension provides valuable protection.",
+      "placeholder": "e.g., 45",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Auditors Fees Sum Insured (₹)",
+      "field_name": "auditors_fees",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000
+      },
+      "guidance_text": "Enter the amount you want covered for professional fees of auditors and accountants who would prepare claim documents after a loss. Typical coverage ranges from ₹1-10 lakhs depending on business size.",
+      "placeholder": "e.g., 500000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Lay-off and Retrenchment Compensation Required?",
+      "field_name": "layoff_retrenchment",
+      "field_type": "radio",
+      "section": "Add-On Coverage Options",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers legal compensation you'd need to pay employees if operations stop due to fire damage. Important if you have many employees and want to protect against labor law liabilities during business interruption.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Lay-off Compensation Period (months)",
+      "field_name": "layoff_period",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "min": 1,
+        "max": 12
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "layoff_retrenchment",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Specify the period for which you want lay-off compensation covered. This should align with your expected recovery time. Most businesses opt for 3-6 months coverage.",
+      "placeholder": "e.g., 6",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Insured Property at Other Locations",
+      "field_name": "other_locations_count",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 20
+      },
+      "guidance_text": "Enter the number of additional locations where you store inventory, equipment, or finished goods. These could be warehouses, distribution centers, or temporary storage facilities not covered in main locations.",
+      "placeholder": "e.g., 2",
+      "format": "integer"
+    },
+    {
+      "question_text": "Wages Coverage on Pro-rata Basis?",
+      "field_name": "wages_prorata",
+      "field_type": "radio",
+      "section": "Add-On Coverage Options",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Pro-rata wages coverage pays employee wages proportional to your business recovery level. If you're operating at 50% capacity post-incident, 50% wages are covered. This is more economical than full coverage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Wages Coverage on Dual Basis?",
+      "field_name": "wages_dual",
+      "field_type": "radio",
+      "section": "Add-On Coverage Options",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Dual basis provides full wages coverage initially (typically 3-6 months) then switches to pro-rata. This protects employees during initial recovery while managing long-term costs. Ideal for businesses with skilled workforce.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Consequential Loss Due to Spoilage Coverage?",
+      "field_name": "spoilage_coverage",
+      "field_type": "radio",
+      "section": "Add-On Coverage Options",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers loss from spoilage of goods due to power failure or temperature change following an insured incident. Essential for businesses dealing with perishables, chemicals, or temperature-sensitive products.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Spoilage Coverage Sum Insured (₹)",
+      "field_name": "spoilage_sum_insured",
+      "field_type": "number",
+      "section": "Add-On Coverage Options",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "spoilage_coverage",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the maximum value of goods that could spoil in a single incident. Consider your peak inventory of perishable/sensitive items and potential loss from temperature control failure.",
+      "placeholder": "e.g., 5000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Terrorism Damage Cover Required?",
+      "field_name": "terrorism_cover",
+      "field_type": "radio",
+      "section": "Add-On Coverage Options",
+      "order_index": 31,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This extends coverage to include losses from terrorism acts. While rare, such events can cause severe business disruption. Consider your location's risk profile and business criticality when deciding.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Additional Information or Special Requirements",
+      "field_name": "additional_info",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide any additional information that might affect your insurance coverage or premium. Include special risk factors, safety measures installed, upcoming expansion plans, or specific coverage requirements not covered above.",
+      "placeholder": "e.g., We have installed automatic fire sprinkler system in 2024. Planning to add new production unit in Q3 2025."
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.484Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 3
+}

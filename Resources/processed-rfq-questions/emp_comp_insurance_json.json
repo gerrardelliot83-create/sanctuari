@@ -1,0 +1,709 @@
+{
+  "product_name": "Employees Compensation Insurance",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of the Employer",
+      "field_name": "employer_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the legal name of your company as registered with the Registrar of Companies. This name will appear on your insurance policy and should match your official business documents.",
+      "placeholder": "e.g., XYZ Manufacturing Pvt Ltd"
+    },
+    {
+      "question_text": "Nature of Business",
+      "field_name": "nature_of_business",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Manufacturing",
+        "Construction",
+        "Information Technology",
+        "Healthcare",
+        "Retail & Trading",
+        "Logistics & Transportation",
+        "Hospitality",
+        "Education",
+        "Financial Services",
+        "Professional Services",
+        "Others"
+      ],
+      "guidance_text": "Select the primary industry category that best describes your business operations. This helps insurers assess the occupational hazards your employees may face and determine appropriate coverage and premiums.",
+      "placeholder": "Select your industry",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "nature_of_business_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "nature_of_business",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Entity",
+      "field_name": "entity_type",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Proprietorship",
+        "Partnership Firm",
+        "Private Limited Company",
+        "Public Limited Company",
+        "Limited Liability Partnership (LLP)",
+        "One Person Company (OPC)",
+        "Trust",
+        "Society",
+        "Others"
+      ],
+      "guidance_text": "Select your company's legal structure as registered with the government. This information determines the documentation required and affects how claims are processed.",
+      "placeholder": "Select entity type"
+    },
+    {
+      "question_text": "Registered Office Address",
+      "field_name": "registered_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete registered office address including building name/number, street, area, city, state, and PIN code. This address should match your official registration documents and will be used for all policy correspondence.",
+      "placeholder": "e.g., 123, Industrial Estate, Andheri East, Mumbai, Maharashtra - 400093",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the full name of the person authorized to handle insurance matters for your company. This person will receive all policy-related communications and coordinate during claim processing.",
+      "placeholder": "e.g., Rajesh Kumar Sharma"
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide a 10-digit Indian mobile number where you can be reached for urgent matters. This number will receive SMS updates about your policy status and claim processing.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email_address",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Enter an official email address that is regularly monitored. All policy documents, renewal notices, and important communications will be sent to this email.",
+      "placeholder": "e.g., insurance@xyzmanufacturing.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Enter your 15-character GST registration number. This is required for tax compliance and will be used for GST invoicing of your insurance premium.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Type",
+      "field_name": "policy_type",
+      "field_type": "radio",
+      "section": "Policy Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "New Policy",
+        "Renewal"
+      ],
+      "guidance_text": "Select 'New Policy' if you're purchasing employees compensation insurance for the first time or switching from another insurer. Select 'Renewal' if you're continuing an existing policy.",
+      "placeholder": "Select policy type"
+    },
+    {
+      "question_text": "Coverage Type Required",
+      "field_name": "coverage_type",
+      "field_type": "select",
+      "section": "Policy Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Employees Compensation Act 1923 Only",
+        "Common Law Liability Only",
+        "Both EC Act and Common Law",
+        "Comprehensive Coverage with Add-ons"
+      ],
+      "guidance_text": "EC Act covers statutory compensation for workplace injuries. Common Law provides additional protection against employee lawsuits. Most businesses opt for both to ensure complete protection against employee injury claims.",
+      "placeholder": "Select coverage type",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from when you want the insurance coverage to begin. For renewals, this should be the day after your current policy expires to avoid any coverage gap.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the coverage end date, typically one year from the start date. Annual policies are standard, but longer terms may be available for certain projects.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Previous Insurer Name (if renewal)",
+      "field_name": "previous_insurer",
+      "field_type": "text",
+      "section": "Policy Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If renewing, provide your current insurance company's name. This helps in transferring any no-claim bonus and understanding your claims history.",
+      "placeholder": "e.g., ABC General Insurance Co. Ltd",
+      "conditional_logic": {
+        "show_if": {
+          "field": "policy_type",
+          "value": "Renewal"
+        }
+      },
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Retroactive Date for Common Law Coverage",
+      "field_name": "retroactive_date",
+      "field_type": "date",
+      "section": "Policy Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "For Common Law coverage, this date determines from when past incidents can be claimed. Usually set to when you first purchased Common Law coverage. Earlier dates provide broader protection.",
+      "placeholder": "e.g., 01/04/2020",
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_type",
+          "value": [
+            "Common Law Liability Only",
+            "Both EC Act and Common Law",
+            "Comprehensive Coverage with Add-ons"
+          ]
+        }
+      }
+    },
+    {
+      "question_text": "Any claims in the last 3 years?",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Policy Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare if any employee compensation claims have been made in the past 3 years. Being transparent about claims history ensures proper coverage and avoids policy disputes later.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Claims Details (if any)",
+      "field_name": "claims_details",
+      "field_type": "textarea",
+      "section": "Policy Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "If you've had claims, provide details including date of incident, nature of injury, claim amount, and current status. This information helps insurers assess risk accurately.",
+      "placeholder": "e.g., March 2024 - Worker slip and fall injury, claimed ₹2,50,000, settled",
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Locations of Work/Site Operations",
+      "field_name": "work_locations",
+      "field_type": "textarea",
+      "section": "Risk Assessment",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 1000
+      },
+      "guidance_text": "List all locations where your employees work, including offices, factories, construction sites, and client locations. Multiple locations may affect premium calculation based on varying risk levels.",
+      "placeholder": "e.g., Head Office: Mumbai; Factory: Pune; Construction Sites: Mumbai, Thane, Nashik"
+    },
+    {
+      "question_text": "Nature of Work Performed by Employees",
+      "field_name": "nature_of_work",
+      "field_type": "textarea",
+      "section": "Risk Assessment",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe the specific tasks your employees perform. Include details about machinery operation, height work, chemical handling, or any hazardous activities. This determines the risk category and premium rates.",
+      "placeholder": "e.g., Assembly line operation, welding, material handling with forklifts, quality inspection, administrative work"
+    },
+    {
+      "question_text": "Safety Measures Implemented",
+      "field_name": "safety_measures",
+      "field_type": "multiselect",
+      "section": "Risk Assessment",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Personal Protective Equipment (PPE) Provided",
+        "Regular Safety Training Programs",
+        "Safety Signage and Warning Systems",
+        "Fire Safety Equipment",
+        "First Aid Facilities",
+        "Emergency Response Plan",
+        "Regular Safety Audits",
+        "Machine Guards and Safety Devices",
+        "Safety Committee Active",
+        "ISO 45001 Certified"
+      ],
+      "guidance_text": "Select all safety measures your company has implemented. Strong safety protocols can reduce premium rates and demonstrate your commitment to employee welfare.",
+      "placeholder": "Select all applicable measures"
+    },
+    {
+      "question_text": "Site Security Arrangements",
+      "field_name": "site_security",
+      "field_type": "select",
+      "section": "Risk Assessment",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "24/7 Security Guards",
+        "CCTV Surveillance",
+        "Access Control Systems",
+        "Perimeter Fencing",
+        "Basic Security Only",
+        "No Formal Security"
+      ],
+      "guidance_text": "Indicate your workplace security arrangements. Good security reduces the risk of unauthorized access and potential accidents, which can positively impact your premium.",
+      "placeholder": "Select security level"
+    },
+    {
+      "question_text": "Medical Facilities Available",
+      "field_name": "medical_facilities",
+      "field_type": "multiselect",
+      "section": "Risk Assessment",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "ESI Registration",
+        "In-house Clinic/Dispensary",
+        "Tie-up with Nearby Hospital",
+        "On-site Doctor/Nurse",
+        "Ambulance Facility",
+        "First Aid Trained Staff",
+        "None Available"
+      ],
+      "guidance_text": "Select all medical facilities available to your employees. Quick medical response can minimize injury severity and claim amounts, potentially reducing your insurance costs.",
+      "placeholder": "Select all available facilities"
+    },
+    {
+      "question_text": "Total Number of Employees",
+      "field_name": "total_employees",
+      "field_type": "number",
+      "section": "Employee Details",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 100000
+      },
+      "guidance_text": "Enter the total number of employees to be covered under this policy. This should include all categories of workers - permanent, contractual, and temporary staff working at your premises.",
+      "placeholder": "e.g., 250",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Employee Category Breakdown",
+      "field_name": "employee_categories",
+      "field_type": "textarea",
+      "section": "Employee Details",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide a breakdown of employees by category with their average monthly wages. Example format: Skilled Workers (100) - ₹25,000/month, Unskilled Workers (50) - ₹15,000/month. This helps calculate accurate coverage amounts.",
+      "placeholder": "e.g., Managers (20) - ₹50,000/month; Supervisors (30) - ₹35,000/month; Workers (200) - ₹20,000/month"
+    },
+    {
+      "question_text": "Total Annual Wages/Salary Bill",
+      "field_name": "annual_wages",
+      "field_type": "number",
+      "section": "Employee Details",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the total annual wages paid to all employees to be covered. This is a key factor in premium calculation as it represents your exposure to compensation claims. Include basic salary, allowances, and overtime.",
+      "placeholder": "e.g., 60000000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Upload Employee Schedule",
+      "field_name": "employee_schedule_file",
+      "field_type": "file",
+      "section": "Employee Details",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload an Excel/PDF file containing employee details including name, designation, and monthly salary. This helps in faster policy issuance and ensures all employees are properly covered.",
+      "placeholder": "Upload Excel/PDF file"
+    },
+    {
+      "question_text": "Common Law Liability Coverage Required?",
+      "field_name": "common_law_required",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Common Law coverage protects against employee lawsuits beyond statutory compensation. Recommended for all businesses as legal awareness increases and employees may claim negligence for workplace injuries.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Common Law Sum Insured",
+      "field_name": "common_law_sum_insured",
+      "field_type": "number",
+      "section": "Additional Coverage",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select the maximum amount payable per person and per incident under Common Law. Higher limits provide better protection but increase premium. Consider your industry risk level and employee profile. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select sum insured",
+      "conditional_logic": {
+        "show_if": {
+          "field": "common_law_required",
+          "value": "Yes"
+        }
+      },
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Medical Expenses Extension Required?",
+      "field_name": "medical_expenses_required",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "This covers immediate medical expenses for injured employees before compensation claims are settled. Helps provide quick relief to employees and demonstrates employer care.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Medical Expenses Limit",
+      "field_name": "medical_expenses_limit",
+      "field_type": "number",
+      "section": "Additional Coverage",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "Select the maximum medical expenses reimbursement per injured employee. This amount is paid immediately for treatment without waiting for claim settlement. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select limit",
+      "conditional_logic": {
+        "show_if": {
+          "field": "medical_expenses_required",
+          "value": "Yes"
+        }
+      },
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Occupational Disease Coverage Required?",
+      "field_name": "occupational_disease_required",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No",
+        "Other (Please specify)"
+      ],
+      "guidance_text": "Covers diseases arising from workplace exposure like lung diseases in dusty environments or repetitive strain injuries. Essential for manufacturing, mining, and chemical industries.",
+      "placeholder": "Select Yes or No",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "occupational_disease_required_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "occupational_disease_required",
+            "value": "Other (Please specify)"
+          }
+        }
+      }
+    },
+    {
+      "question_text": "Terrorism Coverage Required?",
+      "field_name": "terrorism_cover_required",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 31,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Extends coverage to include injuries from terrorist activities. Consider this if located in sensitive areas or high-profile industries. Adds marginal cost but provides peace of mind.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Contract Workers Coverage Required?",
+      "field_name": "contract_workers_required",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 32,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers third-party contract workers employed through contractors. Important if you regularly use contract labor, as you may be held liable for their workplace injuries.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Number of Contract Workers",
+      "field_name": "contract_workers_count",
+      "field_type": "number",
+      "section": "Additional Coverage",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false,
+        "min": 1,
+        "max": 10000
+      },
+      "guidance_text": "Enter the approximate number of contract workers employed at any given time. This helps calculate additional premium for their coverage.",
+      "placeholder": "e.g., 50",
+      "conditional_logic": {
+        "show_if": {
+          "field": "contract_workers_required",
+          "value": "Yes"
+        }
+      },
+      "format": "integer"
+    },
+    {
+      "question_text": "24x7 Personal Accident Coverage Required?",
+      "field_name": "personal_accident_required",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 34,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Extends coverage beyond workplace to include accidents happening anywhere, anytime. Popular benefit that shows employer care and helps attract talent.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy",
+      "field_name": "previous_policy_file",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If renewing, upload your current/expired policy document. This helps understand existing coverage and ensures continuity of protection.",
+      "placeholder": "Upload PDF file",
+      "conditional_logic": {
+        "show_if": {
+          "field": "policy_type",
+          "value": "Renewal"
+        }
+      }
+    },
+    {
+      "question_text": "Upload Claims Experience Letter",
+      "field_name": "claims_experience_file",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 36,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload claims experience certificate from previous insurer showing your claims history. A good claims record can help negotiate better premiums.",
+      "placeholder": "Upload PDF file",
+      "conditional_logic": {
+        "show_if": {
+          "field": "policy_type",
+          "value": "Renewal"
+        }
+      }
+    },
+    {
+      "question_text": "Additional Requirements or Remarks",
+      "field_name": "additional_remarks",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Mention any specific coverage requirements, unique risk factors, or special conditions relevant to your business. This helps insurers provide customized solutions.",
+      "placeholder": "e.g., We have seasonal workforce variation, require coverage for overseas deputation of employees"
+    },
+    {
+      "question_text": "Declaration and Consent",
+      "field_name": "declaration_consent",
+      "field_type": "checkbox",
+      "section": "Declaration",
+      "order_index": 38,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "By checking this box, you confirm that all information provided is true and complete. Any misrepresentation may lead to claim rejection or policy cancellation.",
+      "placeholder": "I declare that the information provided is accurate"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.444Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 5
+}

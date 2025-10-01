@@ -1,0 +1,461 @@
+{
+  "product_name": "Machinery Breakdown Policy",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Name of Insured Company",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your company's registered name exactly as it appears on official documents. This name will be used on the policy document and for all claims. Ensure it matches your GST registration and other business licenses for smooth claim processing.",
+      "placeholder": "e.g., Precision Engineering Works Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Provide your 15-character GST identification number. This is required for commercial policies and helps in claiming input tax credit on premium paid. The format should be like 27AABCU9603R1ZM where first 2 digits represent your state code.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 30,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete office address where policy documents and correspondence should be sent. Include building name/number, street, area, city, state, and pincode. This may be different from your factory address where machinery is located.",
+      "placeholder": "e.g., 3rd Floor, Centrum Plaza, MG Road, Sector 27, Gurgaon, Haryana - 122002",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "guidance_text": "Name of the person responsible for insurance matters who can make decisions about claims and policy changes. This person will be contacted for all machinery breakdown claims, surveys, and renewal discussions. Should be someone familiar with your machinery operations.",
+      "placeholder": "e.g., Suresh Kumar Sharma"
+    },
+    {
+      "question_text": "Contact Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide a mobile number that's available 24/7 for emergency situations. Machinery breakdowns often need immediate attention for claim intimation. This number will receive SMS updates about surveyor visits and claim status.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Email Address",
+      "field_name": "email_address",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Enter an official email that's monitored regularly. Policy documents, claim forms, and surveyor reports will be sent here. For faster claim processing, use an email accessible to multiple authorized personnel rather than a personal email.",
+      "placeholder": "e.g., insurance@precisionworks.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Policy Period",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date from when machinery breakdown coverage should begin. For renewals, ensure this matches your expiring policy's end date plus one day to avoid gaps. New machinery can be covered from the date of successful commissioning.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Policy Period",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Machinery breakdown policies are typically annual (1 year). Select a date exactly one year from the start date. Multi-year policies may be available with discounts but require all machinery to be in good working condition.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Risk Location",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "minLength": 30,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the exact address where the machinery is installed and operating. This is your factory/plant location which may differ from your office address. Include plot number, industrial area name, and nearest landmark. This location will be visited for inspection.",
+      "placeholder": "e.g., Plot No. A-45, Phase III, GIDC Industrial Estate, Vapi, Gujarat - 396195, Near ONGC Pump Station",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Total Sum Insured for All Machinery (₹)",
+      "field_name": "total_sum_insured",
+      "field_type": "number",
+      "section": "Risk Location",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the total current replacement value of all machinery to be insured. This should be the cost to purchase new machinery of same type and capacity today, including taxes, transportation, and installation costs. Don't use depreciated book value as it leads to under-insurance.",
+      "placeholder": "e.g., 150000000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Type of Business/Industry",
+      "field_name": "business_type",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Automobile Manufacturing",
+        "Textile Mill",
+        "Chemical Processing",
+        "Food Processing",
+        "Pharmaceutical Manufacturing",
+        "Steel/Metal Processing",
+        "Plastic Manufacturing",
+        "Paper Mill",
+        "Cement Plant",
+        "Power Generation",
+        "Engineering Goods",
+        "Electronics Manufacturing",
+        "Printing Press",
+        "Cold Storage",
+        "Others"
+      ],
+      "guidance_text": "Select your primary industry type. This determines the risk category as different industries have varying machinery breakdown frequencies. Heavy industries typically have higher premiums than light manufacturing. If your industry isn't listed, select 'Others' and specify in additional information.",
+      "placeholder": "Select your industry",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "business_type_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "business_type",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Detailed Business Description",
+      "field_name": "business_description",
+      "field_type": "textarea",
+      "section": "Business Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "minLength": 30,
+        "maxLength": 500
+      },
+      "guidance_text": "Describe your manufacturing or production process briefly. Include main products manufactured, production capacity, and whether operations run in shifts. This helps insurers understand the usage intensity and criticality of machinery in your operations.",
+      "placeholder": "e.g., Manufacturing of automotive components including gears, shafts, and precision parts. Production capacity 1000 units/day running in 3 shifts. Main processes include CNC machining, heat treatment, and assembly."
+    },
+    {
+      "question_text": "Are spare parts available locally for imported machinery?",
+      "field_name": "spare_parts_availability",
+      "field_type": "radio",
+      "section": "Machinery Support",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - Locally Available",
+        "No - Need to Import",
+        "Not Applicable - No Imported Machinery"
+      ],
+      "guidance_text": "Indicate if spare parts for your imported machinery can be sourced within India. Local availability means faster repairs and lower claim amounts. If parts need importing, consider air freight coverage. This affects both premium and claim settlement time.",
+      "placeholder": "Select spare parts availability"
+    },
+    {
+      "question_text": "Do you have Annual Maintenance Contract (AMC)?",
+      "field_name": "amc_status",
+      "field_type": "radio",
+      "section": "Machinery Support",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - Comprehensive AMC",
+        "Yes - Basic AMC",
+        "No AMC"
+      ],
+      "guidance_text": "AMC shows proactive maintenance which reduces breakdown risk. Comprehensive AMC includes parts replacement while basic covers only service visits. Having AMC can reduce premiums and ensures expert maintenance. Machinery under warranty is considered as having manufacturer support.",
+      "placeholder": "Select AMC status"
+    },
+    {
+      "question_text": "AMC Details",
+      "field_name": "amc_details",
+      "field_type": "textarea",
+      "section": "Machinery Support",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "If you have AMC, provide details including service provider name, scope of coverage (preventive maintenance, breakdown support, parts included/excluded), contract duration, and which machinery is covered. Attach AMC copies with your proposal if available.",
+      "placeholder": "e.g., Comprehensive AMC with ABC Services Pvt Ltd for all CNC machines, includes quarterly preventive maintenance and breakdown support with parts. Contract valid till March 2026.",
+      "conditional_logic": {
+        "show_if": {
+          "field": "amc_status",
+          "value": [
+            "Yes - Comprehensive AMC",
+            "Yes - Basic AMC"
+          ]
+        }
+      }
+    },
+    {
+      "question_text": "Machinery Schedule",
+      "field_name": "machinery_details",
+      "field_type": "textarea",
+      "section": "Machinery Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "minLength": 50,
+        "maxLength": 3000
+      },
+      "guidance_text": "List all machinery to be insured with details: Machine name/type, Make/Manufacturer, Model number, Year of manufacture, Current replacement value, and Primary use. For similar machines, you can group them (e.g., '5 CNC Lathes - Mazak - 2020 - ₹50 lakhs each'). Critical and high-value machinery should be listed individually.",
+      "placeholder": "e.g.,\n1. CNC Turning Center - Mazak - Model QTN-200 - 2020 - ₹55,00,000 - Production\n2. VMC Machine - Haas - Model VF-2SS - 2019 - ₹45,00,000 - Milling Operations\n3. Hydraulic Press - AIDA - 250 Ton - 2018 - ₹30,00,000 - Forming\n4. Air Compressor (3 units) - Atlas Copco - GA90 - 2021 - ₹15,00,000 each - Utility"
+    },
+    {
+      "question_text": "Critical Machinery Information",
+      "field_name": "critical_machinery",
+      "field_type": "textarea",
+      "section": "Machinery Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "Identify machinery critical to your production where breakdown would stop entire operations. These might need expedited repair coverage. Also mention any machinery with known issues, recent major repairs, or nearing end of design life. This transparency helps in faster claim processing.",
+      "placeholder": "e.g., The main CNC turning center is critical - its breakdown stops 60% production. One hydraulic press is 15 years old but recently overhauled with new hydraulic system in Jan 2024."
+    },
+    {
+      "question_text": "Escalation Clause Coverage (Sub-limit in ₹)",
+      "field_name": "escalation_clause",
+      "field_type": "number",
+      "section": "Add-On Covers",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 100000000
+      },
+      "guidance_text": "Protects against inflation in repair costs during the policy period. Typically 10-15% of sum insured is adequate. Very important in current times with rising steel prices and labor costs. If machinery repair involves imported parts, this becomes essential due to currency fluctuations.",
+      "placeholder": "e.g., 15000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Express Freight Coverage (excluding air freight) (Sub-limit in ₹)",
+      "field_name": "express_freight",
+      "field_type": "number",
+      "section": "Add-On Covers",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000
+      },
+      "guidance_text": "Covers additional cost of expedited ground transportation for spare parts to minimize production loss. Useful when standard shipping takes too long. Typically set at 10-20% of your average spare part value. Does not include air freight which is covered separately.",
+      "placeholder": "e.g., 500000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Air Freight Coverage (Sub-limit in ₹)",
+      "field_name": "air_freight",
+      "field_type": "number",
+      "section": "Add-On Covers",
+      "order_index": 20,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000
+      },
+      "guidance_text": "Essential if your machinery uses imported parts. Covers the extra cost of air shipping spare parts versus sea freight. Critical for minimizing downtime of important machinery. Set limit based on weight and value of typical spare parts that might need urgent replacement.",
+      "placeholder": "e.g., 1000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Surrounding Property Damage Coverage (Sub-limit in ₹)",
+      "field_name": "surrounding_property",
+      "field_type": "number",
+      "section": "Add-On Covers",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000
+      },
+      "guidance_text": "Covers damage to your own surrounding property caused by machinery breakdown (like a broken shaft damaging nearby equipment or structures). Different from third-party liability. Consider the potential domino effect of machinery failure in your setup.",
+      "placeholder": "e.g., 2000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Third Party Liability Coverage (Sub-limit in ₹)",
+      "field_name": "third_party_liability",
+      "field_type": "number",
+      "section": "Add-On Covers",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 50000000
+      },
+      "guidance_text": "Covers legal liability for bodily injury or property damage to third parties caused by machinery breakdown. Important if your facility has visitors, contract workers, or is near other properties. Required if machinery breakdown could affect neighboring units in industrial areas.",
+      "placeholder": "e.g., 5000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Additional Customs Duty Coverage (Sub-limit in ₹)",
+      "field_name": "additional_customs_duty",
+      "field_type": "number",
+      "section": "Add-On Covers",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 10000000
+      },
+      "guidance_text": "Covers increased customs duty if rates change between breakdown and import of replacement parts. With frequent duty changes, this is valuable for imported machinery. Set based on typical customs duty for your most expensive imported spare parts.",
+      "placeholder": "e.g., 1500000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Current/Expiring Insurer Name",
+      "field_name": "expiring_insurer",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If you have existing machinery breakdown insurance, provide the current insurer's name. For first-time insurance, enter 'First Time' or leave blank. Continuity with good claims experience may qualify for better rates.",
+      "placeholder": "e.g., National Insurance Company Ltd"
+    },
+    {
+      "question_text": "Claim History (Last 3 Years)",
+      "field_name": "claims_history",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of any machinery breakdown claims in the past 3 years including year, machinery affected, cause of breakdown, claim amount, and whether paid/outstanding/rejected. If no claims, mention 'Nil Claims'. Good maintenance despite claims can still result in competitive premiums.",
+      "placeholder": "e.g.,\n2023 - CNC Machine motor burnout - Claim ₹3,50,000 - Paid\n2024 - Hydraulic Press cylinder failure - Claim ₹2,00,000 - Paid\nTotal Claims: 2, Total Amount: ₹5,50,000"
+    },
+    {
+      "question_text": "Additional Information",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Other Information",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1500
+      },
+      "guidance_text": "Share any other relevant information about your machinery, maintenance practices, or special requirements. Mention if you have standby machinery, preventive maintenance schedules, condition monitoring systems, or if any machinery is second-hand, reconditioned, or under warranty.",
+      "placeholder": "e.g., We follow predictive maintenance using vibration analysis for critical machinery. Have standby units for all critical equipment. The older hydraulic press was completely reconditioned in 2024 with new control systems. ISO 9001 certified facility with documented maintenance procedures."
+    },
+    {
+      "question_text": "Upload Supporting Documents",
+      "field_name": "supporting_documents",
+      "field_type": "file",
+      "section": "Documents",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload machinery purchase invoices, list of machinery with values, previous policy copy (for renewals), recent inspection reports, or AMC agreements. Documents help in faster underwriting and accurate premium calculation. Maximum 10MB per file, PDF format preferred.",
+      "placeholder": "Choose files to upload"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.533Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 3
+}

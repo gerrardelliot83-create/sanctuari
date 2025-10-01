@@ -1,0 +1,702 @@
+{
+  "product_name": "Plate Glass Insurance",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Name of Proposer Company",
+      "field_name": "company_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter your company's legal name as registered with the government. This ensures the insurance policy is issued to the correct entity and claims can be processed without legal complications.",
+      "placeholder": "e.g., XYZ Retail Stores Pvt Ltd",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "GST Number",
+      "field_name": "gst_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+        "minLength": 15,
+        "maxLength": 15
+      },
+      "guidance_text": "Your 15-digit GST number validates your business registration and determines tax calculations on your premium. Ensure this matches your official GST certificate.",
+      "placeholder": "e.g., 27AABCU9603R1ZM",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business",
+      "field_name": "nature_of_business",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Retail Store",
+        "Shopping Mall",
+        "Hotel / Hospitality",
+        "Restaurant / Cafe",
+        "Office Building",
+        "Bank / Financial Institution",
+        "Showroom (Automobile/Electronics)",
+        "Jewelry Store",
+        "Healthcare Facility",
+        "Educational Institution",
+        "Residential Building",
+        "Others"
+      ],
+      "guidance_text": "Select your business type as it helps assess the foot traffic and risk exposure of your glass installations. Businesses with higher customer footfall typically face more accidental damage risks.",
+      "placeholder": "Select your business type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "nature_of_business_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "nature_of_business",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Specify Business Type (if Others)",
+      "field_name": "business_type_other",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": false,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "nature_of_business",
+          "value": "Others"
+        }
+      },
+      "guidance_text": "Describe your business type if not listed above. Include details about customer interaction levels and the importance of glass in your operations.",
+      "placeholder": "e.g., Art Gallery with Glass Displays",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Registered Office Address",
+      "field_name": "registered_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your company's registered address for official correspondence. Include building name, street, area, city, state, and pincode for complete identification.",
+      "placeholder": "e.g., 301, Commerce House, Linking Road, Bandra West, Mumbai, Maharashtra - 400050",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter the exact address where the glass to be insured is installed. If same as registered address, you can repeat it. This location will be inspected if a claim arises.",
+      "placeholder": "e.g., Ground Floor Showroom, Phoenix Mall, Senapati Bapat Road, Pune, Maharashtra - 411016",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Contact Person Name",
+      "field_name": "contact_person",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Name of the person responsible for managing this insurance policy. They will be contacted for policy servicing, renewals, and claims processing.",
+      "placeholder": "e.g., Priya Sharma"
+    },
+    {
+      "question_text": "Mobile Number",
+      "field_name": "mobile_number",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[6-9][0-9]{9}$",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "guidance_text": "Provide a 10-digit mobile number for quick communication. You'll receive SMS updates about policy status, claim settlements, and renewal reminders on this number.",
+      "placeholder": "e.g., 9876543210",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Email Address",
+      "field_name": "email",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "maxLength": 100
+      },
+      "guidance_text": "Your email for receiving policy documents, premium receipts, and claim forms. Ensure this email is regularly monitored to avoid missing important policy communications.",
+      "placeholder": "e.g., insurance@xyzretail.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Type of Glass to be Insured",
+      "field_name": "glass_type",
+      "field_type": "multiselect",
+      "section": "Glass Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Plain Glass",
+        "Toughened/Tempered Glass",
+        "Laminated Glass",
+        "Frosted Glass",
+        "Etched/Designer Glass",
+        "Stained Glass",
+        "Mirror Glass",
+        "Double Glazed Glass",
+        "Bulletproof Glass",
+        "Others"
+      ],
+      "guidance_text": "Select all types of glass you want to insure. Specialty glass like stained or bulletproof glass has higher replacement costs and may affect your premium. Toughened glass typically has lower premiums due to its strength.",
+      "placeholder": "Select all applicable glass types"
+    },
+    {
+      "question_text": "Location of Glass Installation",
+      "field_name": "glass_location",
+      "field_type": "multiselect",
+      "section": "Glass Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Main Entry Door",
+        "Shop Front/Display Window",
+        "Interior Partitions",
+        "Conference Room",
+        "Facade/External Wall",
+        "Skylights",
+        "Elevator/Lift",
+        "Staircase Railings",
+        "Bathroom/Washroom",
+        "Counters/Shelving"
+      ],
+      "guidance_text": "Select all locations where insured glass is installed. External glass faces higher risk from weather and vandalism, while high-traffic areas like main doors have more accidental damage risk.",
+      "placeholder": "Select all installation locations"
+    },
+    {
+      "question_text": "Total Number of Glass Panels",
+      "field_name": "total_panels",
+      "field_type": "number",
+      "section": "Glass Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 10000
+      },
+      "guidance_text": "Count all individual glass panels or panes you want to insure. Each separate piece of glass counts as one panel, even if part of a larger window or door system.",
+      "placeholder": "e.g., 25",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "decimal"
+    },
+    {
+      "question_text": "Average Size of Each Panel",
+      "field_name": "panel_size",
+      "field_type": "text",
+      "section": "Glass Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide approximate dimensions of your glass panels in feet or meters. If you have various sizes, give the most common size or a range. This helps calculate replacement costs.",
+      "placeholder": "e.g., 5ft x 8ft or 1.5m x 2.5m",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Total Area of Glass to be Covered (sq. ft.)",
+      "field_name": "total_glass_area",
+      "field_type": "number",
+      "section": "Glass Details",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "min": 10,
+        "max": 1000000
+      },
+      "guidance_text": "Calculate the total square footage of all glass to be insured by multiplying length x width of all panels. Accurate measurement ensures adequate coverage without over-insuring.",
+      "placeholder": "e.g., 1500",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Glass Thickness",
+      "field_name": "glass_thickness",
+      "field_type": "select",
+      "section": "Glass Details",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "4-6 mm",
+        "8-10 mm",
+        "12 mm",
+        "15 mm",
+        "19 mm",
+        "Above 19 mm",
+        "Varies by panel"
+      ],
+      "guidance_text": "Glass thickness affects both strength and replacement cost. Thicker glass is more expensive to replace but less prone to accidental breakage. Standard commercial glass is typically 8-12mm.",
+      "placeholder": "Select glass thickness"
+    },
+    {
+      "question_text": "Year of Glass Installation",
+      "field_name": "installation_year",
+      "field_type": "number",
+      "section": "Glass Details",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "min": 1950,
+        "max": 2025
+      },
+      "guidance_text": "Enter the year when the glass was installed. Older installations may have wear and tear affecting their strength. Recent installations with warranties may qualify for better rates.",
+      "placeholder": "e.g., 2022",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Has the glass been laminated or reinforced?",
+      "field_name": "glass_reinforced",
+      "field_type": "radio",
+      "section": "Glass Details",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Laminated or reinforced glass has a protective film or wire mesh that holds fragments together when broken, reducing injury risk and often qualifying for lower premiums.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Sum Insured Amount",
+      "field_name": "sum_insured",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 100000000
+      },
+      "guidance_text": "Enter the total replacement cost of all glass including installation charges, labor, and any special treatments like tinting. This should reflect current market rates, not original purchase price.",
+      "placeholder": "e.g., 500000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Policy Period Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select when you want insurance coverage to begin. Allow 2-3 days from today for policy processing. If replacing an existing policy, align with its expiry to avoid coverage gaps.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select your desired policy end date. Annual policies are standard, but longer terms may offer premium discounts. Ensure continuous coverage by renewing before expiry.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Is the building protected by CCTV and/or security personnel?",
+      "field_name": "security_measures",
+      "field_type": "select",
+      "section": "Risk Assessment",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "CCTV Only",
+        "Security Personnel Only",
+        "Both CCTV and Security",
+        "No Security Measures"
+      ],
+      "guidance_text": "Security measures reduce vandalism and malicious damage risks, potentially lowering your premium. 24/7 surveillance and guards provide the best protection against intentional glass damage.",
+      "placeholder": "Select security level"
+    },
+    {
+      "question_text": "Is the glass vulnerable to accidental external impacts?",
+      "field_name": "external_impact_risk",
+      "field_type": "radio",
+      "section": "Risk Assessment",
+      "order_index": 22,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Consider if your glass faces busy streets, parking areas, playgrounds, or construction sites where vehicles, balls, or debris might cause accidental damage. Higher exposure means higher risk.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Describe External Impact Risks",
+      "field_name": "impact_risk_details",
+      "field_type": "textarea",
+      "section": "Risk Assessment",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "external_impact_risk",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe specific risks like heavy foot traffic, nearby sports facilities, vehicular movement, or ongoing construction. This helps insurers understand your unique risk factors.",
+      "placeholder": "e.g., Glass faces main road with heavy traffic; Adjacent to cricket ground where balls occasionally hit windows"
+    },
+    {
+      "question_text": "Has the premises or glass sustained damage in the past 3 years?",
+      "field_name": "past_damage",
+      "field_type": "radio",
+      "section": "Risk Assessment",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Declare any glass damage incidents, whether claimed under insurance or not. Frequent damages indicate higher risk but being transparent helps get accurate quotes.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Past Damage Details",
+      "field_name": "past_damage_details",
+      "field_type": "textarea",
+      "section": "Risk Assessment",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "past_damage",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Provide details of each incident: date, cause of damage, panels affected, and repair cost. Include preventive measures taken to avoid recurrence.",
+      "placeholder": "e.g., March 2023 - Accidental impact by delivery vehicle, 2 panels damaged, Cost: ₹50,000, Installed bollards for protection"
+    },
+    {
+      "question_text": "Is the glass engraved, colored, or containing artwork/advertising?",
+      "field_name": "special_glass_features",
+      "field_type": "radio",
+      "section": "Risk Assessment",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Decorative or advertising elements on glass increase replacement costs significantly. Custom designs, logos, or artistic work require special consideration in coverage and claims.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Special Features Details",
+      "field_name": "special_features_details",
+      "field_type": "textarea",
+      "section": "Risk Assessment",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "special_glass_features",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Describe the special features, their value, and whether they can be easily replicated. Include details about any copyrighted designs or custom artwork that would need special replacement arrangements.",
+      "placeholder": "e.g., Company logo etched on main door glass, valued at ₹30,000; Custom stained glass artwork in lobby worth ₹2,00,000"
+    },
+    {
+      "question_text": "Coverage for Riots, Strike & Malicious Damage (RSMD) required?",
+      "field_name": "rsmd_coverage",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 28,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "RSMD covers glass damage during civil disturbances, protests, or intentional vandalism. Essential for businesses in commercial areas or those with high public visibility.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "RSMD Coverage Sub-Limit",
+      "field_name": "rsmd_limit",
+      "field_type": "number",
+      "section": "Additional Coverage",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false,
+        "min": 10000,
+        "max": 10000000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "rsmd_coverage",
+          "value": "Yes"
+        }
+      },
+      "guidance_text": "Enter the maximum amount you want covered for RSMD damages. This is typically a percentage (50-100%) of your total sum insured, based on your risk assessment.",
+      "placeholder": "e.g., 250000",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Coverage for Temporary Boarding/Protection required?",
+      "field_name": "temp_boarding_coverage",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers the cost of temporary wooden boards or protective sheets while waiting for glass replacement. Important for maintaining security and weather protection after damage.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Coverage for Loss of Advertising/Signage on Glass?",
+      "field_name": "advertising_loss_coverage",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 31,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "If your glass displays business signage, logos, or advertising, this covers the cost of recreating them on replacement glass. Essential for retail stores with branded storefronts.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Coverage for Tinting, Frosting, or Special Treatments?",
+      "field_name": "special_treatment_coverage",
+      "field_type": "radio",
+      "section": "Additional Coverage",
+      "order_index": 32,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Covers the additional cost of reapplying special treatments like UV tinting, privacy frosting, or anti-glare coatings on replacement glass. Standard policies may not include these costs.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Current Insurance Company (if any)",
+      "field_name": "current_insurer",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 100
+      },
+      "guidance_text": "If you have existing plate glass insurance, mention your current insurer. Continuous coverage history often results in better renewal terms and no-claim bonuses.",
+      "placeholder": "e.g., ICICI Lombard"
+    },
+    {
+      "question_text": "Existing Policy Number",
+      "field_name": "existing_policy_number",
+      "field_type": "text",
+      "section": "Insurance History",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 50
+      },
+      "guidance_text": "Your current policy number helps verify coverage history and claim records. This information speeds up the quotation process and ensures continuity benefits.",
+      "placeholder": "e.g., PG/2024/12345",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Existing Policy Expiry Date",
+      "field_name": "policy_expiry_date",
+      "field_type": "date",
+      "section": "Insurance History",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Knowing your current policy's expiry helps ensure seamless coverage transition. Renewing before expiry maintains continuity benefits and prevents coverage gaps.",
+      "placeholder": "e.g., 31/03/2025"
+    },
+    {
+      "question_text": "Claims Made in Last 3 Years?",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 36,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No Claims",
+        "1 Claim",
+        "2 Claims",
+        "More than 2 Claims"
+      ],
+      "guidance_text": "Your claims history directly impacts premium rates. No-claim records typically earn discounts, while multiple claims may increase premiums but ensure you still get coverage.",
+      "placeholder": "Select claim frequency"
+    },
+    {
+      "question_text": "Claim Details",
+      "field_name": "claim_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history",
+          "value": [
+            "1 Claim",
+            "2 Claims",
+            "More than 2 Claims"
+          ]
+        }
+      },
+      "guidance_text": "For each claim, provide: date of loss, cause, claim amount, and settlement amount. Being transparent helps insurers assess risk accurately and provide appropriate coverage.",
+      "placeholder": "e.g., Claim 1: Date: 15/06/2023, Cause: Accidental breakage, Claimed: ₹75,000, Settled: ₹70,000"
+    },
+    {
+      "question_text": "Upload Previous Policy Document",
+      "field_name": "previous_policy_upload",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 38,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your current or previous plate glass insurance policy for reference. This helps insurers understand your existing coverage and offer matching or better terms.",
+      "placeholder": "Choose file to upload"
+    },
+    {
+      "question_text": "Upload Building Plan / Glass Layout",
+      "field_name": "building_plan_upload",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 39,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload building floor plans showing glass locations, or photos of glass installations. Visual documentation helps insurers assess risk accurately and speeds up the underwriting process.",
+      "placeholder": "Choose file to upload"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.584Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

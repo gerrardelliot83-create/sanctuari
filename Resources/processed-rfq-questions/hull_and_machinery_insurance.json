@@ -1,0 +1,297 @@
+{
+  "product_name": "Hull and Machinery Insurance",
+  "product_category": "marine",
+  "questions": [
+    {
+      "question_text": "Proposer's Name & Address",
+      "field_name": "proposer_name_address",
+      "field_type": "textarea",
+      "section": "Proposer Details",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter the full legal name and registered address of the vessel owner or operating company. This should match your vessel registration documents and maritime licenses. Include complete address with city, state, and PIN code for official correspondence.",
+      "placeholder": "e.g., Marine Logistics Pvt Ltd, Plot 45, Shipping Complex, Mazgaon Dock, Mumbai, Maharashtra - 400010",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Bank/Financier Details (if applicable)",
+      "field_name": "bank_financier_details",
+      "field_type": "textarea",
+      "section": "Proposer Details",
+      "order_index": 2,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "If the vessel is financed, provide the bank or financial institution's name, branch, and loan account number. The financier will be added as co-insured on the policy. This ensures the lender's interest is protected in case of total loss or major damage.",
+      "placeholder": "e.g., State Bank of India, Marine Finance Branch, Mumbai. Loan Account: 3456789012. Outstanding: ₹5 crores"
+    },
+    {
+      "question_text": "Vessel Name & Type",
+      "field_name": "vessel_name_type",
+      "field_type": "text",
+      "section": "Vessel Details",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the official registered name of your vessel and its type (cargo ship, tanker, trawler, passenger vessel, tug boat, barge, etc.). The vessel type determines risk category and applicable premium rates. Different vessel types have different standard coverages.",
+      "placeholder": "e.g., MV Sea Eagle - Bulk Cargo Carrier"
+    },
+    {
+      "question_text": "Year Built / Year Rebuilt (if applicable)",
+      "field_name": "year_built_rebuilt",
+      "field_type": "text",
+      "section": "Vessel Details",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "minLength": 4,
+        "maxLength": 50
+      },
+      "guidance_text": "Provide the year the vessel was originally constructed and if it underwent major rebuilding, mention that year too. Vessel age significantly affects premium - newer vessels (under 15 years) get better rates. Vessels over 25 years may need special surveys.",
+      "placeholder": "e.g., Built: 2015 or Built: 2005, Rebuilt: 2020"
+    },
+    {
+      "question_text": "Builder & Material of Construction",
+      "field_name": "builder_material",
+      "field_type": "text",
+      "section": "Vessel Details",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 200
+      },
+      "guidance_text": "Name the shipyard that built the vessel and specify hull material (steel, aluminum, fiberglass, wood). Reputed shipyards and steel construction generally get favorable rates. The construction material affects both premium and coverage terms.",
+      "placeholder": "e.g., Cochin Shipyard Ltd, Steel Hull Construction"
+    },
+    {
+      "question_text": "Vessel Dimensions (Length x Breadth x Depth x Draft in meters)",
+      "field_name": "vessel_dimensions",
+      "field_type": "text",
+      "section": "Vessel Details",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 100
+      },
+      "guidance_text": "Provide vessel dimensions in meters: Overall Length (LOA) x Breadth x Depth x Maximum Draft. These measurements determine the vessel's size category and help assess navigation risks, dry-docking requirements, and port limitations.",
+      "placeholder": "e.g., 180m x 28m x 15m x 10.5m"
+    },
+    {
+      "question_text": "Gross Registered Tonnage (GRT)",
+      "field_name": "gross_registered_tonnage",
+      "field_type": "number",
+      "section": "Vessel Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 500000
+      },
+      "guidance_text": "Enter the Gross Registered Tonnage as per your vessel's registration certificate. GRT measures the vessel's overall internal volume and is a key factor in determining premium rates. Larger tonnage usually means higher premiums due to greater exposure.",
+      "placeholder": "e.g., 15000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Port & Authority of Registry",
+      "field_name": "port_authority_registry",
+      "field_type": "text",
+      "section": "Vessel Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 200
+      },
+      "guidance_text": "Specify the port where your vessel is registered and the maritime authority (e.g., DG Shipping India, MMD Mumbai). The flag state and registration authority determine which regulations apply and affect the insurance terms and surveyor requirements.",
+      "placeholder": "e.g., Port of Mumbai, Directorate General of Shipping, India"
+    },
+    {
+      "question_text": "Estimated Value - Hull, Machinery & Equipment (₹)",
+      "field_name": "estimated_value",
+      "field_type": "number",
+      "section": "Valuation",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Provide the current market value of the complete vessel including hull, machinery, and permanently installed equipment. This should reflect realistic replacement or resale value. Overvaluation leads to higher premiums; undervaluation results in proportionate claim settlements.",
+      "placeholder": "e.g., 500000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Amount Proposed for Insurance (₹)",
+      "field_name": "amount_for_insurance",
+      "field_type": "number",
+      "section": "Valuation",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the sum insured you want for the vessel. This can be the agreed value (pre-determined payout) or actual value basis. Most owners insure for 100% of vessel value, but you can choose lower coverage with proportionate premium reduction.",
+      "placeholder": "e.g., 500000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Purpose of Vessel Use & Trading Limits",
+      "field_name": "vessel_use_trading_limits",
+      "field_type": "textarea",
+      "section": "Employment",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Describe how the vessel is used (cargo transport, fishing, passenger service, offshore support) and specify geographical trading limits (coastal waters, international routes, specific regions). Wider trading areas and riskier operations attract higher premiums.",
+      "placeholder": "e.g., General cargo transportation between Indian ports and Middle East. Trading limits: Indian coastal waters, Arabian Sea, Persian Gulf. No operations during monsoon months (June-September) in Arabian Sea."
+    },
+    {
+      "question_text": "Laid-up Period Details (if any)",
+      "field_name": "laid_up_period",
+      "field_type": "textarea",
+      "section": "Employment",
+      "order_index": 12,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "If the vessel will be laid-up (not in operation) for maintenance, repairs, or off-season, specify the period and location. Laid-up periods often qualify for premium returns or reduced rates as navigation risks are eliminated during this time.",
+      "placeholder": "e.g., Annual dry-docking for 30 days in January at Mumbai Port. Monsoon lay-up from June 15 to September 15 at Cochin anchorage."
+    },
+    {
+      "question_text": "Will the Vessel Undertake Towage Operations?",
+      "field_name": "towage_operations",
+      "field_type": "radio",
+      "section": "Employment",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if your vessel will tow other vessels or objects. Towage operations carry additional liability risks and usually require special clauses and higher premiums. If yes, you'll need to provide details about types of towing and contractual terms.",
+      "placeholder": "No"
+    },
+    {
+      "question_text": "Master's Qualification & License Details",
+      "field_name": "master_qualification",
+      "field_type": "textarea",
+      "section": "Crew",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide details of the vessel master's certification, license class, issuing authority, and years of experience. Qualified and experienced masters reduce navigation risks. Include Certificate of Competency (COC) details and any specialized training relevant to your vessel type.",
+      "placeholder": "e.g., Captain Rajesh Kumar, Master Mariner (Foreign Going), COC No: FG-12345, issued by DG Shipping India. 15 years experience, including 5 years on similar tonnage vessels."
+    },
+    {
+      "question_text": "Number of Crew Members on Board",
+      "field_name": "crew_number",
+      "field_type": "number",
+      "section": "Crew",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true,
+        "min": 1,
+        "max": 500
+      },
+      "guidance_text": "Enter the total number of crew members normally on board including officers and ratings. Adequate crew strength as per minimum safe manning requirements reduces operational risks. Undermanned vessels may face coverage restrictions.",
+      "placeholder": "e.g., 22",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Previous Insurer & Claims Experience",
+      "field_name": "previous_insurer_claims",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 1000
+      },
+      "guidance_text": "Provide details of current/previous marine insurance including insurer name, policy period, sum insured, and claims history for the last 5 years. Include all claims - hull damage, machinery breakdown, collision, salvage, etc. Good claims history earns no-claim bonus discounts.",
+      "placeholder": "e.g., Previous Insurer: New India Assurance, Policy Period: April 2024-March 2025, Sum Insured: ₹50 crores. Claims: One machinery claim of ₹25 lakhs in 2023 for engine repair. No other claims in last 5 years.",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Coverage Risks Required",
+      "field_name": "coverage_risks",
+      "field_type": "multiselect",
+      "section": "Coverage",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Total Loss (TL) Only",
+        "Total Loss + Constructive Total Loss (CTL)",
+        "Comprehensive (All Risks)",
+        "Salvage Charges",
+        "General Average & Salvage",
+        "3/4 Collision Liability",
+        "SRCC (Strikes, Riots, Civil Commotion)",
+        "War Risks",
+        "P&I Risks (Limited)",
+        "Machinery Breakdown",
+        "Extended Navigation Limits"
+      ],
+      "guidance_text": "Select all coverages you need. 'Comprehensive' includes most marine perils. 'TL Only' is cheapest but covers only total loss. 'Collision Liability' covers damage to other vessels. 'SRCC' and 'War Risks' protect against political perils. Choose based on your trade routes and risk appetite.",
+      "placeholder": "Select all applicable coverages"
+    },
+    {
+      "question_text": "Policy Period / Voyage Required",
+      "field_name": "policy_period_voyage",
+      "field_type": "select",
+      "section": "Coverage",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Annual Policy (12 months)",
+        "6 Months",
+        "3 Months",
+        "Single Voyage",
+        "Multiple Specified Voyages"
+      ],
+      "guidance_text": "Select your insurance period preference. Annual policies are common for regular operations and offer better rates. Voyage policies suit one-time or seasonal operations. Consider your operational schedule and cash flow when choosing the policy term.",
+      "placeholder": "Annual Policy (12 months)",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.514Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 2
+}

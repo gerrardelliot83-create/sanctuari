@@ -1,0 +1,611 @@
+{
+  "product_name": "Public Offering Securities Insurance (POSI)",
+  "product_category": "commercial",
+  "questions": [
+    {
+      "question_text": "Principal Organization Name",
+      "field_name": "principal_organization",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the complete legal name of the company planning the public offering. This should match the name in your incorporation documents and draft prospectus. For listed companies, use the name as registered with stock exchanges.",
+      "placeholder": "e.g., XYZ Technologies Limited"
+    },
+    {
+      "question_text": "Principal Address",
+      "field_name": "principal_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the registered office address of the company. This address will be used for all official correspondence regarding the insurance policy. Include complete details with building name, street, city, state, and PIN code.",
+      "placeholder": "e.g., Tower A, 10th Floor, Cyber City, DLF Phase 2, Gurugram, Haryana - 122002",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Nature of Business Activities",
+      "field_name": "nature_of_activities",
+      "field_type": "select",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Information Technology/Software",
+        "Financial Services",
+        "Manufacturing",
+        "Healthcare/Pharmaceuticals",
+        "Retail/E-commerce",
+        "Real Estate/Infrastructure",
+        "Telecommunications",
+        "Energy/Utilities",
+        "Consumer Goods/FMCG",
+        "Media/Entertainment",
+        "Education",
+        "Logistics/Transportation",
+        "Hospitality/Tourism",
+        "Other Services"
+      ],
+      "guidance_text": "Select the primary industry sector of your company. This helps insurers assess the specific risks associated with your business model and the public offering. Choose the category that generates the majority of your revenue.",
+      "placeholder": "Select your primary business"
+    },
+    {
+      "question_text": "Years in Continuous Operation",
+      "field_name": "years_of_operation",
+      "field_type": "number",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 200
+      },
+      "guidance_text": "Enter the number of years your company has been operating continuously under current management. Longer operational history typically indicates stability and may result in better premium rates. Count from the date of incorporation or major restructuring.",
+      "placeholder": "e.g., 10",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Previous Company Names (If Any)",
+      "field_name": "former_names",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 500
+      },
+      "guidance_text": "List any previous names your company operated under, with dates of change. This is important for liability coverage continuity and helps insurers track company history. Include mergers, acquisitions, or rebranding details.",
+      "placeholder": "e.g., ABC Software Pvt Ltd (2015-2020), ABC Tech Solutions Ltd (2020-2023)"
+    },
+    {
+      "question_text": "Date of Incorporation",
+      "field_name": "incorporation_date",
+      "field_type": "date",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date when your company was officially incorporated with the Registrar of Companies. This date is mentioned on your Certificate of Incorporation and helps establish the company's legal existence timeline.",
+      "placeholder": "e.g., 15/03/2015"
+    },
+    {
+      "question_text": "Place of Incorporation",
+      "field_name": "incorporation_place",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "guidance_text": "Enter the city and state where your company is incorporated. For Indian companies, this is the ROC jurisdiction mentioned in your CIN. This determines applicable regulations and legal framework.",
+      "placeholder": "e.g., Mumbai, Maharashtra"
+    },
+    {
+      "question_text": "Is the Company Already Listed?",
+      "field_name": "is_public_company",
+      "field_type": "radio",
+      "section": "Company Information",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No - Private Company going for IPO",
+        "Yes - Already Listed"
+      ],
+      "guidance_text": "Indicate whether your company is currently listed on any stock exchange or is a private company planning its Initial Public Offering (IPO). Listed companies going for Follow-on Public Offering (FPO) have different risk profiles than IPO companies.",
+      "placeholder": "Select status",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Stock Exchanges Where Listed/Planning to List",
+      "field_name": "stock_exchanges",
+      "field_type": "multiselect",
+      "section": "Company Information",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "BSE Main Board",
+        "NSE Main Board",
+        "BSE SME",
+        "NSE Emerge",
+        "International Exchange (GIFT City)",
+        "Foreign Exchange (specify in remarks)"
+      ],
+      "guidance_text": "Select all stock exchanges where your company is currently listed or planning to list through this public offering. Main board listings have different requirements than SME platforms. Multiple listings may require broader coverage.",
+      "placeholder": "Select all applicable"
+    },
+    {
+      "question_text": "Limit of Indemnity Required",
+      "field_name": "indemnity_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "This is the maximum amount the insurer will pay for all claims during the policy period. For IPOs, this typically ranges from 5-10% of the offering size. Higher limits provide better protection against securities litigation but increase premium costs. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select coverage amount",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Deductible/Excess Amount",
+      "field_name": "deductible_amount",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "The deductible is the amount you'll pay out-of-pocket before insurance coverage kicks in for each claim. Higher deductibles reduce premium but increase your financial exposure. Choose based on your company's risk tolerance and financial capacity. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select deductible",
+      "format": "indian_currency",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period - Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Coverage should ideally start before the draft prospectus filing date to cover the entire offering process. Most companies start coverage 30-60 days before the expected IPO launch to cover pre-IPO activities and roadshows.",
+      "placeholder": "e.g., 01/02/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period - End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "POSI policies typically run for 6-7 years from the IPO date as per SEBI regulations. The extended period covers potential claims arising from prospectus misstatements that may surface years after the offering.",
+      "placeholder": "e.g., 31/01/2032",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Total Gross Assets of North American Subsidiaries",
+      "field_name": "north_american_assets",
+      "field_type": "number",
+      "section": "International Exposure",
+      "order_index": 14,
+      "validation_rules": {
+        "required": false,
+        "min": 0,
+        "max": 999999999999
+      },
+      "guidance_text": "If you have subsidiaries in USA or Canada, enter their total asset value in INR. US exposure significantly increases liability risk due to their litigation-friendly environment and requires special coverage considerations.",
+      "placeholder": "e.g., 5000000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Are shares traded on any US Stock Exchange?",
+      "field_name": "us_listed",
+      "field_type": "radio",
+      "section": "International Exposure",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Indicate if your company's shares are listed or traded on NYSE, NASDAQ, or any other US exchange. US listing dramatically increases securities litigation risk and requires specialized coverage with higher premiums.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Do you issue American Depository Receipts (ADRs)?",
+      "field_name": "adr_issued",
+      "field_type": "radio",
+      "section": "International Exposure",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "ADRs allow US investors to buy shares in foreign companies. Even unsponsored ADRs can create US jurisdiction exposure. This significantly impacts coverage needs and premium as it opens potential for US-based litigation.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Coverage for Outside Directorship Required?",
+      "field_name": "outside_directorship_coverage",
+      "field_type": "radio",
+      "section": "Director & Officer Coverage",
+      "order_index": 17,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "This covers your directors/officers serving on boards of other companies at your request. Important if your executives serve on subsidiary boards, joint venture companies, or industry associations. Extends protection beyond your company.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Outside Directorship Details",
+      "field_name": "outside_directorship_details",
+      "field_type": "textarea",
+      "section": "Director & Officer Coverage",
+      "order_index": 18,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "List companies where your directors serve on boards, including company name, director name, position, ownership percentage, and whether that company has D&O insurance. This helps assess additional exposure and coverage needs.",
+      "placeholder": "e.g., ABC Subsidiary Ltd - Mr. John Doe, Director, 100% owned, Has D&O coverage",
+      "conditional_logic": {
+        "show_if": {
+          "field": "outside_directorship_coverage",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Any ongoing acquisitions, mergers, or tender offers?",
+      "field_name": "ongoing_ma_activity",
+      "field_type": "radio",
+      "section": "Corporate Changes",
+      "order_index": 19,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Disclose any M&A activities your company is currently pursuing. These transactions can significantly impact valuation and create additional disclosure obligations that affect securities liability risk.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Are there proposals for your company to be acquired?",
+      "field_name": "acquisition_proposals",
+      "field_type": "radio",
+      "section": "Corporate Changes",
+      "order_index": 20,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Indicate if there are any offers or discussions about your company being acquired. This could affect the public offering plans and creates unique liability scenarios that need special coverage consideration.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Planning a public offering within next 12 months?",
+      "field_name": "public_offering_planned",
+      "field_type": "radio",
+      "section": "Corporate Changes",
+      "order_index": 21,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes - IPO",
+        "Yes - FPO/OFS",
+        "Yes - Rights Issue",
+        "No"
+      ],
+      "guidance_text": "Confirm the type of public offering planned. IPOs have highest risk, followed by Follow-on Public Offerings (FPO) and Offer for Sale (OFS). Rights issues have relatively lower securities litigation risk.",
+      "placeholder": "Select offering type"
+    },
+    {
+      "question_text": "Changes in Board or Senior Management",
+      "field_name": "management_changes",
+      "field_type": "textarea",
+      "section": "Corporate Changes",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "List any changes in directors, CEO, CFO, or other key executives in the past 12 months. Include names, positions, dates, and reasons for departure. Management stability is a key factor in assessing governance risk.",
+      "placeholder": "e.g., Mr. XYZ, CFO, Resigned 01/01/2025 - Personal reasons; Replaced by Ms. ABC on 15/01/2025"
+    },
+    {
+      "question_text": "Has D&O insurance ever been refused or cancelled?",
+      "field_name": "insurance_refused",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 23,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Disclose if any insurer has ever declined, cancelled, or refused to renew D&O or POSI coverage for your company. Be honest - insurers share this information. If yes, you'll need to explain the circumstances.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Do you currently have D&O Liability Insurance?",
+      "field_name": "current_do_insurance",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 24,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Indicate if you have an active Directors & Officers liability policy. POSI is typically purchased in addition to regular D&O coverage to specifically cover public offering risks. Existing D&O coverage shows good governance practices.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Any notices given under current/prior D&O policies?",
+      "field_name": "prior_notices",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 25,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Disclose if you've notified insurers about potential claims or circumstances that might lead to claims under any D&O policy. This includes precautionary notices about investigations, lawsuits, or regulatory actions.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Any claims paid under D&O insurance?",
+      "field_name": "claims_paid",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 26,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Indicate if any claims have been paid out under your D&O policies in the past. Include settlements, legal defense costs, or judgments. Past claims indicate higher risk but don't automatically disqualify coverage.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Pending or past claims against directors/officers?",
+      "field_name": "pending_claims",
+      "field_type": "radio",
+      "section": "Insurance History",
+      "order_index": 27,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Disclose any lawsuits, regulatory proceedings, or investigations involving your directors or officers, whether ongoing or resolved. Include shareholder disputes, SEBI investigations, or criminal proceedings. Full disclosure is legally required.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Claims/Legal Proceedings Details",
+      "field_name": "claims_details",
+      "field_type": "textarea",
+      "section": "Insurance History",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Provide complete details of any claims, lawsuits, or proceedings mentioned above. Include dates, parties involved, allegations, current status, and financial impact. Transparency helps insurers properly assess and price the risk.",
+      "placeholder": "e.g., SEBI investigation for insider trading, Started: Jan 2024, Status: Ongoing, No financial penalty yet",
+      "conditional_logic": {
+        "show_if": {
+          "field": "pending_claims",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Requested Continuity/Retroactive Date",
+      "field_name": "continuity_date",
+      "field_type": "date",
+      "section": "Coverage Continuity",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "For claims-made policies, this date determines how far back the coverage extends for past acts. Typically set to company incorporation date or when you first purchased D&O insurance. Earlier dates provide broader protection.",
+      "placeholder": "e.g., 15/03/2015"
+    },
+    {
+      "question_text": "Previous Insurer Details",
+      "field_name": "previous_insurer_details",
+      "field_type": "textarea",
+      "section": "Coverage Continuity",
+      "order_index": 30,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "If you have/had D&O or POSI coverage, provide insurer names, policy periods, coverage limits, and premium paid. This helps ensure seamless coverage transition and may qualify you for better terms based on claims-free history.",
+      "placeholder": "e.g., ABC Insurance Ltd, Period: 01/04/2023-31/03/2024, Limit: ₹10 Cr, Premium: ₹15 lakhs",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Aware of circumstances that might lead to claims?",
+      "field_name": "potential_claims",
+      "field_type": "radio",
+      "section": "Risk Disclosure",
+      "order_index": 31,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Critically important question - disclose ANY circumstances that could reasonably give rise to a claim. This includes regulatory inquiries, internal investigations, whistleblower complaints, or media allegations. Non-disclosure can void coverage.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Potential Circumstances Details",
+      "field_name": "potential_claims_details",
+      "field_type": "textarea",
+      "section": "Risk Disclosure",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Describe any circumstances that might lead to claims, even if uncertain. Include regulatory scrutiny, accounting irregularities, employment disputes, or governance issues. Early disclosure protects your coverage for these matters.",
+      "placeholder": "Provide detailed description of any circumstances that could potentially lead to a claim",
+      "conditional_logic": {
+        "show_if": {
+          "field": "potential_claims",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Additional Information for Underwriters",
+      "field_name": "additional_information",
+      "field_type": "textarea",
+      "section": "Risk Disclosure",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 2000
+      },
+      "guidance_text": "Share any additional information that helps underwriters assess your risk profile. Include positive factors like strong governance practices, independent board composition, compliance certifications, or risk management systems that reduce liability exposure.",
+      "placeholder": "e.g., We have 5 independent directors, quarterly compliance audits, and ISO 27001 certification"
+    },
+    {
+      "question_text": "Current/Expiring Policy Details",
+      "field_name": "expiring_policy_details",
+      "field_type": "textarea",
+      "section": "Risk Disclosure",
+      "order_index": 34,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "If renewing or switching insurers, provide your current policy number, insurer name, expiry date, and premium. This helps insurers offer competitive quotes and ensure no coverage gaps during transition.",
+      "placeholder": "e.g., Policy No: D&O/2024/12345, Insurer: XYZ Insurance, Expiry: 31/03/2025, Premium: ₹20 lakhs"
+    },
+    {
+      "question_text": "Upload Financial Statements (Last 3 Years)",
+      "field_name": "financial_statements",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 35,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload audited financial statements for the last 3 years in PDF format. These help insurers assess financial stability and growth trajectory. For IPO companies, include any restated financials prepared for the offering.",
+      "placeholder": "Upload PDF files",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Upload Draft Red Herring Prospectus (DRHP)",
+      "field_name": "drhp_document",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 36,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If available, upload the DRHP or draft prospectus. This is the key document insurers review to assess disclosure quality and potential liability. Even preliminary drafts help in getting accurate quotes.",
+      "placeholder": "Upload PDF file"
+    },
+    {
+      "question_text": "Upload Board Resolution for Insurance",
+      "field_name": "board_resolution",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 37,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload the board resolution authorizing purchase of POSI coverage. This demonstrates proper corporate approval and governance. Some insurers require this before binding coverage.",
+      "placeholder": "Upload PDF file"
+    },
+    {
+      "question_text": "Upload Current D&O Policy (If Applicable)",
+      "field_name": "current_do_policy",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 38,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If you have existing D&O coverage, upload the current policy document. This helps insurers understand your existing protection and structure the POSI policy to complement it without gaps or overlaps.",
+      "placeholder": "Upload PDF file"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.603Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}

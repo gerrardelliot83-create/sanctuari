@@ -1,0 +1,308 @@
+{
+  "product_name": "Shopkeeper Marine Insurance",
+  "product_category": "marine",
+  "questions": [
+    {
+      "question_text": "Name of Insured",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Insured Party Details",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the full legal name of your business as registered with government authorities. This name will appear on your insurance policy and all official documents. Ensure accuracy as any discrepancy may cause issues during claims.",
+      "placeholder": "e.g., ABC Traders Pvt Ltd"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Insured Party Details",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide your complete business address where all insurance-related correspondence will be sent. Include building name/number, street, area, city, state, and PIN code. This address is crucial for receiving policy documents and renewal notices.",
+      "placeholder": "e.g., Shop No. 12, Trade Center, MG Road, Chennai, Tamil Nadu, 600001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period",
+      "field_name": "policy_period",
+      "field_type": "select",
+      "section": "Policy & Transit Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Single Transit",
+        "3 Months",
+        "6 Months",
+        "1 Year",
+        "2 Years",
+        "3 Years"
+      ],
+      "guidance_text": "Select how long you need marine insurance coverage. Single transit covers one-time shipment, while annual policies cover multiple shipments throughout the year. Longer periods often offer better premium rates and continuous protection.",
+      "placeholder": "e.g., 1 Year",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Start Date of Transit",
+      "field_name": "transit_start_date",
+      "field_type": "date",
+      "section": "Policy & Transit Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Specify when your goods will begin their journey from the origin point. Coverage typically starts when goods leave the warehouse or seller's premises. For import shipments, this is when goods are loaded at the foreign port.",
+      "placeholder": "e.g., 01/04/2025"
+    },
+    {
+      "question_text": "End Date of Transit",
+      "field_name": "transit_end_date",
+      "field_type": "date",
+      "section": "Policy & Transit Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Enter the expected date when goods will reach the final destination. Coverage continues until goods are delivered to your warehouse or 60 days after arrival at destination port, whichever is earlier. Allow buffer time for unexpected delays.",
+      "placeholder": "e.g., 15/04/2025"
+    },
+    {
+      "question_text": "Expected Date of Voyage/Shipment",
+      "field_name": "expected_shipment_date",
+      "field_type": "date",
+      "section": "Policy & Transit Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Provide the anticipated date when your cargo will be loaded onto the vessel or transport vehicle. This helps insurers track your shipment and assess seasonal risks like monsoons or rough seas that might affect transit.",
+      "placeholder": "e.g., 05/04/2025"
+    },
+    {
+      "question_text": "Place of Origin (From)",
+      "field_name": "origin_place",
+      "field_type": "text",
+      "section": "Transit Route & Transport Details",
+      "order_index": 7,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Specify the starting point of your cargo journey including city and country. For imports, mention the foreign port or city. For domestic transit, provide the warehouse or supplier location. This helps assess route-specific risks.",
+      "placeholder": "e.g., Shanghai Port, China or Mumbai, Maharashtra"
+    },
+    {
+      "question_text": "Destination (To)",
+      "field_name": "destination_place",
+      "field_type": "text",
+      "section": "Transit Route & Transport Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the final delivery location where your goods will be received and unloaded. Include city and state for clarity. Coverage typically extends to your warehouse or the buyer's premises as specified in the sales contract.",
+      "placeholder": "e.g., Chennai Port, Tamil Nadu or Delhi NCR"
+    },
+    {
+      "question_text": "Mode of Transport",
+      "field_name": "transport_mode",
+      "field_type": "select",
+      "section": "Transit Route & Transport Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Sea/Ocean",
+        "Air",
+        "Road",
+        "Rail",
+        "Multimodal (Sea + Road)",
+        "Multimodal (Air + Road)",
+        "Courier/Parcel"
+      ],
+      "guidance_text": "Select how your cargo will be transported. Sea freight is economical for bulk cargo but takes longer. Air freight is faster but costlier, suitable for high-value or time-sensitive goods. Premium rates vary by transport mode due to different risk levels.",
+      "placeholder": "e.g., Sea/Ocean"
+    },
+    {
+      "question_text": "Type of Packing Used",
+      "field_name": "packing_type",
+      "field_type": "select",
+      "section": "Transit Route & Transport Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Wooden Crates",
+        "Cardboard Boxes",
+        "Palletized",
+        "Container (FCL)",
+        "Container (LCL)",
+        "Drums/Barrels",
+        "Bags/Sacks",
+        "Bubble Wrap/Foam",
+        "Other Professional Packing"
+      ],
+      "guidance_text": "Describe how your goods are packed for transit. Proper packing reduces damage risk and affects premium rates. Professional packing with adequate cushioning and weatherproofing is essential for marine transit. Poor packing may lead to claim rejection.",
+      "placeholder": "e.g., Container (FCL)"
+    },
+    {
+      "question_text": "Cargo Description",
+      "field_name": "cargo_description",
+      "field_type": "textarea",
+      "section": "Cargo Details",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide detailed description of goods being shipped including quantity, weight, and specifications. Be specific - instead of 'electronics', write 'Samsung LED TVs 55-inch, 100 units'. Accurate description ensures proper coverage and smooth claim settlement.",
+      "placeholder": "e.g., Cotton fabric rolls, 500 pieces, each 100 meters, Grade A quality, for garment manufacturing"
+    },
+    {
+      "question_text": "Nature of Cargo",
+      "field_name": "cargo_nature",
+      "field_type": "select",
+      "section": "Cargo Details",
+      "order_index": 12,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "General Merchandise",
+        "Electronics/Electrical",
+        "Machinery/Equipment",
+        "Textiles/Garments",
+        "Chemicals (Non-hazardous)",
+        "Food Products",
+        "Raw Materials",
+        "Pharmaceutical",
+        "Auto Parts",
+        "Furniture",
+        "Handicrafts",
+        "Perishable Goods",
+        "Fragile Items"
+      ],
+      "guidance_text": "Select the category that best describes your cargo type. This classification helps insurers understand handling requirements and risk factors. Hazardous goods, perishables, and fragile items typically attract higher premiums due to increased risk.",
+      "placeholder": "e.g., Textiles/Garments"
+    },
+    {
+      "question_text": "Total Cargo Value (INR)",
+      "field_name": "cargo_value",
+      "field_type": "number",
+      "section": "Cargo Details",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 10000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter the total commercial invoice value of your cargo in Indian Rupees. Include the cost of goods plus freight charges (CIF value). This becomes your sum insured - the maximum amount payable in case of total loss. Under-declaring value may result in proportionate claim settlement.",
+      "placeholder": "e.g., 5000000",
+      "format": "decimal"
+    },
+    {
+      "question_text": "Is this an Import Shipment?",
+      "field_name": "is_import_shipment",
+      "field_type": "radio",
+      "section": "Import Shipment & Duty Coverage",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "Indicate if you're importing goods from another country. Import shipments have additional considerations like customs clearance, duty payments, and longer transit times. Coverage can extend from foreign warehouse to your Indian premises.",
+      "placeholder": "Select Yes or No"
+    },
+    {
+      "question_text": "Do you wish to cover Import Duty?",
+      "field_name": "cover_import_duty",
+      "field_type": "radio",
+      "section": "Import Shipment & Duty Coverage",
+      "order_index": 15,
+      "validation_rules": {
+        "required": false
+      },
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "guidance_text": "For imports, you can insure the customs duty amount separately. If goods are damaged after duty payment, you lose both the goods value and paid duty. Duty insurance ensures you recover this additional financial loss.",
+      "placeholder": "Select Yes or No",
+      "conditional_logic": {
+        "show_if": {
+          "field": "is_import_shipment",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Sum Insured for Import Duty",
+      "field_name": "import_duty_sum_insured",
+      "field_type": "number",
+      "section": "Import Shipment & Duty Coverage",
+      "order_index": 16,
+      "validation_rules": {
+        "required": false,
+        "min": 1000,
+        "max": 1000000000
+      },
+      "guidance_text": "Enter the estimated customs duty amount you'll pay for this import shipment. Calculate based on current duty rates for your product category. This amount is added to cargo value to determine total coverage. Check CBIC website for latest duty rates.",
+      "placeholder": "e.g., 500000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "cover_import_duty",
+          "value": "Yes"
+        }
+      },
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Supporting Documents",
+      "field_name": "attachments",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload relevant documents like commercial invoice, packing list, bill of lading, or previous marine policy if renewal. For imports, include purchase order or LC copy. Clear documentation speeds up policy issuance and claim processing.",
+      "placeholder": "Click to upload PDF, JPG, or PNG files (max 10MB each)"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.609Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 2
+}

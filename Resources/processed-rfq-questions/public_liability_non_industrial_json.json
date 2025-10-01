@@ -1,0 +1,533 @@
+{
+  "product_name": "Public Liability Non-Industrial Insurance",
+  "product_category": "general",
+  "questions": [
+    {
+      "question_text": "Name of Insured",
+      "field_name": "insured_name",
+      "field_type": "text",
+      "section": "Company Information",
+      "order_index": 1,
+      "validation_rules": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "guidance_text": "Enter the legal name of your business as registered with the government. This should match the name on your GST certificate and other official documents. For example, if your company is registered as 'ABC Retail Private Limited', enter the complete legal name.",
+      "placeholder": "e.g., ABC Retail Pvt Ltd"
+    },
+    {
+      "question_text": "Communication Address",
+      "field_name": "communication_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 2,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Provide the complete postal address where all insurance-related correspondence should be sent. Include building name/number, street, area, city, state, and PIN code. This address will be used for sending policy documents and renewal notices.",
+      "placeholder": "e.g., 501, 5th Floor, Business Plaza, MG Road, Bengaluru, Karnataka - 560001",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Policy Period - Start Date",
+      "field_name": "policy_start_date",
+      "field_type": "date",
+      "section": "Company Information",
+      "order_index": 3,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date when you want your insurance coverage to begin. The policy typically runs for one year from this date. Most businesses align this with their financial year starting April 1st, but you can choose any date that suits your needs.",
+      "placeholder": "e.g., 01/04/2025",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Policy Period - End Date",
+      "field_name": "policy_end_date",
+      "field_type": "date",
+      "section": "Company Information",
+      "order_index": 4,
+      "validation_rules": {
+        "required": true
+      },
+      "guidance_text": "Select the date when your insurance coverage will end. This is typically one year from the start date. You'll receive renewal reminders before this date to ensure continuous coverage.",
+      "placeholder": "e.g., 31/03/2026",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Risk Location Address",
+      "field_name": "risk_location_address",
+      "field_type": "textarea",
+      "section": "Company Information",
+      "order_index": 5,
+      "validation_rules": {
+        "required": true,
+        "minLength": 20,
+        "maxLength": 500
+      },
+      "guidance_text": "Enter the address of your primary business premises where operations are conducted. This is the location that needs insurance coverage against public liability risks. If different from communication address, ensure complete details are provided.",
+      "placeholder": "e.g., Plot 25, Industrial Area Phase 2, Noida, Uttar Pradesh - 201301",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Do you have multiple risk locations?",
+      "field_name": "multiple_risk_locations",
+      "field_type": "radio",
+      "section": "Company Information",
+      "order_index": 6,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Indicate if your business operates from more than one location that needs insurance coverage. This includes branch offices, warehouses, factories, or retail outlets. If yes, you'll need to provide details of all locations in a separate annexure.",
+      "placeholder": "Select one option"
+    },
+    {
+      "question_text": "Upload Risk Location Details (If Multiple Locations)",
+      "field_name": "multiple_locations_annexure",
+      "field_type": "file",
+      "section": "Company Information",
+      "order_index": 7,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If you have multiple locations, upload a document listing all addresses with details like construction type, age of building, number of floors, and number of occupants. Use the provided template or create your own Excel/PDF document.",
+      "placeholder": "Upload Excel or PDF file",
+      "conditional_logic": {
+        "show_if": {
+          "field": "multiple_risk_locations",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Nature of Business / Occupancy",
+      "field_name": "nature_of_business",
+      "field_type": "select",
+      "section": "Business Details",
+      "order_index": 8,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Retail Store",
+        "Office/Service",
+        "Restaurant/Food Service",
+        "Educational Institution",
+        "Healthcare Facility",
+        "Hospitality/Hotel",
+        "Entertainment/Recreation",
+        "Professional Services",
+        "Shopping Complex/Mall",
+        "Warehousing/Storage",
+        "Other Non-Industrial"
+      ],
+      "guidance_text": "Select the category that best describes your business operations. This helps insurers understand the type of public exposure and associated risks. Non-industrial means businesses that don't involve manufacturing or heavy machinery operations.",
+      "placeholder": "Select your business type",
+      "has_other_option": true,
+      "other_field": {
+        "field_name": "nature_of_business_other",
+        "field_type": "text",
+        "placeholder": "Please specify your business type",
+        "validation_rules": {
+          "required": false,
+          "maxLength": 200
+        },
+        "conditional_logic": {
+          "show_if": {
+            "field": "nature_of_business",
+            "value": "Other (Please specify)"
+          }
+        }
+      },
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Company Website",
+      "field_name": "company_website",
+      "field_type": "text",
+      "section": "Business Details",
+      "order_index": 9,
+      "validation_rules": {
+        "required": false,
+        "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-]*)*/?$",
+        "maxLength": 200
+      },
+      "guidance_text": "Provide your company's website URL if available. This helps insurers better understand your business operations and public presence. Include the complete URL starting with http:// or https://.",
+      "placeholder": "e.g., https://www.abcretail.com",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true
+    },
+    {
+      "question_text": "Annual Turnover",
+      "field_name": "annual_turnover",
+      "field_type": "number",
+      "section": "Business Details",
+      "order_index": 10,
+      "validation_rules": {
+        "required": true,
+        "min": 100000,
+        "max": 10000000000
+      },
+      "guidance_text": "Enter your company's total yearly revenue for the last financial year in rupees. This is your gross sales before deducting expenses. Insurers use this to assess business size and calculate appropriate coverage and premium.",
+      "placeholder": "e.g., 50000000",
+      "auto_fill_source": "company_profile",
+      "auto_fill_enabled": true,
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Type of Coverage",
+      "field_name": "coverage_type",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 11,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Occurrence Based",
+        "Claims Made"
+      ],
+      "guidance_text": "Occurrence Based covers incidents that happen during the policy period, regardless of when claims are filed. Claims Made covers claims filed during the policy period, regardless of when the incident occurred. Most businesses choose Occurrence Based for broader protection.",
+      "placeholder": "Select coverage type",
+      "policy_extractable": true,
+      "extraction_priority": "high"
+    },
+    {
+      "question_text": "Retroactive Date (If Claims Made Coverage)",
+      "field_name": "retroactive_date",
+      "field_type": "date",
+      "section": "Coverage Requirements",
+      "order_index": 12,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If you selected 'Claims Made' coverage, specify the date from which past incidents will be covered. This is typically the date when you first purchased claims-made insurance. Earlier the date, broader the coverage for past incidents.",
+      "placeholder": "e.g., 01/04/2020",
+      "conditional_logic": {
+        "show_if": {
+          "field": "coverage_type",
+          "value": "Claims Made"
+        }
+      }
+    },
+    {
+      "question_text": "Any One Accident (AOA) Limit",
+      "field_name": "aoa_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 13,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "This is the maximum amount the insurer will pay for all claims arising from a single accident or incident. Choose based on your business's risk exposure - higher foot traffic or valuable nearby property typically requires higher limits. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select AOA limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Any One Year (AOY) Limit",
+      "field_name": "aoy_limit",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 14,
+      "validation_rules": {
+        "required": true,
+        "min": 0,
+        "max": 100000000000
+      },
+      "guidance_text": "This is the maximum total amount the insurer will pay for all claims during the entire policy year. It's typically 2-3 times the AOA limit. This is your aggregate coverage limit for the policy period. You can enter the amount in lakhs or crores (e.g., 50,00,000 or 5,00,00,000).",
+      "placeholder": "Select AOY limit",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Territorial Scope",
+      "field_name": "territorial_scope",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 15,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "India Only",
+        "India and SAARC Countries",
+        "Asia Pacific",
+        "Worldwide excluding USA/Canada",
+        "Worldwide"
+      ],
+      "guidance_text": "Select the geographical area where you need coverage for public liability claims. Most non-industrial businesses operating only in India select 'India Only'. Choose broader coverage if you have international operations or visitors.",
+      "placeholder": "Select territorial scope"
+    },
+    {
+      "question_text": "Legal Jurisdiction",
+      "field_name": "legal_jurisdiction",
+      "field_type": "select",
+      "section": "Coverage Requirements",
+      "order_index": 16,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "Indian Courts Only",
+        "Indian and SAARC Courts",
+        "Asian Courts",
+        "Worldwide excluding USA/Canada",
+        "Worldwide"
+      ],
+      "guidance_text": "Specify which country's courts will have jurisdiction over any legal disputes. This should typically match your territorial scope. 'Indian Courts Only' is standard for businesses operating solely in India.",
+      "placeholder": "Select jurisdiction"
+    },
+    {
+      "question_text": "Name of Current/Previous Insurer",
+      "field_name": "expiring_insurer",
+      "field_type": "text",
+      "section": "Coverage Requirements",
+      "order_index": 17,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 200
+      },
+      "guidance_text": "If you currently have or previously had public liability insurance, mention the insurance company name. This helps in understanding your insurance history and may qualify you for no-claim bonuses. Leave blank if this is your first policy.",
+      "placeholder": "e.g., New India Assurance Co. Ltd."
+    },
+    {
+      "question_text": "Have you had any claims in the last 3 years?",
+      "field_name": "claims_history",
+      "field_type": "radio",
+      "section": "Coverage Requirements",
+      "order_index": 18,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Indicate if any public liability claims were made against your business in the past 3 years, whether paid or not. Be honest as insurers verify this information. A claims history doesn't necessarily mean rejection but helps in proper risk assessment.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Claims Details (If Yes)",
+      "field_name": "claims_details",
+      "field_type": "textarea",
+      "section": "Coverage Requirements",
+      "order_index": 19,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "If you had claims, provide details including date of incident, nature of claim, amount claimed, amount paid (if any), and current status. This transparency helps insurers offer appropriate coverage and pricing.",
+      "placeholder": "e.g., Date: 15/06/2023, Incident: Customer slip and fall, Amount Claimed: ₹2,00,000, Settled: ₹1,50,000",
+      "conditional_logic": {
+        "show_if": {
+          "field": "claims_history",
+          "value": "Yes"
+        }
+      }
+    },
+    {
+      "question_text": "Expected Premium Budget",
+      "field_name": "premium_expectation",
+      "field_type": "number",
+      "section": "Coverage Requirements",
+      "order_index": 20,
+      "validation_rules": {
+        "required": false,
+        "min": 1000,
+        "max": 10000000
+      },
+      "guidance_text": "Indicate your approximate budget for annual premium in rupees. This helps insurers structure coverage options within your budget. Leave blank if you're unsure - insurers will provide options based on your risk profile.",
+      "placeholder": "e.g., 50000",
+      "policy_extractable": true,
+      "extraction_priority": "high",
+      "format": "indian_currency"
+    },
+    {
+      "question_text": "Sudden & Accidental Pollution Coverage",
+      "field_name": "addon_pollution",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 21,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers liability from unexpected pollution incidents like chemical spills or gas leaks. Important for businesses handling any chemicals, fuels, or waste materials. Adds about 10-15% to base premium.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Liability from Transportation",
+      "field_name": "addon_transportation",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 22,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers liability while transporting goods or materials to/from your premises. Essential if you regularly move inventory or equipment using your own vehicles. Does not cover vehicle accident damages.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Act of God Perils Coverage",
+      "field_name": "addon_act_of_god",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 23,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Extends coverage to include natural disasters like floods, earthquakes, and storms. Important in disaster-prone areas. Standard policies often exclude these 'Act of God' events.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Lift/Elevator Liability",
+      "field_name": "addon_lift_liability",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 24,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers injuries or damage caused by lifts, elevators, or escalators in your premises. Must-have if your building has these facilities accessible to the public. Includes mechanical failure and maintenance-related incidents.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Terrorism Cover",
+      "field_name": "addon_terrorism",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 25,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Provides coverage for public liability arising from terrorist activities at your premises. Consider if located in high-risk areas or high-profile locations. Premium depends on location and business profile.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Care, Custody & Control",
+      "field_name": "addon_care_custody",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 26,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers damage to property temporarily in your care, like customer belongings in cloakrooms or valet parking. Important for hotels, restaurants, and service businesses handling customer property.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Food & Beverage Liability",
+      "field_name": "addon_food_beverage",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 27,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Essential for restaurants, cafeterias, and any business serving food/drinks. Covers liability from food poisoning or allergic reactions. Includes both prepared food and packaged items sold on premises.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Swimming Pool Liability",
+      "field_name": "addon_swimming_pool",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 28,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers accidents in swimming pools, including drowning, injuries, and infections. Mandatory if your premises has a pool accessible to customers, guests, or members. Includes pool equipment malfunction claims.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Sports & Recreation Facilities",
+      "field_name": "addon_sports_facilities",
+      "field_type": "checkbox",
+      "section": "Add-on Covers",
+      "order_index": 29,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Covers liability from gym equipment, sports courts, play areas, or other recreational facilities. Important for hotels, clubs, schools, and residential complexes with such amenities. Includes equipment failure and supervision-related claims.",
+      "placeholder": "Check if required"
+    },
+    {
+      "question_text": "Do you have other insurance policies with the same insurer?",
+      "field_name": "other_policies_same_insurer",
+      "field_type": "radio",
+      "section": "Additional Information",
+      "order_index": 30,
+      "validation_rules": {
+        "required": true
+      },
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "guidance_text": "Indicate if you have other insurance policies (like fire, marine, or health) with the insurer you're approaching. Having multiple policies with one insurer often qualifies you for package discounts and better service.",
+      "placeholder": "Select one"
+    },
+    {
+      "question_text": "Additional Remarks or Special Requirements",
+      "field_name": "additional_remarks",
+      "field_type": "textarea",
+      "section": "Additional Information",
+      "order_index": 31,
+      "validation_rules": {
+        "required": false,
+        "maxLength": 1000
+      },
+      "guidance_text": "Mention any specific coverage requirements, unique business aspects, or risk mitigation measures you've implemented. Include safety certifications, security arrangements, or any other information that might help in getting better coverage or rates.",
+      "placeholder": "e.g., We have 24/7 CCTV surveillance, trained security guards, and regular safety audits conducted quarterly"
+    },
+    {
+      "question_text": "Upload Previous Policy Copy (If Renewal)",
+      "field_name": "previous_policy_document",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 32,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "If this is a renewal, upload your current/expired policy document. This helps insurers understand your existing coverage and offer competitive renewal terms. Upload PDF or image files only.",
+      "placeholder": "Upload PDF or Image"
+    },
+    {
+      "question_text": "Upload Business Registration Certificate",
+      "field_name": "registration_certificate",
+      "field_type": "file",
+      "section": "Supporting Documents",
+      "order_index": 33,
+      "validation_rules": {
+        "required": false
+      },
+      "guidance_text": "Upload your company registration certificate, GST certificate, or any other business registration document. This helps verify your business's legal status and operations. Ensure the document is clear and readable.",
+      "placeholder": "Upload PDF or Image"
+    }
+  ],
+  "enhanced_features": {
+    "version": "2.0",
+    "features": [
+      "indian_currency_formatting",
+      "auto_fill_from_company_profile",
+      "policy_document_extraction",
+      "other_option_text_fields",
+      "smart_field_types"
+    ],
+    "last_enhanced": "2025-10-01T14:09:19.596Z"
+  },
+  "supports_policy_upload": true,
+  "extractable_fields_count": 4
+}
