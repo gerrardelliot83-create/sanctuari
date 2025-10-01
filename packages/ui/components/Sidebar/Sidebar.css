@@ -18,9 +18,12 @@
 }
 
 .sidebar__brand {
-  padding: 0 16px 32px 16px;
+  padding: 0 16px 24px 16px;
   border-bottom: 1px solid rgba(7, 9, 33, 0.08);
   margin-bottom: 16px;
+  height: 88px;
+  display: flex;
+  align-items: center;
 }
 
 .sidebar__logo {
