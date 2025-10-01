@@ -3,7 +3,9 @@
     "allow": [
       "Bash(ls:*)",
       "Bash(openssl rand:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(yarn install)",
+      "Read(//mnt/c/Users/DELL/Desktop/sanctuari/Resources/**)"
     ],
     "deny": [],
     "ask": []
