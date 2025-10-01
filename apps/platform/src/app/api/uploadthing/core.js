@@ -1,7 +1,15 @@
 import { createUploadthing } from "uploadthing/next";
 import { getUser } from "@sanctuari/database/lib/auth";
 
-const f = createUploadthing();
+const f = createUploadthing({
+  errorFormatter: (err) => {
+    console.error("[UploadThing] Error:", err);
+    return {
+      message: err.message,
+      code: err.code,
+    };
+  },
+});
 
 export const ourFileRouter = {
   // Policy PDF uploader
