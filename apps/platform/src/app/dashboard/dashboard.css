@@ -3,6 +3,19 @@
  * Modern, clean dashboard with sidebar layout
  */
 
+.dashboard-main-wrapper {
+  margin-left: 200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fog);
+}
+
+.dashboard-content-wrapper {
+  flex: 1;
+  padding: 32px;
+}
+
 .dashboard-loading {
   display: flex;
   align-items: center;
@@ -229,6 +242,14 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  .dashboard-main-wrapper {
+    margin-left: 64px;
+  }
+
+  .dashboard-content-wrapper {
+    padding: 16px;
+  }
+
   .dashboard-company-section {
     margin-bottom: 24px;
   }

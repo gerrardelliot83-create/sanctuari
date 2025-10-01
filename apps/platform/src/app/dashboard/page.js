@@ -109,10 +109,10 @@ export default function DashboardPage() {
   const currentCompany = companies.find(c => c.id === currentCompanyId);
 
   return (
-    <div className="dashboard-layout">
+    <>
       <Sidebar />
 
-      <div className="dashboard-layout__main">
+      <div className="dashboard-main-wrapper">
         <TopBar
           userName={user?.user_metadata?.full_name || user?.email}
           userEmail={user?.email}
@@ -120,7 +120,7 @@ export default function DashboardPage() {
           onCreateRFQ={handleCreateRFQ}
         />
 
-        <div className="dashboard-layout__content">
+        <div className="dashboard-content-wrapper">
           <div className="dashboard-page">
             {/* Company Switcher */}
             {companies.length > 0 && (
@@ -254,6 +254,6 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

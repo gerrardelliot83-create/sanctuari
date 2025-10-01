@@ -4,10 +4,17 @@
  */
 
 .sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: var(--white);
+  border-right: 1px solid rgba(7, 9, 33, 0.08);
   display: flex;
   flex-direction: column;
   padding: 24px 0;
-  height: 100%;
+  z-index: 100;
 }
 
 .sidebar__brand {
