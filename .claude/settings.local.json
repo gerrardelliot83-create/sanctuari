@@ -24,7 +24,8 @@
       "Bash(xargs ls:*)",
       "Bash(sudo apt-get:*)",
       "Bash(sudo apt-get install:*)",
-      "Bash(fold:*)"
+      "Bash(fold:*)",
+      "Bash(do echo \"=== $file ===\")"
     ],
     "deny": [],
     "ask": []

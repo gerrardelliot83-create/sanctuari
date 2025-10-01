@@ -391,6 +391,11 @@ export default function RFQWizardPage({ params }) {
                   onFocus={() => setActiveQuestionId(question.id)}
                   onClick={() => setActiveQuestionId(question.id)}
                 >
+                  {responses[question.id]?.value && (
+                    <div className="field-auto-filled-badge">
+                      ✓ Auto-filled from policy
+                    </div>
+                  )}
                   <QuestionRenderer
                     question={question}
                     value={responses[question.id]?.value || ''}

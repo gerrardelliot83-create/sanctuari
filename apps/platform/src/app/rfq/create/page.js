@@ -110,8 +110,8 @@ export default function ProductSelectionPage() {
       const data = await response.json();
 
       if (data.rfq) {
-        // Redirect to RFQ wizard
-        router.push(`/rfq/${data.rfq.id}/create`);
+        // Redirect to policy upload page (Phase 5)
+        router.push(`/rfq/${data.rfq.id}/upload`);
       } else {
         alert('Failed to create RFQ. Please try again.');
         setCreating(false);
