@@ -1,0 +1,37 @@
+/**
+ * Container Component Styles
+ * Sanctuari Design System - Vanilla CSS
+ */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Size variants */
+.container--small {
+  max-width: 640px;
+}
+
+.container--default {
+  max-width: 1024px;
+}
+
+.container--large {
+  max-width: 1280px;
+}
+
+.container--full {
+  max-width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

@@ -1,0 +1,17 @@
+/**
+ * FormField Component Styles
+ * Sanctuari Design System - Vanilla CSS
+ */
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-helper {
+  display: block;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  color: var(--ink-60);
+  margin-top: 4px;
+  line-height: 1.4;
+}

@@ -1,0 +1,18 @@
+/**
+ * Label Component Styles
+ * Sanctuari Design System - Vanilla CSS
+ */
+
+.form-label {
+  display: block;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.required {
+  color: var(--rose);
+  margin-left: 2px;
+}

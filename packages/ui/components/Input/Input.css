@@ -1,0 +1,65 @@
+/**
+ * Input Component Styles
+ * Sanctuari Design System - Vanilla CSS
+ */
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--ink-20);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: var(--ink-60);
+}
+
+.form-input:focus {
+  border-color: var(--iris);
+  box-shadow: 0 0 0 3px var(--iris-light);
+}
+
+.form-input:hover:not(:disabled):not(:focus) {
+  border-color: var(--ink-40);
+}
+
+.form-input:disabled {
+  background: var(--fog);
+  color: var(--ink-40);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-input--error {
+  border-color: var(--rose);
+}
+
+.form-input--error:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px var(--rose-light);
+}
+
+/* Number input - hide spinners for cleaner look */
+.form-input[type="number"]::-webkit-inner-spin-button,
+.form-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .form-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 14px 16px; /* Larger touch target */
+  }
+}

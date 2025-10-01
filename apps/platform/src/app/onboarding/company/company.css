@@ -1,0 +1,125 @@
+/**
+ * Company Onboarding Page Styles
+ */
+
+.onboarding-page {
+  min-height: 100vh;
+  background: var(--fog);
+  padding: 48px 0;
+}
+
+.onboarding-header {
+  margin-bottom: 40px;
+}
+
+.onboarding-header__brand {
+  font-family: 'Geist', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--iris);
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.onboarding-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.onboarding-progress__bar {
+  width: 100%;
+  max-width: 300px;
+  height: 6px;
+  background: var(--ink-10);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.onboarding-progress__fill {
+  height: 100%;
+  background: var(--iris);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.onboarding-progress__text {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  color: var(--ink-60);
+}
+
+.onboarding-card {
+  margin-bottom: 24px;
+}
+
+.onboarding-content {
+  padding: 40px;
+}
+
+.onboarding-content__title {
+  font-family: 'Geist', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px 0;
+}
+
+.onboarding-content__subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  color: var(--ink-60);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+.onboarding-form__error {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: var(--rose-light);
+  border-radius: 8px;
+  border-left: 4px solid var(--rose);
+}
+
+.onboarding-form__actions {
+  margin-top: 32px;
+}
+
+.onboarding-form__submit {
+  width: 100%;
+}
+
+.onboarding-footer {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  color: var(--ink-60);
+  text-align: center;
+  margin: 0;
+}
+
+.onboarding-footer__link {
+  color: var(--iris);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.onboarding-footer__link:hover {
+  color: var(--iris-hover);
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .onboarding-page {
+    padding: 32px 0;
+  }
+
+  .onboarding-content {
+    padding: 24px 20px;
+  }
+
+  .onboarding-content__title {
+    font-size: 20px;
+  }
+}

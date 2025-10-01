@@ -8,11 +8,12 @@
  * Typography: Geist Sans
  */
 
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './Button.css';
 
 export default function Button({
   variant = 'primary',
-  size = 'md',
+  size = 'medium',
   disabled = false,
   loading = false,
   type = 'button',
@@ -20,21 +21,21 @@ export default function Button({
   children,
   className = '',
 }) {
+  const sizeClasses = {
+    small: 'btn-small',
+    medium: 'btn-medium',
+    large: 'btn-large',
+  };
+
   return (
     <button
       type={type}
-      className={`button button--${variant} button--${size} ${className}`}
+      className={`btn btn-${variant} ${sizeClasses[size]} ${loading ? 'btn-loading' : ''} ${className}`}
       disabled={disabled || loading}
       onClick={onClick}
     >
-      {loading ? (
-        <span className="button__loading">
-          <span className="button__spinner"></span>
-          <span>Loading...</span>
-        </span>
-      ) : (
-        children
-      )}
+      {loading ? <LoadingSpinner size="small" color="white" /> : null}
+      {children}
     </button>
   );
 }

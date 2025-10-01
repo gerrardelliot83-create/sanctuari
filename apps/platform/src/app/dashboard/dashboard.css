@@ -1,0 +1,132 @@
+/**
+ * Dashboard Page Styles
+ */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: var(--fog);
+}
+
+.dashboard-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fog);
+}
+
+.dashboard-loading__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--ink-10);
+  border-top-color: var(--iris);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dashboard-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--ink-10);
+  padding: 16px 0;
+  margin-bottom: 48px;
+}
+
+.dashboard-header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header__brand {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--iris);
+  margin: 0;
+}
+
+.dashboard-content {
+  padding-bottom: 48px;
+}
+
+.dashboard-welcome {
+  margin-bottom: 40px;
+}
+
+.dashboard-welcome__title {
+  font-family: 'Geist', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px 0;
+}
+
+.dashboard-welcome__subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px;
+  color: var(--ink-60);
+  margin: 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.dashboard-card__text {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  color: var(--ink-80);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.dashboard-info {
+  max-width: 600px;
+}
+
+.dashboard-info__content h3 {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 12px 0;
+}
+
+.dashboard-info__content p {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  color: var(--ink-80);
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.dashboard-info__pricing {
+  font-family: 'Geist Mono', monospace;
+  font-size: 14px;
+  color: var(--iris);
+  font-weight: 500;
+  margin: 16px 0 0 0 !important;
+}
+
+@media (max-width: 768px) {
+  .dashboard-welcome__title {
+    font-size: 28px;
+  }
+
+  .dashboard-welcome__subtitle {
+    font-size: 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

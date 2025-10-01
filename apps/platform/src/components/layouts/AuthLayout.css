@@ -1,0 +1,143 @@
+/**
+ * AuthLayout Component Styles
+ * Split-screen authentication layout
+ */
+
+.auth-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--fog);
+}
+
+.auth-layout__left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: var(--white);
+}
+
+.auth-layout__content {
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-layout__logo {
+  margin-bottom: 48px;
+}
+
+.auth-layout__brand {
+  font-family: 'Geist', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--iris);
+  margin: 0;
+}
+
+.auth-layout__right {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background: var(--iris);
+  color: var(--white);
+}
+
+.auth-layout__branding {
+  max-width: 480px;
+}
+
+.auth-layout__title {
+  font-family: 'Geist', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  color: var(--white);
+}
+
+.auth-layout__subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 48px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.auth-layout__features {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.auth-layout__feature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.auth-layout__feature-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: var(--white);
+}
+
+.auth-layout__feature h3 {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+  color: var(--white);
+}
+
+.auth-layout__feature p {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .auth-layout__right {
+    flex: 0 0 45%;
+    padding: 32px;
+  }
+
+  .auth-layout__title {
+    font-size: 28px;
+  }
+
+  .auth-layout__subtitle {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .auth-layout {
+    flex-direction: column;
+  }
+
+  .auth-layout__left {
+    padding: 32px 20px;
+  }
+
+  .auth-layout__right {
+    display: none; /* Hide branding panel on mobile */
+  }
+
+  .auth-layout__logo {
+    margin-bottom: 32px;
+  }
+}

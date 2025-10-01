@@ -5,7 +5,8 @@
       "Bash(openssl rand:*)",
       "Bash(node:*)",
       "Bash(yarn install)",
-      "Read(//mnt/c/Users/DELL/Desktop/sanctuari/Resources/**)"
+      "Read(//mnt/c/Users/DELL/Desktop/sanctuari/Resources/**)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

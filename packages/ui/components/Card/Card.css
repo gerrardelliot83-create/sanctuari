@@ -1,0 +1,82 @@
+/**
+ * Card Component Styles
+ * Sanctuari Design System - Vanilla CSS
+ */
+
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(7, 9, 33, 0.06), 0 4px 6px rgba(7, 9, 33, 0.04);
+  transition: box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px rgba(7, 9, 33, 0.08), 0 10px 15px rgba(7, 9, 33, 0.06);
+}
+
+.card-header {
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid var(--ink-10);
+}
+
+.card-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+
+.card-subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  color: var(--ink-60);
+  margin: 4px 0 0;
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-actions {
+  padding: 16px 24px;
+  background: var(--fog);
+  border-top: 1px solid var(--ink-10);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Status variants */
+.card-active {
+  border-left: 4px solid var(--iris);
+}
+
+.card-warning {
+  border-left: 4px solid var(--sun);
+}
+
+.card-danger {
+  border-left: 4px solid var(--rose);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .card-header {
+    padding: 20px 20px 12px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-actions {
+    padding: 12px 20px;
+    flex-direction: column;
+  }
+
+  .card-actions > * {
+    width: 100%;
+  }
+}

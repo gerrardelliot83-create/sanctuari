@@ -1,0 +1,13 @@
+/**
+ * ErrorMessage Component Styles
+ * Sanctuari Design System - Vanilla CSS
+ */
+
+.form-error {
+  display: block;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  color: var(--rose);
+  margin-top: 4px;
+  line-height: 1.4;
+}

@@ -1,0 +1,87 @@
+/**
+ * Login Page Styles
+ */
+
+.login-page {
+  width: 100%;
+}
+
+.login-page__title {
+  font-family: 'Geist', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px 0;
+}
+
+.login-page__subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  color: var(--ink-60);
+  margin: 0 0 32px 0;
+}
+
+.login-form {
+  margin-bottom: 24px;
+}
+
+.login-form__error {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: var(--rose-light);
+  border-radius: 8px;
+  border-left: 4px solid var(--rose);
+}
+
+.login-form__forgot {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
+.login-form__link {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  color: var(--iris);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.login-form__link:hover {
+  color: var(--iris-hover);
+  text-decoration: underline;
+}
+
+.login-form__submit {
+  width: 100%;
+}
+
+.login-page__signup-link {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  color: var(--ink-80);
+  text-align: center;
+  margin: 0;
+}
+
+.login-page__link {
+  color: var(--iris);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.login-page__link:hover {
+  color: var(--iris-hover);
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .login-page__title {
+    font-size: 24px;
+  }
+
+  .login-page__subtitle {
+    font-size: 15px;
+  }
+}
