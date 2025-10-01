@@ -49,10 +49,11 @@ export default function RFQReviewPage({ params }) {
       if (!responsesRes.ok) throw new Error('Failed to load responses');
       const responsesData = await responsesRes.json();
 
-      // Convert responses array to map by question_id
+      // API already returns responses as a map keyed by question_id
+      // Each value is { value, fileUrl, updatedAt }
       const responsesMap = {};
-      (responsesData.responses || []).forEach(r => {
-        responsesMap[r.question_id] = r.response_value;
+      Object.entries(responsesData.responses || {}).forEach(([questionId, data]) => {
+        responsesMap[questionId] = data.value;
       });
       setResponses(responsesMap);
 
