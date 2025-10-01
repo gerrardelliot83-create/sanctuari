@@ -46,7 +46,7 @@ export async function POST(request, { params }) {
       .update({
         rfq_number: rfqNumber,
         status: 'published',
-        submitted_at: new Date().toISOString(),
+        published_at: new Date().toISOString(),
       })
       .eq('id', rfqId)
       .select()

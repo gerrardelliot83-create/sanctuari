@@ -7,13 +7,14 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { ProgressBar, QuestionRenderer, GuidancePanel, Sidebar, TopBar } from '@sanctuari/ui';
 import { getUser, signOut } from '@sanctuari/database/lib/auth';
 import './page.css';
 
 export default function RFQWizardPage({ params }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const rfqId = params.id;
 
   const [user, setUser] = useState(null);
@@ -72,6 +73,16 @@ export default function RFQWizardPage({ params }) {
         if (responsesRes.ok) {
           const responsesData = await responsesRes.json();
           setResponses(responsesData.responses || {});
+        }
+
+        // Check if section parameter is in URL (from edit button)
+        const sectionParam = searchParams.get('section');
+        if (sectionParam !== null) {
+          const sectionIndex = parseInt(sectionParam, 10);
+          if (!isNaN(sectionIndex) && sectionIndex >= 0 && sectionIndex < questionsData.sections.length) {
+            console.log('[RFQ Wizard] Starting at section:', sectionIndex);
+            setCurrentSectionIndex(sectionIndex);
+          }
         }
 
         setLoading(false);
