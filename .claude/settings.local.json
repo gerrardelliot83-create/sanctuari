@@ -25,7 +25,8 @@
       "Bash(sudo apt-get:*)",
       "Bash(sudo apt-get install:*)",
       "Bash(fold:*)",
-      "Bash(do echo \"=== $file ===\")"
+      "Bash(do echo \"=== $file ===\")",
+      "WebFetch(domain:docs.uploadthing.com)"
     ],
     "deny": [],
     "ask": []

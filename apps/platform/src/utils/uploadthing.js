@@ -1,4 +1,6 @@
 import { generateReactHelpers } from "@uploadthing/react";
 
-// Generate helpers for the upload thing routes
-export const { UploadButton, UploadDropzone, useUploadThing } = generateReactHelpers();
+// Type definition for the file router
+// This needs to match the server-side file router in api/uploadthing/core.js
+export const { UploadButton, UploadDropzone, useUploadThing } =
+  generateReactHelpers();
