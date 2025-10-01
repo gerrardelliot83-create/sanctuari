@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Sidebar, TopBar } from '@sanctuari/ui';
 import { getUser, signOut } from '@sanctuari/database/lib/auth';
-import { UploadButton } from '@/utils/uploadthing';
+import { UploadButton } from '@uploadthing/react';
+import '@uploadthing/react/styles.css';
 import './page.css';
 
 export default function PolicyUploadPage({ params }) {

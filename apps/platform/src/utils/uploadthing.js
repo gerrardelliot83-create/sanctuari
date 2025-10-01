@@ -1,3 +1,4 @@
 import { generateReactHelpers } from "@uploadthing/react";
 
-export const { UploadButton, UploadDropzone } = generateReactHelpers();
+// Generate helpers for the upload thing routes
+export const { UploadButton, UploadDropzone, useUploadThing } = generateReactHelpers();
