@@ -36,6 +36,15 @@ export default function RFQWizardPage({ params }) {
         const questionsRes = await fetch(`/api/rfq/${rfqId}/questions`);
         if (!questionsRes.ok) throw new Error('Failed to load questions');
         const questionsData = await questionsRes.json();
+        console.log('[RFQ Wizard] Questions loaded:', {
+          totalSections: questionsData.sections?.length || 0,
+          totalQuestions: questionsData.totalQuestions || 0,
+          sections: questionsData.sections?.map(s => ({
+            name: s.name,
+            questionCount: s.questionCount,
+            hasQuestionsArray: Array.isArray(s.questions)
+          }))
+        });
         setSections(questionsData.sections || []);
 
         // Load existing responses
@@ -114,7 +123,10 @@ export default function RFQWizardPage({ params }) {
   // Validate current section
   const validateSection = () => {
     const currentSection = sections[currentSectionIndex];
-    if (!currentSection) return true;
+    if (!currentSection || !currentSection.questions || !Array.isArray(currentSection.questions)) {
+      console.warn('[RFQ Wizard] Cannot validate - invalid section data');
+      return true;
+    }
 
     const newErrors = {};
     let isValid = true;
@@ -153,27 +165,44 @@ export default function RFQWizardPage({ params }) {
     // Save all responses in current section before moving
     if (hasUnsavedChanges) {
       const currentSection = sections[currentSectionIndex];
-      for (const question of currentSection.questions) {
-        const value = responses[question.id]?.value;
-        if (value) {
-          await saveResponse(question.id, value);
+      if (currentSection?.questions && Array.isArray(currentSection.questions)) {
+        for (const question of currentSection.questions) {
+          const value = responses[question.id]?.value;
+          if (value) {
+            await saveResponse(question.id, value);
+          }
         }
       }
     }
 
     if (currentSectionIndex < sections.length - 1) {
+      const nextIndex = currentSectionIndex + 1;
+      console.log('[RFQ Wizard] Navigating to next section:', {
+        from: currentSectionIndex,
+        to: nextIndex,
+        nextSectionName: sections[nextIndex]?.name,
+        nextSectionQuestionCount: sections[nextIndex]?.questionCount,
+        hasQuestions: Array.isArray(sections[nextIndex]?.questions)
+      });
       setCurrentSectionIndex(prev => prev + 1);
       setErrors({});
       setActiveQuestionId(null);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       // Last section - redirect to review
+      console.log('[RFQ Wizard] Final section completed, redirecting to review');
       router.push(`/rfq/${rfqId}/review`);
     }
   };
 
   const handlePrevious = () => {
     if (currentSectionIndex > 0) {
+      const prevIndex = currentSectionIndex - 1;
+      console.log('[RFQ Wizard] Navigating to previous section:', {
+        from: currentSectionIndex,
+        to: prevIndex,
+        prevSectionName: sections[prevIndex]?.name
+      });
       setCurrentSectionIndex(prev => prev - 1);
       setErrors({});
       setActiveQuestionId(null);
@@ -184,7 +213,10 @@ export default function RFQWizardPage({ params }) {
   const handleSaveDraft = async () => {
     // Save all current responses
     const currentSection = sections[currentSectionIndex];
-    if (!currentSection) return;
+    if (!currentSection || !currentSection.questions || !Array.isArray(currentSection.questions)) {
+      console.warn('[RFQ Wizard] Cannot save draft - invalid section data');
+      return;
+    }
 
     setSaving(true);
     for (const question of currentSection.questions) {
@@ -201,9 +233,12 @@ export default function RFQWizardPage({ params }) {
 
   // Get current section and active question
   const currentSection = sections[currentSectionIndex];
+
+  // Defensive check: ensure currentSection and questions array exist
+  const currentQuestions = currentSection?.questions || [];
   const activeQuestion = activeQuestionId
-    ? currentSection?.questions.find(q => q.id === activeQuestionId)
-    : currentSection?.questions[0];
+    ? currentQuestions.find(q => q.id === activeQuestionId)
+    : currentQuestions[0];
 
   if (loading) {
     return (
@@ -226,10 +261,19 @@ export default function RFQWizardPage({ params }) {
     );
   }
 
-  if (!currentSection) {
+  if (!currentSection || !currentSection.questions || !Array.isArray(currentSection.questions)) {
+    console.error('[RFQ Wizard] Invalid section data:', {
+      currentSectionIndex,
+      currentSection,
+      totalSections: sections.length,
+      sectionsData: sections
+    });
     return (
       <div className="rfq-wizard-error">
-        <p>Section not found.</p>
+        <h2>Section Error</h2>
+        <p>Unable to load section {currentSectionIndex + 1}.</p>
+        <p>Please refresh the page or contact support.</p>
+        <button onClick={() => setCurrentSectionIndex(0)}>Go to First Section</button>
       </div>
     );
   }
@@ -266,7 +310,7 @@ export default function RFQWizardPage({ params }) {
 
           {/* Questions */}
           <div className="rfq-wizard__questions">
-            {currentSection.questions.map((question) => {
+            {Array.isArray(currentSection.questions) && currentSection.questions.map((question) => {
               // Check conditional logic
               const conditionalLogic = question.conditional_logic;
               if (conditionalLogic && conditionalLogic.show_if) {

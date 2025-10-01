@@ -85,13 +85,119 @@ export async function GET(request, { params }) {
       groupedQuestions[section].push(question);
     });
 
-    // Convert to array of sections
-    const sections = Object.keys(groupedQuestions).map((sectionName, index) => ({
-      name: sectionName,
-      index: index,
-      questions: groupedQuestions[sectionName],
-      questionCount: groupedQuestions[sectionName].length,
-    }));
+    // Define section order priority (lower number = earlier in form)
+    // Based on actual CSV section names from the database
+    const sectionPriority = {
+      // Primary Information (1-10)
+      'Proposer Information': 1,
+      'Insured Details': 2,
+      'Proposer Details': 3,
+      'Basic Information': 4,
+
+      // Business & Company Details (11-20)
+      'Business Details': 11,
+      'Company Details': 12,
+      'Organization Information': 13,
+
+      // Coverage & Risk (21-40)
+      'Coverage Requirements': 21,
+      'Coverage and Add-ons': 22,
+      'Risk Information': 23,
+      'Risk Details': 24,
+      'Insurance History and Risk Details': 25,
+      'Policy Details': 26,
+
+      // Product & Sales (41-50)
+      'Product Information': 41,
+      'Product and Sales Information': 42,
+      'Service Details': 43,
+
+      // Financial (51-60)
+      'Financial Information': 51,
+      'Premium Details': 52,
+
+      // Claims & History (61-70)
+      'Claims History': 61,
+      'Insurance History': 62,
+      'Loss History': 63,
+
+      // Annexures & Supporting Docs (71-85)
+      'Supporting Documents': 71,
+      'Annexure A - Manufacturing Units': 81,
+      'Annexure B - Warehouses etc.': 82,
+      'Annexure C - Product Information': 83,
+
+      // Disclosure & Others (86-98)
+      'Disclosure': 86,
+      'Others': 90,
+      'Other Details': 91,
+      'Additional Information': 92,
+
+      // Additional Requirements - MUST BE LAST (99)
+      'Additional Requirements': 99,
+
+      // Default
+      'General': 50,
+    };
+
+    // Get priority for a section name
+    const getSectionPriority = (sectionName) => {
+      // Exact match first
+      if (sectionPriority[sectionName] !== undefined) {
+        return sectionPriority[sectionName];
+      }
+
+      // Pattern matching for flexibility
+      const nameLower = sectionName.toLowerCase();
+
+      // Always put "Additional Requirements" or "Others" last
+      if (nameLower.includes('additional') || nameLower.includes('other')) {
+        return 95;
+      }
+
+      // Annexures towards the end
+      if (nameLower.includes('annexure') || nameLower.includes('annex')) {
+        return 80;
+      }
+
+      // Disclosure/Legal towards end
+      if (nameLower.includes('disclosure') || nameLower.includes('declaration')) {
+        return 85;
+      }
+
+      // Proposer/Insured at beginning
+      if (nameLower.includes('proposer') || nameLower.includes('insured')) {
+        return 5;
+      }
+
+      // Business/Company early
+      if (nameLower.includes('business') || nameLower.includes('company')) {
+        return 15;
+      }
+
+      // Coverage/Risk in middle
+      if (nameLower.includes('coverage') || nameLower.includes('risk')) {
+        return 25;
+      }
+
+      // Claims/History later
+      if (nameLower.includes('claim') || nameLower.includes('history')) {
+        return 65;
+      }
+
+      // Default to middle
+      return 50;
+    };
+
+    // Convert to array of sections and sort by priority
+    const sections = Object.keys(groupedQuestions)
+      .sort((a, b) => getSectionPriority(a) - getSectionPriority(b))
+      .map((sectionName, index) => ({
+        name: sectionName,
+        index: index,
+        questions: groupedQuestions[sectionName],
+        questionCount: groupedQuestions[sectionName].length,
+      }));
 
     console.log('[Questions API] Sections created:', sections.map(s => ({
       name: s.name,

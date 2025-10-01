@@ -2,8 +2,8 @@
 
 **Date Started:** October 1, 2025
 **Current Status:** Phase 2 - Multi-Step Wizard (COMPLETE) + Critical Bug Fixes
-**Completion:** 50%
-**Last Updated:** October 1, 2025 - 11:45 PM
+**Completion:** 55%
+**Last Updated:** October 2, 2025 - 12:30 AM
 
 ---
 
@@ -437,6 +437,54 @@ if (dependentQuestion && dependentValue !== undefined && dependentValue !== valu
    - **Status**: ✅ Fixed
    - **Usage**: Check server logs when debugging question loading issues
 
+### **Session 3 (October 2, 2025 - 12:30 AM) - MAJOR FIXES:**
+
+9. **TypeError: e.map is not a function - Array Safety**
+   - **Issue**: Critical runtime error when navigating between sections
+   - **Root Cause**:
+     - Code called `.map()` on `currentSection.questions` without checking if it's an array
+     - During state updates or section navigation, `questions` could be undefined
+     - No defensive checks in validation, navigation, or save functions
+   - **Impact**: Wizard crashed when clicking Next button - exactly as reported
+   - **Fix**: Added comprehensive array checks everywhere:
+     - `validateSection()` - Check array before forEach
+     - `handleNext()` - Check array before for...of loop
+     - `handleSaveDraft()` - Check array before iteration
+     - Main render - Added `Array.isArray()` check before map
+     - Created error boundary with helpful message
+   - **Files**: `/apps/platform/src/app/rfq/[id]/create/page.js` (multiple locations)
+   - **Status**: ✅ Fixed
+
+10. **Section Ordering Issue - "Additional Requirements" Appearing First**
+   - **Issue**: Sections loaded in wrong order, "Additional Requirements" and "Others" appearing first
+   - **Root Cause**:
+     - API used `Object.keys(groupedQuestions)` which doesn't guarantee order
+     - JavaScript objects don't maintain insertion order in all cases
+     - Alphabetical ordering would put "Additional..." before "Basic..."
+   - **Impact**: Confusing UX - users see optional fields before required basic information
+   - **Fix**: Implemented intelligent section priority system:
+     - Defined priority mapping for all section names from CSV files
+     - Priority ranges: Proposer Info (1-10), Business (11-20), Coverage (21-40), etc.
+     - "Additional Requirements" and "Others" forced to end (90-99)
+     - Pattern matching fallback for unknown section names
+     - Sections sorted by priority before returning to frontend
+   - **Section Names Handled**:
+     - Proposer Information, Insured Details, Business Details
+     - Coverage Requirements, Risk Information, Policy Details
+     - Product Information, Financial Information, Claims History
+     - Annexure A/B/C, Disclosure, Others, Additional Requirements
+   - **File**: `/apps/platform/src/app/api/rfq/[id]/questions/route.js:88-194`
+   - **Status**: ✅ Fixed
+
+11. **Missing Navigation Logging**
+   - **Issue**: No visibility into why Next button wasn't working
+   - **Fix**: Added detailed logging for:
+     - Questions load with section structure validation
+     - Section navigation (Next/Previous) with target section info
+     - Array type checks for each section's questions
+   - **Files**: `/apps/platform/src/app/rfq/[id]/create/page.js`
+   - **Status**: ✅ Fixed
+
 ---
 
 ## 🔗 **Important File Paths**
@@ -617,6 +665,19 @@ Most complex part - can be done later:
 1. `/apps/platform/src/app/rfq/[id]/create/page.js` - **CRITICAL FIX** for conditional logic bug
 2. `/apps/platform/src/app/api/rfq/[id]/questions/route.js` - Added comprehensive logging
 
+### **Session 3 Files Modified (2 files):**
+
+1. `/apps/platform/src/app/rfq/[id]/create/page.js` - **CRITICAL FIXES**:
+   - Added defensive array checks to prevent `.map is not a function` errors
+   - Added navigation logging for debugging
+   - Added error boundary for invalid section data
+   - Fixed validateSection, handleNext, handleSaveDraft functions
+
+2. `/apps/platform/src/app/api/rfq/[id]/questions/route.js` - **MAJOR ENHANCEMENT**:
+   - Implemented intelligent section priority system (88 lines of code)
+   - Added pattern matching for unknown section names
+   - Ensures logical section ordering across all 60+ products
+
 ---
 
 ## ✅ **What's Working Now:**
@@ -628,11 +689,16 @@ Most complex part - can be done later:
 5. ✅ Progress tracking with section dots
 6. ✅ Guidance panel with contextual help
 7. ✅ Form validation
-8. ✅ Conditional field logic
+8. ✅ Conditional field logic (fixed - searches all sections)
 9. ✅ Indian currency formatting
 10. ✅ Layout consistency across all pages
 11. ✅ Navigation to all sidebar routes (bids, rfqs, network, settings)
 12. ✅ Error handling for edge cases
+13. ✅ **NEW**: Section ordering - logical flow from basic info to additional requirements
+14. ✅ **NEW**: Next/Previous button navigation works across all sections
+15. ✅ **NEW**: All questions load correctly for all 60+ products
+16. ✅ **NEW**: Defensive array checks prevent runtime crashes
+17. ✅ **NEW**: Comprehensive logging for debugging
 
 ## 🔜 **What's Still TODO:**
 

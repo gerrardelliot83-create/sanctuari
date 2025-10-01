@@ -16,7 +16,10 @@
       "Read(//mnt/c/Users/DELL/Desktop/sanctuari/**)",
       "Bash(npm run build:*)",
       "Bash(unzip:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(for:*)",
+      "Bash(do cut -d',' -f1 \"$file\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
