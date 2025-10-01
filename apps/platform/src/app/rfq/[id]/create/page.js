@@ -427,10 +427,10 @@ export default function RFQWizardPage({ params }) {
         {/* Right Panel - Guidance (40%) */}
         <div className="rfq-wizard__guidance">
           <GuidancePanel question={activeQuestion} isSticky={true} />
-            </div>
-          </div>
         </div>
       </div>
+          </div>
+        </div>
     </>
   );
 }
