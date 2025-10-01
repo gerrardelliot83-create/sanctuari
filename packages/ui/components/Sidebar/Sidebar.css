@@ -13,17 +13,18 @@
   border-right: 1px solid rgba(7, 9, 33, 0.08);
   display: flex;
   flex-direction: column;
-  padding: 24px 0;
+  padding: 0;
   z-index: 100;
 }
 
 .sidebar__brand {
-  padding: 0 16px 24px 16px;
+  padding: 24px 16px 23px 16px;
   border-bottom: 1px solid rgba(7, 9, 33, 0.08);
-  margin-bottom: 16px;
+  margin-bottom: 0;
   height: 88px;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .sidebar__logo {
@@ -65,7 +66,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 0 12px;
+  padding: 16px 12px;
 }
 
 .sidebar__link {

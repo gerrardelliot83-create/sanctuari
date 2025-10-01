@@ -14,6 +14,7 @@
   border-bottom: 1px solid rgba(7, 9, 33, 0.08);
   height: 88px;
   z-index: 90;
+  width: 100%;
 }
 
 .topbar__left {
@@ -21,9 +22,9 @@
 }
 
 .topbar__greeting {
-  font-family: var(--font-geist-sans);
+  font-family: 'Cabinet Grotesk', var(--font-geist-sans), sans-serif;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
   margin: 0;
