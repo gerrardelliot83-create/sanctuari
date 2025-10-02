@@ -7,8 +7,12 @@
 /* Container */
 .bid-container {
   min-height: 100vh;
+  height: 100vh;
   background: var(--fog);
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 /* Loading State */
@@ -56,6 +60,8 @@
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(7, 9, 33, 0.08);
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
 }
 
 .error-icon,
@@ -97,7 +103,7 @@
   background: white;
   border-bottom: 1px solid rgba(7, 9, 33, 0.08);
   padding: 32px 0;
-  margin-bottom: 32px;
+  flex-shrink: 0;
 }
 
 .bid-header-content {
@@ -150,7 +156,10 @@
 .bid-form {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 24px 80px;
+  padding: 32px 24px 80px;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .form-section {
@@ -376,6 +385,9 @@ textarea {
   grid-template-columns: 1fr;
   gap: 20px;
   margin-bottom: 20px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -472,10 +484,13 @@ textarea {
   background: rgba(111, 79, 255, 0.05);
   border: 1px solid var(--iris);
   border-radius: 8px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .file-uploaded-display svg {
   flex-shrink: 0;
+  min-width: 24px;
 }
 
 .file-uploaded-display .file-name {
@@ -486,6 +501,7 @@ textarea {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .btn-clear-file {

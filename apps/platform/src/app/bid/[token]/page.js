@@ -603,8 +603,11 @@ function QuoteForm({ quote, index, bidderType, onUpdate, onRemove, errors, canRe
         if (parseResult.success && parseResult.extractedData) {
           console.log('[Quote Parse] Success:', parseResult.extractedData);
 
-          // Pre-fill form with extracted data
+          // Pre-fill form with extracted data (keep the file info!)
           onUpdate({
+            quoteDocumentUrl: fileUrl,
+            quoteDocumentFileName: fileName,
+            quoteDocumentSize: fileSize,
             premiumAmount: parseResult.extractedData.premium_amount || quote.premiumAmount,
             coverageAmount: parseResult.extractedData.coverage_amount || quote.coverageAmount,
             deductible: parseResult.extractedData.deductible || quote.deductible,
