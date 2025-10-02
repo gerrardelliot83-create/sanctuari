@@ -1,9 +1,9 @@
 'use client';
 
 /**
- * Page: RFQ List
- * Purpose: Show all RFQs with filtering and management
- * Features: Filter by status, search, pagination, actions
+ * Page: Bid Centre
+ * Purpose: Show all RFQs with filtering and bid management
+ * Features: Filter by status, search, view bids, track invitations
  */
 
 import { useState, useEffect } from 'react';
@@ -100,6 +100,7 @@ export default function RFQsPage() {
 
   const handleResumeRFQ = async (rfq) => {
     if (rfq.status === 'draft') {
+      // Draft RFQs: Resume editing
       const { data: responses } = await supabase
         .from('rfq_responses')
         .select('id')
@@ -111,9 +112,14 @@ export default function RFQsPage() {
       } else {
         router.push(`/rfq/${rfq.id}/create`);
       }
-    } else if (rfq.status === 'published' || rfq.status === 'bidding') {
+    } else if (rfq.status === 'published') {
+      // Published but not yet distributed: Go to distribute page
       router.push(`/rfq/${rfq.id}/distribute`);
+    } else if (rfq.status === 'bidding') {
+      // Bidding RFQs: Go to tracking page to view invitations and bids
+      router.push(`/rfq/${rfq.id}/tracking`);
     } else {
+      // Completed/Cancelled: Go to review page
       router.push(`/rfq/${rfq.id}/review`);
     }
   };
@@ -180,7 +186,7 @@ export default function RFQsPage() {
           <div className="rfqs-page">
             {/* Header */}
             <div className="rfqs-header">
-              <h1 className="rfqs-title">RFQ Management</h1>
+              <h1 className="rfqs-title">Bid Centre</h1>
               <Button onClick={handleCreateRFQ}>Create New RFQ</Button>
             </div>
 

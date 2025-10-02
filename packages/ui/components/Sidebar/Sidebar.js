@@ -16,8 +16,7 @@ export default function Sidebar() {
 
   const navItems = [
     { href: '/dashboard', label: 'Home', icon: 'home' },
-    { href: '/rfqs', label: 'RFQs', icon: 'document' },
-    { href: '/bids', label: 'Bids', icon: 'inbox' },
+    { href: '/rfqs', label: 'Bid Centre', icon: 'inbox' },
     { href: '/network', label: 'Network', icon: 'users' },
     { href: '/settings', label: 'Settings', icon: 'settings' },
   ];
