@@ -104,8 +104,12 @@ export default function BidsPage() {
       } else {
         router.push(`/rfq/${rfq.id}/create`);
       }
+    } else if (rfq.status === 'bidding' || rfq.status === 'published') {
+      // For RFQs in bidding/published status, go to tracking page
+      router.push(`/rfq/${rfq.id}/tracking`);
     } else {
-      router.push(`/rfq/${rfq.id}/distribute`);
+      // For completed/cancelled RFQs
+      router.push(`/rfq/${rfq.id}/review`);
     }
   };
 

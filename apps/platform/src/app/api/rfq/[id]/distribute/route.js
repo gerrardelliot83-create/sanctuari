@@ -112,6 +112,7 @@ export async function POST(request, { params }) {
         }
 
         // Send email via Brevo
+        console.log(`[Distribute API] Sending email to ${recipient.email} with token ${token}`);
         const emailResult = await sendInvitationEmail({
           to: recipient.email,
           contactPerson: recipient.contactPerson || null,
@@ -127,6 +128,8 @@ export async function POST(request, { params }) {
           deadline: new Date(deadline),
           templateId: templateId || 'standard'
         });
+
+        console.log(`[Distribute API] Email result for ${recipient.email}:`, emailResult);
 
         // Log email delivery
         await supabase
