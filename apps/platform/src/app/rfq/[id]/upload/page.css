@@ -55,8 +55,15 @@
 }
 
 .upload-icon {
-  font-size: 4rem;
   margin-bottom: 1rem;
+  display: inline-block;
+  color: var(--iris);
+}
+
+.upload-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--iris);
 }
 
 .upload-card h2 {
@@ -233,8 +240,8 @@
 }
 
 .success-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto 16px;
   background: var(--iris);
   color: var(--white);
@@ -242,8 +249,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  font-weight: bold;
+}
+
+.success-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--white);
 }
 
 .results-header h2 {

@@ -9,8 +9,26 @@ import '@uploadthing/react/styles.css';
 import './page.css';
 
 export default function PolicyUploadPage({ params }) {
+  const [rfqId, setRfqId] = useState(null);
+
+  useEffect(() => {
+    // Unwrap params promise for Next.js 15+
+    Promise.resolve(params).then(p => setRfqId(p.id));
+  }, [params]);
+
+  if (!rfqId) {
+    return (
+      <div className="upload-container">
+        <div className="loading-spinner"></div>
+      </div>
+    );
+  }
+
+  return <PolicyUploadPageClient rfqId={rfqId} />;
+}
+
+function PolicyUploadPageClient({ rfqId }) {
   const router = useRouter();
-  const rfqId = params.id;
 
   const [user, setUser] = useState(null);
   const [rfq, setRfq] = useState(null);
@@ -149,7 +167,12 @@ export default function PolicyUploadPage({ params }) {
               <>
                 {/* Upload Section */}
                 <div className="upload-card">
-                  <div className="upload-icon">📄</div>
+                  <div className="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                  </div>
                   <h2>Upload Policy PDF</h2>
                   <p>We'll analyze your policy and pre-fill as many fields as possible</p>
 
@@ -197,10 +220,10 @@ export default function PolicyUploadPage({ params }) {
                 <h2>Analyzing Your Policy...</h2>
                 <p>This may take 30-60 seconds. Please wait.</p>
                 <div className="progress-steps">
-                  <div className="step active">📤 Upload Complete</div>
-                  <div className="step active">📖 Reading Policy</div>
-                  <div className="step active">🤖 Extracting Data</div>
-                  <div className="step">✓ Complete</div>
+                  <div className="step active">Upload Complete</div>
+                  <div className="step active">Reading Policy</div>
+                  <div className="step active">Extracting Data</div>
+                  <div className="step">Complete</div>
                 </div>
               </div>
             )}
@@ -208,7 +231,11 @@ export default function PolicyUploadPage({ params }) {
             {extractedData && (
               <div className="extraction-results">
                 <div className="results-header">
-                  <div className="success-icon">✓</div>
+                  <div className="success-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </div>
                   <h2>Extraction Complete!</h2>
                   <p>Successfully extracted {extractedData.extractedFields} out of {extractedData.totalFields} fields</p>
                 </div>
@@ -232,7 +259,7 @@ export default function PolicyUploadPage({ params }) {
 
                 {error && (
                   <div className="extraction-warning">
-                    <p>⚠️ {error}</p>
+                    <p>{error}</p>
                   </div>
                 )}
 
