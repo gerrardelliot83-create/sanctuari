@@ -1,19 +1,19 @@
 import { createRouteHandler } from "uploadthing/next";
 import { ourFileRouter } from "./core";
 
-// Log token status (first 10 chars only for security)
-const token = process.env.UPLOADTHING_TOKEN;
-if (!token) {
-  console.error("[UploadThing] UPLOADTHING_TOKEN not found in environment variables");
-} else {
-  console.log("[UploadThing] Token configured:", token.substring(0, 10) + "...");
-}
+// Check ALL UploadThing environment variables
+console.log("[UploadThing] Environment check:");
+console.log("  - UPLOADTHING_TOKEN:", process.env.UPLOADTHING_TOKEN ? "✓ Set" : "✗ Missing");
+console.log("  - UPLOADTHING_SECRET:", process.env.UPLOADTHING_SECRET ? "✓ Set" : "✗ Missing");
+console.log("  - UPLOADTHING_APP_ID:", process.env.UPLOADTHING_APP_ID ? "✓ Set" : "✗ Missing");
 
-// Create route handler with explicit token configuration
-// UploadThing requires either UPLOADTHING_TOKEN env var or explicit config
+// Create route handler
+// UploadThing v7+ uses UPLOADTHING_TOKEN, older versions use UPLOADTHING_SECRET
 export const { GET, POST } = createRouteHandler({
   router: ourFileRouter,
   config: {
-    token: token,
+    // Try token first (v7+), fallback to secret (older versions)
+    token: process.env.UPLOADTHING_TOKEN || process.env.UPLOADTHING_SECRET,
+    logLevel: "Debug",
   },
 });
