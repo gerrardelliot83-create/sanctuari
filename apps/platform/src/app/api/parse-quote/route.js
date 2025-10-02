@@ -8,17 +8,16 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 
-// Initialize Claude
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
-
-// Llama Parse configuration
-const LLAMA_PARSE_API_KEY = process.env.LLAMA_PARSE_API_KEY;
-const LLAMA_PARSE_URL = 'https://api.cloud.llamaindex.ai/api/parsing/upload';
-
 export async function POST(request) {
   try {
+    // Initialize services (done at request time, not build time)
+    const anthropic = new Anthropic({
+      apiKey: process.env.ANTHROPIC_API_KEY,
+    });
+
+    const LLAMA_PARSE_API_KEY = process.env.LLAMA_PARSE_API_KEY;
+    const LLAMA_PARSE_URL = 'https://api.cloud.llamaindex.ai/api/parsing/upload';
+
     const { fileUrl, fileType } = await request.json();
 
     if (!fileUrl) {
