@@ -6,22 +6,21 @@
 
 import { NextResponse } from 'next/server';
 import { createClient } from '@sanctuari/database/lib/server';
-import { getUser } from '@sanctuari/database/lib/auth';
 import { generateUniqueToken } from '@sanctuari/utils/generators';
 import { sendInvitationEmail } from '@sanctuari/utils/email/brevo';
 
 export async function POST(request, { params }) {
   try {
-    // Verify authentication
-    const { user, error: authError } = await getUser();
+    const supabase = createClient();
+
+    // Verify authentication using server client
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
     if (authError || !user) {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
       );
     }
-
-    const supabase = createClient();
 
     // Unwrap params for Next.js 15+
     const resolvedParams = await Promise.resolve(params);
