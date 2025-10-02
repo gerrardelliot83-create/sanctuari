@@ -303,7 +303,7 @@ export default function RFQsPage() {
                         <Button
                           variant="secondary"
                           size="small"
-                          onClick={() => router.push(`/rfq/${rfq.id}/distribute`)}
+                          onClick={() => router.push(`/rfq/${rfq.id}/tracking`)}
                         >
                           View Bids
                         </Button>

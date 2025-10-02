@@ -164,7 +164,9 @@ function BidSubmissionClient({ token }) {
   };
 
   const updateQuote = (quoteId, updates) => {
-    setQuotes(quotes.map(q => q.id === quoteId ? { ...q, ...updates } : q));
+    setQuotes(prevQuotes =>
+      prevQuotes.map(q => q.id === quoteId ? { ...q, ...updates } : q)
+    );
   };
 
   const handleSubmit = async (e) => {
@@ -579,9 +581,8 @@ function QuoteForm({ quote, index, bidderType, onUpdate, onRemove, errors, canRe
 
       console.log('[Quote Upload] Complete:', { fileUrl, fileName, fileSize });
 
-      // Preserve existing data when setting upload info
+      // Update only the specific fields - let parent preserve rest
       onUpdate({
-        ...quote,
         quoteDocumentUrl: fileUrl,
         quoteDocumentFileName: fileName,
         quoteDocumentSize: fileSize,
@@ -605,17 +606,16 @@ function QuoteForm({ quote, index, bidderType, onUpdate, onRemove, errors, canRe
         if (parseResult.success && parseResult.extractedData) {
           console.log('[Quote Parse] Success:', parseResult.extractedData);
 
-          // Pre-fill form with extracted data (preserve all existing data!)
+          // Pre-fill form with extracted data
           onUpdate({
-            ...quote,
             quoteDocumentUrl: fileUrl,
             quoteDocumentFileName: fileName,
             quoteDocumentSize: fileSize,
-            premiumAmount: parseResult.extractedData.premium_amount || quote.premiumAmount,
-            coverageAmount: parseResult.extractedData.coverage_amount || quote.coverageAmount,
-            deductible: parseResult.extractedData.deductible || quote.deductible,
-            policyTermMonths: parseResult.extractedData.policy_term_months || quote.policyTermMonths,
-            insurerName: parseResult.extractedData.insurer_name || quote.insurerName,
+            premiumAmount: parseResult.extractedData.premium_amount || '',
+            coverageAmount: parseResult.extractedData.coverage_amount || '',
+            deductible: parseResult.extractedData.deductible || '',
+            policyTermMonths: parseResult.extractedData.policy_term_months || '12',
+            insurerName: parseResult.extractedData.insurer_name || '',
             extractedData: parseResult.extractedData,
             parsed: true,
           });
@@ -636,9 +636,8 @@ function QuoteForm({ quote, index, bidderType, onUpdate, onRemove, errors, canRe
 
       console.log('[Policy Upload] Complete:', { fileUrl, fileName, fileSize });
 
-      // Preserve all existing quote data when updating policy document
+      // Update only policy document fields
       onUpdate({
-        ...quote,
         policyDocumentUrl: fileUrl,
         policyDocumentFileName: fileName,
         policyDocumentSize: fileSize,
