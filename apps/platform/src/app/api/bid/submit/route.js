@@ -13,7 +13,7 @@ export async function POST(request) {
     // Create Supabase client with service role (bypasses RLS for public bid submission)
     const supabaseAdmin = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.SUPABASE_SERVICE_ROLE_KEY
+      process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY
     );
 
     const { invitationId, token, bidData, documents } = await request.json();

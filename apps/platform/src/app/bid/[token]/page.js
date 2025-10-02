@@ -579,7 +579,9 @@ function QuoteForm({ quote, index, bidderType, onUpdate, onRemove, errors, canRe
 
       console.log('[Quote Upload] Complete:', { fileUrl, fileName, fileSize });
 
+      // Preserve existing data when setting upload info
       onUpdate({
+        ...quote,
         quoteDocumentUrl: fileUrl,
         quoteDocumentFileName: fileName,
         quoteDocumentSize: fileSize,
@@ -603,8 +605,9 @@ function QuoteForm({ quote, index, bidderType, onUpdate, onRemove, errors, canRe
         if (parseResult.success && parseResult.extractedData) {
           console.log('[Quote Parse] Success:', parseResult.extractedData);
 
-          // Pre-fill form with extracted data (keep the file info!)
+          // Pre-fill form with extracted data (preserve all existing data!)
           onUpdate({
+            ...quote,
             quoteDocumentUrl: fileUrl,
             quoteDocumentFileName: fileName,
             quoteDocumentSize: fileSize,
@@ -633,7 +636,9 @@ function QuoteForm({ quote, index, bidderType, onUpdate, onRemove, errors, canRe
 
       console.log('[Policy Upload] Complete:', { fileUrl, fileName, fileSize });
 
+      // Preserve all existing quote data when updating policy document
       onUpdate({
+        ...quote,
         policyDocumentUrl: fileUrl,
         policyDocumentFileName: fileName,
         policyDocumentSize: fileSize,
