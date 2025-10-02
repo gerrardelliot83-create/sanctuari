@@ -84,6 +84,31 @@ export default function DashboardPage() {
     router.push('/rfq/create');
   };
 
+  const handleResumeRFQ = async (rfq) => {
+    if (rfq.status === 'draft') {
+      // Check if responses exist for this draft
+      const { data: responses } = await supabase
+        .from('rfq_responses')
+        .select('id')
+        .eq('rfq_id', rfq.id)
+        .limit(1);
+
+      if (!responses || responses.length === 0) {
+        // No responses yet, start with upload page
+        router.push(`/rfq/${rfq.id}/upload`);
+      } else {
+        // Has responses, go directly to wizard
+        router.push(`/rfq/${rfq.id}/create`);
+      }
+    } else if (rfq.status === 'published' || rfq.status === 'bidding') {
+      // Published RFQs go to distribution/tracking
+      router.push(`/rfq/${rfq.id}/distribute`);
+    } else {
+      // Completed/cancelled RFQs go to review
+      router.push(`/rfq/${rfq.id}/review`);
+    }
+  };
+
   const handleSwitchCompany = async (companyId) => {
     setCurrentCompanyId(companyId);
 
@@ -192,7 +217,11 @@ export default function DashboardPage() {
               ) : (
                 <div className="dashboard-rfq-list">
                   {rfqs.map((rfq) => (
-                    <Card key={rfq.id} className="dashboard-rfq-card">
+                    <Card
+                      key={rfq.id}
+                      className="dashboard-rfq-card"
+                      onClick={() => handleResumeRFQ(rfq)}
+                    >
                       <div className="dashboard-rfq">
                         <div className="dashboard-rfq__header">
                           <div className="dashboard-rfq__title">{rfq.title}</div>
@@ -204,7 +233,7 @@ export default function DashboardPage() {
                           <div className="dashboard-rfq__description">{rfq.description}</div>
                         )}
                         <div className="dashboard-rfq__meta">
-                          <span>RFQ #{rfq.rfq_number}</span>
+                          <span>RFQ #{rfq.rfq_number || 'Draft'}</span>
                           <span>•</span>
                           <span>{new Date(rfq.created_at).toLocaleDateString()}</span>
                         </div>

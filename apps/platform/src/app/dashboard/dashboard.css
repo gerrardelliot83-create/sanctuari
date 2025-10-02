@@ -115,6 +115,7 @@
 .dashboard-rfq-card:hover {
   box-shadow: 0 4px 16px rgba(7, 9, 33, 0.08);
   transform: translateY(-2px);
+  border-color: var(--iris);
 }
 
 .dashboard-rfq {

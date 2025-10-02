@@ -1,0 +1,222 @@
+/* RFQs Page Styles */
+
+.rfqs-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.rfqs-loading__spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--ink-10);
+  border-top-color: var(--iris);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.rfqs-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* Header */
+.rfqs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.rfqs-title {
+  font-family: var(--font-geist-sans);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Search */
+.rfqs-search {
+  margin-bottom: 24px;
+}
+
+.rfqs-search__input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  font-family: var(--font-geist-sans);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--ink-20);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.rfqs-search__input:focus {
+  outline: none;
+  border-color: var(--iris);
+  box-shadow: 0 0 0 3px rgba(111, 79, 255, 0.1);
+}
+
+.rfqs-search__input::placeholder {
+  color: var(--ink-40);
+}
+
+/* Tabs */
+.rfqs-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--ink-10);
+}
+
+.rfqs-tab {
+  padding: 12px 16px;
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-60);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rfqs-tab:hover {
+  color: var(--ink);
+  background: var(--fog);
+}
+
+.rfqs-tab--active {
+  color: var(--iris);
+  border-bottom-color: var(--iris);
+}
+
+/* RFQ List */
+.rfqs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* RFQ Card */
+.rfqs-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rfqs-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(7, 9, 33, 0.08);
+  border-color: var(--iris);
+}
+
+.rfqs-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.rfqs-card__info {
+  flex: 1;
+}
+
+.rfqs-card__title {
+  font-family: var(--font-geist-sans);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 4px 0;
+}
+
+.rfqs-card__product {
+  font-family: var(--font-geist-sans);
+  font-size: 14px;
+  color: var(--ink-60);
+  margin: 0;
+}
+
+.rfqs-card__status {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-geist-sans);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.rfqs-card__status--draft {
+  background-color: rgba(7, 9, 33, 0.06);
+  color: rgba(7, 9, 33, 0.6);
+}
+
+.rfqs-card__status--published,
+.rfqs-card__status--bidding {
+  background-color: rgba(111, 79, 255, 0.1);
+  color: var(--iris);
+}
+
+.rfqs-card__status--completed {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.rfqs-card__status--cancelled {
+  background-color: rgba(253, 84, 120, 0.1);
+  color: var(--rose);
+}
+
+.rfqs-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-geist-sans);
+  font-size: 13px;
+  color: var(--ink-60);
+  margin-bottom: 16px;
+}
+
+.rfqs-card__actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink-10);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rfqs-page {
+    padding: 16px;
+  }
+
+  .rfqs-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .rfqs-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rfqs-card__header {
+    flex-direction: column;
+  }
+
+  .rfqs-card__actions {
+    flex-direction: column;
+  }
+}
