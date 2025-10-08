@@ -24,19 +24,49 @@ export async function orchestrateAnalysis(quotes, rfqData, insuranceProduct) {
 
   // Run all agents in parallel for efficiency
   console.log('[Orchestrator] Running sub-agents in parallel...');
+
+  const agentPromises = [
+    analyzeCoverage(formattedQuotes, formattedRFQ).catch(err => {
+      console.error('[Orchestrator] Coverage agent failed:', err.message);
+      return { error: 'Coverage analysis failed', errorMessage: err.message };
+    }),
+    analyzePricing(formattedQuotes, formattedRFQ, insuranceProduct).catch(err => {
+      console.error('[Orchestrator] Pricing agent failed:', err.message);
+      return { error: 'Pricing analysis failed', errorMessage: err.message };
+    }),
+    analyzeTerms(formattedQuotes).catch(err => {
+      console.error('[Orchestrator] Terms agent failed:', err.message);
+      return { error: 'Terms analysis failed', errorMessage: err.message };
+    }),
+    verifyCompliance(formattedQuotes, formattedRFQ, insuranceProduct).catch(err => {
+      console.error('[Orchestrator] Compliance agent failed:', err.message);
+      return { error: 'Compliance analysis failed', errorMessage: err.message };
+    }),
+    identifyRisks(formattedQuotes, formattedRFQ).catch(err => {
+      console.error('[Orchestrator] Risk agent failed:', err.message);
+      return { error: 'Risk analysis failed', errorMessage: err.message };
+    })
+  ];
+
   const [
     coverageAnalysis,
     pricingAnalysis,
     termsAnalysis,
     complianceAnalysis,
     riskAnalysis
-  ] = await Promise.all([
-    analyzeCoverage(formattedQuotes, formattedRFQ),
-    analyzePricing(formattedQuotes, formattedRFQ, insuranceProduct),
-    analyzeTerms(formattedQuotes),
-    verifyCompliance(formattedQuotes, formattedRFQ, insuranceProduct),
-    identifyRisks(formattedQuotes, formattedRFQ)
-  ]);
+  ] = await Promise.all(agentPromises);
+
+  // Check if any agents failed
+  const failedAgents = [];
+  if (coverageAnalysis?.error) failedAgents.push('Coverage');
+  if (pricingAnalysis?.error) failedAgents.push('Pricing');
+  if (termsAnalysis?.error) failedAgents.push('Terms');
+  if (complianceAnalysis?.error) failedAgents.push('Compliance');
+  if (riskAnalysis?.error) failedAgents.push('Risk');
+
+  if (failedAgents.length > 0) {
+    console.error('[Orchestrator] Failed agents:', failedAgents.join(', '));
+  }
 
   console.log('[Orchestrator] Sub-agent analyses complete. Synthesizing...');
 
@@ -126,13 +156,28 @@ Return ONLY a valid JSON object in this exact format:
 Use plain, professional language. Avoid insurance jargon. Write like you're advising a business owner, not an insurance expert.`;
 
   try {
+    console.log('[Orchestrator] Invoking orchestrator model...');
     const response = await orchestrator.invoke([
       { role: 'user', content: synthesisPrompt }
     ]);
 
+    console.log('[Orchestrator] Orchestrator response received, parsing...');
     const synthesis = parseAIResponse(response);
 
-    console.log('[Orchestrator] Synthesis complete');
+    // Check if parsing failed
+    if (synthesis.error) {
+      console.error('[Orchestrator] Failed to parse synthesis:', synthesis.errorMessage);
+      throw new Error(`Synthesis parsing failed: ${synthesis.errorMessage}`);
+    }
+
+    // Validate synthesis structure
+    if (!synthesis.ranked_quotes || !Array.isArray(synthesis.ranked_quotes)) {
+      console.error('[Orchestrator] Invalid synthesis structure - missing ranked_quotes');
+      throw new Error('Invalid synthesis structure');
+    }
+
+    console.log('[Orchestrator] Synthesis complete successfully');
+    console.log(`[Orchestrator] Ranked ${synthesis.ranked_quotes.length} quotes`);
 
     return {
       coverageAnalysis,
@@ -144,9 +189,14 @@ Use plain, professional language. Avoid insurance jargon. Write like you're advi
     };
 
   } catch (error) {
-    console.error('[Orchestrator] Synthesis error:', error);
+    console.error('[Orchestrator] Synthesis error:', {
+      message: error.message,
+      stack: error.stack,
+      failedAgents: failedAgents.length > 0 ? failedAgents : 'None'
+    });
 
     // Return fallback synthesis
+    console.log('[Orchestrator] Using fallback synthesis');
     return {
       coverageAnalysis,
       pricingAnalysis,

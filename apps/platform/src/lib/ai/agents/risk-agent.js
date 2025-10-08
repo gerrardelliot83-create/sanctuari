@@ -56,13 +56,29 @@ Return ONLY a valid JSON object in this exact format:
 Be conservative - flag potential risks even if uncertain.`;
 
   try {
+    console.log('[Risk Agent] Identifying risks for', quotes.length, 'quotes...');
     const response = await agent.invoke([
       { role: 'user', content: prompt }
     ]);
 
-    return parseAIResponse(response);
+    console.log('[Risk Agent] Response received, parsing...');
+    const parsed = parseAIResponse(response);
+
+    if (parsed.error) {
+      throw new Error(`Parsing failed: ${parsed.errorMessage}`);
+    }
+
+    if (!parsed.quotes || !Array.isArray(parsed.quotes)) {
+      throw new Error('Invalid response structure');
+    }
+
+    console.log('[Risk Agent] Analysis complete');
+    return parsed;
   } catch (error) {
-    console.error('[Risk Agent] Error:', error);
+    console.error('[Risk Agent] Error:', {
+      message: error.message,
+      stack: error.stack?.substring(0, 500)
+    });
     return {
       error: error.message,
       quotes: quotes.map(q => ({
@@ -70,7 +86,7 @@ Be conservative - flag potential risks even if uncertain.`;
         risk_score: 50,
         risk_level: 'Unknown',
         identified_risks: [{
-          risk: 'Risk assessment unavailable',
+          risk: 'Risk assessment unavailable: ' + error.message,
           severity: 'Unknown',
           mitigation: 'Manual review recommended'
         }],

@@ -54,20 +54,42 @@ Return ONLY a valid JSON object in this exact format:
 Be specific and actionable. Focus on material differences that affect risk protection.`;
 
   try {
+    console.log('[Coverage Agent] Analyzing coverage for', quotes.length, 'quotes...');
     const response = await agent.invoke([
       { role: 'user', content: prompt }
     ]);
 
-    return parseAIResponse(response);
+    console.log('[Coverage Agent] Response received, parsing...');
+    const parsed = parseAIResponse(response);
+
+    // Check for parsing errors
+    if (parsed.error) {
+      console.error('[Coverage Agent] Parsing failed:', parsed.errorMessage);
+      throw new Error(`Parsing failed: ${parsed.errorMessage}`);
+    }
+
+    // Validate response structure
+    if (!parsed.quotes || !Array.isArray(parsed.quotes)) {
+      console.error('[Coverage Agent] Invalid response structure - missing quotes array');
+      throw new Error('Invalid response structure');
+    }
+
+    console.log('[Coverage Agent] Analysis complete -', parsed.quotes.length, 'quotes analyzed');
+    return parsed;
+
   } catch (error) {
-    console.error('[Coverage Agent] Error:', error);
+    console.error('[Coverage Agent] Error:', {
+      message: error.message,
+      stack: error.stack?.substring(0, 500)
+    });
+
     return {
       error: error.message,
       quotes: quotes.map(q => ({
         quote_id: q.quote_id,
         coverage_score: 50,
         completeness: 'Unable to analyze',
-        gaps: ['Analysis failed'],
+        gaps: ['Analysis failed: ' + error.message],
         strengths: [],
         red_flags: [],
         add_ons_included: [],

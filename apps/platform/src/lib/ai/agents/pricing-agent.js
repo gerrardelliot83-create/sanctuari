@@ -54,13 +54,29 @@ Return ONLY a valid JSON object in this exact format:
 Be specific about why one quote offers better value than another.`;
 
   try {
+    console.log('[Pricing Agent] Analyzing pricing for', quotes.length, 'quotes...');
     const response = await agent.invoke([
       { role: 'user', content: prompt }
     ]);
 
-    return parseAIResponse(response);
+    console.log('[Pricing Agent] Response received, parsing...');
+    const parsed = parseAIResponse(response);
+
+    if (parsed.error) {
+      throw new Error(`Parsing failed: ${parsed.errorMessage}`);
+    }
+
+    if (!parsed.quotes || !Array.isArray(parsed.quotes)) {
+      throw new Error('Invalid response structure');
+    }
+
+    console.log('[Pricing Agent] Analysis complete');
+    return parsed;
   } catch (error) {
-    console.error('[Pricing Agent] Error:', error);
+    console.error('[Pricing Agent] Error:', {
+      message: error.message,
+      stack: error.stack?.substring(0, 500)
+    });
     return {
       error: error.message,
       quotes: quotes.map(q => ({
@@ -70,7 +86,7 @@ Be specific about why one quote offers better value than another.`;
         premium_efficiency: q.coverage_amount ? (q.premium_amount / q.coverage_amount) * 100000 : null,
         competitive_position: 'Unknown',
         value_highlights: [],
-        pricing_concerns: ['Analysis failed']
+        pricing_concerns: ['Analysis failed: ' + error.message]
       })),
       best_value: null,
       market_insights: 'Pricing analysis temporarily unavailable'

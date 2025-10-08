@@ -48,10 +48,32 @@ export async function POST(request, { params }) {
 
     console.log(`[Analyze Quotes] Found ${rfq.bids.length} quotes to analyze`);
 
+    // Validate bid data quality
+    const validBids = rfq.bids.filter(bid => {
+      const hasBasicInfo = bid.bidder_company_name || bid.insurer_name;
+      const hasFinancialData = bid.premium_amount || bid.coverage_amount;
+      return hasBasicInfo && hasFinancialData;
+    });
+
+    if (validBids.length === 0) {
+      console.log('[Analyze Quotes] No valid bids with sufficient data');
+      return NextResponse.json({
+        error: 'Insufficient bid data for AI analysis',
+        details: 'Bids must include company name and at least premium or coverage amount',
+        suggestion: 'Please ensure bidders provide complete quote information'
+      }, { status: 400 });
+    }
+
+    if (validBids.length < rfq.bids.length) {
+      console.log(`[Analyze Quotes] Filtered ${rfq.bids.length - validBids.length} incomplete bids`);
+    }
+
+    console.log(`[Analyze Quotes] Proceeding with ${validBids.length} valid quotes`);
+
     // Run AI analysis
     const startTime = Date.now();
     const analysis = await orchestrateAnalysis(
-      rfq.bids,
+      validBids,
       rfq,
       rfq.insurance_products.name
     );
@@ -60,7 +82,7 @@ export async function POST(request, { params }) {
     console.log(`[Analyze Quotes] Analysis complete in ${analysisTime}s`);
 
     // Store analysis results in database
-    const updatePromises = rfq.bids.map(async (bid) => {
+    const updatePromises = validBids.map(async (bid) => {
       const bidAnalysis = analysis.orchestratorSynthesis.ranked_quotes
         ?.find(q => q.quote_id === bid.id);
 
@@ -96,7 +118,9 @@ export async function POST(request, { params }) {
       success: true,
       analysis: analysis.orchestratorSynthesis,
       metadata: {
-        quotes_analyzed: rfq.bids.length,
+        quotes_analyzed: validBids.length,
+        quotes_total: rfq.bids.length,
+        quotes_skipped: rfq.bids.length - validBids.length,
         analysis_time_seconds: parseFloat(analysisTime),
         rfq_number: rfq.rfq_number,
         insurance_product: rfq.insurance_products.name

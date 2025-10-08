@@ -49,13 +49,29 @@ Return ONLY a valid JSON object in this exact format:
 Focus on material terms that affect coverage and claims experience.`;
 
   try {
+    console.log('[Terms Agent] Analyzing terms for', quotes.length, 'quotes...');
     const response = await agent.invoke([
       { role: 'user', content: prompt }
     ]);
 
-    return parseAIResponse(response);
+    console.log('[Terms Agent] Response received, parsing...');
+    const parsed = parseAIResponse(response);
+
+    if (parsed.error) {
+      throw new Error(`Parsing failed: ${parsed.errorMessage}`);
+    }
+
+    if (!parsed.quotes || !Array.isArray(parsed.quotes)) {
+      throw new Error('Invalid response structure');
+    }
+
+    console.log('[Terms Agent] Analysis complete');
+    return parsed;
   } catch (error) {
-    console.error('[Terms Agent] Error:', error);
+    console.error('[Terms Agent] Error:', {
+      message: error.message,
+      stack: error.stack?.substring(0, 500)
+    });
     return {
       error: error.message,
       quotes: quotes.map(q => ({
@@ -64,7 +80,7 @@ Focus on material terms that affect coverage and claims experience.`;
         favorability: 'Unable to analyze',
         key_exclusions: [],
         claims_complexity: 'Unknown',
-        red_flags: ['Analysis failed'],
+        red_flags: ['Analysis failed: ' + error.message],
         positive_terms: []
       })),
       comparative_summary: 'Terms analysis temporarily unavailable'

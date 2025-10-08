@@ -52,13 +52,29 @@ Return ONLY a valid JSON object in this exact format:
 Be specific about any compliance gaps that could expose the client to legal/regulatory risk.`;
 
   try {
+    console.log('[Compliance Agent] Verifying compliance for', quotes.length, 'quotes...');
     const response = await agent.invoke([
       { role: 'user', content: prompt }
     ]);
 
-    return parseAIResponse(response);
+    console.log('[Compliance Agent] Response received, parsing...');
+    const parsed = parseAIResponse(response);
+
+    if (parsed.error) {
+      throw new Error(`Parsing failed: ${parsed.errorMessage}`);
+    }
+
+    if (!parsed.quotes || !Array.isArray(parsed.quotes)) {
+      throw new Error('Invalid response structure');
+    }
+
+    console.log('[Compliance Agent] Analysis complete');
+    return parsed;
   } catch (error) {
-    console.error('[Compliance Agent] Error:', error);
+    console.error('[Compliance Agent] Error:', {
+      message: error.message,
+      stack: error.stack?.substring(0, 500)
+    });
     return {
       error: error.message,
       quotes: quotes.map(q => ({
@@ -66,7 +82,7 @@ Be specific about any compliance gaps that could expose the client to legal/regu
         compliance_score: 50,
         regulatory_status: 'Unable to verify',
         mandatory_coverages_met: null,
-        missing_requirements: ['Verification failed'],
+        missing_requirements: ['Verification failed: ' + error.message],
         compliance_risks: []
       })),
       overall_assessment: 'Compliance verification temporarily unavailable'

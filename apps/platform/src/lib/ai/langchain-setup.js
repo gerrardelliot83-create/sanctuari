@@ -34,23 +34,67 @@ export const createSubAgent = () => {
 
 /**
  * Parse JSON response from AI agent
- * Handles various response formats
+ * Handles various response formats including markdown-wrapped JSON
  */
 export const parseAIResponse = (response) => {
   try {
     // Extract content from LangChain response
-    const content = typeof response === 'string'
-      ? response
-      : response.content || response.text || JSON.stringify(response);
+    let content;
+
+    if (typeof response === 'string') {
+      content = response;
+    } else if (response && typeof response === 'object') {
+      // Handle LangChain AIMessage object
+      if (response.content) {
+        content = response.content;
+      } else if (response.text) {
+        content = response.text;
+      } else if (response.lc_kwargs && response.lc_kwargs.content) {
+        content = response.lc_kwargs.content;
+      } else {
+        content = JSON.stringify(response);
+      }
+    } else {
+      throw new Error('Invalid response format');
+    }
+
+    // Remove markdown code blocks if present
+    // Handles: ```json\n{...}\n``` or ```\n{...}\n```
+    let cleanContent = content.trim();
+
+    const markdownJsonMatch = cleanContent.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/);
+    if (markdownJsonMatch) {
+      cleanContent = markdownJsonMatch[1].trim();
+    }
+
+    // Remove any leading/trailing whitespace
+    cleanContent = cleanContent.trim();
 
     // Try to parse as JSON
-    return JSON.parse(content);
+    const parsed = JSON.parse(cleanContent);
+
+    // Validate that we got an object
+    if (!parsed || typeof parsed !== 'object') {
+      throw new Error('Parsed result is not a valid object');
+    }
+
+    return parsed;
+
   } catch (error) {
-    console.error('Failed to parse AI response:', error);
+    console.error('[parseAIResponse] Failed to parse AI response:', {
+      error: error.message,
+      responseType: typeof response,
+      responseKeys: response && typeof response === 'object' ? Object.keys(response) : [],
+      contentPreview: typeof response === 'string'
+        ? response.substring(0, 200)
+        : JSON.stringify(response).substring(0, 200)
+    });
+
     // Return error structure
     return {
       error: 'Failed to parse response',
-      raw: content
+      errorMessage: error.message,
+      raw: typeof response === 'string' ? response.substring(0, 500) : 'Non-string response'
     };
   }
 };
