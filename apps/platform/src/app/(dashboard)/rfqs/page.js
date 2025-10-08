@@ -293,21 +293,13 @@ export default function RFQsPage() {
                             Delete
                           </Button>
                         </>
-                      ) : rfq.status === 'bidding' ? (
-                        <Button
-                          variant="secondary"
-                          size="small"
-                          onClick={() => router.push(`/rfq/${rfq.id}/tracking`)}
-                        >
-                          View Quotes
-                        </Button>
                       ) : (
                         <Button
                           variant="secondary"
                           size="small"
-                          onClick={() => router.push(`/rfq/${rfq.id}/review`)}
+                          onClick={() => router.push(`/rfq/${rfq.id}`)}
                         >
-                          View Details
+                          View Bid
                         </Button>
                       )}
                     </div>
