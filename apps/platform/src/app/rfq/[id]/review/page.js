@@ -1,35 +1,44 @@
 'use client';
 
 /**
- * Page: Quote Comparison
+ * Page: Quote Comparison (REDIRECT)
  * Route: /rfq/[id]/review
- * Purpose: View and compare all submitted quotes for a bid
- * Features: Table/card view, stats, comparison, document download
+ * Purpose: Redirect to Command Center with Quotes tab
+ * Migration: Content moved to /rfq/[id]/components/QuotesTab.js
  */
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@sanctuari/database/lib/client';
-import { getUser, signOut } from '@sanctuari/database/lib/auth';
-import { Sidebar, TopBar, Card, Button } from '@sanctuari/ui';
-import './review.css';
 
-export default function ReviewPage({ params }) {
-  const [rfqId, setRfqId] = useState(null);
+export default function ReviewPageRedirect({ params }) {
+  const router = useRouter();
 
   useEffect(() => {
-    Promise.resolve(params).then(p => setRfqId(p.id));
-  }, [params]);
+    Promise.resolve(params).then(p => {
+      router.replace(`/rfq/${p.id}?tab=quotes`);
+    });
+  }, [params, router]);
 
-  if (!rfqId) {
-    return (
-      <div className="review-loading">
-        <div className="loading-spinner"></div>
-      </div>
-    );
-  }
-
-  return <ReviewPageClient rfqId={rfqId} />;
+  return (
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '400px',
+      flexDirection: 'column',
+      gap: '16px'
+    }}>
+      <div style={{
+        width: '48px',
+        height: '48px',
+        border: '4px solid #F5F4F5',
+        borderTopColor: '#6F4FFF',
+        borderRadius: '50%',
+        animation: 'spin 0.8s linear infinite'
+      }}></div>
+      <p style={{ color: '#070921', fontSize: '14px' }}>Redirecting to Command Center...</p>
+    </div>
+  );
 }
 
 function ReviewPageClient({ rfqId }) {

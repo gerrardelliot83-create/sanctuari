@@ -14,6 +14,9 @@ import { getUser, signOut } from '@sanctuari/database/lib/auth';
 import { Sidebar, TopBar } from '@sanctuari/ui';
 import TabNavigation from './components/TabNavigation';
 import OverviewTab from './components/OverviewTab';
+import QuotesTab from './components/QuotesTab';
+import DistributionTab from './components/DistributionTab';
+import TrackingTab from './components/TrackingTab';
 import './command-center.css';
 
 export default function BidCommandCenter({ params }) {
@@ -208,24 +211,28 @@ function CommandCenterClient({ rfqId }) {
               )}
 
               {activeTab === 'quotes' && (
-                <div className="tab-placeholder">
-                  <h2>Quotes Tab</h2>
-                  <p>Quote comparison functionality will be migrated here in Day 3-4</p>
-                </div>
+                <QuotesTab
+                  rfqId={rfqId}
+                  rfqData={rfq}
+                  bids={bids}
+                />
               )}
 
               {activeTab === 'distribution' && (
-                <div className="tab-placeholder">
-                  <h2>Distribution Tab</h2>
-                  <p>Distribution functionality will be migrated here in Day 3-4</p>
-                </div>
+                <DistributionTab
+                  rfqId={rfqId}
+                  rfqData={rfq}
+                  onDistributionComplete={() => handleTabChange('tracking')}
+                />
               )}
 
               {activeTab === 'tracking' && (
-                <div className="tab-placeholder">
-                  <h2>Tracking Tab</h2>
-                  <p>Tracking functionality will be migrated here in Day 3-4</p>
-                </div>
+                <TrackingTab
+                  rfqId={rfqId}
+                  rfqData={rfq}
+                  invitations={invitations}
+                  onViewQuotes={() => handleTabChange('quotes')}
+                />
               )}
             </div>
           </div>

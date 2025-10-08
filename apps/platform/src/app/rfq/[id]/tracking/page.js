@@ -1,35 +1,44 @@
 'use client';
 
 /**
- * Page: Partner Response Tracking
+ * Page: Partner Response Tracking (REDIRECT)
  * Route: /rfq/[id]/tracking
- * Purpose: Track invitation status, email delivery, and quote submissions
- * Status: PLACEHOLDER - Full implementation in Week 2
+ * Purpose: Redirect to Command Center with Tracking tab
+ * Migration: Content moved to /rfq/[id]/components/TrackingTab.js
  */
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@sanctuari/database/lib/client';
-import { getUser, signOut } from '@sanctuari/database/lib/auth';
-import { Sidebar, TopBar, Card, Button } from '@sanctuari/ui';
-import './tracking.css';
 
-export default function TrackingPage({ params }) {
-  const [rfqId, setRfqId] = useState(null);
+export default function TrackingPageRedirect({ params }) {
+  const router = useRouter();
 
   useEffect(() => {
-    Promise.resolve(params).then(p => setRfqId(p.id));
-  }, [params]);
+    Promise.resolve(params).then(p => {
+      router.replace(`/rfq/${p.id}?tab=tracking`);
+    });
+  }, [params, router]);
 
-  if (!rfqId) {
-    return (
-      <div className="tracking-loading">
-        <div className="loading-spinner"></div>
-      </div>
-    );
-  }
-
-  return <TrackingPageClient rfqId={rfqId} />;
+  return (
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '400px',
+      flexDirection: 'column',
+      gap: '16px'
+    }}>
+      <div style={{
+        width: '48px',
+        height: '48px',
+        border: '4px solid #F5F4F5',
+        borderTopColor: '#6F4FFF',
+        borderRadius: '50%',
+        animation: 'spin 0.8s linear infinite'
+      }}></div>
+      <p style={{ color: '#070921', fontSize: '14px' }}>Redirecting to Command Center...</p>
+    </div>
+  );
 }
 
 function TrackingPageClient({ rfqId }) {
