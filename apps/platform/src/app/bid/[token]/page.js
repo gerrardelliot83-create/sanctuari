@@ -1,8 +1,8 @@
 'use client';
 
 /**
- * Page: Bid Submission Portal
- * Purpose: Public portal for insurers/brokers to submit quotes via unique token
+ * Page: Quote Submission Portal
+ * Purpose: Public portal for partners (insurers/brokers) to submit quotes via unique token
  * Features: Token validation, multiple quote uploads, document parsing, policy wording uploads
  */
 

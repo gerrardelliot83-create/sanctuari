@@ -1,8 +1,8 @@
 'use client';
 
 /**
- * Page: RFQ Distribution
- * Purpose: Distribute RFQ to insurers/brokers via email invitations
+ * Page: Bid Distribution
+ * Purpose: Send bid to partners (insurers/brokers) via email invitations
  * Features: Manual contacts, network selection, distribution settings
  */
 
@@ -78,7 +78,7 @@ function DistributePageClient({ rfqId }) {
 
     setUser(currentUser);
 
-    // Load RFQ
+    // Load bid
     const { data: rfqData } = await supabase
       .from('rfqs')
       .select(`
@@ -315,7 +315,7 @@ function DistributePageClient({ rfqId }) {
           <div className="distribute-container">
             {/* Header */}
             <div className="distribute-header">
-              <h1 className="distribute-title">Distribute RFQ</h1>
+              <h1 className="distribute-title">Send Bid to Partners</h1>
               <p className="distribute-subtitle">
                 Send invitations to insurers and brokers to receive quotes for <strong>{rfq?.rfq_number}</strong>
               </p>

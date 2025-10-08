@@ -2,8 +2,8 @@
 
 /**
  * Page: Bid Centre
- * Purpose: Show all RFQs with filtering and bid management
- * Features: Filter by status, search, view bids, track invitations
+ * Purpose: Show all bids with filtering and quote management
+ * Features: Filter by status, search, view quotes, track invitations
  */
 
 import { useState, useEffect } from 'react';
@@ -61,7 +61,7 @@ export default function RFQsPage() {
 
     setCompanyId(memberData.company_id);
 
-    // Load all RFQs for the company
+    // Load all bids for the company
     const { data: rfqData } = await supabase
       .from('rfqs')
       .select(`
@@ -100,7 +100,7 @@ export default function RFQsPage() {
 
   const handleResumeRFQ = async (rfq) => {
     if (rfq.status === 'draft') {
-      // Draft RFQs: Resume editing
+      // Draft bids: Resume editing
       const { data: responses } = await supabase
         .from('rfq_responses')
         .select('id')
@@ -112,15 +112,9 @@ export default function RFQsPage() {
       } else {
         router.push(`/rfq/${rfq.id}/create`);
       }
-    } else if (rfq.status === 'published') {
-      // Published but not yet distributed: Go to distribute page
-      router.push(`/rfq/${rfq.id}/distribute`);
-    } else if (rfq.status === 'bidding') {
-      // Bidding RFQs: Go to tracking page to view invitations and bids
-      router.push(`/rfq/${rfq.id}/tracking`);
     } else {
-      // Completed/Cancelled: Go to review page
-      router.push(`/rfq/${rfq.id}/review`);
+      // All non-draft bids: Go to Command Center (smart default tab)
+      router.push(`/rfq/${rfq.id}`);
     }
   };
 
@@ -187,14 +181,14 @@ export default function RFQsPage() {
             {/* Header */}
             <div className="rfqs-header">
               <h1 className="rfqs-title">Bid Centre</h1>
-              <Button onClick={handleCreateRFQ}>Create New RFQ</Button>
+              <Button onClick={handleCreateRFQ}>Create New Bid</Button>
             </div>
 
             {/* Search Bar */}
             <div className="rfqs-search">
               <input
                 type="search"
-                placeholder="Search by RFQ number, product, or title..."
+                placeholder="Search by bid number, product, or title..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="rfqs-search__input"
@@ -246,9 +240,9 @@ export default function RFQsPage() {
                         <polyline points="14 2 14 8 20 8"/>
                       </svg>
                     }
-                    title={searchQuery ? 'No matching RFQs' : `No ${activeTab === 'all' ? '' : activeTab} RFQs`}
-                    description={searchQuery ? 'Try adjusting your search' : 'Create your first RFQ to get started'}
-                    actionLabel={searchQuery ? 'Clear Search' : 'Create RFQ'}
+                    title={searchQuery ? 'No matching bids' : `No ${activeTab === 'all' ? '' : activeTab} bids`}
+                    description={searchQuery ? 'Try adjusting your search' : 'Create your first bid to get started'}
+                    actionLabel={searchQuery ? 'Clear Search' : 'Create Bid'}
                     onAction={searchQuery ? () => setSearchQuery('') : handleCreateRFQ}
                   />
                 </Card>
@@ -270,7 +264,7 @@ export default function RFQsPage() {
                     </div>
 
                     <div className="rfqs-card__meta">
-                      <span>RFQ #{rfq.rfq_number || 'Draft'}</span>
+                      <span>Bid #{rfq.rfq_number || 'Draft'}</span>
                       <span>•</span>
                       <span>Created {new Date(rfq.created_at).toLocaleDateString()}</span>
                       {rfq.deadline && (
@@ -305,7 +299,7 @@ export default function RFQsPage() {
                           size="small"
                           onClick={() => router.push(`/rfq/${rfq.id}/tracking`)}
                         >
-                          View Bids
+                          View Quotes
                         </Button>
                       ) : (
                         <Button

@@ -2,7 +2,7 @@
 
 /**
  * Page: Product Selection
- * Purpose: Let user choose insurance product to create RFQ
+ * Purpose: Let user choose insurance product to create a bid
  * Route: /rfq/create
  */
 
@@ -95,7 +95,7 @@ export default function ProductSelectionPage() {
     setCreating(true);
 
     try {
-      // Create draft RFQ
+      // Create draft bid
       const response = await fetch('/api/rfq/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -103,21 +103,21 @@ export default function ProductSelectionPage() {
           product_id: product.id,
           company_id: currentCompanyId,
           user_id: user.id,
-          title: `${product.name} RFQ`,
+          title: `${product.name} Bid`,
         }),
       });
 
       const data = await response.json();
 
       if (data.rfq) {
-        // Redirect to policy upload page (Phase 5)
+        // Redirect to policy upload page
         router.push(`/rfq/${data.rfq.id}/upload`);
       } else {
-        alert('Failed to create RFQ. Please try again.');
+        alert('Failed to create bid. Please try again.');
         setCreating(false);
       }
     } catch (error) {
-      console.error('Error creating RFQ:', error);
+      console.error('Error creating bid:', error);
       alert('An error occurred. Please try again.');
       setCreating(false);
     }
@@ -151,7 +151,7 @@ export default function ProductSelectionPage() {
           <div className="product-selection">
             <div className="product-selection__header">
               <div>
-                <h1 className="product-selection__title">Create RFQ</h1>
+                <h1 className="product-selection__title">Create New Bid</h1>
                 <p className="product-selection__subtitle">
                   Choose an insurance product to get started
                 </p>
@@ -192,7 +192,7 @@ export default function ProductSelectionPage() {
             {creating && (
               <div className="product-selection__creating">
                 <div className="product-selection__creating-spinner" />
-                <p>Creating your RFQ...</p>
+                <p>Creating your bid...</p>
               </div>
             )}
           </div>

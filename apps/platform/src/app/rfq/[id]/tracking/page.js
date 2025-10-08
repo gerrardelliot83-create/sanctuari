@@ -1,9 +1,9 @@
 'use client';
 
 /**
- * Page: RFQ Distribution Tracking
+ * Page: Partner Response Tracking
  * Route: /rfq/[id]/tracking
- * Purpose: Track invitation status, email delivery, and bid submissions
+ * Purpose: Track invitation status, email delivery, and quote submissions
  * Status: PLACEHOLDER - Full implementation in Week 2
  */
 
@@ -54,7 +54,7 @@ function TrackingPageClient({ rfqId }) {
 
     setUser(currentUser);
 
-    // Load RFQ
+    // Load bid
     const { data: rfqData } = await supabase
       .from('rfqs')
       .select(`
@@ -117,13 +117,13 @@ function TrackingPageClient({ rfqId }) {
             {/* Header */}
             <div className="tracking-header">
               <div>
-                <h1 className="tracking-title">Distribution Tracking</h1>
+                <h1 className="tracking-title">Track Partner Responses</h1>
                 <p className="tracking-subtitle">
                   {rfq?.rfq_number} - {rfq?.insurance_products?.name}
                 </p>
               </div>
-              <Button variant="secondary" onClick={() => router.push('/bids')}>
-                Back to Bids
+              <Button variant="secondary" onClick={() => router.push('/rfqs')}>
+                Back to Bid Centre
               </Button>
             </div>
 
@@ -158,7 +158,7 @@ function TrackingPageClient({ rfqId }) {
                   </svg>
                 </div>
                 <div className="stat-number">{submittedCount}</div>
-                <div className="stat-label">Bids Submitted</div>
+                <div className="stat-label">Quotes Received</div>
               </Card>
 
               <Card className="stat-card">
@@ -182,7 +182,7 @@ function TrackingPageClient({ rfqId }) {
                 <div className="empty-state">
                   <p>No invitations have been sent yet.</p>
                   <Button onClick={() => router.push(`/rfq/${rfqId}/distribute`)}>
-                    Distribute RFQ
+                    Send Bid to Partners
                   </Button>
                 </div>
               ) : (
@@ -195,7 +195,7 @@ function TrackingPageClient({ rfqId }) {
                       <div className={`invitation-status status-${invitation.status}`}>
                         {invitation.status === 'sent' && 'Sent'}
                         {invitation.status === 'opened' && 'Opened'}
-                        {invitation.status === 'submitted' && 'Bid Submitted'}
+                        {invitation.status === 'submitted' && 'Quote Submitted'}
                         {invitation.status === 'expired' && 'Expired'}
                       </div>
                       <div className="invitation-date">

@@ -1,9 +1,9 @@
 'use client';
 
 /**
- * Page: Bid Review/Comparison
+ * Page: Quote Comparison
  * Route: /rfq/[id]/review
- * Purpose: View and compare all submitted bids for an RFQ
+ * Purpose: View and compare all submitted quotes for a bid
  * Features: Table/card view, stats, comparison, document download
  */
 
@@ -58,7 +58,7 @@ function ReviewPageClient({ rfqId }) {
 
     setUser(currentUser);
 
-    // Load RFQ with all bids and documents
+    // Load bid with all quotes and documents
     const { data: rfqData, error: rfqError } = await supabase
       .from('rfqs')
       .select(`
@@ -74,7 +74,7 @@ function ReviewPageClient({ rfqId }) {
       .single();
 
     if (rfqError) {
-      console.error('Error loading RFQ:', rfqError);
+      console.error('Error loading bid:', rfqError);
       router.push('/rfqs');
       return;
     }
@@ -134,7 +134,7 @@ function ReviewPageClient({ rfqId }) {
       if (selectedForComparison.length < 3) {
         setSelectedForComparison([...selectedForComparison, bid]);
       } else {
-        alert('You can compare up to 3 bids at a time');
+        alert('You can compare up to 3 quotes at a time');
       }
     }
   };
@@ -174,7 +174,7 @@ function ReviewPageClient({ rfqId }) {
   const getStats = () => {
     if (bids.length === 0) {
       return {
-        totalBids: 0,
+        totalQuotes: 0,
         lowestPremium: null,
         highestCoverage: null,
         averagePremium: null
@@ -185,7 +185,7 @@ function ReviewPageClient({ rfqId }) {
     const validCoverages = bids.filter(b => b.coverage_amount).map(b => b.coverage_amount);
 
     return {
-      totalBids: bids.length,
+      totalQuotes: bids.length,
       lowestPremium: validPremiums.length > 0 ? Math.min(...validPremiums) : null,
       highestCoverage: validCoverages.length > 0 ? Math.max(...validCoverages) : null,
       averagePremium: validPremiums.length > 0
@@ -222,7 +222,7 @@ function ReviewPageClient({ rfqId }) {
             {/* Header */}
             <div className="review-header">
               <div>
-                <h1 className="review-title">Bid Review</h1>
+                <h1 className="review-title">Quote Comparison</h1>
                 <p className="review-subtitle">
                   {rfq?.rfq_number} - {rfq?.insurance_products?.name}
                 </p>
@@ -244,8 +244,8 @@ function ReviewPageClient({ rfqId }) {
                     <line x1="9" y1="15" x2="15" y2="15"/>
                   </svg>
                 </div>
-                <div className="stat-number">{stats.totalBids}</div>
-                <div className="stat-label">Total Bids</div>
+                <div className="stat-number">{stats.totalQuotes}</div>
+                <div className="stat-label">Total Quotes</div>
               </Card>
 
               <Card className="stat-card">

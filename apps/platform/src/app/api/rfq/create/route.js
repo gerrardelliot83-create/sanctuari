@@ -1,8 +1,8 @@
 /**
  * API Route: POST /api/rfq/create
- * Purpose: Create a new draft RFQ
+ * Purpose: Create a new draft bid (request for quotes)
  * Body: { product_id, company_id, user_id }
- * Returns: Created RFQ with ID
+ * Returns: Created bid with ID (stored in rfqs table)
  */
 
 import { createClient } from '@sanctuari/database/lib/server';
@@ -30,25 +30,25 @@ export async function POST(request) {
       .eq('id', product_id)
       .single();
 
-    // Create RFQ with draft status
+    // Create bid with draft status
     const { data: rfq, error } = await supabase
       .from('rfqs')
       .insert({
         user_id,
         company_id,
         product_id,
-        title: title || `${product?.name || 'Insurance'} RFQ`,
+        title: title || `${product?.name || 'Insurance'} Bid`,
         status: 'draft',
         is_first_rfq: false, // We'll check this properly later
-        rfq_number: null, // Generated on submit
+        rfq_number: null, // Generated on publish (will use BID-YYYY-0001 format)
       })
       .select()
       .single();
 
     if (error) {
-      console.error('Error creating RFQ:', error);
+      console.error('Error creating bid:', error);
       return NextResponse.json(
-        { error: 'Failed to create RFQ' },
+        { error: 'Failed to create bid' },
         { status: 500 }
       );
     }
