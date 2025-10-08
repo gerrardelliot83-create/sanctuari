@@ -8,6 +8,7 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@sanctuari/database/lib/client';
 import { Card, Button } from '@sanctuari/ui';
+import CSVUploadModal from './CSVUploadModal';
 import '../distribute/distribute.css';
 
 export default function DistributionTab({ rfqId, rfqData, onDistributionComplete }) {
@@ -15,6 +16,7 @@ export default function DistributionTab({ rfqId, rfqData, onDistributionComplete
 
   // State
   const [activeTab, setActiveTab] = useState('contacts');
+  const [showCSVModal, setShowCSVModal] = useState(false);
 
   // Contacts state
   const [contacts, setContacts] = useState([]);
@@ -99,6 +101,28 @@ export default function DistributionTab({ rfqId, rfqData, onDistributionComplete
 
   const handleRemoveContact = (id) => {
     setContacts(contacts.filter(c => c.id !== id));
+  };
+
+  const handleCSVImport = (importedContacts) => {
+    // Filter out duplicates
+    const newContacts = importedContacts
+      .filter(imported => !contacts.some(c => c.email === imported.email))
+      .map(imported => ({
+        id: Date.now() + Math.random(),
+        email: imported.email,
+        company: imported.company,
+        contactPerson: imported.contactPerson,
+        source: 'csv'
+      }));
+
+    setContacts([...contacts, ...newContacts]);
+
+    // Show success message
+    if (newContacts.length > 0) {
+      alert(`Successfully imported ${newContacts.length} contact${newContacts.length !== 1 ? 's' : ''}`);
+    } else {
+      alert('All contacts were duplicates and were skipped');
+    }
   };
 
   // Network Selection
@@ -293,6 +317,18 @@ export default function DistributionTab({ rfqId, rfqData, onDistributionComplete
                   <Button onClick={handleAddContact}>Add Contact</Button>
                 </div>
               </div>
+
+              <div className="bulk-import-section">
+                <p className="bulk-import-label">Or bulk import from CSV:</p>
+                <Button variant="secondary" onClick={() => setShowCSVModal(true)}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Import from CSV
+                </Button>
+              </div>
             </div>
 
             {contacts.length > 0 && (
@@ -310,7 +346,7 @@ export default function DistributionTab({ rfqId, rfqData, onDistributionComplete
                       )}
                     </div>
                     <div className="contact-source">
-                      {contact.source === 'network' ? 'From Network' : 'Manual'}
+                      {contact.source === 'network' ? 'From Network' : contact.source === 'csv' ? 'CSV Import' : 'Manual'}
                     </div>
                     <button
                       className="contact-remove"
@@ -481,6 +517,14 @@ export default function DistributionTab({ rfqId, rfqData, onDistributionComplete
             )}
           </Card>
         </div>
+      )}
+
+      {/* CSV Upload Modal */}
+      {showCSVModal && (
+        <CSVUploadModal
+          onClose={() => setShowCSVModal(false)}
+          onImport={handleCSVImport}
+        />
       )}
     </div>
   );

@@ -594,3 +594,26 @@
     align-self: flex-start;
   }
 }
+
+/* ===== CSV Bulk Import Section ===== */
+
+.bulk-import-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(7, 9, 33, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bulk-import-label {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  color: rgba(7, 9, 33, 0.7);
+  margin: 0;
+}
+
+.bulk-import-section button svg {
+  width: 16px;
+  height: 16px;
+}

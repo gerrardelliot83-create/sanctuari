@@ -16,6 +16,7 @@ export default function TrackingTab({ rfqId, rfqData, invitations: initialInvita
   const supabase = createClient();
 
   const [invitations, setInvitations] = useState(initialInvitations || []);
+  const [resending, setResending] = useState(null); // Track which invitation is being resent
 
   useEffect(() => {
     // Set up real-time subscription for invitation updates
@@ -51,6 +52,38 @@ export default function TrackingTab({ rfqId, rfqData, invitations: initialInvita
 
     if (invitationsData) {
       setInvitations(invitationsData);
+    }
+  };
+
+  const handleResendInvitation = async (invitationId) => {
+    if (!confirm('Resend invitation to this partner?')) {
+      return;
+    }
+
+    setResending(invitationId);
+
+    try {
+      const response = await fetch(`/api/rfq/${rfqId}/resend-invitation`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ invitationId })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to resend invitation');
+      }
+
+      alert(`Invitation resent successfully to ${data.email}`);
+      // Reload invitations to show updated sent_at time
+      await loadInvitations();
+
+    } catch (error) {
+      console.error('Error resending invitation:', error);
+      alert(`Failed to resend invitation: ${error.message}`);
+    } finally {
+      setResending(null);
     }
   };
 
@@ -143,22 +176,114 @@ export default function TrackingTab({ rfqId, rfqData, invitations: initialInvita
           <div className="invitations-list">
             {invitations.map(invitation => (
               <div key={invitation.id} className="invitation-item">
-                <div className="invitation-email">
-                  {invitation.external_email}
+                <div className="invitation-main">
+                  <div className="invitation-info-group">
+                    <div className="invitation-email">
+                      {invitation.external_email}
+                    </div>
+                    <div className={`invitation-status status-${invitation.status}`}>
+                      {invitation.status === 'sent' && 'Sent'}
+                      {invitation.status === 'opened' && 'Opened'}
+                      {invitation.status === 'submitted' && 'Quote Submitted'}
+                      {invitation.status === 'expired' && (invitation.bounce_reason || 'Expired')}
+                    </div>
+                  </div>
+                  {invitation.status !== 'submitted' && invitation.status !== 'expired' && (
+                    <Button
+                      variant="secondary"
+                      size="small"
+                      onClick={() => handleResendInvitation(invitation.id)}
+                      disabled={resending === invitation.id}
+                    >
+                      {resending === invitation.id ? 'Sending...' : 'Resend'}
+                    </Button>
+                  )}
                 </div>
-                <div className={`invitation-status status-${invitation.status}`}>
-                  {invitation.status === 'sent' && 'Sent'}
-                  {invitation.status === 'opened' && 'Opened'}
-                  {invitation.status === 'submitted' && 'Quote Submitted'}
-                  {invitation.status === 'expired' && 'Expired'}
-                </div>
-                <div className="invitation-date">
-                  {new Date(invitation.sent_at).toLocaleDateString('en-IN', {
-                    month: 'short',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                  })}
+
+                {/* Detailed Tracking Timeline */}
+                <div className="invitation-timeline">
+                  <div className="timeline-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <line x1="22" y1="2" x2="11" y2="13"/>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                    <span>Sent {new Date(invitation.sent_at).toLocaleDateString('en-IN', {
+                      month: 'short',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    })}</span>
+                  </div>
+
+                  {invitation.delivered_at && (
+                    <div className="timeline-item delivered">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      <span>Delivered {new Date(invitation.delivered_at).toLocaleDateString('en-IN', {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })}</span>
+                    </div>
+                  )}
+
+                  {invitation.opened_at && (
+                    <div className="timeline-item opened">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                      </svg>
+                      <span>Opened {new Date(invitation.opened_at).toLocaleDateString('en-IN', {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })}</span>
+                    </div>
+                  )}
+
+                  {invitation.clicked_at && (
+                    <div className="timeline-item clicked">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                      </svg>
+                      <span>Clicked link {new Date(invitation.clicked_at).toLocaleDateString('en-IN', {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })}</span>
+                    </div>
+                  )}
+
+                  {invitation.submitted_at && (
+                    <div className="timeline-item submitted">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                      </svg>
+                      <span>Quote submitted {new Date(invitation.submitted_at).toLocaleDateString('en-IN', {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })}</span>
+                    </div>
+                  )}
+
+                  {invitation.bounce_reason && (
+                    <div className="timeline-item bounced">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="15" y1="9" x2="9" y2="15"/>
+                        <line x1="9" y1="9" x2="15" y2="15"/>
+                      </svg>
+                      <span>{invitation.bounce_reason}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -166,19 +291,6 @@ export default function TrackingTab({ rfqId, rfqData, invitations: initialInvita
         )}
       </Card>
 
-      {/* Coming Soon Notice */}
-      <Card className="coming-soon-card">
-        <div className="coming-soon-content">
-          <h4>Week 2 Features Coming Soon</h4>
-          <ul>
-            <li>Real-time email delivery status via Brevo webhooks</li>
-            <li>Detailed link open tracking with timestamps</li>
-            <li>Resend invitations to specific recipients</li>
-            <li>Automated reminder emails before deadline</li>
-            <li>CSV export of tracking data for reporting</li>
-          </ul>
-        </div>
-      </Card>
     </div>
   );
 }
