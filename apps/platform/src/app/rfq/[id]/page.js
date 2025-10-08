@@ -17,6 +17,7 @@ import OverviewTab from './components/OverviewTab';
 import QuotesTab from './components/QuotesTab';
 import DistributionTab from './components/DistributionTab';
 import TrackingTab from './components/TrackingTab';
+import CommunicationTab from './components/CommunicationTab';
 import './command-center.css';
 
 export default function BidCommandCenter({ params }) {
@@ -101,7 +102,7 @@ function CommandCenterClient({ rfqId }) {
   };
 
   const isValidTab = (tab) => {
-    return ['overview', 'quotes', 'distribution', 'tracking'].includes(tab);
+    return ['overview', 'quotes', 'distribution', 'tracking', 'communication'].includes(tab);
   };
 
   const getDefaultTab = (rfqData, bidsCount, invitationsCount) => {
@@ -232,6 +233,14 @@ function CommandCenterClient({ rfqId }) {
                   rfqData={rfq}
                   invitations={invitations}
                   onViewQuotes={() => handleTabChange('quotes')}
+                />
+              )}
+
+              {activeTab === 'communication' && (
+                <CommunicationTab
+                  rfqId={rfqId}
+                  rfqData={rfq}
+                  invitations={invitations}
                 />
               )}
             </div>

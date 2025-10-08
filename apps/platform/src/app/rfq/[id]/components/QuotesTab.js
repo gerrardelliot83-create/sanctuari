@@ -8,6 +8,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Card, Button } from '@sanctuari/ui';
+import AIInsightsPanel from './AIInsightsPanel';
 import '../review/review.css';
 
 export default function QuotesTab({ rfqId, rfqData, bids: initialBids }) {
@@ -18,6 +19,7 @@ export default function QuotesTab({ rfqId, rfqData, bids: initialBids }) {
   const [sortBy, setSortBy] = useState('created_at'); // 'created_at', 'premium_amount', 'coverage_amount'
   const [sortOrder, setSortOrder] = useState('desc'); // 'asc' or 'desc'
   const [selectedForComparison, setSelectedForComparison] = useState([]);
+  const [showAIInsights, setShowAIInsights] = useState(false);
 
   const handleSort = (field) => {
     if (sortBy === field) {
@@ -172,6 +174,33 @@ export default function QuotesTab({ rfqId, rfqData, bids: initialBids }) {
           <div className="stat-label">Average Premium</div>
         </Card>
       </div>
+
+      {/* AI Insights Panel */}
+      {bids.length > 0 && (
+        <div className="ai-insights-toggle">
+          <Button
+            variant={showAIInsights ? 'primary' : 'secondary'}
+            onClick={() => setShowAIInsights(!showAIInsights)}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            {showAIInsights ? 'Hide AI Insights' : 'Show AI Insights'}
+          </Button>
+        </div>
+      )}
+
+      {showAIInsights && bids.length > 0 && (
+        <AIInsightsPanel
+          rfqId={rfqId}
+          onAnalysisComplete={(analysis) => {
+            // Optionally update bid sorting based on AI scores
+            console.log('AI Analysis complete:', analysis);
+          }}
+        />
+      )}
 
       {/* View Controls */}
       {bids.length > 0 && (
