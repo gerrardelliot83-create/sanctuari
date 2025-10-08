@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Card, Button } from '@sanctuari/ui';
 import AIInsightsPanel from './AIInsightsPanel';
+import EnhancedComparison from './EnhancedComparison';
 import '../review/review.css';
 
 export default function QuotesTab({ rfqId, rfqData, bids: initialBids }) {
@@ -20,6 +21,7 @@ export default function QuotesTab({ rfqId, rfqData, bids: initialBids }) {
   const [sortOrder, setSortOrder] = useState('desc'); // 'asc' or 'desc'
   const [selectedForComparison, setSelectedForComparison] = useState([]);
   const [showAIInsights, setShowAIInsights] = useState(false);
+  const [showEnhancedComparison, setShowEnhancedComparison] = useState(false);
 
   const handleSort = (field) => {
     if (sortBy === field) {
@@ -175,7 +177,7 @@ export default function QuotesTab({ rfqId, rfqData, bids: initialBids }) {
         </Card>
       </div>
 
-      {/* AI Insights Panel */}
+      {/* AI Insights & Comparison Toggle */}
       {bids.length > 0 && (
         <div className="ai-insights-toggle">
           <Button
@@ -189,7 +191,27 @@ export default function QuotesTab({ rfqId, rfqData, bids: initialBids }) {
             </svg>
             {showAIInsights ? 'Hide AI Insights' : 'Show AI Insights'}
           </Button>
+          <Button
+            variant={showEnhancedComparison ? 'primary' : 'secondary'}
+            onClick={() => setShowEnhancedComparison(!showEnhancedComparison)}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+            </svg>
+            {showEnhancedComparison ? 'Hide Comparison' : 'Enhanced Comparison'}
+          </Button>
         </div>
+      )}
+
+      {/* Enhanced Comparison */}
+      {showEnhancedComparison && bids.length > 0 && rfqData?.insurance_products?.name && (
+        <EnhancedComparison
+          productName={rfqData.insurance_products.name}
+          quotes={bids}
+        />
       )}
 
       {showAIInsights && bids.length > 0 && (

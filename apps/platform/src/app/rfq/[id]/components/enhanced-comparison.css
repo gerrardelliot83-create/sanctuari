@@ -1,0 +1,503 @@
+/* Enhanced Quote Comparison Styles */
+
+.enhanced-comparison {
+  margin: 24px 0;
+}
+
+.enhanced-comparison-empty {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+}
+
+/* Header */
+.comparison-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.comparison-title h3 {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #070921;
+}
+
+.comparison-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.comparison-view-toggle {
+  display: flex;
+  gap: 8px;
+  background: #F5F4F5;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.view-btn {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.view-btn.active {
+  background: white;
+  color: #6F4FFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.view-btn:hover:not(.active) {
+  color: #070921;
+}
+
+/* Insights */
+.comparison-insights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.insight-card {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.insight-card.severity-high {
+  background: #FFF5F5;
+  border-left-color: #FD5478;
+}
+
+.insight-card.severity-medium {
+  background: #FFF9E6;
+  border-left-color: #F6C754;
+}
+
+.insight-card.severity-low {
+  background: #F0F9FF;
+  border-left-color: #6F4FFF;
+}
+
+.insight-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.insight-content {
+  flex: 1;
+}
+
+.insight-content strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #070921;
+  font-size: 14px;
+}
+
+.insight-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Best Quotes Summary */
+.best-quotes-summary {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.best-quotes-summary h4 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #070921;
+}
+
+.best-quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.best-quote-card {
+  background: #F5F4F5;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.best-quote-card.highlight {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFFBF0 100%);
+  border: 2px solid #F6C754;
+}
+
+.best-quote-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.best-quote-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #6F4FFF;
+  margin-bottom: 4px;
+}
+
+.best-quote-card.highlight .best-quote-value {
+  color: #F6C754;
+}
+
+.best-quote-insurer {
+  font-size: 14px;
+  color: #070921;
+  font-weight: 500;
+}
+
+/* Comparison Matrix */
+.comparison-matrix-container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+
+.comparison-matrix table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.comparison-matrix th {
+  background: #F5F4F5;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #070921;
+  border-bottom: 2px solid #E0E0E0;
+}
+
+.comparison-matrix th.field-column {
+  position: sticky;
+  left: 0;
+  background: #F5F4F5;
+  z-index: 2;
+  min-width: 200px;
+}
+
+.comparison-matrix th.quote-column {
+  min-width: 150px;
+  text-align: center;
+}
+
+.comparison-matrix td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.comparison-matrix tr:hover {
+  background: #FAFAFA;
+}
+
+.comparison-matrix tr.critical-row {
+  background: #FFF9F5;
+}
+
+.comparison-matrix tr.critical-row:hover {
+  background: #FFF5F0;
+}
+
+.field-name {
+  font-weight: 500;
+  color: #070921;
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 1;
+}
+
+.critical-row .field-name {
+  background: #FFF9F5;
+}
+
+.critical-row:hover .field-name {
+  background: #FFF5F0;
+}
+
+.critical-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  padding: 2px 6px;
+  background: #FD5478;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.quote-value {
+  text-align: center;
+  color: #070921;
+}
+
+.quote-value.best-value {
+  background: #F0F9FF;
+  font-weight: 600;
+  color: #6F4FFF;
+  position: relative;
+}
+
+.quote-value.missing-value {
+  color: #999;
+  font-style: italic;
+}
+
+.best-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  padding: 2px 6px;
+  background: #6F4FFF;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Card View */
+.comparison-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.comparison-quote-card {
+  padding: 20px;
+}
+
+.quote-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #F0F0F0;
+}
+
+.quote-card-header h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #070921;
+}
+
+.value-score {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: #6F4FFF;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.quote-card-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+}
+
+.field-row.critical {
+  background: #FFF9F5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 0 -12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.field-label {
+  font-size: 13px;
+  color: #666;
+  flex: 1;
+}
+
+.critical-star {
+  color: #FD5478;
+  margin-left: 4px;
+}
+
+.field-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #070921;
+  text-align: right;
+}
+
+/* Value Metrics */
+.value-metrics-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.value-metrics-section h4 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #070921;
+}
+
+.value-metrics-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.value-metrics-table th {
+  background: #F5F4F5;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #070921;
+  border-bottom: 2px solid #E0E0E0;
+}
+
+.value-metrics-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.value-metrics-table tr.high-value {
+  background: #F0F9FF;
+}
+
+.value-metrics-table tr:hover {
+  background: #FAFAFA;
+}
+
+.value-metrics-table tr.high-value:hover {
+  background: #E6F4FF;
+}
+
+.value-score-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  background: #F0F0F0;
+  border-radius: 4px;
+  height: 24px;
+  min-width: 120px;
+}
+
+.value-score-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #6F4FFF 0%, #8B6FFF 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.value-score-bar span {
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 600;
+  color: #070921;
+  padding-left: 8px;
+}
+
+.value-metrics-note {
+  margin: 16px 0 0 0;
+  font-size: 13px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comparison-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .comparison-view-toggle {
+    width: 100%;
+  }
+
+  .view-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .best-quotes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-matrix-container {
+    padding: 12px;
+  }
+
+  .comparison-matrix th.field-column {
+    min-width: 150px;
+  }
+
+  .comparison-matrix th.quote-column {
+    min-width: 120px;
+  }
+
+  .comparison-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .value-metrics-section {
+    padding: 16px 12px;
+  }
+
+  .value-metrics-table {
+    font-size: 12px;
+  }
+
+  .value-metrics-table th,
+  .value-metrics-table td {
+    padding: 8px;
+  }
+}
